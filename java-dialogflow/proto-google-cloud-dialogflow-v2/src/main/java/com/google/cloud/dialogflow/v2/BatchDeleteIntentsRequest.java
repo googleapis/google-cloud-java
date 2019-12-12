@@ -43,6 +43,12 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchDeleteIntentsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,9 +81,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               intents_.add(
                   input.readMessage(
@@ -98,7 +104,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         intents_ = java.util.Collections.unmodifiableList(intents_);
       }
       this.unknownFields = unknownFields.build();
@@ -121,7 +127,6 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -135,6 +140,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -158,6 +165,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -472,7 +481,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
 
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         intentsBuilder_.clear();
       }
@@ -504,18 +513,16 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
       com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest result =
           new com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (intentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           intents_ = java.util.Collections.unmodifiableList(intents_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.intents_ = intents_;
       } else {
         result.intents_ = intentsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -574,7 +581,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         if (!other.intents_.isEmpty()) {
           if (intents_.isEmpty()) {
             intents_ = other.intents_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureIntentsIsMutable();
             intents_.addAll(other.intents_);
@@ -587,7 +594,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
             intentsBuilder_.dispose();
             intentsBuilder_ = null;
             intents_ = other.intents_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             intentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIntentsFieldBuilder()
@@ -641,6 +648,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -664,6 +673,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -687,6 +698,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -708,6 +722,8 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -726,6 +742,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -742,9 +761,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureIntentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>(intents_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -992,7 +1011,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     public Builder clearIntents() {
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         intentsBuilder_.clear();
@@ -1134,7 +1153,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
                 com.google.cloud.dialogflow.v2.Intent,
                 com.google.cloud.dialogflow.v2.Intent.Builder,
                 com.google.cloud.dialogflow.v2.IntentOrBuilder>(
-                intents_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                intents_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         intents_ = null;
       }
       return intentsBuilder_;

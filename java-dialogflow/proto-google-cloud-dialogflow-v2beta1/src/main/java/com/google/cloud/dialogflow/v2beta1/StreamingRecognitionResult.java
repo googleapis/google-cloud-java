@@ -63,6 +63,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognitionResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -117,10 +123,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 speechWordInfo_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SpeechWordInfo>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               speechWordInfo_.add(
                   input.readMessage(
@@ -157,7 +163,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         speechWordInfo_ = java.util.Collections.unmodifiableList(speechWordInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -274,12 +280,20 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MessageType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MessageType forNumber(int value) {
       switch (value) {
         case 0:
@@ -339,7 +353,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType)
   }
 
-  private int bitField0_;
   public static final int MESSAGE_TYPE_FIELD_NUMBER = 1;
   private int messageType_;
   /**
@@ -351,6 +364,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
    * </code>
+   *
+   * @return The enum numeric value on the wire for messageType.
    */
   public int getMessageTypeValue() {
     return messageType_;
@@ -364,6 +379,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
    * </code>
+   *
+   * @return The messageType.
    */
   public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
       getMessageType() {
@@ -387,6 +404,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string transcript = 2;</code>
+   *
+   * @return The transcript.
    */
   public java.lang.String getTranscript() {
     java.lang.Object ref = transcript_;
@@ -408,6 +427,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string transcript = 2;</code>
+   *
+   * @return The bytes for transcript.
    */
   public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
@@ -434,6 +455,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>bool is_final = 3;</code>
+   *
+   * @return The isFinal.
    */
   public boolean getIsFinal() {
     return isFinal_;
@@ -454,6 +477,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -475,6 +500,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>float stability = 6;</code>
+   *
+   * @return The stability.
    */
   public float getStability() {
     return stability_;
@@ -567,6 +594,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   *
+   * @return Whether the speechEndOffset field is set.
    */
   public boolean hasSpeechEndOffset() {
     return speechEndOffset_ != null;
@@ -580,6 +609,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   *
+   * @return The speechEndOffset.
    */
   public com.google.protobuf.Duration getSpeechEndOffset() {
     return speechEndOffset_ == null
@@ -907,7 +938,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
       if (speechWordInfoBuilder_ == null) {
         speechWordInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         speechWordInfoBuilder_.clear();
       }
@@ -946,16 +977,15 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult result =
           new com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.messageType_ = messageType_;
       result.transcript_ = transcript_;
       result.isFinal_ = isFinal_;
       result.confidence_ = confidence_;
       result.stability_ = stability_;
       if (speechWordInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           speechWordInfo_ = java.util.Collections.unmodifiableList(speechWordInfo_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.speechWordInfo_ = speechWordInfo_;
       } else {
@@ -966,7 +996,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       } else {
         result.speechEndOffset_ = speechEndOffsetBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1038,7 +1067,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         if (!other.speechWordInfo_.isEmpty()) {
           if (speechWordInfo_.isEmpty()) {
             speechWordInfo_ = other.speechWordInfo_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSpeechWordInfoIsMutable();
             speechWordInfo_.addAll(other.speechWordInfo_);
@@ -1051,7 +1080,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             speechWordInfoBuilder_.dispose();
             speechWordInfoBuilder_ = null;
             speechWordInfo_ = other.speechWordInfo_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
             speechWordInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechWordInfoFieldBuilder()
@@ -1108,6 +1137,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for messageType.
      */
     public int getMessageTypeValue() {
       return messageType_;
@@ -1122,6 +1153,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for messageType to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageTypeValue(int value) {
       messageType_ = value;
@@ -1138,6 +1172,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @return The messageType.
      */
     public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
         getMessageType() {
@@ -1159,6 +1195,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @param value The messageType to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageType(
         com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType value) {
@@ -1180,6 +1219,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessageType() {
 
@@ -1198,6 +1239,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @return The transcript.
      */
     public java.lang.String getTranscript() {
       java.lang.Object ref = transcript_;
@@ -1219,6 +1262,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @return The bytes for transcript.
      */
     public com.google.protobuf.ByteString getTranscriptBytes() {
       java.lang.Object ref = transcript_;
@@ -1240,6 +1285,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @param value The transcript to set.
+     * @return This builder for chaining.
      */
     public Builder setTranscript(java.lang.String value) {
       if (value == null) {
@@ -1259,6 +1307,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTranscript() {
 
@@ -1275,6 +1325,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @param value The bytes for transcript to set.
+     * @return This builder for chaining.
      */
     public Builder setTranscriptBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1299,6 +1352,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 3;</code>
+     *
+     * @return The isFinal.
      */
     public boolean getIsFinal() {
       return isFinal_;
@@ -1314,6 +1369,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 3;</code>
+     *
+     * @param value The isFinal to set.
+     * @return This builder for chaining.
      */
     public Builder setIsFinal(boolean value) {
 
@@ -1332,6 +1390,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsFinal() {
 
@@ -1354,6 +1414,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1371,6 +1433,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1391,6 +1456,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 
@@ -1414,6 +1481,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float stability = 6;</code>
+     *
+     * @return The stability.
      */
     public float getStability() {
       return stability_;
@@ -1432,6 +1501,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float stability = 6;</code>
+     *
+     * @param value The stability to set.
+     * @return This builder for chaining.
      */
     public Builder setStability(float value) {
 
@@ -1453,6 +1525,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float stability = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStability() {
 
@@ -1465,11 +1539,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureSpeechWordInfoIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         speechWordInfo_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SpeechWordInfo>(
                 speechWordInfo_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1710,7 +1784,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder clearSpeechWordInfo() {
       if (speechWordInfoBuilder_ == null) {
         speechWordInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         speechWordInfoBuilder_.clear();
@@ -1851,7 +1925,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
                 com.google.cloud.dialogflow.v2beta1.SpeechWordInfo.Builder,
                 com.google.cloud.dialogflow.v2beta1.SpeechWordInfoOrBuilder>(
                 speechWordInfo_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         speechWordInfo_ = null;
@@ -1874,6 +1948,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     *
+     * @return Whether the speechEndOffset field is set.
      */
     public boolean hasSpeechEndOffset() {
       return speechEndOffsetBuilder_ != null || speechEndOffset_ != null;
@@ -1887,6 +1963,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     *
+     * @return The speechEndOffset.
      */
     public com.google.protobuf.Duration getSpeechEndOffset() {
       if (speechEndOffsetBuilder_ == null) {

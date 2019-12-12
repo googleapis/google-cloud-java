@@ -32,6 +32,8 @@ public interface OriginalDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string source = 1;</code>
+   *
+   * @return The source.
    */
   java.lang.String getSource();
   /**
@@ -43,6 +45,8 @@ public interface OriginalDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string source = 1;</code>
+   *
+   * @return The bytes for source.
    */
   com.google.protobuf.ByteString getSourceBytes();
 
@@ -55,6 +59,8 @@ public interface OriginalDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
@@ -66,6 +72,8 @@ public interface OriginalDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
 
@@ -88,6 +96,8 @@ public interface OriginalDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
+   *
+   * @return Whether the payload field is set.
    */
   boolean hasPayload();
   /**
@@ -109,6 +119,8 @@ public interface OriginalDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
+   *
+   * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
   /**

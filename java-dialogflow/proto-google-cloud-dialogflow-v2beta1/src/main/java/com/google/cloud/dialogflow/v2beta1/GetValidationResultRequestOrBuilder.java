@@ -32,6 +32,8 @@ public interface GetValidationResultRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface GetValidationResultRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface GetValidationResultRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -72,6 +78,8 @@ public interface GetValidationResultRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

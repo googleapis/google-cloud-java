@@ -34,6 +34,8 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -125,6 +129,8 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -140,6 +146,8 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -152,6 +160,8 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -163,6 +173,8 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

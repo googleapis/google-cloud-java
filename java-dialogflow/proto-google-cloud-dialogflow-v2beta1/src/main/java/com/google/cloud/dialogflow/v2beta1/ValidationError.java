@@ -44,6 +44,12 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ValidationError();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               entries_.add(s);
               break;
@@ -105,7 +111,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entries_ = entries_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -250,12 +256,20 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Severity valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Severity forNumber(int value) {
       switch (value) {
         case 0:
@@ -319,7 +333,6 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.ValidationError.Severity)
   }
 
-  private int bitField0_;
   public static final int SEVERITY_FIELD_NUMBER = 1;
   private int severity_;
   /**
@@ -330,6 +343,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
    */
   public int getSeverityValue() {
     return severity_;
@@ -342,6 +357,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+   *
+   * @return The severity.
    */
   public com.google.cloud.dialogflow.v2beta1.ValidationError.Severity getSeverity() {
     @SuppressWarnings("deprecation")
@@ -374,6 +391,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @return A list containing the entries.
    */
   public com.google.protobuf.ProtocolStringList getEntriesList() {
     return entries_;
@@ -398,6 +417,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @return The count of entries.
    */
   public int getEntriesCount() {
     return entries_.size();
@@ -422,6 +443,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The entries at the given index.
    */
   public java.lang.String getEntries(int index) {
     return entries_.get(index);
@@ -446,6 +470,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the entries at the given index.
    */
   public com.google.protobuf.ByteString getEntriesBytes(int index) {
     return entries_.getByteString(index);
@@ -461,6 +488,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string error_message = 4;</code>
+   *
+   * @return The errorMessage.
    */
   public java.lang.String getErrorMessage() {
     java.lang.Object ref = errorMessage_;
@@ -481,6 +510,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string error_message = 4;</code>
+   *
+   * @return The bytes for errorMessage.
    */
   public com.google.protobuf.ByteString getErrorMessageBytes() {
     java.lang.Object ref = errorMessage_;
@@ -730,7 +761,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       severity_ = 0;
 
       entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       errorMessage_ = "";
 
       return this;
@@ -761,15 +792,13 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.dialogflow.v2beta1.ValidationError result =
           new com.google.cloud.dialogflow.v2beta1.ValidationError(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.severity_ = severity_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         entries_ = entries_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.entries_ = entries_;
       result.errorMessage_ = errorMessage_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -826,7 +855,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       if (!other.entries_.isEmpty()) {
         if (entries_.isEmpty()) {
           entries_ = other.entries_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEntriesIsMutable();
           entries_.addAll(other.entries_);
@@ -878,6 +907,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+     *
+     * @return The enum numeric value on the wire for severity.
      */
     public int getSeverityValue() {
       return severity_;
@@ -890,6 +921,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
       severity_ = value;
@@ -904,6 +938,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+     *
+     * @return The severity.
      */
     public com.google.cloud.dialogflow.v2beta1.ValidationError.Severity getSeverity() {
       @SuppressWarnings("deprecation")
@@ -921,6 +957,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverity(com.google.cloud.dialogflow.v2beta1.ValidationError.Severity value) {
       if (value == null) {
@@ -939,6 +978,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSeverity() {
 
@@ -951,9 +992,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entries_ = new com.google.protobuf.LazyStringArrayList(entries_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -976,6 +1017,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @return A list containing the entries.
      */
     public com.google.protobuf.ProtocolStringList getEntriesList() {
       return entries_.getUnmodifiableView();
@@ -1000,6 +1043,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @return The count of entries.
      */
     public int getEntriesCount() {
       return entries_.size();
@@ -1024,6 +1069,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The entries at the given index.
      */
     public java.lang.String getEntries(int index) {
       return entries_.get(index);
@@ -1048,6 +1096,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the entries at the given index.
      */
     public com.google.protobuf.ByteString getEntriesBytes(int index) {
       return entries_.getByteString(index);
@@ -1072,6 +1123,10 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The entries to set.
+     * @return This builder for chaining.
      */
     public Builder setEntries(int index, java.lang.String value) {
       if (value == null) {
@@ -1102,6 +1157,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @param value The entries to add.
+     * @return This builder for chaining.
      */
     public Builder addEntries(java.lang.String value) {
       if (value == null) {
@@ -1132,6 +1190,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @param values The entries to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEntries(java.lang.Iterable<java.lang.String> values) {
       ensureEntriesIsMutable();
@@ -1159,10 +1220,12 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntries() {
       entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1186,6 +1249,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string entries = 3;</code>
+     *
+     * @param value The bytes of the entries to add.
+     * @return This builder for chaining.
      */
     public Builder addEntriesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1207,6 +1273,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string error_message = 4;</code>
+     *
+     * @return The errorMessage.
      */
     public java.lang.String getErrorMessage() {
       java.lang.Object ref = errorMessage_;
@@ -1227,6 +1295,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string error_message = 4;</code>
+     *
+     * @return The bytes for errorMessage.
      */
     public com.google.protobuf.ByteString getErrorMessageBytes() {
       java.lang.Object ref = errorMessage_;
@@ -1247,6 +1317,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string error_message = 4;</code>
+     *
+     * @param value The errorMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setErrorMessage(java.lang.String value) {
       if (value == null) {
@@ -1265,6 +1338,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string error_message = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
 
@@ -1280,6 +1355,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string error_message = 4;</code>
+     *
+     * @param value The bytes for errorMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setErrorMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

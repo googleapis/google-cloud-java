@@ -43,6 +43,12 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchDeleteEntityTypesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityTypeNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               entityTypeNames_.add(s);
               break;
@@ -97,7 +103,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entityTypeNames_ = entityTypeNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +126,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -134,6 +139,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -157,6 +164,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -181,6 +190,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the entityTypeNames.
    */
   public com.google.protobuf.ProtocolStringList getEntityTypeNamesList() {
     return entityTypeNames_;
@@ -194,6 +205,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of entityTypeNames.
    */
   public int getEntityTypeNamesCount() {
     return entityTypeNames_.size();
@@ -207,6 +220,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The entityTypeNames at the given index.
    */
   public java.lang.String getEntityTypeNames(int index) {
     return entityTypeNames_.get(index);
@@ -220,6 +236,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the entityTypeNames at the given index.
    */
   public com.google.protobuf.ByteString getEntityTypeNamesBytes(int index) {
     return entityTypeNames_.getByteString(index);
@@ -449,7 +468,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       parent_ = "";
 
       entityTypeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -479,14 +498,12 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest result =
           new com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         entityTypeNames_ = entityTypeNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.entityTypeNames_ = entityTypeNames_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -545,7 +562,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       if (!other.entityTypeNames_.isEmpty()) {
         if (entityTypeNames_.isEmpty()) {
           entityTypeNames_ = other.entityTypeNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEntityTypeNamesIsMutable();
           entityTypeNames_.addAll(other.entityTypeNames_);
@@ -596,6 +613,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -619,6 +638,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -642,6 +663,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -663,6 +687,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -681,6 +707,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -697,9 +726,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntityTypeNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entityTypeNames_ = new com.google.protobuf.LazyStringArrayList(entityTypeNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -711,6 +740,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the entityTypeNames.
      */
     public com.google.protobuf.ProtocolStringList getEntityTypeNamesList() {
       return entityTypeNames_.getUnmodifiableView();
@@ -724,6 +755,8 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of entityTypeNames.
      */
     public int getEntityTypeNamesCount() {
       return entityTypeNames_.size();
@@ -737,6 +770,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The entityTypeNames at the given index.
      */
     public java.lang.String getEntityTypeNames(int index) {
       return entityTypeNames_.get(index);
@@ -750,6 +786,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the entityTypeNames at the given index.
      */
     public com.google.protobuf.ByteString getEntityTypeNamesBytes(int index) {
       return entityTypeNames_.getByteString(index);
@@ -763,6 +802,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The entityTypeNames to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityTypeNames(int index, java.lang.String value) {
       if (value == null) {
@@ -782,6 +825,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The entityTypeNames to add.
+     * @return This builder for chaining.
      */
     public Builder addEntityTypeNames(java.lang.String value) {
       if (value == null) {
@@ -801,6 +847,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The entityTypeNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEntityTypeNames(java.lang.Iterable<java.lang.String> values) {
       ensureEntityTypeNamesIsMutable();
@@ -817,10 +866,12 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntityTypeNames() {
       entityTypeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -833,6 +884,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the entityTypeNames to add.
+     * @return This builder for chaining.
      */
     public Builder addEntityTypeNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

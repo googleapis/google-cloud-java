@@ -34,6 +34,8 @@ public interface EntityTypeOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface EntityTypeOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface EntityTypeOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -68,6 +74,8 @@ public interface EntityTypeOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -81,6 +89,8 @@ public interface EntityTypeOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
@@ -93,6 +103,8 @@ public interface EntityTypeOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The kind.
    */
   com.google.cloud.dialogflow.v2.EntityType.Kind getKind();
 
@@ -107,6 +119,8 @@ public interface EntityTypeOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for autoExpansionMode.
    */
   int getAutoExpansionModeValue();
   /**
@@ -120,6 +134,8 @@ public interface EntityTypeOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The autoExpansionMode.
    */
   com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode getAutoExpansionMode();
 
@@ -193,6 +209,8 @@ public interface EntityTypeOrBuilder
    * </pre>
    *
    * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableFuzzyExtraction.
    */
   boolean getEnableFuzzyExtraction();
 }

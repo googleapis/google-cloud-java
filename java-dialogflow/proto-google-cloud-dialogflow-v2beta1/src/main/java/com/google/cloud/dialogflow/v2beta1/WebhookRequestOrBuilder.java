@@ -35,6 +35,8 @@ public interface WebhookRequestOrBuilder
    * </pre>
    *
    * <code>string session = 4;</code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -49,6 +51,8 @@ public interface WebhookRequestOrBuilder
    * </pre>
    *
    * <code>string session = 4;</code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -61,6 +65,8 @@ public interface WebhookRequestOrBuilder
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The responseId.
    */
   java.lang.String getResponseId();
   /**
@@ -72,6 +78,8 @@ public interface WebhookRequestOrBuilder
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The bytes for responseId.
    */
   com.google.protobuf.ByteString getResponseIdBytes();
 
@@ -84,6 +92,8 @@ public interface WebhookRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
+   *
+   * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
   /**
@@ -95,6 +105,8 @@ public interface WebhookRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
+   *
+   * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult();
   /**
@@ -178,6 +190,8 @@ public interface WebhookRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
+   *
+   * @return Whether the originalDetectIntentRequest field is set.
    */
   boolean hasOriginalDetectIntentRequest();
   /**
@@ -191,6 +205,8 @@ public interface WebhookRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
+   *
+   * @return The originalDetectIntentRequest.
    */
   com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest getOriginalDetectIntentRequest();
   /**

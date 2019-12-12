@@ -32,6 +32,8 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_type_names = 2;</code>
+   *
+   * @return A list containing the entityTypeNames.
    */
   java.util.List<java.lang.String> getEntityTypeNamesList();
   /**
@@ -66,6 +72,8 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_type_names = 2;</code>
+   *
+   * @return The count of entityTypeNames.
    */
   int getEntityTypeNamesCount();
   /**
@@ -77,6 +85,9 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_type_names = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The entityTypeNames at the given index.
    */
   java.lang.String getEntityTypeNames(int index);
   /**
@@ -88,6 +99,9 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_type_names = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the entityTypeNames at the given index.
    */
   com.google.protobuf.ByteString getEntityTypeNamesBytes(int index);
 }

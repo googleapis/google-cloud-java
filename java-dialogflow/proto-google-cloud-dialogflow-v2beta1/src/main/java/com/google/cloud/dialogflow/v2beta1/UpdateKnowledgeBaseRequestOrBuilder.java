@@ -31,6 +31,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   *
+   * @return Whether the knowledgeBase field is set.
    */
   boolean hasKnowledgeBase();
   /**
@@ -41,6 +43,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   *
+   * @return The knowledgeBase.
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase();
   /**
@@ -64,6 +68,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -76,6 +82,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

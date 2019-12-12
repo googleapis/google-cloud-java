@@ -32,6 +32,8 @@ public interface UpdateIntentRequestOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the intent field is set.
    */
   boolean hasIntent();
   /**
@@ -43,6 +45,8 @@ public interface UpdateIntentRequestOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The intent.
    */
   com.google.cloud.dialogflow.v2.Intent getIntent();
   /**
@@ -70,6 +74,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -85,6 +91,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -97,6 +105,8 @@ public interface UpdateIntentRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -108,6 +118,8 @@ public interface UpdateIntentRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -132,6 +144,8 @@ public interface UpdateIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -144,6 +158,8 @@ public interface UpdateIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 }

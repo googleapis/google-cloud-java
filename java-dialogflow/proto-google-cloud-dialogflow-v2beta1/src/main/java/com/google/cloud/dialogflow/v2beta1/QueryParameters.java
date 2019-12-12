@@ -45,6 +45,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new QueryParameters();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -91,9 +97,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 contexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               contexts_.add(
                   input.readMessage(
@@ -107,11 +113,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 sessionEntityTypes_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2beta1.SessionEntityType>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               sessionEntityTypes_.add(
                   input.readMessage(
@@ -154,20 +160,20 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
           case 98:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 knowledgeBaseNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000004;
               }
               knowledgeBaseNames_.add(s);
               break;
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 webhookHeaders_ =
                     com.google.protobuf.MapField.newMapField(
                         WebhookHeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> webhookHeaders__ =
                   input.readMessage(
@@ -192,13 +198,13 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         contexts_ = java.util.Collections.unmodifiableList(contexts_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         knowledgeBaseNames_ = knowledgeBaseNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -232,7 +238,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2beta1.QueryParameters.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TIME_ZONE_FIELD_NUMBER = 1;
   private volatile java.lang.Object timeZone_;
   /**
@@ -246,6 +251,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string time_zone = 1;</code>
+   *
+   * @return The timeZone.
    */
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
@@ -269,6 +276,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string time_zone = 1;</code>
+   *
+   * @return The bytes for timeZone.
    */
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
@@ -292,6 +301,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
+   *
+   * @return Whether the geoLocation field is set.
    */
   public boolean hasGeoLocation() {
     return geoLocation_ != null;
@@ -304,6 +315,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
+   *
+   * @return The geoLocation.
    */
   public com.google.type.LatLng getGeoLocation() {
     return geoLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : geoLocation_;
@@ -401,6 +414,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool reset_contexts = 4;</code>
+   *
+   * @return The resetContexts.
    */
   public boolean getResetContexts() {
     return resetContexts_;
@@ -498,6 +513,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 6;</code>
+   *
+   * @return Whether the payload field is set.
    */
   public boolean hasPayload() {
     return payload_ != null;
@@ -511,6 +528,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 6;</code>
+   *
+   * @return The payload.
    */
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
@@ -541,6 +560,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @return A list containing the knowledgeBaseNames.
    */
   public com.google.protobuf.ProtocolStringList getKnowledgeBaseNamesList() {
     return knowledgeBaseNames_;
@@ -555,6 +576,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @return The count of knowledgeBaseNames.
    */
   public int getKnowledgeBaseNamesCount() {
     return knowledgeBaseNames_.size();
@@ -569,6 +592,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The knowledgeBaseNames at the given index.
    */
   public java.lang.String getKnowledgeBaseNames(int index) {
     return knowledgeBaseNames_.get(index);
@@ -583,6 +609,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the knowledgeBaseNames at the given index.
    */
   public com.google.protobuf.ByteString getKnowledgeBaseNamesBytes(int index) {
     return knowledgeBaseNames_.getByteString(index);
@@ -604,6 +633,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
+   *
+   * @return Whether the sentimentAnalysisRequestConfig field is set.
    */
   public boolean hasSentimentAnalysisRequestConfig() {
     return sentimentAnalysisRequestConfig_ != null;
@@ -621,6 +652,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
+   *
+   * @return The sentimentAnalysisRequestConfig.
    */
   public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig
       getSentimentAnalysisRequestConfig() {
@@ -1119,7 +1152,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (contextsBuilder_ == null) {
         contexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         contextsBuilder_.clear();
       }
@@ -1127,7 +1160,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         sessionEntityTypesBuilder_.clear();
       }
@@ -1138,7 +1171,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         payloadBuilder_ = null;
       }
       knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (sentimentAnalysisRequestConfigBuilder_ == null) {
         sentimentAnalysisRequestConfig_ = null;
       } else {
@@ -1174,7 +1207,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.dialogflow.v2beta1.QueryParameters result =
           new com.google.cloud.dialogflow.v2beta1.QueryParameters(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.timeZone_ = timeZone_;
       if (geoLocationBuilder_ == null) {
         result.geoLocation_ = geoLocation_;
@@ -1182,9 +1214,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         result.geoLocation_ = geoLocationBuilder_.build();
       }
       if (contextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           contexts_ = java.util.Collections.unmodifiableList(contexts_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.contexts_ = contexts_;
       } else {
@@ -1192,9 +1224,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       result.resetContexts_ = resetContexts_;
       if (sessionEntityTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.sessionEntityTypes_ = sessionEntityTypes_;
       } else {
@@ -1205,9 +1237,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         result.payload_ = payloadBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         knowledgeBaseNames_ = knowledgeBaseNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.knowledgeBaseNames_ = knowledgeBaseNames_;
       if (sentimentAnalysisRequestConfigBuilder_ == null) {
@@ -1217,7 +1249,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       result.webhookHeaders_ = internalGetWebhookHeaders();
       result.webhookHeaders_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1279,7 +1310,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         if (!other.contexts_.isEmpty()) {
           if (contexts_.isEmpty()) {
             contexts_ = other.contexts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureContextsIsMutable();
             contexts_.addAll(other.contexts_);
@@ -1292,7 +1323,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             contextsBuilder_.dispose();
             contextsBuilder_ = null;
             contexts_ = other.contexts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             contextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContextsFieldBuilder()
@@ -1309,7 +1340,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         if (!other.sessionEntityTypes_.isEmpty()) {
           if (sessionEntityTypes_.isEmpty()) {
             sessionEntityTypes_ = other.sessionEntityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSessionEntityTypesIsMutable();
             sessionEntityTypes_.addAll(other.sessionEntityTypes_);
@@ -1322,7 +1353,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             sessionEntityTypesBuilder_.dispose();
             sessionEntityTypesBuilder_ = null;
             sessionEntityTypes_ = other.sessionEntityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             sessionEntityTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSessionEntityTypesFieldBuilder()
@@ -1338,7 +1369,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!other.knowledgeBaseNames_.isEmpty()) {
         if (knowledgeBaseNames_.isEmpty()) {
           knowledgeBaseNames_ = other.knowledgeBaseNames_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureKnowledgeBaseNamesIsMutable();
           knowledgeBaseNames_.addAll(other.knowledgeBaseNames_);
@@ -1393,6 +1424,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_zone = 1;</code>
+     *
+     * @return The timeZone.
      */
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
@@ -1416,6 +1449,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_zone = 1;</code>
+     *
+     * @return The bytes for timeZone.
      */
     public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
@@ -1439,6 +1474,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_zone = 1;</code>
+     *
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
@@ -1460,6 +1498,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_zone = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
 
@@ -1478,6 +1518,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_zone = 1;</code>
+     *
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1502,6 +1545,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
+     *
+     * @return Whether the geoLocation field is set.
      */
     public boolean hasGeoLocation() {
       return geoLocationBuilder_ != null || geoLocation_ != null;
@@ -1514,6 +1559,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.type.LatLng geo_location = 2;</code>
+     *
+     * @return The geoLocation.
      */
     public com.google.type.LatLng getGeoLocation() {
       if (geoLocationBuilder_ == null) {
@@ -1665,9 +1712,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureContextsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         contexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(contexts_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1894,7 +1941,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder clearContexts() {
       if (contextsBuilder_ == null) {
         contexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         contextsBuilder_.clear();
@@ -2023,7 +2070,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.Context,
                 com.google.cloud.dialogflow.v2beta1.Context.Builder,
                 com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
-                contexts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                contexts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         contexts_ = null;
       }
       return contextsBuilder_;
@@ -2039,6 +2086,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool reset_contexts = 4;</code>
+     *
+     * @return The resetContexts.
      */
     public boolean getResetContexts() {
       return resetContexts_;
@@ -2052,6 +2101,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool reset_contexts = 4;</code>
+     *
+     * @param value The resetContexts to set.
+     * @return This builder for chaining.
      */
     public Builder setResetContexts(boolean value) {
 
@@ -2068,6 +2120,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool reset_contexts = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResetContexts() {
 
@@ -2080,11 +2134,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sessionEntityTypes_ = java.util.Collections.emptyList();
 
     private void ensureSessionEntityTypesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         sessionEntityTypes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SessionEntityType>(
                 sessionEntityTypes_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2338,7 +2392,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder clearSessionEntityTypes() {
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         sessionEntityTypesBuilder_.clear();
@@ -2487,7 +2541,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
                 com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>(
                 sessionEntityTypes_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         sessionEntityTypes_ = null;
@@ -2510,6 +2564,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 6;</code>
+     *
+     * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
       return payloadBuilder_ != null || payload_ != null;
@@ -2523,6 +2579,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 6;</code>
+     *
+     * @return The payload.
      */
     public com.google.protobuf.Struct getPayload() {
       if (payloadBuilder_ == null) {
@@ -2683,9 +2741,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKnowledgeBaseNamesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         knowledgeBaseNames_ = new com.google.protobuf.LazyStringArrayList(knowledgeBaseNames_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2698,6 +2756,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @return A list containing the knowledgeBaseNames.
      */
     public com.google.protobuf.ProtocolStringList getKnowledgeBaseNamesList() {
       return knowledgeBaseNames_.getUnmodifiableView();
@@ -2712,6 +2772,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @return The count of knowledgeBaseNames.
      */
     public int getKnowledgeBaseNamesCount() {
       return knowledgeBaseNames_.size();
@@ -2726,6 +2788,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The knowledgeBaseNames at the given index.
      */
     public java.lang.String getKnowledgeBaseNames(int index) {
       return knowledgeBaseNames_.get(index);
@@ -2740,6 +2805,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the knowledgeBaseNames at the given index.
      */
     public com.google.protobuf.ByteString getKnowledgeBaseNamesBytes(int index) {
       return knowledgeBaseNames_.getByteString(index);
@@ -2754,6 +2822,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The knowledgeBaseNames to set.
+     * @return This builder for chaining.
      */
     public Builder setKnowledgeBaseNames(int index, java.lang.String value) {
       if (value == null) {
@@ -2774,6 +2846,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @param value The knowledgeBaseNames to add.
+     * @return This builder for chaining.
      */
     public Builder addKnowledgeBaseNames(java.lang.String value) {
       if (value == null) {
@@ -2794,6 +2869,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @param values The knowledgeBaseNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllKnowledgeBaseNames(java.lang.Iterable<java.lang.String> values) {
       ensureKnowledgeBaseNamesIsMutable();
@@ -2811,10 +2889,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKnowledgeBaseNames() {
       knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2828,6 +2908,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
+     *
+     * @param value The bytes of the knowledgeBaseNames to add.
+     * @return This builder for chaining.
      */
     public Builder addKnowledgeBaseNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2860,6 +2943,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
      * </code>
+     *
+     * @return Whether the sentimentAnalysisRequestConfig field is set.
      */
     public boolean hasSentimentAnalysisRequestConfig() {
       return sentimentAnalysisRequestConfigBuilder_ != null
@@ -2878,6 +2963,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
      * </code>
+     *
+     * @return The sentimentAnalysisRequestConfig.
      */
     public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig
         getSentimentAnalysisRequestConfig() {

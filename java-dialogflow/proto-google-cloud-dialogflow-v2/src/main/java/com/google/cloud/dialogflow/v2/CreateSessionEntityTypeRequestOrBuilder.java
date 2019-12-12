@@ -32,6 +32,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the sessionEntityType field is set.
    */
   boolean hasSessionEntityType();
   /**
@@ -68,6 +74,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The sessionEntityType.
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityType();
   /**

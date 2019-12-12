@@ -43,6 +43,12 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VoiceSelectionParams();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -148,6 +155,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -175,6 +184,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+   *
+   * @return The enum numeric value on the wire for ssmlGender.
    */
   public int getSsmlGenderValue() {
     return ssmlGender_;
@@ -191,6 +202,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+   *
+   * @return The ssmlGender.
    */
   public com.google.cloud.dialogflow.v2.SsmlVoiceGender getSsmlGender() {
     @SuppressWarnings("deprecation")
@@ -547,6 +560,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -569,6 +584,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -591,6 +608,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -611,6 +631,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -628,6 +650,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -653,6 +678,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     *
+     * @return The enum numeric value on the wire for ssmlGender.
      */
     public int getSsmlGenderValue() {
       return ssmlGender_;
@@ -669,6 +696,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for ssmlGender to set.
+     * @return This builder for chaining.
      */
     public Builder setSsmlGenderValue(int value) {
       ssmlGender_ = value;
@@ -687,6 +717,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     *
+     * @return The ssmlGender.
      */
     public com.google.cloud.dialogflow.v2.SsmlVoiceGender getSsmlGender() {
       @SuppressWarnings("deprecation")
@@ -706,6 +738,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     *
+     * @param value The ssmlGender to set.
+     * @return This builder for chaining.
      */
     public Builder setSsmlGender(com.google.cloud.dialogflow.v2.SsmlVoiceGender value) {
       if (value == null) {
@@ -728,6 +763,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSsmlGender() {
 

@@ -41,6 +41,12 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
   private Sentiment() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Sentiment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -119,6 +124,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -135,6 +142,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float magnitude = 2;</code>
+   *
+   * @return The magnitude.
    */
   public float getMagnitude() {
     return magnitude_;
@@ -482,6 +491,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -495,6 +506,9 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -511,6 +525,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -529,6 +545,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float magnitude = 2;</code>
+     *
+     * @return The magnitude.
      */
     public float getMagnitude() {
       return magnitude_;
@@ -542,6 +560,9 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float magnitude = 2;</code>
+     *
+     * @param value The magnitude to set.
+     * @return This builder for chaining.
      */
     public Builder setMagnitude(float value) {
 
@@ -558,6 +579,8 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float magnitude = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMagnitude() {
 

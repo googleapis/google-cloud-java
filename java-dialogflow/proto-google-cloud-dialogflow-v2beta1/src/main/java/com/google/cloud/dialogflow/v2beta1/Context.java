@@ -42,6 +42,12 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Context();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +148,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -170,6 +177,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -196,6 +205,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 lifespan_count = 2;</code>
+   *
+   * @return The lifespanCount.
    */
   public int getLifespanCount() {
     return lifespanCount_;
@@ -214,6 +225,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>
+   *
+   * @return Whether the parameters field is set.
    */
   public boolean hasParameters() {
     return parameters_ != null;
@@ -229,6 +242,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>
+   *
+   * @return The parameters.
    */
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
@@ -624,6 +639,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -651,6 +668,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -678,6 +697,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -703,6 +725,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -725,6 +749,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -749,6 +776,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 lifespan_count = 2;</code>
+     *
+     * @return The lifespanCount.
      */
     public int getLifespanCount() {
       return lifespanCount_;
@@ -764,6 +793,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 lifespan_count = 2;</code>
+     *
+     * @param value The lifespanCount to set.
+     * @return This builder for chaining.
      */
     public Builder setLifespanCount(int value) {
 
@@ -782,6 +814,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 lifespan_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLifespanCount() {
 
@@ -807,6 +841,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 3;</code>
+     *
+     * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
       return parametersBuilder_ != null || parameters_ != null;
@@ -822,6 +858,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 3;</code>
+     *
+     * @return The parameters.
      */
     public com.google.protobuf.Struct getParameters() {
       if (parametersBuilder_ == null) {

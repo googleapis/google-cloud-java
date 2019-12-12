@@ -43,6 +43,12 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchUpdateEntityTypesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -157,7 +162,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
   private int entityTypeBatchCase_ = 0;
   private java.lang.Object entityTypeBatch_;
 
-  public enum EntityTypeBatchCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EntityTypeBatchCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ENTITY_TYPE_BATCH_URI(2),
     ENTITY_TYPE_BATCH_INLINE(3),
     ENTITYTYPEBATCH_NOT_SET(0);
@@ -166,7 +174,11 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
     private EntityTypeBatchCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EntityTypeBatchCase valueOf(int value) {
       return forNumber(value);
@@ -207,6 +219,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -230,6 +244,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -255,6 +271,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string entity_type_batch_uri = 2;</code>
+   *
+   * @return The entityTypeBatchUri.
    */
   public java.lang.String getEntityTypeBatchUri() {
     java.lang.Object ref = "";
@@ -283,6 +301,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string entity_type_batch_uri = 2;</code>
+   *
+   * @return The bytes for entityTypeBatchUri.
    */
   public com.google.protobuf.ByteString getEntityTypeBatchUriBytes() {
     java.lang.Object ref = "";
@@ -310,6 +330,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
+   *
+   * @return Whether the entityTypeBatchInline field is set.
    */
   public boolean hasEntityTypeBatchInline() {
     return entityTypeBatchCase_ == 3;
@@ -322,6 +344,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
+   *
+   * @return The entityTypeBatchInline.
    */
   public com.google.cloud.dialogflow.v2.EntityTypeBatch getEntityTypeBatchInline() {
     if (entityTypeBatchCase_ == 3) {
@@ -361,6 +385,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -386,6 +412,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -410,6 +438,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -423,6 +453,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -900,6 +932,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -923,6 +957,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -946,6 +982,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -967,6 +1006,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -985,6 +1026,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1008,6 +1052,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string entity_type_batch_uri = 2;</code>
+     *
+     * @return The entityTypeBatchUri.
      */
     public java.lang.String getEntityTypeBatchUri() {
       java.lang.Object ref = "";
@@ -1036,6 +1082,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string entity_type_batch_uri = 2;</code>
+     *
+     * @return The bytes for entityTypeBatchUri.
      */
     public com.google.protobuf.ByteString getEntityTypeBatchUriBytes() {
       java.lang.Object ref = "";
@@ -1064,6 +1112,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string entity_type_batch_uri = 2;</code>
+     *
+     * @param value The entityTypeBatchUri to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityTypeBatchUri(java.lang.String value) {
       if (value == null) {
@@ -1085,6 +1136,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string entity_type_batch_uri = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntityTypeBatchUri() {
       if (entityTypeBatchCase_ == 2) {
@@ -1105,6 +1158,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string entity_type_batch_uri = 2;</code>
+     *
+     * @param value The bytes for entityTypeBatchUri to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityTypeBatchUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1130,6 +1186,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
+     *
+     * @return Whether the entityTypeBatchInline field is set.
      */
     public boolean hasEntityTypeBatchInline() {
       return entityTypeBatchCase_ == 3;
@@ -1142,6 +1200,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
+     *
+     * @return The entityTypeBatchInline.
      */
     public com.google.cloud.dialogflow.v2.EntityTypeBatch getEntityTypeBatchInline() {
       if (entityTypeBatchInlineBuilder_ == null) {
@@ -1337,6 +1397,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1362,6 +1424,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1387,6 +1451,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1410,6 +1477,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1430,6 +1499,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1457,6 +1529,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1470,6 +1544,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

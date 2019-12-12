@@ -32,6 +32,8 @@ public interface StreamingRecognitionResultOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
    * </code>
+   *
+   * @return The enum numeric value on the wire for messageType.
    */
   int getMessageTypeValue();
   /**
@@ -43,6 +45,8 @@ public interface StreamingRecognitionResultOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
    * </code>
+   *
+   * @return The messageType.
    */
   com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType getMessageType();
 
@@ -55,6 +59,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>string transcript = 2;</code>
+   *
+   * @return The transcript.
    */
   java.lang.String getTranscript();
   /**
@@ -66,6 +72,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>string transcript = 2;</code>
+   *
+   * @return The bytes for transcript.
    */
   com.google.protobuf.ByteString getTranscriptBytes();
 
@@ -80,6 +88,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>bool is_final = 3;</code>
+   *
+   * @return The isFinal.
    */
   boolean getIsFinal();
 
@@ -96,6 +106,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

@@ -44,6 +44,12 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchUpdateEntitiesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,10 +82,10 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entities_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2.EntityType.Entity>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               entities_.add(
                   input.readMessage(
@@ -123,7 +129,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
       }
       this.unknownFields = unknownFields.build();
@@ -146,7 +152,6 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -160,6 +165,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -183,6 +190,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -285,6 +294,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -310,6 +321,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -334,6 +347,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -347,6 +362,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -610,7 +627,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
 
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         entitiesBuilder_.clear();
       }
@@ -650,12 +667,11 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
       com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest result =
           new com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entities_ = entities_;
       } else {
@@ -667,7 +683,6 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -726,7 +741,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -739,7 +754,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -800,6 +815,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -823,6 +840,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -846,6 +865,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -867,6 +889,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -885,6 +909,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -901,10 +928,10 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.EntityType.Entity>(entities_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1142,7 +1169,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -1279,7 +1306,7 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
                 com.google.cloud.dialogflow.v2.EntityType.Entity,
                 com.google.cloud.dialogflow.v2.EntityType.Entity.Builder,
                 com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;
@@ -1299,6 +1326,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1324,6 +1353,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1349,6 +1380,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1372,6 +1406,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1392,6 +1428,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1419,6 +1458,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1432,6 +1473,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

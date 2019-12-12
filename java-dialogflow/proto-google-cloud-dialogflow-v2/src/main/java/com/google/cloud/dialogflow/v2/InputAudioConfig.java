@@ -45,6 +45,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InputAudioConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -90,9 +96,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 phraseHints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               phraseHints_.add(s);
               break;
@@ -123,7 +129,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -146,7 +152,6 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2.InputAudioConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
@@ -157,6 +162,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
    */
   public int getAudioEncodingValue() {
     return audioEncoding_;
@@ -169,6 +176,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The audioEncoding.
    */
   public com.google.cloud.dialogflow.v2.AudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
@@ -191,6 +200,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
+   *
+   * @return The sampleRateHertz.
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
@@ -210,6 +221,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -234,6 +247,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -261,6 +276,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @return A list containing the phraseHints.
    */
   public com.google.protobuf.ProtocolStringList getPhraseHintsList() {
     return phraseHints_;
@@ -277,6 +294,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @return The count of phraseHints.
    */
   public int getPhraseHintsCount() {
     return phraseHints_.size();
@@ -293,6 +312,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseHints at the given index.
    */
   public java.lang.String getPhraseHints(int index) {
     return phraseHints_.get(index);
@@ -309,6 +331,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseHints at the given index.
    */
   public com.google.protobuf.ByteString getPhraseHintsBytes(int index) {
     return phraseHints_.getByteString(index);
@@ -324,6 +349,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+   *
+   * @return The enum numeric value on the wire for modelVariant.
    */
   public int getModelVariantValue() {
     return modelVariant_;
@@ -336,6 +363,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+   *
+   * @return The modelVariant.
    */
   public com.google.cloud.dialogflow.v2.SpeechModelVariant getModelVariant() {
     @SuppressWarnings("deprecation")
@@ -363,6 +392,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>bool single_utterance = 8;</code>
+   *
+   * @return The singleUtterance.
    */
   public boolean getSingleUtterance() {
     return singleUtterance_;
@@ -637,7 +668,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       languageCode_ = "";
 
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelVariant_ = 0;
 
       singleUtterance_ = false;
@@ -670,18 +701,16 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dialogflow.v2.InputAudioConfig result =
           new com.google.cloud.dialogflow.v2.InputAudioConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.audioEncoding_ = audioEncoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.phraseHints_ = phraseHints_;
       result.modelVariant_ = modelVariant_;
       result.singleUtterance_ = singleUtterance_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -745,7 +774,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!other.phraseHints_.isEmpty()) {
         if (phraseHints_.isEmpty()) {
           phraseHints_ = other.phraseHints_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensurePhraseHintsIsMutable();
           phraseHints_.addAll(other.phraseHints_);
@@ -798,6 +827,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+     *
+     * @return The enum numeric value on the wire for audioEncoding.
      */
     public int getAudioEncodingValue() {
       return audioEncoding_;
@@ -810,6 +841,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for audioEncoding to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
       audioEncoding_ = value;
@@ -824,6 +858,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+     *
+     * @return The audioEncoding.
      */
     public com.google.cloud.dialogflow.v2.AudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
@@ -839,6 +875,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+     *
+     * @param value The audioEncoding to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioEncoding(com.google.cloud.dialogflow.v2.AudioEncoding value) {
       if (value == null) {
@@ -857,6 +896,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
 
@@ -878,6 +919,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @return The sampleRateHertz.
      */
     public int getSampleRateHertz() {
       return sampleRateHertz_;
@@ -894,6 +937,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @param value The sampleRateHertz to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleRateHertz(int value) {
 
@@ -913,6 +959,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
 
@@ -934,6 +982,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -958,6 +1008,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -982,6 +1034,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1004,6 +1059,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1023,6 +1080,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1039,9 +1099,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePhraseHintsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         phraseHints_ = new com.google.protobuf.LazyStringArrayList(phraseHints_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1056,6 +1116,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @return A list containing the phraseHints.
      */
     public com.google.protobuf.ProtocolStringList getPhraseHintsList() {
       return phraseHints_.getUnmodifiableView();
@@ -1072,6 +1134,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @return The count of phraseHints.
      */
     public int getPhraseHintsCount() {
       return phraseHints_.size();
@@ -1088,6 +1152,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The phraseHints at the given index.
      */
     public java.lang.String getPhraseHints(int index) {
       return phraseHints_.get(index);
@@ -1104,6 +1171,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the phraseHints at the given index.
      */
     public com.google.protobuf.ByteString getPhraseHintsBytes(int index) {
       return phraseHints_.getByteString(index);
@@ -1120,6 +1190,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The phraseHints to set.
+     * @return This builder for chaining.
      */
     public Builder setPhraseHints(int index, java.lang.String value) {
       if (value == null) {
@@ -1142,6 +1216,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @param value The phraseHints to add.
+     * @return This builder for chaining.
      */
     public Builder addPhraseHints(java.lang.String value) {
       if (value == null) {
@@ -1164,6 +1241,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @param values The phraseHints to add.
+     * @return This builder for chaining.
      */
     public Builder addAllPhraseHints(java.lang.Iterable<java.lang.String> values) {
       ensurePhraseHintsIsMutable();
@@ -1183,10 +1263,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPhraseHints() {
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1202,6 +1284,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string phrase_hints = 4;</code>
+     *
+     * @param value The bytes of the phraseHints to add.
+     * @return This builder for chaining.
      */
     public Builder addPhraseHintsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1223,6 +1308,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+     *
+     * @return The enum numeric value on the wire for modelVariant.
      */
     public int getModelVariantValue() {
       return modelVariant_;
@@ -1235,6 +1322,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for modelVariant to set.
+     * @return This builder for chaining.
      */
     public Builder setModelVariantValue(int value) {
       modelVariant_ = value;
@@ -1249,6 +1339,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+     *
+     * @return The modelVariant.
      */
     public com.google.cloud.dialogflow.v2.SpeechModelVariant getModelVariant() {
       @SuppressWarnings("deprecation")
@@ -1266,6 +1358,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+     *
+     * @param value The modelVariant to set.
+     * @return This builder for chaining.
      */
     public Builder setModelVariant(com.google.cloud.dialogflow.v2.SpeechModelVariant value) {
       if (value == null) {
@@ -1284,6 +1379,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModelVariant() {
 
@@ -1310,6 +1407,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool single_utterance = 8;</code>
+     *
+     * @return The singleUtterance.
      */
     public boolean getSingleUtterance() {
       return singleUtterance_;
@@ -1331,6 +1430,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool single_utterance = 8;</code>
+     *
+     * @param value The singleUtterance to set.
+     * @return This builder for chaining.
      */
     public Builder setSingleUtterance(boolean value) {
 
@@ -1355,6 +1457,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool single_utterance = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSingleUtterance() {
 

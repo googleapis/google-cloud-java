@@ -46,6 +46,12 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WebhookResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -78,10 +84,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fulfillmentMessages_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               fulfillmentMessages_.add(
                   input.readMessage(
@@ -112,10 +118,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 outputContexts_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               outputContexts_.add(
                   input.readMessage(
@@ -145,11 +151,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 sessionEntityTypes_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2beta1.SessionEntityType>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000004;
               }
               sessionEntityTypes_.add(
                   input.readMessage(
@@ -171,13 +177,13 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -200,7 +206,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2beta1.WebhookResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FULFILLMENT_TEXT_FIELD_NUMBER = 1;
   private volatile java.lang.Object fulfillmentText_;
   /**
@@ -212,6 +217,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string fulfillment_text = 1;</code>
+   *
+   * @return The fulfillmentText.
    */
   public java.lang.String getFulfillmentText() {
     java.lang.Object ref = fulfillmentText_;
@@ -233,6 +240,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string fulfillment_text = 1;</code>
+   *
+   * @return The bytes for fulfillmentText.
    */
   public com.google.protobuf.ByteString getFulfillmentTextBytes() {
     java.lang.Object ref = fulfillmentText_;
@@ -327,6 +336,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string source = 3;</code>
+   *
+   * @return The source.
    */
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
@@ -347,6 +358,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string source = 3;</code>
+   *
+   * @return The bytes for source.
    */
   public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
@@ -391,6 +404,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
+   *
+   * @return Whether the payload field is set.
    */
   public boolean hasPayload() {
     return payload_ != null;
@@ -424,6 +439,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
+   *
+   * @return The payload.
    */
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
@@ -545,6 +562,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
+   *
+   * @return Whether the followupEventInput field is set.
    */
   public boolean hasFollowupEventInput() {
     return followupEventInput_ != null;
@@ -560,6 +579,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
+   *
+   * @return The followupEventInput.
    */
   public com.google.cloud.dialogflow.v2beta1.EventInput getFollowupEventInput() {
     return followupEventInput_ == null
@@ -594,6 +615,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool end_interaction = 8;</code>
+   *
+   * @return The endInteraction.
    */
   public boolean getEndInteraction() {
     return endInteraction_;
@@ -983,7 +1006,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
       if (fulfillmentMessagesBuilder_ == null) {
         fulfillmentMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         fulfillmentMessagesBuilder_.clear();
       }
@@ -997,7 +1020,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         outputContextsBuilder_.clear();
       }
@@ -1011,7 +1034,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         sessionEntityTypesBuilder_.clear();
       }
@@ -1043,12 +1066,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.dialogflow.v2beta1.WebhookResponse result =
           new com.google.cloud.dialogflow.v2beta1.WebhookResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.fulfillmentText_ = fulfillmentText_;
       if (fulfillmentMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fulfillmentMessages_ = fulfillmentMessages_;
       } else {
@@ -1061,9 +1083,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         result.payload_ = payloadBuilder_.build();
       }
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.outputContexts_ = outputContexts_;
       } else {
@@ -1076,15 +1098,14 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       }
       result.endInteraction_ = endInteraction_;
       if (sessionEntityTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.sessionEntityTypes_ = sessionEntityTypes_;
       } else {
         result.sessionEntityTypes_ = sessionEntityTypesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1143,7 +1164,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         if (!other.fulfillmentMessages_.isEmpty()) {
           if (fulfillmentMessages_.isEmpty()) {
             fulfillmentMessages_ = other.fulfillmentMessages_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFulfillmentMessagesIsMutable();
             fulfillmentMessages_.addAll(other.fulfillmentMessages_);
@@ -1156,7 +1177,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             fulfillmentMessagesBuilder_.dispose();
             fulfillmentMessagesBuilder_ = null;
             fulfillmentMessages_ = other.fulfillmentMessages_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             fulfillmentMessagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFulfillmentMessagesFieldBuilder()
@@ -1177,7 +1198,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         if (!other.outputContexts_.isEmpty()) {
           if (outputContexts_.isEmpty()) {
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureOutputContextsIsMutable();
             outputContexts_.addAll(other.outputContexts_);
@@ -1190,7 +1211,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             outputContextsBuilder_.dispose();
             outputContextsBuilder_ = null;
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             outputContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOutputContextsFieldBuilder()
@@ -1210,7 +1231,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         if (!other.sessionEntityTypes_.isEmpty()) {
           if (sessionEntityTypes_.isEmpty()) {
             sessionEntityTypes_ = other.sessionEntityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSessionEntityTypesIsMutable();
             sessionEntityTypes_.addAll(other.sessionEntityTypes_);
@@ -1223,7 +1244,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             sessionEntityTypesBuilder_.dispose();
             sessionEntityTypesBuilder_ = null;
             sessionEntityTypes_ = other.sessionEntityTypes_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000004);
             sessionEntityTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSessionEntityTypesFieldBuilder()
@@ -1275,6 +1296,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string fulfillment_text = 1;</code>
+     *
+     * @return The fulfillmentText.
      */
     public java.lang.String getFulfillmentText() {
       java.lang.Object ref = fulfillmentText_;
@@ -1296,6 +1319,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string fulfillment_text = 1;</code>
+     *
+     * @return The bytes for fulfillmentText.
      */
     public com.google.protobuf.ByteString getFulfillmentTextBytes() {
       java.lang.Object ref = fulfillmentText_;
@@ -1317,6 +1342,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string fulfillment_text = 1;</code>
+     *
+     * @param value The fulfillmentText to set.
+     * @return This builder for chaining.
      */
     public Builder setFulfillmentText(java.lang.String value) {
       if (value == null) {
@@ -1336,6 +1364,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string fulfillment_text = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFulfillmentText() {
 
@@ -1352,6 +1382,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string fulfillment_text = 1;</code>
+     *
+     * @param value The bytes for fulfillmentText to set.
+     * @return This builder for chaining.
      */
     public Builder setFulfillmentTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1368,11 +1401,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         fulfillmentMessages_ = java.util.Collections.emptyList();
 
     private void ensureFulfillmentMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fulfillmentMessages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(
                 fulfillmentMessages_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1614,7 +1647,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     public Builder clearFulfillmentMessages() {
       if (fulfillmentMessagesBuilder_ == null) {
         fulfillmentMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         fulfillmentMessagesBuilder_.clear();
@@ -1756,7 +1789,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
                 fulfillmentMessages_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         fulfillmentMessages_ = null;
@@ -1773,6 +1806,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string source = 3;</code>
+     *
+     * @return The source.
      */
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
@@ -1793,6 +1828,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string source = 3;</code>
+     *
+     * @return The bytes for source.
      */
     public com.google.protobuf.ByteString getSourceBytes() {
       java.lang.Object ref = source_;
@@ -1813,6 +1850,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string source = 3;</code>
+     *
+     * @param value The source to set.
+     * @return This builder for chaining.
      */
     public Builder setSource(java.lang.String value) {
       if (value == null) {
@@ -1831,6 +1871,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string source = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSource() {
 
@@ -1846,6 +1888,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string source = 3;</code>
+     *
+     * @param value The bytes for source to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1893,6 +1938,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
+     *
+     * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
       return payloadBuilder_ != null || payload_ != null;
@@ -1926,6 +1973,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
+     *
+     * @return The payload.
      */
     public com.google.protobuf.Struct getPayload() {
       if (payloadBuilder_ == null) {
@@ -2226,10 +2275,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         outputContexts_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2456,7 +2505,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         outputContextsBuilder_.clear();
@@ -2587,7 +2636,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.Context.Builder,
                 com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -2612,6 +2661,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
+     *
+     * @return Whether the followupEventInput field is set.
      */
     public boolean hasFollowupEventInput() {
       return followupEventInputBuilder_ != null || followupEventInput_ != null;
@@ -2627,6 +2678,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
+     *
+     * @return The followupEventInput.
      */
     public com.google.cloud.dialogflow.v2beta1.EventInput getFollowupEventInput() {
       if (followupEventInputBuilder_ == null) {
@@ -2816,6 +2869,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool end_interaction = 8;</code>
+     *
+     * @return The endInteraction.
      */
     public boolean getEndInteraction() {
       return endInteraction_;
@@ -2830,6 +2885,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool end_interaction = 8;</code>
+     *
+     * @param value The endInteraction to set.
+     * @return This builder for chaining.
      */
     public Builder setEndInteraction(boolean value) {
 
@@ -2847,6 +2905,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool end_interaction = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndInteraction() {
 
@@ -2859,11 +2919,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         sessionEntityTypes_ = java.util.Collections.emptyList();
 
     private void ensureSessionEntityTypesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         sessionEntityTypes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SessionEntityType>(
                 sessionEntityTypes_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3139,7 +3199,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     public Builder clearSessionEntityTypes() {
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         sessionEntityTypesBuilder_.clear();
@@ -3302,7 +3362,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
                 com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>(
                 sessionEntityTypes_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         sessionEntityTypes_ = null;

@@ -34,6 +34,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeZone.
    */
   java.lang.String getTimeZone();
   /**
@@ -47,6 +49,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>string time_zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
 
@@ -58,6 +62,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the geoLocation field is set.
    */
   boolean hasGeoLocation();
   /**
@@ -68,6 +74,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The geoLocation.
    */
   com.google.type.LatLng getGeoLocation();
   /**
@@ -157,6 +165,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>bool reset_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The resetContexts.
    */
   boolean getResetContexts();
 
@@ -242,6 +252,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the payload field is set.
    */
   boolean hasPayload();
   /**
@@ -253,6 +265,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
   /**
@@ -278,6 +292,8 @@ public interface QueryParametersOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the sentimentAnalysisRequestConfig field is set.
    */
   boolean hasSentimentAnalysisRequestConfig();
   /**
@@ -291,6 +307,8 @@ public interface QueryParametersOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The sentimentAnalysisRequestConfig.
    */
   com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig();
   /**

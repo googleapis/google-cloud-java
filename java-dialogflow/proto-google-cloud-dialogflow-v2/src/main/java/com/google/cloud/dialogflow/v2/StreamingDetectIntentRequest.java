@@ -64,6 +64,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingDetectIntentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,7 +82,6 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -201,6 +206,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -226,6 +233,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -251,6 +260,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the queryParams field is set.
    */
   public boolean hasQueryParams() {
     return queryParams_ != null;
@@ -265,6 +276,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The queryParams.
    */
   public com.google.cloud.dialogflow.v2.QueryParameters getQueryParams() {
     return queryParams_ == null
@@ -302,6 +315,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the queryInput field is set.
    */
   public boolean hasQueryInput() {
     return queryInput_ != null;
@@ -320,6 +335,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The queryInput.
    */
   public com.google.cloud.dialogflow.v2.QueryInput getQueryInput() {
     return queryInput_ == null
@@ -363,6 +380,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <code>bool single_utterance = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The singleUtterance.
    */
   @java.lang.Deprecated
   public boolean getSingleUtterance() {
@@ -383,6 +402,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   public boolean hasOutputAudioConfig() {
     return outputAudioConfig_ != null;
@@ -399,6 +420,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The outputAudioConfig.
    */
   public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
@@ -434,6 +457,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>bytes input_audio = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The inputAudio.
    */
   public com.google.protobuf.ByteString getInputAudio() {
     return inputAudio_;
@@ -907,6 +932,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -932,6 +959,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -957,6 +986,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -980,6 +1012,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -1000,6 +1034,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1028,6 +1065,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
       return queryParamsBuilder_ != null || queryParams_ != null;
@@ -1042,6 +1081,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The queryParams.
      */
     public com.google.cloud.dialogflow.v2.QueryParameters getQueryParams() {
       if (queryParamsBuilder_ == null) {
@@ -1232,6 +1273,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the queryInput field is set.
      */
     public boolean hasQueryInput() {
       return queryInputBuilder_ != null || queryInput_ != null;
@@ -1250,6 +1293,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The queryInput.
      */
     public com.google.cloud.dialogflow.v2.QueryInput getQueryInput() {
       if (queryInputBuilder_ == null) {
@@ -1465,6 +1510,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <code>bool single_utterance = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The singleUtterance.
      */
     @java.lang.Deprecated
     public boolean getSingleUtterance() {
@@ -1486,6 +1533,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <code>bool single_utterance = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The singleUtterance to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setSingleUtterance(boolean value) {
@@ -1510,6 +1560,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <code>bool single_utterance = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearSingleUtterance() {
@@ -1537,6 +1589,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the outputAudioConfig field is set.
      */
     public boolean hasOutputAudioConfig() {
       return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
@@ -1553,6 +1607,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The outputAudioConfig.
      */
     public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {
@@ -1749,6 +1805,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>bytes input_audio = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputAudio.
      */
     public com.google.protobuf.ByteString getInputAudio() {
       return inputAudio_;
@@ -1763,6 +1821,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>bytes input_audio = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The inputAudio to set.
+     * @return This builder for chaining.
      */
     public Builder setInputAudio(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1783,6 +1844,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>bytes input_audio = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputAudio() {
 

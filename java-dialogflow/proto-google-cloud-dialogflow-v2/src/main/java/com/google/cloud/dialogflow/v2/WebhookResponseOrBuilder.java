@@ -32,6 +32,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>string fulfillment_text = 1;</code>
+   *
+   * @return The fulfillmentText.
    */
   java.lang.String getFulfillmentText();
   /**
@@ -43,6 +45,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>string fulfillment_text = 1;</code>
+   *
+   * @return The bytes for fulfillmentText.
    */
   com.google.protobuf.ByteString getFulfillmentTextBytes();
 
@@ -111,6 +115,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>string source = 3;</code>
+   *
+   * @return The source.
    */
   java.lang.String getSource();
   /**
@@ -121,6 +127,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>string source = 3;</code>
+   *
+   * @return The bytes for source.
    */
   com.google.protobuf.ByteString getSourceBytes();
 
@@ -153,6 +161,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
+   *
+   * @return Whether the payload field is set.
    */
   boolean hasPayload();
   /**
@@ -184,6 +194,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
+   *
+   * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
   /**
@@ -286,6 +298,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EventInput followup_event_input = 6;</code>
+   *
+   * @return Whether the followupEventInput field is set.
    */
   boolean hasFollowupEventInput();
   /**
@@ -299,6 +313,8 @@ public interface WebhookResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EventInput followup_event_input = 6;</code>
+   *
+   * @return The followupEventInput.
    */
   com.google.cloud.dialogflow.v2.EventInput getFollowupEventInput();
   /**

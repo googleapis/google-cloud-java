@@ -35,6 +35,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the sessionEntityType field is set.
    */
   boolean hasSessionEntityType();
   /**
@@ -49,6 +51,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The sessionEntityType.
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityType();
   /**
@@ -75,6 +79,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -86,6 +92,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

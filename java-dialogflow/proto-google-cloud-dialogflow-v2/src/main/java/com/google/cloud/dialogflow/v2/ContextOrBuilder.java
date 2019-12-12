@@ -34,6 +34,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -61,6 +65,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>int32 lifespan_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The lifespanCount.
    */
   int getLifespanCount();
 
@@ -75,6 +81,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the parameters field is set.
    */
   boolean hasParameters();
   /**
@@ -88,6 +96,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
   /**

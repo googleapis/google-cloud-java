@@ -42,6 +42,12 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OutputAudioConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
    */
   public int getAudioEncodingValue() {
     return audioEncoding_;
@@ -150,6 +157,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The audioEncoding.
    */
   public com.google.cloud.dialogflow.v2.OutputAudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
@@ -174,6 +183,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
+   *
+   * @return The sampleRateHertz.
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
@@ -189,6 +200,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   *
+   * @return Whether the synthesizeSpeechConfig field is set.
    */
   public boolean hasSynthesizeSpeechConfig() {
     return synthesizeSpeechConfig_ != null;
@@ -201,6 +214,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   *
+   * @return The synthesizeSpeechConfig.
    */
   public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig getSynthesizeSpeechConfig() {
     return synthesizeSpeechConfig_ == null
@@ -594,6 +609,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+     *
+     * @return The enum numeric value on the wire for audioEncoding.
      */
     public int getAudioEncodingValue() {
       return audioEncoding_;
@@ -606,6 +623,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for audioEncoding to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
       audioEncoding_ = value;
@@ -620,6 +640,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+     *
+     * @return The audioEncoding.
      */
     public com.google.cloud.dialogflow.v2.OutputAudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
@@ -637,6 +659,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+     *
+     * @param value The audioEncoding to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioEncoding(com.google.cloud.dialogflow.v2.OutputAudioEncoding value) {
       if (value == null) {
@@ -655,6 +680,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioEncoding audio_encoding = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
 
@@ -676,6 +703,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @return The sampleRateHertz.
      */
     public int getSampleRateHertz() {
       return sampleRateHertz_;
@@ -692,6 +721,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @param value The sampleRateHertz to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleRateHertz(int value) {
 
@@ -711,6 +743,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
 
@@ -733,6 +767,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     *
+     * @return Whether the synthesizeSpeechConfig field is set.
      */
     public boolean hasSynthesizeSpeechConfig() {
       return synthesizeSpeechConfigBuilder_ != null || synthesizeSpeechConfig_ != null;
@@ -745,6 +781,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     *
+     * @return The synthesizeSpeechConfig.
      */
     public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig getSynthesizeSpeechConfig() {
       if (synthesizeSpeechConfigBuilder_ == null) {

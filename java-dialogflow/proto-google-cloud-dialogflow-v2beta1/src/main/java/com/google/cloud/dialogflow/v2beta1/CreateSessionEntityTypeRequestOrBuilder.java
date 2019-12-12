@@ -36,6 +36,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   *
+   * @return Whether the sessionEntityType field is set.
    */
   boolean hasSessionEntityType();
   /**
@@ -72,6 +78,8 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   *
+   * @return The sessionEntityType.
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType();
   /**

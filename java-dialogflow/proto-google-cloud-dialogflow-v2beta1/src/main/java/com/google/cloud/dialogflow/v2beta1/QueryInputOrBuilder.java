@@ -31,6 +31,8 @@ public interface QueryInputOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.InputAudioConfig audio_config = 1;</code>
+   *
+   * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
   /**
@@ -41,6 +43,8 @@ public interface QueryInputOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.InputAudioConfig audio_config = 1;</code>
+   *
+   * @return The audioConfig.
    */
   com.google.cloud.dialogflow.v2beta1.InputAudioConfig getAudioConfig();
   /**
@@ -62,6 +66,8 @@ public interface QueryInputOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.TextInput text = 2;</code>
+   *
+   * @return Whether the text field is set.
    */
   boolean hasText();
   /**
@@ -72,6 +78,8 @@ public interface QueryInputOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.TextInput text = 2;</code>
+   *
+   * @return The text.
    */
   com.google.cloud.dialogflow.v2beta1.TextInput getText();
   /**
@@ -93,6 +101,8 @@ public interface QueryInputOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput event = 3;</code>
+   *
+   * @return Whether the event field is set.
    */
   boolean hasEvent();
   /**
@@ -103,6 +113,8 @@ public interface QueryInputOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput event = 3;</code>
+   *
+   * @return The event.
    */
   com.google.cloud.dialogflow.v2beta1.EventInput getEvent();
   /**

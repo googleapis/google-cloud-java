@@ -32,6 +32,8 @@ public interface TextInputOrBuilder
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The text.
    */
   java.lang.String getText();
   /**
@@ -43,6 +45,8 @@ public interface TextInputOrBuilder
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for text.
    */
   com.google.protobuf.ByteString getTextBytes();
 
@@ -57,6 +61,8 @@ public interface TextInputOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -70,6 +76,8 @@ public interface TextInputOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

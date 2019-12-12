@@ -51,6 +51,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Agent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -98,9 +104,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               supportedLanguageCodes_.add(s);
               break;
@@ -171,7 +177,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -280,12 +286,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MatchMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MatchMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -445,12 +459,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ApiVersion valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ApiVersion forNumber(int value) {
       switch (value) {
         case 0:
@@ -612,12 +634,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Tier valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Tier forNumber(int value) {
       switch (value) {
         case 0:
@@ -677,7 +707,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Agent.Tier)
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -689,6 +718,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -710,6 +741,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -733,6 +766,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -753,6 +788,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -780,6 +817,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
+   *
+   * @return The defaultLanguageCode.
    */
   public java.lang.String getDefaultLanguageCode() {
     java.lang.Object ref = defaultLanguageCode_;
@@ -804,6 +843,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
+   *
+   * @return The bytes for defaultLanguageCode.
    */
   public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
     java.lang.Object ref = defaultLanguageCode_;
@@ -828,6 +869,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @return A list containing the supportedLanguageCodes.
    */
   public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
     return supportedLanguageCodes_;
@@ -841,6 +884,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @return The count of supportedLanguageCodes.
    */
   public int getSupportedLanguageCodesCount() {
     return supportedLanguageCodes_.size();
@@ -854,6 +899,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedLanguageCodes at the given index.
    */
   public java.lang.String getSupportedLanguageCodes(int index) {
     return supportedLanguageCodes_.get(index);
@@ -867,6 +915,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedLanguageCodes at the given index.
    */
   public com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index) {
     return supportedLanguageCodes_.getByteString(index);
@@ -884,6 +935,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_zone = 5;</code>
+   *
+   * @return The timeZone.
    */
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
@@ -906,6 +959,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_zone = 5;</code>
+   *
+   * @return The bytes for timeZone.
    */
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
@@ -930,6 +985,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -951,6 +1008,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -978,6 +1037,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
+   *
+   * @return The avatarUri.
    */
   public java.lang.String getAvatarUri() {
     java.lang.Object ref = avatarUri_;
@@ -1002,6 +1063,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
+   *
+   * @return The bytes for avatarUri.
    */
   public com.google.protobuf.ByteString getAvatarUriBytes() {
     java.lang.Object ref = avatarUri_;
@@ -1025,6 +1088,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool enable_logging = 8;</code>
+   *
+   * @return The enableLogging.
    */
   public boolean getEnableLogging() {
     return enableLogging_;
@@ -1040,6 +1105,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+   *
+   * @return The enum numeric value on the wire for matchMode.
    */
   public int getMatchModeValue() {
     return matchMode_;
@@ -1052,6 +1119,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+   *
+   * @return The matchMode.
    */
   public com.google.cloud.dialogflow.v2beta1.Agent.MatchMode getMatchMode() {
     @SuppressWarnings("deprecation")
@@ -1078,6 +1147,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float classification_threshold = 10;</code>
+   *
+   * @return The classificationThreshold.
    */
   public float getClassificationThreshold() {
     return classificationThreshold_;
@@ -1096,6 +1167,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+   *
+   * @return The enum numeric value on the wire for apiVersion.
    */
   public int getApiVersionValue() {
     return apiVersion_;
@@ -1111,6 +1184,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+   *
+   * @return The apiVersion.
    */
   public com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion getApiVersion() {
     @SuppressWarnings("deprecation")
@@ -1131,6 +1206,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+   *
+   * @return The enum numeric value on the wire for tier.
    */
   public int getTierValue() {
     return tier_;
@@ -1143,6 +1220,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+   *
+   * @return The tier.
    */
   public com.google.cloud.dialogflow.v2beta1.Agent.Tier getTier() {
     @SuppressWarnings("deprecation")
@@ -1477,7 +1556,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       defaultLanguageCode_ = "";
 
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       timeZone_ = "";
 
       description_ = "";
@@ -1522,13 +1601,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Agent result =
           new com.google.cloud.dialogflow.v2beta1.Agent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.displayName_ = displayName_;
       result.defaultLanguageCode_ = defaultLanguageCode_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.supportedLanguageCodes_ = supportedLanguageCodes_;
       result.timeZone_ = timeZone_;
@@ -1539,7 +1617,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       result.classificationThreshold_ = classificationThreshold_;
       result.apiVersion_ = apiVersion_;
       result.tier_ = tier_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1604,7 +1681,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedLanguageCodes_.isEmpty()) {
         if (supportedLanguageCodes_.isEmpty()) {
           supportedLanguageCodes_ = other.supportedLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureSupportedLanguageCodesIsMutable();
           supportedLanguageCodes_.addAll(other.supportedLanguageCodes_);
@@ -1679,6 +1756,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1700,6 +1779,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1721,6 +1802,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1740,6 +1824,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1756,6 +1842,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1777,6 +1866,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1797,6 +1888,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1817,6 +1910,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1835,6 +1931,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1850,6 +1948,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1875,6 +1976,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
+     *
+     * @return The defaultLanguageCode.
      */
     public java.lang.String getDefaultLanguageCode() {
       java.lang.Object ref = defaultLanguageCode_;
@@ -1899,6 +2002,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
+     *
+     * @return The bytes for defaultLanguageCode.
      */
     public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
       java.lang.Object ref = defaultLanguageCode_;
@@ -1923,6 +2028,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
+     *
+     * @param value The defaultLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1945,6 +2053,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultLanguageCode() {
 
@@ -1964,6 +2074,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
+     *
+     * @param value The bytes for defaultLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1980,10 +2093,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         supportedLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1995,6 +2108,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @return A list containing the supportedLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
       return supportedLanguageCodes_.getUnmodifiableView();
@@ -2008,6 +2123,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @return The count of supportedLanguageCodes.
      */
     public int getSupportedLanguageCodesCount() {
       return supportedLanguageCodes_.size();
@@ -2021,6 +2138,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedLanguageCodes at the given index.
      */
     public java.lang.String getSupportedLanguageCodes(int index) {
       return supportedLanguageCodes_.get(index);
@@ -2034,6 +2154,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the supportedLanguageCodes at the given index.
      */
     public com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index) {
       return supportedLanguageCodes_.getByteString(index);
@@ -2047,6 +2170,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The supportedLanguageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setSupportedLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -2066,6 +2193,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @param value The supportedLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addSupportedLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -2085,6 +2215,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @param values The supportedLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSupportedLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedLanguageCodesIsMutable();
@@ -2101,10 +2234,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSupportedLanguageCodes() {
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2117,6 +2252,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string supported_language_codes = 4;</code>
+     *
+     * @param value The bytes of the supportedLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addSupportedLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2140,6 +2278,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 5;</code>
+     *
+     * @return The timeZone.
      */
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
@@ -2162,6 +2302,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 5;</code>
+     *
+     * @return The bytes for timeZone.
      */
     public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
@@ -2184,6 +2326,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 5;</code>
+     *
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
@@ -2204,6 +2349,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
 
@@ -2221,6 +2368,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 5;</code>
+     *
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2243,6 +2393,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2264,6 +2416,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2285,6 +2439,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2304,6 +2461,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2320,6 +2479,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2345,6 +2507,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
+     *
+     * @return The avatarUri.
      */
     public java.lang.String getAvatarUri() {
       java.lang.Object ref = avatarUri_;
@@ -2369,6 +2533,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
+     *
+     * @return The bytes for avatarUri.
      */
     public com.google.protobuf.ByteString getAvatarUriBytes() {
       java.lang.Object ref = avatarUri_;
@@ -2393,6 +2559,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
+     *
+     * @param value The avatarUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAvatarUri(java.lang.String value) {
       if (value == null) {
@@ -2415,6 +2584,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAvatarUri() {
 
@@ -2434,6 +2605,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
+     *
+     * @param value The bytes for avatarUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAvatarUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2455,6 +2629,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_logging = 8;</code>
+     *
+     * @return The enableLogging.
      */
     public boolean getEnableLogging() {
       return enableLogging_;
@@ -2467,6 +2643,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_logging = 8;</code>
+     *
+     * @param value The enableLogging to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableLogging(boolean value) {
 
@@ -2482,6 +2661,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_logging = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableLogging() {
 
@@ -2499,6 +2680,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+     *
+     * @return The enum numeric value on the wire for matchMode.
      */
     public int getMatchModeValue() {
       return matchMode_;
@@ -2511,6 +2694,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for matchMode to set.
+     * @return This builder for chaining.
      */
     public Builder setMatchModeValue(int value) {
       matchMode_ = value;
@@ -2525,6 +2711,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+     *
+     * @return The matchMode.
      */
     public com.google.cloud.dialogflow.v2beta1.Agent.MatchMode getMatchMode() {
       @SuppressWarnings("deprecation")
@@ -2542,6 +2730,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+     *
+     * @param value The matchMode to set.
+     * @return This builder for chaining.
      */
     public Builder setMatchMode(com.google.cloud.dialogflow.v2beta1.Agent.MatchMode value) {
       if (value == null) {
@@ -2560,6 +2751,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMatchMode() {
 
@@ -2583,6 +2776,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float classification_threshold = 10;</code>
+     *
+     * @return The classificationThreshold.
      */
     public float getClassificationThreshold() {
       return classificationThreshold_;
@@ -2601,6 +2796,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float classification_threshold = 10;</code>
+     *
+     * @param value The classificationThreshold to set.
+     * @return This builder for chaining.
      */
     public Builder setClassificationThreshold(float value) {
 
@@ -2622,6 +2820,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float classification_threshold = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClassificationThreshold() {
 
@@ -2642,6 +2842,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+     *
+     * @return The enum numeric value on the wire for apiVersion.
      */
     public int getApiVersionValue() {
       return apiVersion_;
@@ -2657,6 +2859,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+     *
+     * @param value The enum numeric value on the wire for apiVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setApiVersionValue(int value) {
       apiVersion_ = value;
@@ -2674,6 +2879,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+     *
+     * @return The apiVersion.
      */
     public com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion getApiVersion() {
       @SuppressWarnings("deprecation")
@@ -2694,6 +2901,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+     *
+     * @param value The apiVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setApiVersion(com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion value) {
       if (value == null) {
@@ -2715,6 +2925,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
 
@@ -2732,6 +2944,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+     *
+     * @return The enum numeric value on the wire for tier.
      */
     public int getTierValue() {
       return tier_;
@@ -2744,6 +2958,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+     *
+     * @param value The enum numeric value on the wire for tier to set.
+     * @return This builder for chaining.
      */
     public Builder setTierValue(int value) {
       tier_ = value;
@@ -2758,6 +2975,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+     *
+     * @return The tier.
      */
     public com.google.cloud.dialogflow.v2beta1.Agent.Tier getTier() {
       @SuppressWarnings("deprecation")
@@ -2773,6 +2992,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+     *
+     * @param value The tier to set.
+     * @return This builder for chaining.
      */
     public Builder setTier(com.google.cloud.dialogflow.v2beta1.Agent.Tier value) {
       if (value == null) {
@@ -2791,6 +3013,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTier() {
 

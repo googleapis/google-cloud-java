@@ -57,6 +57,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Intent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -114,9 +120,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inputContextNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               inputContextNames_.add(s);
               break;
@@ -124,19 +130,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 events_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000002;
               }
               events_.add(s);
               break;
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 trainingPhrases_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000004;
               }
               trainingPhrases_.add(
                   input.readMessage(
@@ -153,9 +159,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 outputContexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Context>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000008;
               }
               outputContexts_.add(
                   input.readMessage(
@@ -169,10 +175,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 parameters_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Parameter>();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00000010;
               }
               parameters_.add(
                   input.readMessage(
@@ -181,10 +187,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 messages_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message>();
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00000020;
               }
               messages_.add(
                   input.readMessage(
@@ -194,9 +200,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case 120:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00004000;
+                mutable_bitField0_ |= 0x00000040;
               }
               defaultResponsePlatforms_.add(rawValue);
               break;
@@ -207,9 +213,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                   defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00004000;
+                  mutable_bitField0_ |= 0x00000040;
                 }
                 defaultResponsePlatforms_.add(rawValue);
               }
@@ -232,11 +238,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 followupIntentInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>();
-                mutable_bitField0_ |= 0x00020000;
+                mutable_bitField0_ |= 0x00000080;
               }
               followupIntentInfo_.add(
                   input.readMessage(
@@ -263,29 +269,29 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         events_ = events_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         messages_ = java.util.Collections.unmodifiableList(messages_);
       }
-      if (((mutable_bitField0_ & 0x00004000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         defaultResponsePlatforms_ =
             java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
       }
-      if (((mutable_bitField0_ & 0x00020000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -392,12 +398,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static WebhookState valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static WebhookState forNumber(int value) {
       switch (value) {
         case 0:
@@ -468,6 +482,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -478,6 +494,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
 
@@ -491,6 +509,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
@@ -503,6 +523,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The type.
      */
     com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType();
 
@@ -643,6 +665,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The timesAddedCount.
      */
     int getTimesAddedCount();
   }
@@ -669,6 +693,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       type_ = 0;
       parts_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TrainingPhrase();
     }
 
     @java.lang.Override
@@ -711,11 +741,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   parts_ =
                       new java.util.ArrayList<
                           com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 parts_.add(
                     input.readMessage(
@@ -742,7 +772,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           parts_ = java.util.Collections.unmodifiableList(parts_);
         }
         this.unknownFields = unknownFields.build();
@@ -860,12 +890,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Type forNumber(int value) {
         switch (value) {
           case 0:
@@ -938,6 +976,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The text.
        */
       java.lang.String getText();
       /**
@@ -948,6 +988,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The bytes for text.
        */
       com.google.protobuf.ByteString getTextBytes();
 
@@ -960,6 +1002,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entityType.
        */
       java.lang.String getEntityType();
       /**
@@ -971,6 +1015,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entityType.
        */
       com.google.protobuf.ByteString getEntityTypeBytes();
 
@@ -984,6 +1030,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The alias.
        */
       java.lang.String getAlias();
       /**
@@ -996,6 +1044,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for alias.
        */
       com.google.protobuf.ByteString getAliasBytes();
 
@@ -1010,6 +1060,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The userDefined.
        */
       boolean getUserDefined();
     }
@@ -1039,6 +1091,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Part();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1051,7 +1109,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -1133,6 +1190,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The text.
        */
       public java.lang.String getText() {
         java.lang.Object ref = text_;
@@ -1153,6 +1212,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The bytes for text.
        */
       public com.google.protobuf.ByteString getTextBytes() {
         java.lang.Object ref = text_;
@@ -1177,6 +1238,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entityType.
        */
       public java.lang.String getEntityType() {
         java.lang.Object ref = entityType_;
@@ -1198,6 +1261,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entityType.
        */
       public com.google.protobuf.ByteString getEntityTypeBytes() {
         java.lang.Object ref = entityType_;
@@ -1223,6 +1288,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The alias.
        */
       public java.lang.String getAlias() {
         java.lang.Object ref = alias_;
@@ -1245,6 +1312,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for alias.
        */
       public com.google.protobuf.ByteString getAliasBytes() {
         java.lang.Object ref = alias_;
@@ -1271,6 +1340,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The userDefined.
        */
       public boolean getUserDefined() {
         return userDefined_;
@@ -1658,6 +1729,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @return The text.
          */
         public java.lang.String getText() {
           java.lang.Object ref = text_;
@@ -1678,6 +1751,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @return The bytes for text.
          */
         public com.google.protobuf.ByteString getTextBytes() {
           java.lang.Object ref = text_;
@@ -1698,6 +1773,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @param value The text to set.
+         * @return This builder for chaining.
          */
         public Builder setText(java.lang.String value) {
           if (value == null) {
@@ -1716,6 +1794,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearText() {
 
@@ -1731,6 +1811,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @param value The bytes for text to set.
+         * @return This builder for chaining.
          */
         public Builder setTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1753,6 +1836,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The entityType.
          */
         public java.lang.String getEntityType() {
           java.lang.Object ref = entityType_;
@@ -1774,6 +1859,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for entityType.
          */
         public com.google.protobuf.ByteString getEntityTypeBytes() {
           java.lang.Object ref = entityType_;
@@ -1795,6 +1882,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The entityType to set.
+         * @return This builder for chaining.
          */
         public Builder setEntityType(java.lang.String value) {
           if (value == null) {
@@ -1814,6 +1904,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearEntityType() {
 
@@ -1830,6 +1922,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for entityType to set.
+         * @return This builder for chaining.
          */
         public Builder setEntityTypeBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1853,6 +1948,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The alias.
          */
         public java.lang.String getAlias() {
           java.lang.Object ref = alias_;
@@ -1875,6 +1972,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for alias.
          */
         public com.google.protobuf.ByteString getAliasBytes() {
           java.lang.Object ref = alias_;
@@ -1897,6 +1996,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The alias to set.
+         * @return This builder for chaining.
          */
         public Builder setAlias(java.lang.String value) {
           if (value == null) {
@@ -1917,6 +2019,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearAlias() {
 
@@ -1934,6 +2038,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for alias to set.
+         * @return This builder for chaining.
          */
         public Builder setAliasBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1958,6 +2065,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The userDefined.
          */
         public boolean getUserDefined() {
           return userDefined_;
@@ -1973,6 +2082,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The userDefined to set.
+         * @return This builder for chaining.
          */
         public Builder setUserDefined(boolean value) {
 
@@ -1991,6 +2103,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearUserDefined() {
 
@@ -2052,7 +2166,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
-    private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
@@ -2063,6 +2176,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2083,6 +2198,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2108,6 +2225,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -2122,6 +2241,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The type.
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
       @SuppressWarnings("deprecation")
@@ -2286,6 +2407,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The timesAddedCount.
      */
     public int getTimesAddedCount() {
       return timesAddedCount_;
@@ -2539,7 +2662,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         if (partsBuilder_ == null) {
           parts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           partsBuilder_.clear();
         }
@@ -2573,20 +2696,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.Intent.TrainingPhrase result =
             new com.google.cloud.dialogflow.v2.Intent.TrainingPhrase(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.name_ = name_;
         result.type_ = type_;
         if (partsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             parts_ = java.util.Collections.unmodifiableList(parts_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.parts_ = parts_;
         } else {
           result.parts_ = partsBuilder_.build();
         }
         result.timesAddedCount_ = timesAddedCount_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2650,7 +2771,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.parts_.isEmpty()) {
             if (parts_.isEmpty()) {
               parts_ = other.parts_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensurePartsIsMutable();
               parts_.addAll(other.parts_);
@@ -2663,7 +2784,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               partsBuilder_.dispose();
               partsBuilder_ = null;
               parts_ = other.parts_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               partsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPartsFieldBuilder()
@@ -2717,6 +2838,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2737,6 +2860,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -2757,6 +2882,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -2775,6 +2903,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -2790,6 +2920,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2813,6 +2946,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
@@ -2827,6 +2962,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -2843,6 +2981,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The type.
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
         @SuppressWarnings("deprecation")
@@ -2862,6 +3002,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type value) {
         if (value == null) {
@@ -2882,6 +3025,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearType() {
 
@@ -2894,11 +3039,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensurePartsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           parts_ =
               new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part>(
                   parts_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -3285,7 +3430,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder clearParts() {
         if (partsBuilder_ == null) {
           parts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           partsBuilder_.clear();
@@ -3519,7 +3664,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part,
                   com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.Builder,
                   com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder>(
-                  parts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                  parts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           parts_ = null;
         }
         return partsBuilder_;
@@ -3536,6 +3681,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The timesAddedCount.
        */
       public int getTimesAddedCount() {
         return timesAddedCount_;
@@ -3550,6 +3697,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The timesAddedCount to set.
+       * @return This builder for chaining.
        */
       public Builder setTimesAddedCount(int value) {
 
@@ -3567,6 +3717,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearTimesAddedCount() {
 
@@ -3640,6 +3792,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -3650,6 +3804,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
 
@@ -3661,6 +3817,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     java.lang.String getDisplayName();
     /**
@@ -3671,6 +3829,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -3687,6 +3847,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The value.
      */
     java.lang.String getValue();
     /**
@@ -3702,6 +3864,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString getValueBytes();
 
@@ -3716,6 +3880,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The defaultValue.
      */
     java.lang.String getDefaultValue();
     /**
@@ -3729,6 +3895,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for defaultValue.
      */
     com.google.protobuf.ByteString getDefaultValueBytes();
 
@@ -3742,6 +3910,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The entityTypeDisplayName.
      */
     java.lang.String getEntityTypeDisplayName();
     /**
@@ -3754,6 +3924,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for entityTypeDisplayName.
      */
     com.google.protobuf.ByteString getEntityTypeDisplayNameBytes();
 
@@ -3767,6 +3939,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mandatory.
      */
     boolean getMandatory();
 
@@ -3779,6 +3953,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the prompts.
      */
     java.util.List<java.lang.String> getPromptsList();
     /**
@@ -3790,6 +3966,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of prompts.
      */
     int getPromptsCount();
     /**
@@ -3801,6 +3979,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The prompts at the given index.
      */
     java.lang.String getPrompts(int index);
     /**
@@ -3812,6 +3993,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the prompts at the given index.
      */
     com.google.protobuf.ByteString getPromptsBytes(int index);
 
@@ -3823,6 +4007,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isList.
      */
     boolean getIsList();
   }
@@ -3852,6 +4038,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       defaultValue_ = "";
       entityTypeDisplayName_ = "";
       prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Parameter();
     }
 
     @java.lang.Override
@@ -3921,9 +4113,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   prompts_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000040;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 prompts_.add(s);
                 break;
@@ -3947,7 +4139,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           prompts_ = prompts_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -3970,7 +4162,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.v2.Intent.Parameter.Builder.class);
     }
 
-    private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
@@ -3981,6 +4172,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -4001,6 +4194,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -4024,6 +4219,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -4044,6 +4241,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -4072,6 +4271,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -4097,6 +4298,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
@@ -4123,6 +4326,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The defaultValue.
      */
     public java.lang.String getDefaultValue() {
       java.lang.Object ref = defaultValue_;
@@ -4146,6 +4351,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for defaultValue.
      */
     public com.google.protobuf.ByteString getDefaultValueBytes() {
       java.lang.Object ref = defaultValue_;
@@ -4171,6 +4378,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The entityTypeDisplayName.
      */
     public java.lang.String getEntityTypeDisplayName() {
       java.lang.Object ref = entityTypeDisplayName_;
@@ -4193,6 +4402,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for entityTypeDisplayName.
      */
     public com.google.protobuf.ByteString getEntityTypeDisplayNameBytes() {
       java.lang.Object ref = entityTypeDisplayName_;
@@ -4218,6 +4429,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mandatory.
      */
     public boolean getMandatory() {
       return mandatory_;
@@ -4234,6 +4447,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the prompts.
      */
     public com.google.protobuf.ProtocolStringList getPromptsList() {
       return prompts_;
@@ -4247,6 +4462,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of prompts.
      */
     public int getPromptsCount() {
       return prompts_.size();
@@ -4260,6 +4477,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The prompts at the given index.
      */
     public java.lang.String getPrompts(int index) {
       return prompts_.get(index);
@@ -4273,6 +4493,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the prompts at the given index.
      */
     public com.google.protobuf.ByteString getPromptsBytes(int index) {
       return prompts_.getByteString(index);
@@ -4288,6 +4511,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isList.
      */
     public boolean getIsList() {
       return isList_;
@@ -4582,7 +4807,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         mandatory_ = false;
 
         prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         isList_ = false;
 
         return this;
@@ -4613,20 +4838,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.Intent.Parameter result =
             new com.google.cloud.dialogflow.v2.Intent.Parameter(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.name_ = name_;
         result.displayName_ = displayName_;
         result.value_ = value_;
         result.defaultValue_ = defaultValue_;
         result.entityTypeDisplayName_ = entityTypeDisplayName_;
         result.mandatory_ = mandatory_;
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           prompts_ = prompts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.prompts_ = prompts_;
         result.isList_ = isList_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -4705,7 +4928,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.prompts_.isEmpty()) {
           if (prompts_.isEmpty()) {
             prompts_ = other.prompts_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePromptsIsMutable();
             prompts_.addAll(other.prompts_);
@@ -4756,6 +4979,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -4776,6 +5001,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -4796,6 +5023,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -4814,6 +5044,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -4829,6 +5061,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4850,6 +5085,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 2;</code>
+       *
+       * @return The displayName.
        */
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
@@ -4870,6 +5107,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 2;</code>
+       *
+       * @return The bytes for displayName.
        */
       public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
@@ -4890,6 +5129,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 2;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayName(java.lang.String value) {
         if (value == null) {
@@ -4908,6 +5150,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
 
@@ -4923,6 +5167,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 2;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4949,6 +5196,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The value.
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -4974,6 +5223,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString getValueBytes() {
         java.lang.Object ref = value_;
@@ -4999,6 +5250,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(java.lang.String value) {
         if (value == null) {
@@ -5022,6 +5276,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
 
@@ -5042,6 +5298,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5066,6 +5325,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The defaultValue.
        */
       public java.lang.String getDefaultValue() {
         java.lang.Object ref = defaultValue_;
@@ -5089,6 +5350,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for defaultValue.
        */
       public com.google.protobuf.ByteString getDefaultValueBytes() {
         java.lang.Object ref = defaultValue_;
@@ -5112,6 +5375,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The defaultValue to set.
+       * @return This builder for chaining.
        */
       public Builder setDefaultValue(java.lang.String value) {
         if (value == null) {
@@ -5133,6 +5399,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDefaultValue() {
 
@@ -5151,6 +5419,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for defaultValue to set.
+       * @return This builder for chaining.
        */
       public Builder setDefaultValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5174,6 +5445,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entityTypeDisplayName.
        */
       public java.lang.String getEntityTypeDisplayName() {
         java.lang.Object ref = entityTypeDisplayName_;
@@ -5196,6 +5469,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entityTypeDisplayName.
        */
       public com.google.protobuf.ByteString getEntityTypeDisplayNameBytes() {
         java.lang.Object ref = entityTypeDisplayName_;
@@ -5218,6 +5493,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The entityTypeDisplayName to set.
+       * @return This builder for chaining.
        */
       public Builder setEntityTypeDisplayName(java.lang.String value) {
         if (value == null) {
@@ -5238,6 +5516,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearEntityTypeDisplayName() {
 
@@ -5255,6 +5535,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for entityTypeDisplayName to set.
+       * @return This builder for chaining.
        */
       public Builder setEntityTypeDisplayNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5278,6 +5561,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The mandatory.
        */
       public boolean getMandatory() {
         return mandatory_;
@@ -5292,6 +5577,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The mandatory to set.
+       * @return This builder for chaining.
        */
       public Builder setMandatory(boolean value) {
 
@@ -5309,6 +5597,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMandatory() {
 
@@ -5321,9 +5611,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePromptsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           prompts_ = new com.google.protobuf.LazyStringArrayList(prompts_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -5335,6 +5625,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the prompts.
        */
       public com.google.protobuf.ProtocolStringList getPromptsList() {
         return prompts_.getUnmodifiableView();
@@ -5348,6 +5640,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of prompts.
        */
       public int getPromptsCount() {
         return prompts_.size();
@@ -5361,6 +5655,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The prompts at the given index.
        */
       public java.lang.String getPrompts(int index) {
         return prompts_.get(index);
@@ -5374,6 +5671,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the prompts at the given index.
        */
       public com.google.protobuf.ByteString getPromptsBytes(int index) {
         return prompts_.getByteString(index);
@@ -5387,6 +5687,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The prompts to set.
+       * @return This builder for chaining.
        */
       public Builder setPrompts(int index, java.lang.String value) {
         if (value == null) {
@@ -5406,6 +5710,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The prompts to add.
+       * @return This builder for chaining.
        */
       public Builder addPrompts(java.lang.String value) {
         if (value == null) {
@@ -5425,6 +5732,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The prompts to add.
+       * @return This builder for chaining.
        */
       public Builder addAllPrompts(java.lang.Iterable<java.lang.String> values) {
         ensurePromptsIsMutable();
@@ -5441,10 +5751,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrompts() {
         prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5457,6 +5769,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the prompts to add.
+       * @return This builder for chaining.
        */
       public Builder addPromptsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5478,6 +5793,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The isList.
        */
       public boolean getIsList() {
         return isList_;
@@ -5490,6 +5807,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The isList to set.
+       * @return This builder for chaining.
        */
       public Builder setIsList(boolean value) {
 
@@ -5505,6 +5825,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIsList() {
 
@@ -5578,6 +5900,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
+     *
+     * @return Whether the text field is set.
      */
     boolean hasText();
     /**
@@ -5588,6 +5912,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
+     *
+     * @return The text.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.Text getText();
     /**
@@ -5609,6 +5935,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
+     *
+     * @return Whether the image field is set.
      */
     boolean hasImage();
     /**
@@ -5619,6 +5947,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
+     *
+     * @return The image.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
     /**
@@ -5640,6 +5970,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
+     *
+     * @return Whether the quickReplies field is set.
      */
     boolean hasQuickReplies();
     /**
@@ -5650,6 +5982,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
+     *
+     * @return The quickReplies.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getQuickReplies();
     /**
@@ -5671,6 +6005,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
+     *
+     * @return Whether the card field is set.
      */
     boolean hasCard();
     /**
@@ -5681,6 +6017,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
+     *
+     * @return The card.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.Card getCard();
     /**
@@ -5704,6 +6042,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
+     *
+     * @return Whether the payload field is set.
      */
     boolean hasPayload();
     /**
@@ -5716,6 +6056,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
+     *
+     * @return The payload.
      */
     com.google.protobuf.Struct getPayload();
     /**
@@ -5739,6 +6081,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;</code>
+     *
+     * @return Whether the simpleResponses field is set.
      */
     boolean hasSimpleResponses();
     /**
@@ -5749,6 +6093,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;</code>
+     *
+     * @return The simpleResponses.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getSimpleResponses();
     /**
@@ -5771,6 +6117,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
+     *
+     * @return Whether the basicCard field is set.
      */
     boolean hasBasicCard();
     /**
@@ -5781,6 +6129,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
+     *
+     * @return The basicCard.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getBasicCard();
     /**
@@ -5802,6 +6152,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
+     *
+     * @return Whether the suggestions field is set.
      */
     boolean hasSuggestions();
     /**
@@ -5812,6 +6164,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
+     *
+     * @return The suggestions.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getSuggestions();
     /**
@@ -5834,6 +6188,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
      * </code>
+     *
+     * @return Whether the linkOutSuggestion field is set.
      */
     boolean hasLinkOutSuggestion();
     /**
@@ -5845,6 +6201,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
      * </code>
+     *
+     * @return The linkOutSuggestion.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion getLinkOutSuggestion();
     /**
@@ -5868,6 +6226,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
+     *
+     * @return Whether the listSelect field is set.
      */
     boolean hasListSelect();
     /**
@@ -5878,6 +6238,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
+     *
+     * @return The listSelect.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getListSelect();
     /**
@@ -5899,6 +6261,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;</code>
+     *
+     * @return Whether the carouselSelect field is set.
      */
     boolean hasCarouselSelect();
     /**
@@ -5909,6 +6273,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;</code>
+     *
+     * @return The carouselSelect.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getCarouselSelect();
     /**
@@ -5933,6 +6299,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
      * </code>
+     *
+     * @return Whether the browseCarouselCard field is set.
      */
     boolean hasBrowseCarouselCard();
     /**
@@ -5945,6 +6313,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
      * </code>
+     *
+     * @return The browseCarouselCard.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard getBrowseCarouselCard();
     /**
@@ -5969,6 +6339,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
+     *
+     * @return Whether the tableCard field is set.
      */
     boolean hasTableCard();
     /**
@@ -5979,6 +6351,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
+     *
+     * @return The tableCard.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.TableCard getTableCard();
     /**
@@ -6000,6 +6374,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
+     *
+     * @return Whether the mediaContent field is set.
      */
     boolean hasMediaContent();
     /**
@@ -6010,6 +6386,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
+     *
+     * @return The mediaContent.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.MediaContent getMediaContent();
     /**
@@ -6033,6 +6411,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for platform.
      */
     int getPlatformValue();
     /**
@@ -6045,6 +6425,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The platform.
      */
     com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform();
 
@@ -6074,6 +6456,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Message();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -6086,7 +6474,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6758,12 +7145,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static Platform valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Platform forNumber(int value) {
         switch (value) {
           case 0:
@@ -6848,6 +7243,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the text.
        */
       java.util.List<java.lang.String> getTextList();
       /**
@@ -6858,6 +7255,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of text.
        */
       int getTextCount();
       /**
@@ -6868,6 +7267,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The text at the given index.
        */
       java.lang.String getText(int index);
       /**
@@ -6878,6 +7280,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the text at the given index.
        */
       com.google.protobuf.ByteString getTextBytes(int index);
     }
@@ -6902,6 +7307,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       private Text() {
         text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Text();
       }
 
       @java.lang.Override
@@ -6986,6 +7397,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the text.
        */
       public com.google.protobuf.ProtocolStringList getTextList() {
         return text_;
@@ -6998,6 +7411,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of text.
        */
       public int getTextCount() {
         return text_.size();
@@ -7010,6 +7425,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The text at the given index.
        */
       public java.lang.String getText(int index) {
         return text_.get(index);
@@ -7022,6 +7440,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the text at the given index.
        */
       public com.google.protobuf.ByteString getTextBytes(int index) {
         return text_.getByteString(index);
@@ -7387,6 +7808,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the text.
          */
         public com.google.protobuf.ProtocolStringList getTextList() {
           return text_.getUnmodifiableView();
@@ -7399,6 +7822,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of text.
          */
         public int getTextCount() {
           return text_.size();
@@ -7411,6 +7836,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The text at the given index.
          */
         public java.lang.String getText(int index) {
           return text_.get(index);
@@ -7423,6 +7851,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the text at the given index.
          */
         public com.google.protobuf.ByteString getTextBytes(int index) {
           return text_.getByteString(index);
@@ -7435,6 +7866,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The text to set.
+         * @return This builder for chaining.
          */
         public Builder setText(int index, java.lang.String value) {
           if (value == null) {
@@ -7453,6 +7888,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The text to add.
+         * @return This builder for chaining.
          */
         public Builder addText(java.lang.String value) {
           if (value == null) {
@@ -7471,6 +7909,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The text to add.
+         * @return This builder for chaining.
          */
         public Builder addAllText(java.lang.Iterable<java.lang.String> values) {
           ensureTextIsMutable();
@@ -7486,6 +7927,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearText() {
           text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -7501,6 +7944,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the text to add.
+         * @return This builder for chaining.
          */
         public Builder addTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -7578,6 +8024,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The imageUri.
        */
       java.lang.String getImageUri();
       /**
@@ -7588,6 +8036,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for imageUri.
        */
       com.google.protobuf.ByteString getImageUriBytes();
 
@@ -7600,6 +8050,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The accessibilityText.
        */
       java.lang.String getAccessibilityText();
       /**
@@ -7611,6 +8063,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for accessibilityText.
        */
       com.google.protobuf.ByteString getAccessibilityTextBytes();
     }
@@ -7639,6 +8093,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Image();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -7651,7 +8111,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -7721,6 +8180,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The imageUri.
        */
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
@@ -7741,6 +8202,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for imageUri.
        */
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
@@ -7765,6 +8228,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The accessibilityText.
        */
       public java.lang.String getAccessibilityText() {
         java.lang.Object ref = accessibilityText_;
@@ -7786,6 +8251,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for accessibilityText.
        */
       public com.google.protobuf.ByteString getAccessibilityTextBytes() {
         java.lang.Object ref = accessibilityText_;
@@ -8147,6 +8614,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The imageUri.
          */
         public java.lang.String getImageUri() {
           java.lang.Object ref = imageUri_;
@@ -8167,6 +8636,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for imageUri.
          */
         public com.google.protobuf.ByteString getImageUriBytes() {
           java.lang.Object ref = imageUri_;
@@ -8187,6 +8658,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The imageUri to set.
+         * @return This builder for chaining.
          */
         public Builder setImageUri(java.lang.String value) {
           if (value == null) {
@@ -8205,6 +8679,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearImageUri() {
 
@@ -8220,6 +8696,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for imageUri to set.
+         * @return This builder for chaining.
          */
         public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -8242,6 +8721,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The accessibilityText.
          */
         public java.lang.String getAccessibilityText() {
           java.lang.Object ref = accessibilityText_;
@@ -8263,6 +8744,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for accessibilityText.
          */
         public com.google.protobuf.ByteString getAccessibilityTextBytes() {
           java.lang.Object ref = accessibilityText_;
@@ -8284,6 +8767,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The accessibilityText to set.
+         * @return This builder for chaining.
          */
         public Builder setAccessibilityText(java.lang.String value) {
           if (value == null) {
@@ -8303,6 +8789,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearAccessibilityText() {
 
@@ -8319,6 +8807,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for accessibilityText to set.
+         * @return This builder for chaining.
          */
         public Builder setAccessibilityTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -8396,6 +8887,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       java.lang.String getTitle();
       /**
@@ -8406,6 +8899,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -8417,6 +8912,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the quickReplies.
        */
       java.util.List<java.lang.String> getQuickRepliesList();
       /**
@@ -8427,6 +8924,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of quickReplies.
        */
       int getQuickRepliesCount();
       /**
@@ -8437,6 +8936,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The quickReplies at the given index.
        */
       java.lang.String getQuickReplies(int index);
       /**
@@ -8447,6 +8949,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the quickReplies at the given index.
        */
       com.google.protobuf.ByteString getQuickRepliesBytes(int index);
     }
@@ -8472,6 +8977,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       private QuickReplies() {
         title_ = "";
         quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new QuickReplies();
       }
 
       @java.lang.Override
@@ -8508,9 +9019,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     quickReplies_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   quickReplies_.add(s);
                   break;
@@ -8530,7 +9041,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             quickReplies_ = quickReplies_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -8553,7 +9064,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies.Builder.class);
       }
 
-      private int bitField0_;
       public static final int TITLE_FIELD_NUMBER = 1;
       private volatile java.lang.Object title_;
       /**
@@ -8564,6 +9074,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -8584,6 +9096,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -8607,6 +9121,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the quickReplies.
        */
       public com.google.protobuf.ProtocolStringList getQuickRepliesList() {
         return quickReplies_;
@@ -8619,6 +9135,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of quickReplies.
        */
       public int getQuickRepliesCount() {
         return quickReplies_.size();
@@ -8631,6 +9149,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The quickReplies at the given index.
        */
       public java.lang.String getQuickReplies(int index) {
         return quickReplies_.get(index);
@@ -8643,6 +9164,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the quickReplies at the given index.
        */
       public com.google.protobuf.ByteString getQuickRepliesBytes(int index) {
         return quickReplies_.getByteString(index);
@@ -8874,7 +9398,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           title_ = "";
 
           quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -8904,14 +9428,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies result =
               new com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.title_ = title_;
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             quickReplies_ = quickReplies_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.quickReplies_ = quickReplies_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -8972,7 +9494,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.quickReplies_.isEmpty()) {
             if (quickReplies_.isEmpty()) {
               quickReplies_ = other.quickReplies_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureQuickRepliesIsMutable();
               quickReplies_.addAll(other.quickReplies_);
@@ -9021,6 +9543,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -9041,6 +9565,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -9061,6 +9587,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -9079,6 +9608,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTitle() {
 
@@ -9094,6 +9625,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -9110,9 +9644,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureQuickRepliesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             quickReplies_ = new com.google.protobuf.LazyStringArrayList(quickReplies_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
         /**
@@ -9123,6 +9657,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the quickReplies.
          */
         public com.google.protobuf.ProtocolStringList getQuickRepliesList() {
           return quickReplies_.getUnmodifiableView();
@@ -9135,6 +9671,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of quickReplies.
          */
         public int getQuickRepliesCount() {
           return quickReplies_.size();
@@ -9147,6 +9685,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The quickReplies at the given index.
          */
         public java.lang.String getQuickReplies(int index) {
           return quickReplies_.get(index);
@@ -9159,6 +9700,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the quickReplies at the given index.
          */
         public com.google.protobuf.ByteString getQuickRepliesBytes(int index) {
           return quickReplies_.getByteString(index);
@@ -9171,6 +9715,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The quickReplies to set.
+         * @return This builder for chaining.
          */
         public Builder setQuickReplies(int index, java.lang.String value) {
           if (value == null) {
@@ -9189,6 +9737,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The quickReplies to add.
+         * @return This builder for chaining.
          */
         public Builder addQuickReplies(java.lang.String value) {
           if (value == null) {
@@ -9207,6 +9758,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The quickReplies to add.
+         * @return This builder for chaining.
          */
         public Builder addAllQuickReplies(java.lang.Iterable<java.lang.String> values) {
           ensureQuickRepliesIsMutable();
@@ -9222,10 +9776,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearQuickReplies() {
           quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -9237,6 +9793,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the quickReplies to add.
+         * @return This builder for chaining.
          */
         public Builder addQuickRepliesBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -9317,6 +9876,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       java.lang.String getTitle();
       /**
@@ -9327,6 +9888,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -9338,6 +9901,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       java.lang.String getSubtitle();
       /**
@@ -9348,6 +9913,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       com.google.protobuf.ByteString getSubtitleBytes();
 
@@ -9359,6 +9926,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The imageUri.
        */
       java.lang.String getImageUri();
       /**
@@ -9369,6 +9938,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for imageUri.
        */
       com.google.protobuf.ByteString getImageUriBytes();
 
@@ -9462,6 +10033,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Card();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -9508,11 +10085,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     buttons_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.Card.Button>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   buttons_.add(
                       input.readMessage(
@@ -9535,7 +10112,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             buttons_ = java.util.Collections.unmodifiableList(buttons_);
           }
           this.unknownFields = unknownFields.build();
@@ -9571,6 +10148,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The text.
          */
         java.lang.String getText();
         /**
@@ -9581,6 +10160,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for text.
          */
         com.google.protobuf.ByteString getTextBytes();
 
@@ -9593,6 +10174,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The postback.
          */
         java.lang.String getPostback();
         /**
@@ -9604,6 +10187,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for postback.
          */
         com.google.protobuf.ByteString getPostbackBytes();
       }
@@ -9632,6 +10217,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Button();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
@@ -9644,7 +10235,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -9714,6 +10304,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The text.
          */
         public java.lang.String getText() {
           java.lang.Object ref = text_;
@@ -9734,6 +10326,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for text.
          */
         public com.google.protobuf.ByteString getTextBytes() {
           java.lang.Object ref = text_;
@@ -9758,6 +10352,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The postback.
          */
         public java.lang.String getPostback() {
           java.lang.Object ref = postback_;
@@ -9779,6 +10375,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for postback.
          */
         public com.google.protobuf.ByteString getPostbackBytes() {
           java.lang.Object ref = postback_;
@@ -10146,6 +10744,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The text.
            */
           public java.lang.String getText() {
             java.lang.Object ref = text_;
@@ -10166,6 +10766,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for text.
            */
           public com.google.protobuf.ByteString getTextBytes() {
             java.lang.Object ref = text_;
@@ -10186,6 +10788,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The text to set.
+           * @return This builder for chaining.
            */
           public Builder setText(java.lang.String value) {
             if (value == null) {
@@ -10204,6 +10809,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearText() {
 
@@ -10219,6 +10826,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for text to set.
+           * @return This builder for chaining.
            */
           public Builder setTextBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -10241,6 +10851,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The postback.
            */
           public java.lang.String getPostback() {
             java.lang.Object ref = postback_;
@@ -10262,6 +10874,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for postback.
            */
           public com.google.protobuf.ByteString getPostbackBytes() {
             java.lang.Object ref = postback_;
@@ -10283,6 +10897,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The postback to set.
+           * @return This builder for chaining.
            */
           public Builder setPostback(java.lang.String value) {
             if (value == null) {
@@ -10302,6 +10919,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearPostback() {
 
@@ -10318,6 +10937,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for postback to set.
+           * @return This builder for chaining.
            */
           public Builder setPostbackBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -10385,7 +11007,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
-      private int bitField0_;
       public static final int TITLE_FIELD_NUMBER = 1;
       private volatile java.lang.Object title_;
       /**
@@ -10396,6 +11017,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -10416,6 +11039,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -10439,6 +11064,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
@@ -10459,6 +11086,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
@@ -10482,6 +11111,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The imageUri.
        */
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
@@ -10502,6 +11133,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for imageUri.
        */
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
@@ -10838,7 +11471,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             buttonsBuilder_.clear();
           }
@@ -10870,20 +11503,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.Card result =
               new com.google.cloud.dialogflow.v2.Intent.Message.Card(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.title_ = title_;
           result.subtitle_ = subtitle_;
           result.imageUri_ = imageUri_;
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.buttons_ = buttons_;
           } else {
             result.buttons_ = buttonsBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -10952,7 +11583,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.buttons_.isEmpty()) {
               if (buttons_.isEmpty()) {
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureButtonsIsMutable();
                 buttons_.addAll(other.buttons_);
@@ -10965,7 +11596,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 buttonsBuilder_.dispose();
                 buttonsBuilder_ = null;
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 buttonsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getButtonsFieldBuilder()
@@ -11016,6 +11647,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -11036,6 +11669,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -11056,6 +11691,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -11074,6 +11712,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTitle() {
 
@@ -11089,6 +11729,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -11110,6 +11753,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The subtitle.
          */
         public java.lang.String getSubtitle() {
           java.lang.Object ref = subtitle_;
@@ -11130,6 +11775,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for subtitle.
          */
         public com.google.protobuf.ByteString getSubtitleBytes() {
           java.lang.Object ref = subtitle_;
@@ -11150,6 +11797,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitle(java.lang.String value) {
           if (value == null) {
@@ -11168,6 +11818,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
 
@@ -11183,6 +11835,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -11204,6 +11859,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The imageUri.
          */
         public java.lang.String getImageUri() {
           java.lang.Object ref = imageUri_;
@@ -11224,6 +11881,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for imageUri.
          */
         public com.google.protobuf.ByteString getImageUriBytes() {
           java.lang.Object ref = imageUri_;
@@ -11244,6 +11903,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The imageUri to set.
+         * @return This builder for chaining.
          */
         public Builder setImageUri(java.lang.String value) {
           if (value == null) {
@@ -11262,6 +11924,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearImageUri() {
 
@@ -11277,6 +11941,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for imageUri to set.
+         * @return This builder for chaining.
          */
         public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -11293,11 +11960,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             buttons_ =
                 new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message.Card.Button>(
                     buttons_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -11541,7 +12208,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             buttonsBuilder_.clear();
@@ -11685,7 +12352,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.Card.Button,
                     com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.Builder,
                     com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder>(
-                    buttons_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                    buttons_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -11757,6 +12424,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text_to_speech = 1;</code>
+       *
+       * @return The textToSpeech.
        */
       java.lang.String getTextToSpeech();
       /**
@@ -11768,6 +12437,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text_to_speech = 1;</code>
+       *
+       * @return The bytes for textToSpeech.
        */
       com.google.protobuf.ByteString getTextToSpeechBytes();
 
@@ -11781,6 +12452,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string ssml = 2;</code>
+       *
+       * @return The ssml.
        */
       java.lang.String getSsml();
       /**
@@ -11793,6 +12466,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string ssml = 2;</code>
+       *
+       * @return The bytes for ssml.
        */
       com.google.protobuf.ByteString getSsmlBytes();
 
@@ -11804,6 +12479,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The displayText.
        */
       java.lang.String getDisplayText();
       /**
@@ -11814,6 +12491,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for displayText.
        */
       com.google.protobuf.ByteString getDisplayTextBytes();
     }
@@ -11843,6 +12522,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SimpleResponse();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -11855,7 +12540,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -11933,6 +12617,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text_to_speech = 1;</code>
+       *
+       * @return The textToSpeech.
        */
       public java.lang.String getTextToSpeech() {
         java.lang.Object ref = textToSpeech_;
@@ -11954,6 +12640,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text_to_speech = 1;</code>
+       *
+       * @return The bytes for textToSpeech.
        */
       public com.google.protobuf.ByteString getTextToSpeechBytes() {
         java.lang.Object ref = textToSpeech_;
@@ -11979,6 +12667,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string ssml = 2;</code>
+       *
+       * @return The ssml.
        */
       public java.lang.String getSsml() {
         java.lang.Object ref = ssml_;
@@ -12001,6 +12691,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string ssml = 2;</code>
+       *
+       * @return The bytes for ssml.
        */
       public com.google.protobuf.ByteString getSsmlBytes() {
         java.lang.Object ref = ssml_;
@@ -12024,6 +12716,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The displayText.
        */
       public java.lang.String getDisplayText() {
         java.lang.Object ref = displayText_;
@@ -12044,6 +12738,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for displayText.
        */
       public com.google.protobuf.ByteString getDisplayTextBytes() {
         java.lang.Object ref = displayText_;
@@ -12426,6 +13122,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text_to_speech = 1;</code>
+         *
+         * @return The textToSpeech.
          */
         public java.lang.String getTextToSpeech() {
           java.lang.Object ref = textToSpeech_;
@@ -12447,6 +13145,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text_to_speech = 1;</code>
+         *
+         * @return The bytes for textToSpeech.
          */
         public com.google.protobuf.ByteString getTextToSpeechBytes() {
           java.lang.Object ref = textToSpeech_;
@@ -12468,6 +13168,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text_to_speech = 1;</code>
+         *
+         * @param value The textToSpeech to set.
+         * @return This builder for chaining.
          */
         public Builder setTextToSpeech(java.lang.String value) {
           if (value == null) {
@@ -12487,6 +13190,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text_to_speech = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTextToSpeech() {
 
@@ -12503,6 +13208,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text_to_speech = 1;</code>
+         *
+         * @param value The bytes for textToSpeech to set.
+         * @return This builder for chaining.
          */
         public Builder setTextToSpeechBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -12526,6 +13234,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string ssml = 2;</code>
+         *
+         * @return The ssml.
          */
         public java.lang.String getSsml() {
           java.lang.Object ref = ssml_;
@@ -12548,6 +13258,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string ssml = 2;</code>
+         *
+         * @return The bytes for ssml.
          */
         public com.google.protobuf.ByteString getSsmlBytes() {
           java.lang.Object ref = ssml_;
@@ -12570,6 +13282,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string ssml = 2;</code>
+         *
+         * @param value The ssml to set.
+         * @return This builder for chaining.
          */
         public Builder setSsml(java.lang.String value) {
           if (value == null) {
@@ -12590,6 +13305,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string ssml = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearSsml() {
 
@@ -12607,6 +13324,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string ssml = 2;</code>
+         *
+         * @param value The bytes for ssml to set.
+         * @return This builder for chaining.
          */
         public Builder setSsmlBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -12628,6 +13348,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The displayText.
          */
         public java.lang.String getDisplayText() {
           java.lang.Object ref = displayText_;
@@ -12648,6 +13370,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for displayText.
          */
         public com.google.protobuf.ByteString getDisplayTextBytes() {
           java.lang.Object ref = displayText_;
@@ -12668,6 +13392,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The displayText to set.
+         * @return This builder for chaining.
          */
         public Builder setDisplayText(java.lang.String value) {
           if (value == null) {
@@ -12686,6 +13413,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearDisplayText() {
 
@@ -12701,6 +13430,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for displayText to set.
+         * @return This builder for chaining.
          */
         public Builder setDisplayTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -12862,6 +13594,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       private SimpleResponses() {
         simpleResponses_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SimpleResponses();
       }
 
       @java.lang.Override
@@ -13873,6 +14611,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       java.lang.String getTitle();
       /**
@@ -13883,6 +14623,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -13894,6 +14636,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       java.lang.String getSubtitle();
       /**
@@ -13904,6 +14648,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       com.google.protobuf.ByteString getSubtitleBytes();
 
@@ -13915,6 +14661,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string formatted_text = 3;</code>
+       *
+       * @return The formattedText.
        */
       java.lang.String getFormattedText();
       /**
@@ -13925,6 +14673,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string formatted_text = 3;</code>
+       *
+       * @return The bytes for formattedText.
        */
       com.google.protobuf.ByteString getFormattedTextBytes();
 
@@ -13938,6 +14688,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return Whether the image field is set.
        */
       boolean hasImage();
       /**
@@ -13950,6 +14702,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The image.
        */
       com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
       /**
@@ -14057,6 +14811,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BasicCard();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -14120,11 +14880,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 42:
                 {
-                  if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     buttons_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>();
-                    mutable_bitField0_ |= 0x00000010;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   buttons_.add(
                       input.readMessage(
@@ -14147,7 +14907,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             buttons_ = java.util.Collections.unmodifiableList(buttons_);
           }
           this.unknownFields = unknownFields.build();
@@ -14183,6 +14943,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return The title.
          */
         java.lang.String getTitle();
         /**
@@ -14193,6 +14955,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return The bytes for title.
          */
         com.google.protobuf.ByteString getTitleBytes();
 
@@ -14206,6 +14970,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return Whether the openUriAction field is set.
          */
         boolean hasOpenUriAction();
         /**
@@ -14218,6 +14984,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return The openUriAction.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
             getOpenUriAction();
@@ -14259,6 +15027,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Button();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
@@ -14271,7 +15045,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -14357,6 +15130,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string uri = 1;</code>
+           *
+           * @return The uri.
            */
           java.lang.String getUri();
           /**
@@ -14367,6 +15142,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string uri = 1;</code>
+           *
+           * @return The bytes for uri.
            */
           com.google.protobuf.ByteString getUriBytes();
         }
@@ -14395,6 +15172,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
 
           @java.lang.Override
+          @SuppressWarnings({"unused"})
+          protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new OpenUriAction();
+          }
+
+          @java.lang.Override
           public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
           }
@@ -14407,7 +15190,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (extensionRegistry == null) {
               throw new java.lang.NullPointerException();
             }
-            int mutable_bitField0_ = 0;
             com.google.protobuf.UnknownFieldSet.Builder unknownFields =
                 com.google.protobuf.UnknownFieldSet.newBuilder();
             try {
@@ -14472,6 +15254,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string uri = 1;</code>
+           *
+           * @return The uri.
            */
           public java.lang.String getUri() {
             java.lang.Object ref = uri_;
@@ -14492,6 +15276,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string uri = 1;</code>
+           *
+           * @return The bytes for uri.
            */
           public com.google.protobuf.ByteString getUriBytes() {
             java.lang.Object ref = uri_;
@@ -14871,6 +15657,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string uri = 1;</code>
+             *
+             * @return The uri.
              */
             public java.lang.String getUri() {
               java.lang.Object ref = uri_;
@@ -14891,6 +15679,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string uri = 1;</code>
+             *
+             * @return The bytes for uri.
              */
             public com.google.protobuf.ByteString getUriBytes() {
               java.lang.Object ref = uri_;
@@ -14911,6 +15701,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string uri = 1;</code>
+             *
+             * @param value The uri to set.
+             * @return This builder for chaining.
              */
             public Builder setUri(java.lang.String value) {
               if (value == null) {
@@ -14929,6 +15722,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string uri = 1;</code>
+             *
+             * @return This builder for chaining.
              */
             public Builder clearUri() {
 
@@ -14944,6 +15739,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string uri = 1;</code>
+             *
+             * @param value The bytes for uri to set.
+             * @return This builder for chaining.
              */
             public Builder setUriBytes(com.google.protobuf.ByteString value) {
               if (value == null) {
@@ -15023,6 +15821,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -15043,6 +15843,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -15069,6 +15871,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return Whether the openUriAction field is set.
          */
         public boolean hasOpenUriAction() {
           return openUriAction_ != null;
@@ -15083,6 +15887,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return The openUriAction.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
             getOpenUriAction() {
@@ -15478,6 +16284,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 1;</code>
+           *
+           * @return The title.
            */
           public java.lang.String getTitle() {
             java.lang.Object ref = title_;
@@ -15498,6 +16306,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 1;</code>
+           *
+           * @return The bytes for title.
            */
           public com.google.protobuf.ByteString getTitleBytes() {
             java.lang.Object ref = title_;
@@ -15518,6 +16328,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 1;</code>
+           *
+           * @param value The title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitle(java.lang.String value) {
             if (value == null) {
@@ -15536,6 +16349,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 1;</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearTitle() {
 
@@ -15551,6 +16366,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 1;</code>
+           *
+           * @param value The bytes for title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitleBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -15582,6 +16400,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
+           *
+           * @return Whether the openUriAction field is set.
            */
           public boolean hasOpenUriAction() {
             return openUriActionBuilder_ != null || openUriAction_ != null;
@@ -15596,6 +16416,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
+           *
+           * @return The openUriAction.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
               getOpenUriAction() {
@@ -15836,7 +16658,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
-      private int bitField0_;
       public static final int TITLE_FIELD_NUMBER = 1;
       private volatile java.lang.Object title_;
       /**
@@ -15847,6 +16668,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -15867,6 +16690,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -15890,6 +16715,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
@@ -15910,6 +16737,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
@@ -15933,6 +16762,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string formatted_text = 3;</code>
+       *
+       * @return The formattedText.
        */
       public java.lang.String getFormattedText() {
         java.lang.Object ref = formattedText_;
@@ -15953,6 +16784,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string formatted_text = 3;</code>
+       *
+       * @return The bytes for formattedText.
        */
       public com.google.protobuf.ByteString getFormattedTextBytes() {
         java.lang.Object ref = formattedText_;
@@ -15978,6 +16811,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return Whether the image field is set.
        */
       public boolean hasImage() {
         return image_ != null;
@@ -15992,6 +16827,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The image.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         return image_ == null
@@ -16357,7 +17194,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             buttonsBuilder_.clear();
           }
@@ -16389,7 +17226,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.BasicCard result =
               new com.google.cloud.dialogflow.v2.Intent.Message.BasicCard(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.title_ = title_;
           result.subtitle_ = subtitle_;
           result.formattedText_ = formattedText_;
@@ -16399,15 +17235,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             result.image_ = imageBuilder_.build();
           }
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.buttons_ = buttons_;
           } else {
             result.buttons_ = buttonsBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -16479,7 +17314,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.buttons_.isEmpty()) {
               if (buttons_.isEmpty()) {
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureButtonsIsMutable();
                 buttons_.addAll(other.buttons_);
@@ -16492,7 +17327,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 buttonsBuilder_.dispose();
                 buttonsBuilder_ = null;
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 buttonsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getButtonsFieldBuilder()
@@ -16543,6 +17378,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -16563,6 +17400,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -16583,6 +17422,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -16601,6 +17443,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTitle() {
 
@@ -16616,6 +17460,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -16637,6 +17484,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The subtitle.
          */
         public java.lang.String getSubtitle() {
           java.lang.Object ref = subtitle_;
@@ -16657,6 +17506,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for subtitle.
          */
         public com.google.protobuf.ByteString getSubtitleBytes() {
           java.lang.Object ref = subtitle_;
@@ -16677,6 +17528,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitle(java.lang.String value) {
           if (value == null) {
@@ -16695,6 +17549,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
 
@@ -16710,6 +17566,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -16731,6 +17590,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string formatted_text = 3;</code>
+         *
+         * @return The formattedText.
          */
         public java.lang.String getFormattedText() {
           java.lang.Object ref = formattedText_;
@@ -16751,6 +17612,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string formatted_text = 3;</code>
+         *
+         * @return The bytes for formattedText.
          */
         public com.google.protobuf.ByteString getFormattedTextBytes() {
           java.lang.Object ref = formattedText_;
@@ -16771,6 +17634,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string formatted_text = 3;</code>
+         *
+         * @param value The formattedText to set.
+         * @return This builder for chaining.
          */
         public Builder setFormattedText(java.lang.String value) {
           if (value == null) {
@@ -16789,6 +17655,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string formatted_text = 3;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFormattedText() {
 
@@ -16804,6 +17672,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string formatted_text = 3;</code>
+         *
+         * @param value The bytes for formattedText to set.
+         * @return This builder for chaining.
          */
         public Builder setFormattedTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -16832,6 +17703,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         public boolean hasImage() {
           return imageBuilder_ != null || image_ != null;
@@ -16846,6 +17719,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           if (imageBuilder_ == null) {
@@ -17020,11 +17895,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000010) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>(buttons_);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -17274,7 +18149,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             buttonsBuilder_.clear();
@@ -17421,7 +18296,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button,
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.Builder,
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder>(
-                    buttons_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                    buttons_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -17492,6 +18367,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The title.
        */
       java.lang.String getTitle();
       /**
@@ -17502,6 +18379,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
     }
@@ -17530,6 +18409,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Suggestion();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -17542,7 +18427,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -17605,6 +18489,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -17625,6 +18511,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -17973,6 +18861,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -17993,6 +18883,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -18013,6 +18905,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -18031,6 +18926,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTitle() {
 
@@ -18046,6 +18943,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -18200,6 +19100,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       private Suggestions() {
         suggestions_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Suggestions();
       }
 
       @java.lang.Override
@@ -19195,6 +20101,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The destinationName.
        */
       java.lang.String getDestinationName();
       /**
@@ -19205,6 +20113,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for destinationName.
        */
       com.google.protobuf.ByteString getDestinationNameBytes();
 
@@ -19217,6 +20127,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The uri.
        */
       java.lang.String getUri();
       /**
@@ -19228,6 +20140,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for uri.
        */
       com.google.protobuf.ByteString getUriBytes();
     }
@@ -19257,6 +20171,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LinkOutSuggestion();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -19269,7 +20189,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -19339,6 +20258,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The destinationName.
        */
       public java.lang.String getDestinationName() {
         java.lang.Object ref = destinationName_;
@@ -19359,6 +20280,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for destinationName.
        */
       public com.google.protobuf.ByteString getDestinationNameBytes() {
         java.lang.Object ref = destinationName_;
@@ -19383,6 +20306,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The uri.
        */
       public java.lang.String getUri() {
         java.lang.Object ref = uri_;
@@ -19404,6 +20329,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for uri.
        */
       public com.google.protobuf.ByteString getUriBytes() {
         java.lang.Object ref = uri_;
@@ -19775,6 +20702,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The destinationName.
          */
         public java.lang.String getDestinationName() {
           java.lang.Object ref = destinationName_;
@@ -19795,6 +20724,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for destinationName.
          */
         public com.google.protobuf.ByteString getDestinationNameBytes() {
           java.lang.Object ref = destinationName_;
@@ -19815,6 +20746,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The destinationName to set.
+         * @return This builder for chaining.
          */
         public Builder setDestinationName(java.lang.String value) {
           if (value == null) {
@@ -19833,6 +20767,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearDestinationName() {
 
@@ -19848,6 +20784,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for destinationName to set.
+         * @return This builder for chaining.
          */
         public Builder setDestinationNameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -19870,6 +20809,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The uri.
          */
         public java.lang.String getUri() {
           java.lang.Object ref = uri_;
@@ -19891,6 +20832,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for uri.
          */
         public com.google.protobuf.ByteString getUriBytes() {
           java.lang.Object ref = uri_;
@@ -19912,6 +20855,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
          */
         public Builder setUri(java.lang.String value) {
           if (value == null) {
@@ -19931,6 +20877,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearUri() {
 
@@ -19947,6 +20895,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
          */
         public Builder setUriBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -20027,6 +20978,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       java.lang.String getTitle();
       /**
@@ -20037,6 +20990,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -20112,6 +21067,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       java.lang.String getSubtitle();
       /**
@@ -20122,6 +21079,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       com.google.protobuf.ByteString getSubtitleBytes();
     }
@@ -20148,6 +21107,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         title_ = "";
         items_ = java.util.Collections.emptyList();
         subtitle_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ListSelect();
       }
 
       @java.lang.Override
@@ -20183,11 +21148,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 18:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     items_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   items_.add(
                       input.readMessage(
@@ -20217,7 +21182,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             items_ = java.util.Collections.unmodifiableList(items_);
           }
           this.unknownFields = unknownFields.build();
@@ -20255,6 +21220,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return Whether the info field is set.
          */
         boolean hasInfo();
         /**
@@ -20267,6 +21234,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return The info.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo();
         /**
@@ -20290,6 +21259,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The title.
          */
         java.lang.String getTitle();
         /**
@@ -20300,6 +21271,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for title.
          */
         com.google.protobuf.ByteString getTitleBytes();
 
@@ -20311,6 +21284,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         java.lang.String getDescription();
         /**
@@ -20321,6 +21296,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -20334,6 +21311,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         boolean hasImage();
         /**
@@ -20346,6 +21325,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
         /**
@@ -20386,6 +21367,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Item();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
@@ -20398,7 +21385,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -20505,6 +21491,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return Whether the info field is set.
          */
         public boolean hasInfo() {
           return info_ != null;
@@ -20519,6 +21507,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return The info.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
           return info_ == null
@@ -20551,6 +21541,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -20571,6 +21563,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -20594,6 +21588,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
@@ -20614,6 +21610,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
@@ -20639,6 +21637,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         public boolean hasImage() {
           return image_ != null;
@@ -20653,6 +21653,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
@@ -21096,6 +22098,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
            * </code>
+           *
+           * @return Whether the info field is set.
            */
           public boolean hasInfo() {
             return infoBuilder_ != null || info_ != null;
@@ -21110,6 +22114,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
            * </code>
+           *
+           * @return The info.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
             if (infoBuilder_ == null) {
@@ -21296,6 +22302,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The title.
            */
           public java.lang.String getTitle() {
             java.lang.Object ref = title_;
@@ -21316,6 +22324,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for title.
            */
           public com.google.protobuf.ByteString getTitleBytes() {
             java.lang.Object ref = title_;
@@ -21336,6 +22346,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitle(java.lang.String value) {
             if (value == null) {
@@ -21354,6 +22367,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearTitle() {
 
@@ -21369,6 +22384,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitleBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -21390,6 +22408,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The description.
            */
           public java.lang.String getDescription() {
             java.lang.Object ref = description_;
@@ -21410,6 +22430,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for description.
            */
           public com.google.protobuf.ByteString getDescriptionBytes() {
             java.lang.Object ref = description_;
@@ -21430,6 +22452,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescription(java.lang.String value) {
             if (value == null) {
@@ -21448,6 +22473,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearDescription() {
 
@@ -21463,6 +22490,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -21491,6 +22521,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return Whether the image field is set.
            */
           public boolean hasImage() {
             return imageBuilder_ != null || image_ != null;
@@ -21505,6 +22537,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The image.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
             if (imageBuilder_ == null) {
@@ -21730,7 +22764,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
-      private int bitField0_;
       public static final int TITLE_FIELD_NUMBER = 1;
       private volatile java.lang.Object title_;
       /**
@@ -21741,6 +22774,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -21761,6 +22796,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -21861,6 +22898,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
@@ -21881,6 +22920,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
@@ -22127,7 +23168,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           if (itemsBuilder_ == null) {
             items_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             itemsBuilder_.clear();
           }
@@ -22162,19 +23203,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.ListSelect result =
               new com.google.cloud.dialogflow.v2.Intent.Message.ListSelect(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.title_ = title_;
           if (itemsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.items_ = items_;
           } else {
             result.items_ = itemsBuilder_.build();
           }
           result.subtitle_ = subtitle_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -22236,7 +23275,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.items_.isEmpty()) {
               if (items_.isEmpty()) {
                 items_ = other.items_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureItemsIsMutable();
                 items_.addAll(other.items_);
@@ -22249,7 +23288,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 itemsBuilder_.dispose();
                 itemsBuilder_ = null;
                 items_ = other.items_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 itemsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getItemsFieldBuilder()
@@ -22304,6 +23343,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -22324,6 +23365,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -22344,6 +23387,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -22362,6 +23408,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTitle() {
 
@@ -22377,6 +23425,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -22393,11 +23444,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             items_ = java.util.Collections.emptyList();
 
         private void ensureItemsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             items_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item>(items_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -22643,7 +23694,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearItems() {
           if (itemsBuilder_ == null) {
             items_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             itemsBuilder_.clear();
@@ -22789,7 +23840,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item,
                     com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.Builder,
                     com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder>(
-                    items_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                    items_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
             items_ = null;
           }
           return itemsBuilder_;
@@ -22804,6 +23855,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The subtitle.
          */
         public java.lang.String getSubtitle() {
           java.lang.Object ref = subtitle_;
@@ -22824,6 +23877,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for subtitle.
          */
         public com.google.protobuf.ByteString getSubtitleBytes() {
           java.lang.Object ref = subtitle_;
@@ -22844,6 +23899,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitle(java.lang.String value) {
           if (value == null) {
@@ -22862,6 +23920,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
 
@@ -22877,6 +23937,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -23036,6 +24099,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CarouselSelect();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -23127,6 +24196,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return Whether the info field is set.
          */
         boolean hasInfo();
         /**
@@ -23139,6 +24210,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return The info.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo();
         /**
@@ -23162,6 +24235,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The title.
          */
         java.lang.String getTitle();
         /**
@@ -23172,6 +24247,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for title.
          */
         com.google.protobuf.ByteString getTitleBytes();
 
@@ -23183,6 +24260,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         java.lang.String getDescription();
         /**
@@ -23193,6 +24272,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -23206,6 +24287,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         boolean hasImage();
         /**
@@ -23218,6 +24301,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
         /**
@@ -23258,6 +24343,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Item();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
@@ -23270,7 +24361,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -23377,6 +24467,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return Whether the info field is set.
          */
         public boolean hasInfo() {
           return info_ != null;
@@ -23391,6 +24483,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
+         *
+         * @return The info.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
           return info_ == null
@@ -23423,6 +24517,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -23443,6 +24539,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -23466,6 +24564,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
@@ -23486,6 +24586,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
@@ -23511,6 +24613,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         public boolean hasImage() {
           return image_ != null;
@@ -23525,6 +24629,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
@@ -23971,6 +25077,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
            * </code>
+           *
+           * @return Whether the info field is set.
            */
           public boolean hasInfo() {
             return infoBuilder_ != null || info_ != null;
@@ -23985,6 +25093,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
            * </code>
+           *
+           * @return The info.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
             if (infoBuilder_ == null) {
@@ -24171,6 +25281,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The title.
            */
           public java.lang.String getTitle() {
             java.lang.Object ref = title_;
@@ -24191,6 +25303,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for title.
            */
           public com.google.protobuf.ByteString getTitleBytes() {
             java.lang.Object ref = title_;
@@ -24211,6 +25325,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitle(java.lang.String value) {
             if (value == null) {
@@ -24229,6 +25346,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearTitle() {
 
@@ -24244,6 +25363,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitleBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -24265,6 +25387,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The description.
            */
           public java.lang.String getDescription() {
             java.lang.Object ref = description_;
@@ -24285,6 +25409,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for description.
            */
           public com.google.protobuf.ByteString getDescriptionBytes() {
             java.lang.Object ref = description_;
@@ -24305,6 +25431,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescription(java.lang.String value) {
             if (value == null) {
@@ -24323,6 +25452,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearDescription() {
 
@@ -24338,6 +25469,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -24366,6 +25500,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return Whether the image field is set.
            */
           public boolean hasImage() {
             return imageBuilder_ != null || image_ != null;
@@ -24380,6 +25516,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The image.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
             if (imageBuilder_ == null) {
@@ -25534,6 +26672,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The key.
        */
       java.lang.String getKey();
       /**
@@ -25545,6 +26685,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for key.
        */
       com.google.protobuf.ByteString getKeyBytes();
 
@@ -25557,6 +26699,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the synonyms.
        */
       java.util.List<java.lang.String> getSynonymsList();
       /**
@@ -25568,6 +26712,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of synonyms.
        */
       int getSynonymsCount();
       /**
@@ -25579,6 +26725,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The synonyms at the given index.
        */
       java.lang.String getSynonyms(int index);
       /**
@@ -25590,6 +26739,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the synonyms at the given index.
        */
       com.google.protobuf.ByteString getSynonymsBytes(int index);
     }
@@ -25616,6 +26768,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       private SelectItemInfo() {
         key_ = "";
         synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SelectItemInfo();
       }
 
       @java.lang.Override
@@ -25652,9 +26810,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     synonyms_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   synonyms_.add(s);
                   break;
@@ -25674,7 +26832,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             synonyms_ = synonyms_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -25697,7 +26855,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder.class);
       }
 
-      private int bitField0_;
       public static final int KEY_FIELD_NUMBER = 1;
       private volatile java.lang.Object key_;
       /**
@@ -25709,6 +26866,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -25730,6 +26889,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
@@ -25754,6 +26915,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the synonyms.
        */
       public com.google.protobuf.ProtocolStringList getSynonymsList() {
         return synonyms_;
@@ -25767,6 +26930,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of synonyms.
        */
       public int getSynonymsCount() {
         return synonyms_.size();
@@ -25780,6 +26945,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The synonyms at the given index.
        */
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
@@ -25793,6 +26961,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the synonyms at the given index.
        */
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
@@ -26025,7 +27196,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           key_ = "";
 
           synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -26055,14 +27226,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo result =
               new com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.key_ = key_;
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             synonyms_ = synonyms_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.synonyms_ = synonyms_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -26124,7 +27293,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.synonyms_.isEmpty()) {
             if (synonyms_.isEmpty()) {
               synonyms_ = other.synonyms_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureSynonymsIsMutable();
               synonyms_.addAll(other.synonyms_);
@@ -26174,6 +27343,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The key.
          */
         public java.lang.String getKey() {
           java.lang.Object ref = key_;
@@ -26195,6 +27366,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for key.
          */
         public com.google.protobuf.ByteString getKeyBytes() {
           java.lang.Object ref = key_;
@@ -26216,6 +27389,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The key to set.
+         * @return This builder for chaining.
          */
         public Builder setKey(java.lang.String value) {
           if (value == null) {
@@ -26235,6 +27411,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearKey() {
 
@@ -26251,6 +27429,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for key to set.
+         * @return This builder for chaining.
          */
         public Builder setKeyBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -26267,9 +27448,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureSynonymsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
         /**
@@ -26281,6 +27462,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the synonyms.
          */
         public com.google.protobuf.ProtocolStringList getSynonymsList() {
           return synonyms_.getUnmodifiableView();
@@ -26294,6 +27477,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of synonyms.
          */
         public int getSynonymsCount() {
           return synonyms_.size();
@@ -26307,6 +27492,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The synonyms at the given index.
          */
         public java.lang.String getSynonyms(int index) {
           return synonyms_.get(index);
@@ -26320,6 +27508,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the synonyms at the given index.
          */
         public com.google.protobuf.ByteString getSynonymsBytes(int index) {
           return synonyms_.getByteString(index);
@@ -26333,6 +27524,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The synonyms to set.
+         * @return This builder for chaining.
          */
         public Builder setSynonyms(int index, java.lang.String value) {
           if (value == null) {
@@ -26352,6 +27547,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The synonyms to add.
+         * @return This builder for chaining.
          */
         public Builder addSynonyms(java.lang.String value) {
           if (value == null) {
@@ -26371,6 +27569,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The synonyms to add.
+         * @return This builder for chaining.
          */
         public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
           ensureSynonymsIsMutable();
@@ -26387,10 +27588,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearSynonyms() {
           synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -26403,6 +27606,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the synonyms to add.
+         * @return This builder for chaining.
          */
         public Builder addSynonymsBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -26485,6 +27691,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for mediaType.
        */
       int getMediaTypeValue();
       /**
@@ -26497,6 +27705,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The mediaType.
        */
       com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType getMediaType();
 
@@ -26593,6 +27803,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MediaContent();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -26625,12 +27841,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 18:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     mediaObjects_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.MediaContent
                                 .ResponseMediaObject>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   mediaObjects_.add(
                       input.readMessage(
@@ -26654,7 +27870,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             mediaObjects_ = java.util.Collections.unmodifiableList(mediaObjects_);
           }
           this.unknownFields = unknownFields.build();
@@ -26740,12 +27956,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return value;
         }
 
-        /** @deprecated Use {@link #forNumber(int)} instead. */
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
         @java.lang.Deprecated
         public static ResponseMediaType valueOf(int value) {
           return forNumber(value);
         }
 
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
         public static ResponseMediaType forNumber(int value) {
           switch (value) {
             case 0:
@@ -26820,6 +28044,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string name = 1;</code>
+         *
+         * @return The name.
          */
         java.lang.String getName();
         /**
@@ -26830,6 +28056,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string name = 1;</code>
+         *
+         * @return The bytes for name.
          */
         com.google.protobuf.ByteString getNameBytes();
 
@@ -26841,6 +28069,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         java.lang.String getDescription();
         /**
@@ -26851,6 +28081,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -26864,6 +28096,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the largeImage field is set.
          */
         boolean hasLargeImage();
         /**
@@ -26876,6 +28110,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The largeImage.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getLargeImage();
         /**
@@ -26901,6 +28137,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the icon field is set.
          */
         boolean hasIcon();
         /**
@@ -26913,6 +28151,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The icon.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getIcon();
         /**
@@ -26936,6 +28176,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string content_url = 5;</code>
+         *
+         * @return The contentUrl.
          */
         java.lang.String getContentUrl();
         /**
@@ -26946,6 +28188,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string content_url = 5;</code>
+         *
+         * @return The bytes for contentUrl.
          */
         com.google.protobuf.ByteString getContentUrlBytes();
 
@@ -26980,6 +28224,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ResponseMediaObject();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
@@ -26992,7 +28242,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -27104,7 +28353,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         private int imageCase_ = 0;
         private java.lang.Object image_;
 
-        public enum ImageCase implements com.google.protobuf.Internal.EnumLite {
+        public enum ImageCase
+            implements
+                com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
           LARGE_IMAGE(3),
           ICON(4),
           IMAGE_NOT_SET(0);
@@ -27113,7 +28365,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           private ImageCase(int value) {
             this.value = value;
           }
-          /** @deprecated Use {@link #forNumber(int)} instead. */
+          /**
+           * @param value The number of the enum to look for.
+           * @return The enum associated with the given number.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
           @java.lang.Deprecated
           public static ImageCase valueOf(int value) {
             return forNumber(value);
@@ -27151,6 +28407,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string name = 1;</code>
+         *
+         * @return The name.
          */
         public java.lang.String getName() {
           java.lang.Object ref = name_;
@@ -27171,6 +28429,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string name = 1;</code>
+         *
+         * @return The bytes for name.
          */
         public com.google.protobuf.ByteString getNameBytes() {
           java.lang.Object ref = name_;
@@ -27194,6 +28454,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
@@ -27214,6 +28476,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
@@ -27238,6 +28502,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the largeImage field is set.
          */
         public boolean hasLargeImage() {
           return imageCase_ == 3;
@@ -27252,6 +28518,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The largeImage.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getLargeImage() {
           if (imageCase_ == 3) {
@@ -27289,6 +28557,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the icon field is set.
          */
         public boolean hasIcon() {
           return imageCase_ == 4;
@@ -27303,6 +28573,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The icon.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getIcon() {
           if (imageCase_ == 4) {
@@ -27338,6 +28610,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string content_url = 5;</code>
+         *
+         * @return The contentUrl.
          */
         public java.lang.String getContentUrl() {
           java.lang.Object ref = contentUrl_;
@@ -27358,6 +28632,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string content_url = 5;</code>
+         *
+         * @return The bytes for contentUrl.
          */
         public com.google.protobuf.ByteString getContentUrlBytes() {
           java.lang.Object ref = contentUrl_;
@@ -27855,6 +29131,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string name = 1;</code>
+           *
+           * @return The name.
            */
           public java.lang.String getName() {
             java.lang.Object ref = name_;
@@ -27875,6 +29153,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string name = 1;</code>
+           *
+           * @return The bytes for name.
            */
           public com.google.protobuf.ByteString getNameBytes() {
             java.lang.Object ref = name_;
@@ -27895,6 +29175,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string name = 1;</code>
+           *
+           * @param value The name to set.
+           * @return This builder for chaining.
            */
           public Builder setName(java.lang.String value) {
             if (value == null) {
@@ -27913,6 +29196,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string name = 1;</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearName() {
 
@@ -27928,6 +29213,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string name = 1;</code>
+           *
+           * @param value The bytes for name to set.
+           * @return This builder for chaining.
            */
           public Builder setNameBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -27949,6 +29237,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The description.
            */
           public java.lang.String getDescription() {
             java.lang.Object ref = description_;
@@ -27969,6 +29259,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for description.
            */
           public com.google.protobuf.ByteString getDescriptionBytes() {
             java.lang.Object ref = description_;
@@ -27989,6 +29281,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescription(java.lang.String value) {
             if (value == null) {
@@ -28007,6 +29302,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearDescription() {
 
@@ -28022,6 +29319,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -28049,6 +29349,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return Whether the largeImage field is set.
            */
           public boolean hasLargeImage() {
             return imageCase_ == 3;
@@ -28063,6 +29365,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The largeImage.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getLargeImage() {
             if (largeImageBuilder_ == null) {
@@ -28273,6 +29577,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return Whether the icon field is set.
            */
           public boolean hasIcon() {
             return imageCase_ == 4;
@@ -28287,6 +29593,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The icon.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getIcon() {
             if (iconBuilder_ == null) {
@@ -28488,6 +29796,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string content_url = 5;</code>
+           *
+           * @return The contentUrl.
            */
           public java.lang.String getContentUrl() {
             java.lang.Object ref = contentUrl_;
@@ -28508,6 +29818,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string content_url = 5;</code>
+           *
+           * @return The bytes for contentUrl.
            */
           public com.google.protobuf.ByteString getContentUrlBytes() {
             java.lang.Object ref = contentUrl_;
@@ -28528,6 +29840,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string content_url = 5;</code>
+           *
+           * @param value The contentUrl to set.
+           * @return This builder for chaining.
            */
           public Builder setContentUrl(java.lang.String value) {
             if (value == null) {
@@ -28546,6 +29861,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string content_url = 5;</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearContentUrl() {
 
@@ -28561,6 +29878,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string content_url = 5;</code>
+           *
+           * @param value The bytes for contentUrl to set.
+           * @return This builder for chaining.
            */
           public Builder setContentUrlBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -28630,7 +29950,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
-      private int bitField0_;
       public static final int MEDIA_TYPE_FIELD_NUMBER = 1;
       private int mediaType_;
       /**
@@ -28643,6 +29962,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for mediaType.
        */
       public int getMediaTypeValue() {
         return mediaType_;
@@ -28657,6 +29978,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The mediaType.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType
           getMediaType() {
@@ -28983,7 +30306,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           if (mediaObjectsBuilder_ == null) {
             mediaObjects_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             mediaObjectsBuilder_.clear();
           }
@@ -29016,18 +30339,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.MediaContent result =
               new com.google.cloud.dialogflow.v2.Intent.Message.MediaContent(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.mediaType_ = mediaType_;
           if (mediaObjectsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               mediaObjects_ = java.util.Collections.unmodifiableList(mediaObjects_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.mediaObjects_ = mediaObjects_;
           } else {
             result.mediaObjects_ = mediaObjectsBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -29088,7 +30409,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.mediaObjects_.isEmpty()) {
               if (mediaObjects_.isEmpty()) {
                 mediaObjects_ = other.mediaObjects_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureMediaObjectsIsMutable();
                 mediaObjects_.addAll(other.mediaObjects_);
@@ -29101,7 +30422,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 mediaObjectsBuilder_.dispose();
                 mediaObjectsBuilder_ = null;
                 mediaObjects_ = other.mediaObjects_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 mediaObjectsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getMediaObjectsFieldBuilder()
@@ -29155,6 +30476,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The enum numeric value on the wire for mediaType.
          */
         public int getMediaTypeValue() {
           return mediaType_;
@@ -29169,6 +30492,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @param value The enum numeric value on the wire for mediaType to set.
+         * @return This builder for chaining.
          */
         public Builder setMediaTypeValue(int value) {
           mediaType_ = value;
@@ -29185,6 +30511,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The mediaType.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType
             getMediaType() {
@@ -29207,6 +30535,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @param value The mediaType to set.
+         * @return This builder for chaining.
          */
         public Builder setMediaType(
             com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType value) {
@@ -29228,6 +30559,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType media_type = 1 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearMediaType() {
 
@@ -29241,12 +30574,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             mediaObjects_ = java.util.Collections.emptyList();
 
         private void ensureMediaObjectsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             mediaObjects_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject>(
                     mediaObjects_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -29503,7 +30836,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearMediaObjects() {
           if (mediaObjectsBuilder_ == null) {
             mediaObjects_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             mediaObjectsBuilder_.clear();
@@ -29662,7 +30995,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.MediaContent
                         .ResponseMediaObjectOrBuilder>(
                     mediaObjects_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             mediaObjects_ = null;
@@ -29817,6 +31150,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for imageDisplayOptions.
        */
       int getImageDisplayOptionsValue();
       /**
@@ -29830,6 +31165,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The imageDisplayOptions.
        */
       com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
           getImageDisplayOptions();
@@ -29857,6 +31194,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       private BrowseCarouselCard() {
         items_ = java.util.Collections.emptyList();
         imageDisplayOptions_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BrowseCarouselCard();
       }
 
       @java.lang.Override
@@ -30087,12 +31430,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return value;
         }
 
-        /** @deprecated Use {@link #forNumber(int)} instead. */
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
         @java.lang.Deprecated
         public static ImageDisplayOptions valueOf(int value) {
           return forNumber(value);
         }
 
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
         public static ImageDisplayOptions forNumber(int value) {
           switch (value) {
             case 0:
@@ -30175,6 +31526,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
          * </code>
+         *
+         * @return Whether the openUriAction field is set.
          */
         boolean hasOpenUriAction();
         /**
@@ -30187,6 +31540,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
          * </code>
+         *
+         * @return The openUriAction.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem
                 .OpenUrlAction
@@ -30214,6 +31569,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2;</code>
+         *
+         * @return The title.
          */
         java.lang.String getTitle();
         /**
@@ -30224,6 +31581,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2;</code>
+         *
+         * @return The bytes for title.
          */
         com.google.protobuf.ByteString getTitleBytes();
 
@@ -30236,6 +31595,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         java.lang.String getDescription();
         /**
@@ -30247,6 +31608,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -30260,6 +31623,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         boolean hasImage();
         /**
@@ -30272,6 +31637,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
         /**
@@ -30296,6 +31663,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The footer.
          */
         java.lang.String getFooter();
         /**
@@ -30307,6 +31676,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for footer.
          */
         com.google.protobuf.ByteString getFooterBytes();
       }
@@ -30338,6 +31709,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new BrowseCarouselCardItem();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
@@ -30350,7 +31727,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -30469,6 +31845,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string url = 1;</code>
+           *
+           * @return The url.
            */
           java.lang.String getUrl();
           /**
@@ -30479,6 +31857,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string url = 1;</code>
+           *
+           * @return The bytes for url.
            */
           com.google.protobuf.ByteString getUrlBytes();
 
@@ -30493,6 +31873,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The enum numeric value on the wire for urlTypeHint.
            */
           int getUrlTypeHintValue();
           /**
@@ -30506,6 +31888,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The urlTypeHint.
            */
           com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem
                   .OpenUrlAction.UrlTypeHint
@@ -30537,6 +31921,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
 
           @java.lang.Override
+          @SuppressWarnings({"unused"})
+          protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new OpenUrlAction();
+          }
+
+          @java.lang.Override
           public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
           }
@@ -30549,7 +31939,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (extensionRegistry == null) {
               throw new java.lang.NullPointerException();
             }
-            int mutable_bitField0_ = 0;
             com.google.protobuf.UnknownFieldSet.Builder unknownFields =
                 com.google.protobuf.UnknownFieldSet.newBuilder();
             try {
@@ -30696,12 +32085,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               return value;
             }
 
-            /** @deprecated Use {@link #forNumber(int)} instead. */
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
             @java.lang.Deprecated
             public static UrlTypeHint valueOf(int value) {
               return forNumber(value);
             }
 
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
             public static UrlTypeHint forNumber(int value) {
               switch (value) {
                 case 0:
@@ -30776,6 +32173,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string url = 1;</code>
+           *
+           * @return The url.
            */
           public java.lang.String getUrl() {
             java.lang.Object ref = url_;
@@ -30796,6 +32195,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string url = 1;</code>
+           *
+           * @return The bytes for url.
            */
           public com.google.protobuf.ByteString getUrlBytes() {
             java.lang.Object ref = url_;
@@ -30822,6 +32223,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The enum numeric value on the wire for urlTypeHint.
            */
           public int getUrlTypeHintValue() {
             return urlTypeHint_;
@@ -30837,6 +32240,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The urlTypeHint.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
@@ -31269,6 +32674,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string url = 1;</code>
+             *
+             * @return The url.
              */
             public java.lang.String getUrl() {
               java.lang.Object ref = url_;
@@ -31289,6 +32696,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string url = 1;</code>
+             *
+             * @return The bytes for url.
              */
             public com.google.protobuf.ByteString getUrlBytes() {
               java.lang.Object ref = url_;
@@ -31309,6 +32718,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string url = 1;</code>
+             *
+             * @param value The url to set.
+             * @return This builder for chaining.
              */
             public Builder setUrl(java.lang.String value) {
               if (value == null) {
@@ -31327,6 +32739,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string url = 1;</code>
+             *
+             * @return This builder for chaining.
              */
             public Builder clearUrl() {
 
@@ -31342,6 +32756,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * </pre>
              *
              * <code>string url = 1;</code>
+             *
+             * @param value The bytes for url to set.
+             * @return This builder for chaining.
              */
             public Builder setUrlBytes(com.google.protobuf.ByteString value) {
               if (value == null) {
@@ -31366,6 +32783,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * <code>
              * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
              * </code>
+             *
+             * @return The enum numeric value on the wire for urlTypeHint.
              */
             public int getUrlTypeHintValue() {
               return urlTypeHint_;
@@ -31381,6 +32800,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * <code>
              * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
              * </code>
+             *
+             * @param value The enum numeric value on the wire for urlTypeHint to set.
+             * @return This builder for chaining.
              */
             public Builder setUrlTypeHintValue(int value) {
               urlTypeHint_ = value;
@@ -31398,6 +32820,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * <code>
              * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
              * </code>
+             *
+             * @return The urlTypeHint.
              */
             public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                     .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
@@ -31424,6 +32848,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * <code>
              * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
              * </code>
+             *
+             * @param value The urlTypeHint to set.
+             * @return This builder for chaining.
              */
             public Builder setUrlTypeHint(
                 com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
@@ -31448,6 +32875,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * <code>
              * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint url_type_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
              * </code>
+             *
+             * @return This builder for chaining.
              */
             public Builder clearUrlTypeHint() {
 
@@ -31530,6 +32959,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
          * </code>
+         *
+         * @return Whether the openUriAction field is set.
          */
         public boolean hasOpenUriAction() {
           return openUriAction_ != null;
@@ -31544,6 +32975,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
          * </code>
+         *
+         * @return The openUriAction.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                 .BrowseCarouselCardItem.OpenUrlAction
@@ -31580,6 +33013,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2;</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -31600,6 +33035,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 2;</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -31624,6 +33061,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The description.
          */
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
@@ -31645,6 +33084,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for description.
          */
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
@@ -31670,6 +33111,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         public boolean hasImage() {
           return image_ != null;
@@ -31684,6 +33127,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
@@ -31716,6 +33161,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The footer.
          */
         public java.lang.String getFooter() {
           java.lang.Object ref = footer_;
@@ -31737,6 +33184,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for footer.
          */
         public com.google.protobuf.ByteString getFooterBytes() {
           java.lang.Object ref = footer_;
@@ -32240,6 +33689,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
            * </code>
+           *
+           * @return Whether the openUriAction field is set.
            */
           public boolean hasOpenUriAction() {
             return openUriActionBuilder_ != null || openUriAction_ != null;
@@ -32254,6 +33705,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
            * </code>
+           *
+           * @return The openUriAction.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem.OpenUrlAction
@@ -32456,6 +33909,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2;</code>
+           *
+           * @return The title.
            */
           public java.lang.String getTitle() {
             java.lang.Object ref = title_;
@@ -32476,6 +33931,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2;</code>
+           *
+           * @return The bytes for title.
            */
           public com.google.protobuf.ByteString getTitleBytes() {
             java.lang.Object ref = title_;
@@ -32496,6 +33953,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2;</code>
+           *
+           * @param value The title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitle(java.lang.String value) {
             if (value == null) {
@@ -32514,6 +33974,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2;</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearTitle() {
 
@@ -32529,6 +33991,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string title = 2;</code>
+           *
+           * @param value The bytes for title to set.
+           * @return This builder for chaining.
            */
           public Builder setTitleBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -32551,6 +34016,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The description.
            */
           public java.lang.String getDescription() {
             java.lang.Object ref = description_;
@@ -32572,6 +34039,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for description.
            */
           public com.google.protobuf.ByteString getDescriptionBytes() {
             java.lang.Object ref = description_;
@@ -32593,6 +34062,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescription(java.lang.String value) {
             if (value == null) {
@@ -32612,6 +34084,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearDescription() {
 
@@ -32628,6 +34102,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for description to set.
+           * @return This builder for chaining.
            */
           public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -32656,6 +34133,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return Whether the image field is set.
            */
           public boolean hasImage() {
             return imageBuilder_ != null || image_ != null;
@@ -32670,6 +34149,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * <code>
            * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
+           *
+           * @return The image.
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
             if (imageBuilder_ == null) {
@@ -32850,6 +34331,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The footer.
            */
           public java.lang.String getFooter() {
             java.lang.Object ref = footer_;
@@ -32871,6 +34354,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for footer.
            */
           public com.google.protobuf.ByteString getFooterBytes() {
             java.lang.Object ref = footer_;
@@ -32892,6 +34377,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The footer to set.
+           * @return This builder for chaining.
            */
           public Builder setFooter(java.lang.String value) {
             if (value == null) {
@@ -32911,6 +34399,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearFooter() {
 
@@ -32927,6 +34417,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>string footer = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for footer to set.
+           * @return This builder for chaining.
            */
           public Builder setFooterBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -32999,7 +34492,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
-      private int bitField0_;
       public static final int ITEMS_FIELD_NUMBER = 1;
       private java.util.List<
               com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
@@ -33104,6 +34596,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for imageDisplayOptions.
        */
       public int getImageDisplayOptionsValue() {
         return imageDisplayOptions_;
@@ -33119,6 +34613,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The imageDisplayOptions.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
           getImageDisplayOptions() {
@@ -33401,7 +34897,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard result =
               new com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (itemsBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
@@ -33412,7 +34907,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             result.items_ = itemsBuilder_.build();
           }
           result.imageDisplayOptions_ = imageDisplayOptions_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -34004,6 +35498,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The enum numeric value on the wire for imageDisplayOptions.
          */
         public int getImageDisplayOptionsValue() {
           return imageDisplayOptions_;
@@ -34019,6 +35515,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @param value The enum numeric value on the wire for imageDisplayOptions to set.
+         * @return This builder for chaining.
          */
         public Builder setImageDisplayOptionsValue(int value) {
           imageDisplayOptions_ = value;
@@ -34036,6 +35535,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The imageDisplayOptions.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
             getImageDisplayOptions() {
@@ -34060,6 +35561,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @param value The imageDisplayOptions to set.
+         * @return This builder for chaining.
          */
         public Builder setImageDisplayOptions(
             com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
@@ -34083,6 +35587,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions image_display_options = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearImageDisplayOptions() {
 
@@ -34159,6 +35665,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1;</code>
+       *
+       * @return The title.
        */
       java.lang.String getTitle();
       /**
@@ -34169,6 +35677,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1;</code>
+       *
+       * @return The bytes for title.
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -34180,6 +35690,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       java.lang.String getSubtitle();
       /**
@@ -34190,6 +35702,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       com.google.protobuf.ByteString getSubtitleBytes();
 
@@ -34203,6 +35717,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return Whether the image field is set.
        */
       boolean hasImage();
       /**
@@ -34215,6 +35731,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The image.
        */
       com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
       /**
@@ -34451,6 +35969,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TableCard();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -34507,11 +36031,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     columnProperties_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   columnProperties_.add(
                       input.readMessage(
@@ -34521,11 +36045,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 42:
                 {
-                  if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     rows_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow>();
-                    mutable_bitField0_ |= 0x00000010;
+                    mutable_bitField0_ |= 0x00000002;
                   }
                   rows_.add(
                       input.readMessage(
@@ -34535,11 +36059,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 50:
                 {
-                  if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                     buttons_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>();
-                    mutable_bitField0_ |= 0x00000020;
+                    mutable_bitField0_ |= 0x00000004;
                   }
                   buttons_.add(
                       input.readMessage(
@@ -34562,13 +36086,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             columnProperties_ = java.util.Collections.unmodifiableList(columnProperties_);
           }
-          if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             rows_ = java.util.Collections.unmodifiableList(rows_);
           }
-          if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          if (((mutable_bitField0_ & 0x00000004) != 0)) {
             buttons_ = java.util.Collections.unmodifiableList(buttons_);
           }
           this.unknownFields = unknownFields.build();
@@ -34591,7 +36115,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.Message.TableCard.Builder.class);
       }
 
-      private int bitField0_;
       public static final int TITLE_FIELD_NUMBER = 1;
       private volatile java.lang.Object title_;
       /**
@@ -34602,6 +36125,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1;</code>
+       *
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -34622,6 +36147,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string title = 1;</code>
+       *
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -34645,6 +36172,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subtitle.
        */
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
@@ -34665,6 +36194,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subtitle.
        */
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
@@ -34690,6 +36221,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return Whether the image field is set.
        */
       public boolean hasImage() {
         return image_ != null;
@@ -34704,6 +36237,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The image.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         return image_ == null
@@ -35239,19 +36774,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           if (columnPropertiesBuilder_ == null) {
             columnProperties_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             columnPropertiesBuilder_.clear();
           }
           if (rowsBuilder_ == null) {
             rows_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             rowsBuilder_.clear();
           }
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             buttonsBuilder_.clear();
           }
@@ -35283,7 +36818,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.TableCard result =
               new com.google.cloud.dialogflow.v2.Intent.Message.TableCard(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.title_ = title_;
           result.subtitle_ = subtitle_;
           if (imageBuilder_ == null) {
@@ -35292,33 +36826,32 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             result.image_ = imageBuilder_.build();
           }
           if (columnPropertiesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               columnProperties_ = java.util.Collections.unmodifiableList(columnProperties_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.columnProperties_ = columnProperties_;
           } else {
             result.columnProperties_ = columnPropertiesBuilder_.build();
           }
           if (rowsBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               rows_ = java.util.Collections.unmodifiableList(rows_);
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.rows_ = rows_;
           } else {
             result.rows_ = rowsBuilder_.build();
           }
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000020) != 0)) {
+            if (((bitField0_ & 0x00000004) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000004);
             }
             result.buttons_ = buttons_;
           } else {
             result.buttons_ = buttonsBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -35386,7 +36919,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.columnProperties_.isEmpty()) {
               if (columnProperties_.isEmpty()) {
                 columnProperties_ = other.columnProperties_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureColumnPropertiesIsMutable();
                 columnProperties_.addAll(other.columnProperties_);
@@ -35399,7 +36932,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 columnPropertiesBuilder_.dispose();
                 columnPropertiesBuilder_ = null;
                 columnProperties_ = other.columnProperties_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 columnPropertiesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getColumnPropertiesFieldBuilder()
@@ -35413,7 +36946,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.rows_.isEmpty()) {
               if (rows_.isEmpty()) {
                 rows_ = other.rows_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureRowsIsMutable();
                 rows_.addAll(other.rows_);
@@ -35426,7 +36959,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 rowsBuilder_.dispose();
                 rowsBuilder_ = null;
                 rows_ = other.rows_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 rowsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getRowsFieldBuilder()
@@ -35440,7 +36973,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             if (!other.buttons_.isEmpty()) {
               if (buttons_.isEmpty()) {
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000020);
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureButtonsIsMutable();
                 buttons_.addAll(other.buttons_);
@@ -35453,7 +36986,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 buttonsBuilder_.dispose();
                 buttonsBuilder_ = null;
                 buttons_ = other.buttons_;
-                bitField0_ = (bitField0_ & ~0x00000020);
+                bitField0_ = (bitField0_ & ~0x00000004);
                 buttonsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getButtonsFieldBuilder()
@@ -35504,6 +37037,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return The title.
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -35524,6 +37059,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return The bytes for title.
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -35544,6 +37081,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -35562,6 +37102,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTitle() {
 
@@ -35577,6 +37119,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string title = 1;</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -35598,6 +37143,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The subtitle.
          */
         public java.lang.String getSubtitle() {
           java.lang.Object ref = subtitle_;
@@ -35618,6 +37165,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for subtitle.
          */
         public com.google.protobuf.ByteString getSubtitleBytes() {
           java.lang.Object ref = subtitle_;
@@ -35638,6 +37187,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitle(java.lang.String value) {
           if (value == null) {
@@ -35656,6 +37208,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearSubtitle() {
 
@@ -35671,6 +37225,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for subtitle to set.
+         * @return This builder for chaining.
          */
         public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -35699,6 +37256,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return Whether the image field is set.
          */
         public boolean hasImage() {
           return imageBuilder_ != null || image_ != null;
@@ -35713,6 +37272,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The image.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           if (imageBuilder_ == null) {
@@ -35887,12 +37448,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             columnProperties_ = java.util.Collections.emptyList();
 
         private void ensureColumnPropertiesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             columnProperties_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties>(
                     columnProperties_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -36142,7 +37703,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearColumnProperties() {
           if (columnPropertiesBuilder_ == null) {
             columnProperties_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             columnPropertiesBuilder_.clear();
@@ -36290,7 +37851,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.Builder,
                     com.google.cloud.dialogflow.v2.Intent.Message.ColumnPropertiesOrBuilder>(
                     columnProperties_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             columnProperties_ = null;
@@ -36302,11 +37863,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureRowsIsMutable() {
-          if (!((bitField0_ & 0x00000010) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             rows_ =
                 new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow>(
                     rows_);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -36550,7 +38111,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearRows() {
           if (rowsBuilder_ == null) {
             rows_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             rowsBuilder_.clear();
@@ -36693,7 +38254,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow,
                     com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow.Builder,
                     com.google.cloud.dialogflow.v2.Intent.Message.TableCardRowOrBuilder>(
-                    rows_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                    rows_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
             rows_ = null;
           }
           return rowsBuilder_;
@@ -36703,11 +38264,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000020) != 0)) {
+          if (!((bitField0_ & 0x00000004) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>(buttons_);
-            bitField0_ |= 0x00000020;
+            bitField0_ |= 0x00000004;
           }
         }
 
@@ -36957,7 +38518,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
             buttons_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
           } else {
             buttonsBuilder_.clear();
@@ -37104,7 +38665,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button,
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.Builder,
                     com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder>(
-                    buttons_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                    buttons_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -37175,6 +38736,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string header = 1;</code>
+       *
+       * @return The header.
        */
       java.lang.String getHeader();
       /**
@@ -37185,6 +38748,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string header = 1;</code>
+       *
+       * @return The bytes for header.
        */
       com.google.protobuf.ByteString getHeaderBytes();
 
@@ -37198,6 +38763,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for horizontalAlignment.
        */
       int getHorizontalAlignmentValue();
       /**
@@ -37210,6 +38777,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The horizontalAlignment.
        */
       com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment
           getHorizontalAlignment();
@@ -37239,6 +38808,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ColumnProperties();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -37251,7 +38826,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -37414,12 +38988,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return value;
         }
 
-        /** @deprecated Use {@link #forNumber(int)} instead. */
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
         @java.lang.Deprecated
         public static HorizontalAlignment valueOf(int value) {
           return forNumber(value);
         }
 
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
         public static HorizontalAlignment forNumber(int value) {
           switch (value) {
             case 0:
@@ -37495,6 +39077,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string header = 1;</code>
+       *
+       * @return The header.
        */
       public java.lang.String getHeader() {
         java.lang.Object ref = header_;
@@ -37515,6 +39099,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string header = 1;</code>
+       *
+       * @return The bytes for header.
        */
       public com.google.protobuf.ByteString getHeaderBytes() {
         java.lang.Object ref = header_;
@@ -37540,6 +39126,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for horizontalAlignment.
        */
       public int getHorizontalAlignmentValue() {
         return horizontalAlignment_;
@@ -37554,6 +39142,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The horizontalAlignment.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment
           getHorizontalAlignment() {
@@ -37929,6 +39519,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string header = 1;</code>
+         *
+         * @return The header.
          */
         public java.lang.String getHeader() {
           java.lang.Object ref = header_;
@@ -37949,6 +39541,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string header = 1;</code>
+         *
+         * @return The bytes for header.
          */
         public com.google.protobuf.ByteString getHeaderBytes() {
           java.lang.Object ref = header_;
@@ -37969,6 +39563,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string header = 1;</code>
+         *
+         * @param value The header to set.
+         * @return This builder for chaining.
          */
         public Builder setHeader(java.lang.String value) {
           if (value == null) {
@@ -37987,6 +39584,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string header = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearHeader() {
 
@@ -38002,6 +39601,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string header = 1;</code>
+         *
+         * @param value The bytes for header to set.
+         * @return This builder for chaining.
          */
         public Builder setHeaderBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -38025,6 +39627,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The enum numeric value on the wire for horizontalAlignment.
          */
         public int getHorizontalAlignmentValue() {
           return horizontalAlignment_;
@@ -38039,6 +39643,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @param value The enum numeric value on the wire for horizontalAlignment to set.
+         * @return This builder for chaining.
          */
         public Builder setHorizontalAlignmentValue(int value) {
           horizontalAlignment_ = value;
@@ -38055,6 +39662,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return The horizontalAlignment.
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment
             getHorizontalAlignment() {
@@ -38078,6 +39687,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @param value The horizontalAlignment to set.
+         * @return This builder for chaining.
          */
         public Builder setHorizontalAlignment(
             com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment
@@ -38100,6 +39712,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment horizontal_alignment = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearHorizontalAlignment() {
 
@@ -38239,6 +39853,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool divider_after = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dividerAfter.
        */
       boolean getDividerAfter();
     }
@@ -38263,6 +39879,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       private TableCardRow() {
         cells_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TableCardRow();
       }
 
       @java.lang.Override
@@ -38346,7 +39968,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow.Builder.class);
       }
 
-      private int bitField0_;
       public static final int CELLS_FIELD_NUMBER = 1;
       private java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.TableCardCell> cells_;
       /**
@@ -38434,6 +40055,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool divider_after = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dividerAfter.
        */
       public boolean getDividerAfter() {
         return dividerAfter_;
@@ -38696,7 +40319,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow result =
               new com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (cellsBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               cells_ = java.util.Collections.unmodifiableList(cells_);
@@ -38707,7 +40329,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             result.cells_ = cellsBuilder_.build();
           }
           result.dividerAfter_ = dividerAfter_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -39236,6 +40857,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>bool divider_after = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The dividerAfter.
          */
         public boolean getDividerAfter() {
           return dividerAfter_;
@@ -39248,6 +40871,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>bool divider_after = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The dividerAfter to set.
+         * @return This builder for chaining.
          */
         public Builder setDividerAfter(boolean value) {
 
@@ -39263,6 +40889,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>bool divider_after = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearDividerAfter() {
 
@@ -39339,6 +40967,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The text.
        */
       java.lang.String getText();
       /**
@@ -39349,6 +40979,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The bytes for text.
        */
       com.google.protobuf.ByteString getTextBytes();
     }
@@ -39376,6 +41008,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TableCardCell();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -39388,7 +41026,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -39451,6 +41088,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The text.
        */
       public java.lang.String getText() {
         java.lang.Object ref = text_;
@@ -39471,6 +41110,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string text = 1;</code>
+       *
+       * @return The bytes for text.
        */
       public com.google.protobuf.ByteString getTextBytes() {
         java.lang.Object ref = text_;
@@ -39820,6 +41461,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @return The text.
          */
         public java.lang.String getText() {
           java.lang.Object ref = text_;
@@ -39840,6 +41483,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @return The bytes for text.
          */
         public com.google.protobuf.ByteString getTextBytes() {
           java.lang.Object ref = text_;
@@ -39860,6 +41505,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @param value The text to set.
+         * @return This builder for chaining.
          */
         public Builder setText(java.lang.String value) {
           if (value == null) {
@@ -39878,6 +41526,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearText() {
 
@@ -39893,6 +41543,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string text = 1;</code>
+         *
+         * @param value The bytes for text to set.
+         * @return This builder for chaining.
          */
         public Builder setTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -39963,7 +41616,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     private int messageCase_ = 0;
     private java.lang.Object message_;
 
-    public enum MessageCase implements com.google.protobuf.Internal.EnumLite {
+    public enum MessageCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       TEXT(1),
       IMAGE(2),
       QUICK_REPLIES(3),
@@ -39984,7 +41640,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       private MessageCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static MessageCase valueOf(int value) {
         return forNumber(value);
@@ -40045,6 +41705,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
+     *
+     * @return Whether the text field is set.
      */
     public boolean hasText() {
       return messageCase_ == 1;
@@ -40057,6 +41719,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
+     *
+     * @return The text.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Text getText() {
       if (messageCase_ == 1) {
@@ -40089,6 +41753,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
+     *
+     * @return Whether the image field is set.
      */
     public boolean hasImage() {
       return messageCase_ == 2;
@@ -40101,6 +41767,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
+     *
+     * @return The image.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
       if (messageCase_ == 2) {
@@ -40133,6 +41801,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
+     *
+     * @return Whether the quickReplies field is set.
      */
     public boolean hasQuickReplies() {
       return messageCase_ == 3;
@@ -40145,6 +41815,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
+     *
+     * @return The quickReplies.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getQuickReplies() {
       if (messageCase_ == 3) {
@@ -40178,6 +41850,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
+     *
+     * @return Whether the card field is set.
      */
     public boolean hasCard() {
       return messageCase_ == 4;
@@ -40190,6 +41864,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
+     *
+     * @return The card.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Card getCard() {
       if (messageCase_ == 4) {
@@ -40224,6 +41900,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
+     *
+     * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
       return messageCase_ == 5;
@@ -40238,6 +41916,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
+     *
+     * @return The payload.
      */
     public com.google.protobuf.Struct getPayload() {
       if (messageCase_ == 5) {
@@ -40272,6 +41952,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;</code>
+     *
+     * @return Whether the simpleResponses field is set.
      */
     public boolean hasSimpleResponses() {
       return messageCase_ == 7;
@@ -40284,6 +41966,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;</code>
+     *
+     * @return The simpleResponses.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getSimpleResponses() {
       if (messageCase_ == 7) {
@@ -40317,6 +42001,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
+     *
+     * @return Whether the basicCard field is set.
      */
     public boolean hasBasicCard() {
       return messageCase_ == 8;
@@ -40329,6 +42015,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
+     *
+     * @return The basicCard.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getBasicCard() {
       if (messageCase_ == 8) {
@@ -40362,6 +42050,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
+     *
+     * @return Whether the suggestions field is set.
      */
     public boolean hasSuggestions() {
       return messageCase_ == 9;
@@ -40374,6 +42064,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
+     *
+     * @return The suggestions.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getSuggestions() {
       if (messageCase_ == 9) {
@@ -40408,6 +42100,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
      * </code>
+     *
+     * @return Whether the linkOutSuggestion field is set.
      */
     public boolean hasLinkOutSuggestion() {
       return messageCase_ == 10;
@@ -40421,6 +42115,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
      * </code>
+     *
+     * @return The linkOutSuggestion.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion getLinkOutSuggestion() {
       if (messageCase_ == 10) {
@@ -40455,6 +42151,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
+     *
+     * @return Whether the listSelect field is set.
      */
     public boolean hasListSelect() {
       return messageCase_ == 11;
@@ -40467,6 +42165,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
+     *
+     * @return The listSelect.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getListSelect() {
       if (messageCase_ == 11) {
@@ -40500,6 +42200,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;</code>
+     *
+     * @return Whether the carouselSelect field is set.
      */
     public boolean hasCarouselSelect() {
       return messageCase_ == 12;
@@ -40512,6 +42214,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;</code>
+     *
+     * @return The carouselSelect.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getCarouselSelect() {
       if (messageCase_ == 12) {
@@ -40547,6 +42251,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
      * </code>
+     *
+     * @return Whether the browseCarouselCard field is set.
      */
     public boolean hasBrowseCarouselCard() {
       return messageCase_ == 22;
@@ -40561,6 +42267,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
      * </code>
+     *
+     * @return The browseCarouselCard.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
         getBrowseCarouselCard() {
@@ -40597,6 +42305,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
+     *
+     * @return Whether the tableCard field is set.
      */
     public boolean hasTableCard() {
       return messageCase_ == 23;
@@ -40609,6 +42319,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
+     *
+     * @return The tableCard.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.TableCard getTableCard() {
       if (messageCase_ == 23) {
@@ -40642,6 +42354,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
+     *
+     * @return Whether the mediaContent field is set.
      */
     public boolean hasMediaContent() {
       return messageCase_ == 24;
@@ -40654,6 +42368,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
+     *
+     * @return The mediaContent.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent getMediaContent() {
       if (messageCase_ == 24) {
@@ -40690,6 +42406,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for platform.
      */
     public int getPlatformValue() {
       return platform_;
@@ -40704,6 +42422,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The platform.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
       @SuppressWarnings("deprecation")
@@ -41469,6 +43189,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
+       *
+       * @return Whether the text field is set.
        */
       public boolean hasText() {
         return messageCase_ == 1;
@@ -41481,6 +43203,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
+       *
+       * @return The text.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Text getText() {
         if (textBuilder_ == null) {
@@ -41672,6 +43396,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
+       *
+       * @return Whether the image field is set.
        */
       public boolean hasImage() {
         return messageCase_ == 2;
@@ -41684,6 +43410,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
+       *
+       * @return The image.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         if (imageBuilder_ == null) {
@@ -41875,6 +43603,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
+       *
+       * @return Whether the quickReplies field is set.
        */
       public boolean hasQuickReplies() {
         return messageCase_ == 3;
@@ -41887,6 +43617,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
+       *
+       * @return The quickReplies.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getQuickReplies() {
         if (quickRepliesBuilder_ == null) {
@@ -42084,6 +43816,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
+       *
+       * @return Whether the card field is set.
        */
       public boolean hasCard() {
         return messageCase_ == 4;
@@ -42096,6 +43830,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
+       *
+       * @return The card.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Card getCard() {
         if (cardBuilder_ == null) {
@@ -42289,6 +44025,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
+       *
+       * @return Whether the payload field is set.
        */
       public boolean hasPayload() {
         return messageCase_ == 5;
@@ -42303,6 +44041,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
+       *
+       * @return The payload.
        */
       public com.google.protobuf.Struct getPayload() {
         if (payloadBuilder_ == null) {
@@ -42503,6 +44243,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;
        * </code>
+       *
+       * @return Whether the simpleResponses field is set.
        */
       public boolean hasSimpleResponses() {
         return messageCase_ == 7;
@@ -42516,6 +44258,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;
        * </code>
+       *
+       * @return The simpleResponses.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getSimpleResponses() {
         if (simpleResponsesBuilder_ == null) {
@@ -42720,6 +44464,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
+       *
+       * @return Whether the basicCard field is set.
        */
       public boolean hasBasicCard() {
         return messageCase_ == 8;
@@ -42732,6 +44478,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
+       *
+       * @return The basicCard.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getBasicCard() {
         if (basicCardBuilder_ == null) {
@@ -42924,6 +44672,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
+       *
+       * @return Whether the suggestions field is set.
        */
       public boolean hasSuggestions() {
         return messageCase_ == 9;
@@ -42936,6 +44686,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
+       *
+       * @return The suggestions.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getSuggestions() {
         if (suggestionsBuilder_ == null) {
@@ -43135,6 +44887,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
        * </code>
+       *
+       * @return Whether the linkOutSuggestion field is set.
        */
       public boolean hasLinkOutSuggestion() {
         return messageCase_ == 10;
@@ -43149,6 +44903,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
        * </code>
+       *
+       * @return The linkOutSuggestion.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion
           getLinkOutSuggestion() {
@@ -43365,6 +45121,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
+       *
+       * @return Whether the listSelect field is set.
        */
       public boolean hasListSelect() {
         return messageCase_ == 11;
@@ -43377,6 +45135,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
+       *
+       * @return The listSelect.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getListSelect() {
         if (listSelectBuilder_ == null) {
@@ -43574,6 +45334,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;
        * </code>
+       *
+       * @return Whether the carouselSelect field is set.
        */
       public boolean hasCarouselSelect() {
         return messageCase_ == 12;
@@ -43587,6 +45349,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;
        * </code>
+       *
+       * @return The carouselSelect.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getCarouselSelect() {
         if (carouselSelectBuilder_ == null) {
@@ -43793,6 +45557,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
        * </code>
+       *
+       * @return Whether the browseCarouselCard field is set.
        */
       public boolean hasBrowseCarouselCard() {
         return messageCase_ == 22;
@@ -43807,6 +45573,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
        * </code>
+       *
+       * @return The browseCarouselCard.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
           getBrowseCarouselCard() {
@@ -44024,6 +45792,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
+       *
+       * @return Whether the tableCard field is set.
        */
       public boolean hasTableCard() {
         return messageCase_ == 23;
@@ -44036,6 +45806,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
+       *
+       * @return The tableCard.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCard getTableCard() {
         if (tableCardBuilder_ == null) {
@@ -44228,6 +46000,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
+       *
+       * @return Whether the mediaContent field is set.
        */
       public boolean hasMediaContent() {
         return messageCase_ == 24;
@@ -44240,6 +46014,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
+       *
+       * @return The mediaContent.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent getMediaContent() {
         if (mediaContentBuilder_ == null) {
@@ -44435,6 +46211,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The enum numeric value on the wire for platform.
        */
       public int getPlatformValue() {
         return platform_;
@@ -44449,6 +46227,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @param value The enum numeric value on the wire for platform to set.
+       * @return This builder for chaining.
        */
       public Builder setPlatformValue(int value) {
         platform_ = value;
@@ -44465,6 +46246,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return The platform.
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
         @SuppressWarnings("deprecation")
@@ -44484,6 +46267,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @param value The platform to set.
+       * @return This builder for chaining.
        */
       public Builder setPlatform(com.google.cloud.dialogflow.v2.Intent.Message.Platform value) {
         if (value == null) {
@@ -44504,6 +46290,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPlatform() {
 
@@ -44578,6 +46366,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string followup_intent_name = 1;</code>
+     *
+     * @return The followupIntentName.
      */
     java.lang.String getFollowupIntentName();
     /**
@@ -44589,6 +46379,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string followup_intent_name = 1;</code>
+     *
+     * @return The bytes for followupIntentName.
      */
     com.google.protobuf.ByteString getFollowupIntentNameBytes();
 
@@ -44601,6 +46393,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 2;</code>
+     *
+     * @return The parentFollowupIntentName.
      */
     java.lang.String getParentFollowupIntentName();
     /**
@@ -44612,6 +46406,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 2;</code>
+     *
+     * @return The bytes for parentFollowupIntentName.
      */
     com.google.protobuf.ByteString getParentFollowupIntentNameBytes();
   }
@@ -44640,6 +46436,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FollowupIntentInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -44652,7 +46454,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -44722,6 +46523,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string followup_intent_name = 1;</code>
+     *
+     * @return The followupIntentName.
      */
     public java.lang.String getFollowupIntentName() {
       java.lang.Object ref = followupIntentName_;
@@ -44743,6 +46546,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string followup_intent_name = 1;</code>
+     *
+     * @return The bytes for followupIntentName.
      */
     public com.google.protobuf.ByteString getFollowupIntentNameBytes() {
       java.lang.Object ref = followupIntentName_;
@@ -44767,6 +46572,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 2;</code>
+     *
+     * @return The parentFollowupIntentName.
      */
     public java.lang.String getParentFollowupIntentName() {
       java.lang.Object ref = parentFollowupIntentName_;
@@ -44788,6 +46595,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 2;</code>
+     *
+     * @return The bytes for parentFollowupIntentName.
      */
     public com.google.protobuf.ByteString getParentFollowupIntentNameBytes() {
       java.lang.Object ref = parentFollowupIntentName_;
@@ -45151,6 +46960,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string followup_intent_name = 1;</code>
+       *
+       * @return The followupIntentName.
        */
       public java.lang.String getFollowupIntentName() {
         java.lang.Object ref = followupIntentName_;
@@ -45172,6 +46983,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string followup_intent_name = 1;</code>
+       *
+       * @return The bytes for followupIntentName.
        */
       public com.google.protobuf.ByteString getFollowupIntentNameBytes() {
         java.lang.Object ref = followupIntentName_;
@@ -45193,6 +47006,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string followup_intent_name = 1;</code>
+       *
+       * @param value The followupIntentName to set.
+       * @return This builder for chaining.
        */
       public Builder setFollowupIntentName(java.lang.String value) {
         if (value == null) {
@@ -45212,6 +47028,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string followup_intent_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFollowupIntentName() {
 
@@ -45228,6 +47046,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string followup_intent_name = 1;</code>
+       *
+       * @param value The bytes for followupIntentName to set.
+       * @return This builder for chaining.
        */
       public Builder setFollowupIntentNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -45250,6 +47071,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string parent_followup_intent_name = 2;</code>
+       *
+       * @return The parentFollowupIntentName.
        */
       public java.lang.String getParentFollowupIntentName() {
         java.lang.Object ref = parentFollowupIntentName_;
@@ -45271,6 +47094,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string parent_followup_intent_name = 2;</code>
+       *
+       * @return The bytes for parentFollowupIntentName.
        */
       public com.google.protobuf.ByteString getParentFollowupIntentNameBytes() {
         java.lang.Object ref = parentFollowupIntentName_;
@@ -45292,6 +47117,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string parent_followup_intent_name = 2;</code>
+       *
+       * @param value The parentFollowupIntentName to set.
+       * @return This builder for chaining.
        */
       public Builder setParentFollowupIntentName(java.lang.String value) {
         if (value == null) {
@@ -45311,6 +47139,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string parent_followup_intent_name = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearParentFollowupIntentName() {
 
@@ -45327,6 +47157,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string parent_followup_intent_name = 2;</code>
+       *
+       * @param value The bytes for parentFollowupIntentName to set.
+       * @return This builder for chaining.
        */
       public Builder setParentFollowupIntentNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -45391,7 +47224,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -45405,6 +47237,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -45428,6 +47262,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -45451,6 +47287,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -45471,6 +47309,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -45496,6 +47336,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for webhookState.
    */
   public int getWebhookStateValue() {
     return webhookState_;
@@ -45510,6 +47352,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The webhookState.
    */
   public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
     @SuppressWarnings("deprecation")
@@ -45536,6 +47380,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The priority.
    */
   public int getPriority() {
     return priority_;
@@ -45551,6 +47397,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isFallback.
    */
   public boolean getIsFallback() {
     return isFallback_;
@@ -45569,6 +47417,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mlDisabled.
    */
   public boolean getMlDisabled() {
     return mlDisabled_;
@@ -45586,6 +47436,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the inputContextNames.
    */
   public com.google.protobuf.ProtocolStringList getInputContextNamesList() {
     return inputContextNames_;
@@ -45600,6 +47452,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of inputContextNames.
    */
   public int getInputContextNamesCount() {
     return inputContextNames_.size();
@@ -45614,6 +47468,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The inputContextNames at the given index.
    */
   public java.lang.String getInputContextNames(int index) {
     return inputContextNames_.get(index);
@@ -45628,6 +47485,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the inputContextNames at the given index.
    */
   public com.google.protobuf.ByteString getInputContextNamesBytes(int index) {
     return inputContextNames_.getByteString(index);
@@ -45645,6 +47505,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the events.
    */
   public com.google.protobuf.ProtocolStringList getEventsList() {
     return events_;
@@ -45659,6 +47521,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of events.
    */
   public int getEventsCount() {
     return events_.size();
@@ -45673,6 +47537,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The events at the given index.
    */
   public java.lang.String getEvents(int index) {
     return events_.get(index);
@@ -45687,6 +47554,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the events at the given index.
    */
   public com.google.protobuf.ByteString getEventsBytes(int index) {
     return events_.getByteString(index);
@@ -45784,6 +47654,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The action.
    */
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
@@ -45805,6 +47677,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for action.
    */
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
@@ -45923,6 +47797,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The resetContexts.
    */
   public boolean getResetContexts() {
     return resetContexts_;
@@ -46110,6 +47986,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the defaultResponsePlatforms.
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
       getDefaultResponsePlatformsList() {
@@ -46128,6 +48006,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param value The defaultResponsePlatforms to add.
    */
   public int getDefaultResponsePlatformsCount() {
     return defaultResponsePlatforms_.size();
@@ -46143,6 +48023,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The defaultResponsePlatforms at the given index.
    */
   public com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(
       int index) {
@@ -46159,6 +48042,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
    */
   public java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList() {
     return defaultResponsePlatforms_;
@@ -46174,6 +48059,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of defaultResponsePlatforms at the given index.
    */
   public int getDefaultResponsePlatformsValue(int index) {
     return defaultResponsePlatforms_.get(index);
@@ -46194,6 +48082,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string root_followup_intent_name = 16;</code>
+   *
+   * @return The rootFollowupIntentName.
    */
   public java.lang.String getRootFollowupIntentName() {
     java.lang.Object ref = rootFollowupIntentName_;
@@ -46217,6 +48107,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string root_followup_intent_name = 16;</code>
+   *
+   * @return The bytes for rootFollowupIntentName.
    */
   public com.google.protobuf.ByteString getRootFollowupIntentNameBytes() {
     java.lang.Object ref = rootFollowupIntentName_;
@@ -46245,6 +48137,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent_followup_intent_name = 17;</code>
+   *
+   * @return The parentFollowupIntentName.
    */
   public java.lang.String getParentFollowupIntentName() {
     java.lang.Object ref = parentFollowupIntentName_;
@@ -46270,6 +48164,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent_followup_intent_name = 17;</code>
+   *
+   * @return The bytes for parentFollowupIntentName.
    */
   public com.google.protobuf.ByteString getParentFollowupIntentNameBytes() {
     java.lang.Object ref = parentFollowupIntentName_;
@@ -46784,12 +48680,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       mlDisabled_ = false;
 
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000001);
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         trainingPhrasesBuilder_.clear();
       }
@@ -46797,7 +48693,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         outputContextsBuilder_.clear();
       }
@@ -46805,25 +48701,25 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         parametersBuilder_.clear();
       }
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         messagesBuilder_.clear();
       }
       defaultResponsePlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00000040);
       rootFollowupIntentName_ = "";
 
       parentFollowupIntentName_ = "";
 
       if (followupIntentInfoBuilder_ == null) {
         followupIntentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         followupIntentInfoBuilder_.clear();
       }
@@ -46855,27 +48751,26 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2.Intent result =
           new com.google.cloud.dialogflow.v2.Intent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.webhookState_ = webhookState_;
       result.priority_ = priority_;
       result.isFallback_ = isFallback_;
       result.mlDisabled_ = mlDisabled_;
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.inputContextNames_ = inputContextNames_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         events_ = events_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.events_ = events_;
       if (trainingPhrasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.trainingPhrases_ = trainingPhrases_;
       } else {
@@ -46883,9 +48778,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       result.action_ = action_;
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.outputContexts_ = outputContexts_;
       } else {
@@ -46893,41 +48788,40 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       result.resetContexts_ = resetContexts_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.messages_ = messages_;
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         defaultResponsePlatforms_ =
             java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.defaultResponsePlatforms_ = defaultResponsePlatforms_;
       result.rootFollowupIntentName_ = rootFollowupIntentName_;
       result.parentFollowupIntentName_ = parentFollowupIntentName_;
       if (followupIntentInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.followupIntentInfo_ = followupIntentInfo_;
       } else {
         result.followupIntentInfo_ = followupIntentInfoBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -47000,7 +48894,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.inputContextNames_.isEmpty()) {
         if (inputContextNames_.isEmpty()) {
           inputContextNames_ = other.inputContextNames_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureInputContextNamesIsMutable();
           inputContextNames_.addAll(other.inputContextNames_);
@@ -47010,7 +48904,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.events_.isEmpty()) {
         if (events_.isEmpty()) {
           events_ = other.events_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEventsIsMutable();
           events_.addAll(other.events_);
@@ -47021,7 +48915,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.trainingPhrases_.isEmpty()) {
           if (trainingPhrases_.isEmpty()) {
             trainingPhrases_ = other.trainingPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTrainingPhrasesIsMutable();
             trainingPhrases_.addAll(other.trainingPhrases_);
@@ -47034,7 +48928,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             trainingPhrasesBuilder_.dispose();
             trainingPhrasesBuilder_ = null;
             trainingPhrases_ = other.trainingPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
             trainingPhrasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrainingPhrasesFieldBuilder()
@@ -47052,7 +48946,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.outputContexts_.isEmpty()) {
           if (outputContexts_.isEmpty()) {
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureOutputContextsIsMutable();
             outputContexts_.addAll(other.outputContexts_);
@@ -47065,7 +48959,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             outputContextsBuilder_.dispose();
             outputContextsBuilder_ = null;
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000008);
             outputContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOutputContextsFieldBuilder()
@@ -47082,7 +48976,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -47095,7 +48989,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000010);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -47109,7 +49003,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -47122,7 +49016,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000020);
             messagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMessagesFieldBuilder()
@@ -47135,7 +49029,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.defaultResponsePlatforms_.isEmpty()) {
         if (defaultResponsePlatforms_.isEmpty()) {
           defaultResponsePlatforms_ = other.defaultResponsePlatforms_;
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureDefaultResponsePlatformsIsMutable();
           defaultResponsePlatforms_.addAll(other.defaultResponsePlatforms_);
@@ -47154,7 +49048,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.followupIntentInfo_.isEmpty()) {
           if (followupIntentInfo_.isEmpty()) {
             followupIntentInfo_ = other.followupIntentInfo_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureFollowupIntentInfoIsMutable();
             followupIntentInfo_.addAll(other.followupIntentInfo_);
@@ -47167,7 +49061,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             followupIntentInfoBuilder_.dispose();
             followupIntentInfoBuilder_ = null;
             followupIntentInfo_ = other.followupIntentInfo_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00000080);
             followupIntentInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFollowupIntentInfoFieldBuilder()
@@ -47220,6 +49114,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -47243,6 +49139,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -47266,6 +49164,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -47287,6 +49188,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -47305,6 +49208,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -47326,6 +49232,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -47346,6 +49254,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -47366,6 +49276,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -47384,6 +49297,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -47399,6 +49314,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -47422,6 +49340,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for webhookState.
      */
     public int getWebhookStateValue() {
       return webhookState_;
@@ -47436,6 +49356,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for webhookState to set.
+     * @return This builder for chaining.
      */
     public Builder setWebhookStateValue(int value) {
       webhookState_ = value;
@@ -47452,6 +49375,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The webhookState.
      */
     public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
       @SuppressWarnings("deprecation")
@@ -47471,6 +49396,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The webhookState to set.
+     * @return This builder for chaining.
      */
     public Builder setWebhookState(com.google.cloud.dialogflow.v2.Intent.WebhookState value) {
       if (value == null) {
@@ -47491,6 +49419,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWebhookState() {
 
@@ -47514,6 +49444,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The priority.
      */
     public int getPriority() {
       return priority_;
@@ -47532,6 +49464,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The priority to set.
+     * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
 
@@ -47553,6 +49488,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPriority() {
 
@@ -47570,6 +49507,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isFallback.
      */
     public boolean getIsFallback() {
       return isFallback_;
@@ -47582,6 +49521,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The isFallback to set.
+     * @return This builder for chaining.
      */
     public Builder setIsFallback(boolean value) {
 
@@ -47597,6 +49539,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsFallback() {
 
@@ -47617,6 +49561,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mlDisabled.
      */
     public boolean getMlDisabled() {
       return mlDisabled_;
@@ -47632,6 +49578,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mlDisabled to set.
+     * @return This builder for chaining.
      */
     public Builder setMlDisabled(boolean value) {
 
@@ -47650,6 +49599,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMlDisabled() {
 
@@ -47662,9 +49613,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInputContextNamesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inputContextNames_ = new com.google.protobuf.LazyStringArrayList(inputContextNames_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -47678,6 +49629,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the inputContextNames.
      */
     public com.google.protobuf.ProtocolStringList getInputContextNamesList() {
       return inputContextNames_.getUnmodifiableView();
@@ -47693,6 +49646,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The count of inputContextNames.
      */
     public int getInputContextNamesCount() {
       return inputContextNames_.size();
@@ -47708,6 +49663,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The inputContextNames at the given index.
      */
     public java.lang.String getInputContextNames(int index) {
       return inputContextNames_.get(index);
@@ -47723,6 +49681,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the inputContextNames at the given index.
      */
     public com.google.protobuf.ByteString getInputContextNamesBytes(int index) {
       return inputContextNames_.getByteString(index);
@@ -47738,6 +49699,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The inputContextNames to set.
+     * @return This builder for chaining.
      */
     public Builder setInputContextNames(int index, java.lang.String value) {
       if (value == null) {
@@ -47759,6 +49724,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The inputContextNames to add.
+     * @return This builder for chaining.
      */
     public Builder addInputContextNames(java.lang.String value) {
       if (value == null) {
@@ -47780,6 +49748,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The inputContextNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllInputContextNames(java.lang.Iterable<java.lang.String> values) {
       ensureInputContextNamesIsMutable();
@@ -47798,10 +49769,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputContextNames() {
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -47816,6 +49789,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The bytes of the inputContextNames to add.
+     * @return This builder for chaining.
      */
     public Builder addInputContextNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -47832,9 +49808,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         events_ = new com.google.protobuf.LazyStringArrayList(events_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -47847,6 +49823,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the events.
      */
     public com.google.protobuf.ProtocolStringList getEventsList() {
       return events_.getUnmodifiableView();
@@ -47861,6 +49839,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of events.
      */
     public int getEventsCount() {
       return events_.size();
@@ -47875,6 +49855,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The events at the given index.
      */
     public java.lang.String getEvents(int index) {
       return events_.get(index);
@@ -47889,6 +49872,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the events at the given index.
      */
     public com.google.protobuf.ByteString getEventsBytes(int index) {
       return events_.getByteString(index);
@@ -47903,6 +49889,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The events to set.
+     * @return This builder for chaining.
      */
     public Builder setEvents(int index, java.lang.String value) {
       if (value == null) {
@@ -47923,6 +49913,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The events to add.
+     * @return This builder for chaining.
      */
     public Builder addEvents(java.lang.String value) {
       if (value == null) {
@@ -47943,6 +49936,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The events to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEvents(java.lang.Iterable<java.lang.String> values) {
       ensureEventsIsMutable();
@@ -47960,10 +49956,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEvents() {
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -47977,6 +49975,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the events to add.
+     * @return This builder for chaining.
      */
     public Builder addEventsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -47993,11 +49994,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTrainingPhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         trainingPhrases_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase>(
                 trainingPhrases_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -48249,7 +50250,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrainingPhrases() {
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         trainingPhrasesBuilder_.clear();
@@ -48398,7 +50399,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder,
                 com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>(
                 trainingPhrases_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         trainingPhrases_ = null;
@@ -48416,6 +50417,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The action.
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -48437,6 +50440,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for action.
      */
     public com.google.protobuf.ByteString getActionBytes() {
       java.lang.Object ref = action_;
@@ -48458,6 +50463,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
     public Builder setAction(java.lang.String value) {
       if (value == null) {
@@ -48477,6 +50485,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAction() {
 
@@ -48493,6 +50503,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
      */
     public Builder setActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -48509,10 +50522,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         outputContexts_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.Context>(outputContexts_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -48794,7 +50807,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         outputContextsBuilder_.clear();
@@ -48959,7 +50972,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Context.Builder,
                 com.google.cloud.dialogflow.v2.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -48977,6 +50990,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The resetContexts.
      */
     public boolean getResetContexts() {
       return resetContexts_;
@@ -48990,6 +51005,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The resetContexts to set.
+     * @return This builder for chaining.
      */
     public Builder setResetContexts(boolean value) {
 
@@ -49006,6 +51024,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResetContexts() {
 
@@ -49018,10 +51038,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Parameter>(parameters_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -49259,7 +51279,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -49396,7 +51416,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.Parameter,
                 com.google.cloud.dialogflow.v2.Intent.Parameter.Builder,
                 com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -49406,10 +51426,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         messages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message>(messages_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -49658,7 +51678,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -49801,7 +51821,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.Message,
                 com.google.cloud.dialogflow.v2.Intent.Message.Builder,
                 com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>(
-                messages_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                messages_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;
@@ -49811,10 +51831,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDefaultResponsePlatformsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         defaultResponsePlatforms_ =
             new java.util.ArrayList<java.lang.Integer>(defaultResponsePlatforms_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -49828,6 +51848,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the defaultResponsePlatforms.
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
         getDefaultResponsePlatformsList() {
@@ -49846,6 +51868,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The count of defaultResponsePlatforms.
      */
     public int getDefaultResponsePlatformsCount() {
       return defaultResponsePlatforms_.size();
@@ -49861,6 +51885,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The defaultResponsePlatforms at the given index.
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(
         int index) {
@@ -49877,6 +51904,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The defaultResponsePlatforms to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultResponsePlatforms(
         int index, com.google.cloud.dialogflow.v2.Intent.Message.Platform value) {
@@ -49899,6 +51930,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The defaultResponsePlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addDefaultResponsePlatforms(
         com.google.cloud.dialogflow.v2.Intent.Message.Platform value) {
@@ -49921,6 +51955,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The defaultResponsePlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDefaultResponsePlatforms(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.Message.Platform>
@@ -49943,10 +51980,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultResponsePlatforms() {
       defaultResponsePlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -49961,6 +52000,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
      */
     public java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList() {
       return java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
@@ -49976,6 +52017,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of defaultResponsePlatforms at the given index.
      */
     public int getDefaultResponsePlatformsValue(int index) {
       return defaultResponsePlatforms_.get(index);
@@ -49991,6 +52035,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of defaultResponsePlatforms at the given index.
+     * @return This builder for chaining.
      */
     public Builder setDefaultResponsePlatformsValue(int index, int value) {
       ensureDefaultResponsePlatformsIsMutable();
@@ -50009,6 +52057,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for defaultResponsePlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addDefaultResponsePlatformsValue(int value) {
       ensureDefaultResponsePlatformsIsMutable();
@@ -50027,6 +52078,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for defaultResponsePlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDefaultResponsePlatformsValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -50050,6 +52104,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string root_followup_intent_name = 16;</code>
+     *
+     * @return The rootFollowupIntentName.
      */
     public java.lang.String getRootFollowupIntentName() {
       java.lang.Object ref = rootFollowupIntentName_;
@@ -50073,6 +52129,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string root_followup_intent_name = 16;</code>
+     *
+     * @return The bytes for rootFollowupIntentName.
      */
     public com.google.protobuf.ByteString getRootFollowupIntentNameBytes() {
       java.lang.Object ref = rootFollowupIntentName_;
@@ -50096,6 +52154,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string root_followup_intent_name = 16;</code>
+     *
+     * @param value The rootFollowupIntentName to set.
+     * @return This builder for chaining.
      */
     public Builder setRootFollowupIntentName(java.lang.String value) {
       if (value == null) {
@@ -50117,6 +52178,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string root_followup_intent_name = 16;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRootFollowupIntentName() {
 
@@ -50135,6 +52198,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string root_followup_intent_name = 16;</code>
+     *
+     * @param value The bytes for rootFollowupIntentName to set.
+     * @return This builder for chaining.
      */
     public Builder setRootFollowupIntentNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -50161,6 +52227,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 17;</code>
+     *
+     * @return The parentFollowupIntentName.
      */
     public java.lang.String getParentFollowupIntentName() {
       java.lang.Object ref = parentFollowupIntentName_;
@@ -50186,6 +52254,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 17;</code>
+     *
+     * @return The bytes for parentFollowupIntentName.
      */
     public com.google.protobuf.ByteString getParentFollowupIntentNameBytes() {
       java.lang.Object ref = parentFollowupIntentName_;
@@ -50211,6 +52281,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 17;</code>
+     *
+     * @param value The parentFollowupIntentName to set.
+     * @return This builder for chaining.
      */
     public Builder setParentFollowupIntentName(java.lang.String value) {
       if (value == null) {
@@ -50234,6 +52307,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 17;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParentFollowupIntentName() {
 
@@ -50254,6 +52329,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_followup_intent_name = 17;</code>
+     *
+     * @param value The bytes for parentFollowupIntentName to set.
+     * @return This builder for chaining.
      */
     public Builder setParentFollowupIntentNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -50270,11 +52348,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         followupIntentInfo_ = java.util.Collections.emptyList();
 
     private void ensureFollowupIntentInfoIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         followupIntentInfo_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>(
                 followupIntentInfo_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -50531,7 +52609,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFollowupIntentInfo() {
       if (followupIntentInfoBuilder_ == null) {
         followupIntentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         followupIntentInfoBuilder_.clear();
@@ -50682,7 +52760,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder,
                 com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder>(
                 followupIntentInfo_,
-                ((bitField0_ & 0x00020000) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         followupIntentInfo_ = null;

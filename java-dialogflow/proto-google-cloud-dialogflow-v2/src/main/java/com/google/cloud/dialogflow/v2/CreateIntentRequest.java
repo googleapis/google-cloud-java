@@ -44,6 +44,12 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateIntentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -174,6 +181,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -198,6 +207,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the intent field is set.
    */
   public boolean hasIntent() {
     return intent_ != null;
@@ -211,6 +222,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The intent.
    */
   public com.google.cloud.dialogflow.v2.Intent getIntent() {
     return intent_ == null ? com.google.cloud.dialogflow.v2.Intent.getDefaultInstance() : intent_;
@@ -244,6 +257,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -269,6 +284,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -294,6 +311,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   public int getIntentViewValue() {
     return intentView_;
@@ -308,6 +327,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The intentView.
    */
   public com.google.cloud.dialogflow.v2.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
@@ -707,6 +728,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -730,6 +753,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -753,6 +778,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -774,6 +802,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -792,6 +822,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -820,6 +853,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the intent field is set.
      */
     public boolean hasIntent() {
       return intentBuilder_ != null || intent_ != null;
@@ -834,6 +869,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The intent.
      */
     public com.google.cloud.dialogflow.v2.Intent getIntent() {
       if (intentBuilder_ == null) {
@@ -1017,6 +1054,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1042,6 +1081,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1067,6 +1108,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1090,6 +1134,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1110,6 +1156,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1133,6 +1182,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for intentView.
      */
     public int getIntentViewValue() {
       return intentView_;
@@ -1147,6 +1198,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for intentView to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
       intentView_ = value;
@@ -1163,6 +1217,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The intentView.
      */
     public com.google.cloud.dialogflow.v2.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
@@ -1180,6 +1236,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The intentView to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentView(com.google.cloud.dialogflow.v2.IntentView value) {
       if (value == null) {
@@ -1200,6 +1259,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIntentView() {
 

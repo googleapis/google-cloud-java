@@ -40,6 +40,12 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
   private UpdateContextRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateContextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -150,6 +157,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   *
+   * @return The context.
    */
   public com.google.cloud.dialogflow.v2beta1.Context getContext() {
     return context_ == null
@@ -179,6 +188,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -191,6 +202,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -581,6 +594,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -593,6 +608,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     *
+     * @return The context.
      */
     public com.google.cloud.dialogflow.v2beta1.Context getContext() {
       if (contextBuilder_ == null) {
@@ -762,6 +779,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -774,6 +793,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

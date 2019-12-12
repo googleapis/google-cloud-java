@@ -32,6 +32,8 @@ public interface ExportAgentResponseOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
+   *
+   * @return The agentUri.
    */
   java.lang.String getAgentUri();
   /**
@@ -43,6 +45,8 @@ public interface ExportAgentResponseOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
+   *
+   * @return The bytes for agentUri.
    */
   com.google.protobuf.ByteString getAgentUriBytes();
 
@@ -54,6 +58,8 @@ public interface ExportAgentResponseOrBuilder
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
+   *
+   * @return The agentContent.
    */
   com.google.protobuf.ByteString getAgentContent();
 

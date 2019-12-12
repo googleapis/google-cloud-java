@@ -38,6 +38,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -55,6 +57,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -69,6 +73,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>int32 lifespan_count = 2;</code>
+   *
+   * @return The lifespanCount.
    */
   int getLifespanCount();
 
@@ -83,6 +89,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>
+   *
+   * @return Whether the parameters field is set.
    */
   boolean hasParameters();
   /**
@@ -96,6 +104,8 @@ public interface ContextOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>
+   *
+   * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
   /**

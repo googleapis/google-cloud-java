@@ -43,6 +43,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WebhookRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -161,6 +166,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string session = 4;</code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -185,6 +192,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string session = 4;</code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -209,6 +218,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The responseId.
    */
   public java.lang.String getResponseId() {
     java.lang.Object ref = responseId_;
@@ -230,6 +241,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The bytes for responseId.
    */
   public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
@@ -254,6 +267,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+   *
+   * @return Whether the queryResult field is set.
    */
   public boolean hasQueryResult() {
     return queryResult_ != null;
@@ -267,6 +282,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+   *
+   * @return The queryResult.
    */
   public com.google.cloud.dialogflow.v2.QueryResult getQueryResult() {
     return queryResult_ == null
@@ -300,6 +317,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
+   *
+   * @return Whether the originalDetectIntentRequest field is set.
    */
   public boolean hasOriginalDetectIntentRequest() {
     return originalDetectIntentRequest_ != null;
@@ -315,6 +334,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
+   *
+   * @return The originalDetectIntentRequest.
    */
   public com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest
       getOriginalDetectIntentRequest() {
@@ -743,6 +764,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -767,6 +790,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -791,6 +816,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -813,6 +841,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -832,6 +862,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -854,6 +887,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The responseId.
      */
     public java.lang.String getResponseId() {
       java.lang.Object ref = responseId_;
@@ -875,6 +910,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The bytes for responseId.
      */
     public com.google.protobuf.ByteString getResponseIdBytes() {
       java.lang.Object ref = responseId_;
@@ -896,6 +933,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseId(java.lang.String value) {
       if (value == null) {
@@ -915,6 +955,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseId() {
 
@@ -931,6 +973,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The bytes for responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -958,6 +1003,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+     *
+     * @return Whether the queryResult field is set.
      */
     public boolean hasQueryResult() {
       return queryResultBuilder_ != null || queryResult_ != null;
@@ -971,6 +1018,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+     *
+     * @return The queryResult.
      */
     public com.google.cloud.dialogflow.v2.QueryResult getQueryResult() {
       if (queryResultBuilder_ == null) {
@@ -1151,6 +1200,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
      * </code>
+     *
+     * @return Whether the originalDetectIntentRequest field is set.
      */
     public boolean hasOriginalDetectIntentRequest() {
       return originalDetectIntentRequestBuilder_ != null || originalDetectIntentRequest_ != null;
@@ -1166,6 +1217,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
      * </code>
+     *
+     * @return The originalDetectIntentRequest.
      */
     public com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest
         getOriginalDetectIntentRequest() {

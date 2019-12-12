@@ -62,6 +62,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognitionResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,7 +80,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -237,12 +242,20 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MessageType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MessageType forNumber(int value) {
       switch (value) {
         case 0:
@@ -313,6 +326,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
    * </code>
+   *
+   * @return The enum numeric value on the wire for messageType.
    */
   public int getMessageTypeValue() {
     return messageType_;
@@ -326,6 +341,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
    * </code>
+   *
+   * @return The messageType.
    */
   public com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType getMessageType() {
     @SuppressWarnings("deprecation")
@@ -347,6 +364,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string transcript = 2;</code>
+   *
+   * @return The transcript.
    */
   public java.lang.String getTranscript() {
     java.lang.Object ref = transcript_;
@@ -368,6 +387,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string transcript = 2;</code>
+   *
+   * @return The bytes for transcript.
    */
   public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
@@ -394,6 +415,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>bool is_final = 3;</code>
+   *
+   * @return The isFinal.
    */
   public boolean getIsFinal() {
     return isFinal_;
@@ -414,6 +437,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -819,6 +844,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for messageType.
      */
     public int getMessageTypeValue() {
       return messageType_;
@@ -832,6 +859,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for messageType to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageTypeValue(int value) {
       messageType_ = value;
@@ -847,6 +877,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @return The messageType.
      */
     public com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType getMessageType() {
       @SuppressWarnings("deprecation")
@@ -866,6 +898,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @param value The messageType to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageType(
         com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType value) {
@@ -886,6 +921,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType message_type = 1;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessageType() {
 
@@ -904,6 +941,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @return The transcript.
      */
     public java.lang.String getTranscript() {
       java.lang.Object ref = transcript_;
@@ -925,6 +964,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @return The bytes for transcript.
      */
     public com.google.protobuf.ByteString getTranscriptBytes() {
       java.lang.Object ref = transcript_;
@@ -946,6 +987,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @param value The transcript to set.
+     * @return This builder for chaining.
      */
     public Builder setTranscript(java.lang.String value) {
       if (value == null) {
@@ -965,6 +1009,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTranscript() {
 
@@ -981,6 +1027,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string transcript = 2;</code>
+     *
+     * @param value The bytes for transcript to set.
+     * @return This builder for chaining.
      */
     public Builder setTranscriptBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1005,6 +1054,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 3;</code>
+     *
+     * @return The isFinal.
      */
     public boolean getIsFinal() {
       return isFinal_;
@@ -1020,6 +1071,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 3;</code>
+     *
+     * @param value The isFinal to set.
+     * @return This builder for chaining.
      */
     public Builder setIsFinal(boolean value) {
 
@@ -1038,6 +1092,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsFinal() {
 
@@ -1060,6 +1116,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1077,6 +1135,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1097,6 +1158,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

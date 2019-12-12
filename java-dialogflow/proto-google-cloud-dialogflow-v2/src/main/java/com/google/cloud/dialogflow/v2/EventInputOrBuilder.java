@@ -31,6 +31,8 @@ public interface EventInputOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface EventInputOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface EventInputOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the parameters field is set.
    */
   boolean hasParameters();
   /**
@@ -62,6 +68,8 @@ public interface EventInputOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
   /**
@@ -86,6 +94,8 @@ public interface EventInputOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -99,6 +109,8 @@ public interface EventInputOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

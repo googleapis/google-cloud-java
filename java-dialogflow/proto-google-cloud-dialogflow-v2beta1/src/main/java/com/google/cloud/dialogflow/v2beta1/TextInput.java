@@ -43,6 +43,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextInput();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The text.
    */
   public java.lang.String getText() {
     java.lang.Object ref = text_;
@@ -146,6 +153,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The bytes for text.
    */
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
@@ -172,6 +181,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -195,6 +206,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -550,6 +563,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return The text.
      */
     public java.lang.String getText() {
       java.lang.Object ref = text_;
@@ -571,6 +586,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return The bytes for text.
      */
     public com.google.protobuf.ByteString getTextBytes() {
       java.lang.Object ref = text_;
@@ -592,6 +609,9 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
      */
     public Builder setText(java.lang.String value) {
       if (value == null) {
@@ -611,6 +631,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearText() {
 
@@ -627,6 +649,9 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
      */
     public Builder setTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -651,6 +676,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -674,6 +701,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -697,6 +726,9 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -718,6 +750,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -736,6 +770,9 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

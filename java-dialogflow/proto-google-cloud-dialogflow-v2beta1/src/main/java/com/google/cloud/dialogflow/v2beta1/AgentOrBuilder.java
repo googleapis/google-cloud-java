@@ -32,6 +32,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -64,6 +70,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -79,6 +87,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
+   *
+   * @return The defaultLanguageCode.
    */
   java.lang.String getDefaultLanguageCode();
   /**
@@ -93,6 +103,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
+   *
+   * @return The bytes for defaultLanguageCode.
    */
   com.google.protobuf.ByteString getDefaultLanguageCodeBytes();
 
@@ -105,6 +117,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @return A list containing the supportedLanguageCodes.
    */
   java.util.List<java.lang.String> getSupportedLanguageCodesList();
   /**
@@ -116,6 +130,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @return The count of supportedLanguageCodes.
    */
   int getSupportedLanguageCodesCount();
   /**
@@ -127,6 +143,9 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedLanguageCodes at the given index.
    */
   java.lang.String getSupportedLanguageCodes(int index);
   /**
@@ -138,6 +157,9 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedLanguageCodes at the given index.
    */
   com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index);
 
@@ -151,6 +173,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string time_zone = 5;</code>
+   *
+   * @return The timeZone.
    */
   java.lang.String getTimeZone();
   /**
@@ -163,6 +187,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string time_zone = 5;</code>
+   *
+   * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
 
@@ -175,6 +201,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -186,6 +214,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -201,6 +231,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
+   *
+   * @return The avatarUri.
    */
   java.lang.String getAvatarUri();
   /**
@@ -215,6 +247,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
+   *
+   * @return The bytes for avatarUri.
    */
   com.google.protobuf.ByteString getAvatarUriBytes();
 
@@ -226,6 +260,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>bool enable_logging = 8;</code>
+   *
+   * @return The enableLogging.
    */
   boolean getEnableLogging();
 
@@ -237,6 +273,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+   *
+   * @return The enum numeric value on the wire for matchMode.
    */
   int getMatchModeValue();
   /**
@@ -247,6 +285,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+   *
+   * @return The matchMode.
    */
   com.google.cloud.dialogflow.v2beta1.Agent.MatchMode getMatchMode();
 
@@ -264,6 +304,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>float classification_threshold = 10;</code>
+   *
+   * @return The classificationThreshold.
    */
   float getClassificationThreshold();
 
@@ -278,6 +320,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+   *
+   * @return The enum numeric value on the wire for apiVersion.
    */
   int getApiVersionValue();
   /**
@@ -291,6 +335,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.ApiVersion api_version = 14;</code>
+   *
+   * @return The apiVersion.
    */
   com.google.cloud.dialogflow.v2beta1.Agent.ApiVersion getApiVersion();
 
@@ -302,6 +348,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+   *
+   * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
   /**
@@ -312,6 +360,8 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent.Tier tier = 15;</code>
+   *
+   * @return The tier.
    */
   com.google.cloud.dialogflow.v2beta1.Agent.Tier getTier();
 }

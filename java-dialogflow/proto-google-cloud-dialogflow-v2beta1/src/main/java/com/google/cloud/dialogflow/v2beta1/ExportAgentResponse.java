@@ -40,6 +40,12 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
   private ExportAgentResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportAgentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -113,7 +118,10 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
   private int agentCase_ = 0;
   private java.lang.Object agent_;
 
-  public enum AgentCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AgentCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AGENT_URI(1),
     AGENT_CONTENT(2),
     AGENT_NOT_SET(0);
@@ -122,7 +130,11 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
     private AgentCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AgentCase valueOf(int value) {
       return forNumber(value);
@@ -160,6 +172,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
+   *
+   * @return The agentUri.
    */
   public java.lang.String getAgentUri() {
     java.lang.Object ref = "";
@@ -186,6 +200,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
+   *
+   * @return The bytes for agentUri.
    */
   public com.google.protobuf.ByteString getAgentUriBytes() {
     java.lang.Object ref = "";
@@ -213,6 +229,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
+   *
+   * @return The agentContent.
    */
   public com.google.protobuf.ByteString getAgentContent() {
     if (agentCase_ == 2) {
@@ -611,6 +629,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
+     *
+     * @return The agentUri.
      */
     public java.lang.String getAgentUri() {
       java.lang.Object ref = "";
@@ -637,6 +657,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
+     *
+     * @return The bytes for agentUri.
      */
     public com.google.protobuf.ByteString getAgentUriBytes() {
       java.lang.Object ref = "";
@@ -663,6 +685,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
+     *
+     * @param value The agentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAgentUri(java.lang.String value) {
       if (value == null) {
@@ -682,6 +707,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAgentUri() {
       if (agentCase_ == 1) {
@@ -700,6 +727,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
+     *
+     * @param value The bytes for agentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAgentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -720,6 +750,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
+     *
+     * @return The agentContent.
      */
     public com.google.protobuf.ByteString getAgentContent() {
       if (agentCase_ == 2) {
@@ -735,6 +767,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
+     *
+     * @param value The agentContent to set.
+     * @return This builder for chaining.
      */
     public Builder setAgentContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -753,6 +788,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAgentContent() {
       if (agentCase_ == 2) {

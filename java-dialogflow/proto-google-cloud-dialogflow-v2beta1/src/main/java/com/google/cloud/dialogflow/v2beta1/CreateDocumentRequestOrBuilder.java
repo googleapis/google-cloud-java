@@ -32,6 +32,8 @@ public interface CreateDocumentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateDocumentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface CreateDocumentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   *
+   * @return Whether the document field is set.
    */
   boolean hasDocument();
   /**
@@ -64,6 +70,8 @@ public interface CreateDocumentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   *
+   * @return The document.
    */
   com.google.cloud.dialogflow.v2beta1.Document getDocument();
   /**

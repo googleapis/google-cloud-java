@@ -44,6 +44,12 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   private QueryInput() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new QueryInput();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,7 +157,10 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   private int inputCase_ = 0;
   private java.lang.Object input_;
 
-  public enum InputCase implements com.google.protobuf.Internal.EnumLite {
+  public enum InputCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AUDIO_CONFIG(1),
     TEXT(2),
     EVENT(3),
@@ -162,7 +170,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     private InputCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static InputCase valueOf(int value) {
       return forNumber(value);
@@ -201,6 +213,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.InputAudioConfig audio_config = 1;</code>
+   *
+   * @return Whether the audioConfig field is set.
    */
   public boolean hasAudioConfig() {
     return inputCase_ == 1;
@@ -213,6 +227,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.InputAudioConfig audio_config = 1;</code>
+   *
+   * @return The audioConfig.
    */
   public com.google.cloud.dialogflow.v2.InputAudioConfig getAudioConfig() {
     if (inputCase_ == 1) {
@@ -245,6 +261,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
+   *
+   * @return Whether the text field is set.
    */
   public boolean hasText() {
     return inputCase_ == 2;
@@ -257,6 +275,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
+   *
+   * @return The text.
    */
   public com.google.cloud.dialogflow.v2.TextInput getText() {
     if (inputCase_ == 2) {
@@ -289,6 +309,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EventInput event = 3;</code>
+   *
+   * @return Whether the event field is set.
    */
   public boolean hasEvent() {
     return inputCase_ == 3;
@@ -301,6 +323,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EventInput event = 3;</code>
+   *
+   * @return The event.
    */
   public com.google.cloud.dialogflow.v2.EventInput getEvent() {
     if (inputCase_ == 3) {
@@ -754,6 +778,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.InputAudioConfig audio_config = 1;</code>
+     *
+     * @return Whether the audioConfig field is set.
      */
     public boolean hasAudioConfig() {
       return inputCase_ == 1;
@@ -766,6 +792,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.InputAudioConfig audio_config = 1;</code>
+     *
+     * @return The audioConfig.
      */
     public com.google.cloud.dialogflow.v2.InputAudioConfig getAudioConfig() {
       if (audioConfigBuilder_ == null) {
@@ -956,6 +984,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
+     *
+     * @return Whether the text field is set.
      */
     public boolean hasText() {
       return inputCase_ == 2;
@@ -968,6 +998,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
+     *
+     * @return The text.
      */
     public com.google.cloud.dialogflow.v2.TextInput getText() {
       if (textBuilder_ == null) {
@@ -1157,6 +1189,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EventInput event = 3;</code>
+     *
+     * @return Whether the event field is set.
      */
     public boolean hasEvent() {
       return inputCase_ == 3;
@@ -1169,6 +1203,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EventInput event = 3;</code>
+     *
+     * @return The event.
      */
     public com.google.cloud.dialogflow.v2.EventInput getEvent() {
       if (eventBuilder_ == null) {

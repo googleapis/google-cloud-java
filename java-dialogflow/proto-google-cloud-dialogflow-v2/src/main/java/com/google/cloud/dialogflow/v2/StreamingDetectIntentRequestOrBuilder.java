@@ -36,6 +36,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -51,6 +53,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -64,6 +68,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
   /**
@@ -76,6 +82,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
   /**
@@ -105,6 +113,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the queryInput field is set.
    */
   boolean hasQueryInput();
   /**
@@ -121,6 +131,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The queryInput.
    */
   com.google.cloud.dialogflow.v2.QueryInput getQueryInput();
   /**
@@ -156,6 +168,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    * <code>bool single_utterance = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The singleUtterance.
    */
   @java.lang.Deprecated
   boolean getSingleUtterance();
@@ -172,6 +186,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
   /**
@@ -186,6 +202,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
   /**
@@ -213,6 +231,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>bytes input_audio = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The inputAudio.
    */
   com.google.protobuf.ByteString getInputAudio();
 }

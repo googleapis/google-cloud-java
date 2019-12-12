@@ -33,6 +33,8 @@ public interface SentimentAnalysisRequestConfigOrBuilder
    * </pre>
    *
    * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The analyzeQueryTextSentiment.
    */
   boolean getAnalyzeQueryTextSentiment();
 }

@@ -34,6 +34,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -68,6 +74,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -81,6 +89,8 @@ public interface IntentOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for webhookState.
    */
   int getWebhookStateValue();
   /**
@@ -93,6 +103,8 @@ public interface IntentOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The webhookState.
    */
   com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState();
 
@@ -110,6 +122,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The priority.
    */
   int getPriority();
 
@@ -121,6 +135,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isFallback.
    */
   boolean getIsFallback();
 
@@ -135,6 +151,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mlDisabled.
    */
   boolean getMlDisabled();
 
@@ -148,6 +166,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the inputContextNames.
    */
   java.util.List<java.lang.String> getInputContextNamesList();
   /**
@@ -160,6 +180,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of inputContextNames.
    */
   int getInputContextNamesCount();
   /**
@@ -172,6 +194,9 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The inputContextNames at the given index.
    */
   java.lang.String getInputContextNames(int index);
   /**
@@ -184,6 +209,9 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the inputContextNames at the given index.
    */
   com.google.protobuf.ByteString getInputContextNamesBytes(int index);
 
@@ -197,6 +225,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the events.
    */
   java.util.List<java.lang.String> getEventsList();
   /**
@@ -209,6 +239,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of events.
    */
   int getEventsCount();
   /**
@@ -221,6 +253,9 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The events at the given index.
    */
   java.lang.String getEvents(int index);
   /**
@@ -233,6 +268,9 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the events at the given index.
    */
   com.google.protobuf.ByteString getEventsBytes(int index);
 
@@ -313,6 +351,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The action.
    */
   java.lang.String getAction();
   /**
@@ -324,6 +364,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for action.
    */
   com.google.protobuf.ByteString getActionBytes();
 
@@ -418,6 +460,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The resetContexts.
    */
   boolean getResetContexts();
 
@@ -561,6 +605,8 @@ public interface IntentOrBuilder
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the defaultResponsePlatforms.
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
       getDefaultResponsePlatformsList();
@@ -575,6 +621,8 @@ public interface IntentOrBuilder
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The count of defaultResponsePlatforms.
    */
   int getDefaultResponsePlatformsCount();
   /**
@@ -588,6 +636,9 @@ public interface IntentOrBuilder
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The defaultResponsePlatforms at the given index.
    */
   com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(int index);
   /**
@@ -601,6 +652,8 @@ public interface IntentOrBuilder
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
    */
   java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList();
   /**
@@ -614,6 +667,9 @@ public interface IntentOrBuilder
    * <code>
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of defaultResponsePlatforms at the given index.
    */
   int getDefaultResponsePlatformsValue(int index);
 
@@ -628,6 +684,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string root_followup_intent_name = 16;</code>
+   *
+   * @return The rootFollowupIntentName.
    */
   java.lang.String getRootFollowupIntentName();
   /**
@@ -641,6 +699,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string root_followup_intent_name = 16;</code>
+   *
+   * @return The bytes for rootFollowupIntentName.
    */
   com.google.protobuf.ByteString getRootFollowupIntentNameBytes();
 
@@ -657,6 +717,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string parent_followup_intent_name = 17;</code>
+   *
+   * @return The parentFollowupIntentName.
    */
   java.lang.String getParentFollowupIntentName();
   /**
@@ -672,6 +734,8 @@ public interface IntentOrBuilder
    * </pre>
    *
    * <code>string parent_followup_intent_name = 17;</code>
+   *
+   * @return The bytes for parentFollowupIntentName.
    */
   com.google.protobuf.ByteString getParentFollowupIntentNameBytes();
 

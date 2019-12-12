@@ -35,6 +35,8 @@ public interface SessionEntityTypeOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface SessionEntityTypeOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface SessionEntityTypeOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for entityOverrideMode.
    */
   int getEntityOverrideModeValue();
   /**
@@ -76,6 +82,8 @@ public interface SessionEntityTypeOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode entity_override_mode = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The entityOverrideMode.
    */
   com.google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode getEntityOverrideMode();
 

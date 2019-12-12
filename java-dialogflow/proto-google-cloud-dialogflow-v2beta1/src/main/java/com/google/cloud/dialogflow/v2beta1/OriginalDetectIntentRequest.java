@@ -44,6 +44,12 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OriginalDetectIntentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string source = 1;</code>
+   *
+   * @return The source.
    */
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
@@ -161,6 +168,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string source = 1;</code>
+   *
+   * @return The bytes for source.
    */
   public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
@@ -185,6 +194,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The version.
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -206,6 +217,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
    */
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
@@ -240,6 +253,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
+   *
+   * @return Whether the payload field is set.
    */
   public boolean hasPayload() {
     return payload_ != null;
@@ -263,6 +278,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
+   *
+   * @return The payload.
    */
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
@@ -669,6 +686,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string source = 1;</code>
+     *
+     * @return The source.
      */
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
@@ -690,6 +709,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string source = 1;</code>
+     *
+     * @return The bytes for source.
      */
     public com.google.protobuf.ByteString getSourceBytes() {
       java.lang.Object ref = source_;
@@ -711,6 +732,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string source = 1;</code>
+     *
+     * @param value The source to set.
+     * @return This builder for chaining.
      */
     public Builder setSource(java.lang.String value) {
       if (value == null) {
@@ -730,6 +754,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string source = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSource() {
 
@@ -746,6 +772,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string source = 1;</code>
+     *
+     * @param value The bytes for source to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -768,6 +797,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return The version.
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -789,6 +820,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return The bytes for version.
      */
     public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
@@ -810,6 +843,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(java.lang.String value) {
       if (value == null) {
@@ -829,6 +865,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -845,6 +883,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -882,6 +923,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
+     *
+     * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
       return payloadBuilder_ != null || payload_ != null;
@@ -905,6 +948,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
+     *
+     * @return The payload.
      */
     public com.google.protobuf.Struct getPayload() {
       if (payloadBuilder_ == null) {

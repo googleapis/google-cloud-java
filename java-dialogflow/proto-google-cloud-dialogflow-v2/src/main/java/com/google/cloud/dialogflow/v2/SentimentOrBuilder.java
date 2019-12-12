@@ -32,6 +32,8 @@ public interface SentimentOrBuilder
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -44,6 +46,8 @@ public interface SentimentOrBuilder
    * </pre>
    *
    * <code>float magnitude = 2;</code>
+   *
+   * @return The magnitude.
    */
   float getMagnitude();
 }

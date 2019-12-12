@@ -38,6 +38,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string query_text = 1;</code>
+   *
+   * @return The queryText.
    */
   java.lang.String getQueryText();
   /**
@@ -55,6 +57,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string query_text = 1;</code>
+   *
+   * @return The bytes for queryText.
    */
   com.google.protobuf.ByteString getQueryTextBytes();
 
@@ -69,6 +73,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -82,6 +88,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -100,6 +108,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>float speech_recognition_confidence = 2;</code>
+   *
+   * @return The speechRecognitionConfidence.
    */
   float getSpeechRecognitionConfidence();
 
@@ -111,6 +121,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string action = 3;</code>
+   *
+   * @return The action.
    */
   java.lang.String getAction();
   /**
@@ -121,6 +133,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string action = 3;</code>
+   *
+   * @return The bytes for action.
    */
   com.google.protobuf.ByteString getActionBytes();
 
@@ -132,6 +146,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
+   *
+   * @return Whether the parameters field is set.
    */
   boolean hasParameters();
   /**
@@ -142,6 +158,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
+   *
+   * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
   /**
@@ -167,6 +185,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>bool all_required_params_present = 5;</code>
+   *
+   * @return The allRequiredParamsPresent.
    */
   boolean getAllRequiredParamsPresent();
 
@@ -179,6 +199,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
+   *
+   * @return The fulfillmentText.
    */
   java.lang.String getFulfillmentText();
   /**
@@ -190,6 +212,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
+   *
+   * @return The bytes for fulfillmentText.
    */
   com.google.protobuf.ByteString getFulfillmentTextBytes();
 
@@ -255,6 +279,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string webhook_source = 8;</code>
+   *
+   * @return The webhookSource.
    */
   java.lang.String getWebhookSource();
   /**
@@ -266,6 +292,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>string webhook_source = 8;</code>
+   *
+   * @return The bytes for webhookSource.
    */
   com.google.protobuf.ByteString getWebhookSourceBytes();
 
@@ -278,6 +306,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct webhook_payload = 9;</code>
+   *
+   * @return Whether the webhookPayload field is set.
    */
   boolean hasWebhookPayload();
   /**
@@ -289,6 +319,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct webhook_payload = 9;</code>
+   *
+   * @return The webhookPayload.
    */
   com.google.protobuf.Struct getWebhookPayload();
   /**
@@ -380,6 +412,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
+   *
+   * @return Whether the intent field is set.
    */
   boolean hasIntent();
   /**
@@ -392,6 +426,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
+   *
+   * @return The intent.
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
   /**
@@ -422,6 +458,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>float intent_detection_confidence = 12;</code>
+   *
+   * @return The intentDetectionConfidence.
    */
   float getIntentDetectionConfidence();
 
@@ -435,6 +473,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
+   *
+   * @return Whether the diagnosticInfo field is set.
    */
   boolean hasDiagnosticInfo();
   /**
@@ -447,6 +487,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
+   *
+   * @return The diagnosticInfo.
    */
   com.google.protobuf.Struct getDiagnosticInfo();
   /**
@@ -472,6 +514,8 @@ public interface QueryResultOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
    * </code>
+   *
+   * @return Whether the sentimentAnalysisResult field is set.
    */
   boolean hasSentimentAnalysisResult();
   /**
@@ -484,6 +528,8 @@ public interface QueryResultOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
    * </code>
+   *
+   * @return The sentimentAnalysisResult.
    */
   com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult();
   /**
@@ -509,6 +555,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   *
+   * @return Whether the knowledgeAnswers field is set.
    */
   boolean hasKnowledgeAnswers();
   /**
@@ -520,6 +568,8 @@ public interface QueryResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   *
+   * @return The knowledgeAnswers.
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers();
   /**

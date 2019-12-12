@@ -32,6 +32,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The responseId.
    */
   java.lang.String getResponseId();
   /**
@@ -43,6 +45,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The bytes for responseId.
    */
   com.google.protobuf.ByteString getResponseIdBytes();
 
@@ -54,6 +58,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult recognition_result = 2;</code>
+   *
+   * @return Whether the recognitionResult field is set.
    */
   boolean hasRecognitionResult();
   /**
@@ -64,6 +70,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult recognition_result = 2;</code>
+   *
+   * @return The recognitionResult.
    */
   com.google.cloud.dialogflow.v2.StreamingRecognitionResult getRecognitionResult();
   /**
@@ -86,6 +94,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 3;</code>
+   *
+   * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
   /**
@@ -96,6 +106,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 3;</code>
+   *
+   * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2.QueryResult getQueryResult();
   /**
@@ -117,6 +129,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 4;</code>
+   *
+   * @return Whether the webhookStatus field is set.
    */
   boolean hasWebhookStatus();
   /**
@@ -127,6 +141,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 4;</code>
+   *
+   * @return The webhookStatus.
    */
   com.google.rpc.Status getWebhookStatus();
   /**
@@ -153,6 +169,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>bytes output_audio = 5;</code>
+   *
+   * @return The outputAudio.
    */
   com.google.protobuf.ByteString getOutputAudio();
 
@@ -164,6 +182,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
   /**
@@ -174,6 +194,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   *
+   * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
   /**

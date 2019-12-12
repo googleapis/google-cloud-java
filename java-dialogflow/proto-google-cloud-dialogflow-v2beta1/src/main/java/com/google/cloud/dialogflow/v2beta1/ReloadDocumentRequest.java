@@ -42,6 +42,12 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReloadDocumentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,7 +130,10 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_SOURCE(3),
     SOURCE_NOT_SET(0);
     private final int value;
@@ -133,7 +141,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -171,6 +183,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -193,6 +207,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -215,6 +231,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
@@ -227,6 +245,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
+   *
+   * @return The gcsSource.
    */
   public com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 3) {
@@ -639,6 +659,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -661,6 +683,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -683,6 +707,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -703,6 +730,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -720,6 +749,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -745,6 +777,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
+     *
+     * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
@@ -757,6 +791,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
+     *
+     * @return The gcsSource.
      */
     public com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {

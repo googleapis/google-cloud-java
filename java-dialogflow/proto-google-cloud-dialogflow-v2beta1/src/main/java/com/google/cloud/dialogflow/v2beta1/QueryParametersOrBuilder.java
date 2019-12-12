@@ -34,6 +34,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>string time_zone = 1;</code>
+   *
+   * @return The timeZone.
    */
   java.lang.String getTimeZone();
   /**
@@ -47,6 +49,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>string time_zone = 1;</code>
+   *
+   * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
 
@@ -58,6 +62,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
+   *
+   * @return Whether the geoLocation field is set.
    */
   boolean hasGeoLocation();
   /**
@@ -68,6 +74,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
+   *
+   * @return The geoLocation.
    */
   com.google.type.LatLng getGeoLocation();
   /**
@@ -147,6 +155,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>bool reset_contexts = 4;</code>
+   *
+   * @return The resetContexts.
    */
   boolean getResetContexts();
 
@@ -227,6 +237,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 6;</code>
+   *
+   * @return Whether the payload field is set.
    */
   boolean hasPayload();
   /**
@@ -238,6 +250,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 6;</code>
+   *
+   * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
   /**
@@ -262,6 +276,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @return A list containing the knowledgeBaseNames.
    */
   java.util.List<java.lang.String> getKnowledgeBaseNamesList();
   /**
@@ -274,6 +290,8 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @return The count of knowledgeBaseNames.
    */
   int getKnowledgeBaseNamesCount();
   /**
@@ -286,6 +304,9 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The knowledgeBaseNames at the given index.
    */
   java.lang.String getKnowledgeBaseNames(int index);
   /**
@@ -298,6 +319,9 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the knowledgeBaseNames at the given index.
    */
   com.google.protobuf.ByteString getKnowledgeBaseNamesBytes(int index);
 
@@ -314,6 +338,8 @@ public interface QueryParametersOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
+   *
+   * @return Whether the sentimentAnalysisRequestConfig field is set.
    */
   boolean hasSentimentAnalysisRequestConfig();
   /**
@@ -329,6 +355,8 @@ public interface QueryParametersOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
+   *
+   * @return The sentimentAnalysisRequestConfig.
    */
   com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig
       getSentimentAnalysisRequestConfig();

@@ -34,6 +34,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string intent_batch_uri = 2;</code>
+   *
+   * @return The intentBatchUri.
    */
   java.lang.String getIntentBatchUri();
   /**
@@ -72,6 +78,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string intent_batch_uri = 2;</code>
+   *
+   * @return The bytes for intentBatchUri.
    */
   com.google.protobuf.ByteString getIntentBatchUriBytes();
 
@@ -83,6 +91,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.IntentBatch intent_batch_inline = 3;</code>
+   *
+   * @return Whether the intentBatchInline field is set.
    */
   boolean hasIntentBatchInline();
   /**
@@ -93,6 +103,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.IntentBatch intent_batch_inline = 3;</code>
+   *
+   * @return The intentBatchInline.
    */
   com.google.cloud.dialogflow.v2.IntentBatch getIntentBatchInline();
   /**
@@ -119,6 +131,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -134,6 +148,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -146,6 +162,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -157,6 +175,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -181,6 +201,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -193,6 +215,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 

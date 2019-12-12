@@ -44,6 +44,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WebhookRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -117,10 +123,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 alternativeQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               alternativeQueryResults_.add(
                   input.readMessage(
@@ -141,7 +147,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -164,7 +170,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.WebhookRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object session_;
   /**
@@ -179,6 +184,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string session = 4;</code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -203,6 +210,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string session = 4;</code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -227,6 +236,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The responseId.
    */
   public java.lang.String getResponseId() {
     java.lang.Object ref = responseId_;
@@ -248,6 +259,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The bytes for responseId.
    */
   public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
@@ -272,6 +285,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
+   *
+   * @return Whether the queryResult field is set.
    */
   public boolean hasQueryResult() {
     return queryResult_ != null;
@@ -285,6 +300,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
+   *
+   * @return The queryResult.
    */
   public com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult() {
     return queryResult_ == null
@@ -390,6 +407,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
+   *
+   * @return Whether the originalDetectIntentRequest field is set.
    */
   public boolean hasOriginalDetectIntentRequest() {
     return originalDetectIntentRequest_ != null;
@@ -405,6 +424,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
+   *
+   * @return The originalDetectIntentRequest.
    */
   public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest
       getOriginalDetectIntentRequest() {
@@ -701,7 +722,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (alternativeQueryResultsBuilder_ == null) {
         alternativeQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         alternativeQueryResultsBuilder_.clear();
       }
@@ -739,7 +760,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.WebhookRequest result =
           new com.google.cloud.dialogflow.v2beta1.WebhookRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       result.responseId_ = responseId_;
       if (queryResultBuilder_ == null) {
@@ -748,10 +768,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         result.queryResult_ = queryResultBuilder_.build();
       }
       if (alternativeQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           alternativeQueryResults_ =
               java.util.Collections.unmodifiableList(alternativeQueryResults_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.alternativeQueryResults_ = alternativeQueryResults_;
       } else {
@@ -762,7 +782,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.originalDetectIntentRequest_ = originalDetectIntentRequestBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -828,7 +847,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.alternativeQueryResults_.isEmpty()) {
           if (alternativeQueryResults_.isEmpty()) {
             alternativeQueryResults_ = other.alternativeQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAlternativeQueryResultsIsMutable();
             alternativeQueryResults_.addAll(other.alternativeQueryResults_);
@@ -841,7 +860,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             alternativeQueryResultsBuilder_.dispose();
             alternativeQueryResultsBuilder_ = null;
             alternativeQueryResults_ = other.alternativeQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             alternativeQueryResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAlternativeQueryResultsFieldBuilder()
@@ -899,6 +918,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -923,6 +944,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -947,6 +970,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -969,6 +995,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -988,6 +1016,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string session = 4;</code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1010,6 +1041,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The responseId.
      */
     public java.lang.String getResponseId() {
       java.lang.Object ref = responseId_;
@@ -1031,6 +1064,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The bytes for responseId.
      */
     public com.google.protobuf.ByteString getResponseIdBytes() {
       java.lang.Object ref = responseId_;
@@ -1052,6 +1087,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseId(java.lang.String value) {
       if (value == null) {
@@ -1071,6 +1109,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseId() {
 
@@ -1087,6 +1127,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The bytes for responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1114,6 +1157,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
+     *
+     * @return Whether the queryResult field is set.
      */
     public boolean hasQueryResult() {
       return queryResultBuilder_ != null || queryResult_ != null;
@@ -1127,6 +1172,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
+     *
+     * @return The queryResult.
      */
     public com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult() {
       if (queryResultBuilder_ == null) {
@@ -1294,11 +1341,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         alternativeQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureAlternativeQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         alternativeQueryResults_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(
                 alternativeQueryResults_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1529,7 +1576,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAlternativeQueryResults() {
       if (alternativeQueryResultsBuilder_ == null) {
         alternativeQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         alternativeQueryResultsBuilder_.clear();
@@ -1663,7 +1710,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
                 com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
                 alternativeQueryResults_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         alternativeQueryResults_ = null;
@@ -1689,6 +1736,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;
      * </code>
+     *
+     * @return Whether the originalDetectIntentRequest field is set.
      */
     public boolean hasOriginalDetectIntentRequest() {
       return originalDetectIntentRequestBuilder_ != null || originalDetectIntentRequest_ != null;
@@ -1704,6 +1753,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;
      * </code>
+     *
+     * @return The originalDetectIntentRequest.
      */
     public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest
         getOriginalDetectIntentRequest() {

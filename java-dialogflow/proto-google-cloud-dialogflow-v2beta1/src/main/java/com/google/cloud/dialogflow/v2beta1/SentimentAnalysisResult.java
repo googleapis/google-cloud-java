@@ -41,6 +41,12 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
   private SentimentAnalysisResult() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SentimentAnalysisResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
+   *
+   * @return Whether the queryTextSentiment field is set.
    */
   public boolean hasQueryTextSentiment() {
     return queryTextSentiment_ != null;
@@ -136,6 +143,8 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
+   *
+   * @return The queryTextSentiment.
    */
   public com.google.cloud.dialogflow.v2beta1.Sentiment getQueryTextSentiment() {
     return queryTextSentiment_ == null
@@ -501,6 +510,8 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
+     *
+     * @return Whether the queryTextSentiment field is set.
      */
     public boolean hasQueryTextSentiment() {
       return queryTextSentimentBuilder_ != null || queryTextSentiment_ != null;
@@ -513,6 +524,8 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
+     *
+     * @return The queryTextSentiment.
      */
     public com.google.cloud.dialogflow.v2beta1.Sentiment getQueryTextSentiment() {
       if (queryTextSentimentBuilder_ == null) {

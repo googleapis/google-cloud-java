@@ -32,6 +32,8 @@ public interface RestoreAgentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface RestoreAgentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface RestoreAgentRequestOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
+   *
+   * @return The agentUri.
    */
   java.lang.String getAgentUri();
   /**
@@ -66,6 +72,8 @@ public interface RestoreAgentRequestOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
+   *
+   * @return The bytes for agentUri.
    */
   com.google.protobuf.ByteString getAgentUriBytes();
 
@@ -77,6 +85,8 @@ public interface RestoreAgentRequestOrBuilder
    * </pre>
    *
    * <code>bytes agent_content = 3;</code>
+   *
+   * @return The agentContent.
    */
   com.google.protobuf.ByteString getAgentContent();
 

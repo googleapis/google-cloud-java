@@ -31,6 +31,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 1;</code>
+   *
+   * @return Whether the entityType field is set.
    */
   boolean hasEntityType();
   /**
@@ -41,6 +43,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 1;</code>
+   *
+   * @return The entityType.
    */
   com.google.cloud.dialogflow.v2beta1.EntityType getEntityType();
   /**
@@ -67,6 +71,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -82,6 +88,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -93,6 +101,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -103,6 +113,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -32,6 +32,8 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    * </pre>
    *
    * <code>bool force = 2;</code>
+   *
+   * @return The force.
    */
   boolean getForce();
 }

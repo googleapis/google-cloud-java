@@ -48,6 +48,12 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SessionEntityType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -87,11 +93,11 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entities_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2beta1.EntityType.Entity>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               entities_.add(
                   input.readMessage(
@@ -113,7 +119,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
       }
       this.unknownFields = unknownFields.build();
@@ -234,12 +240,20 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EntityOverrideMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static EntityOverrideMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -302,7 +316,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -321,6 +334,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -349,6 +364,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -375,6 +392,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for entityOverrideMode.
    */
   public int getEntityOverrideModeValue() {
     return entityOverrideMode_;
@@ -390,6 +409,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
    * </code>
+   *
+   * @return The entityOverrideMode.
    */
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode
       getEntityOverrideMode() {
@@ -715,7 +736,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
 
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         entitiesBuilder_.clear();
       }
@@ -747,19 +768,17 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       com.google.cloud.dialogflow.v2beta1.SessionEntityType result =
           new com.google.cloud.dialogflow.v2beta1.SessionEntityType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.entityOverrideMode_ = entityOverrideMode_;
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entities_ = entities_;
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -821,7 +840,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -834,7 +853,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -893,6 +912,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -921,6 +942,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -949,6 +972,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -975,6 +1001,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -998,6 +1026,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1022,6 +1053,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for entityOverrideMode.
      */
     public int getEntityOverrideModeValue() {
       return entityOverrideMode_;
@@ -1037,6 +1070,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for entityOverrideMode to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityOverrideModeValue(int value) {
       entityOverrideMode_ = value;
@@ -1054,6 +1090,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
      * </code>
+     *
+     * @return The entityOverrideMode.
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode
         getEntityOverrideMode() {
@@ -1076,6 +1114,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
      * </code>
+     *
+     * @param value The entityOverrideMode to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityOverrideMode(
         com.google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode value) {
@@ -1098,6 +1139,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode entity_override_mode = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntityOverrideMode() {
 
@@ -1110,11 +1153,11 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EntityType.Entity>(
                 entities_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1344,7 +1387,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -1477,7 +1520,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dialogflow.v2beta1.EntityType.Entity,
                 com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder,
                 com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;

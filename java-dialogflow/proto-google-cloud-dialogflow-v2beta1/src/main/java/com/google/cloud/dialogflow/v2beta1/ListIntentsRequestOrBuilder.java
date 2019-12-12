@@ -32,6 +32,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -59,6 +63,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -74,6 +80,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -85,6 +93,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 3;</code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -95,6 +105,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 3;</code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 
@@ -107,6 +119,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -118,6 +132,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -128,6 +144,8 @@ public interface ListIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

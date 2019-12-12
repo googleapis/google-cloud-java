@@ -42,6 +42,12 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new KnowledgeAnswers();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -131,6 +137,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The source.
      */
     java.lang.String getSource();
     /**
@@ -143,6 +151,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for source.
      */
     com.google.protobuf.ByteString getSourceBytes();
 
@@ -155,6 +165,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string faq_question = 2;</code>
+     *
+     * @return The faqQuestion.
      */
     java.lang.String getFaqQuestion();
     /**
@@ -166,6 +178,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string faq_question = 2;</code>
+     *
+     * @return The bytes for faqQuestion.
      */
     com.google.protobuf.ByteString getFaqQuestionBytes();
 
@@ -178,6 +192,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string answer = 3;</code>
+     *
+     * @return The answer.
      */
     java.lang.String getAnswer();
     /**
@@ -189,6 +205,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string answer = 3;</code>
+     *
+     * @return The bytes for answer.
      */
     com.google.protobuf.ByteString getAnswerBytes();
 
@@ -208,6 +226,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
      * </code>
+     *
+     * @return The enum numeric value on the wire for matchConfidenceLevel.
      */
     int getMatchConfidenceLevelValue();
     /**
@@ -226,6 +246,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
      * </code>
+     *
+     * @return The matchConfidenceLevel.
      */
     com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
         getMatchConfidenceLevel();
@@ -244,6 +266,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float match_confidence = 5;</code>
+     *
+     * @return The matchConfidence.
      */
     float getMatchConfidence();
   }
@@ -274,6 +298,12 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Answer();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -286,7 +316,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -468,12 +497,20 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static MatchConfidenceLevel valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static MatchConfidenceLevel forNumber(int value) {
         switch (value) {
           case 0:
@@ -550,6 +587,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The source.
      */
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
@@ -572,6 +611,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for source.
      */
     public com.google.protobuf.ByteString getSourceBytes() {
       java.lang.Object ref = source_;
@@ -596,6 +637,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string faq_question = 2;</code>
+     *
+     * @return The faqQuestion.
      */
     public java.lang.String getFaqQuestion() {
       java.lang.Object ref = faqQuestion_;
@@ -617,6 +660,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string faq_question = 2;</code>
+     *
+     * @return The bytes for faqQuestion.
      */
     public com.google.protobuf.ByteString getFaqQuestionBytes() {
       java.lang.Object ref = faqQuestion_;
@@ -641,6 +686,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string answer = 3;</code>
+     *
+     * @return The answer.
      */
     public java.lang.String getAnswer() {
       java.lang.Object ref = answer_;
@@ -662,6 +709,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string answer = 3;</code>
+     *
+     * @return The bytes for answer.
      */
     public com.google.protobuf.ByteString getAnswerBytes() {
       java.lang.Object ref = answer_;
@@ -693,6 +742,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
      * </code>
+     *
+     * @return The enum numeric value on the wire for matchConfidenceLevel.
      */
     public int getMatchConfidenceLevelValue() {
       return matchConfidenceLevel_;
@@ -713,6 +764,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
      * </code>
+     *
+     * @return The matchConfidenceLevel.
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
         getMatchConfidenceLevel() {
@@ -742,6 +795,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float match_confidence = 5;</code>
+     *
+     * @return The matchConfidence.
      */
     public float getMatchConfidence() {
       return matchConfidence_;
@@ -1153,6 +1208,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The source.
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -1175,6 +1232,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for source.
        */
       public com.google.protobuf.ByteString getSourceBytes() {
         java.lang.Object ref = source_;
@@ -1197,6 +1256,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The source to set.
+       * @return This builder for chaining.
        */
       public Builder setSource(java.lang.String value) {
         if (value == null) {
@@ -1217,6 +1279,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSource() {
 
@@ -1234,6 +1298,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string source = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1256,6 +1323,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string faq_question = 2;</code>
+       *
+       * @return The faqQuestion.
        */
       public java.lang.String getFaqQuestion() {
         java.lang.Object ref = faqQuestion_;
@@ -1277,6 +1346,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string faq_question = 2;</code>
+       *
+       * @return The bytes for faqQuestion.
        */
       public com.google.protobuf.ByteString getFaqQuestionBytes() {
         java.lang.Object ref = faqQuestion_;
@@ -1298,6 +1369,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string faq_question = 2;</code>
+       *
+       * @param value The faqQuestion to set.
+       * @return This builder for chaining.
        */
       public Builder setFaqQuestion(java.lang.String value) {
         if (value == null) {
@@ -1317,6 +1391,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string faq_question = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFaqQuestion() {
 
@@ -1333,6 +1409,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string faq_question = 2;</code>
+       *
+       * @param value The bytes for faqQuestion to set.
+       * @return This builder for chaining.
        */
       public Builder setFaqQuestionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1355,6 +1434,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string answer = 3;</code>
+       *
+       * @return The answer.
        */
       public java.lang.String getAnswer() {
         java.lang.Object ref = answer_;
@@ -1376,6 +1457,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string answer = 3;</code>
+       *
+       * @return The bytes for answer.
        */
       public com.google.protobuf.ByteString getAnswerBytes() {
         java.lang.Object ref = answer_;
@@ -1397,6 +1480,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string answer = 3;</code>
+       *
+       * @param value The answer to set.
+       * @return This builder for chaining.
        */
       public Builder setAnswer(java.lang.String value) {
         if (value == null) {
@@ -1416,6 +1502,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string answer = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAnswer() {
 
@@ -1432,6 +1520,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string answer = 3;</code>
+       *
+       * @param value The bytes for answer to set.
+       * @return This builder for chaining.
        */
       public Builder setAnswerBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1461,6 +1552,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>
        * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
        * </code>
+       *
+       * @return The enum numeric value on the wire for matchConfidenceLevel.
        */
       public int getMatchConfidenceLevelValue() {
         return matchConfidenceLevel_;
@@ -1481,6 +1574,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>
        * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
        * </code>
+       *
+       * @param value The enum numeric value on the wire for matchConfidenceLevel to set.
+       * @return This builder for chaining.
        */
       public Builder setMatchConfidenceLevelValue(int value) {
         matchConfidenceLevel_ = value;
@@ -1503,6 +1599,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>
        * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
        * </code>
+       *
+       * @return The matchConfidenceLevel.
        */
       public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
           getMatchConfidenceLevel() {
@@ -1531,6 +1629,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>
        * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
        * </code>
+       *
+       * @param value The matchConfidenceLevel to set.
+       * @return This builder for chaining.
        */
       public Builder setMatchConfidenceLevel(
           com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel value) {
@@ -1558,6 +1659,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>
        * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMatchConfidenceLevel() {
 
@@ -1581,6 +1684,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>float match_confidence = 5;</code>
+       *
+       * @return The matchConfidence.
        */
       public float getMatchConfidence() {
         return matchConfidence_;
@@ -1599,6 +1704,9 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>float match_confidence = 5;</code>
+       *
+       * @param value The matchConfidence to set.
+       * @return This builder for chaining.
        */
       public Builder setMatchConfidence(float value) {
 
@@ -1620,6 +1728,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>float match_confidence = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMatchConfidence() {
 

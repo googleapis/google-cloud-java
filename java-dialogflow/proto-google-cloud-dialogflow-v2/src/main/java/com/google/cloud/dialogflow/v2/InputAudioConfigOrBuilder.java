@@ -31,6 +31,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
   /**
@@ -41,6 +43,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The audioEncoding.
    */
   com.google.cloud.dialogflow.v2.AudioEncoding getAudioEncoding();
 
@@ -56,6 +60,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
+   *
+   * @return The sampleRateHertz.
    */
   int getSampleRateHertz();
 
@@ -71,6 +77,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -85,6 +93,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -100,6 +110,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @return A list containing the phraseHints.
    */
   java.util.List<java.lang.String> getPhraseHintsList();
   /**
@@ -114,6 +126,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @return The count of phraseHints.
    */
   int getPhraseHintsCount();
   /**
@@ -128,6 +142,9 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseHints at the given index.
    */
   java.lang.String getPhraseHints(int index);
   /**
@@ -142,6 +159,9 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>repeated string phrase_hints = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseHints at the given index.
    */
   com.google.protobuf.ByteString getPhraseHintsBytes(int index);
 
@@ -153,6 +173,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+   *
+   * @return The enum numeric value on the wire for modelVariant.
    */
   int getModelVariantValue();
   /**
@@ -163,6 +185,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.SpeechModelVariant model_variant = 10;</code>
+   *
+   * @return The modelVariant.
    */
   com.google.cloud.dialogflow.v2.SpeechModelVariant getModelVariant();
 
@@ -183,6 +207,8 @@ public interface InputAudioConfigOrBuilder
    * </pre>
    *
    * <code>bool single_utterance = 8;</code>
+   *
+   * @return The singleUtterance.
    */
   boolean getSingleUtterance();
 }

@@ -34,6 +34,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -81,6 +89,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string mime_type = 3;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -91,6 +101,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string mime_type = 3;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -103,6 +115,8 @@ public interface DocumentOrBuilder
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @return A list containing the knowledgeTypes.
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
       getKnowledgeTypesList();
@@ -115,6 +129,8 @@ public interface DocumentOrBuilder
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @return The count of knowledgeTypes.
    */
   int getKnowledgeTypesCount();
   /**
@@ -126,6 +142,9 @@ public interface DocumentOrBuilder
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The knowledgeTypes at the given index.
    */
   com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index);
   /**
@@ -137,6 +156,8 @@ public interface DocumentOrBuilder
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for knowledgeTypes.
    */
   java.util.List<java.lang.Integer> getKnowledgeTypesValueList();
   /**
@@ -148,6 +169,9 @@ public interface DocumentOrBuilder
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of knowledgeTypes at the given index.
    */
   int getKnowledgeTypesValue(int index);
 
@@ -165,6 +189,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string content_uri = 5;</code>
+   *
+   * @return The contentUri.
    */
   java.lang.String getContentUri();
   /**
@@ -181,6 +207,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string content_uri = 5;</code>
+   *
+   * @return The bytes for contentUri.
    */
   com.google.protobuf.ByteString getContentUriBytes();
 
@@ -195,6 +223,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string content = 6 [deprecated = true];</code>
+   *
+   * @return The content.
    */
   @java.lang.Deprecated
   java.lang.String getContent();
@@ -209,6 +239,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string content = 6 [deprecated = true];</code>
+   *
+   * @return The bytes for content.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getContentBytes();
@@ -222,6 +254,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>bytes raw_content = 9;</code>
+   *
+   * @return The rawContent.
    */
   com.google.protobuf.ByteString getRawContent();
 

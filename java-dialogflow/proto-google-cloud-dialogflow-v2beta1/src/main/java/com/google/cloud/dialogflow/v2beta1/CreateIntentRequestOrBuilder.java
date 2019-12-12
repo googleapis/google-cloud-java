@@ -32,6 +32,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   *
+   * @return Whether the intent field is set.
    */
   boolean hasIntent();
   /**
@@ -64,6 +70,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   *
+   * @return The intent.
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
   /**
@@ -90,6 +98,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -105,6 +115,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -116,6 +128,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -126,6 +140,8 @@ public interface CreateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 4;</code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 }

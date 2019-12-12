@@ -56,6 +56,12 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingDetectIntentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -158,10 +164,10 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 alternativeQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               alternativeQueryResults_.add(
                   input.readMessage(
@@ -182,7 +188,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -205,7 +211,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object responseId_;
   /**
@@ -217,6 +222,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The responseId.
    */
   public java.lang.String getResponseId() {
     java.lang.Object ref = responseId_;
@@ -238,6 +245,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The bytes for responseId.
    */
   public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
@@ -262,6 +271,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
    * </code>
+   *
+   * @return Whether the recognitionResult field is set.
    */
   public boolean hasRecognitionResult() {
     return recognitionResult_ != null;
@@ -275,6 +286,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
    * </code>
+   *
+   * @return The recognitionResult.
    */
   public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getRecognitionResult() {
     return recognitionResult_ == null
@@ -307,6 +320,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
+   *
+   * @return Whether the queryResult field is set.
    */
   public boolean hasQueryResult() {
     return queryResult_ != null;
@@ -320,6 +335,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
+   *
+   * @return The queryResult.
    */
   public com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult() {
     return queryResult_ == null
@@ -456,6 +473,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 4;</code>
+   *
+   * @return Whether the webhookStatus field is set.
    */
   public boolean hasWebhookStatus() {
     return webhookStatus_ != null;
@@ -468,6 +487,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 4;</code>
+   *
+   * @return The webhookStatus.
    */
   public com.google.rpc.Status getWebhookStatus() {
     return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
@@ -500,6 +521,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>bytes output_audio = 5;</code>
+   *
+   * @return The outputAudio.
    */
   public com.google.protobuf.ByteString getOutputAudio() {
     return outputAudio_;
@@ -515,6 +538,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   public boolean hasOutputAudioConfig() {
     return outputAudioConfig_ != null;
@@ -527,6 +552,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   *
+   * @return The outputAudioConfig.
    */
   public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
@@ -863,7 +890,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       if (alternativeQueryResultsBuilder_ == null) {
         alternativeQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         alternativeQueryResultsBuilder_.clear();
       }
@@ -910,7 +937,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse result =
           new com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.responseId_ = responseId_;
       if (recognitionResultBuilder_ == null) {
         result.recognitionResult_ = recognitionResult_;
@@ -923,10 +949,10 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         result.queryResult_ = queryResultBuilder_.build();
       }
       if (alternativeQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           alternativeQueryResults_ =
               java.util.Collections.unmodifiableList(alternativeQueryResults_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.alternativeQueryResults_ = alternativeQueryResults_;
       } else {
@@ -943,7 +969,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       } else {
         result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1010,7 +1035,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         if (!other.alternativeQueryResults_.isEmpty()) {
           if (alternativeQueryResults_.isEmpty()) {
             alternativeQueryResults_ = other.alternativeQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAlternativeQueryResultsIsMutable();
             alternativeQueryResults_.addAll(other.alternativeQueryResults_);
@@ -1023,7 +1048,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             alternativeQueryResultsBuilder_.dispose();
             alternativeQueryResultsBuilder_ = null;
             alternativeQueryResults_ = other.alternativeQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             alternativeQueryResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAlternativeQueryResultsFieldBuilder()
@@ -1085,6 +1110,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The responseId.
      */
     public java.lang.String getResponseId() {
       java.lang.Object ref = responseId_;
@@ -1106,6 +1133,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The bytes for responseId.
      */
     public com.google.protobuf.ByteString getResponseIdBytes() {
       java.lang.Object ref = responseId_;
@@ -1127,6 +1156,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseId(java.lang.String value) {
       if (value == null) {
@@ -1146,6 +1178,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseId() {
 
@@ -1162,6 +1196,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The bytes for responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1189,6 +1226,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
      * </code>
+     *
+     * @return Whether the recognitionResult field is set.
      */
     public boolean hasRecognitionResult() {
       return recognitionResultBuilder_ != null || recognitionResult_ != null;
@@ -1202,6 +1241,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
      * </code>
+     *
+     * @return The recognitionResult.
      */
     public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getRecognitionResult() {
       if (recognitionResultBuilder_ == null) {
@@ -1385,6 +1426,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
+     *
+     * @return Whether the queryResult field is set.
      */
     public boolean hasQueryResult() {
       return queryResultBuilder_ != null || queryResult_ != null;
@@ -1398,6 +1441,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
+     *
+     * @return The queryResult.
      */
     public com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult() {
       if (queryResultBuilder_ == null) {
@@ -1565,11 +1610,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         alternativeQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureAlternativeQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         alternativeQueryResults_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(
                 alternativeQueryResults_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1877,7 +1922,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public Builder clearAlternativeQueryResults() {
       if (alternativeQueryResultsBuilder_ == null) {
         alternativeQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         alternativeQueryResultsBuilder_.clear();
@@ -2060,7 +2105,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
                 com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
                 com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
                 alternativeQueryResults_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         alternativeQueryResults_ = null;
@@ -2080,6 +2125,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 4;</code>
+     *
+     * @return Whether the webhookStatus field is set.
      */
     public boolean hasWebhookStatus() {
       return webhookStatusBuilder_ != null || webhookStatus_ != null;
@@ -2092,6 +2139,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 4;</code>
+     *
+     * @return The webhookStatus.
      */
     public com.google.rpc.Status getWebhookStatus() {
       if (webhookStatusBuilder_ == null) {
@@ -2253,6 +2302,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
+     *
+     * @return The outputAudio.
      */
     public com.google.protobuf.ByteString getOutputAudio() {
       return outputAudio_;
@@ -2270,6 +2321,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
+     *
+     * @param value The outputAudio to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputAudio(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2293,6 +2347,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutputAudio() {
 
@@ -2315,6 +2371,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     *
+     * @return Whether the outputAudioConfig field is set.
      */
     public boolean hasOutputAudioConfig() {
       return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
@@ -2327,6 +2385,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     *
+     * @return The outputAudioConfig.
      */
     public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {

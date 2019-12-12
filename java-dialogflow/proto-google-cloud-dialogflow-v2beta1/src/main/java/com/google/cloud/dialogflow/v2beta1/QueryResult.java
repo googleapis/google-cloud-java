@@ -48,6 +48,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new QueryResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -119,10 +125,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fulfillmentMessages_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               fulfillmentMessages_.add(
                   input.readMessage(
@@ -154,10 +160,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 outputContexts_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000002;
               }
               outputContexts_.add(
                   input.readMessage(
@@ -255,10 +261,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
       }
       this.unknownFields = unknownFields.build();
@@ -281,7 +287,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.QueryResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int QUERY_TEXT_FIELD_NUMBER = 1;
   private volatile java.lang.Object queryText_;
   /**
@@ -299,6 +304,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_text = 1;</code>
+   *
+   * @return The queryText.
    */
   public java.lang.String getQueryText() {
     java.lang.Object ref = queryText_;
@@ -326,6 +333,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_text = 1;</code>
+   *
+   * @return The bytes for queryText.
    */
   public com.google.protobuf.ByteString getQueryTextBytes() {
     java.lang.Object ref = queryText_;
@@ -352,6 +361,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -375,6 +386,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -405,6 +418,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float speech_recognition_confidence = 2;</code>
+   *
+   * @return The speechRecognitionConfidence.
    */
   public float getSpeechRecognitionConfidence() {
     return speechRecognitionConfidence_;
@@ -420,6 +435,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action = 3;</code>
+   *
+   * @return The action.
    */
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
@@ -440,6 +457,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action = 3;</code>
+   *
+   * @return The bytes for action.
    */
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
@@ -463,6 +482,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
+   *
+   * @return Whether the parameters field is set.
    */
   public boolean hasParameters() {
     return parameters_ != null;
@@ -475,6 +496,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
+   *
+   * @return The parameters.
    */
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
@@ -506,6 +529,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool all_required_params_present = 5;</code>
+   *
+   * @return The allRequiredParamsPresent.
    */
   public boolean getAllRequiredParamsPresent() {
     return allRequiredParamsPresent_;
@@ -522,6 +547,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
+   *
+   * @return The fulfillmentText.
    */
   public java.lang.String getFulfillmentText() {
     java.lang.Object ref = fulfillmentText_;
@@ -543,6 +570,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
+   *
+   * @return The bytes for fulfillmentText.
    */
   public com.google.protobuf.ByteString getFulfillmentTextBytes() {
     java.lang.Object ref = fulfillmentText_;
@@ -633,6 +662,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string webhook_source = 8;</code>
+   *
+   * @return The webhookSource.
    */
   public java.lang.String getWebhookSource() {
     java.lang.Object ref = webhookSource_;
@@ -654,6 +685,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string webhook_source = 8;</code>
+   *
+   * @return The bytes for webhookSource.
    */
   public com.google.protobuf.ByteString getWebhookSourceBytes() {
     java.lang.Object ref = webhookSource_;
@@ -678,6 +711,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct webhook_payload = 9;</code>
+   *
+   * @return Whether the webhookPayload field is set.
    */
   public boolean hasWebhookPayload() {
     return webhookPayload_ != null;
@@ -691,6 +726,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct webhook_payload = 9;</code>
+   *
+   * @return The webhookPayload.
    */
   public com.google.protobuf.Struct getWebhookPayload() {
     return webhookPayload_ == null
@@ -803,6 +840,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
+   *
+   * @return Whether the intent field is set.
    */
   public boolean hasIntent() {
     return intent_ != null;
@@ -817,6 +856,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
+   *
+   * @return The intent.
    */
   public com.google.cloud.dialogflow.v2beta1.Intent getIntent() {
     return intent_ == null
@@ -855,6 +896,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float intent_detection_confidence = 12;</code>
+   *
+   * @return The intentDetectionConfidence.
    */
   public float getIntentDetectionConfidence() {
     return intentDetectionConfidence_;
@@ -872,6 +915,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
+   *
+   * @return Whether the diagnosticInfo field is set.
    */
   public boolean hasDiagnosticInfo() {
     return diagnosticInfo_ != null;
@@ -886,6 +931,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
+   *
+   * @return The diagnosticInfo.
    */
   public com.google.protobuf.Struct getDiagnosticInfo() {
     return diagnosticInfo_ == null
@@ -919,6 +966,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
    * </code>
+   *
+   * @return Whether the sentimentAnalysisResult field is set.
    */
   public boolean hasSentimentAnalysisResult() {
     return sentimentAnalysisResult_ != null;
@@ -933,6 +982,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
    * </code>
+   *
+   * @return The sentimentAnalysisResult.
    */
   public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult() {
     return sentimentAnalysisResult_ == null
@@ -966,6 +1017,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   *
+   * @return Whether the knowledgeAnswers field is set.
    */
   public boolean hasKnowledgeAnswers() {
     return knowledgeAnswers_ != null;
@@ -979,6 +1032,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   *
+   * @return The knowledgeAnswers.
    */
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers() {
     return knowledgeAnswers_ == null
@@ -1403,7 +1458,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
 
       if (fulfillmentMessagesBuilder_ == null) {
         fulfillmentMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         fulfillmentMessagesBuilder_.clear();
       }
@@ -1417,7 +1472,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         outputContextsBuilder_.clear();
       }
@@ -1475,7 +1530,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.QueryResult result =
           new com.google.cloud.dialogflow.v2beta1.QueryResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.queryText_ = queryText_;
       result.languageCode_ = languageCode_;
       result.speechRecognitionConfidence_ = speechRecognitionConfidence_;
@@ -1488,9 +1542,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       result.allRequiredParamsPresent_ = allRequiredParamsPresent_;
       result.fulfillmentText_ = fulfillmentText_;
       if (fulfillmentMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fulfillmentMessages_ = fulfillmentMessages_;
       } else {
@@ -1503,9 +1557,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         result.webhookPayload_ = webhookPayloadBuilder_.build();
       }
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.outputContexts_ = outputContexts_;
       } else {
@@ -1532,7 +1586,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.knowledgeAnswers_ = knowledgeAnswersBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1612,7 +1665,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         if (!other.fulfillmentMessages_.isEmpty()) {
           if (fulfillmentMessages_.isEmpty()) {
             fulfillmentMessages_ = other.fulfillmentMessages_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFulfillmentMessagesIsMutable();
             fulfillmentMessages_.addAll(other.fulfillmentMessages_);
@@ -1625,7 +1678,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             fulfillmentMessagesBuilder_.dispose();
             fulfillmentMessagesBuilder_ = null;
             fulfillmentMessages_ = other.fulfillmentMessages_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
             fulfillmentMessagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFulfillmentMessagesFieldBuilder()
@@ -1646,7 +1699,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         if (!other.outputContexts_.isEmpty()) {
           if (outputContexts_.isEmpty()) {
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureOutputContextsIsMutable();
             outputContexts_.addAll(other.outputContexts_);
@@ -1659,7 +1712,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             outputContextsBuilder_.dispose();
             outputContextsBuilder_ = null;
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
             outputContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOutputContextsFieldBuilder()
@@ -1731,6 +1784,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_text = 1;</code>
+     *
+     * @return The queryText.
      */
     public java.lang.String getQueryText() {
       java.lang.Object ref = queryText_;
@@ -1758,6 +1813,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_text = 1;</code>
+     *
+     * @return The bytes for queryText.
      */
     public com.google.protobuf.ByteString getQueryTextBytes() {
       java.lang.Object ref = queryText_;
@@ -1785,6 +1842,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_text = 1;</code>
+     *
+     * @param value The queryText to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryText(java.lang.String value) {
       if (value == null) {
@@ -1810,6 +1870,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_text = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQueryText() {
 
@@ -1832,6 +1894,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_text = 1;</code>
+     *
+     * @param value The bytes for queryText to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1856,6 +1921,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1879,6 +1946,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1902,6 +1971,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1923,6 +1995,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1941,6 +2015,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1969,6 +2046,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
+     *
+     * @return The speechRecognitionConfidence.
      */
     public float getSpeechRecognitionConfidence() {
       return speechRecognitionConfidence_;
@@ -1988,6 +2067,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
+     *
+     * @param value The speechRecognitionConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setSpeechRecognitionConfidence(float value) {
 
@@ -2010,6 +2092,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpeechRecognitionConfidence() {
 
@@ -2027,6 +2111,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 3;</code>
+     *
+     * @return The action.
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -2047,6 +2133,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 3;</code>
+     *
+     * @return The bytes for action.
      */
     public com.google.protobuf.ByteString getActionBytes() {
       java.lang.Object ref = action_;
@@ -2067,6 +2155,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 3;</code>
+     *
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
     public Builder setAction(java.lang.String value) {
       if (value == null) {
@@ -2085,6 +2176,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAction() {
 
@@ -2100,6 +2193,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 3;</code>
+     *
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
      */
     public Builder setActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2126,6 +2222,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
+     *
+     * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
       return parametersBuilder_ != null || parameters_ != null;
@@ -2138,6 +2236,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
+     *
+     * @return The parameters.
      */
     public com.google.protobuf.Struct getParameters() {
       if (parametersBuilder_ == null) {
@@ -2300,6 +2400,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool all_required_params_present = 5;</code>
+     *
+     * @return The allRequiredParamsPresent.
      */
     public boolean getAllRequiredParamsPresent() {
       return allRequiredParamsPresent_;
@@ -2316,6 +2418,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool all_required_params_present = 5;</code>
+     *
+     * @param value The allRequiredParamsPresent to set.
+     * @return This builder for chaining.
      */
     public Builder setAllRequiredParamsPresent(boolean value) {
 
@@ -2335,6 +2440,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool all_required_params_present = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllRequiredParamsPresent() {
 
@@ -2353,6 +2460,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
+     *
+     * @return The fulfillmentText.
      */
     public java.lang.String getFulfillmentText() {
       java.lang.Object ref = fulfillmentText_;
@@ -2374,6 +2483,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
+     *
+     * @return The bytes for fulfillmentText.
      */
     public com.google.protobuf.ByteString getFulfillmentTextBytes() {
       java.lang.Object ref = fulfillmentText_;
@@ -2395,6 +2506,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
+     *
+     * @param value The fulfillmentText to set.
+     * @return This builder for chaining.
      */
     public Builder setFulfillmentText(java.lang.String value) {
       if (value == null) {
@@ -2414,6 +2528,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFulfillmentText() {
 
@@ -2430,6 +2546,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
+     *
+     * @param value The bytes for fulfillmentText to set.
+     * @return This builder for chaining.
      */
     public Builder setFulfillmentTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2446,11 +2565,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         fulfillmentMessages_ = java.util.Collections.emptyList();
 
     private void ensureFulfillmentMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fulfillmentMessages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(
                 fulfillmentMessages_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2681,7 +2800,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFulfillmentMessages() {
       if (fulfillmentMessagesBuilder_ == null) {
         fulfillmentMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         fulfillmentMessagesBuilder_.clear();
@@ -2816,7 +2935,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
                 fulfillmentMessages_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         fulfillmentMessages_ = null;
@@ -2834,6 +2953,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string webhook_source = 8;</code>
+     *
+     * @return The webhookSource.
      */
     public java.lang.String getWebhookSource() {
       java.lang.Object ref = webhookSource_;
@@ -2855,6 +2976,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string webhook_source = 8;</code>
+     *
+     * @return The bytes for webhookSource.
      */
     public com.google.protobuf.ByteString getWebhookSourceBytes() {
       java.lang.Object ref = webhookSource_;
@@ -2876,6 +2999,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string webhook_source = 8;</code>
+     *
+     * @param value The webhookSource to set.
+     * @return This builder for chaining.
      */
     public Builder setWebhookSource(java.lang.String value) {
       if (value == null) {
@@ -2895,6 +3021,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string webhook_source = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWebhookSource() {
 
@@ -2911,6 +3039,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string webhook_source = 8;</code>
+     *
+     * @param value The bytes for webhookSource to set.
+     * @return This builder for chaining.
      */
     public Builder setWebhookSourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2938,6 +3069,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct webhook_payload = 9;</code>
+     *
+     * @return Whether the webhookPayload field is set.
      */
     public boolean hasWebhookPayload() {
       return webhookPayloadBuilder_ != null || webhookPayload_ != null;
@@ -2951,6 +3084,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct webhook_payload = 9;</code>
+     *
+     * @return The webhookPayload.
      */
     public com.google.protobuf.Struct getWebhookPayload() {
       if (webhookPayloadBuilder_ == null) {
@@ -3117,10 +3252,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         outputContexts_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3369,7 +3504,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         outputContextsBuilder_.clear();
@@ -3514,7 +3649,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Context.Builder,
                 com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -3538,6 +3673,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
+     *
+     * @return Whether the intent field is set.
      */
     public boolean hasIntent() {
       return intentBuilder_ != null || intent_ != null;
@@ -3552,6 +3689,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
+     *
+     * @return The intent.
      */
     public com.google.cloud.dialogflow.v2beta1.Intent getIntent() {
       if (intentBuilder_ == null) {
@@ -3737,6 +3876,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
+     *
+     * @return The intentDetectionConfidence.
      */
     public float getIntentDetectionConfidence() {
       return intentDetectionConfidence_;
@@ -3756,6 +3897,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
+     *
+     * @param value The intentDetectionConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentDetectionConfidence(float value) {
 
@@ -3778,6 +3922,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIntentDetectionConfidence() {
 
@@ -3802,6 +3948,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
+     *
+     * @return Whether the diagnosticInfo field is set.
      */
     public boolean hasDiagnosticInfo() {
       return diagnosticInfoBuilder_ != null || diagnosticInfo_ != null;
@@ -3816,6 +3964,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
+     *
+     * @return The diagnosticInfo.
      */
     public com.google.protobuf.Struct getDiagnosticInfo() {
       if (diagnosticInfoBuilder_ == null) {
@@ -4002,6 +4152,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
      * </code>
+     *
+     * @return Whether the sentimentAnalysisResult field is set.
      */
     public boolean hasSentimentAnalysisResult() {
       return sentimentAnalysisResultBuilder_ != null || sentimentAnalysisResult_ != null;
@@ -4017,6 +4169,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
      * </code>
+     *
+     * @return The sentimentAnalysisResult.
      */
     public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult
         getSentimentAnalysisResult() {
@@ -4215,6 +4369,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     *
+     * @return Whether the knowledgeAnswers field is set.
      */
     public boolean hasKnowledgeAnswers() {
       return knowledgeAnswersBuilder_ != null || knowledgeAnswers_ != null;
@@ -4228,6 +4384,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     *
+     * @return The knowledgeAnswers.
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers() {
       if (knowledgeAnswersBuilder_ == null) {

@@ -47,6 +47,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Document();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -94,9 +100,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           case 32:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               knowledgeTypes_.add(rawValue);
               break;
@@ -107,9 +113,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 knowledgeTypes_.add(rawValue);
               }
@@ -150,7 +156,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -267,12 +273,20 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static KnowledgeType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static KnowledgeType forNumber(int value) {
       switch (value) {
         case 0:
@@ -330,11 +344,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Document.KnowledgeType)
   }
 
-  private int bitField0_;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CONTENT_URI(5),
     @java.lang.Deprecated
     CONTENT(6),
@@ -345,7 +361,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -388,6 +408,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -411,6 +433,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -435,6 +459,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -456,6 +482,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -479,6 +507,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 3;</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -499,6 +529,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 3;</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -538,6 +570,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @return A list containing the knowledgeTypes.
    */
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
       getKnowledgeTypesList() {
@@ -554,6 +588,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @param value The knowledgeTypes to add.
    */
   public int getKnowledgeTypesCount() {
     return knowledgeTypes_.size();
@@ -567,6 +603,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The knowledgeTypes at the given index.
    */
   public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
     return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
@@ -580,6 +619,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for knowledgeTypes.
    */
   public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
     return knowledgeTypes_;
@@ -593,6 +634,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of knowledgeTypes at the given index.
    */
   public int getKnowledgeTypesValue(int index) {
     return knowledgeTypes_.get(index);
@@ -615,6 +659,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content_uri = 5;</code>
+   *
+   * @return The contentUri.
    */
   public java.lang.String getContentUri() {
     java.lang.Object ref = "";
@@ -646,6 +692,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content_uri = 5;</code>
+   *
+   * @return The bytes for contentUri.
    */
   public com.google.protobuf.ByteString getContentUriBytes() {
     java.lang.Object ref = "";
@@ -676,6 +724,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content = 6 [deprecated = true];</code>
+   *
+   * @return The content.
    */
   @java.lang.Deprecated
   public java.lang.String getContent() {
@@ -705,6 +755,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content = 6 [deprecated = true];</code>
+   *
+   * @return The bytes for content.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getContentBytes() {
@@ -734,6 +786,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes raw_content = 9;</code>
+   *
+   * @return The rawContent.
    */
   public com.google.protobuf.ByteString getRawContent() {
     if (sourceCase_ == 9) {
@@ -1049,7 +1103,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       mimeType_ = "";
 
       knowledgeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1080,13 +1134,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Document result =
           new com.google.cloud.dialogflow.v2beta1.Document(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.mimeType_ = mimeType_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.knowledgeTypes_ = knowledgeTypes_;
       if (sourceCase_ == 5) {
@@ -1098,7 +1151,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (sourceCase_ == 9) {
         result.source_ = source_;
       }
-      result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -1164,7 +1216,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!other.knowledgeTypes_.isEmpty()) {
         if (knowledgeTypes_.isEmpty()) {
           knowledgeTypes_ = other.knowledgeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureKnowledgeTypesIsMutable();
           knowledgeTypes_.addAll(other.knowledgeTypes_);
@@ -1253,6 +1305,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1276,6 +1330,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1299,6 +1355,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1320,6 +1379,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1338,6 +1399,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1360,6 +1424,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1381,6 +1447,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1402,6 +1470,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1421,6 +1492,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1437,6 +1510,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1458,6 +1534,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 3;</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -1478,6 +1556,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 3;</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -1498,6 +1578,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 3;</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -1516,6 +1599,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -1531,6 +1616,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 3;</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1546,9 +1634,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> knowledgeTypes_ = java.util.Collections.emptyList();
 
     private void ensureKnowledgeTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>(knowledgeTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1560,6 +1648,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @return A list containing the knowledgeTypes.
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
         getKnowledgeTypesList() {
@@ -1576,6 +1666,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @return The count of knowledgeTypes.
      */
     public int getKnowledgeTypesCount() {
       return knowledgeTypes_.size();
@@ -1589,6 +1681,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The knowledgeTypes at the given index.
      */
     public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
       return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
@@ -1602,6 +1697,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The knowledgeTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setKnowledgeTypes(
         int index, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType value) {
@@ -1622,6 +1721,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param value The knowledgeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addKnowledgeTypes(
         com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType value) {
@@ -1642,6 +1744,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param values The knowledgeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllKnowledgeTypes(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
@@ -1662,10 +1767,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKnowledgeTypes() {
       knowledgeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1678,6 +1785,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for knowledgeTypes.
      */
     public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
       return java.util.Collections.unmodifiableList(knowledgeTypes_);
@@ -1691,6 +1800,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of knowledgeTypes at the given index.
      */
     public int getKnowledgeTypesValue(int index) {
       return knowledgeTypes_.get(index);
@@ -1704,6 +1816,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of knowledgeTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setKnowledgeTypesValue(int index, int value) {
       ensureKnowledgeTypesIsMutable();
@@ -1720,6 +1836,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for knowledgeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addKnowledgeTypesValue(int value) {
       ensureKnowledgeTypesIsMutable();
@@ -1736,6 +1855,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
      * </code>
+     *
+     * @param values The enum numeric values on the wire for knowledgeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllKnowledgeTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureKnowledgeTypesIsMutable();
@@ -1760,6 +1882,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content_uri = 5;</code>
+     *
+     * @return The contentUri.
      */
     public java.lang.String getContentUri() {
       java.lang.Object ref = "";
@@ -1791,6 +1915,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content_uri = 5;</code>
+     *
+     * @return The bytes for contentUri.
      */
     public com.google.protobuf.ByteString getContentUriBytes() {
       java.lang.Object ref = "";
@@ -1822,6 +1948,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content_uri = 5;</code>
+     *
+     * @param value The contentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setContentUri(java.lang.String value) {
       if (value == null) {
@@ -1846,6 +1975,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content_uri = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContentUri() {
       if (sourceCase_ == 5) {
@@ -1869,6 +2000,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content_uri = 5;</code>
+     *
+     * @param value The bytes for contentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setContentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1892,6 +2026,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 6 [deprecated = true];</code>
+     *
+     * @return The content.
      */
     @java.lang.Deprecated
     public java.lang.String getContent() {
@@ -1921,6 +2057,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 6 [deprecated = true];</code>
+     *
+     * @return The bytes for content.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getContentBytes() {
@@ -1950,6 +2088,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 6 [deprecated = true];</code>
+     *
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setContent(java.lang.String value) {
@@ -1972,6 +2113,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 6 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearContent() {
@@ -1993,6 +2136,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 6 [deprecated = true];</code>
+     *
+     * @param value The bytes for content to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setContentBytes(com.google.protobuf.ByteString value) {
@@ -2015,6 +2161,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes raw_content = 9;</code>
+     *
+     * @return The rawContent.
      */
     public com.google.protobuf.ByteString getRawContent() {
       if (sourceCase_ == 9) {
@@ -2031,6 +2179,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes raw_content = 9;</code>
+     *
+     * @param value The rawContent to set.
+     * @return This builder for chaining.
      */
     public Builder setRawContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2050,6 +2201,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes raw_content = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRawContent() {
       if (sourceCase_ == 9) {

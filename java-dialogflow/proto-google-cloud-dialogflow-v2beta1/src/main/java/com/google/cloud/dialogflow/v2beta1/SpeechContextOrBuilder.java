@@ -40,6 +40,8 @@ public interface SpeechContextOrBuilder
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @return A list containing the phrases.
    */
   java.util.List<java.lang.String> getPhrasesList();
   /**
@@ -59,6 +61,8 @@ public interface SpeechContextOrBuilder
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @return The count of phrases.
    */
   int getPhrasesCount();
   /**
@@ -78,6 +82,9 @@ public interface SpeechContextOrBuilder
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phrases at the given index.
    */
   java.lang.String getPhrases(int index);
   /**
@@ -97,6 +104,9 @@ public interface SpeechContextOrBuilder
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phrases at the given index.
    */
   com.google.protobuf.ByteString getPhrasesBytes(int index);
 
@@ -114,6 +124,8 @@ public interface SpeechContextOrBuilder
    * </pre>
    *
    * <code>float boost = 2;</code>
+   *
+   * @return The boost.
    */
   float getBoost();
 }

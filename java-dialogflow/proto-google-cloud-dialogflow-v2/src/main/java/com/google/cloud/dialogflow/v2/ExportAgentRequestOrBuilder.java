@@ -34,6 +34,8 @@ public interface ExportAgentRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ExportAgentRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -61,6 +65,8 @@ public interface ExportAgentRequestOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The agentUri.
    */
   java.lang.String getAgentUri();
   /**
@@ -74,6 +80,8 @@ public interface ExportAgentRequestOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for agentUri.
    */
   com.google.protobuf.ByteString getAgentUriBytes();
 }

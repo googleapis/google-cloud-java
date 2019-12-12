@@ -33,6 +33,8 @@ public interface ReloadDocumentRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ReloadDocumentRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface ReloadDocumentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -66,6 +72,8 @@ public interface ReloadDocumentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource();
   /**

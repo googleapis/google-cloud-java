@@ -39,6 +39,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -57,6 +59,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -68,6 +72,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
+   *
+   * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
   /**
@@ -78,6 +84,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
+   *
+   * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2beta1.QueryParameters getQueryParams();
   /**
@@ -103,6 +111,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   *
+   * @return Whether the queryInput field is set.
    */
   boolean hasQueryInput();
   /**
@@ -117,6 +127,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   *
+   * @return The queryInput.
    */
   com.google.cloud.dialogflow.v2beta1.QueryInput getQueryInput();
   /**
@@ -144,6 +156,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 4;</code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
   /**
@@ -156,6 +170,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 4;</code>
+   *
+   * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
   /**
@@ -181,6 +197,8 @@ public interface DetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>bytes input_audio = 5;</code>
+   *
+   * @return The inputAudio.
    */
   com.google.protobuf.ByteString getInputAudio();
 }

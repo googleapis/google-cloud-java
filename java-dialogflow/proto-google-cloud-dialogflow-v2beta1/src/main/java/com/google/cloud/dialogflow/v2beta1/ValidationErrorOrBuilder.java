@@ -31,6 +31,8 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
   /**
@@ -41,6 +43,8 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.ValidationError.Severity severity = 1;</code>
+   *
+   * @return The severity.
    */
   com.google.cloud.dialogflow.v2beta1.ValidationError.Severity getSeverity();
 
@@ -64,6 +68,8 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @return A list containing the entries.
    */
   java.util.List<java.lang.String> getEntriesList();
   /**
@@ -86,6 +92,8 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @return The count of entries.
    */
   int getEntriesCount();
   /**
@@ -108,6 +116,9 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The entries at the given index.
    */
   java.lang.String getEntries(int index);
   /**
@@ -130,6 +141,9 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>repeated string entries = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the entries at the given index.
    */
   com.google.protobuf.ByteString getEntriesBytes(int index);
 
@@ -141,6 +155,8 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>string error_message = 4;</code>
+   *
+   * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
   /**
@@ -151,6 +167,8 @@ public interface ValidationErrorOrBuilder
    * </pre>
    *
    * <code>string error_message = 4;</code>
+   *
+   * @return The bytes for errorMessage.
    */
   com.google.protobuf.ByteString getErrorMessageBytes();
 }

@@ -44,6 +44,12 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchUpdateIntentsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -165,7 +170,10 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
   private int intentBatchCase_ = 0;
   private java.lang.Object intentBatch_;
 
-  public enum IntentBatchCase implements com.google.protobuf.Internal.EnumLite {
+  public enum IntentBatchCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INTENT_BATCH_URI(2),
     INTENT_BATCH_INLINE(3),
     INTENTBATCH_NOT_SET(0);
@@ -174,7 +182,11 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     private IntentBatchCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static IntentBatchCase valueOf(int value) {
       return forNumber(value);
@@ -213,6 +225,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -234,6 +248,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -258,6 +274,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string intent_batch_uri = 2;</code>
+   *
+   * @return The intentBatchUri.
    */
   public java.lang.String getIntentBatchUri() {
     java.lang.Object ref = "";
@@ -285,6 +303,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string intent_batch_uri = 2;</code>
+   *
+   * @return The bytes for intentBatchUri.
    */
   public com.google.protobuf.ByteString getIntentBatchUriBytes() {
     java.lang.Object ref = "";
@@ -312,6 +332,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
+   *
+   * @return Whether the intentBatchInline field is set.
    */
   public boolean hasIntentBatchInline() {
     return intentBatchCase_ == 3;
@@ -324,6 +346,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
+   *
+   * @return The intentBatchInline.
    */
   public com.google.cloud.dialogflow.v2beta1.IntentBatch getIntentBatchInline() {
     if (intentBatchCase_ == 3) {
@@ -362,6 +386,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string language_code = 4;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -387,6 +413,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string language_code = 4;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -410,6 +438,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -422,6 +452,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -449,6 +481,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   public int getIntentViewValue() {
     return intentView_;
@@ -461,6 +495,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+   *
+   * @return The intentView.
    */
   public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
@@ -944,6 +980,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -965,6 +1003,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -986,6 +1026,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1005,6 +1048,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1021,6 +1066,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1043,6 +1091,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string intent_batch_uri = 2;</code>
+     *
+     * @return The intentBatchUri.
      */
     public java.lang.String getIntentBatchUri() {
       java.lang.Object ref = "";
@@ -1070,6 +1120,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string intent_batch_uri = 2;</code>
+     *
+     * @return The bytes for intentBatchUri.
      */
     public com.google.protobuf.ByteString getIntentBatchUriBytes() {
       java.lang.Object ref = "";
@@ -1097,6 +1149,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string intent_batch_uri = 2;</code>
+     *
+     * @param value The intentBatchUri to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentBatchUri(java.lang.String value) {
       if (value == null) {
@@ -1117,6 +1172,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string intent_batch_uri = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIntentBatchUri() {
       if (intentBatchCase_ == 2) {
@@ -1136,6 +1193,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string intent_batch_uri = 2;</code>
+     *
+     * @param value The bytes for intentBatchUri to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentBatchUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1161,6 +1221,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
+     *
+     * @return Whether the intentBatchInline field is set.
      */
     public boolean hasIntentBatchInline() {
       return intentBatchCase_ == 3;
@@ -1173,6 +1235,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
+     *
+     * @return The intentBatchInline.
      */
     public com.google.cloud.dialogflow.v2beta1.IntentBatch getIntentBatchInline() {
       if (intentBatchInlineBuilder_ == null) {
@@ -1366,6 +1430,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 4;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1391,6 +1457,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 4;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1416,6 +1484,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 4;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1439,6 +1510,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1459,6 +1532,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 4;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1485,6 +1561,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1497,6 +1575,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1659,6 +1739,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+     *
+     * @return The enum numeric value on the wire for intentView.
      */
     public int getIntentViewValue() {
       return intentView_;
@@ -1671,6 +1753,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for intentView to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
       intentView_ = value;
@@ -1685,6 +1770,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+     *
+     * @return The intentView.
      */
     public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
@@ -1700,6 +1787,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+     *
+     * @param value The intentView to set.
+     * @return This builder for chaining.
      */
     public Builder setIntentView(com.google.cloud.dialogflow.v2beta1.IntentView value) {
       if (value == null) {
@@ -1718,6 +1808,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIntentView() {
 

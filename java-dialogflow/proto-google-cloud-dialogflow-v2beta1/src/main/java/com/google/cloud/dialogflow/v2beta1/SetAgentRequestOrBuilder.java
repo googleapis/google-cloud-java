@@ -31,6 +31,8 @@ public interface SetAgentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+   *
+   * @return Whether the agent field is set.
    */
   boolean hasAgent();
   /**
@@ -41,6 +43,8 @@ public interface SetAgentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+   *
+   * @return The agent.
    */
   com.google.cloud.dialogflow.v2beta1.Agent getAgent();
   /**
@@ -62,6 +66,8 @@ public interface SetAgentRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -72,6 +78,8 @@ public interface SetAgentRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -34,6 +34,8 @@ public interface CreateEntityTypeRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateEntityTypeRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateEntityTypeRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the entityType field is set.
    */
   boolean hasEntityType();
   /**
@@ -72,6 +78,8 @@ public interface CreateEntityTypeRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The entityType.
    */
   com.google.cloud.dialogflow.v2.EntityType getEntityType();
   /**
@@ -100,6 +108,8 @@ public interface CreateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -115,6 +125,8 @@ public interface CreateEntityTypeRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

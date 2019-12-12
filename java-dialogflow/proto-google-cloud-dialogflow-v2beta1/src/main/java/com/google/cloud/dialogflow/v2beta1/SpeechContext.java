@@ -43,6 +43,12 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeechContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -118,7 +124,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.SpeechContext.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PHRASES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList phrases_;
   /**
@@ -138,6 +143,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @return A list containing the phrases.
    */
   public com.google.protobuf.ProtocolStringList getPhrasesList() {
     return phrases_;
@@ -159,6 +166,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @return The count of phrases.
    */
   public int getPhrasesCount() {
     return phrases_.size();
@@ -180,6 +189,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phrases at the given index.
    */
   public java.lang.String getPhrases(int index) {
     return phrases_.get(index);
@@ -201,6 +213,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phrases at the given index.
    */
   public com.google.protobuf.ByteString getPhrasesBytes(int index) {
     return phrases_.getByteString(index);
@@ -222,6 +237,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float boost = 2;</code>
+   *
+   * @return The boost.
    */
   public float getBoost() {
     return boost_;
@@ -481,14 +498,12 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.SpeechContext result =
           new com.google.cloud.dialogflow.v2beta1.SpeechContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         phrases_ = phrases_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.phrases_ = phrases_;
       result.boost_ = boost_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -610,6 +625,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @return A list containing the phrases.
      */
     public com.google.protobuf.ProtocolStringList getPhrasesList() {
       return phrases_.getUnmodifiableView();
@@ -631,6 +648,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @return The count of phrases.
      */
     public int getPhrasesCount() {
       return phrases_.size();
@@ -652,6 +671,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The phrases at the given index.
      */
     public java.lang.String getPhrases(int index) {
       return phrases_.get(index);
@@ -673,6 +695,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the phrases at the given index.
      */
     public com.google.protobuf.ByteString getPhrasesBytes(int index) {
       return phrases_.getByteString(index);
@@ -694,6 +719,10 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The phrases to set.
+     * @return This builder for chaining.
      */
     public Builder setPhrases(int index, java.lang.String value) {
       if (value == null) {
@@ -721,6 +750,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @param value The phrases to add.
+     * @return This builder for chaining.
      */
     public Builder addPhrases(java.lang.String value) {
       if (value == null) {
@@ -748,6 +780,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @param values The phrases to add.
+     * @return This builder for chaining.
      */
     public Builder addAllPhrases(java.lang.Iterable<java.lang.String> values) {
       ensurePhrasesIsMutable();
@@ -772,6 +807,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPhrases() {
       phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -796,6 +833,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
+     *
+     * @param value The bytes of the phrases to add.
+     * @return This builder for chaining.
      */
     public Builder addPhrasesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -823,6 +863,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float boost = 2;</code>
+     *
+     * @return The boost.
      */
     public float getBoost() {
       return boost_;
@@ -841,6 +883,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float boost = 2;</code>
+     *
+     * @param value The boost to set.
+     * @return This builder for chaining.
      */
     public Builder setBoost(float value) {
 
@@ -862,6 +907,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float boost = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBoost() {
 

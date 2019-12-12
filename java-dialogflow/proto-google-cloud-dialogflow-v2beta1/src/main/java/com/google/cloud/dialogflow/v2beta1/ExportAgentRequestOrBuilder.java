@@ -32,6 +32,8 @@ public interface ExportAgentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ExportAgentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface ExportAgentRequestOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
+   *
+   * @return The agentUri.
    */
   java.lang.String getAgentUri();
   /**
@@ -72,6 +78,8 @@ public interface ExportAgentRequestOrBuilder
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
+   *
+   * @return The bytes for agentUri.
    */
   com.google.protobuf.ByteString getAgentUriBytes();
 }

@@ -31,6 +31,8 @@ public interface KnowledgeOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface KnowledgeOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State getState();
 }

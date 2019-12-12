@@ -32,6 +32,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -74,6 +80,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -85,6 +93,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 3;</code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -95,6 +105,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 3;</code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 }

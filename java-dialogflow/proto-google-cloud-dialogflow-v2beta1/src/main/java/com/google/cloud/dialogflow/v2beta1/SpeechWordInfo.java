@@ -42,6 +42,12 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeechWordInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The word.
    */
   public java.lang.String getWord() {
     java.lang.Object ref = word_;
@@ -171,6 +178,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The bytes for word.
    */
   public com.google.protobuf.ByteString getWordBytes() {
     java.lang.Object ref = word_;
@@ -196,6 +205,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration start_offset = 1;</code>
+   *
+   * @return Whether the startOffset field is set.
    */
   public boolean hasStartOffset() {
     return startOffset_ != null;
@@ -210,6 +221,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration start_offset = 1;</code>
+   *
+   * @return The startOffset.
    */
   public com.google.protobuf.Duration getStartOffset() {
     return startOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startOffset_;
@@ -241,6 +254,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration end_offset = 2;</code>
+   *
+   * @return Whether the endOffset field is set.
    */
   public boolean hasEndOffset() {
     return endOffset_ != null;
@@ -255,6 +270,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration end_offset = 2;</code>
+   *
+   * @return The endOffset.
    */
   public com.google.protobuf.Duration getEndOffset() {
     return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
@@ -289,6 +306,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -693,6 +712,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @return The word.
      */
     public java.lang.String getWord() {
       java.lang.Object ref = word_;
@@ -713,6 +734,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @return The bytes for word.
      */
     public com.google.protobuf.ByteString getWordBytes() {
       java.lang.Object ref = word_;
@@ -733,6 +756,9 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @param value The word to set.
+     * @return This builder for chaining.
      */
     public Builder setWord(java.lang.String value) {
       if (value == null) {
@@ -751,6 +777,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWord() {
 
@@ -766,6 +794,9 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @param value The bytes for word to set.
+     * @return This builder for chaining.
      */
     public Builder setWordBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -794,6 +825,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration start_offset = 1;</code>
+     *
+     * @return Whether the startOffset field is set.
      */
     public boolean hasStartOffset() {
       return startOffsetBuilder_ != null || startOffset_ != null;
@@ -808,6 +841,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration start_offset = 1;</code>
+     *
+     * @return The startOffset.
      */
     public com.google.protobuf.Duration getStartOffset() {
       if (startOffsetBuilder_ == null) {
@@ -991,6 +1026,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration end_offset = 2;</code>
+     *
+     * @return Whether the endOffset field is set.
      */
     public boolean hasEndOffset() {
       return endOffsetBuilder_ != null || endOffset_ != null;
@@ -1005,6 +1042,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration end_offset = 2;</code>
+     *
+     * @return The endOffset.
      */
     public com.google.protobuf.Duration getEndOffset() {
       if (endOffsetBuilder_ == null) {
@@ -1182,6 +1221,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1199,6 +1240,9 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1219,6 +1263,8 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

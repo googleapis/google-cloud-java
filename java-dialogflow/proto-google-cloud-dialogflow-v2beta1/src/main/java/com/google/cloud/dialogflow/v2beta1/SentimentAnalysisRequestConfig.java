@@ -41,6 +41,12 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
   private SentimentAnalysisRequestConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SentimentAnalysisRequestConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +120,8 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>bool analyze_query_text_sentiment = 1;</code>
+   *
+   * @return The analyzeQueryTextSentiment.
    */
   public boolean getAnalyzeQueryTextSentiment() {
     return analyzeQueryTextSentiment_;
@@ -457,6 +464,8 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>bool analyze_query_text_sentiment = 1;</code>
+     *
+     * @return The analyzeQueryTextSentiment.
      */
     public boolean getAnalyzeQueryTextSentiment() {
       return analyzeQueryTextSentiment_;
@@ -471,6 +480,9 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>bool analyze_query_text_sentiment = 1;</code>
+     *
+     * @param value The analyzeQueryTextSentiment to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalyzeQueryTextSentiment(boolean value) {
 
@@ -488,6 +500,8 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>bool analyze_query_text_sentiment = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnalyzeQueryTextSentiment() {
 

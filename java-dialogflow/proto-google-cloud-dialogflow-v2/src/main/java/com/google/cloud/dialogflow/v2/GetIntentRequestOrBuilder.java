@@ -34,6 +34,8 @@ public interface GetIntentRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface GetIntentRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -78,6 +84,8 @@ public interface GetIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -91,6 +99,8 @@ public interface GetIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -103,6 +113,8 @@ public interface GetIntentRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.IntentView intent_view = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 }

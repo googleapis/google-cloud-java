@@ -34,6 +34,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>double speaking_rate = 1;</code>
+   *
+   * @return The speakingRate.
    */
   double getSpeakingRate();
 
@@ -47,6 +49,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>double pitch = 2;</code>
+   *
+   * @return The pitch.
    */
   double getPitch();
 
@@ -65,6 +69,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>double volume_gain_db = 3;</code>
+   *
+   * @return The volumeGainDb.
    */
   double getVolumeGainDb();
 
@@ -78,6 +84,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>repeated string effects_profile_id = 5;</code>
+   *
+   * @return A list containing the effectsProfileId.
    */
   java.util.List<java.lang.String> getEffectsProfileIdList();
   /**
@@ -90,6 +98,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>repeated string effects_profile_id = 5;</code>
+   *
+   * @return The count of effectsProfileId.
    */
   int getEffectsProfileIdCount();
   /**
@@ -102,6 +112,9 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>repeated string effects_profile_id = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The effectsProfileId at the given index.
    */
   java.lang.String getEffectsProfileId(int index);
   /**
@@ -114,6 +127,9 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>repeated string effects_profile_id = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the effectsProfileId at the given index.
    */
   com.google.protobuf.ByteString getEffectsProfileIdBytes(int index);
 
@@ -125,6 +141,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
+   *
+   * @return Whether the voice field is set.
    */
   boolean hasVoice();
   /**
@@ -135,6 +153,8 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
+   *
+   * @return The voice.
    */
   com.google.cloud.dialogflow.v2.VoiceSelectionParams getVoice();
   /**

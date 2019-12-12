@@ -32,6 +32,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string intent_batch_uri = 2;</code>
+   *
+   * @return The intentBatchUri.
    */
   java.lang.String getIntentBatchUri();
   /**
@@ -68,6 +74,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string intent_batch_uri = 2;</code>
+   *
+   * @return The bytes for intentBatchUri.
    */
   com.google.protobuf.ByteString getIntentBatchUriBytes();
 
@@ -79,6 +87,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
+   *
+   * @return Whether the intentBatchInline field is set.
    */
   boolean hasIntentBatchInline();
   /**
@@ -89,6 +99,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
+   *
+   * @return The intentBatchInline.
    */
   com.google.cloud.dialogflow.v2beta1.IntentBatch getIntentBatchInline();
   /**
@@ -115,6 +127,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 4;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -130,6 +144,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 4;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -141,6 +157,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -151,6 +169,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -172,6 +192,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -182,6 +204,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 6;</code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 

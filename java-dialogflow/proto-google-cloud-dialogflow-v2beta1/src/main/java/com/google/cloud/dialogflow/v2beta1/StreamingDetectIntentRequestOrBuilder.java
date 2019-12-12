@@ -40,6 +40,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string session = 1;</code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -59,6 +61,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>string session = 1;</code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -70,6 +74,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
+   *
+   * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
   /**
@@ -80,6 +86,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
+   *
+   * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2beta1.QueryParameters getQueryParams();
   /**
@@ -105,6 +113,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   *
+   * @return Whether the queryInput field is set.
    */
   boolean hasQueryInput();
   /**
@@ -119,6 +129,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   *
+   * @return The queryInput.
    */
   com.google.cloud.dialogflow.v2beta1.QueryInput getQueryInput();
   /**
@@ -152,6 +164,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>bool single_utterance = 4;</code>
+   *
+   * @return The singleUtterance.
    */
   boolean getSingleUtterance();
 
@@ -165,6 +179,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
   /**
@@ -177,6 +193,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   *
+   * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
   /**
@@ -202,6 +220,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * </pre>
    *
    * <code>bytes input_audio = 6;</code>
+   *
+   * @return The inputAudio.
    */
   com.google.protobuf.ByteString getInputAudio();
 }

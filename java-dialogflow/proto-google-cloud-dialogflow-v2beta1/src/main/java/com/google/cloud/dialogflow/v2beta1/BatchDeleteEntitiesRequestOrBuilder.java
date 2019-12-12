@@ -32,6 +32,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @return A list containing the entityValues.
    */
   java.util.List<java.lang.String> getEntityValuesList();
   /**
@@ -68,6 +74,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @return The count of entityValues.
    */
   int getEntityValuesCount();
   /**
@@ -80,6 +88,9 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The entityValues at the given index.
    */
   java.lang.String getEntityValues(int index);
   /**
@@ -92,6 +103,9 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the entityValues at the given index.
    */
   com.google.protobuf.ByteString getEntityValuesBytes(int index);
 
@@ -108,6 +122,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -123,6 +139,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

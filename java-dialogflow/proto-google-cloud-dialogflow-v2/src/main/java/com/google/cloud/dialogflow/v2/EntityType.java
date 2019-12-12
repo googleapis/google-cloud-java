@@ -48,6 +48,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EntityType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -101,10 +107,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entities_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2.EntityType.Entity>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               entities_.add(
                   input.readMessage(
@@ -131,7 +137,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
       }
       this.unknownFields = unknownFields.build();
@@ -264,12 +270,20 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Kind valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Kind forNumber(int value) {
       switch (value) {
         case 0:
@@ -395,12 +409,20 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AutoExpansionMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AutoExpansionMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -479,6 +501,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The value.
      */
     java.lang.String getValue();
     /**
@@ -496,6 +520,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString getValueBytes();
 
@@ -511,6 +537,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the synonyms.
      */
     java.util.List<java.lang.String> getSynonymsList();
     /**
@@ -525,6 +553,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of synonyms.
      */
     int getSynonymsCount();
     /**
@@ -539,6 +569,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The synonyms at the given index.
      */
     java.lang.String getSynonyms(int index);
     /**
@@ -553,6 +586,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the synonyms at the given index.
      */
     com.google.protobuf.ByteString getSynonymsBytes(int index);
   }
@@ -578,6 +614,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     private Entity() {
       value_ = "";
       synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Entity();
     }
 
     @java.lang.Override
@@ -614,9 +656,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   synonyms_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 synonyms_.add(s);
                 break;
@@ -635,7 +677,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           synonyms_ = synonyms_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -658,7 +700,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.v2.EntityType.Entity.Builder.class);
     }
 
-    private int bitField0_;
     public static final int VALUE_FIELD_NUMBER = 1;
     private volatile java.lang.Object value_;
     /**
@@ -676,6 +717,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -703,6 +746,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
@@ -730,6 +775,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the synonyms.
      */
     public com.google.protobuf.ProtocolStringList getSynonymsList() {
       return synonyms_;
@@ -746,6 +793,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of synonyms.
      */
     public int getSynonymsCount() {
       return synonyms_.size();
@@ -762,6 +811,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The synonyms at the given index.
      */
     public java.lang.String getSynonyms(int index) {
       return synonyms_.get(index);
@@ -778,6 +830,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the synonyms at the given index.
      */
     public com.google.protobuf.ByteString getSynonymsBytes(int index) {
       return synonyms_.getByteString(index);
@@ -1008,7 +1063,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         value_ = "";
 
         synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1037,14 +1092,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2.EntityType.Entity result =
             new com.google.cloud.dialogflow.v2.EntityType.Entity(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.value_ = value_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           synonyms_ = synonyms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.synonyms_ = synonyms_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1104,7 +1157,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         if (!other.synonyms_.isEmpty()) {
           if (synonyms_.isEmpty()) {
             synonyms_ = other.synonyms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSynonymsIsMutable();
             synonyms_.addAll(other.synonyms_);
@@ -1159,6 +1212,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The value.
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -1186,6 +1241,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString getValueBytes() {
         java.lang.Object ref = value_;
@@ -1213,6 +1270,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(java.lang.String value) {
         if (value == null) {
@@ -1238,6 +1298,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
 
@@ -1260,6 +1322,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1276,9 +1341,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSynonymsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1293,6 +1358,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the synonyms.
        */
       public com.google.protobuf.ProtocolStringList getSynonymsList() {
         return synonyms_.getUnmodifiableView();
@@ -1309,6 +1376,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of synonyms.
        */
       public int getSynonymsCount() {
         return synonyms_.size();
@@ -1325,6 +1394,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The synonyms at the given index.
        */
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
@@ -1341,6 +1413,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the synonyms at the given index.
        */
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
@@ -1357,6 +1432,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The synonyms to set.
+       * @return This builder for chaining.
        */
       public Builder setSynonyms(int index, java.lang.String value) {
         if (value == null) {
@@ -1379,6 +1458,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The synonyms to add.
+       * @return This builder for chaining.
        */
       public Builder addSynonyms(java.lang.String value) {
         if (value == null) {
@@ -1401,6 +1483,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param values The synonyms to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
         ensureSynonymsIsMutable();
@@ -1420,10 +1505,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSynonyms() {
         synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1439,6 +1526,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes of the synonyms to add.
+       * @return This builder for chaining.
        */
       public Builder addSynonymsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1503,7 +1593,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1517,6 +1606,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1540,6 +1631,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1563,6 +1656,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -1583,6 +1678,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -1608,6 +1705,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
@@ -1622,6 +1721,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The kind.
    */
   public com.google.cloud.dialogflow.v2.EntityType.Kind getKind() {
     @SuppressWarnings("deprecation")
@@ -1643,6 +1744,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for autoExpansionMode.
    */
   public int getAutoExpansionModeValue() {
     return autoExpansionMode_;
@@ -1658,6 +1761,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The autoExpansionMode.
    */
   public com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode getAutoExpansionMode() {
     @SuppressWarnings("deprecation")
@@ -1752,6 +1857,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableFuzzyExtraction.
    */
   public boolean getEnableFuzzyExtraction() {
     return enableFuzzyExtraction_;
@@ -2028,7 +2135,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
 
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         entitiesBuilder_.clear();
       }
@@ -2062,22 +2169,20 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2.EntityType result =
           new com.google.cloud.dialogflow.v2.EntityType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.kind_ = kind_;
       result.autoExpansionMode_ = autoExpansionMode_;
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entities_ = entities_;
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
       result.enableFuzzyExtraction_ = enableFuzzyExtraction_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2145,7 +2250,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -2158,7 +2263,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -2214,6 +2319,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2237,6 +2344,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2260,6 +2369,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2281,6 +2393,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2299,6 +2413,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2320,6 +2437,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2340,6 +2459,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -2360,6 +2481,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -2378,6 +2502,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -2393,6 +2519,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2416,6 +2545,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
@@ -2430,6 +2561,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -2446,6 +2580,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The kind.
      */
     public com.google.cloud.dialogflow.v2.EntityType.Kind getKind() {
       @SuppressWarnings("deprecation")
@@ -2463,6 +2599,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(com.google.cloud.dialogflow.v2.EntityType.Kind value) {
       if (value == null) {
@@ -2483,6 +2622,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
 
@@ -2503,6 +2644,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for autoExpansionMode.
      */
     public int getAutoExpansionModeValue() {
       return autoExpansionMode_;
@@ -2518,6 +2661,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for autoExpansionMode to set.
+     * @return This builder for chaining.
      */
     public Builder setAutoExpansionModeValue(int value) {
       autoExpansionMode_ = value;
@@ -2535,6 +2681,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The autoExpansionMode.
      */
     public com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode getAutoExpansionMode() {
       @SuppressWarnings("deprecation")
@@ -2555,6 +2703,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The autoExpansionMode to set.
+     * @return This builder for chaining.
      */
     public Builder setAutoExpansionMode(
         com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode value) {
@@ -2577,6 +2728,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dialogflow.v2.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAutoExpansionMode() {
 
@@ -2589,10 +2742,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.EntityType.Entity>(entities_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2830,7 +2983,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -2967,7 +3120,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2.EntityType.Entity,
                 com.google.cloud.dialogflow.v2.EntityType.Entity.Builder,
                 com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;
@@ -2982,6 +3135,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableFuzzyExtraction.
      */
     public boolean getEnableFuzzyExtraction() {
       return enableFuzzyExtraction_;
@@ -2994,6 +3149,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableFuzzyExtraction to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableFuzzyExtraction(boolean value) {
 
@@ -3009,6 +3167,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableFuzzyExtraction() {
 

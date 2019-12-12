@@ -32,6 +32,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -57,6 +61,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string entity_type_batch_uri = 2;</code>
+   *
+   * @return The entityTypeBatchUri.
    */
   java.lang.String getEntityTypeBatchUri();
   /**
@@ -70,6 +76,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string entity_type_batch_uri = 2;</code>
+   *
+   * @return The bytes for entityTypeBatchUri.
    */
   com.google.protobuf.ByteString getEntityTypeBatchUriBytes();
 
@@ -81,6 +89,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
+   *
+   * @return Whether the entityTypeBatchInline field is set.
    */
   boolean hasEntityTypeBatchInline();
   /**
@@ -91,6 +101,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
+   *
+   * @return The entityTypeBatchInline.
    */
   com.google.cloud.dialogflow.v2beta1.EntityTypeBatch getEntityTypeBatchInline();
   /**
@@ -117,6 +129,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 4;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -132,6 +146,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 4;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -143,6 +159,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -153,6 +171,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

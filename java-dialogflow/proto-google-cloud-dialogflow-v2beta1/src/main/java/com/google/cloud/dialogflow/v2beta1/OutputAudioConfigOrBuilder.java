@@ -31,6 +31,8 @@ public interface OutputAudioConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
   /**
@@ -41,6 +43,8 @@ public interface OutputAudioConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioEncoding audio_encoding = 1;</code>
+   *
+   * @return The audioEncoding.
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding getAudioEncoding();
 
@@ -56,6 +60,8 @@ public interface OutputAudioConfigOrBuilder
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
+   *
+   * @return The sampleRateHertz.
    */
   int getSampleRateHertz();
 
@@ -68,6 +74,8 @@ public interface OutputAudioConfigOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
    * </code>
+   *
+   * @return Whether the synthesizeSpeechConfig field is set.
    */
   boolean hasSynthesizeSpeechConfig();
   /**
@@ -79,6 +87,8 @@ public interface OutputAudioConfigOrBuilder
    *
    * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
    * </code>
+   *
+   * @return The synthesizeSpeechConfig.
    */
   com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getSynthesizeSpeechConfig();
   /**

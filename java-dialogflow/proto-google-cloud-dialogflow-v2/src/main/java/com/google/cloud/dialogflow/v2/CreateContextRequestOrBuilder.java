@@ -32,6 +32,8 @@ public interface CreateContextRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateContextRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface CreateContextRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -68,6 +74,8 @@ public interface CreateContextRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The context.
    */
   com.google.cloud.dialogflow.v2.Context getContext();
   /**

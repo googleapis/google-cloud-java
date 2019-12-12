@@ -36,6 +36,8 @@ public interface CreateContextRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateContextRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface CreateContextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Context context = 2;</code>
+   *
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -72,6 +78,8 @@ public interface CreateContextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Context context = 2;</code>
+   *
+   * @return The context.
    */
   com.google.cloud.dialogflow.v2beta1.Context getContext();
   /**

@@ -44,6 +44,12 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchDeleteEntitiesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityValues_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               entityValues_.add(s);
               break;
@@ -105,7 +111,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entityValues_ = entityValues_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -128,7 +134,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -140,6 +145,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -161,6 +168,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -186,6 +195,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @return A list containing the entityValues.
    */
   public com.google.protobuf.ProtocolStringList getEntityValuesList() {
     return entityValues_;
@@ -200,6 +211,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @return The count of entityValues.
    */
   public int getEntityValuesCount() {
     return entityValues_.size();
@@ -214,6 +227,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The entityValues at the given index.
    */
   public java.lang.String getEntityValues(int index) {
     return entityValues_.get(index);
@@ -228,6 +244,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string entity_values = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the entityValues at the given index.
    */
   public com.google.protobuf.ByteString getEntityValuesBytes(int index) {
     return entityValues_.getByteString(index);
@@ -248,6 +267,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -273,6 +294,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -519,7 +542,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       parent_ = "";
 
       entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       languageCode_ = "";
 
       return this;
@@ -551,15 +574,13 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         entityValues_ = entityValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.entityValues_ = entityValues_;
       result.languageCode_ = languageCode_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -618,7 +639,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       if (!other.entityValues_.isEmpty()) {
         if (entityValues_.isEmpty()) {
           entityValues_ = other.entityValues_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEntityValuesIsMutable();
           entityValues_.addAll(other.entityValues_);
@@ -672,6 +693,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -693,6 +716,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -714,6 +739,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -733,6 +761,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -749,6 +779,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -765,9 +798,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntityValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entityValues_ = new com.google.protobuf.LazyStringArrayList(entityValues_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -780,6 +813,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @return A list containing the entityValues.
      */
     public com.google.protobuf.ProtocolStringList getEntityValuesList() {
       return entityValues_.getUnmodifiableView();
@@ -794,6 +829,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @return The count of entityValues.
      */
     public int getEntityValuesCount() {
       return entityValues_.size();
@@ -808,6 +845,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The entityValues at the given index.
      */
     public java.lang.String getEntityValues(int index) {
       return entityValues_.get(index);
@@ -822,6 +862,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the entityValues at the given index.
      */
     public com.google.protobuf.ByteString getEntityValuesBytes(int index) {
       return entityValues_.getByteString(index);
@@ -836,6 +879,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The entityValues to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityValues(int index, java.lang.String value) {
       if (value == null) {
@@ -856,6 +903,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @param value The entityValues to add.
+     * @return This builder for chaining.
      */
     public Builder addEntityValues(java.lang.String value) {
       if (value == null) {
@@ -876,6 +926,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @param values The entityValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEntityValues(java.lang.Iterable<java.lang.String> values) {
       ensureEntityValuesIsMutable();
@@ -893,10 +946,12 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntityValues() {
       entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -910,6 +965,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string entity_values = 2;</code>
+     *
+     * @param value The bytes of the entityValues to add.
+     * @return This builder for chaining.
      */
     public Builder addEntityValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -936,6 +994,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -961,6 +1021,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -986,6 +1048,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1009,6 +1074,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1029,6 +1096,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

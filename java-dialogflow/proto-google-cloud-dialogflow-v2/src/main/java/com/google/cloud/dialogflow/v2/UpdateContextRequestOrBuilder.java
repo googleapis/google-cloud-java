@@ -33,6 +33,8 @@ public interface UpdateContextRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -45,6 +47,8 @@ public interface UpdateContextRequestOrBuilder
    * <code>
    * .google.cloud.dialogflow.v2.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The context.
    */
   com.google.cloud.dialogflow.v2.Context getContext();
   /**
@@ -69,6 +73,8 @@ public interface UpdateContextRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -80,6 +86,8 @@ public interface UpdateContextRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

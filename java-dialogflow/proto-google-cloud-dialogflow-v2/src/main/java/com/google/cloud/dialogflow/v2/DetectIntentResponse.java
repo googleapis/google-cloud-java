@@ -43,6 +43,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DetectIntentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -169,6 +174,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The responseId.
    */
   public java.lang.String getResponseId() {
     java.lang.Object ref = responseId_;
@@ -190,6 +197,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string response_id = 1;</code>
+   *
+   * @return The bytes for responseId.
    */
   public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
@@ -214,6 +223,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+   *
+   * @return Whether the queryResult field is set.
    */
   public boolean hasQueryResult() {
     return queryResult_ != null;
@@ -227,6 +238,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+   *
+   * @return The queryResult.
    */
   public com.google.cloud.dialogflow.v2.QueryResult getQueryResult() {
     return queryResult_ == null
@@ -257,6 +270,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
+   *
+   * @return Whether the webhookStatus field is set.
    */
   public boolean hasWebhookStatus() {
     return webhookStatus_ != null;
@@ -269,6 +284,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
+   *
+   * @return The webhookStatus.
    */
   public com.google.rpc.Status getWebhookStatus() {
     return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
@@ -301,6 +318,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bytes output_audio = 4;</code>
+   *
+   * @return The outputAudio.
    */
   public com.google.protobuf.ByteString getOutputAudio() {
     return outputAudio_;
@@ -316,6 +335,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   *
+   * @return Whether the outputAudioConfig field is set.
    */
   public boolean hasOutputAudioConfig() {
     return outputAudioConfig_ != null;
@@ -328,6 +349,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   *
+   * @return The outputAudioConfig.
    */
   public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
@@ -774,6 +797,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The responseId.
      */
     public java.lang.String getResponseId() {
       java.lang.Object ref = responseId_;
@@ -795,6 +820,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return The bytes for responseId.
      */
     public com.google.protobuf.ByteString getResponseIdBytes() {
       java.lang.Object ref = responseId_;
@@ -816,6 +843,9 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseId(java.lang.String value) {
       if (value == null) {
@@ -835,6 +865,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseId() {
 
@@ -851,6 +883,9 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string response_id = 1;</code>
+     *
+     * @param value The bytes for responseId to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -878,6 +913,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+     *
+     * @return Whether the queryResult field is set.
      */
     public boolean hasQueryResult() {
       return queryResultBuilder_ != null || queryResult_ != null;
@@ -891,6 +928,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
+     *
+     * @return The queryResult.
      */
     public com.google.cloud.dialogflow.v2.QueryResult getQueryResult() {
       if (queryResultBuilder_ == null) {
@@ -1066,6 +1105,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
+     *
+     * @return Whether the webhookStatus field is set.
      */
     public boolean hasWebhookStatus() {
       return webhookStatusBuilder_ != null || webhookStatus_ != null;
@@ -1078,6 +1119,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
+     *
+     * @return The webhookStatus.
      */
     public com.google.rpc.Status getWebhookStatus() {
       if (webhookStatusBuilder_ == null) {
@@ -1239,6 +1282,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bytes output_audio = 4;</code>
+     *
+     * @return The outputAudio.
      */
     public com.google.protobuf.ByteString getOutputAudio() {
       return outputAudio_;
@@ -1256,6 +1301,9 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bytes output_audio = 4;</code>
+     *
+     * @param value The outputAudio to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputAudio(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1279,6 +1327,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bytes output_audio = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutputAudio() {
 
@@ -1301,6 +1351,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     *
+     * @return Whether the outputAudioConfig field is set.
      */
     public boolean hasOutputAudioConfig() {
       return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
@@ -1313,6 +1365,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     *
+     * @return The outputAudioConfig.
      */
     public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {

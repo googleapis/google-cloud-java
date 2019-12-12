@@ -79,25 +79,17 @@ public final class WebhookProto {
           + "ogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cl"
           + "oud.Dialogflow.V2b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.dialogflow.v2.ContextProto.getDescriptor(),
-          com.google.cloud.dialogflow.v2.IntentProto.getDescriptor(),
-          com.google.cloud.dialogflow.v2.SessionProto.getDescriptor(),
-          com.google.cloud.dialogflow.v2.SessionEntityTypeProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.cloud.dialogflow.v2.ContextProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2.IntentProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2.SessionProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2.SessionEntityTypeProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_dialogflow_v2_WebhookRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_dialogflow_v2_WebhookRequest_fieldAccessorTable =

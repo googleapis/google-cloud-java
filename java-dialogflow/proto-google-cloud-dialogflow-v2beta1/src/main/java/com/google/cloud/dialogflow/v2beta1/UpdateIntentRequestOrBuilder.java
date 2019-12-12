@@ -31,6 +31,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
+   *
+   * @return Whether the intent field is set.
    */
   boolean hasIntent();
   /**
@@ -41,6 +43,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
+   *
+   * @return The intent.
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
   /**
@@ -67,6 +71,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -82,6 +88,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -93,6 +101,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -103,6 +113,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -124,6 +136,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
   /**
@@ -134,6 +148,8 @@ public interface UpdateIntentRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentView intent_view = 4;</code>
+   *
+   * @return The intentView.
    */
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 }

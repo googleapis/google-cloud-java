@@ -31,6 +31,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The word.
    */
   java.lang.String getWord();
   /**
@@ -41,6 +43,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The bytes for word.
    */
   com.google.protobuf.ByteString getWordBytes();
 
@@ -54,6 +58,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration start_offset = 1;</code>
+   *
+   * @return Whether the startOffset field is set.
    */
   boolean hasStartOffset();
   /**
@@ -66,6 +72,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration start_offset = 1;</code>
+   *
+   * @return The startOffset.
    */
   com.google.protobuf.Duration getStartOffset();
   /**
@@ -91,6 +99,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration end_offset = 2;</code>
+   *
+   * @return Whether the endOffset field is set.
    */
   boolean hasEndOffset();
   /**
@@ -103,6 +113,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration end_offset = 2;</code>
+   *
+   * @return The endOffset.
    */
   com.google.protobuf.Duration getEndOffset();
   /**
@@ -131,6 +143,8 @@ public interface SpeechWordInfoOrBuilder
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }
