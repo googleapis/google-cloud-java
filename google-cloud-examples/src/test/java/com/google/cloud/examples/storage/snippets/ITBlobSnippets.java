@@ -27,6 +27,7 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.examples.storage.objects.GenerateV4GetObjectSignedUrl;
 import com.google.cloud.examples.storage.objects.GenerateV4PutObjectSignedUrl;
+import com.google.cloud.examples.storage.objects.MakeObjectPublic;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -74,6 +75,8 @@ public class ITBlobSnippets {
 
   private static Storage storage;
   private static Blob blob;
+
+  private static final String PROJECT_ID = System.getProperty("GOOGLE_CLOUD_PROJECT");
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -207,5 +210,14 @@ public class ITBlobSnippets {
       assertEquals(CONTENT.length, responseStream.read(readBytes));
       assertArrayEquals(CONTENT, readBytes);
     }
+  }
+    
+  @Test
+  public void testMakeObjectPublic() {
+    String aclBlob = "acl-test-blob";
+    assertNull(
+        storage.create(BlobInfo.newBuilder(BUCKET, aclBlob).build()).getAcl(Acl.User.ofAllUsers()));
+    MakeObjectPublic.makeObjectPublic(PROJECT_ID, BUCKET, aclBlob);
+    assertNotNull(storage.get(BUCKET, aclBlob).getAcl(Acl.User.ofAllUsers()));
   }
 }
