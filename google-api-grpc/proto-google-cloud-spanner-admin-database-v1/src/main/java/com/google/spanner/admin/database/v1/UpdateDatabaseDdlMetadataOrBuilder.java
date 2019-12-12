@@ -16,6 +16,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder
    * </pre>
    *
    * <code>string database = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The database.
    */
   java.lang.String getDatabase();
   /**
@@ -26,6 +28,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder
    * </pre>
    *
    * <code>string database = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 
@@ -38,6 +42,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
+   *
+   * @return A list containing the statements.
    */
   java.util.List<java.lang.String> getStatementsList();
   /**
@@ -49,6 +55,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
+   *
+   * @return The count of statements.
    */
   int getStatementsCount();
   /**
@@ -60,6 +68,9 @@ public interface UpdateDatabaseDdlMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The statements at the given index.
    */
   java.lang.String getStatements(int index);
   /**
@@ -71,6 +82,9 @@ public interface UpdateDatabaseDdlMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the statements at the given index.
    */
   com.google.protobuf.ByteString getStatementsBytes(int index);
 

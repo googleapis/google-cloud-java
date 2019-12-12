@@ -43,6 +43,12 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateDatabaseDdlRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statements_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               statements_.add(s);
               break;
@@ -104,7 +110,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statements_ = statements_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -127,7 +133,6 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
             com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATABASE_FIELD_NUMBER = 1;
   private volatile java.lang.Object database_;
   /**
@@ -140,6 +145,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The database.
    */
   public java.lang.String getDatabase() {
     java.lang.Object ref = database_;
@@ -162,6 +169,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for database.
    */
   public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
@@ -185,6 +194,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the statements.
    */
   public com.google.protobuf.ProtocolStringList getStatementsList() {
     return statements_;
@@ -197,6 +208,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of statements.
    */
   public int getStatementsCount() {
     return statements_.size();
@@ -209,6 +222,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The statements at the given index.
    */
   public java.lang.String getStatements(int index) {
     return statements_.get(index);
@@ -221,6 +237,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the statements at the given index.
    */
   public com.google.protobuf.ByteString getStatementsBytes(int index) {
     return statements_.getByteString(index);
@@ -254,6 +273,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string operation_id = 3;</code>
+   *
+   * @return The operationId.
    */
   public java.lang.String getOperationId() {
     java.lang.Object ref = operationId_;
@@ -292,6 +313,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string operation_id = 3;</code>
+   *
+   * @return The bytes for operationId.
    */
   public com.google.protobuf.ByteString getOperationIdBytes() {
     java.lang.Object ref = operationId_;
@@ -552,7 +575,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       database_ = "";
 
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       operationId_ = "";
 
       return this;
@@ -584,15 +607,13 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest result =
           new com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.database_ = database_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         statements_ = statements_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.statements_ = statements_;
       result.operationId_ = operationId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -651,7 +672,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       if (!other.statements_.isEmpty()) {
         if (statements_.isEmpty()) {
           statements_ = other.statements_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureStatementsIsMutable();
           statements_.addAll(other.statements_);
@@ -706,6 +727,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The database.
      */
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
@@ -728,6 +751,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for database.
      */
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
@@ -750,6 +775,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The database to set.
+     * @return This builder for chaining.
      */
     public Builder setDatabase(java.lang.String value) {
       if (value == null) {
@@ -770,6 +798,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDatabase() {
 
@@ -787,6 +817,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for database to set.
+     * @return This builder for chaining.
      */
     public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -803,9 +836,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statements_ = new com.google.protobuf.LazyStringArrayList(statements_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -816,6 +849,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the statements.
      */
     public com.google.protobuf.ProtocolStringList getStatementsList() {
       return statements_.getUnmodifiableView();
@@ -828,6 +863,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of statements.
      */
     public int getStatementsCount() {
       return statements_.size();
@@ -840,6 +877,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The statements at the given index.
      */
     public java.lang.String getStatements(int index) {
       return statements_.get(index);
@@ -852,6 +892,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the statements at the given index.
      */
     public com.google.protobuf.ByteString getStatementsBytes(int index) {
       return statements_.getByteString(index);
@@ -864,6 +907,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The statements to set.
+     * @return This builder for chaining.
      */
     public Builder setStatements(int index, java.lang.String value) {
       if (value == null) {
@@ -882,6 +929,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The statements to add.
+     * @return This builder for chaining.
      */
     public Builder addStatements(java.lang.String value) {
       if (value == null) {
@@ -900,6 +950,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The statements to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStatements(java.lang.Iterable<java.lang.String> values) {
       ensureStatementsIsMutable();
@@ -915,10 +968,12 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatements() {
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -930,6 +985,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the statements to add.
+     * @return This builder for chaining.
      */
     public Builder addStatementsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -969,6 +1027,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_id = 3;</code>
+     *
+     * @return The operationId.
      */
     public java.lang.String getOperationId() {
       java.lang.Object ref = operationId_;
@@ -1007,6 +1067,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_id = 3;</code>
+     *
+     * @return The bytes for operationId.
      */
     public com.google.protobuf.ByteString getOperationIdBytes() {
       java.lang.Object ref = operationId_;
@@ -1045,6 +1107,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_id = 3;</code>
+     *
+     * @param value The operationId to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationId(java.lang.String value) {
       if (value == null) {
@@ -1081,6 +1146,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOperationId() {
 
@@ -1114,6 +1181,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_id = 3;</code>
+     *
+     * @param value The bytes for operationId to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

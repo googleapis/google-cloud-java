@@ -19,6 +19,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -32,6 +34,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -46,6 +50,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The config.
    */
   java.lang.String getConfig();
   /**
@@ -59,6 +65,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for config.
    */
   com.google.protobuf.ByteString getConfigBytes();
 
@@ -71,6 +79,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -82,6 +92,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -97,6 +109,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>int32 node_count = 5;</code>
+   *
+   * @return The nodeCount.
    */
   int getNodeCount();
 
@@ -112,6 +126,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -126,6 +142,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+   *
+   * @return The state.
    */
   com.google.spanner.admin.instance.v1.Instance.State getState();
 
@@ -283,6 +301,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @return A list containing the endpointUris.
    */
   java.util.List<java.lang.String> getEndpointUrisList();
   /**
@@ -300,6 +320,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @return The count of endpointUris.
    */
   int getEndpointUrisCount();
   /**
@@ -317,6 +339,9 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The endpointUris at the given index.
    */
   java.lang.String getEndpointUris(int index);
   /**
@@ -334,6 +359,9 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the endpointUris at the given index.
    */
   com.google.protobuf.ByteString getEndpointUrisBytes(int index);
 }

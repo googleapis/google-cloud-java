@@ -19,6 +19,8 @@ public interface CreateDatabaseRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -32,6 +34,8 @@ public interface CreateDatabaseRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -47,6 +51,8 @@ public interface CreateDatabaseRequestOrBuilder
    * </pre>
    *
    * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The createStatement.
    */
   java.lang.String getCreateStatement();
   /**
@@ -61,6 +67,8 @@ public interface CreateDatabaseRequestOrBuilder
    * </pre>
    *
    * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for createStatement.
    */
   com.google.protobuf.ByteString getCreateStatementBytes();
 
@@ -75,6 +83,8 @@ public interface CreateDatabaseRequestOrBuilder
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @return A list containing the extraStatements.
    */
   java.util.List<java.lang.String> getExtraStatementsList();
   /**
@@ -88,6 +98,8 @@ public interface CreateDatabaseRequestOrBuilder
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @return The count of extraStatements.
    */
   int getExtraStatementsCount();
   /**
@@ -101,6 +113,9 @@ public interface CreateDatabaseRequestOrBuilder
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The extraStatements at the given index.
    */
   java.lang.String getExtraStatements(int index);
   /**
@@ -114,6 +129,9 @@ public interface CreateDatabaseRequestOrBuilder
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the extraStatements at the given index.
    */
   com.google.protobuf.ByteString getExtraStatementsBytes(int index);
 }

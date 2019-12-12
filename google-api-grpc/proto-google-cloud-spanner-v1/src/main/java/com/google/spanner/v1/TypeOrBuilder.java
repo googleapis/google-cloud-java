@@ -16,6 +16,8 @@ public interface TypeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TypeCode code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
   /**
@@ -26,6 +28,8 @@ public interface TypeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TypeCode code = 1;</code>
+   *
+   * @return The code.
    */
   com.google.spanner.v1.TypeCode getCode();
 
@@ -38,6 +42,8 @@ public interface TypeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
+   *
+   * @return Whether the arrayElementType field is set.
    */
   boolean hasArrayElementType();
   /**
@@ -49,6 +55,8 @@ public interface TypeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
+   *
+   * @return The arrayElementType.
    */
   com.google.spanner.v1.Type getArrayElementType();
   /**
@@ -72,6 +80,8 @@ public interface TypeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
+   *
+   * @return Whether the structType field is set.
    */
   boolean hasStructType();
   /**
@@ -83,6 +93,8 @@ public interface TypeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
+   *
+   * @return The structType.
    */
   com.google.spanner.v1.StructType getStructType();
   /**

@@ -28,6 +28,12 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchCreateSessionsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The database.
    */
   public java.lang.String getDatabase() {
     java.lang.Object ref = database_;
@@ -146,6 +153,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for database.
    */
   public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
@@ -169,6 +178,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.spanner.v1.Session session_template = 2;</code>
+   *
+   * @return Whether the sessionTemplate field is set.
    */
   public boolean hasSessionTemplate() {
     return sessionTemplate_ != null;
@@ -181,6 +192,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.spanner.v1.Session session_template = 2;</code>
+   *
+   * @return The sessionTemplate.
    */
   public com.google.spanner.v1.Session getSessionTemplate() {
     return sessionTemplate_ == null
@@ -215,6 +228,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sessionCount.
    */
   public int getSessionCount() {
     return sessionCount_;
@@ -592,6 +607,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The database.
      */
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
@@ -614,6 +631,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for database.
      */
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
@@ -636,6 +655,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The database to set.
+     * @return This builder for chaining.
      */
     public Builder setDatabase(java.lang.String value) {
       if (value == null) {
@@ -656,6 +678,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDatabase() {
 
@@ -673,6 +697,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for database to set.
+     * @return This builder for chaining.
      */
     public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -699,6 +726,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.spanner.v1.Session session_template = 2;</code>
+     *
+     * @return Whether the sessionTemplate field is set.
      */
     public boolean hasSessionTemplate() {
       return sessionTemplateBuilder_ != null || sessionTemplate_ != null;
@@ -711,6 +740,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.spanner.v1.Session session_template = 2;</code>
+     *
+     * @return The sessionTemplate.
      */
     public com.google.spanner.v1.Session getSessionTemplate() {
       if (sessionTemplateBuilder_ == null) {
@@ -880,6 +911,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sessionCount.
      */
     public int getSessionCount() {
       return sessionCount_;
@@ -897,6 +930,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The sessionCount to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionCount(int value) {
 
@@ -917,6 +953,8 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSessionCount() {
 

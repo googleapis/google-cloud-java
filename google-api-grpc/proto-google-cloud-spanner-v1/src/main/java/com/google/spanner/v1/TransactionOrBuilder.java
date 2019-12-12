@@ -22,6 +22,8 @@ public interface TransactionOrBuilder
    * </pre>
    *
    * <code>bytes id = 1;</code>
+   *
+   * @return The id.
    */
   com.google.protobuf.ByteString getId();
 
@@ -37,6 +39,8 @@ public interface TransactionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
+   *
+   * @return Whether the readTimestamp field is set.
    */
   boolean hasReadTimestamp();
   /**
@@ -51,6 +55,8 @@ public interface TransactionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
+   *
+   * @return The readTimestamp.
    */
   com.google.protobuf.Timestamp getReadTimestamp();
   /**

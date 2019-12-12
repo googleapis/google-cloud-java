@@ -32,6 +32,12 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExecuteSqlRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -101,11 +107,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 paramTypes_ =
                     com.google.protobuf.MapField.newMapField(
                         ParamTypesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
                   paramTypes__ =
@@ -268,12 +274,20 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static QueryMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static QueryMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -331,7 +345,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.spanner.v1.ExecuteSqlRequest.QueryMode)
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
@@ -344,6 +357,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -366,6 +381,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -395,6 +412,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   public boolean hasTransaction() {
     return transaction_ != null;
@@ -413,6 +432,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   public com.google.spanner.v1.TransactionSelector getTransaction() {
     return transaction_ == null
@@ -448,6 +469,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sql.
    */
   public java.lang.String getSql() {
     java.lang.Object ref = sql_;
@@ -468,6 +491,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for sql.
    */
   public com.google.protobuf.ByteString getSqlBytes() {
     java.lang.Object ref = sql_;
@@ -498,6 +523,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
+   *
+   * @return Whether the params field is set.
    */
   public boolean hasParams() {
     return params_ != null;
@@ -517,6 +544,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
+   *
+   * @return The params.
    */
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
@@ -683,6 +712,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bytes resume_token = 6;</code>
+   *
+   * @return The resumeToken.
    */
   public com.google.protobuf.ByteString getResumeToken() {
     return resumeToken_;
@@ -703,6 +734,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+   *
+   * @return The enum numeric value on the wire for queryMode.
    */
   public int getQueryModeValue() {
     return queryMode_;
@@ -720,6 +753,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+   *
+   * @return The queryMode.
    */
   public com.google.spanner.v1.ExecuteSqlRequest.QueryMode getQueryMode() {
     @SuppressWarnings("deprecation")
@@ -741,6 +776,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bytes partition_token = 8;</code>
+   *
+   * @return The partitionToken.
    */
   public com.google.protobuf.ByteString getPartitionToken() {
     return partitionToken_;
@@ -763,6 +800,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int64 seqno = 9;</code>
+   *
+   * @return The seqno.
    */
   public long getSeqno() {
     return seqno_;
@@ -1135,7 +1174,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       com.google.spanner.v1.ExecuteSqlRequest result =
           new com.google.spanner.v1.ExecuteSqlRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionBuilder_ == null) {
         result.transaction_ = transaction_;
@@ -1154,7 +1192,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       result.queryMode_ = queryMode_;
       result.partitionToken_ = partitionToken_;
       result.seqno_ = seqno_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1273,6 +1310,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -1295,6 +1334,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -1317,6 +1358,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -1337,6 +1381,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -1354,6 +1400,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1386,6 +1435,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     *
+     * @return Whether the transaction field is set.
      */
     public boolean hasTransaction() {
       return transactionBuilder_ != null || transaction_ != null;
@@ -1404,6 +1455,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     *
+     * @return The transaction.
      */
     public com.google.spanner.v1.TransactionSelector getTransaction() {
       if (transactionBuilder_ == null) {
@@ -1611,6 +1664,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sql.
      */
     public java.lang.String getSql() {
       java.lang.Object ref = sql_;
@@ -1631,6 +1686,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for sql.
      */
     public com.google.protobuf.ByteString getSqlBytes() {
       java.lang.Object ref = sql_;
@@ -1651,6 +1708,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The sql to set.
+     * @return This builder for chaining.
      */
     public Builder setSql(java.lang.String value) {
       if (value == null) {
@@ -1669,6 +1729,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSql() {
 
@@ -1684,6 +1746,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for sql to set.
+     * @return This builder for chaining.
      */
     public Builder setSqlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1717,6 +1782,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 4;</code>
+     *
+     * @return Whether the params field is set.
      */
     public boolean hasParams() {
       return paramsBuilder_ != null || params_ != null;
@@ -1736,6 +1803,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 4;</code>
+     *
+     * @return The params.
      */
     public com.google.protobuf.Struct getParams() {
       if (paramsBuilder_ == null) {
@@ -2154,6 +2223,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes resume_token = 6;</code>
+     *
+     * @return The resumeToken.
      */
     public com.google.protobuf.ByteString getResumeToken() {
       return resumeToken_;
@@ -2171,6 +2242,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes resume_token = 6;</code>
+     *
+     * @param value The resumeToken to set.
+     * @return This builder for chaining.
      */
     public Builder setResumeToken(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2194,6 +2268,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes resume_token = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResumeToken() {
 
@@ -2216,6 +2292,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+     *
+     * @return The enum numeric value on the wire for queryMode.
      */
     public int getQueryModeValue() {
       return queryMode_;
@@ -2233,6 +2311,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for queryMode to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryModeValue(int value) {
       queryMode_ = value;
@@ -2252,6 +2333,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+     *
+     * @return The queryMode.
      */
     public com.google.spanner.v1.ExecuteSqlRequest.QueryMode getQueryMode() {
       @SuppressWarnings("deprecation")
@@ -2274,6 +2357,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+     *
+     * @param value The queryMode to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryMode(com.google.spanner.v1.ExecuteSqlRequest.QueryMode value) {
       if (value == null) {
@@ -2297,6 +2383,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQueryMode() {
 
@@ -2317,6 +2405,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes partition_token = 8;</code>
+     *
+     * @return The partitionToken.
      */
     public com.google.protobuf.ByteString getPartitionToken() {
       return partitionToken_;
@@ -2332,6 +2422,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes partition_token = 8;</code>
+     *
+     * @param value The partitionToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPartitionToken(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2353,6 +2446,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes partition_token = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPartitionToken() {
 
@@ -2377,6 +2472,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int64 seqno = 9;</code>
+     *
+     * @return The seqno.
      */
     public long getSeqno() {
       return seqno_;
@@ -2396,6 +2493,9 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int64 seqno = 9;</code>
+     *
+     * @param value The seqno to set.
+     * @return This builder for chaining.
      */
     public Builder setSeqno(long value) {
 
@@ -2418,6 +2518,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int64 seqno = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSeqno() {
 

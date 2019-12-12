@@ -18,6 +18,8 @@ public interface CommitRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface CommitRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -41,6 +45,8 @@ public interface CommitRequestOrBuilder
    * </pre>
    *
    * <code>bytes transaction_id = 2;</code>
+   *
+   * @return The transactionId.
    */
   com.google.protobuf.ByteString getTransactionId();
 
@@ -60,6 +66,8 @@ public interface CommitRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
+   *
+   * @return Whether the singleUseTransaction field is set.
    */
   boolean hasSingleUseTransaction();
   /**
@@ -78,6 +86,8 @@ public interface CommitRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
+   *
+   * @return The singleUseTransaction.
    */
   com.google.spanner.v1.TransactionOptions getSingleUseTransaction();
   /**

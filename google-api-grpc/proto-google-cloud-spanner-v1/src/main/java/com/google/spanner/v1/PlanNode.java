@@ -29,6 +29,12 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PlanNode();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -73,9 +79,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 childLinks_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               childLinks_.add(
                   input.readMessage(
@@ -142,7 +148,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
       }
       this.unknownFields = unknownFields.build();
@@ -257,12 +263,20 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Kind valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Kind forNumber(int value) {
       switch (value) {
         case 0:
@@ -333,6 +347,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 child_index = 1;</code>
+     *
+     * @return The childIndex.
      */
     int getChildIndex();
 
@@ -347,6 +363,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 2;</code>
+     *
+     * @return The type.
      */
     java.lang.String getType();
     /**
@@ -360,6 +378,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 2;</code>
+     *
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString getTypeBytes();
 
@@ -378,6 +398,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string variable = 3;</code>
+     *
+     * @return The variable.
      */
     java.lang.String getVariable();
     /**
@@ -395,6 +417,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string variable = 3;</code>
+     *
+     * @return The bytes for variable.
      */
     com.google.protobuf.ByteString getVariableBytes();
   }
@@ -424,6 +448,12 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ChildLink();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -436,7 +466,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -510,6 +539,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 child_index = 1;</code>
+     *
+     * @return The childIndex.
      */
     public int getChildIndex() {
       return childIndex_;
@@ -528,6 +559,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 2;</code>
+     *
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -551,6 +584,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 2;</code>
+     *
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
@@ -581,6 +616,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string variable = 3;</code>
+     *
+     * @return The variable.
      */
     public java.lang.String getVariable() {
       java.lang.Object ref = variable_;
@@ -608,6 +645,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string variable = 3;</code>
+     *
+     * @return The bytes for variable.
      */
     public com.google.protobuf.ByteString getVariableBytes() {
       java.lang.Object ref = variable_;
@@ -982,6 +1021,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 child_index = 1;</code>
+       *
+       * @return The childIndex.
        */
       public int getChildIndex() {
         return childIndex_;
@@ -994,6 +1035,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 child_index = 1;</code>
+       *
+       * @param value The childIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setChildIndex(int value) {
 
@@ -1009,6 +1053,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 child_index = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearChildIndex() {
 
@@ -1029,6 +1075,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string type = 2;</code>
+       *
+       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -1052,6 +1100,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string type = 2;</code>
+       *
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString getTypeBytes() {
         java.lang.Object ref = type_;
@@ -1075,6 +1125,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string type = 2;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(java.lang.String value) {
         if (value == null) {
@@ -1096,6 +1149,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string type = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearType() {
 
@@ -1114,6 +1169,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string type = 2;</code>
+       *
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1142,6 +1200,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string variable = 3;</code>
+       *
+       * @return The variable.
        */
       public java.lang.String getVariable() {
         java.lang.Object ref = variable_;
@@ -1169,6 +1229,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string variable = 3;</code>
+       *
+       * @return The bytes for variable.
        */
       public com.google.protobuf.ByteString getVariableBytes() {
         java.lang.Object ref = variable_;
@@ -1196,6 +1258,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string variable = 3;</code>
+       *
+       * @param value The variable to set.
+       * @return This builder for chaining.
        */
       public Builder setVariable(java.lang.String value) {
         if (value == null) {
@@ -1221,6 +1286,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string variable = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearVariable() {
 
@@ -1243,6 +1310,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string variable = 3;</code>
+       *
+       * @param value The bytes for variable to set.
+       * @return This builder for chaining.
        */
       public Builder setVariableBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1320,6 +1390,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
@@ -1330,6 +1402,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -1432,6 +1506,12 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ShortRepresentation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1464,11 +1544,11 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   subqueries_ =
                       com.google.protobuf.MapField.newMapField(
                           SubqueriesDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> subqueries__ =
                     input.readMessage(
@@ -1522,7 +1602,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               com.google.spanner.v1.PlanNode.ShortRepresentation.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object description_;
     /**
@@ -1533,6 +1612,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1553,6 +1634,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1952,11 +2035,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         com.google.spanner.v1.PlanNode.ShortRepresentation result =
             new com.google.spanner.v1.PlanNode.ShortRepresentation(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.description_ = description_;
         result.subqueries_ = internalGetSubqueries();
         result.subqueries_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2055,6 +2136,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string description = 1;</code>
+       *
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -2075,6 +2158,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string description = 1;</code>
+       *
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString getDescriptionBytes() {
         java.lang.Object ref = description_;
@@ -2095,6 +2180,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string description = 1;</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(java.lang.String value) {
         if (value == null) {
@@ -2113,6 +2201,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string description = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
 
@@ -2128,6 +2218,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string description = 1;</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2372,7 +2465,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_;
   /**
@@ -2383,6 +2475,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 index = 1;</code>
+   *
+   * @return The index.
    */
   public int getIndex() {
     return index_;
@@ -2402,6 +2496,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
@@ -2418,6 +2514,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+   *
+   * @return The kind.
    */
   public com.google.spanner.v1.PlanNode.Kind getKind() {
     @SuppressWarnings("deprecation")
@@ -2435,6 +2533,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -2455,6 +2555,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -2542,6 +2644,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
+   *
+   * @return Whether the shortRepresentation field is set.
    */
   public boolean hasShortRepresentation() {
     return shortRepresentation_ != null;
@@ -2554,6 +2658,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
+   *
+   * @return The shortRepresentation.
    */
   public com.google.spanner.v1.PlanNode.ShortRepresentation getShortRepresentation() {
     return shortRepresentation_ == null
@@ -2590,6 +2696,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 6;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -2608,6 +2716,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 6;</code>
+   *
+   * @return The metadata.
    */
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
@@ -2644,6 +2754,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct execution_stats = 7;</code>
+   *
+   * @return Whether the executionStats field is set.
    */
   public boolean hasExecutionStats() {
     return executionStats_ != null;
@@ -2659,6 +2771,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct execution_stats = 7;</code>
+   *
+   * @return The executionStats.
    */
   public com.google.protobuf.Struct getExecutionStats() {
     return executionStats_ == null
@@ -2963,7 +3077,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
 
       if (childLinksBuilder_ == null) {
         childLinks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         childLinksBuilder_.clear();
       }
@@ -3012,14 +3126,13 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.PlanNode buildPartial() {
       com.google.spanner.v1.PlanNode result = new com.google.spanner.v1.PlanNode(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.index_ = index_;
       result.kind_ = kind_;
       result.displayName_ = displayName_;
       if (childLinksBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.childLinks_ = childLinks_;
       } else {
@@ -3040,7 +3153,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.executionStats_ = executionStatsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3104,7 +3216,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         if (!other.childLinks_.isEmpty()) {
           if (childLinks_.isEmpty()) {
             childLinks_ = other.childLinks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureChildLinksIsMutable();
             childLinks_.addAll(other.childLinks_);
@@ -3117,7 +3229,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
             childLinksBuilder_.dispose();
             childLinksBuilder_ = null;
             childLinks_ = other.childLinks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             childLinksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChildLinksFieldBuilder()
@@ -3176,6 +3288,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 index = 1;</code>
+     *
+     * @return The index.
      */
     public int getIndex() {
       return index_;
@@ -3188,6 +3302,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 index = 1;</code>
+     *
+     * @param value The index to set.
+     * @return This builder for chaining.
      */
     public Builder setIndex(int value) {
 
@@ -3203,6 +3320,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 index = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIndex() {
 
@@ -3224,6 +3343,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+     *
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
@@ -3240,6 +3361,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -3258,6 +3382,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+     *
+     * @return The kind.
      */
     public com.google.spanner.v1.PlanNode.Kind getKind() {
       @SuppressWarnings("deprecation")
@@ -3277,6 +3403,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(com.google.spanner.v1.PlanNode.Kind value) {
       if (value == null) {
@@ -3299,6 +3428,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
 
@@ -3316,6 +3447,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -3336,6 +3469,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -3356,6 +3491,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -3374,6 +3512,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -3389,6 +3529,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3405,10 +3548,10 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureChildLinksIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         childLinks_ =
             new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>(childLinks_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3623,7 +3766,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     public Builder clearChildLinks() {
       if (childLinksBuilder_ == null) {
         childLinks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         childLinksBuilder_.clear();
@@ -3745,7 +3888,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.PlanNode.ChildLink,
                 com.google.spanner.v1.PlanNode.ChildLink.Builder,
                 com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>(
-                childLinks_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                childLinks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         childLinks_ = null;
       }
       return childLinksBuilder_;
@@ -3765,6 +3908,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
+     *
+     * @return Whether the shortRepresentation field is set.
      */
     public boolean hasShortRepresentation() {
       return shortRepresentationBuilder_ != null || shortRepresentation_ != null;
@@ -3777,6 +3922,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
+     *
+     * @return The shortRepresentation.
      */
     public com.google.spanner.v1.PlanNode.ShortRepresentation getShortRepresentation() {
       if (shortRepresentationBuilder_ == null) {
@@ -3957,6 +4104,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 6;</code>
+     *
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -3975,6 +4124,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 6;</code>
+     *
+     * @return The metadata.
      */
     public com.google.protobuf.Struct getMetadata() {
       if (metadataBuilder_ == null) {
@@ -4183,6 +4334,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct execution_stats = 7;</code>
+     *
+     * @return Whether the executionStats field is set.
      */
     public boolean hasExecutionStats() {
       return executionStatsBuilder_ != null || executionStats_ != null;
@@ -4198,6 +4351,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct execution_stats = 7;</code>
+     *
+     * @return The executionStats.
      */
     public com.google.protobuf.Struct getExecutionStats() {
       if (executionStatsBuilder_ == null) {

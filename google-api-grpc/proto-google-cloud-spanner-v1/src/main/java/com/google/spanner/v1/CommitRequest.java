@@ -28,6 +28,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommitRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -82,9 +88,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mutations_ = new java.util.ArrayList<com.google.spanner.v1.Mutation>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               mutations_.add(
                   input.readMessage(com.google.spanner.v1.Mutation.parser(), extensionRegistry));
@@ -104,7 +110,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         mutations_ = java.util.Collections.unmodifiableList(mutations_);
       }
       this.unknownFields = unknownFields.build();
@@ -127,11 +133,13 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.v1.CommitRequest.Builder.class);
   }
 
-  private int bitField0_;
   private int transactionCase_ = 0;
   private java.lang.Object transaction_;
 
-  public enum TransactionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TransactionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSACTION_ID(2),
     SINGLE_USE_TRANSACTION(3),
     TRANSACTION_NOT_SET(0);
@@ -140,7 +148,11 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     private TransactionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TransactionCase valueOf(int value) {
       return forNumber(value);
@@ -180,6 +192,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -202,6 +216,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -224,6 +240,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes transaction_id = 2;</code>
+   *
+   * @return The transactionId.
    */
   public com.google.protobuf.ByteString getTransactionId() {
     if (transactionCase_ == 2) {
@@ -249,6 +267,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
+   *
+   * @return Whether the singleUseTransaction field is set.
    */
   public boolean hasSingleUseTransaction() {
     return transactionCase_ == 3;
@@ -269,6 +289,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
+   *
+   * @return The singleUseTransaction.
    */
   public com.google.spanner.v1.TransactionOptions getSingleUseTransaction() {
     if (transactionCase_ == 3) {
@@ -632,7 +654,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         mutationsBuilder_.clear();
       }
@@ -665,7 +687,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.CommitRequest buildPartial() {
       com.google.spanner.v1.CommitRequest result = new com.google.spanner.v1.CommitRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionCase_ == 2) {
         result.transaction_ = transaction_;
@@ -678,15 +699,14 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (mutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           mutations_ = java.util.Collections.unmodifiableList(mutations_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.mutations_ = mutations_;
       } else {
         result.mutations_ = mutationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.transactionCase_ = transactionCase_;
       onBuilt();
       return result;
@@ -745,7 +765,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.mutations_.isEmpty()) {
           if (mutations_.isEmpty()) {
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureMutationsIsMutable();
             mutations_.addAll(other.mutations_);
@@ -758,7 +778,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             mutationsBuilder_.dispose();
             mutationsBuilder_ = null;
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             mutationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMutationsFieldBuilder()
@@ -840,6 +860,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -862,6 +884,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -884,6 +908,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -904,6 +931,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -921,6 +950,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -941,6 +973,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction_id = 2;</code>
+     *
+     * @return The transactionId.
      */
     public com.google.protobuf.ByteString getTransactionId() {
       if (transactionCase_ == 2) {
@@ -956,6 +990,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction_id = 2;</code>
+     *
+     * @param value The transactionId to set.
+     * @return This builder for chaining.
      */
     public Builder setTransactionId(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -974,6 +1011,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTransactionId() {
       if (transactionCase_ == 2) {
@@ -1005,6 +1044,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
+     *
+     * @return Whether the singleUseTransaction field is set.
      */
     public boolean hasSingleUseTransaction() {
       return transactionCase_ == 3;
@@ -1025,6 +1066,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
+     *
+     * @return The singleUseTransaction.
      */
     public com.google.spanner.v1.TransactionOptions getSingleUseTransaction() {
       if (singleUseTransactionBuilder_ == null) {
@@ -1262,9 +1305,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         mutations_ = new java.util.ArrayList<com.google.spanner.v1.Mutation>(mutations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1499,7 +1542,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMutations() {
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         mutationsBuilder_.clear();
@@ -1634,7 +1677,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.Mutation,
                 com.google.spanner.v1.Mutation.Builder,
                 com.google.spanner.v1.MutationOrBuilder>(
-                mutations_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                mutations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         mutations_ = null;
       }
       return mutationsBuilder_;

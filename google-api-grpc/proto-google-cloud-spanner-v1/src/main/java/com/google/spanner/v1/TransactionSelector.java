@@ -28,6 +28,12 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
   private TransactionSelector() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TransactionSelector();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,7 +131,10 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
   private int selectorCase_ = 0;
   private java.lang.Object selector_;
 
-  public enum SelectorCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SelectorCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SINGLE_USE(1),
     ID(2),
     BEGIN(3),
@@ -136,7 +144,11 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
     private SelectorCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SelectorCase valueOf(int value) {
       return forNumber(value);
@@ -177,6 +189,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
+   *
+   * @return Whether the singleUse field is set.
    */
   public boolean hasSingleUse() {
     return selectorCase_ == 1;
@@ -191,6 +205,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
+   *
+   * @return The singleUse.
    */
   public com.google.spanner.v1.TransactionOptions getSingleUse() {
     if (selectorCase_ == 1) {
@@ -225,6 +241,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes id = 2;</code>
+   *
+   * @return The id.
    */
   public com.google.protobuf.ByteString getId() {
     if (selectorCase_ == 2) {
@@ -244,6 +262,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
+   *
+   * @return Whether the begin field is set.
    */
   public boolean hasBegin() {
     return selectorCase_ == 3;
@@ -258,6 +278,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
+   *
+   * @return The begin.
    */
   public com.google.spanner.v1.TransactionOptions getBegin() {
     if (selectorCase_ == 3) {
@@ -710,6 +732,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
+     *
+     * @return Whether the singleUse field is set.
      */
     public boolean hasSingleUse() {
       return selectorCase_ == 1;
@@ -724,6 +748,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
+     *
+     * @return The singleUse.
      */
     public com.google.spanner.v1.TransactionOptions getSingleUse() {
       if (singleUseBuilder_ == null) {
@@ -922,6 +948,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes id = 2;</code>
+     *
+     * @return The id.
      */
     public com.google.protobuf.ByteString getId() {
       if (selectorCase_ == 2) {
@@ -937,6 +965,9 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes id = 2;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -955,6 +986,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       if (selectorCase_ == 2) {
@@ -980,6 +1013,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
+     *
+     * @return Whether the begin field is set.
      */
     public boolean hasBegin() {
       return selectorCase_ == 3;
@@ -994,6 +1029,8 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
+     *
+     * @return The begin.
      */
     public com.google.spanner.v1.TransactionOptions getBegin() {
       if (beginBuilder_ == null) {

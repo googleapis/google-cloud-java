@@ -26,6 +26,12 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
   private CreateInstanceMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateInstanceMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -38,7 +44,6 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,6 +159,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
+   *
+   * @return Whether the instance field is set.
    */
   public boolean hasInstance() {
     return instance_ != null;
@@ -166,6 +173,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
+   *
+   * @return The instance.
    */
   public com.google.spanner.admin.instance.v1.Instance getInstance() {
     return instance_ == null
@@ -197,6 +206,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -211,6 +222,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -242,6 +255,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cancel_time = 3;</code>
+   *
+   * @return Whether the cancelTime field is set.
    */
   public boolean hasCancelTime() {
     return cancelTime_ != null;
@@ -256,6 +271,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cancel_time = 3;</code>
+   *
+   * @return The cancelTime.
    */
   public com.google.protobuf.Timestamp getCancelTime() {
     return cancelTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : cancelTime_;
@@ -285,6 +302,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 4;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -297,6 +316,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 4;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -744,6 +765,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
+     *
+     * @return Whether the instance field is set.
      */
     public boolean hasInstance() {
       return instanceBuilder_ != null || instance_ != null;
@@ -756,6 +779,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
+     *
+     * @return The instance.
      */
     public com.google.spanner.admin.instance.v1.Instance getInstance() {
       if (instanceBuilder_ == null) {
@@ -928,6 +953,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -942,6 +969,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -1121,6 +1150,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp cancel_time = 3;</code>
+     *
+     * @return Whether the cancelTime field is set.
      */
     public boolean hasCancelTime() {
       return cancelTimeBuilder_ != null || cancelTime_ != null;
@@ -1135,6 +1166,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp cancel_time = 3;</code>
+     *
+     * @return The cancelTime.
      */
     public com.google.protobuf.Timestamp getCancelTime() {
       if (cancelTimeBuilder_ == null) {
@@ -1316,6 +1349,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1328,6 +1363,8 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {

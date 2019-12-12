@@ -28,6 +28,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Type();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.TypeCode code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   public int getCodeValue() {
     return code_;
@@ -141,6 +148,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.TypeCode code = 1;</code>
+   *
+   * @return The code.
    */
   public com.google.spanner.v1.TypeCode getCode() {
     @SuppressWarnings("deprecation")
@@ -159,6 +168,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
+   *
+   * @return Whether the arrayElementType field is set.
    */
   public boolean hasArrayElementType() {
     return arrayElementType_ != null;
@@ -172,6 +183,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
+   *
+   * @return The arrayElementType.
    */
   public com.google.spanner.v1.Type getArrayElementType() {
     return arrayElementType_ == null
@@ -203,6 +216,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
+   *
+   * @return Whether the structType field is set.
    */
   public boolean hasStructType() {
     return structType_ != null;
@@ -216,6 +231,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
+   *
+   * @return The structType.
    */
   public com.google.spanner.v1.StructType getStructType() {
     return structType_ == null
@@ -611,6 +628,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for code.
      */
     public int getCodeValue() {
       return code_;
@@ -623,6 +642,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
       code_ = value;
@@ -637,6 +659,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
+     *
+     * @return The code.
      */
     public com.google.spanner.v1.TypeCode getCode() {
       @SuppressWarnings("deprecation")
@@ -651,6 +675,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
+     *
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(com.google.spanner.v1.TypeCode value) {
       if (value == null) {
@@ -669,6 +696,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
 
@@ -692,6 +721,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.Type array_element_type = 2;</code>
+     *
+     * @return Whether the arrayElementType field is set.
      */
     public boolean hasArrayElementType() {
       return arrayElementTypeBuilder_ != null || arrayElementType_ != null;
@@ -705,6 +736,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.Type array_element_type = 2;</code>
+     *
+     * @return The arrayElementType.
      */
     public com.google.spanner.v1.Type getArrayElementType() {
       if (arrayElementTypeBuilder_ == null) {
@@ -882,6 +915,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.StructType struct_type = 3;</code>
+     *
+     * @return Whether the structType field is set.
      */
     public boolean hasStructType() {
       return structTypeBuilder_ != null || structType_ != null;
@@ -895,6 +930,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.StructType struct_type = 3;</code>
+     *
+     * @return The structType.
      */
     public com.google.spanner.v1.StructType getStructType() {
       if (structTypeBuilder_ == null) {

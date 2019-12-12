@@ -18,6 +18,8 @@ public interface PartitionOrBuilder
    * </pre>
    *
    * <code>bytes partition_token = 1;</code>
+   *
+   * @return The partitionToken.
    */
   com.google.protobuf.ByteString getPartitionToken();
 }

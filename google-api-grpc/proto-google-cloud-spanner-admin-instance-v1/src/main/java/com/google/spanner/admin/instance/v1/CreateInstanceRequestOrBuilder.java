@@ -19,6 +19,8 @@ public interface CreateInstanceRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -32,6 +34,8 @@ public interface CreateInstanceRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -45,6 +49,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
@@ -57,6 +63,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString getInstanceIdBytes();
 
@@ -71,6 +79,8 @@ public interface CreateInstanceRequestOrBuilder
    * <code>
    * .google.spanner.admin.instance.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the instance field is set.
    */
   boolean hasInstance();
   /**
@@ -84,6 +94,8 @@ public interface CreateInstanceRequestOrBuilder
    * <code>
    * .google.spanner.admin.instance.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The instance.
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**

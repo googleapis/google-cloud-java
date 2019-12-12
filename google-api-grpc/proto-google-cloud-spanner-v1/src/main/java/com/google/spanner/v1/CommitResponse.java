@@ -25,6 +25,12 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   private CommitResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommitResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,6 +112,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_timestamp = 1;</code>
+   *
+   * @return Whether the commitTimestamp field is set.
    */
   public boolean hasCommitTimestamp() {
     return commitTimestamp_ != null;
@@ -119,6 +126,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_timestamp = 1;</code>
+   *
+   * @return The commitTimestamp.
    */
   public com.google.protobuf.Timestamp getCommitTimestamp() {
     return commitTimestamp_ == null
@@ -477,6 +486,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_timestamp = 1;</code>
+     *
+     * @return Whether the commitTimestamp field is set.
      */
     public boolean hasCommitTimestamp() {
       return commitTimestampBuilder_ != null || commitTimestamp_ != null;
@@ -489,6 +500,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_timestamp = 1;</code>
+     *
+     * @return The commitTimestamp.
      */
     public com.google.protobuf.Timestamp getCommitTimestamp() {
       if (commitTimestampBuilder_ == null) {

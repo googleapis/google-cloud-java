@@ -18,6 +18,8 @@ public interface RollbackRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface RollbackRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -41,6 +45,8 @@ public interface RollbackRequestOrBuilder
    * </pre>
    *
    * <code>bytes transaction_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The transactionId.
    */
   com.google.protobuf.ByteString getTransactionId();
 }

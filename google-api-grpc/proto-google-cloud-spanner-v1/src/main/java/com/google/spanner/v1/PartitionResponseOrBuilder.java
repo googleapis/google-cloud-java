@@ -67,6 +67,8 @@ public interface PartitionResponseOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
@@ -77,6 +79,8 @@ public interface PartitionResponseOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   com.google.spanner.v1.Transaction getTransaction();
   /**

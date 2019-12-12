@@ -22,6 +22,8 @@ public interface ResultSetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.StructType row_type = 1;</code>
+   *
+   * @return Whether the rowType field is set.
    */
   boolean hasRowType();
   /**
@@ -38,6 +40,8 @@ public interface ResultSetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.StructType row_type = 1;</code>
+   *
+   * @return The rowType.
    */
   com.google.spanner.v1.StructType getRowType();
   /**
@@ -66,6 +70,8 @@ public interface ResultSetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
@@ -77,6 +83,8 @@ public interface ResultSetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   com.google.spanner.v1.Transaction getTransaction();
   /**

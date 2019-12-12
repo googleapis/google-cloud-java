@@ -18,6 +18,8 @@ public interface BatchCreateSessionsRequestOrBuilder
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The database.
    */
   java.lang.String getDatabase();
   /**
@@ -30,6 +32,8 @@ public interface BatchCreateSessionsRequestOrBuilder
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 
@@ -41,6 +45,8 @@ public interface BatchCreateSessionsRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Session session_template = 2;</code>
+   *
+   * @return Whether the sessionTemplate field is set.
    */
   boolean hasSessionTemplate();
   /**
@@ -51,6 +57,8 @@ public interface BatchCreateSessionsRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Session session_template = 2;</code>
+   *
+   * @return The sessionTemplate.
    */
   com.google.spanner.v1.Session getSessionTemplate();
   /**
@@ -77,6 +85,8 @@ public interface BatchCreateSessionsRequestOrBuilder
    * </pre>
    *
    * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sessionCount.
    */
   int getSessionCount();
 }

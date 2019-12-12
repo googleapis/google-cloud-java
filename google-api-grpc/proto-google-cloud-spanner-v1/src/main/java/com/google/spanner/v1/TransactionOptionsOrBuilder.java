@@ -19,6 +19,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+   *
+   * @return Whether the readWrite field is set.
    */
   boolean hasReadWrite();
   /**
@@ -32,6 +34,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+   *
+   * @return The readWrite.
    */
   com.google.spanner.v1.TransactionOptions.ReadWrite getReadWrite();
   /**
@@ -59,6 +63,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   *
+   * @return Whether the partitionedDml field is set.
    */
   boolean hasPartitionedDml();
   /**
@@ -72,6 +78,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   *
+   * @return The partitionedDml.
    */
   com.google.spanner.v1.TransactionOptions.PartitionedDml getPartitionedDml();
   /**
@@ -99,6 +107,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+   *
+   * @return Whether the readOnly field is set.
    */
   boolean hasReadOnly();
   /**
@@ -112,6 +122,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+   *
+   * @return The readOnly.
    */
   com.google.spanner.v1.TransactionOptions.ReadOnly getReadOnly();
   /**

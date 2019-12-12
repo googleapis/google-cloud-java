@@ -25,6 +25,12 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
   private ResultSetMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ResultSetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,6 +133,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.StructType row_type = 1;</code>
+   *
+   * @return Whether the rowType field is set.
    */
   public boolean hasRowType() {
     return rowType_ != null;
@@ -146,6 +153,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.StructType row_type = 1;</code>
+   *
+   * @return The rowType.
    */
   public com.google.spanner.v1.StructType getRowType() {
     return rowType_ == null ? com.google.spanner.v1.StructType.getDefaultInstance() : rowType_;
@@ -180,6 +189,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   public boolean hasTransaction() {
     return transaction_ != null;
@@ -193,6 +204,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   public com.google.spanner.v1.Transaction getTransaction() {
     return transaction_ == null
@@ -588,6 +601,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.StructType row_type = 1;</code>
+     *
+     * @return Whether the rowType field is set.
      */
     public boolean hasRowType() {
       return rowTypeBuilder_ != null || rowType_ != null;
@@ -606,6 +621,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.StructType row_type = 1;</code>
+     *
+     * @return The rowType.
      */
     public com.google.spanner.v1.StructType getRowType() {
       if (rowTypeBuilder_ == null) {
@@ -812,6 +829,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+     *
+     * @return Whether the transaction field is set.
      */
     public boolean hasTransaction() {
       return transactionBuilder_ != null || transaction_ != null;
@@ -825,6 +844,8 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.spanner.v1.Transaction transaction = 2;</code>
+     *
+     * @return The transaction.
      */
     public com.google.spanner.v1.Transaction getTransaction() {
       if (transactionBuilder_ == null) {

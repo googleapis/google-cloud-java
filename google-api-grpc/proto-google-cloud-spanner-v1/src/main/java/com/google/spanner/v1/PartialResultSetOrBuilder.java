@@ -17,6 +17,8 @@ public interface PartialResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -28,6 +30,8 @@ public interface PartialResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+   *
+   * @return The metadata.
    */
   com.google.spanner.v1.ResultSetMetadata getMetadata();
   /**
@@ -393,6 +397,8 @@ public interface PartialResultSetOrBuilder
    * </pre>
    *
    * <code>bool chunked_value = 3;</code>
+   *
+   * @return The chunkedValue.
    */
   boolean getChunkedValue();
 
@@ -408,6 +414,8 @@ public interface PartialResultSetOrBuilder
    * </pre>
    *
    * <code>bytes resume_token = 4;</code>
+   *
+   * @return The resumeToken.
    */
   com.google.protobuf.ByteString getResumeToken();
 
@@ -424,6 +432,8 @@ public interface PartialResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
+   *
+   * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
@@ -439,6 +449,8 @@ public interface PartialResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
+   *
+   * @return The stats.
    */
   com.google.spanner.v1.ResultSetStats getStats();
   /**

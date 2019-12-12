@@ -28,6 +28,12 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetDatabaseDdlResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,6 +115,8 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string statements = 1;</code>
+   *
+   * @return A list containing the statements.
    */
   public com.google.protobuf.ProtocolStringList getStatementsList() {
     return statements_;
@@ -122,6 +130,8 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string statements = 1;</code>
+   *
+   * @return The count of statements.
    */
   public int getStatementsCount() {
     return statements_.size();
@@ -135,6 +145,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string statements = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The statements at the given index.
    */
   public java.lang.String getStatements(int index) {
     return statements_.get(index);
@@ -148,6 +161,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string statements = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the statements at the given index.
    */
   public com.google.protobuf.ByteString getStatementsBytes(int index) {
     return statements_.getByteString(index);
@@ -511,6 +527,8 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @return A list containing the statements.
      */
     public com.google.protobuf.ProtocolStringList getStatementsList() {
       return statements_.getUnmodifiableView();
@@ -524,6 +542,8 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @return The count of statements.
      */
     public int getStatementsCount() {
       return statements_.size();
@@ -537,6 +557,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The statements at the given index.
      */
     public java.lang.String getStatements(int index) {
       return statements_.get(index);
@@ -550,6 +573,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the statements at the given index.
      */
     public com.google.protobuf.ByteString getStatementsBytes(int index) {
       return statements_.getByteString(index);
@@ -563,6 +589,10 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The statements to set.
+     * @return This builder for chaining.
      */
     public Builder setStatements(int index, java.lang.String value) {
       if (value == null) {
@@ -582,6 +612,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @param value The statements to add.
+     * @return This builder for chaining.
      */
     public Builder addStatements(java.lang.String value) {
       if (value == null) {
@@ -601,6 +634,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @param values The statements to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStatements(java.lang.Iterable<java.lang.String> values) {
       ensureStatementsIsMutable();
@@ -617,6 +653,8 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatements() {
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -633,6 +671,9 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string statements = 1;</code>
+     *
+     * @param value The bytes of the statements to add.
+     * @return This builder for chaining.
      */
     public Builder addStatementsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

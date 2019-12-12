@@ -18,6 +18,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -47,6 +51,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
@@ -63,6 +69,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
@@ -90,6 +98,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sql.
    */
   java.lang.String getSql();
   /**
@@ -100,6 +110,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for sql.
    */
   com.google.protobuf.ByteString getSqlBytes();
 
@@ -118,6 +130,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
+   *
+   * @return Whether the params field is set.
    */
   boolean hasParams();
   /**
@@ -135,6 +149,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
+   *
+   * @return The params.
    */
   com.google.protobuf.Struct getParams();
   /**
@@ -258,6 +274,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>bytes resume_token = 6;</code>
+   *
+   * @return The resumeToken.
    */
   com.google.protobuf.ByteString getResumeToken();
 
@@ -274,6 +292,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+   *
+   * @return The enum numeric value on the wire for queryMode.
    */
   int getQueryModeValue();
   /**
@@ -289,6 +309,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
+   *
+   * @return The queryMode.
    */
   com.google.spanner.v1.ExecuteSqlRequest.QueryMode getQueryMode();
 
@@ -303,6 +325,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>bytes partition_token = 8;</code>
+   *
+   * @return The partitionToken.
    */
   com.google.protobuf.ByteString getPartitionToken();
 
@@ -321,6 +345,8 @@ public interface ExecuteSqlRequestOrBuilder
    * </pre>
    *
    * <code>int64 seqno = 9;</code>
+   *
+   * @return The seqno.
    */
   long getSeqno();
 }

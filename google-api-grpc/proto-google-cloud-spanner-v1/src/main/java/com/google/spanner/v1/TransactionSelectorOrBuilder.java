@@ -18,6 +18,8 @@ public interface TransactionSelectorOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
+   *
+   * @return Whether the singleUse field is set.
    */
   boolean hasSingleUse();
   /**
@@ -30,6 +32,8 @@ public interface TransactionSelectorOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
+   *
+   * @return The singleUse.
    */
   com.google.spanner.v1.TransactionOptions getSingleUse();
   /**
@@ -53,6 +57,8 @@ public interface TransactionSelectorOrBuilder
    * </pre>
    *
    * <code>bytes id = 2;</code>
+   *
+   * @return The id.
    */
   com.google.protobuf.ByteString getId();
 
@@ -66,6 +72,8 @@ public interface TransactionSelectorOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
+   *
+   * @return Whether the begin field is set.
    */
   boolean hasBegin();
   /**
@@ -78,6 +86,8 @@ public interface TransactionSelectorOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
+   *
+   * @return The begin.
    */
   com.google.spanner.v1.TransactionOptions getBegin();
   /**

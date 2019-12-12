@@ -25,6 +25,12 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
   private ResultSetStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ResultSetStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,7 +132,10 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
   private int rowCountCase_ = 0;
   private java.lang.Object rowCount_;
 
-  public enum RowCountCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RowCountCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ROW_COUNT_EXACT(3),
     ROW_COUNT_LOWER_BOUND(4),
     ROWCOUNT_NOT_SET(0);
@@ -136,7 +144,11 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
     private RowCountCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RowCountCase valueOf(int value) {
       return forNumber(value);
@@ -174,6 +186,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
+   *
+   * @return Whether the queryPlan field is set.
    */
   public boolean hasQueryPlan() {
     return queryPlan_ != null;
@@ -186,6 +200,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
+   *
+   * @return The queryPlan.
    */
   public com.google.spanner.v1.QueryPlan getQueryPlan() {
     return queryPlan_ == null ? com.google.spanner.v1.QueryPlan.getDefaultInstance() : queryPlan_;
@@ -220,6 +236,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct query_stats = 2;</code>
+   *
+   * @return Whether the queryStats field is set.
    */
   public boolean hasQueryStats() {
     return queryStats_ != null;
@@ -239,6 +257,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct query_stats = 2;</code>
+   *
+   * @return The queryStats.
    */
   public com.google.protobuf.Struct getQueryStats() {
     return queryStats_ == null ? com.google.protobuf.Struct.getDefaultInstance() : queryStats_;
@@ -272,6 +292,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 row_count_exact = 3;</code>
+   *
+   * @return The rowCountExact.
    */
   public long getRowCountExact() {
     if (rowCountCase_ == 3) {
@@ -290,6 +312,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 row_count_lower_bound = 4;</code>
+   *
+   * @return The rowCountLowerBound.
    */
   public long getRowCountLowerBound() {
     if (rowCountCase_ == 4) {
@@ -743,6 +767,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
+     *
+     * @return Whether the queryPlan field is set.
      */
     public boolean hasQueryPlan() {
       return queryPlanBuilder_ != null || queryPlan_ != null;
@@ -755,6 +781,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
+     *
+     * @return The queryPlan.
      */
     public com.google.spanner.v1.QueryPlan getQueryPlan() {
       if (queryPlanBuilder_ == null) {
@@ -931,6 +959,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct query_stats = 2;</code>
+     *
+     * @return Whether the queryStats field is set.
      */
     public boolean hasQueryStats() {
       return queryStatsBuilder_ != null || queryStats_ != null;
@@ -950,6 +980,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct query_stats = 2;</code>
+     *
+     * @return The queryStats.
      */
     public com.google.protobuf.Struct getQueryStats() {
       if (queryStatsBuilder_ == null) {
@@ -1156,6 +1188,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count_exact = 3;</code>
+     *
+     * @return The rowCountExact.
      */
     public long getRowCountExact() {
       if (rowCountCase_ == 3) {
@@ -1171,6 +1205,9 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count_exact = 3;</code>
+     *
+     * @param value The rowCountExact to set.
+     * @return This builder for chaining.
      */
     public Builder setRowCountExact(long value) {
       rowCountCase_ = 3;
@@ -1186,6 +1223,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count_exact = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowCountExact() {
       if (rowCountCase_ == 3) {
@@ -1205,6 +1244,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count_lower_bound = 4;</code>
+     *
+     * @return The rowCountLowerBound.
      */
     public long getRowCountLowerBound() {
       if (rowCountCase_ == 4) {
@@ -1221,6 +1262,9 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count_lower_bound = 4;</code>
+     *
+     * @param value The rowCountLowerBound to set.
+     * @return This builder for chaining.
      */
     public Builder setRowCountLowerBound(long value) {
       rowCountCase_ = 4;
@@ -1237,6 +1281,8 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count_lower_bound = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowCountLowerBound() {
       if (rowCountCase_ == 4) {

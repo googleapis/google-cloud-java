@@ -16,6 +16,8 @@ public interface ResultSetStatsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
+   *
+   * @return Whether the queryPlan field is set.
    */
   boolean hasQueryPlan();
   /**
@@ -26,6 +28,8 @@ public interface ResultSetStatsOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
+   *
+   * @return The queryPlan.
    */
   com.google.spanner.v1.QueryPlan getQueryPlan();
   /**
@@ -54,6 +58,8 @@ public interface ResultSetStatsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct query_stats = 2;</code>
+   *
+   * @return Whether the queryStats field is set.
    */
   boolean hasQueryStats();
   /**
@@ -71,6 +77,8 @@ public interface ResultSetStatsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct query_stats = 2;</code>
+   *
+   * @return The queryStats.
    */
   com.google.protobuf.Struct getQueryStats();
   /**
@@ -99,6 +107,8 @@ public interface ResultSetStatsOrBuilder
    * </pre>
    *
    * <code>int64 row_count_exact = 3;</code>
+   *
+   * @return The rowCountExact.
    */
   long getRowCountExact();
 
@@ -111,6 +121,8 @@ public interface ResultSetStatsOrBuilder
    * </pre>
    *
    * <code>int64 row_count_lower_bound = 4;</code>
+   *
+   * @return The rowCountLowerBound.
    */
   long getRowCountLowerBound();
 

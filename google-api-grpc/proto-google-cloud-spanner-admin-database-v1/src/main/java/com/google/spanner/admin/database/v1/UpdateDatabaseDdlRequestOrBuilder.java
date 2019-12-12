@@ -18,6 +18,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The database.
    */
   java.lang.String getDatabase();
   /**
@@ -30,6 +32,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 
@@ -41,6 +45,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the statements.
    */
   java.util.List<java.lang.String> getStatementsList();
   /**
@@ -51,6 +57,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of statements.
    */
   int getStatementsCount();
   /**
@@ -61,6 +69,9 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The statements at the given index.
    */
   java.lang.String getStatements(int index);
   /**
@@ -71,6 +82,9 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * </pre>
    *
    * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the statements at the given index.
    */
   com.google.protobuf.ByteString getStatementsBytes(int index);
 
@@ -100,6 +114,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * </pre>
    *
    * <code>string operation_id = 3;</code>
+   *
+   * @return The operationId.
    */
   java.lang.String getOperationId();
   /**
@@ -128,6 +144,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * </pre>
    *
    * <code>string operation_id = 3;</code>
+   *
+   * @return The bytes for operationId.
    */
   com.google.protobuf.ByteString getOperationIdBytes();
 }

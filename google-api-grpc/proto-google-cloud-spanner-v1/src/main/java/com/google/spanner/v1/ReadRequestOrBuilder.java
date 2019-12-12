@@ -18,6 +18,8 @@ public interface ReadRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface ReadRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -42,6 +46,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
@@ -53,6 +59,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
@@ -75,6 +83,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The table.
    */
   java.lang.String getTable();
   /**
@@ -85,6 +95,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for table.
    */
   com.google.protobuf.ByteString getTableBytes();
 
@@ -101,6 +113,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>string index = 4;</code>
+   *
+   * @return The index.
    */
   java.lang.String getIndex();
   /**
@@ -116,6 +130,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>string index = 4;</code>
+   *
+   * @return The bytes for index.
    */
   com.google.protobuf.ByteString getIndexBytes();
 
@@ -128,6 +144,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the columns.
    */
   java.util.List<java.lang.String> getColumnsList();
   /**
@@ -139,6 +157,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of columns.
    */
   int getColumnsCount();
   /**
@@ -150,6 +170,9 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The columns at the given index.
    */
   java.lang.String getColumns(int index);
   /**
@@ -161,6 +184,9 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the columns at the given index.
    */
   com.google.protobuf.ByteString getColumnsBytes(int index);
 
@@ -185,6 +211,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the keySet field is set.
    */
   boolean hasKeySet();
   /**
@@ -208,6 +236,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The keySet.
    */
   com.google.spanner.v1.KeySet getKeySet();
   /**
@@ -244,6 +274,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>int64 limit = 8;</code>
+   *
+   * @return The limit.
    */
   long getLimit();
 
@@ -260,6 +292,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>bytes resume_token = 9;</code>
+   *
+   * @return The resumeToken.
    */
   com.google.protobuf.ByteString getResumeToken();
 
@@ -274,6 +308,8 @@ public interface ReadRequestOrBuilder
    * </pre>
    *
    * <code>bytes partition_token = 10;</code>
+   *
+   * @return The partitionToken.
    */
   com.google.protobuf.ByteString getPartitionToken();
 }

@@ -26,6 +26,12 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
   private PartitionOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PartitionOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -38,7 +44,6 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,6 +112,8 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int64 partition_size_bytes = 1;</code>
+   *
+   * @return The partitionSizeBytes.
    */
   public long getPartitionSizeBytes() {
     return partitionSizeBytes_;
@@ -128,6 +135,8 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int64 max_partitions = 2;</code>
+   *
+   * @return The maxPartitions.
    */
   public long getMaxPartitions() {
     return maxPartitions_;
@@ -476,6 +485,8 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int64 partition_size_bytes = 1;</code>
+     *
+     * @return The partitionSizeBytes.
      */
     public long getPartitionSizeBytes() {
       return partitionSizeBytes_;
@@ -492,6 +503,9 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int64 partition_size_bytes = 1;</code>
+     *
+     * @param value The partitionSizeBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setPartitionSizeBytes(long value) {
 
@@ -511,6 +525,8 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int64 partition_size_bytes = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPartitionSizeBytes() {
 
@@ -534,6 +550,8 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int64 max_partitions = 2;</code>
+     *
+     * @return The maxPartitions.
      */
     public long getMaxPartitions() {
       return maxPartitions_;
@@ -552,6 +570,9 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int64 max_partitions = 2;</code>
+     *
+     * @param value The maxPartitions to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxPartitions(long value) {
 
@@ -573,6 +594,8 @@ public final class PartitionOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int64 max_partitions = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxPartitions() {
 

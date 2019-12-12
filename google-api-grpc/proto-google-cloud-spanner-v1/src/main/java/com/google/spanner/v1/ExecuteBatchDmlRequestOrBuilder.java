@@ -18,6 +18,8 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -46,6 +50,8 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * <code>
    * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
@@ -61,6 +67,8 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * <code>
    * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The transaction.
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
@@ -175,6 +183,8 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * </pre>
    *
    * <code>int64 seqno = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The seqno.
    */
   long getSeqno();
 }

@@ -18,6 +18,8 @@ public interface BeginTransactionRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface BeginTransactionRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -43,6 +47,8 @@ public interface BeginTransactionRequestOrBuilder
    * <code>
    * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the options field is set.
    */
   boolean hasOptions();
   /**
@@ -55,6 +61,8 @@ public interface BeginTransactionRequestOrBuilder
    * <code>
    * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The options.
    */
   com.google.spanner.v1.TransactionOptions getOptions();
   /**

@@ -30,6 +30,12 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateDatabaseRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,9 +76,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 extraStatements_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               extraStatements_.add(s);
               break;
@@ -91,7 +97,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         extraStatements_ = extraStatements_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -114,7 +120,6 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
             com.google.spanner.admin.database.v1.CreateDatabaseRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -128,6 +133,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -151,6 +158,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -178,6 +187,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The createStatement.
    */
   public java.lang.String getCreateStatement() {
     java.lang.Object ref = createStatement_;
@@ -202,6 +213,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for createStatement.
    */
   public com.google.protobuf.ByteString getCreateStatementBytes() {
     java.lang.Object ref = createStatement_;
@@ -228,6 +241,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @return A list containing the extraStatements.
    */
   public com.google.protobuf.ProtocolStringList getExtraStatementsList() {
     return extraStatements_;
@@ -243,6 +258,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @return The count of extraStatements.
    */
   public int getExtraStatementsCount() {
     return extraStatements_.size();
@@ -258,6 +275,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The extraStatements at the given index.
    */
   public java.lang.String getExtraStatements(int index) {
     return extraStatements_.get(index);
@@ -273,6 +293,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string extra_statements = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the extraStatements at the given index.
    */
   public com.google.protobuf.ByteString getExtraStatementsBytes(int index) {
     return extraStatements_.getByteString(index);
@@ -514,7 +537,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       createStatement_ = "";
 
       extraStatements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -543,15 +566,13 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       com.google.spanner.admin.database.v1.CreateDatabaseRequest result =
           new com.google.spanner.admin.database.v1.CreateDatabaseRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.createStatement_ = createStatement_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         extraStatements_ = extraStatements_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.extraStatements_ = extraStatements_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -613,7 +634,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       if (!other.extraStatements_.isEmpty()) {
         if (extraStatements_.isEmpty()) {
           extraStatements_ = other.extraStatements_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureExtraStatementsIsMutable();
           extraStatements_.addAll(other.extraStatements_);
@@ -664,6 +685,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -687,6 +710,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -710,6 +735,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -731,6 +759,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -749,6 +779,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -774,6 +807,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The createStatement.
      */
     public java.lang.String getCreateStatement() {
       java.lang.Object ref = createStatement_;
@@ -798,6 +833,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for createStatement.
      */
     public com.google.protobuf.ByteString getCreateStatementBytes() {
       java.lang.Object ref = createStatement_;
@@ -822,6 +859,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The createStatement to set.
+     * @return This builder for chaining.
      */
     public Builder setCreateStatement(java.lang.String value) {
       if (value == null) {
@@ -844,6 +884,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCreateStatement() {
 
@@ -863,6 +905,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for createStatement to set.
+     * @return This builder for chaining.
      */
     public Builder setCreateStatementBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -879,9 +924,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExtraStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         extraStatements_ = new com.google.protobuf.LazyStringArrayList(extraStatements_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -895,6 +940,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @return A list containing the extraStatements.
      */
     public com.google.protobuf.ProtocolStringList getExtraStatementsList() {
       return extraStatements_.getUnmodifiableView();
@@ -910,6 +957,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @return The count of extraStatements.
      */
     public int getExtraStatementsCount() {
       return extraStatements_.size();
@@ -925,6 +974,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The extraStatements at the given index.
      */
     public java.lang.String getExtraStatements(int index) {
       return extraStatements_.get(index);
@@ -940,6 +992,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the extraStatements at the given index.
      */
     public com.google.protobuf.ByteString getExtraStatementsBytes(int index) {
       return extraStatements_.getByteString(index);
@@ -955,6 +1010,10 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The extraStatements to set.
+     * @return This builder for chaining.
      */
     public Builder setExtraStatements(int index, java.lang.String value) {
       if (value == null) {
@@ -976,6 +1035,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @param value The extraStatements to add.
+     * @return This builder for chaining.
      */
     public Builder addExtraStatements(java.lang.String value) {
       if (value == null) {
@@ -997,6 +1059,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @param values The extraStatements to add.
+     * @return This builder for chaining.
      */
     public Builder addAllExtraStatements(java.lang.Iterable<java.lang.String> values) {
       ensureExtraStatementsIsMutable();
@@ -1015,10 +1080,12 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExtraStatements() {
       extraStatements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1033,6 +1100,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string extra_statements = 3;</code>
+     *
+     * @param value The bytes of the extraStatements to add.
+     * @return This builder for chaining.
      */
     public Builder addExtraStatementsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

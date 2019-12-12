@@ -16,6 +16,8 @@ public interface ReplicaInfoOrBuilder
    * </pre>
    *
    * <code>string location = 1;</code>
+   *
+   * @return The location.
    */
   java.lang.String getLocation();
   /**
@@ -26,6 +28,8 @@ public interface ReplicaInfoOrBuilder
    * </pre>
    *
    * <code>string location = 1;</code>
+   *
+   * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
 
@@ -37,6 +41,8 @@ public interface ReplicaInfoOrBuilder
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -47,6 +53,8 @@ public interface ReplicaInfoOrBuilder
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+   *
+   * @return The type.
    */
   com.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType getType();
 
@@ -61,6 +69,8 @@ public interface ReplicaInfoOrBuilder
    * </pre>
    *
    * <code>bool default_leader_location = 3;</code>
+   *
+   * @return The defaultLeaderLocation.
    */
   boolean getDefaultLeaderLocation();
 }

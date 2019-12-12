@@ -33,6 +33,12 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,9 +102,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 columns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               columns_.add(s);
               break;
@@ -146,7 +152,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         columns_ = columns_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -169,7 +175,6 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.v1.ReadRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
@@ -182,6 +187,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -204,6 +211,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -228,6 +237,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   public boolean hasTransaction() {
     return transaction_ != null;
@@ -241,6 +252,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   public com.google.spanner.v1.TransactionSelector getTransaction() {
     return transaction_ == null
@@ -271,6 +284,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The table.
    */
   public java.lang.String getTable() {
     java.lang.Object ref = table_;
@@ -291,6 +306,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for table.
    */
   public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
@@ -319,6 +336,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string index = 4;</code>
+   *
+   * @return The index.
    */
   public java.lang.String getIndex() {
     java.lang.Object ref = index_;
@@ -344,6 +363,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string index = 4;</code>
+   *
+   * @return The bytes for index.
    */
   public com.google.protobuf.ByteString getIndexBytes() {
     java.lang.Object ref = index_;
@@ -368,6 +389,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the columns.
    */
   public com.google.protobuf.ProtocolStringList getColumnsList() {
     return columns_;
@@ -381,6 +404,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of columns.
    */
   public int getColumnsCount() {
     return columns_.size();
@@ -394,6 +419,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The columns at the given index.
    */
   public java.lang.String getColumns(int index) {
     return columns_.get(index);
@@ -407,6 +435,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the columns at the given index.
    */
   public com.google.protobuf.ByteString getColumnsBytes(int index) {
     return columns_.getByteString(index);
@@ -435,6 +466,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the keySet field is set.
    */
   public boolean hasKeySet() {
     return keySet_ != null;
@@ -460,6 +493,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The keySet.
    */
   public com.google.spanner.v1.KeySet getKeySet() {
     return keySet_ == null ? com.google.spanner.v1.KeySet.getDefaultInstance() : keySet_;
@@ -502,6 +537,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 limit = 8;</code>
+   *
+   * @return The limit.
    */
   public long getLimit() {
     return limit_;
@@ -522,6 +559,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes resume_token = 9;</code>
+   *
+   * @return The resumeToken.
    */
   public com.google.protobuf.ByteString getResumeToken() {
     return resumeToken_;
@@ -540,6 +579,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes partition_token = 10;</code>
+   *
+   * @return The partitionToken.
    */
   public com.google.protobuf.ByteString getPartitionToken() {
     return partitionToken_;
@@ -850,7 +891,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
       index_ = "";
 
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (keySetBuilder_ == null) {
         keySet_ = null;
       } else {
@@ -890,7 +931,6 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.ReadRequest buildPartial() {
       com.google.spanner.v1.ReadRequest result = new com.google.spanner.v1.ReadRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionBuilder_ == null) {
         result.transaction_ = transaction_;
@@ -899,9 +939,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
       }
       result.table_ = table_;
       result.index_ = index_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         columns_ = columns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.columns_ = columns_;
       if (keySetBuilder_ == null) {
@@ -912,7 +952,6 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
       result.limit_ = limit_;
       result.resumeToken_ = resumeToken_;
       result.partitionToken_ = partitionToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -980,7 +1019,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
       if (!other.columns_.isEmpty()) {
         if (columns_.isEmpty()) {
           columns_ = other.columns_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureColumnsIsMutable();
           columns_.addAll(other.columns_);
@@ -1041,6 +1080,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -1063,6 +1104,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -1085,6 +1128,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -1105,6 +1151,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -1122,6 +1170,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1149,6 +1200,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     *
+     * @return Whether the transaction field is set.
      */
     public boolean hasTransaction() {
       return transactionBuilder_ != null || transaction_ != null;
@@ -1162,6 +1215,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     *
+     * @return The transaction.
      */
     public com.google.spanner.v1.TransactionSelector getTransaction() {
       if (transactionBuilder_ == null) {
@@ -1334,6 +1389,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
      */
     public java.lang.String getTable() {
       java.lang.Object ref = table_;
@@ -1354,6 +1411,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
      */
     public com.google.protobuf.ByteString getTableBytes() {
       java.lang.Object ref = table_;
@@ -1374,6 +1433,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The table to set.
+     * @return This builder for chaining.
      */
     public Builder setTable(java.lang.String value) {
       if (value == null) {
@@ -1392,6 +1454,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTable() {
 
@@ -1407,6 +1471,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for table to set.
+     * @return This builder for chaining.
      */
     public Builder setTableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1433,6 +1500,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string index = 4;</code>
+     *
+     * @return The index.
      */
     public java.lang.String getIndex() {
       java.lang.Object ref = index_;
@@ -1458,6 +1527,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string index = 4;</code>
+     *
+     * @return The bytes for index.
      */
     public com.google.protobuf.ByteString getIndexBytes() {
       java.lang.Object ref = index_;
@@ -1483,6 +1554,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string index = 4;</code>
+     *
+     * @param value The index to set.
+     * @return This builder for chaining.
      */
     public Builder setIndex(java.lang.String value) {
       if (value == null) {
@@ -1506,6 +1580,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string index = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIndex() {
 
@@ -1526,6 +1602,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string index = 4;</code>
+     *
+     * @param value The bytes for index to set.
+     * @return This builder for chaining.
      */
     public Builder setIndexBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1542,9 +1621,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         columns_ = new com.google.protobuf.LazyStringArrayList(columns_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1556,6 +1635,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the columns.
      */
     public com.google.protobuf.ProtocolStringList getColumnsList() {
       return columns_.getUnmodifiableView();
@@ -1569,6 +1650,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of columns.
      */
     public int getColumnsCount() {
       return columns_.size();
@@ -1582,6 +1665,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The columns at the given index.
      */
     public java.lang.String getColumns(int index) {
       return columns_.get(index);
@@ -1595,6 +1681,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the columns at the given index.
      */
     public com.google.protobuf.ByteString getColumnsBytes(int index) {
       return columns_.getByteString(index);
@@ -1608,6 +1697,10 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The columns to set.
+     * @return This builder for chaining.
      */
     public Builder setColumns(int index, java.lang.String value) {
       if (value == null) {
@@ -1627,6 +1720,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The columns to add.
+     * @return This builder for chaining.
      */
     public Builder addColumns(java.lang.String value) {
       if (value == null) {
@@ -1646,6 +1742,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The columns to add.
+     * @return This builder for chaining.
      */
     public Builder addAllColumns(java.lang.Iterable<java.lang.String> values) {
       ensureColumnsIsMutable();
@@ -1662,10 +1761,12 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumns() {
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1678,6 +1779,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the columns to add.
+     * @return This builder for chaining.
      */
     public Builder addColumnsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1717,6 +1821,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the keySet field is set.
      */
     public boolean hasKeySet() {
       return keySetBuilder_ != null || keySet_ != null;
@@ -1742,6 +1848,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The keySet.
      */
     public com.google.spanner.v1.KeySet getKeySet() {
       if (keySetBuilder_ == null) {
@@ -1993,6 +2101,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 limit = 8;</code>
+     *
+     * @return The limit.
      */
     public long getLimit() {
       return limit_;
@@ -2007,6 +2117,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 limit = 8;</code>
+     *
+     * @param value The limit to set.
+     * @return This builder for chaining.
      */
     public Builder setLimit(long value) {
 
@@ -2024,6 +2137,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 limit = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLimit() {
 
@@ -2046,6 +2161,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes resume_token = 9;</code>
+     *
+     * @return The resumeToken.
      */
     public com.google.protobuf.ByteString getResumeToken() {
       return resumeToken_;
@@ -2063,6 +2180,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes resume_token = 9;</code>
+     *
+     * @param value The resumeToken to set.
+     * @return This builder for chaining.
      */
     public Builder setResumeToken(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2086,6 +2206,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes resume_token = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResumeToken() {
 
@@ -2106,6 +2228,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes partition_token = 10;</code>
+     *
+     * @return The partitionToken.
      */
     public com.google.protobuf.ByteString getPartitionToken() {
       return partitionToken_;
@@ -2121,6 +2245,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes partition_token = 10;</code>
+     *
+     * @param value The partitionToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPartitionToken(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2142,6 +2269,8 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes partition_token = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPartitionToken() {
 

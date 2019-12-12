@@ -19,6 +19,8 @@ public interface UpdateInstanceRequestOrBuilder
    * <code>
    * .google.spanner.admin.instance.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the instance field is set.
    */
   boolean hasInstance();
   /**
@@ -32,6 +34,8 @@ public interface UpdateInstanceRequestOrBuilder
    * <code>
    * .google.spanner.admin.instance.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The instance.
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
@@ -60,6 +64,8 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask field_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
   /**
@@ -74,6 +80,8 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask field_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**

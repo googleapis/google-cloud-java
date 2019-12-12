@@ -16,6 +16,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>int32 index = 1;</code>
+   *
+   * @return The index.
    */
   int getIndex();
 
@@ -31,6 +33,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
@@ -45,6 +49,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
+   *
+   * @return The kind.
    */
   com.google.spanner.v1.PlanNode.Kind getKind();
 
@@ -56,6 +62,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -66,6 +74,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -129,6 +139,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
+   *
+   * @return Whether the shortRepresentation field is set.
    */
   boolean hasShortRepresentation();
   /**
@@ -139,6 +151,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
+   *
+   * @return The shortRepresentation.
    */
   com.google.spanner.v1.PlanNode.ShortRepresentation getShortRepresentation();
   /**
@@ -166,6 +180,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 6;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -182,6 +198,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 6;</code>
+   *
+   * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
   /**
@@ -212,6 +230,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct execution_stats = 7;</code>
+   *
+   * @return Whether the executionStats field is set.
    */
   boolean hasExecutionStats();
   /**
@@ -225,6 +245,8 @@ public interface PlanNodeOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct execution_stats = 7;</code>
+   *
+   * @return The executionStats.
    */
   com.google.protobuf.Struct getExecutionStats();
   /**

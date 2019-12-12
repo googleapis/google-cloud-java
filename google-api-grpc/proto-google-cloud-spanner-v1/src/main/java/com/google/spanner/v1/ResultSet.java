@@ -28,6 +28,12 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ResultSet();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 rows_ = new java.util.ArrayList<com.google.protobuf.ListValue>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               rows_.add(
                   input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry));
@@ -107,7 +113,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         rows_ = java.util.Collections.unmodifiableList(rows_);
       }
       this.unknownFields = unknownFields.build();
@@ -129,7 +135,6 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.v1.ResultSet.class, com.google.spanner.v1.ResultSet.Builder.class);
   }
 
-  private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.spanner.v1.ResultSetMetadata metadata_;
   /**
@@ -140,6 +145,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -152,6 +159,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+   *
+   * @return The metadata.
    */
   public com.google.spanner.v1.ResultSetMetadata getMetadata() {
     return metadata_ == null
@@ -276,6 +285,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 3;</code>
+   *
+   * @return Whether the stats field is set.
    */
   public boolean hasStats() {
     return stats_ != null;
@@ -295,6 +306,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 3;</code>
+   *
+   * @return The stats.
    */
   public com.google.spanner.v1.ResultSetStats getStats() {
     return stats_ == null ? com.google.spanner.v1.ResultSetStats.getDefaultInstance() : stats_;
@@ -561,7 +574,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
       }
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         rowsBuilder_.clear();
       }
@@ -598,16 +611,15 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.ResultSet buildPartial() {
       com.google.spanner.v1.ResultSet result = new com.google.spanner.v1.ResultSet(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
       if (rowsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           rows_ = java.util.Collections.unmodifiableList(rows_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.rows_ = rows_;
       } else {
@@ -618,7 +630,6 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.stats_ = statsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -675,7 +686,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
         if (!other.rows_.isEmpty()) {
           if (rows_.isEmpty()) {
             rows_ = other.rows_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureRowsIsMutable();
             rows_.addAll(other.rows_);
@@ -688,7 +699,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
             rowsBuilder_.dispose();
             rowsBuilder_ = null;
             rows_ = other.rows_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             rowsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRowsFieldBuilder()
@@ -746,6 +757,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+     *
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -758,6 +771,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+     *
+     * @return The metadata.
      */
     public com.google.spanner.v1.ResultSetMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -916,9 +931,9 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.protobuf.ListValue> rows_ = java.util.Collections.emptyList();
 
     private void ensureRowsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         rows_ = new java.util.ArrayList<com.google.protobuf.ListValue>(rows_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1185,7 +1200,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRows() {
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         rowsBuilder_.clear();
@@ -1339,7 +1354,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.ListValue,
                 com.google.protobuf.ListValue.Builder,
                 com.google.protobuf.ListValueOrBuilder>(
-                rows_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                rows_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         rows_ = null;
       }
       return rowsBuilder_;
@@ -1366,6 +1381,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 3;</code>
+     *
+     * @return Whether the stats field is set.
      */
     public boolean hasStats() {
       return statsBuilder_ != null || stats_ != null;
@@ -1385,6 +1402,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 3;</code>
+     *
+     * @return The stats.
      */
     public com.google.spanner.v1.ResultSetStats getStats() {
       if (statsBuilder_ == null) {

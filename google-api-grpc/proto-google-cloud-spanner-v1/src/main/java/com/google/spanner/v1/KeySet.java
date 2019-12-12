@@ -33,6 +33,12 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new KeySet();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -119,7 +125,6 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.v1.KeySet.class, com.google.spanner.v1.KeySet.Builder.class);
   }
 
-  private int bitField0_;
   public static final int KEYS_FIELD_NUMBER = 1;
   private java.util.List<com.google.protobuf.ListValue> keys_;
   /**
@@ -279,6 +284,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool all = 3;</code>
+   *
+   * @return The all.
    */
   public boolean getAll() {
     return all_;
@@ -554,7 +561,6 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.KeySet buildPartial() {
       com.google.spanner.v1.KeySet result = new com.google.spanner.v1.KeySet(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (keysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -574,7 +580,6 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
         result.ranges_ = rangesBuilder_.build();
       }
       result.all_ = all_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1483,6 +1488,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool all = 3;</code>
+     *
+     * @return The all.
      */
     public boolean getAll() {
       return all_;
@@ -1497,6 +1504,9 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool all = 3;</code>
+     *
+     * @param value The all to set.
+     * @return This builder for chaining.
      */
     public Builder setAll(boolean value) {
 
@@ -1514,6 +1524,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool all = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAll() {
 

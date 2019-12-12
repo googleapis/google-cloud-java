@@ -18,6 +18,8 @@ public interface CreateSessionRequestOrBuilder
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The database.
    */
   java.lang.String getDatabase();
   /**
@@ -30,6 +32,8 @@ public interface CreateSessionRequestOrBuilder
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 
@@ -41,6 +45,8 @@ public interface CreateSessionRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Session session = 2;</code>
+   *
+   * @return Whether the session field is set.
    */
   boolean hasSession();
   /**
@@ -51,6 +57,8 @@ public interface CreateSessionRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Session session = 2;</code>
+   *
+   * @return The session.
    */
   com.google.spanner.v1.Session getSession();
   /**

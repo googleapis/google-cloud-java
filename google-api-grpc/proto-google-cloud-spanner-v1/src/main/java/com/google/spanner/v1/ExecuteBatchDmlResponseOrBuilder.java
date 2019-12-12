@@ -103,6 +103,8 @@ public interface ExecuteBatchDmlResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 2;</code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -114,6 +116,8 @@ public interface ExecuteBatchDmlResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 2;</code>
+   *
+   * @return The status.
    */
   com.google.rpc.Status getStatus();
   /**

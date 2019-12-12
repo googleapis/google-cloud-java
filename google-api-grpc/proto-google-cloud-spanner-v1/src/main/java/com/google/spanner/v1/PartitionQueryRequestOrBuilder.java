@@ -18,6 +18,8 @@ public interface PartitionQueryRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   java.lang.String getSession();
   /**
@@ -30,6 +32,8 @@ public interface PartitionQueryRequestOrBuilder
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -42,6 +46,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
@@ -53,6 +59,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
@@ -84,6 +92,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sql.
    */
   java.lang.String getSql();
   /**
@@ -103,6 +113,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for sql.
    */
   com.google.protobuf.ByteString getSqlBytes();
 
@@ -121,6 +133,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
+   *
+   * @return Whether the params field is set.
    */
   boolean hasParams();
   /**
@@ -138,6 +152,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
+   *
+   * @return The params.
    */
   com.google.protobuf.Struct getParams();
   /**
@@ -256,6 +272,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.PartitionOptions partition_options = 6;</code>
+   *
+   * @return Whether the partitionOptions field is set.
    */
   boolean hasPartitionOptions();
   /**
@@ -266,6 +284,8 @@ public interface PartitionQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.PartitionOptions partition_options = 6;</code>
+   *
+   * @return The partitionOptions.
    */
   com.google.spanner.v1.PartitionOptions getPartitionOptions();
   /**

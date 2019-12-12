@@ -28,6 +28,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BeginTransactionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +125,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The session.
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -142,6 +149,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * <code>
    * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for session.
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -167,6 +176,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * <code>
    * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the options field is set.
    */
   public boolean hasOptions() {
     return options_ != null;
@@ -181,6 +192,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * <code>
    * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The options.
    */
   public com.google.spanner.v1.TransactionOptions getOptions() {
     return options_ == null
@@ -558,6 +571,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The session.
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -580,6 +595,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for session.
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -602,6 +619,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -622,6 +642,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSession() {
 
@@ -639,6 +661,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -667,6 +692,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the options field is set.
      */
     public boolean hasOptions() {
       return optionsBuilder_ != null || options_ != null;
@@ -681,6 +708,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * <code>
      * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The options.
      */
     public com.google.spanner.v1.TransactionOptions getOptions() {
       if (optionsBuilder_ == null) {

@@ -20,6 +20,12 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReplicaInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -32,7 +38,6 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -228,12 +233,20 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ReplicaType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ReplicaType forNumber(int value) {
       switch (value) {
         case 0:
@@ -303,6 +316,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 1;</code>
+   *
+   * @return The location.
    */
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
@@ -323,6 +338,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 1;</code>
+   *
+   * @return The bytes for location.
    */
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
@@ -346,6 +363,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -358,6 +377,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+   *
+   * @return The type.
    */
   public com.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType getType() {
     @SuppressWarnings("deprecation")
@@ -381,6 +402,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool default_leader_location = 3;</code>
+   *
+   * @return The defaultLeaderLocation.
    */
   public boolean getDefaultLeaderLocation() {
     return defaultLeaderLocation_;
@@ -738,6 +761,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -758,6 +783,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -778,6 +805,9 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocation(java.lang.String value) {
       if (value == null) {
@@ -796,6 +826,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocation() {
 
@@ -811,6 +843,9 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -832,6 +867,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -844,6 +881,9 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -858,6 +898,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+     *
+     * @return The type.
      */
     public com.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType getType() {
       @SuppressWarnings("deprecation")
@@ -875,6 +917,9 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType value) {
       if (value == null) {
@@ -893,6 +938,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.ReplicaInfo.ReplicaType type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -913,6 +960,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool default_leader_location = 3;</code>
+     *
+     * @return The defaultLeaderLocation.
      */
     public boolean getDefaultLeaderLocation() {
       return defaultLeaderLocation_;
@@ -928,6 +977,9 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool default_leader_location = 3;</code>
+     *
+     * @param value The defaultLeaderLocation to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultLeaderLocation(boolean value) {
 
@@ -946,6 +998,8 @@ public final class ReplicaInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool default_leader_location = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultLeaderLocation() {
 

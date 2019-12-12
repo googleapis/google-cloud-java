@@ -27,6 +27,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Session();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,10 +65,10 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -143,7 +149,6 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.v1.Session.class, com.google.spanner.v1.Session.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -155,6 +160,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -176,6 +183,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -316,6 +325,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -328,6 +339,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -356,6 +369,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp approximate_last_use_time = 4;</code>
+   *
+   * @return Whether the approximateLastUseTime field is set.
    */
   public boolean hasApproximateLastUseTime() {
     return approximateLastUseTime_ != null;
@@ -369,6 +384,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp approximate_last_use_time = 4;</code>
+   *
+   * @return The approximateLastUseTime.
    */
   public com.google.protobuf.Timestamp getApproximateLastUseTime() {
     return approximateLastUseTime_ == null
@@ -698,7 +715,6 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.Session buildPartial() {
       com.google.spanner.v1.Session result = new com.google.spanner.v1.Session(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -712,7 +728,6 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.approximateLastUseTime_ = approximateLastUseTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -814,6 +829,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -835,6 +852,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -856,6 +875,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -875,6 +897,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -891,6 +915,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1111,6 +1138,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1123,6 +1152,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1291,6 +1322,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp approximate_last_use_time = 4;</code>
+     *
+     * @return Whether the approximateLastUseTime field is set.
      */
     public boolean hasApproximateLastUseTime() {
       return approximateLastUseTimeBuilder_ != null || approximateLastUseTime_ != null;
@@ -1304,6 +1337,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp approximate_last_use_time = 4;</code>
+     *
+     * @return The approximateLastUseTime.
      */
     public com.google.protobuf.Timestamp getApproximateLastUseTime() {
       if (approximateLastUseTimeBuilder_ == null) {

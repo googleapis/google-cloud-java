@@ -27,6 +27,12 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Transaction();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +125,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes id = 1;</code>
+   *
+   * @return The id.
    */
   public com.google.protobuf.ByteString getId() {
     return id_;
@@ -139,6 +146,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
+   *
+   * @return Whether the readTimestamp field is set.
    */
   public boolean hasReadTimestamp() {
     return readTimestamp_ != null;
@@ -155,6 +164,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
+   *
+   * @return The readTimestamp.
    */
   public com.google.protobuf.Timestamp getReadTimestamp() {
     return readTimestamp_ == null
@@ -533,6 +544,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes id = 1;</code>
+     *
+     * @return The id.
      */
     public com.google.protobuf.ByteString getId() {
       return id_;
@@ -551,6 +564,9 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -575,6 +591,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -601,6 +619,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
+     *
+     * @return Whether the readTimestamp field is set.
      */
     public boolean hasReadTimestamp() {
       return readTimestampBuilder_ != null || readTimestamp_ != null;
@@ -617,6 +637,8 @@ public final class Transaction extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
+     *
+     * @return The readTimestamp.
      */
     public com.google.protobuf.Timestamp getReadTimestamp() {
       if (readTimestampBuilder_ == null) {

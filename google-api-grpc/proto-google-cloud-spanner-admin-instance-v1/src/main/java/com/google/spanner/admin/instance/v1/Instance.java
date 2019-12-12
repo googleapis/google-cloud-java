@@ -31,6 +31,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Instance();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -89,10 +95,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -103,9 +109,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 endpointUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000002;
               }
               endpointUris_.add(s);
               break;
@@ -124,7 +130,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         endpointUris_ = endpointUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -246,12 +252,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -309,7 +323,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.spanner.admin.instance.v1.Instance.State)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -323,6 +336,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -346,6 +361,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -372,6 +389,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The config.
    */
   public java.lang.String getConfig() {
     java.lang.Object ref = config_;
@@ -395,6 +414,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for config.
    */
   public com.google.protobuf.ByteString getConfigBytes() {
     java.lang.Object ref = config_;
@@ -419,6 +440,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -440,6 +463,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -467,6 +492,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 node_count = 5;</code>
+   *
+   * @return The nodeCount.
    */
   public int getNodeCount() {
     return nodeCount_;
@@ -486,6 +513,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -502,6 +531,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+   *
+   * @return The state.
    */
   public com.google.spanner.admin.instance.v1.Instance.State getState() {
     @SuppressWarnings("deprecation")
@@ -690,6 +721,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @return A list containing the endpointUris.
    */
   public com.google.protobuf.ProtocolStringList getEndpointUrisList() {
     return endpointUris_;
@@ -709,6 +742,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @return The count of endpointUris.
    */
   public int getEndpointUrisCount() {
     return endpointUris_.size();
@@ -728,6 +763,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The endpointUris at the given index.
    */
   public java.lang.String getEndpointUris(int index) {
     return endpointUris_.get(index);
@@ -747,6 +785,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string endpoint_uris = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the endpointUris at the given index.
    */
   public com.google.protobuf.ByteString getEndpointUrisBytes(int index) {
     return endpointUris_.getByteString(index);
@@ -1059,7 +1100,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableLabels().clear();
       endpointUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1088,7 +1129,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       com.google.spanner.admin.instance.v1.Instance result =
           new com.google.spanner.admin.instance.v1.Instance(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.config_ = config_;
       result.displayName_ = displayName_;
@@ -1096,12 +1136,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.state_ = state_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         endpointUris_ = endpointUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.endpointUris_ = endpointUris_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1173,7 +1212,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.endpointUris_.isEmpty()) {
         if (endpointUris_.isEmpty()) {
           endpointUris_ = other.endpointUris_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEndpointUrisIsMutable();
           endpointUris_.addAll(other.endpointUris_);
@@ -1223,6 +1262,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1246,6 +1287,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1269,6 +1312,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1290,6 +1336,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1308,6 +1356,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1332,6 +1383,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The config.
      */
     public java.lang.String getConfig() {
       java.lang.Object ref = config_;
@@ -1355,6 +1408,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for config.
      */
     public com.google.protobuf.ByteString getConfigBytes() {
       java.lang.Object ref = config_;
@@ -1378,6 +1433,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The config to set.
+     * @return This builder for chaining.
      */
     public Builder setConfig(java.lang.String value) {
       if (value == null) {
@@ -1399,6 +1457,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfig() {
 
@@ -1417,6 +1477,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for config to set.
+     * @return This builder for chaining.
      */
     public Builder setConfigBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1439,6 +1502,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1460,6 +1525,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1481,6 +1548,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1500,6 +1570,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1516,6 +1588,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1541,6 +1616,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 node_count = 5;</code>
+     *
+     * @return The nodeCount.
      */
     public int getNodeCount() {
       return nodeCount_;
@@ -1557,6 +1634,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 node_count = 5;</code>
+     *
+     * @param value The nodeCount to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeCount(int value) {
 
@@ -1576,6 +1656,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 node_count = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
 
@@ -1597,6 +1679,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1613,6 +1697,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1631,6 +1718,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     *
+     * @return The state.
      */
     public com.google.spanner.admin.instance.v1.Instance.State getState() {
       @SuppressWarnings("deprecation")
@@ -1652,6 +1741,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.spanner.admin.instance.v1.Instance.State value) {
       if (value == null) {
@@ -1674,6 +1766,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1957,9 +2051,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEndpointUrisIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         endpointUris_ = new com.google.protobuf.LazyStringArrayList(endpointUris_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1977,6 +2071,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @return A list containing the endpointUris.
      */
     public com.google.protobuf.ProtocolStringList getEndpointUrisList() {
       return endpointUris_.getUnmodifiableView();
@@ -1996,6 +2092,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @return The count of endpointUris.
      */
     public int getEndpointUrisCount() {
       return endpointUris_.size();
@@ -2015,6 +2113,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The endpointUris at the given index.
      */
     public java.lang.String getEndpointUris(int index) {
       return endpointUris_.get(index);
@@ -2034,6 +2135,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the endpointUris at the given index.
      */
     public com.google.protobuf.ByteString getEndpointUrisBytes(int index) {
       return endpointUris_.getByteString(index);
@@ -2053,6 +2157,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The endpointUris to set.
+     * @return This builder for chaining.
      */
     public Builder setEndpointUris(int index, java.lang.String value) {
       if (value == null) {
@@ -2078,6 +2186,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @param value The endpointUris to add.
+     * @return This builder for chaining.
      */
     public Builder addEndpointUris(java.lang.String value) {
       if (value == null) {
@@ -2103,6 +2214,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @param values The endpointUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEndpointUris(java.lang.Iterable<java.lang.String> values) {
       ensureEndpointUrisIsMutable();
@@ -2125,10 +2239,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndpointUris() {
       endpointUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2147,6 +2263,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string endpoint_uris = 8;</code>
+     *
+     * @param value The bytes of the endpointUris to add.
+     * @return This builder for chaining.
      */
     public Builder addEndpointUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

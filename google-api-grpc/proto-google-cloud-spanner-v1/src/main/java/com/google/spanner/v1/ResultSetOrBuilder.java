@@ -16,6 +16,8 @@ public interface ResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -26,6 +28,8 @@ public interface ResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
+   *
+   * @return The metadata.
    */
   com.google.spanner.v1.ResultSetMetadata getMetadata();
   /**
@@ -130,6 +134,8 @@ public interface ResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 3;</code>
+   *
+   * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
@@ -147,6 +153,8 @@ public interface ResultSetOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 3;</code>
+   *
+   * @return The stats.
    */
   com.google.spanner.v1.ResultSetStats getStats();
   /**

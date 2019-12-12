@@ -16,6 +16,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
+   *
+   * @return Whether the instance field is set.
    */
   boolean hasInstance();
   /**
@@ -26,6 +28,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
+   *
+   * @return The instance.
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
@@ -49,6 +53,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -61,6 +67,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -86,6 +94,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cancel_time = 3;</code>
+   *
+   * @return Whether the cancelTime field is set.
    */
   boolean hasCancelTime();
   /**
@@ -98,6 +108,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cancel_time = 3;</code>
+   *
+   * @return The cancelTime.
    */
   com.google.protobuf.Timestamp getCancelTime();
   /**
@@ -121,6 +133,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 4;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -131,6 +145,8 @@ public interface CreateInstanceMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 4;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**

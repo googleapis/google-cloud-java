@@ -17,6 +17,8 @@ public interface SessionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -28,6 +30,8 @@ public interface SessionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -123,6 +127,8 @@ public interface SessionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -133,6 +139,8 @@ public interface SessionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -155,6 +163,8 @@ public interface SessionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp approximate_last_use_time = 4;</code>
+   *
+   * @return Whether the approximateLastUseTime field is set.
    */
   boolean hasApproximateLastUseTime();
   /**
@@ -166,6 +176,8 @@ public interface SessionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp approximate_last_use_time = 4;</code>
+   *
+   * @return The approximateLastUseTime.
    */
   com.google.protobuf.Timestamp getApproximateLastUseTime();
   /**

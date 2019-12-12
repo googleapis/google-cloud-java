@@ -27,6 +27,12 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateSessionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The database.
    */
   public java.lang.String getDatabase() {
     java.lang.Object ref = database_;
@@ -140,6 +147,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for database.
    */
   public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
@@ -163,6 +172,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.spanner.v1.Session session = 2;</code>
+   *
+   * @return Whether the session field is set.
    */
   public boolean hasSession() {
     return session_ != null;
@@ -175,6 +186,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.spanner.v1.Session session = 2;</code>
+   *
+   * @return The session.
    */
   public com.google.spanner.v1.Session getSession() {
     return session_ == null ? com.google.spanner.v1.Session.getDefaultInstance() : session_;
@@ -547,6 +560,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The database.
      */
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
@@ -569,6 +584,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for database.
      */
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
@@ -591,6 +608,9 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The database to set.
+     * @return This builder for chaining.
      */
     public Builder setDatabase(java.lang.String value) {
       if (value == null) {
@@ -611,6 +631,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDatabase() {
 
@@ -628,6 +650,9 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for database to set.
+     * @return This builder for chaining.
      */
     public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -654,6 +679,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.spanner.v1.Session session = 2;</code>
+     *
+     * @return Whether the session field is set.
      */
     public boolean hasSession() {
       return sessionBuilder_ != null || session_ != null;
@@ -666,6 +693,8 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.spanner.v1.Session session = 2;</code>
+     *
+     * @return The session.
      */
     public com.google.spanner.v1.Session getSession() {
       if (sessionBuilder_ == null) {

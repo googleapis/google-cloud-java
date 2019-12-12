@@ -85,6 +85,12 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
   private KeyRange() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new KeyRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -97,7 +103,6 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -203,7 +208,10 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
   private int startKeyTypeCase_ = 0;
   private java.lang.Object startKeyType_;
 
-  public enum StartKeyTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StartKeyTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     START_CLOSED(1),
     START_OPEN(2),
     STARTKEYTYPE_NOT_SET(0);
@@ -212,7 +220,11 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
     private StartKeyTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StartKeyTypeCase valueOf(int value) {
       return forNumber(value);
@@ -243,7 +255,10 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
   private int endKeyTypeCase_ = 0;
   private java.lang.Object endKeyType_;
 
-  public enum EndKeyTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EndKeyTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     END_CLOSED(3),
     END_OPEN(4),
     ENDKEYTYPE_NOT_SET(0);
@@ -252,7 +267,11 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
     private EndKeyTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EndKeyTypeCase valueOf(int value) {
       return forNumber(value);
@@ -290,6 +309,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue start_closed = 1;</code>
+   *
+   * @return Whether the startClosed field is set.
    */
   public boolean hasStartClosed() {
     return startKeyTypeCase_ == 1;
@@ -303,6 +324,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue start_closed = 1;</code>
+   *
+   * @return The startClosed.
    */
   public com.google.protobuf.ListValue getStartClosed() {
     if (startKeyTypeCase_ == 1) {
@@ -337,6 +360,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue start_open = 2;</code>
+   *
+   * @return Whether the startOpen field is set.
    */
   public boolean hasStartOpen() {
     return startKeyTypeCase_ == 2;
@@ -350,6 +375,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue start_open = 2;</code>
+   *
+   * @return The startOpen.
    */
   public com.google.protobuf.ListValue getStartOpen() {
     if (startKeyTypeCase_ == 2) {
@@ -384,6 +411,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue end_closed = 3;</code>
+   *
+   * @return Whether the endClosed field is set.
    */
   public boolean hasEndClosed() {
     return endKeyTypeCase_ == 3;
@@ -397,6 +426,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue end_closed = 3;</code>
+   *
+   * @return The endClosed.
    */
   public com.google.protobuf.ListValue getEndClosed() {
     if (endKeyTypeCase_ == 3) {
@@ -431,6 +462,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue end_open = 4;</code>
+   *
+   * @return Whether the endOpen field is set.
    */
   public boolean hasEndOpen() {
     return endKeyTypeCase_ == 4;
@@ -444,6 +477,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.ListValue end_open = 4;</code>
+   *
+   * @return The endOpen.
    */
   public com.google.protobuf.ListValue getEndOpen() {
     if (endKeyTypeCase_ == 4) {
@@ -1008,6 +1043,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue start_closed = 1;</code>
+     *
+     * @return Whether the startClosed field is set.
      */
     public boolean hasStartClosed() {
       return startKeyTypeCase_ == 1;
@@ -1021,6 +1058,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue start_closed = 1;</code>
+     *
+     * @return The startClosed.
      */
     public com.google.protobuf.ListValue getStartClosed() {
       if (startClosedBuilder_ == null) {
@@ -1216,6 +1255,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue start_open = 2;</code>
+     *
+     * @return Whether the startOpen field is set.
      */
     public boolean hasStartOpen() {
       return startKeyTypeCase_ == 2;
@@ -1229,6 +1270,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue start_open = 2;</code>
+     *
+     * @return The startOpen.
      */
     public com.google.protobuf.ListValue getStartOpen() {
       if (startOpenBuilder_ == null) {
@@ -1424,6 +1467,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue end_closed = 3;</code>
+     *
+     * @return Whether the endClosed field is set.
      */
     public boolean hasEndClosed() {
       return endKeyTypeCase_ == 3;
@@ -1437,6 +1482,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue end_closed = 3;</code>
+     *
+     * @return The endClosed.
      */
     public com.google.protobuf.ListValue getEndClosed() {
       if (endClosedBuilder_ == null) {
@@ -1631,6 +1678,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue end_open = 4;</code>
+     *
+     * @return Whether the endOpen field is set.
      */
     public boolean hasEndOpen() {
       return endKeyTypeCase_ == 4;
@@ -1644,6 +1693,8 @@ public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.ListValue end_open = 4;</code>
+     *
+     * @return The endOpen.
      */
     public com.google.protobuf.ListValue getEndOpen() {
       if (endOpenBuilder_ == null) {

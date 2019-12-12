@@ -17,6 +17,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert = 1;</code>
+   *
+   * @return Whether the insert field is set.
    */
   boolean hasInsert();
   /**
@@ -28,6 +30,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert = 1;</code>
+   *
+   * @return The insert.
    */
   com.google.spanner.v1.Mutation.Write getInsert();
   /**
@@ -51,6 +55,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write update = 2;</code>
+   *
+   * @return Whether the update field is set.
    */
   boolean hasUpdate();
   /**
@@ -62,6 +68,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write update = 2;</code>
+   *
+   * @return The update.
    */
   com.google.spanner.v1.Mutation.Write getUpdate();
   /**
@@ -86,6 +94,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
+   *
+   * @return Whether the insertOrUpdate field is set.
    */
   boolean hasInsertOrUpdate();
   /**
@@ -98,6 +108,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
+   *
+   * @return The insertOrUpdate.
    */
   com.google.spanner.v1.Mutation.Write getInsertOrUpdate();
   /**
@@ -128,6 +140,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
+   *
+   * @return Whether the replace field is set.
    */
   boolean hasReplace();
   /**
@@ -145,6 +159,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
+   *
+   * @return The replace.
    */
   com.google.spanner.v1.Mutation.Write getReplace();
   /**
@@ -174,6 +190,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Delete delete = 5;</code>
+   *
+   * @return Whether the delete field is set.
    */
   boolean hasDelete();
   /**
@@ -185,6 +203,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Delete delete = 5;</code>
+   *
+   * @return The delete.
    */
   com.google.spanner.v1.Mutation.Delete getDelete();
   /**

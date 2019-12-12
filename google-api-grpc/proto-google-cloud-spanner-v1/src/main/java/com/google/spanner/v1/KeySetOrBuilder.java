@@ -140,6 +140,8 @@ public interface KeySetOrBuilder
    * </pre>
    *
    * <code>bool all = 3;</code>
+   *
+   * @return The all.
    */
   boolean getAll();
 }

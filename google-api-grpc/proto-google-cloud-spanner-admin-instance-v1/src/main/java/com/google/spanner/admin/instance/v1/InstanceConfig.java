@@ -30,6 +30,12 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InstanceConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,10 +75,10 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 replicas_ =
                     new java.util.ArrayList<com.google.spanner.admin.instance.v1.ReplicaInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               replicas_.add(
                   input.readMessage(
@@ -94,7 +100,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         replicas_ = java.util.Collections.unmodifiableList(replicas_);
       }
       this.unknownFields = unknownFields.build();
@@ -117,7 +123,6 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.admin.instance.v1.InstanceConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -130,6 +135,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -152,6 +159,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -175,6 +184,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -195,6 +206,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -510,7 +523,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
 
       if (replicasBuilder_ == null) {
         replicas_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         replicasBuilder_.clear();
       }
@@ -542,19 +555,17 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.spanner.admin.instance.v1.InstanceConfig result =
           new com.google.spanner.admin.instance.v1.InstanceConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (replicasBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           replicas_ = java.util.Collections.unmodifiableList(replicas_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.replicas_ = replicas_;
       } else {
         result.replicas_ = replicasBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -617,7 +628,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.replicas_.isEmpty()) {
           if (replicas_.isEmpty()) {
             replicas_ = other.replicas_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureReplicasIsMutable();
             replicas_.addAll(other.replicas_);
@@ -630,7 +641,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
             replicasBuilder_.dispose();
             replicasBuilder_ = null;
             replicas_ = other.replicas_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             replicasBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReplicasFieldBuilder()
@@ -683,6 +694,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -705,6 +718,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -727,6 +742,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -747,6 +765,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -764,6 +784,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -785,6 +808,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -805,6 +830,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -825,6 +852,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -843,6 +873,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -858,6 +890,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -874,10 +909,10 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureReplicasIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         replicas_ =
             new java.util.ArrayList<com.google.spanner.admin.instance.v1.ReplicaInfo>(replicas_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1104,7 +1139,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReplicas() {
       if (replicasBuilder_ == null) {
         replicas_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         replicasBuilder_.clear();
@@ -1234,7 +1269,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.admin.instance.v1.ReplicaInfo,
                 com.google.spanner.admin.instance.v1.ReplicaInfo.Builder,
                 com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>(
-                replicas_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                replicas_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         replicas_ = null;
       }
       return replicasBuilder_;

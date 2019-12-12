@@ -20,6 +20,8 @@ public interface PartitionOptionsOrBuilder
    * </pre>
    *
    * <code>int64 partition_size_bytes = 1;</code>
+   *
+   * @return The partitionSizeBytes.
    */
   long getPartitionSizeBytes();
 
@@ -37,6 +39,8 @@ public interface PartitionOptionsOrBuilder
    * </pre>
    *
    * <code>int64 max_partitions = 2;</code>
+   *
+   * @return The maxPartitions.
    */
   long getMaxPartitions();
 }
