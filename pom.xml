@@ -246,7 +246,7 @@
 
   <modules>
     <module>google-cloud-bigquery</module>
-  <module>google-cloud-bigquery-bom</module>
+    <module>google-cloud-bigquery-bom</module>
   </modules>
 
   <reporting>
@@ -341,6 +341,17 @@
         <auto-value-annotations.version>${auto-value.version}</auto-value-annotations.version>
       </properties>
     </profile>
+
+    <profile>
+      <id>samples-java8AndNewer</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <modules>
+        <module>samples</module>
+      </modules>
+    </profile>
+
   </profiles>
 
 </project>
