@@ -957,19 +957,6 @@ public class StorageSnippets {
     return acl;
   }
 
-  /** Example of updating a blob to be public-read. */
-  // [TARGET createAcl(BlobId, Acl)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE 42]
-  public Acl blobToPublicRead(String bucketName, String blobName, long blobGeneration) {
-    // [START storageMakePublic]
-    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
-    Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllUsers(), Role.READER));
-    // [END storageMakePublic]
-    return acl;
-  }
-
   /** Example of listing the ACL entries for a blob. */
   // [TARGET listAcls(BlobId)]
   // [VARIABLE "my_unique_bucket"]
