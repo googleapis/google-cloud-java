@@ -69,9 +69,8 @@ public class CanonicalExtensionHeadersSerializer {
                   .get(headerName)
                   // Remove any whitespace around the colon that appears after the header name.
                   .trim()
-                  // Replace any folding whitespace or newlines (CRLF or LF) with a single space.
-                  .replaceAll("[\\s]{2,}", " ")
-                  .replaceAll("(\\t|\\r?\\n)+", " "))
+                  // Replace any sequence of whitespace with a single space.
+                  .replaceAll("\\s+", " "))
           // Append a newline (U+000A) to each custom header.
           .append(SignatureInfo.COMPONENT_SEPARATOR);
     }

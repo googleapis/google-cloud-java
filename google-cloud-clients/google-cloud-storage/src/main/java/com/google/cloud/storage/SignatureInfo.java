@@ -18,14 +18,19 @@ package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
 import com.google.common.net.UrlEscapers;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
@@ -163,23 +168,48 @@ public class SignatureInfo {
   }
 
   public String constructV4QueryString() {
-    StringBuilder signedHeaders =
+    ArrayListMultimap<String, String> paramMap = ArrayListMultimap.create();
+
+    // TODO: Once we support supplying additional query params, we should remove any of the reserved
+    // ones that users might have added.
+
+    // Add in the reserved auth-specific query params.
+    paramMap.put(
+        "X-Goog-Algorithm", UrlEscapers.urlFormParameterEscaper().escape(GOOG4_RSA_SHA256));
+    paramMap.put(
+        "X-Goog-Credential",
+        UrlEscapers.urlFormParameterEscaper().escape(accountEmail + "/" + yearMonthDay + SCOPE));
+    paramMap.put("X-Goog-Date", UrlEscapers.urlFormParameterEscaper().escape(exactDate));
+    paramMap.put(
+        "X-Goog-Expires", UrlEscapers.urlFormParameterEscaper().escape(Long.toString(expiration)));
+    StringBuilder signedHeadersBuilder =
         new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V4)
             .serializeHeaderNames(canonicalizedExtensionHeaders);
+    paramMap.put(
+        "X-Goog-SignedHeaders",
+        UrlEscapers.urlFormParameterEscaper().escape(signedHeadersBuilder.toString()));
 
-    StringBuilder queryString = new StringBuilder();
-    queryString.append("X-Goog-Algorithm=").append(GOOG4_RSA_SHA256).append("&");
-    queryString.append(
-        "X-Goog-Credential="
-            + UrlEscapers.urlFormParameterEscaper()
-                .escape(accountEmail + "/" + yearMonthDay + SCOPE)
-            + "&");
-    queryString.append("X-Goog-Date=" + exactDate + "&");
-    queryString.append("X-Goog-Expires=" + expiration + "&");
-    queryString.append(
-        "X-Goog-SignedHeaders="
-            + UrlEscapers.urlFormParameterEscaper().escape(signedHeaders.toString()));
-    return queryString.toString();
+    StringBuilder queryStringBuilder = new StringBuilder();
+    ArrayList<String> paramKeys = Lists.newArrayList(paramMap.keySet());
+    Collections.sort(paramKeys);
+    for (String key : paramKeys) {
+      List<String> valuesForCurrentKey = paramMap.get(key);
+      if (valuesForCurrentKey.size() > 1) {
+        // If there's more than 1 value for the given key, create a standalone list from the given
+        // view collection and sort it; params with multiple values must be sorted by value.
+        valuesForCurrentKey = Lists.newArrayList(valuesForCurrentKey);
+        Collections.sort(valuesForCurrentKey);
+      }
+      for (String value : valuesForCurrentKey) {
+        queryStringBuilder.append(key).append('=').append(value).append('&');
+      }
+    }
+    // Remove trailing '&' from last-added param.
+    if (queryStringBuilder.length() > 0) {
+      queryStringBuilder.setLength(queryStringBuilder.length() - 1);
+    }
+
+    return queryStringBuilder.toString();
   }
 
   public HttpMethod getHttpVerb() {
