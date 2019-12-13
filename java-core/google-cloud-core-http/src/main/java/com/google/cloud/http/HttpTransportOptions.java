@@ -176,6 +176,7 @@ public class HttpTransportOptions implements TransportOptions {
     builder.setClientLibToken(
         ServiceOptions.getGoogApiClientLibName(),
         GaxProperties.getLibraryVersion(serviceOptions.getClass()));
+    builder.setQuotaProjectIdToken(serviceOptions.getQuotaProjectId());
     return builder;
   }
 

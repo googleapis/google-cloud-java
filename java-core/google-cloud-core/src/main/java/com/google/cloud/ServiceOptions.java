@@ -43,6 +43,7 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.QuotaProjectIdProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.base.Preconditions;
@@ -102,6 +103,7 @@ public abstract class ServiceOptions<
   protected Credentials credentials;
   private final TransportOptions transportOptions;
   private final HeaderProvider headerProvider;
+  private final String quotaProjectId;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -132,6 +134,7 @@ public abstract class ServiceOptions<
     private TransportOptions transportOptions;
     private HeaderProvider headerProvider;
     private String clientLibToken = ServiceOptions.getGoogApiClientLibName();
+    private String quotaProjectId;
 
     @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder() {}
@@ -147,6 +150,7 @@ public abstract class ServiceOptions<
       clock = options.clock;
       transportOptions = options.transportOptions;
       clientLibToken = options.clientLibToken;
+      quotaProjectId = options.quotaProjectId;
     }
 
     protected abstract ServiceOptions<ServiceT, OptionsT> build();
@@ -212,6 +216,10 @@ public abstract class ServiceOptions<
       if (this.projectId == null && credentials instanceof ServiceAccountCredentials) {
         this.projectId = ((ServiceAccountCredentials) credentials).getProjectId();
       }
+
+      if (this.quotaProjectId == null && credentials instanceof QuotaProjectIdProvider) {
+        this.quotaProjectId = ((ServiceAccountCredentials) credentials).getQuotaProjectId();
+      }
       return self();
     }
 
@@ -269,6 +277,17 @@ public abstract class ServiceOptions<
       return self();
     }
 
+    /**
+     * Sets the quotaProjectId that specifies the project used for quota and billing purposes.
+     *
+     * @see <a href="https://cloud.google.com/apis/docs/system-parameters">See system parameter
+     *     $userProject</a>
+     */
+    public B setQuotaProjectId(String quotaProjectId) {
+      this.quotaProjectId = quotaProjectId;
+      return self();
+    }
+
     protected Set<String> getAllowedClientLibTokens() {
       return allowedClientLibTokens;
     }
@@ -305,6 +324,10 @@ public abstract class ServiceOptions<
         firstNonNull(builder.transportOptions, serviceDefaults.getDefaultTransportOptions());
     headerProvider = firstNonNull(builder.headerProvider, new NoHeaderProvider());
     clientLibToken = builder.clientLibToken;
+    quotaProjectId =
+        builder.quotaProjectId != null
+            ? builder.quotaProjectId
+            : getValueFromCredentialsFile(System.getenv(CREDENTIAL_ENV_NAME), "quota_project_id");
   }
 
   /**
@@ -488,24 +511,24 @@ public abstract class ServiceOptions<
   }
 
   protected static String getServiceAccountProjectId() {
-    return getServiceAccountProjectId(System.getenv(CREDENTIAL_ENV_NAME));
+    return getValueFromCredentialsFile(System.getenv(CREDENTIAL_ENV_NAME), "project_id");
   }
 
   @InternalApi("Visible for testing")
-  static String getServiceAccountProjectId(String credentialsPath) {
-    String project = null;
+  static String getValueFromCredentialsFile(String credentialsPath, String key) {
+    String value = null;
     if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
         JsonObjectParser parser = new JsonObjectParser(jsonFactory);
         GenericJson fileContents =
             parser.parseAndClose(credentialsStream, Charsets.UTF_8, GenericJson.class);
-        project = (String) fileContents.get("project_id");
+        value = (String) fileContents.get(key);
       } catch (IOException e) {
         // ignore
       }
     }
-    return project;
+    return value;
   }
 
   /**
@@ -664,7 +687,8 @@ public abstract class ServiceOptions<
         retrySettings,
         serviceFactoryClassName,
         serviceRpcFactoryClassName,
-        clock);
+        clock,
+        quotaProjectId);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?> other) {
@@ -674,7 +698,8 @@ public abstract class ServiceOptions<
         && Objects.equals(retrySettings, other.retrySettings)
         && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
         && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
-        && Objects.equals(clock, clock);
+        && Objects.equals(clock, clock)
+        && Objects.equals(quotaProjectId, other.quotaProjectId);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
@@ -733,5 +758,10 @@ public abstract class ServiceOptions<
 
   public String getClientLibToken() {
     return clientLibToken;
+  }
+
+  /** Returns the quotaProjectId that specifies the project used for quota and billing purposes. */
+  public String getQuotaProjectId() {
+    return quotaProjectId;
   }
 }
