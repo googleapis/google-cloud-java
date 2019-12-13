@@ -16,19 +16,15 @@
 
 package com.google.cloud.storage;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.cloud.storage.SignedUrlEncodingHelper.Rfc3986UriEncode;
+import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
-import com.google.common.net.UrlEscapers;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -176,6 +172,13 @@ public class SignatureInfo {
         .toString();
   }
 
+  /**
+   * Returns a query string constructed from this object's stored query parameters, sorted in code
+   * point order so that the query string can be used in a V4 canonical request string.
+   *
+   * @see <a href= "https://cloud.google.com/storage/docs/authentication/canonical-requests">
+   *     Canonical Requests</a>
+   */
   public String constructV4QueryString() {
     TreeMap<String, String> sortedParamMap = new TreeMap<String, String>();
 
@@ -188,8 +191,7 @@ public class SignatureInfo {
       if (!RESERVED_PARAMS_LOWER.contains(entry.getKey().toLowerCase())) {
         // URI encode user-supplied parameter, both the name and the value.
         sortedParamMap.put(
-            Rfc3986UriEncode(entry.getKey(), true),
-            Rfc3986UriEncode(entry.getValue(), true));
+            Rfc3986UriEncode(entry.getKey(), true), Rfc3986UriEncode(entry.getValue(), true));
       }
     }
 

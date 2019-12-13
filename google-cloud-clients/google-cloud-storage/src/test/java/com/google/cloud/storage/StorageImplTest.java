@@ -79,6 +79,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.crypto.spec.SecretKeySpec;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -2314,6 +2316,55 @@ public class StorageImplTest {
     signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
     assertTrue(
         signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testV4SignUrlHasSortedQueryParams() {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            6,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withV4Signature(),
+            Storage.SignUrlOption.withQueryParams(
+                ImmutableMap.<String, String>of("generation", "1565050147294767")));
+    String stringUrl = url.toString();
+    String expectedPrefix =
+        new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append('?')
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedPrefix));
+    String restOfUrl = stringUrl.substring(expectedPrefix.length());
+
+    Pattern pattern =
+        Pattern.compile(
+            // We use the same code to construct the canonical request query string as we do to
+            // construct the query string used in the final URL, so this query string should also be
+            // sorted correctly, except for the trailing x-goog-signature param.
+            new StringBuilder("X-Goog-Algorithm=GOOG4-RSA-SHA256")
+                .append("&X-Goog-Credential=[^&]+")
+                .append("&X-Goog-Date=[^&]+")
+                .append("&X-Goog-Expires=[^&]+")
+                .append("&X-Goog-SignedHeaders=[^&]+")
+                .append("&generation=[^&]+")
+                // Signature is always tacked onto the end of the final URL; it's not sorted w/ the
+                // other params above, since the signature is not known when you're constructing the
+                // query string line of the canonical request string.
+                .append("&X-Goog-Signature=.*")
+                .toString());
+    Matcher matcher = pattern.matcher(restOfUrl);
+    assertTrue(matcher.matches());
   }
 
   @Test

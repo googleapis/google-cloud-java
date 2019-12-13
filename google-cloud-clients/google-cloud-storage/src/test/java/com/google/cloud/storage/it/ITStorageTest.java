@@ -1868,15 +1868,6 @@ public class ITStorageTest {
               Storage.SignUrlOption.withV4Signature(),
               Storage.SignUrlOption.withQueryParams(
                   ImmutableMap.<String, String>of("generation", generationStr)));
-      String urlStr = url.toString();
-      // Verify that the param was added to the URL:
-      assertThat(urlStr).contains("generation=" + generationStr);
-      // Verify correct parameter sorting (by code point):
-      int genParamPos = urlStr.indexOf("generation=");
-      int xGoogParamPos = urlStr.indexOf("X-Goog-Algorithm=");
-      assertTrue(
-          "'generation' param should appear in URL string AFTER 'X-Goog-Algorithm' param!",
-          genParamPos > xGoogParamPos);
       // Finally, verify that the URL works and we can get the object as expected:
       URLConnection connection = url.openConnection();
       byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
