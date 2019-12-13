@@ -87,6 +87,7 @@ public class LoggingAppenderTest {
                     .put("levelName", "WARN")
                     .put("levelValue", String.valueOf(30000L))
                     .put("loggerName", this.getClass().getName())
+                    .put("fullStacktrace", "this is a test".trim())
                     .build())
             .build();
     logging.setFlushSeverity(Severity.WARNING);
@@ -112,9 +113,10 @@ public class LoggingAppenderTest {
             .setSeverity(Severity.ERROR)
             .setLabels(
                 new ImmutableMap.Builder<String, String>()
-                    .put("levelName", "ERROR")
-                    .put("levelValue", String.valueOf(40000L))
-                    .put("loggerName", this.getClass().getName())
+                    .put("levelName","ERROR")
+                    .put("levelValue",String.valueOf(40000L))
+                    .put("loggerName",this.getClass().getName())
+                    .put("fullStacktrace","this is a test".trim())
                     .build())
             .build();
     logging.setFlushSeverity(Severity.ERROR);
@@ -150,6 +152,7 @@ public class LoggingAppenderTest {
                     .put("levelName", "WARN")
                     .put("levelValue", String.valueOf(30000L))
                     .put("loggerName", this.getClass().getName())
+                    .put("fullStacktrace", "this is a test".trim())
                     .put("test-label-1", "test-value-1")
                     .put("test-label-2", "test-value-2")
                     .build())
@@ -199,6 +202,7 @@ public class LoggingAppenderTest {
                     .put("levelName", "INFO")
                     .put("levelValue", String.valueOf(20000L))
                     .put("loggerName", this.getClass().getName())
+                    .put("fullStacktrace", "this is a test".trim())
                     .put("mdc1", "value1")
                     .put("mdc2", "value2")
                     .build())

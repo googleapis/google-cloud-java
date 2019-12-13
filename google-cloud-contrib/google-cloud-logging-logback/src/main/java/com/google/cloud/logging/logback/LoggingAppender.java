@@ -72,6 +72,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
   private static final String LOGGER_NAME_KEY = "loggerName";
+  private static final String STACKTRACE = "fullStacktrace";
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
@@ -269,7 +270,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
     Level level = e.getLevel();
     LogEntry.Builder builder =
-        LogEntry.newBuilder(Payload.StringPayload.of(payload.toString().trim()))
+        LogEntry.newBuilder(Payload.StringPayload.of(e.getMessage().trim()))
             .setTimestamp(e.getTimeStamp())
             .setSeverity(severityFor(level));
 
@@ -277,6 +278,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         .addLabel(LEVEL_NAME_KEY, level.toString())
         .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()))
         .addLabel(LOGGER_NAME_KEY, e.getLoggerName());
+        .addLabel(STACKTRACE, payload.toString().trim());
 
     for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
       if (null != entry.getKey() && null != entry.getValue()) {
