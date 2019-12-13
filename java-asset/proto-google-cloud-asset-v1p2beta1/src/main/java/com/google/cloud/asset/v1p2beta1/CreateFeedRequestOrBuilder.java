@@ -35,6 +35,8 @@ public interface CreateFeedRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface CreateFeedRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -61,6 +65,8 @@ public interface CreateFeedRequestOrBuilder
    * </pre>
    *
    * <code>string feed_id = 2;</code>
+   *
+   * @return The feedId.
    */
   java.lang.String getFeedId();
   /**
@@ -72,6 +78,8 @@ public interface CreateFeedRequestOrBuilder
    * </pre>
    *
    * <code>string feed_id = 2;</code>
+   *
+   * @return The bytes for feedId.
    */
   com.google.protobuf.ByteString getFeedIdBytes();
 
@@ -87,6 +95,8 @@ public interface CreateFeedRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   *
+   * @return Whether the feed field is set.
    */
   boolean hasFeed();
   /**
@@ -101,6 +111,8 @@ public interface CreateFeedRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3;</code>
+   *
+   * @return The feed.
    */
   com.google.cloud.asset.v1p2beta1.Feed getFeed();
   /**

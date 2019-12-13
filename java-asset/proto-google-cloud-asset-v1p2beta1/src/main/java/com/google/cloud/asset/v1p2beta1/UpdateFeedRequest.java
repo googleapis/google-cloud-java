@@ -40,6 +40,12 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
   private UpdateFeedRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateFeedRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   *
+   * @return Whether the feed field is set.
    */
   public boolean hasFeed() {
     return feed_ != null;
@@ -158,6 +165,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   *
+   * @return The feed.
    */
   public com.google.cloud.asset.v1p2beta1.Feed getFeed() {
     return feed_ == null ? com.google.cloud.asset.v1p2beta1.Feed.getDefaultInstance() : feed_;
@@ -191,6 +200,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -205,6 +216,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -600,6 +613,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     *
+     * @return Whether the feed field is set.
      */
     public boolean hasFeed() {
       return feedBuilder_ != null || feed_ != null;
@@ -616,6 +631,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+     *
+     * @return The feed.
      */
     public com.google.cloud.asset.v1p2beta1.Feed getFeed() {
       if (feedBuilder_ == null) {
@@ -811,6 +828,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -825,6 +844,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

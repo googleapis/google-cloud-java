@@ -31,6 +31,8 @@ public interface FeedOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.PubsubDestination pubsub_destination = 1;</code>
+   *
+   * @return Whether the pubsubDestination field is set.
    */
   boolean hasPubsubDestination();
   /**
@@ -41,6 +43,8 @@ public interface FeedOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.PubsubDestination pubsub_destination = 1;</code>
+   *
+   * @return The pubsubDestination.
    */
   com.google.cloud.asset.v1p2beta1.PubsubDestination getPubsubDestination();
   /**

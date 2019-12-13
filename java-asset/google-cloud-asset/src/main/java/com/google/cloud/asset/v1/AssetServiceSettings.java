@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.asset.v1.stub.AssetServiceStubSettings;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -47,13 +48,13 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of batchGetAssetsHistory to 30 seconds:
+ * <p>For example, to set the total timeout of createFeed to 30 seconds:
  *
  * <pre>
  * <code>
  * AssetServiceSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceSettings.newBuilder();
- * assetServiceSettingsBuilder.batchGetAssetsHistorySettings().getRetrySettings().toBuilder()
+ * assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
@@ -79,6 +80,31 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   public UnaryCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
       batchGetAssetsHistorySettings() {
     return ((AssetServiceStubSettings) getStubSettings()).batchGetAssetsHistorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createFeed. */
+  public UnaryCallSettings<CreateFeedRequest, Feed> createFeedSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).createFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFeed. */
+  public UnaryCallSettings<GetFeedRequest, Feed> getFeedSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).getFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listFeeds. */
+  public UnaryCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).listFeedsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateFeed. */
+  public UnaryCallSettings<UpdateFeedRequest, Feed> updateFeedSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).updateFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeed. */
+  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).deleteFeedSettings();
   }
 
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
@@ -196,6 +222,31 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     public UnaryCallSettings.Builder<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
         batchGetAssetsHistorySettings() {
       return getStubSettingsBuilder().batchGetAssetsHistorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createFeed. */
+    public UnaryCallSettings.Builder<CreateFeedRequest, Feed> createFeedSettings() {
+      return getStubSettingsBuilder().createFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFeed. */
+    public UnaryCallSettings.Builder<GetFeedRequest, Feed> getFeedSettings() {
+      return getStubSettingsBuilder().getFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listFeeds. */
+    public UnaryCallSettings.Builder<ListFeedsRequest, ListFeedsResponse> listFeedsSettings() {
+      return getStubSettingsBuilder().listFeedsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFeed. */
+    public UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings() {
+      return getStubSettingsBuilder().updateFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeed. */
+    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
+      return getStubSettingsBuilder().deleteFeedSettings();
     }
 
     @Override

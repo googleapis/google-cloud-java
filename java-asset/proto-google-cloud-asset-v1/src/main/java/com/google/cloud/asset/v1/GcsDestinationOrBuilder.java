@@ -35,6 +35,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -49,6 +51,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 
@@ -68,6 +72,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string uri_prefix = 2;</code>
+   *
+   * @return The uriPrefix.
    */
   java.lang.String getUriPrefix();
   /**
@@ -86,6 +92,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string uri_prefix = 2;</code>
+   *
+   * @return The bytes for uriPrefix.
    */
   com.google.protobuf.ByteString getUriPrefixBytes();
 

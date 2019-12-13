@@ -43,6 +43,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BigQueryDestination();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The dataset.
    */
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
@@ -155,6 +162,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for dataset.
    */
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
@@ -180,6 +189,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The table.
    */
   public java.lang.String getTable() {
     java.lang.Object ref = table_;
@@ -202,6 +213,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for table.
    */
   public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
@@ -228,6 +241,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bool force = 3;</code>
+   *
+   * @return The force.
    */
   public boolean getForce() {
     return force_;
@@ -592,6 +607,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The dataset.
      */
     public java.lang.String getDataset() {
       java.lang.Object ref = dataset_;
@@ -615,6 +632,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for dataset.
      */
     public com.google.protobuf.ByteString getDatasetBytes() {
       java.lang.Object ref = dataset_;
@@ -638,6 +657,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The dataset to set.
+     * @return This builder for chaining.
      */
     public Builder setDataset(java.lang.String value) {
       if (value == null) {
@@ -659,6 +681,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataset() {
 
@@ -677,6 +701,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for dataset to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -700,6 +727,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
      */
     public java.lang.String getTable() {
       java.lang.Object ref = table_;
@@ -722,6 +751,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
      */
     public com.google.protobuf.ByteString getTableBytes() {
       java.lang.Object ref = table_;
@@ -744,6 +775,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The table to set.
+     * @return This builder for chaining.
      */
     public Builder setTable(java.lang.String value) {
       if (value == null) {
@@ -764,6 +798,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTable() {
 
@@ -781,6 +817,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for table to set.
+     * @return This builder for chaining.
      */
     public Builder setTableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -805,6 +844,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool force = 3;</code>
+     *
+     * @return The force.
      */
     public boolean getForce() {
       return force_;
@@ -820,6 +861,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool force = 3;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
      */
     public Builder setForce(boolean value) {
 
@@ -838,6 +882,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool force = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearForce() {
 

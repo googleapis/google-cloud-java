@@ -33,6 +33,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return A list containing the assetNames.
    */
   java.util.List<java.lang.String> getAssetNamesList();
   /**
@@ -78,6 +84,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return The count of assetNames.
    */
   int getAssetNamesCount();
   /**
@@ -94,6 +102,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetNames at the given index.
    */
   java.lang.String getAssetNames(int index);
   /**
@@ -110,6 +121,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetNames at the given index.
    */
   com.google.protobuf.ByteString getAssetNamesBytes(int index);
 
@@ -121,6 +135,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
   /**
@@ -131,6 +147,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   *
+   * @return The contentType.
    */
   com.google.cloud.asset.v1beta1.ContentType getContentType();
 
@@ -147,6 +165,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   *
+   * @return Whether the readTimeWindow field is set.
    */
   boolean hasReadTimeWindow();
   /**
@@ -162,6 +182,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   *
+   * @return The readTimeWindow.
    */
   com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow();
   /**

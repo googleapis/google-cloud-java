@@ -44,6 +44,12 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportAssetsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -92,9 +98,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assetTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               assetTypes_.add(s);
               break;
@@ -136,7 +142,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -159,7 +165,6 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.asset.v1beta1.ExportAssetsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -173,6 +178,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -196,6 +203,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -223,6 +232,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -239,6 +250,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -274,6 +287,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return A list containing the assetTypes.
    */
   public com.google.protobuf.ProtocolStringList getAssetTypesList() {
     return assetTypes_;
@@ -290,6 +305,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return The count of assetTypes.
    */
   public int getAssetTypesCount() {
     return assetTypes_.size();
@@ -306,6 +323,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetTypes at the given index.
    */
   public java.lang.String getAssetTypes(int index) {
     return assetTypes_.get(index);
@@ -322,6 +342,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetTypes at the given index.
    */
   public com.google.protobuf.ByteString getAssetTypesBytes(int index) {
     return assetTypes_.getByteString(index);
@@ -338,6 +361,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   public int getContentTypeValue() {
     return contentType_;
@@ -351,6 +376,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+   *
+   * @return The contentType.
    */
   public com.google.cloud.asset.v1beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
@@ -370,6 +397,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -383,6 +412,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -671,7 +702,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         readTimeBuilder_ = null;
       }
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       contentType_ = 0;
 
       if (outputConfigBuilder_ == null) {
@@ -708,16 +739,15 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       com.google.cloud.asset.v1beta1.ExportAssetsRequest result =
           new com.google.cloud.asset.v1beta1.ExportAssetsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (readTimeBuilder_ == null) {
         result.readTime_ = readTime_;
       } else {
         result.readTime_ = readTimeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.assetTypes_ = assetTypes_;
       result.contentType_ = contentType_;
@@ -726,7 +756,6 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -787,7 +816,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -844,6 +873,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -867,6 +898,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -890,6 +923,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -911,6 +947,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -929,6 +967,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -959,6 +1000,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -975,6 +1018,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -1156,9 +1201,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1173,6 +1218,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
       return assetTypes_.getUnmodifiableView();
@@ -1189,6 +1236,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @return The count of assetTypes.
      */
     public int getAssetTypesCount() {
       return assetTypes_.size();
@@ -1205,6 +1254,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The assetTypes at the given index.
      */
     public java.lang.String getAssetTypes(int index) {
       return assetTypes_.get(index);
@@ -1221,6 +1273,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the assetTypes at the given index.
      */
     public com.google.protobuf.ByteString getAssetTypesBytes(int index) {
       return assetTypes_.getByteString(index);
@@ -1237,6 +1292,10 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The assetTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setAssetTypes(int index, java.lang.String value) {
       if (value == null) {
@@ -1259,6 +1318,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param value The assetTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetTypes(java.lang.String value) {
       if (value == null) {
@@ -1281,6 +1343,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param values The assetTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
@@ -1300,10 +1365,12 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1319,6 +1386,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param value The bytes of the assetTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetTypesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1341,6 +1411,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for contentType.
      */
     public int getContentTypeValue() {
       return contentType_;
@@ -1354,6 +1426,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
       contentType_ = value;
@@ -1369,6 +1444,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+     *
+     * @return The contentType.
      */
     public com.google.cloud.asset.v1beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
@@ -1385,6 +1462,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+     *
+     * @param value The contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentType(com.google.cloud.asset.v1beta1.ContentType value) {
       if (value == null) {
@@ -1404,6 +1484,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContentType() {
 
@@ -1427,6 +1509,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -1440,6 +1524,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {

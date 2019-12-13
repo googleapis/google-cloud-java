@@ -31,6 +31,8 @@ public interface ExportAssetsResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -41,6 +43,8 @@ public interface ExportAssetsResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
+   *
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -63,6 +67,8 @@ public interface ExportAssetsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 2;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -74,6 +80,8 @@ public interface ExportAssetsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 2;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig();
   /**

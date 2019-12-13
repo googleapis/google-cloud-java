@@ -44,6 +44,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchGetAssetsHistoryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assetNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               assetNames_.add(s);
               break;
@@ -121,7 +127,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -144,7 +150,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
             com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -157,6 +162,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -179,6 +186,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -208,6 +217,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return A list containing the assetNames.
    */
   public com.google.protobuf.ProtocolStringList getAssetNamesList() {
     return assetNames_;
@@ -226,6 +237,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return The count of assetNames.
    */
   public int getAssetNamesCount() {
     return assetNames_.size();
@@ -244,6 +257,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetNames at the given index.
    */
   public java.lang.String getAssetNames(int index) {
     return assetNames_.get(index);
@@ -262,6 +278,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetNames at the given index.
    */
   public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
     return assetNames_.getByteString(index);
@@ -277,6 +296,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   public int getContentTypeValue() {
     return contentType_;
@@ -289,6 +310,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   *
+   * @return The contentType.
    */
   public com.google.cloud.asset.v1beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
@@ -312,6 +335,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   *
+   * @return Whether the readTimeWindow field is set.
    */
   public boolean hasReadTimeWindow() {
     return readTimeWindow_ != null;
@@ -329,6 +354,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   *
+   * @return The readTimeWindow.
    */
   public com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow() {
     return readTimeWindow_ == null
@@ -602,7 +629,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       parent_ = "";
 
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       contentType_ = 0;
 
       if (readTimeWindowBuilder_ == null) {
@@ -639,11 +666,10 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest result =
           new com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.assetNames_ = assetNames_;
       result.contentType_ = contentType_;
@@ -652,7 +678,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       } else {
         result.readTimeWindow_ = readTimeWindowBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -710,7 +735,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -766,6 +791,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -788,6 +815,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -810,6 +839,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -830,6 +862,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -847,6 +881,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -863,9 +900,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -882,6 +919,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @return A list containing the assetNames.
      */
     public com.google.protobuf.ProtocolStringList getAssetNamesList() {
       return assetNames_.getUnmodifiableView();
@@ -900,6 +939,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @return The count of assetNames.
      */
     public int getAssetNamesCount() {
       return assetNames_.size();
@@ -918,6 +959,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The assetNames at the given index.
      */
     public java.lang.String getAssetNames(int index) {
       return assetNames_.get(index);
@@ -936,6 +980,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the assetNames at the given index.
      */
     public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
       return assetNames_.getByteString(index);
@@ -954,6 +1001,10 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The assetNames to set.
+     * @return This builder for chaining.
      */
     public Builder setAssetNames(int index, java.lang.String value) {
       if (value == null) {
@@ -978,6 +1029,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param value The assetNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetNames(java.lang.String value) {
       if (value == null) {
@@ -1002,6 +1056,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param values The assetNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAssetNames(java.lang.Iterable<java.lang.String> values) {
       ensureAssetNamesIsMutable();
@@ -1023,10 +1080,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssetNames() {
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1044,6 +1103,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param value The bytes of the assetNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1065,6 +1127,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for contentType.
      */
     public int getContentTypeValue() {
       return contentType_;
@@ -1077,6 +1141,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
       contentType_ = value;
@@ -1091,6 +1158,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     *
+     * @return The contentType.
      */
     public com.google.cloud.asset.v1beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
@@ -1106,6 +1175,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     *
+     * @param value The contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentType(com.google.cloud.asset.v1beta1.ContentType value) {
       if (value == null) {
@@ -1124,6 +1196,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContentType() {
 
@@ -1151,6 +1225,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     *
+     * @return Whether the readTimeWindow field is set.
      */
     public boolean hasReadTimeWindow() {
       return readTimeWindowBuilder_ != null || readTimeWindow_ != null;
@@ -1168,6 +1244,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     *
+     * @return The readTimeWindow.
      */
     public com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow() {
       if (readTimeWindowBuilder_ == null) {

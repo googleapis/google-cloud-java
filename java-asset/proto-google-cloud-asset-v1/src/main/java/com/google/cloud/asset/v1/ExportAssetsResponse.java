@@ -42,6 +42,12 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
   private ExportAssetsResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportAssetsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -152,6 +159,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
+   *
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -180,6 +189,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -193,6 +204,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.asset.v1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -585,6 +598,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     *
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -597,6 +612,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     *
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -761,6 +778,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -774,6 +793,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.asset.v1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {

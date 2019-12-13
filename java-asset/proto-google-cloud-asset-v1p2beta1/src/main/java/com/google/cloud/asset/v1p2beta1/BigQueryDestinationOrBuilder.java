@@ -34,6 +34,8 @@ public interface BigQueryDestinationOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The dataset.
    */
   java.lang.String getDataset();
   /**
@@ -47,6 +49,8 @@ public interface BigQueryDestinationOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The bytes for dataset.
    */
   com.google.protobuf.ByteString getDatasetBytes();
 
@@ -60,6 +64,8 @@ public interface BigQueryDestinationOrBuilder
    * </pre>
    *
    * <code>string table = 2;</code>
+   *
+   * @return The table.
    */
   java.lang.String getTable();
   /**
@@ -72,6 +78,8 @@ public interface BigQueryDestinationOrBuilder
    * </pre>
    *
    * <code>string table = 2;</code>
+   *
+   * @return The bytes for table.
    */
   com.google.protobuf.ByteString getTableBytes();
 
@@ -86,6 +94,8 @@ public interface BigQueryDestinationOrBuilder
    * </pre>
    *
    * <code>bool force = 3;</code>
+   *
+   * @return The force.
    */
   boolean getForce();
 }

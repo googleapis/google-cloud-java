@@ -35,6 +35,8 @@ public interface UpdateFeedRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   *
+   * @return Whether the feed field is set.
    */
   boolean hasFeed();
   /**
@@ -49,6 +51,8 @@ public interface UpdateFeedRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 1;</code>
+   *
+   * @return The feed.
    */
   com.google.cloud.asset.v1p2beta1.Feed getFeed();
   /**
@@ -76,6 +80,8 @@ public interface UpdateFeedRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -88,6 +94,8 @@ public interface UpdateFeedRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -35,6 +35,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string asset_type = 2;</code>
+   *
+   * @return The assetType.
    */
   java.lang.String getAssetType();
   /**
@@ -70,6 +76,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string asset_type = 2;</code>
+   *
+   * @return The bytes for assetType.
    */
   com.google.protobuf.ByteString getAssetTypeBytes();
 
@@ -81,6 +89,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
+   *
+   * @return Whether the resource field is set.
    */
   boolean hasResource();
   /**
@@ -91,6 +101,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
+   *
+   * @return The resource.
    */
   com.google.cloud.asset.v1.Resource getResource();
   /**
@@ -113,6 +125,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+   *
+   * @return Whether the iamPolicy field is set.
    */
   boolean hasIamPolicy();
   /**
@@ -124,6 +138,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+   *
+   * @return The iamPolicy.
    */
   com.google.iam.v1.Policy getIamPolicy();
   /**
@@ -137,4 +153,71 @@ public interface AssetOrBuilder
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
    */
   com.google.iam.v1.PolicyOrBuilder getIamPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
+   * represented as a list of relative resource names. Ancestry path starts with
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
+   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * </pre>
+   *
+   * <code>repeated string ancestors = 10;</code>
+   *
+   * @return A list containing the ancestors.
+   */
+  java.util.List<java.lang.String> getAncestorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
+   * represented as a list of relative resource names. Ancestry path starts with
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
+   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * </pre>
+   *
+   * <code>repeated string ancestors = 10;</code>
+   *
+   * @return The count of ancestors.
+   */
+  int getAncestorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
+   * represented as a list of relative resource names. Ancestry path starts with
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
+   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * </pre>
+   *
+   * <code>repeated string ancestors = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ancestors at the given index.
+   */
+  java.lang.String getAncestors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
+   * represented as a list of relative resource names. Ancestry path starts with
+   * the closest CRM ancestor and ends at root. If the asset is a CRM
+   * project/folder/organization, this starts from the asset itself.
+   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * </pre>
+   *
+   * <code>repeated string ancestors = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ancestors at the given index.
+   */
+  com.google.protobuf.ByteString getAncestorsBytes(int index);
 }

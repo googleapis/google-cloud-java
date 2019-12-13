@@ -49,6 +49,12 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Feed();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -82,9 +88,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assetNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               assetNames_.add(s);
               break;
@@ -92,9 +98,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 assetTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               assetTypes_.add(s);
               break;
@@ -137,10 +143,10 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -163,7 +169,6 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1p2beta1.Feed.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -179,6 +184,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -204,6 +211,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -234,6 +243,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return A list containing the assetNames.
    */
   public com.google.protobuf.ProtocolStringList getAssetNamesList() {
     return assetNames_;
@@ -253,6 +264,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return The count of assetNames.
    */
   public int getAssetNamesCount() {
     return assetNames_.size();
@@ -272,6 +285,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetNames at the given index.
    */
   public java.lang.String getAssetNames(int index) {
     return assetNames_.get(index);
@@ -291,6 +307,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetNames at the given index.
    */
   public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
     return assetNames_.getByteString(index);
@@ -312,6 +331,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return A list containing the assetTypes.
    */
   public com.google.protobuf.ProtocolStringList getAssetTypesList() {
     return assetTypes_;
@@ -330,6 +351,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return The count of assetTypes.
    */
   public int getAssetTypesCount() {
     return assetTypes_.size();
@@ -348,6 +371,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetTypes at the given index.
    */
   public java.lang.String getAssetTypes(int index) {
     return assetTypes_.get(index);
@@ -366,6 +392,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetTypes at the given index.
    */
   public com.google.protobuf.ByteString getAssetTypesBytes(int index) {
     return assetTypes_.getByteString(index);
@@ -382,6 +411,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   public int getContentTypeValue() {
     return contentType_;
@@ -395,6 +426,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+   *
+   * @return The contentType.
    */
   public com.google.cloud.asset.v1p2beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
@@ -414,6 +447,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   *
+   * @return Whether the feedOutputConfig field is set.
    */
   public boolean hasFeedOutputConfig() {
     return feedOutputConfig_ != null;
@@ -427,6 +462,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   *
+   * @return The feedOutputConfig.
    */
   public com.google.cloud.asset.v1p2beta1.FeedOutputConfig getFeedOutputConfig() {
     return feedOutputConfig_ == null
@@ -713,9 +750,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
 
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       contentType_ = 0;
 
       if (feedOutputConfigBuilder_ == null) {
@@ -752,16 +789,15 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.asset.v1p2beta1.Feed result =
           new com.google.cloud.asset.v1p2beta1.Feed(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.assetNames_ = assetNames_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.assetTypes_ = assetTypes_;
       result.contentType_ = contentType_;
@@ -770,7 +806,6 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.feedOutputConfig_ = feedOutputConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -827,7 +862,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -837,7 +872,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -895,6 +930,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -920,6 +957,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -945,6 +984,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -968,6 +1010,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -988,6 +1032,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1004,9 +1051,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1024,6 +1071,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @return A list containing the assetNames.
      */
     public com.google.protobuf.ProtocolStringList getAssetNamesList() {
       return assetNames_.getUnmodifiableView();
@@ -1043,6 +1092,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @return The count of assetNames.
      */
     public int getAssetNamesCount() {
       return assetNames_.size();
@@ -1062,6 +1113,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The assetNames at the given index.
      */
     public java.lang.String getAssetNames(int index) {
       return assetNames_.get(index);
@@ -1081,6 +1135,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the assetNames at the given index.
      */
     public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
       return assetNames_.getByteString(index);
@@ -1100,6 +1157,10 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The assetNames to set.
+     * @return This builder for chaining.
      */
     public Builder setAssetNames(int index, java.lang.String value) {
       if (value == null) {
@@ -1125,6 +1186,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param value The assetNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetNames(java.lang.String value) {
       if (value == null) {
@@ -1150,6 +1214,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param values The assetNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAssetNames(java.lang.Iterable<java.lang.String> values) {
       ensureAssetNamesIsMutable();
@@ -1172,10 +1239,12 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssetNames() {
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1194,6 +1263,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_names = 2;</code>
+     *
+     * @param value The bytes of the assetNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1210,9 +1282,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1229,6 +1301,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
       return assetTypes_.getUnmodifiableView();
@@ -1247,6 +1321,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @return The count of assetTypes.
      */
     public int getAssetTypesCount() {
       return assetTypes_.size();
@@ -1265,6 +1341,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The assetTypes at the given index.
      */
     public java.lang.String getAssetTypes(int index) {
       return assetTypes_.get(index);
@@ -1283,6 +1362,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the assetTypes at the given index.
      */
     public com.google.protobuf.ByteString getAssetTypesBytes(int index) {
       return assetTypes_.getByteString(index);
@@ -1301,6 +1383,10 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The assetTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setAssetTypes(int index, java.lang.String value) {
       if (value == null) {
@@ -1325,6 +1411,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param value The assetTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetTypes(java.lang.String value) {
       if (value == null) {
@@ -1349,6 +1438,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param values The assetTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
@@ -1370,10 +1462,12 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1391,6 +1485,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
+     *
+     * @param value The bytes of the assetTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAssetTypesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1413,6 +1510,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for contentType.
      */
     public int getContentTypeValue() {
       return contentType_;
@@ -1426,6 +1525,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
       contentType_ = value;
@@ -1441,6 +1543,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+     *
+     * @return The contentType.
      */
     public com.google.cloud.asset.v1p2beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
@@ -1457,6 +1561,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+     *
+     * @param value The contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentType(com.google.cloud.asset.v1p2beta1.ContentType value) {
       if (value == null) {
@@ -1476,6 +1583,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContentType() {
 
@@ -1499,6 +1608,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     *
+     * @return Whether the feedOutputConfig field is set.
      */
     public boolean hasFeedOutputConfig() {
       return feedOutputConfigBuilder_ != null || feedOutputConfig_ != null;
@@ -1512,6 +1623,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+     *
+     * @return The feedOutputConfig.
      */
     public com.google.cloud.asset.v1p2beta1.FeedOutputConfig getFeedOutputConfig() {
       if (feedOutputConfigBuilder_ == null) {

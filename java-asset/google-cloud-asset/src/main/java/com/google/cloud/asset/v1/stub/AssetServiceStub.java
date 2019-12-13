@@ -21,10 +21,18 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
+import com.google.cloud.asset.v1.CreateFeedRequest;
+import com.google.cloud.asset.v1.DeleteFeedRequest;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
+import com.google.cloud.asset.v1.Feed;
+import com.google.cloud.asset.v1.GetFeedRequest;
+import com.google.cloud.asset.v1.ListFeedsRequest;
+import com.google.cloud.asset.v1.ListFeedsResponse;
+import com.google.cloud.asset.v1.UpdateFeedRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -55,6 +63,26 @@ public abstract class AssetServiceStub implements BackgroundResource {
   public UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
       batchGetAssetsHistoryCallable() {
     throw new UnsupportedOperationException("Not implemented: batchGetAssetsHistoryCallable()");
+  }
+
+  public UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: createFeedCallable()");
+  }
+
+  public UnaryCallable<GetFeedRequest, Feed> getFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFeedCallable()");
+  }
+
+  public UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFeedsCallable()");
+  }
+
+  public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateFeedCallable()");
+  }
+
+  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFeedCallable()");
   }
 
   @Override

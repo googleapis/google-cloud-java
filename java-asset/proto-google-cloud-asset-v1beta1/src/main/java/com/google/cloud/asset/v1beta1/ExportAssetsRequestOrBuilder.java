@@ -34,6 +34,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -76,6 +82,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -105,6 +113,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return A list containing the assetTypes.
    */
   java.util.List<java.lang.String> getAssetTypesList();
   /**
@@ -119,6 +129,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return The count of assetTypes.
    */
   int getAssetTypesCount();
   /**
@@ -133,6 +145,9 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetTypes at the given index.
    */
   java.lang.String getAssetTypes(int index);
   /**
@@ -147,6 +162,9 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetTypes at the given index.
    */
   com.google.protobuf.ByteString getAssetTypesBytes(int index);
 
@@ -159,6 +177,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
   /**
@@ -170,6 +190,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+   *
+   * @return The contentType.
    */
   com.google.cloud.asset.v1beta1.ContentType getContentType();
 
@@ -182,6 +204,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -193,6 +217,8 @@ public interface ExportAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig();
   /**

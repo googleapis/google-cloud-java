@@ -36,6 +36,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -51,6 +53,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -69,6 +73,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return A list containing the assetNames.
    */
   java.util.List<java.lang.String> getAssetNamesList();
   /**
@@ -86,6 +92,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @return The count of assetNames.
    */
   int getAssetNamesCount();
   /**
@@ -103,6 +111,9 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetNames at the given index.
    */
   java.lang.String getAssetNames(int index);
   /**
@@ -120,6 +131,9 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetNames at the given index.
    */
   com.google.protobuf.ByteString getAssetNamesBytes(int index);
 
@@ -137,6 +151,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return A list containing the assetTypes.
    */
   java.util.List<java.lang.String> getAssetTypesList();
   /**
@@ -153,6 +169,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @return The count of assetTypes.
    */
   int getAssetTypesCount();
   /**
@@ -169,6 +187,9 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetTypes at the given index.
    */
   java.lang.String getAssetTypes(int index);
   /**
@@ -185,6 +206,9 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetTypes at the given index.
    */
   com.google.protobuf.ByteString getAssetTypesBytes(int index);
 
@@ -197,6 +221,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
   /**
@@ -208,6 +234,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.ContentType content_type = 4;</code>
+   *
+   * @return The contentType.
    */
   com.google.cloud.asset.v1p2beta1.ContentType getContentType();
 
@@ -220,6 +248,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   *
+   * @return Whether the feedOutputConfig field is set.
    */
   boolean hasFeedOutputConfig();
   /**
@@ -231,6 +261,8 @@ public interface FeedOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5;</code>
+   *
+   * @return The feedOutputConfig.
    */
   com.google.cloud.asset.v1p2beta1.FeedOutputConfig getFeedOutputConfig();
   /**

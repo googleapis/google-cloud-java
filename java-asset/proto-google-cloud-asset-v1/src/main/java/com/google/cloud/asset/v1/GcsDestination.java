@@ -40,6 +40,12 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   private GcsDestination() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcsDestination();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,7 +119,10 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   private int objectUriCase_ = 0;
   private java.lang.Object objectUri_;
 
-  public enum ObjectUriCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ObjectUriCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     URI(1),
     URI_PREFIX(2),
     OBJECTURI_NOT_SET(0);
@@ -123,7 +131,11 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     private ObjectUriCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ObjectUriCase valueOf(int value) {
       return forNumber(value);
@@ -164,6 +176,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = "";
@@ -193,6 +207,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = "";
@@ -228,6 +244,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri_prefix = 2;</code>
+   *
+   * @return The uriPrefix.
    */
   public java.lang.String getUriPrefix() {
     java.lang.Object ref = "";
@@ -261,6 +279,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri_prefix = 2;</code>
+   *
+   * @return The bytes for uriPrefix.
    */
   public com.google.protobuf.ByteString getUriPrefixBytes() {
     java.lang.Object ref = "";
@@ -668,6 +688,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = "";
@@ -697,6 +719,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = "";
@@ -726,6 +750,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -748,6 +775,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
       if (objectUriCase_ == 1) {
@@ -769,6 +798,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -797,6 +829,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri_prefix = 2;</code>
+     *
+     * @return The uriPrefix.
      */
     public java.lang.String getUriPrefix() {
       java.lang.Object ref = "";
@@ -830,6 +864,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri_prefix = 2;</code>
+     *
+     * @return The bytes for uriPrefix.
      */
     public com.google.protobuf.ByteString getUriPrefixBytes() {
       java.lang.Object ref = "";
@@ -863,6 +899,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri_prefix = 2;</code>
+     *
+     * @param value The uriPrefix to set.
+     * @return This builder for chaining.
      */
     public Builder setUriPrefix(java.lang.String value) {
       if (value == null) {
@@ -889,6 +928,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri_prefix = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUriPrefix() {
       if (objectUriCase_ == 2) {
@@ -914,6 +955,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri_prefix = 2;</code>
+     *
+     * @param value The bytes for uriPrefix to set.
+     * @return This builder for chaining.
      */
     public Builder setUriPrefixBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

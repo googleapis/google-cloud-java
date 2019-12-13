@@ -46,6 +46,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Asset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -121,9 +127,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ancestors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               ancestors_.add(s);
               break;
@@ -142,7 +148,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -165,7 +171,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1p2beta1.Asset.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -180,6 +185,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -204,6 +211,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -227,6 +236,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string asset_type = 2;</code>
+   *
+   * @return The assetType.
    */
   public java.lang.String getAssetType() {
     java.lang.Object ref = assetType_;
@@ -247,6 +258,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string asset_type = 2;</code>
+   *
+   * @return The bytes for assetType.
    */
   public com.google.protobuf.ByteString getAssetTypeBytes() {
     java.lang.Object ref = assetType_;
@@ -270,6 +283,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
+   *
+   * @return Whether the resource field is set.
    */
   public boolean hasResource() {
     return resource_ != null;
@@ -282,6 +297,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
+   *
+   * @return The resource.
    */
   public com.google.cloud.asset.v1p2beta1.Resource getResource() {
     return resource_ == null
@@ -312,6 +329,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+   *
+   * @return Whether the iamPolicy field is set.
    */
   public boolean hasIamPolicy() {
     return iamPolicy_ != null;
@@ -325,6 +344,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+   *
+   * @return The iamPolicy.
    */
   public com.google.iam.v1.Policy getIamPolicy() {
     return iamPolicy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : iamPolicy_;
@@ -355,6 +376,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes iam_policy_name = 5;</code>
+   *
+   * @return The iamPolicyName.
    */
   public com.google.protobuf.ByteString getIamPolicyName() {
     return iamPolicyName_;
@@ -374,6 +397,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @return A list containing the ancestors.
    */
   public com.google.protobuf.ProtocolStringList getAncestorsList() {
     return ancestors_;
@@ -390,6 +415,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @return The count of ancestors.
    */
   public int getAncestorsCount() {
     return ancestors_.size();
@@ -406,6 +433,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ancestors at the given index.
    */
   public java.lang.String getAncestors(int index) {
     return ancestors_.get(index);
@@ -422,6 +452,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ancestors at the given index.
    */
   public com.google.protobuf.ByteString getAncestorsBytes(int index) {
     return ancestors_.getByteString(index);
@@ -712,7 +745,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       iamPolicyName_ = com.google.protobuf.ByteString.EMPTY;
 
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -741,7 +774,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.asset.v1p2beta1.Asset result =
           new com.google.cloud.asset.v1p2beta1.Asset(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.assetType_ = assetType_;
       if (resourceBuilder_ == null) {
@@ -755,12 +787,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         result.iamPolicy_ = iamPolicyBuilder_.build();
       }
       result.iamPolicyName_ = iamPolicyName_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ancestors_ = ancestors_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -830,7 +861,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
           ancestors_ = other.ancestors_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAncestorsIsMutable();
           ancestors_.addAll(other.ancestors_);
@@ -881,6 +912,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -905,6 +938,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -929,6 +964,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -951,6 +989,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -970,6 +1010,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -991,6 +1034,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string asset_type = 2;</code>
+     *
+     * @return The assetType.
      */
     public java.lang.String getAssetType() {
       java.lang.Object ref = assetType_;
@@ -1011,6 +1056,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string asset_type = 2;</code>
+     *
+     * @return The bytes for assetType.
      */
     public com.google.protobuf.ByteString getAssetTypeBytes() {
       java.lang.Object ref = assetType_;
@@ -1031,6 +1078,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string asset_type = 2;</code>
+     *
+     * @param value The assetType to set.
+     * @return This builder for chaining.
      */
     public Builder setAssetType(java.lang.String value) {
       if (value == null) {
@@ -1049,6 +1099,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string asset_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssetType() {
 
@@ -1064,6 +1116,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string asset_type = 2;</code>
+     *
+     * @param value The bytes for assetType to set.
+     * @return This builder for chaining.
      */
     public Builder setAssetTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1090,6 +1145,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
+     *
+     * @return Whether the resource field is set.
      */
     public boolean hasResource() {
       return resourceBuilder_ != null || resource_ != null;
@@ -1102,6 +1159,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
+     *
+     * @return The resource.
      */
     public com.google.cloud.asset.v1p2beta1.Resource getResource() {
       if (resourceBuilder_ == null) {
@@ -1272,6 +1331,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+     *
+     * @return Whether the iamPolicy field is set.
      */
     public boolean hasIamPolicy() {
       return iamPolicyBuilder_ != null || iamPolicy_ != null;
@@ -1285,6 +1346,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+     *
+     * @return The iamPolicy.
      */
     public com.google.iam.v1.Policy getIamPolicy() {
       if (iamPolicyBuilder_ == null) {
@@ -1452,6 +1515,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes iam_policy_name = 5;</code>
+     *
+     * @return The iamPolicyName.
      */
     public com.google.protobuf.ByteString getIamPolicyName() {
       return iamPolicyName_;
@@ -1466,6 +1531,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes iam_policy_name = 5;</code>
+     *
+     * @param value The iamPolicyName to set.
+     * @return This builder for chaining.
      */
     public Builder setIamPolicyName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1486,6 +1554,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes iam_policy_name = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIamPolicyName() {
 
@@ -1498,9 +1568,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAncestorsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         ancestors_ = new com.google.protobuf.LazyStringArrayList(ancestors_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1515,6 +1585,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @return A list containing the ancestors.
      */
     public com.google.protobuf.ProtocolStringList getAncestorsList() {
       return ancestors_.getUnmodifiableView();
@@ -1531,6 +1603,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @return The count of ancestors.
      */
     public int getAncestorsCount() {
       return ancestors_.size();
@@ -1547,6 +1621,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ancestors at the given index.
      */
     public java.lang.String getAncestors(int index) {
       return ancestors_.get(index);
@@ -1563,6 +1640,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ancestors at the given index.
      */
     public com.google.protobuf.ByteString getAncestorsBytes(int index) {
       return ancestors_.getByteString(index);
@@ -1579,6 +1659,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The ancestors to set.
+     * @return This builder for chaining.
      */
     public Builder setAncestors(int index, java.lang.String value) {
       if (value == null) {
@@ -1601,6 +1685,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @param value The ancestors to add.
+     * @return This builder for chaining.
      */
     public Builder addAncestors(java.lang.String value) {
       if (value == null) {
@@ -1623,6 +1710,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @param values The ancestors to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAncestors(java.lang.Iterable<java.lang.String> values) {
       ensureAncestorsIsMutable();
@@ -1642,10 +1732,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAncestors() {
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1661,6 +1753,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string ancestors = 6;</code>
+     *
+     * @param value The bytes of the ancestors to add.
+     * @return This builder for chaining.
      */
     public Builder addAncestorsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -151,6 +151,254 @@ public final class AssetServiceGrpc {
     return getBatchGetAssetsHistoryMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateFeedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>
+      METHOD_CREATE_FEED = getCreateFeedMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>
+      getCreateFeedMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>
+      getCreateFeedMethod() {
+    return getCreateFeedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>
+      getCreateFeedMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>
+        getCreateFeedMethod;
+    if ((getCreateFeedMethod = AssetServiceGrpc.getCreateFeedMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getCreateFeedMethod = AssetServiceGrpc.getCreateFeedMethod) == null) {
+          AssetServiceGrpc.getCreateFeedMethod =
+              getCreateFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.asset.v1.AssetService", "CreateFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.CreateFeedRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.Feed.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("CreateFeed"))
+                      .build();
+        }
+      }
+    }
+    return getCreateFeedMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetFeedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>
+      METHOD_GET_FEED = getGetFeedMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>
+      getGetFeedMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>
+      getGetFeedMethod() {
+    return getGetFeedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>
+      getGetFeedMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>
+        getGetFeedMethod;
+    if ((getGetFeedMethod = AssetServiceGrpc.getGetFeedMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getGetFeedMethod = AssetServiceGrpc.getGetFeedMethod) == null) {
+          AssetServiceGrpc.getGetFeedMethod =
+              getGetFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.cloud.asset.v1.AssetService", "GetFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.GetFeedRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.Feed.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("GetFeed"))
+                      .build();
+        }
+      }
+    }
+    return getGetFeedMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListFeedsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListFeedsRequest, com.google.cloud.asset.v1.ListFeedsResponse>
+      METHOD_LIST_FEEDS = getListFeedsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListFeedsRequest, com.google.cloud.asset.v1.ListFeedsResponse>
+      getListFeedsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListFeedsRequest, com.google.cloud.asset.v1.ListFeedsResponse>
+      getListFeedsMethod() {
+    return getListFeedsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListFeedsRequest, com.google.cloud.asset.v1.ListFeedsResponse>
+      getListFeedsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.ListFeedsRequest, com.google.cloud.asset.v1.ListFeedsResponse>
+        getListFeedsMethod;
+    if ((getListFeedsMethod = AssetServiceGrpc.getListFeedsMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getListFeedsMethod = AssetServiceGrpc.getListFeedsMethod) == null) {
+          AssetServiceGrpc.getListFeedsMethod =
+              getListFeedsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.ListFeedsRequest,
+                          com.google.cloud.asset.v1.ListFeedsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.cloud.asset.v1.AssetService", "ListFeeds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.ListFeedsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.ListFeedsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("ListFeeds"))
+                      .build();
+        }
+      }
+    }
+    return getListFeedsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateFeedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>
+      METHOD_UPDATE_FEED = getUpdateFeedMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>
+      getUpdateFeedMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>
+      getUpdateFeedMethod() {
+    return getUpdateFeedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>
+      getUpdateFeedMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>
+        getUpdateFeedMethod;
+    if ((getUpdateFeedMethod = AssetServiceGrpc.getUpdateFeedMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getUpdateFeedMethod = AssetServiceGrpc.getUpdateFeedMethod) == null) {
+          AssetServiceGrpc.getUpdateFeedMethod =
+              getUpdateFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.asset.v1.AssetService", "UpdateFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.UpdateFeedRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.Feed.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("UpdateFeed"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateFeedMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteFeedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_FEED = getDeleteFeedMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>
+      getDeleteFeedMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>
+      getDeleteFeedMethod() {
+    return getDeleteFeedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>
+      getDeleteFeedMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>
+        getDeleteFeedMethod;
+    if ((getDeleteFeedMethod = AssetServiceGrpc.getDeleteFeedMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getDeleteFeedMethod = AssetServiceGrpc.getDeleteFeedMethod) == null) {
+          AssetServiceGrpc.getDeleteFeedMethod =
+              getDeleteFeedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.asset.v1.AssetService", "DeleteFeed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.DeleteFeedRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("DeleteFeed"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFeedMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
     return new AssetServiceStub(channel);
@@ -213,6 +461,72 @@ public final class AssetServiceGrpc {
       asyncUnimplementedUnaryCall(getBatchGetAssetsHistoryMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a feed in a parent project/folder/organization to listen to its
+     * asset updates.
+     * </pre>
+     */
+    public void createFeed(
+        com.google.cloud.asset.v1.CreateFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateFeedMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about an asset feed.
+     * </pre>
+     */
+    public void getFeed(
+        com.google.cloud.asset.v1.GetFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetFeedMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all asset feeds in a parent project/folder/organization.
+     * </pre>
+     */
+    public void listFeeds(
+        com.google.cloud.asset.v1.ListFeedsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListFeedsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListFeedsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an asset feed configuration.
+     * </pre>
+     */
+    public void updateFeed(
+        com.google.cloud.asset.v1.UpdateFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateFeedMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset feed.
+     * </pre>
+     */
+    public void deleteFeed(
+        com.google.cloud.asset.v1.DeleteFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteFeedMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -229,6 +543,36 @@ public final class AssetServiceGrpc {
                       com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest,
                       com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse>(
                       this, METHODID_BATCH_GET_ASSETS_HISTORY)))
+          .addMethod(
+              getCreateFeedMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.CreateFeedRequest, com.google.cloud.asset.v1.Feed>(
+                      this, METHODID_CREATE_FEED)))
+          .addMethod(
+              getGetFeedMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.GetFeedRequest, com.google.cloud.asset.v1.Feed>(
+                      this, METHODID_GET_FEED)))
+          .addMethod(
+              getListFeedsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.ListFeedsRequest,
+                      com.google.cloud.asset.v1.ListFeedsResponse>(this, METHODID_LIST_FEEDS)))
+          .addMethod(
+              getUpdateFeedMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.UpdateFeedRequest, com.google.cloud.asset.v1.Feed>(
+                      this, METHODID_UPDATE_FEED)))
+          .addMethod(
+              getDeleteFeedMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_FEED)))
           .build();
     }
   }
@@ -295,6 +639,87 @@ public final class AssetServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a feed in a parent project/folder/organization to listen to its
+     * asset updates.
+     * </pre>
+     */
+    public void createFeed(
+        com.google.cloud.asset.v1.CreateFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateFeedMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about an asset feed.
+     * </pre>
+     */
+    public void getFeed(
+        com.google.cloud.asset.v1.GetFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetFeedMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all asset feeds in a parent project/folder/organization.
+     * </pre>
+     */
+    public void listFeeds(
+        com.google.cloud.asset.v1.ListFeedsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListFeedsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListFeedsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an asset feed configuration.
+     * </pre>
+     */
+    public void updateFeed(
+        com.google.cloud.asset.v1.UpdateFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateFeedMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset feed.
+     * </pre>
+     */
+    public void deleteFeed(
+        com.google.cloud.asset.v1.DeleteFeedRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteFeedMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -353,6 +778,70 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchGetAssetsHistoryMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a feed in a parent project/folder/organization to listen to its
+     * asset updates.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.Feed createFeed(
+        com.google.cloud.asset.v1.CreateFeedRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateFeedMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about an asset feed.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.Feed getFeed(
+        com.google.cloud.asset.v1.GetFeedRequest request) {
+      return blockingUnaryCall(getChannel(), getGetFeedMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all asset feeds in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.ListFeedsResponse listFeeds(
+        com.google.cloud.asset.v1.ListFeedsRequest request) {
+      return blockingUnaryCall(getChannel(), getListFeedsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an asset feed configuration.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.Feed updateFeed(
+        com.google.cloud.asset.v1.UpdateFeedRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateFeedMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset feed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFeed(
+        com.google.cloud.asset.v1.DeleteFeedRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteFeedMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -414,10 +903,82 @@ public final class AssetServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getBatchGetAssetsHistoryMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a feed in a parent project/folder/organization to listen to its
+     * asset updates.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1.Feed>
+        createFeed(com.google.cloud.asset.v1.CreateFeedRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateFeedMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about an asset feed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1.Feed>
+        getFeed(com.google.cloud.asset.v1.GetFeedRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetFeedMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all asset feeds in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.ListFeedsResponse>
+        listFeeds(com.google.cloud.asset.v1.ListFeedsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListFeedsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an asset feed configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1.Feed>
+        updateFeed(com.google.cloud.asset.v1.UpdateFeedRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateFeedMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset feed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteFeed(
+        com.google.cloud.asset.v1.DeleteFeedRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteFeedMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_EXPORT_ASSETS = 0;
   private static final int METHODID_BATCH_GET_ASSETS_HISTORY = 1;
+  private static final int METHODID_CREATE_FEED = 2;
+  private static final int METHODID_GET_FEED = 3;
+  private static final int METHODID_LIST_FEEDS = 4;
+  private static final int METHODID_UPDATE_FEED = 5;
+  private static final int METHODID_DELETE_FEED = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -446,6 +1007,32 @@ public final class AssetServiceGrpc {
               (com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_FEED:
+          serviceImpl.createFeed(
+              (com.google.cloud.asset.v1.CreateFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed>) responseObserver);
+          break;
+        case METHODID_GET_FEED:
+          serviceImpl.getFeed(
+              (com.google.cloud.asset.v1.GetFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed>) responseObserver);
+          break;
+        case METHODID_LIST_FEEDS:
+          serviceImpl.listFeeds(
+              (com.google.cloud.asset.v1.ListFeedsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListFeedsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_FEED:
+          serviceImpl.updateFeed(
+              (com.google.cloud.asset.v1.UpdateFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.Feed>) responseObserver);
+          break;
+        case METHODID_DELETE_FEED:
+          serviceImpl.deleteFeed(
+              (com.google.cloud.asset.v1.DeleteFeedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -513,6 +1100,11 @@ public final class AssetServiceGrpc {
                       .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
                       .addMethod(getExportAssetsMethodHelper())
                       .addMethod(getBatchGetAssetsHistoryMethodHelper())
+                      .addMethod(getCreateFeedMethodHelper())
+                      .addMethod(getGetFeedMethodHelper())
+                      .addMethod(getListFeedsMethodHelper())
+                      .addMethod(getUpdateFeedMethodHelper())
+                      .addMethod(getDeleteFeedMethodHelper())
                       .build();
         }
       }

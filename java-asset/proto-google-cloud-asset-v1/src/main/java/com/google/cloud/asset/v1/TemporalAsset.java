@@ -41,6 +41,12 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   private TemporalAsset() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TemporalAsset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,6 +149,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
+   *
+   * @return Whether the window field is set.
    */
   public boolean hasWindow() {
     return window_ != null;
@@ -156,6 +163,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
+   *
+   * @return The window.
    */
   public com.google.cloud.asset.v1.TimeWindow getWindow() {
     return window_ == null ? com.google.cloud.asset.v1.TimeWindow.getDefaultInstance() : window_;
@@ -183,6 +192,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool deleted = 2;</code>
+   *
+   * @return The deleted.
    */
   public boolean getDeleted() {
     return deleted_;
@@ -198,6 +209,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
+   *
+   * @return Whether the asset field is set.
    */
   public boolean hasAsset() {
     return asset_ != null;
@@ -210,6 +223,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
+   *
+   * @return The asset.
    */
   public com.google.cloud.asset.v1.Asset getAsset() {
     return asset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : asset_;
@@ -612,6 +627,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
+     *
+     * @return Whether the window field is set.
      */
     public boolean hasWindow() {
       return windowBuilder_ != null || window_ != null;
@@ -624,6 +641,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
+     *
+     * @return The window.
      */
     public com.google.cloud.asset.v1.TimeWindow getWindow() {
       if (windowBuilder_ == null) {
@@ -788,6 +807,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool deleted = 2;</code>
+     *
+     * @return The deleted.
      */
     public boolean getDeleted() {
       return deleted_;
@@ -800,6 +821,9 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool deleted = 2;</code>
+     *
+     * @param value The deleted to set.
+     * @return This builder for chaining.
      */
     public Builder setDeleted(boolean value) {
 
@@ -815,6 +839,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool deleted = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeleted() {
 
@@ -837,6 +863,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
+     *
+     * @return Whether the asset field is set.
      */
     public boolean hasAsset() {
       return assetBuilder_ != null || asset_ != null;
@@ -849,6 +877,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
+     *
+     * @return The asset.
      */
     public com.google.cloud.asset.v1.Asset getAsset() {
       if (assetBuilder_ == null) {

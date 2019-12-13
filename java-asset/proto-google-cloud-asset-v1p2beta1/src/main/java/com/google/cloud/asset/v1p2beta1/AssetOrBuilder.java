@@ -35,6 +35,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string asset_type = 2;</code>
+   *
+   * @return The assetType.
    */
   java.lang.String getAssetType();
   /**
@@ -70,6 +76,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>string asset_type = 2;</code>
+   *
+   * @return The bytes for assetType.
    */
   com.google.protobuf.ByteString getAssetTypeBytes();
 
@@ -81,6 +89,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
+   *
+   * @return Whether the resource field is set.
    */
   boolean hasResource();
   /**
@@ -91,6 +101,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
+   *
+   * @return The resource.
    */
   com.google.cloud.asset.v1p2beta1.Resource getResource();
   /**
@@ -113,6 +125,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+   *
+   * @return Whether the iamPolicy field is set.
    */
   boolean hasIamPolicy();
   /**
@@ -124,6 +138,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
+   *
+   * @return The iamPolicy.
    */
   com.google.iam.v1.Policy getIamPolicy();
   /**
@@ -148,6 +164,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>bytes iam_policy_name = 5;</code>
+   *
+   * @return The iamPolicyName.
    */
   com.google.protobuf.ByteString getIamPolicyName();
 
@@ -163,6 +181,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @return A list containing the ancestors.
    */
   java.util.List<java.lang.String> getAncestorsList();
   /**
@@ -177,6 +197,8 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @return The count of ancestors.
    */
   int getAncestorsCount();
   /**
@@ -191,6 +213,9 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ancestors at the given index.
    */
   java.lang.String getAncestors(int index);
   /**
@@ -205,6 +230,9 @@ public interface AssetOrBuilder
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ancestors at the given index.
    */
   com.google.protobuf.ByteString getAncestorsBytes(int index);
 }

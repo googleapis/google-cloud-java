@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.asset.v1.AssetServiceGrpc.AssetServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -80,6 +81,77 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
     if (response instanceof BatchGetAssetsHistoryResponse) {
       requests.add(request);
       responseObserver.onNext((BatchGetAssetsHistoryResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createFeed(CreateFeedRequest request, StreamObserver<Feed> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Feed) {
+      requests.add(request);
+      responseObserver.onNext((Feed) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getFeed(GetFeedRequest request, StreamObserver<Feed> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Feed) {
+      requests.add(request);
+      responseObserver.onNext((Feed) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listFeeds(
+      ListFeedsRequest request, StreamObserver<ListFeedsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListFeedsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListFeedsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateFeed(UpdateFeedRequest request, StreamObserver<Feed> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Feed) {
+      requests.add(request);
+      responseObserver.onNext((Feed) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteFeed(DeleteFeedRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

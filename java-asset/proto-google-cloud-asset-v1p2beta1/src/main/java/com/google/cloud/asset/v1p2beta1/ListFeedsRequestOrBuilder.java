@@ -33,6 +33,8 @@ public interface ListFeedsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface ListFeedsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 }

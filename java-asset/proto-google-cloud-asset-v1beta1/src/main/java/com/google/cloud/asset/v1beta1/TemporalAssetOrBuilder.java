@@ -31,6 +31,8 @@ public interface TemporalAssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow window = 1;</code>
+   *
+   * @return Whether the window field is set.
    */
   boolean hasWindow();
   /**
@@ -41,6 +43,8 @@ public interface TemporalAssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow window = 1;</code>
+   *
+   * @return The window.
    */
   com.google.cloud.asset.v1beta1.TimeWindow getWindow();
   /**
@@ -62,6 +66,8 @@ public interface TemporalAssetOrBuilder
    * </pre>
    *
    * <code>bool deleted = 2;</code>
+   *
+   * @return The deleted.
    */
   boolean getDeleted();
 
@@ -73,6 +79,8 @@ public interface TemporalAssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.Asset asset = 3;</code>
+   *
+   * @return Whether the asset field is set.
    */
   boolean hasAsset();
   /**
@@ -83,6 +91,8 @@ public interface TemporalAssetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.Asset asset = 3;</code>
+   *
+   * @return The asset.
    */
   com.google.cloud.asset.v1beta1.Asset getAsset();
   /**

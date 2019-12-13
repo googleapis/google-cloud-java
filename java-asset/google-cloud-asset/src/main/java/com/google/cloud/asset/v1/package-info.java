@@ -28,15 +28,8 @@
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
- *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
- *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .setContentType(contentType)
- *     .setReadTimeWindow(readTimeWindow)
- *     .build();
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
+ *   String parent = "";
+ *   Feed response = assetServiceClient.createFeed(parent);
  * }
  * </code>
  * </pre>

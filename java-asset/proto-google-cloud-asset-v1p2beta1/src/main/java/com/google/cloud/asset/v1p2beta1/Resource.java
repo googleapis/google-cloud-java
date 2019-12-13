@@ -46,6 +46,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Resource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -177,6 +182,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string version = 1;</code>
+   *
+   * @return The version.
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -197,6 +204,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string version = 1;</code>
+   *
+   * @return The bytes for version.
    */
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
@@ -224,6 +233,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
+   *
+   * @return The discoveryDocumentUri.
    */
   public java.lang.String getDiscoveryDocumentUri() {
     java.lang.Object ref = discoveryDocumentUri_;
@@ -248,6 +259,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
+   *
+   * @return The bytes for discoveryDocumentUri.
    */
   public com.google.protobuf.ByteString getDiscoveryDocumentUriBytes() {
     java.lang.Object ref = discoveryDocumentUri_;
@@ -273,6 +286,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string discovery_name = 3;</code>
+   *
+   * @return The discoveryName.
    */
   public java.lang.String getDiscoveryName() {
     java.lang.Object ref = discoveryName_;
@@ -295,6 +310,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string discovery_name = 3;</code>
+   *
+   * @return The bytes for discoveryName.
    */
   public com.google.protobuf.ByteString getDiscoveryNameBytes() {
     java.lang.Object ref = discoveryName_;
@@ -322,6 +339,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_url = 4;</code>
+   *
+   * @return The resourceUrl.
    */
   public java.lang.String getResourceUrl() {
     java.lang.Object ref = resourceUrl_;
@@ -346,6 +365,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_url = 4;</code>
+   *
+   * @return The bytes for resourceUrl.
    */
   public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
@@ -377,6 +398,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent = 5;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -405,6 +428,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent = 5;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -429,6 +454,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
+   *
+   * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
@@ -442,6 +469,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
+   *
+   * @return The data.
    */
   public com.google.protobuf.Struct getData() {
     return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
@@ -471,6 +500,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Any internal_data = 7;</code>
+   *
+   * @return Whether the internalData field is set.
    */
   public boolean hasInternalData() {
     return internalData_ != null;
@@ -484,6 +515,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Any internal_data = 7;</code>
+   *
+   * @return The internalData.
    */
   public com.google.protobuf.Any getInternalData() {
     return internalData_ == null ? com.google.protobuf.Any.getDefaultInstance() : internalData_;
@@ -947,6 +980,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 1;</code>
+     *
+     * @return The version.
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -967,6 +1002,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 1;</code>
+     *
+     * @return The bytes for version.
      */
     public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
@@ -987,6 +1024,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 1;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(java.lang.String value) {
       if (value == null) {
@@ -1005,6 +1045,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -1020,6 +1062,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 1;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1045,6 +1090,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
+     *
+     * @return The discoveryDocumentUri.
      */
     public java.lang.String getDiscoveryDocumentUri() {
       java.lang.Object ref = discoveryDocumentUri_;
@@ -1069,6 +1116,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
+     *
+     * @return The bytes for discoveryDocumentUri.
      */
     public com.google.protobuf.ByteString getDiscoveryDocumentUriBytes() {
       java.lang.Object ref = discoveryDocumentUri_;
@@ -1093,6 +1142,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
+     *
+     * @param value The discoveryDocumentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDiscoveryDocumentUri(java.lang.String value) {
       if (value == null) {
@@ -1115,6 +1167,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiscoveryDocumentUri() {
 
@@ -1134,6 +1188,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
+     *
+     * @param value The bytes for discoveryDocumentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDiscoveryDocumentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1157,6 +1214,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_name = 3;</code>
+     *
+     * @return The discoveryName.
      */
     public java.lang.String getDiscoveryName() {
       java.lang.Object ref = discoveryName_;
@@ -1179,6 +1238,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_name = 3;</code>
+     *
+     * @return The bytes for discoveryName.
      */
     public com.google.protobuf.ByteString getDiscoveryNameBytes() {
       java.lang.Object ref = discoveryName_;
@@ -1201,6 +1262,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_name = 3;</code>
+     *
+     * @param value The discoveryName to set.
+     * @return This builder for chaining.
      */
     public Builder setDiscoveryName(java.lang.String value) {
       if (value == null) {
@@ -1221,6 +1285,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiscoveryName() {
 
@@ -1238,6 +1304,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string discovery_name = 3;</code>
+     *
+     * @param value The bytes for discoveryName to set.
+     * @return This builder for chaining.
      */
     public Builder setDiscoveryNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1263,6 +1332,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 4;</code>
+     *
+     * @return The resourceUrl.
      */
     public java.lang.String getResourceUrl() {
       java.lang.Object ref = resourceUrl_;
@@ -1287,6 +1358,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 4;</code>
+     *
+     * @return The bytes for resourceUrl.
      */
     public com.google.protobuf.ByteString getResourceUrlBytes() {
       java.lang.Object ref = resourceUrl_;
@@ -1311,6 +1384,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 4;</code>
+     *
+     * @param value The resourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUrl(java.lang.String value) {
       if (value == null) {
@@ -1333,6 +1409,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
 
@@ -1352,6 +1430,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 4;</code>
+     *
+     * @param value The bytes for resourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1381,6 +1462,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 5;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1409,6 +1492,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 5;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1437,6 +1522,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 5;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1463,6 +1551,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1486,6 +1576,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent = 5;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1513,6 +1606,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
+     *
+     * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
@@ -1526,6 +1621,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
+     *
+     * @return The data.
      */
     public com.google.protobuf.Struct getData() {
       if (dataBuilder_ == null) {
@@ -1695,6 +1792,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Any internal_data = 7;</code>
+     *
+     * @return Whether the internalData field is set.
      */
     public boolean hasInternalData() {
       return internalDataBuilder_ != null || internalData_ != null;
@@ -1708,6 +1807,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Any internal_data = 7;</code>
+     *
+     * @return The internalData.
      */
     public com.google.protobuf.Any getInternalData() {
       if (internalDataBuilder_ == null) {

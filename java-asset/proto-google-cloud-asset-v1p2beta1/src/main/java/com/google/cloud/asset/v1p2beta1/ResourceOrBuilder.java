@@ -31,6 +31,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string version = 1;</code>
+   *
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
@@ -41,6 +43,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string version = 1;</code>
+   *
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
 
@@ -56,6 +60,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
+   *
+   * @return The discoveryDocumentUri.
    */
   java.lang.String getDiscoveryDocumentUri();
   /**
@@ -70,6 +76,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
+   *
+   * @return The bytes for discoveryDocumentUri.
    */
   com.google.protobuf.ByteString getDiscoveryDocumentUriBytes();
 
@@ -83,6 +91,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string discovery_name = 3;</code>
+   *
+   * @return The discoveryName.
    */
   java.lang.String getDiscoveryName();
   /**
@@ -95,6 +105,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string discovery_name = 3;</code>
+   *
+   * @return The bytes for discoveryName.
    */
   com.google.protobuf.ByteString getDiscoveryNameBytes();
 
@@ -110,6 +122,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string resource_url = 4;</code>
+   *
+   * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
   /**
@@ -124,6 +138,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string resource_url = 4;</code>
+   *
+   * @return The bytes for resourceUrl.
    */
   com.google.protobuf.ByteString getResourceUrlBytes();
 
@@ -143,6 +159,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string parent = 5;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -161,6 +179,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>string parent = 5;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -173,6 +193,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
+   *
+   * @return Whether the data field is set.
    */
   boolean hasData();
   /**
@@ -184,6 +206,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
+   *
+   * @return The data.
    */
   com.google.protobuf.Struct getData();
   /**
@@ -207,6 +231,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Any internal_data = 7;</code>
+   *
+   * @return Whether the internalData field is set.
    */
   boolean hasInternalData();
   /**
@@ -218,6 +244,8 @@ public interface ResourceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Any internal_data = 7;</code>
+   *
+   * @return The internalData.
    */
   com.google.protobuf.Any getInternalData();
   /**

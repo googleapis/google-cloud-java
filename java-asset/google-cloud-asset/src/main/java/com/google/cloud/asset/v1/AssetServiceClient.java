@@ -24,6 +24,7 @@ import com.google.cloud.asset.v1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1.stub.AssetServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -38,15 +39,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
- *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
- *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .setContentType(contentType)
- *     .setReadTimeWindow(readTimeWindow)
- *     .build();
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
+ *   String parent = "";
+ *   Feed response = assetServiceClient.createFeed(parent);
  * }
  * </code>
  * </pre>
@@ -315,6 +309,364 @@ public class AssetServiceClient implements BackgroundResource {
   public final UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
       batchGetAssetsHistoryCallable() {
     return stub.batchGetAssetsHistoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a feed in a parent project/folder/organization to listen to its asset updates.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = "";
+   *   Feed response = assetServiceClient.createFeed(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the project/folder/organization where this feed should be
+   *     created in. It can only be an organization number (such as "organizations/123"), a folder
+   *     number (such as "folders/123"), a project ID (such as "projects/my-project-id")", or a
+   *     project number (such as "projects/12345").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed createFeed(String parent) {
+
+    CreateFeedRequest request = CreateFeedRequest.newBuilder().setParent(parent).build();
+    return createFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a feed in a parent project/folder/organization to listen to its asset updates.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = "";
+   *   String feedId = "";
+   *   Feed feed = Feed.newBuilder().build();
+   *   CreateFeedRequest request = CreateFeedRequest.newBuilder()
+   *     .setParent(parent)
+   *     .setFeedId(feedId)
+   *     .setFeed(feed)
+   *     .build();
+   *   Feed response = assetServiceClient.createFeed(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed createFeed(CreateFeedRequest request) {
+    return createFeedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a feed in a parent project/folder/organization to listen to its asset updates.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = "";
+   *   String feedId = "";
+   *   Feed feed = Feed.newBuilder().build();
+   *   CreateFeedRequest request = CreateFeedRequest.newBuilder()
+   *     .setParent(parent)
+   *     .setFeedId(feedId)
+   *     .setFeed(feed)
+   *     .build();
+   *   ApiFuture&lt;Feed&gt; future = assetServiceClient.createFeedCallable().futureCall(request);
+   *   // Do something
+   *   Feed response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
+    return stub.createFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets details about an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String formattedName = FeedName.format("[PROJECT]", "[FEED]");
+   *   Feed response = assetServiceClient.getFeed(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the Feed and it must be in the format of:
+   *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
+   *     organizations/organization_number/feeds/feed_id
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed getFeed(String name) {
+
+    GetFeedRequest request = GetFeedRequest.newBuilder().setName(name).build();
+    return getFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets details about an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String formattedName = FeedName.format("[PROJECT]", "[FEED]");
+   *   GetFeedRequest request = GetFeedRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   Feed response = assetServiceClient.getFeed(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed getFeed(GetFeedRequest request) {
+    return getFeedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets details about an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String formattedName = FeedName.format("[PROJECT]", "[FEED]");
+   *   GetFeedRequest request = GetFeedRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Feed&gt; future = assetServiceClient.getFeedCallable().futureCall(request);
+   *   // Do something
+   *   Feed response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetFeedRequest, Feed> getFeedCallable() {
+    return stub.getFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all asset feeds in a parent project/folder/organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = "";
+   *   ListFeedsResponse response = assetServiceClient.listFeeds(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent project/folder/organization whose feeds are to be listed. It
+   *     can only be using project/folder/organization number (such as "folders/12345")", or a
+   *     project ID (such as "projects/my-project-id").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeedsResponse listFeeds(String parent) {
+
+    ListFeedsRequest request = ListFeedsRequest.newBuilder().setParent(parent).build();
+    return listFeeds(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all asset feeds in a parent project/folder/organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = "";
+   *   ListFeedsRequest request = ListFeedsRequest.newBuilder()
+   *     .setParent(parent)
+   *     .build();
+   *   ListFeedsResponse response = assetServiceClient.listFeeds(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeedsResponse listFeeds(ListFeedsRequest request) {
+    return listFeedsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all asset feeds in a parent project/folder/organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = "";
+   *   ListFeedsRequest request = ListFeedsRequest.newBuilder()
+   *     .setParent(parent)
+   *     .build();
+   *   ApiFuture&lt;ListFeedsResponse&gt; future = assetServiceClient.listFeedsCallable().futureCall(request);
+   *   // Do something
+   *   ListFeedsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable() {
+    return stub.listFeedsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an asset feed configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   Feed feed = Feed.newBuilder().build();
+   *   Feed response = assetServiceClient.updateFeed(feed);
+   * }
+   * </code></pre>
+   *
+   * @param feed Required. The new values of feed details. It must match an existing feed and the
+   *     field `name` must be in the format of: projects/project_number/feeds/feed_id or
+   *     folders/folder_number/feeds/feed_id or organizations/organization_number/feeds/feed_id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed updateFeed(Feed feed) {
+
+    UpdateFeedRequest request = UpdateFeedRequest.newBuilder().setFeed(feed).build();
+    return updateFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an asset feed configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   Feed feed = Feed.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateFeedRequest request = UpdateFeedRequest.newBuilder()
+   *     .setFeed(feed)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Feed response = assetServiceClient.updateFeed(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feed updateFeed(UpdateFeedRequest request) {
+    return updateFeedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an asset feed configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   Feed feed = Feed.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateFeedRequest request = UpdateFeedRequest.newBuilder()
+   *     .setFeed(feed)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Feed&gt; future = assetServiceClient.updateFeedCallable().futureCall(request);
+   *   // Do something
+   *   Feed response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
+    return stub.updateFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String formattedName = FeedName.format("[PROJECT]", "[FEED]");
+   *   assetServiceClient.deleteFeed(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the feed and it must be in the format of:
+   *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
+   *     organizations/organization_number/feeds/feed_id
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeed(String name) {
+
+    DeleteFeedRequest request = DeleteFeedRequest.newBuilder().setName(name).build();
+    deleteFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String formattedName = FeedName.format("[PROJECT]", "[FEED]");
+   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   assetServiceClient.deleteFeed(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeed(DeleteFeedRequest request) {
+    deleteFeedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an asset feed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String formattedName = FeedName.format("[PROJECT]", "[FEED]");
+   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = assetServiceClient.deleteFeedCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    return stub.deleteFeedCallable();
   }
 
   @Override
