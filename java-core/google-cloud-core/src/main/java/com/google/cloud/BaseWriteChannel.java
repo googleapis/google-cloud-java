@@ -36,8 +36,8 @@ public abstract class BaseWriteChannel<
         ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable>
     implements WriteChannel {
 
-  private static final int MIN_CHUNK_SIZE = 256 * 1024;
-  private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
+  private static final int MIN_CHUNK_SIZE = 256 * 1024; // 256 KiB
+  private static final int DEFAULT_CHUNK_SIZE = 60 * MIN_CHUNK_SIZE; // 15MiB
 
   private final ServiceOptionsT options;
   private final EntityT entity;

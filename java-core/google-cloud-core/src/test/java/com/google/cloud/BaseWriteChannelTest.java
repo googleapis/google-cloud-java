@@ -55,8 +55,8 @@ public class BaseWriteChannelTest {
   private static final Serializable ENTITY = 42L;
   private static final String UPLOAD_ID = "uploadId";
   private static final byte[] CONTENT = {0xD, 0xE, 0xA, 0xD};
-  private static final int MIN_CHUNK_SIZE = 256 * 1024;
-  private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
+  private static final int MIN_CHUNK_SIZE = 256 * 1024; // 256 KiB
+  private static final int DEFAULT_CHUNK_SIZE = 60 * MIN_CHUNK_SIZE; // 15MiB
   private static final Random RANDOM = new Random();
   private static BaseWriteChannel channel;
 
