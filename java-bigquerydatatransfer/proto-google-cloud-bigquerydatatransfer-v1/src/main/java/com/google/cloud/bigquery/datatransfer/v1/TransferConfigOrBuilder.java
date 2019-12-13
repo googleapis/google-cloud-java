@@ -380,6 +380,64 @@ public interface TransferConfigOrBuilder
    */
   com.google.protobuf.ByteString getDatasetRegionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic where notifications will be sent after transfer runs
+   * associated with this transfer config finish.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 15;</code>
+   */
+  java.lang.String getNotificationPubsubTopic();
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic where notifications will be sent after transfer runs
+   * associated with this transfer config finish.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 15;</code>
+   */
+  com.google.protobuf.ByteString getNotificationPubsubTopicBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Email notifications will be sent according to these preferences
+   * to the email address of the user who owns this transfer config.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   */
+  boolean hasEmailPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Email notifications will be sent according to these preferences
+   * to the email address of the user who owns this transfer config.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Email notifications will be sent according to these preferences
+   * to the email address of the user who owns this transfer config.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
+      getEmailPreferencesOrBuilder();
+
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase
       getDestinationCase();
 }

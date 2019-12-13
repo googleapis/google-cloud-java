@@ -28,9 +28,9 @@ public interface CreateTransferConfigRequestOrBuilder
    *
    * <pre>
    * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id}
-   * If specified location and location of the destination bigquery dataset
-   * do not match - the request will fail.
+   * Must be in the format projects/{project_id}/locations/{location_id} or
+   * projects/{project_id}. If specified location and location of the
+   * destination bigquery dataset do not match - the request will fail.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface CreateTransferConfigRequestOrBuilder
    *
    * <pre>
    * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id}
-   * If specified location and location of the destination bigquery dataset
-   * do not match - the request will fail.
+   * Must be in the format projects/{project_id}/locations/{location_id} or
+   * projects/{project_id}. If specified location and location of the
+   * destination bigquery dataset do not match - the request will fail.
    * </pre>
    *
    * <code>
@@ -170,4 +170,31 @@ public interface CreateTransferConfigRequestOrBuilder
    * <code>string version_info = 5;</code>
    */
   com.google.protobuf.ByteString getVersionInfoBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional service account name. If this field is set, transfer config will
+   * be created with this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
+   * account.
+   * </pre>
+   *
+   * <code>string service_account_name = 6;</code>
+   */
+  java.lang.String getServiceAccountName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional service account name. If this field is set, transfer config will
+   * be created with this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
+   * account.
+   * </pre>
+   *
+   * <code>string service_account_name = 6;</code>
+   */
+  com.google.protobuf.ByteString getServiceAccountNameBytes();
 }

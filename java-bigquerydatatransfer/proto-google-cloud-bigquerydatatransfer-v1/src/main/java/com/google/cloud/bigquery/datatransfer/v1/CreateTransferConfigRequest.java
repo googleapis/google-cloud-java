@@ -46,6 +46,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     parent_ = "";
     authorizationCode_ = "";
     versionInfo_ = "";
+    serviceAccountName_ = "";
   }
 
   @java.lang.Override
@@ -110,6 +111,13 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
               versionInfo_ = s;
               break;
             }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccountName_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -151,9 +159,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id}
-   * If specified location and location of the destination bigquery dataset
-   * do not match - the request will fail.
+   * Must be in the format projects/{project_id}/locations/{location_id} or
+   * projects/{project_id}. If specified location and location of the
+   * destination bigquery dataset do not match - the request will fail.
    * </pre>
    *
    * <code>
@@ -176,9 +184,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id}
-   * If specified location and location of the destination bigquery dataset
-   * do not match - the request will fail.
+   * Must be in the format projects/{project_id}/locations/{location_id} or
+   * projects/{project_id}. If specified location and location of the
+   * destination bigquery dataset do not match - the request will fail.
    * </pre>
    *
    * <code>
@@ -369,6 +377,55 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int SERVICE_ACCOUNT_NAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object serviceAccountName_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional service account name. If this field is set, transfer config will
+   * be created with this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
+   * account.
+   * </pre>
+   *
+   * <code>string service_account_name = 6;</code>
+   */
+  public java.lang.String getServiceAccountName() {
+    java.lang.Object ref = serviceAccountName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccountName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional service account name. If this field is set, transfer config will
+   * be created with this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
+   * account.
+   * </pre>
+   *
+   * <code>string service_account_name = 6;</code>
+   */
+  public com.google.protobuf.ByteString getServiceAccountNameBytes() {
+    java.lang.Object ref = serviceAccountName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccountName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -395,6 +452,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     if (!getVersionInfoBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, versionInfo_);
     }
+    if (!getServiceAccountNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceAccountName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -415,6 +475,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     }
     if (!getVersionInfoBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, versionInfo_);
+    }
+    if (!getServiceAccountNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceAccountName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -439,6 +502,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     }
     if (!getAuthorizationCode().equals(other.getAuthorizationCode())) return false;
     if (!getVersionInfo().equals(other.getVersionInfo())) return false;
+    if (!getServiceAccountName().equals(other.getServiceAccountName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -460,6 +524,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getAuthorizationCode().hashCode();
     hash = (37 * hash) + VERSION_INFO_FIELD_NUMBER;
     hash = (53 * hash) + getVersionInfo().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccountName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -625,6 +691,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
 
       versionInfo_ = "";
 
+      serviceAccountName_ = "";
+
       return this;
     }
 
@@ -662,6 +730,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       }
       result.authorizationCode_ = authorizationCode_;
       result.versionInfo_ = versionInfo_;
+      result.serviceAccountName_ = serviceAccountName_;
       onBuilt();
       return result;
     }
@@ -730,6 +799,10 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
         versionInfo_ = other.versionInfo_;
         onChanged();
       }
+      if (!other.getServiceAccountName().isEmpty()) {
+        serviceAccountName_ = other.serviceAccountName_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -767,9 +840,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id}
-     * If specified location and location of the destination bigquery dataset
-     * do not match - the request will fail.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>
@@ -792,9 +865,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id}
-     * If specified location and location of the destination bigquery dataset
-     * do not match - the request will fail.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>
@@ -817,9 +890,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id}
-     * If specified location and location of the destination bigquery dataset
-     * do not match - the request will fail.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>
@@ -840,9 +913,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id}
-     * If specified location and location of the destination bigquery dataset
-     * do not match - the request will fail.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>
@@ -860,9 +933,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id}
-     * If specified location and location of the destination bigquery dataset
-     * do not match - the request will fail.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>
@@ -1363,6 +1436,115 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
 
       versionInfo_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccountName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
+     * account.
+     * </pre>
+     *
+     * <code>string service_account_name = 6;</code>
+     */
+    public java.lang.String getServiceAccountName() {
+      java.lang.Object ref = serviceAccountName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
+     * account.
+     * </pre>
+     *
+     * <code>string service_account_name = 6;</code>
+     */
+    public com.google.protobuf.ByteString getServiceAccountNameBytes() {
+      java.lang.Object ref = serviceAccountName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
+     * account.
+     * </pre>
+     *
+     * <code>string service_account_name = 6;</code>
+     */
+    public Builder setServiceAccountName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccountName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
+     * account.
+     * </pre>
+     *
+     * <code>string service_account_name = 6;</code>
+     */
+    public Builder clearServiceAccountName() {
+
+      serviceAccountName_ = getDefaultInstance().getServiceAccountName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
+     * account.
+     * </pre>
+     *
+     * <code>string service_account_name = 6;</code>
+     */
+    public Builder setServiceAccountNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccountName_ = value;
       onChanged();
       return this;
     }

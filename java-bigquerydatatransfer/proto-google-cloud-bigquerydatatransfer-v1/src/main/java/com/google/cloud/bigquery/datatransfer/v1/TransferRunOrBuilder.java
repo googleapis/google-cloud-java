@@ -388,5 +388,74 @@ public interface TransferRunOrBuilder
    */
   com.google.protobuf.ByteString getScheduleBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pub/Sub topic where a notification will be sent after this
+   * transfer run finishes
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getNotificationPubsubTopic();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pub/Sub topic where a notification will be sent after this
+   * transfer run finishes
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.ByteString getNotificationPubsubTopicBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email notifications will be sent according to these
+   * preferences to the email address of the user who owns the transfer config
+   * this run was derived from.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean hasEmailPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email notifications will be sent according to these
+   * preferences to the email address of the user who owns the transfer config
+   * this run was derived from.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email notifications will be sent according to these
+   * preferences to the email address of the user who owns the transfer config
+   * this run was derived from.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
+      getEmailPreferencesOrBuilder();
+
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun.DestinationCase getDestinationCase();
 }

@@ -143,7 +143,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. Transfer configuration name in the form:
-   * `projects/{project_id}/transferConfigs/{config_id}`.
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
    * <code>
@@ -166,7 +167,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. Transfer configuration name in the form:
-   * `projects/{project_id}/transferConfigs/{config_id}`.
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
    * <code>
@@ -661,7 +663,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>
@@ -684,7 +687,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>
@@ -707,7 +711,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>
@@ -728,7 +733,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>
@@ -746,7 +752,8 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>

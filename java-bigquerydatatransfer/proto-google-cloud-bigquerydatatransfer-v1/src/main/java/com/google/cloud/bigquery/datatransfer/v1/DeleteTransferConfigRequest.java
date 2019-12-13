@@ -114,7 +114,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
    * <code>
@@ -137,7 +138,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
    * <code>
@@ -490,7 +492,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * </pre>
      *
      * <code>
@@ -513,7 +516,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * </pre>
      *
      * <code>
@@ -536,7 +540,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * </pre>
      *
      * <code>
@@ -557,7 +562,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * </pre>
      *
      * <code>
@@ -575,7 +581,8 @@ public final class DeleteTransferConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * </pre>
      *
      * <code>

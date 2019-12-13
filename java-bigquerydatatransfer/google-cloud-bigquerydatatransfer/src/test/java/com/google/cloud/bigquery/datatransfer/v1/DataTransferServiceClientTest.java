@@ -207,6 +207,7 @@ public class DataTransferServiceClientTest {
     boolean disabled = true;
     long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
+    String notificationPubsubTopic = "notificationPubsubTopic1794281191";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(name.toString())
@@ -218,6 +219,7 @@ public class DataTransferServiceClientTest {
             .setDisabled(disabled)
             .setUserId(userId)
             .setDatasetRegion(datasetRegion)
+            .setNotificationPubsubTopic(notificationPubsubTopic)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -268,6 +270,7 @@ public class DataTransferServiceClientTest {
     boolean disabled = true;
     long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
+    String notificationPubsubTopic = "notificationPubsubTopic1794281191";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(name.toString())
@@ -279,6 +282,7 @@ public class DataTransferServiceClientTest {
             .setDisabled(disabled)
             .setUserId(userId)
             .setDatasetRegion(datasetRegion)
+            .setNotificationPubsubTopic(notificationPubsubTopic)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -366,6 +370,7 @@ public class DataTransferServiceClientTest {
     boolean disabled = true;
     long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
+    String notificationPubsubTopic = "notificationPubsubTopic1794281191";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(name2.toString())
@@ -377,6 +382,7 @@ public class DataTransferServiceClientTest {
             .setDisabled(disabled)
             .setUserId(userId)
             .setDatasetRegion(datasetRegion)
+            .setNotificationPubsubTopic(notificationPubsubTopic)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -514,6 +520,7 @@ public class DataTransferServiceClientTest {
     String dataSourceId = "dataSourceId-1015796374";
     long userId = 147132913L;
     String schedule = "schedule-697920873";
+    String notificationPubsubTopic = "notificationPubsubTopic1794281191";
     TransferRun expectedResponse =
         TransferRun.newBuilder()
             .setName(name2.toString())
@@ -521,6 +528,7 @@ public class DataTransferServiceClientTest {
             .setDataSourceId(dataSourceId)
             .setUserId(userId)
             .setSchedule(schedule)
+            .setNotificationPubsubTopic(notificationPubsubTopic)
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 

@@ -173,4 +173,33 @@ public interface UpdateTransferConfigRequestOrBuilder
    * <code>string version_info = 5;</code>
    */
   com.google.protobuf.ByteString getVersionInfoBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional service account name. If this field is set and
+   * "service_account_name" is set in update_mask, transfer config will be
+   * updated to use this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
+   * account.
+   * </pre>
+   *
+   * <code>string service_account_name = 6;</code>
+   */
+  java.lang.String getServiceAccountName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional service account name. If this field is set and
+   * "service_account_name" is set in update_mask, transfer config will be
+   * updated to use this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
+   * account.
+   * </pre>
+   *
+   * <code>string service_account_name = 6;</code>
+   */
+  com.google.protobuf.ByteString getServiceAccountNameBytes();
 }

@@ -156,7 +156,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Transfer run name in the form:
-   * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * </pre>
    *
    * <code>
@@ -179,7 +180,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Transfer run name in the form:
-   * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * </pre>
    *
    * <code>
@@ -778,7 +780,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Transfer run name in the form:
-     * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -801,7 +804,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Transfer run name in the form:
-     * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -824,7 +828,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Transfer run name in the form:
-     * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -845,7 +850,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Transfer run name in the form:
-     * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -863,7 +869,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Transfer run name in the form:
-     * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>

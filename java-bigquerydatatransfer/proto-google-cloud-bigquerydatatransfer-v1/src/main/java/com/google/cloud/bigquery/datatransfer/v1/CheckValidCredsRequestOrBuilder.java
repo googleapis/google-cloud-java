@@ -28,7 +28,8 @@ public interface CheckValidCredsRequestOrBuilder
    *
    * <pre>
    * Required. The data source in the form:
-   * `projects/{project_id}/dataSources/{data_source_id}`
+   * `projects/{project_id}/dataSources/{data_source_id}` or
+   * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface CheckValidCredsRequestOrBuilder
    *
    * <pre>
    * Required. The data source in the form:
-   * `projects/{project_id}/dataSources/{data_source_id}`
+   * `projects/{project_id}/dataSources/{data_source_id}` or
+   * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
    * </pre>
    *
    * <code>

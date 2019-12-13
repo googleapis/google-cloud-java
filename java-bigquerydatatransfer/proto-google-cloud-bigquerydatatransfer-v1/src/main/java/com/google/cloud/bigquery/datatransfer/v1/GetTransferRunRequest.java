@@ -113,7 +113,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * </pre>
    *
    * <code>
@@ -136,7 +137,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * </pre>
    *
    * <code>
@@ -484,7 +486,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -507,7 +510,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -530,7 +534,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -551,7 +556,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>
@@ -569,7 +575,8 @@ public final class GetTransferRunRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
      * <code>

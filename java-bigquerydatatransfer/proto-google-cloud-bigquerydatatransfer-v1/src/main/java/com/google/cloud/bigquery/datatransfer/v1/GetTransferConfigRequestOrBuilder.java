@@ -28,7 +28,8 @@ public interface GetTransferConfigRequestOrBuilder
    *
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetTransferConfigRequestOrBuilder
    *
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
    * <code>

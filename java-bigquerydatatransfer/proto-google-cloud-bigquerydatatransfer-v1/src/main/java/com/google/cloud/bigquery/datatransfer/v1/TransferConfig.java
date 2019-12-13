@@ -49,6 +49,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     schedule_ = "";
     state_ = 0;
     datasetRegion_ = "";
+    notificationPubsubTopic_ = "";
   }
 
   @java.lang.Override
@@ -181,6 +182,30 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               datasetRegion_ = s;
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notificationPubsubTopic_ = s;
+              break;
+            }
+          case 146:
+            {
+              com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder subBuilder = null;
+              if (emailPreferences_ != null) {
+                subBuilder = emailPreferences_.toBuilder();
+              }
+              emailPreferences_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(emailPreferences_);
+                emailPreferences_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 194:
@@ -827,6 +852,96 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER = 15;
+  private volatile java.lang.Object notificationPubsubTopic_;
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic where notifications will be sent after transfer runs
+   * associated with this transfer config finish.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 15;</code>
+   */
+  public java.lang.String getNotificationPubsubTopic() {
+    java.lang.Object ref = notificationPubsubTopic_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notificationPubsubTopic_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic where notifications will be sent after transfer runs
+   * associated with this transfer config finish.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 15;</code>
+   */
+  public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
+    java.lang.Object ref = notificationPubsubTopic_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      notificationPubsubTopic_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EMAIL_PREFERENCES_FIELD_NUMBER = 18;
+  private com.google.cloud.bigquery.datatransfer.v1.EmailPreferences emailPreferences_;
+  /**
+   *
+   *
+   * <pre>
+   * Email notifications will be sent according to these preferences
+   * to the email address of the user who owns this transfer config.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   */
+  public boolean hasEmailPreferences() {
+    return emailPreferences_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Email notifications will be sent according to these preferences
+   * to the email address of the user who owns this transfer config.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   */
+  public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences() {
+    return emailPreferences_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance()
+        : emailPreferences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Email notifications will be sent according to these preferences
+   * to the email address of the user who owns this transfer config.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   */
+  public com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
+      getEmailPreferencesOrBuilder() {
+    return getEmailPreferences();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -882,6 +997,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDatasetRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, datasetRegion_);
     }
+    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, notificationPubsubTopic_);
+    }
+    if (emailPreferences_ != null) {
+      output.writeMessage(18, getEmailPreferences());
+    }
     if (scheduleOptions_ != null) {
       output.writeMessage(24, getScheduleOptions());
     }
@@ -935,6 +1056,13 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDatasetRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, datasetRegion_);
     }
+    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(15, notificationPubsubTopic_);
+    }
+    if (emailPreferences_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEmailPreferences());
+    }
     if (scheduleOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getScheduleOptions());
     }
@@ -979,6 +1107,11 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (getUserId() != other.getUserId()) return false;
     if (!getDatasetRegion().equals(other.getDatasetRegion())) return false;
+    if (!getNotificationPubsubTopic().equals(other.getNotificationPubsubTopic())) return false;
+    if (hasEmailPreferences() != other.hasEmailPreferences()) return false;
+    if (hasEmailPreferences()) {
+      if (!getEmailPreferences().equals(other.getEmailPreferences())) return false;
+    }
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 2:
@@ -1032,6 +1165,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUserId());
     hash = (37 * hash) + DATASET_REGION_FIELD_NUMBER;
     hash = (53 * hash) + getDatasetRegion().hashCode();
+    hash = (37 * hash) + NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER;
+    hash = (53 * hash) + getNotificationPubsubTopic().hashCode();
+    if (hasEmailPreferences()) {
+      hash = (37 * hash) + EMAIL_PREFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getEmailPreferences().hashCode();
+    }
     switch (destinationCase_) {
       case 2:
         hash = (37 * hash) + DESTINATION_DATASET_ID_FIELD_NUMBER;
@@ -1233,6 +1372,14 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
       datasetRegion_ = "";
 
+      notificationPubsubTopic_ = "";
+
+      if (emailPreferencesBuilder_ == null) {
+        emailPreferences_ = null;
+      } else {
+        emailPreferences_ = null;
+        emailPreferencesBuilder_ = null;
+      }
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -1294,6 +1441,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       result.state_ = state_;
       result.userId_ = userId_;
       result.datasetRegion_ = datasetRegion_;
+      result.notificationPubsubTopic_ = notificationPubsubTopic_;
+      if (emailPreferencesBuilder_ == null) {
+        result.emailPreferences_ = emailPreferences_;
+      } else {
+        result.emailPreferences_ = emailPreferencesBuilder_.build();
+      }
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -1388,6 +1541,13 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.getDatasetRegion().isEmpty()) {
         datasetRegion_ = other.datasetRegion_;
         onChanged();
+      }
+      if (!other.getNotificationPubsubTopic().isEmpty()) {
+        notificationPubsubTopic_ = other.notificationPubsubTopic_;
+        onChanged();
+      }
+      if (other.hasEmailPreferences()) {
+        mergeEmailPreferences(other.getEmailPreferences());
       }
       switch (other.getDestinationCase()) {
         case DESTINATION_DATASET_ID:
@@ -3098,6 +3258,301 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       datasetRegion_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object notificationPubsubTopic_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic where notifications will be sent after transfer runs
+     * associated with this transfer config finish.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 15;</code>
+     */
+    public java.lang.String getNotificationPubsubTopic() {
+      java.lang.Object ref = notificationPubsubTopic_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notificationPubsubTopic_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic where notifications will be sent after transfer runs
+     * associated with this transfer config finish.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 15;</code>
+     */
+    public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
+      java.lang.Object ref = notificationPubsubTopic_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        notificationPubsubTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic where notifications will be sent after transfer runs
+     * associated with this transfer config finish.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 15;</code>
+     */
+    public Builder setNotificationPubsubTopic(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      notificationPubsubTopic_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic where notifications will be sent after transfer runs
+     * associated with this transfer config finish.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 15;</code>
+     */
+    public Builder clearNotificationPubsubTopic() {
+
+      notificationPubsubTopic_ = getDefaultInstance().getNotificationPubsubTopic();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic where notifications will be sent after transfer runs
+     * associated with this transfer config finish.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 15;</code>
+     */
+    public Builder setNotificationPubsubTopicBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      notificationPubsubTopic_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.bigquery.datatransfer.v1.EmailPreferences emailPreferences_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.EmailPreferences,
+            com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder>
+        emailPreferencesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public boolean hasEmailPreferences() {
+      return emailPreferencesBuilder_ != null || emailPreferences_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences() {
+      if (emailPreferencesBuilder_ == null) {
+        return emailPreferences_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance()
+            : emailPreferences_;
+      } else {
+        return emailPreferencesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public Builder setEmailPreferences(
+        com.google.cloud.bigquery.datatransfer.v1.EmailPreferences value) {
+      if (emailPreferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        emailPreferences_ = value;
+        onChanged();
+      } else {
+        emailPreferencesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public Builder setEmailPreferences(
+        com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder builderForValue) {
+      if (emailPreferencesBuilder_ == null) {
+        emailPreferences_ = builderForValue.build();
+        onChanged();
+      } else {
+        emailPreferencesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public Builder mergeEmailPreferences(
+        com.google.cloud.bigquery.datatransfer.v1.EmailPreferences value) {
+      if (emailPreferencesBuilder_ == null) {
+        if (emailPreferences_ != null) {
+          emailPreferences_ =
+              com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.newBuilder(
+                      emailPreferences_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          emailPreferences_ = value;
+        }
+        onChanged();
+      } else {
+        emailPreferencesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public Builder clearEmailPreferences() {
+      if (emailPreferencesBuilder_ == null) {
+        emailPreferences_ = null;
+        onChanged();
+      } else {
+        emailPreferences_ = null;
+        emailPreferencesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder
+        getEmailPreferencesBuilder() {
+
+      onChanged();
+      return getEmailPreferencesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
+        getEmailPreferencesOrBuilder() {
+      if (emailPreferencesBuilder_ != null) {
+        return emailPreferencesBuilder_.getMessageOrBuilder();
+      } else {
+        return emailPreferences_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance()
+            : emailPreferences_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Email notifications will be sent according to these preferences
+     * to the email address of the user who owns this transfer config.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.EmailPreferences,
+            com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder>
+        getEmailPreferencesFieldBuilder() {
+      if (emailPreferencesBuilder_ == null) {
+        emailPreferencesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.EmailPreferences,
+                com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder>(
+                getEmailPreferences(), getParentForChildren(), isClean());
+        emailPreferences_ = null;
+      }
+      return emailPreferencesBuilder_;
     }
 
     @java.lang.Override
