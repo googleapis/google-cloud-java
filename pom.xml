@@ -343,10 +343,7 @@
     </profile>
 
     <profile>
-      <id>samples-java8AndNewer</id>
-      <activation>
-        <jdk>[1.8,)</jdk>
-      </activation>
+      <id>include-samples</id>
       <modules>
         <module>samples</module>
       </modules>
