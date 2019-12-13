@@ -25,6 +25,12 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
   private Projection() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Projection();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +113,8 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   public boolean hasProperty() {
     return property_ != null;
@@ -120,6 +127,8 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+   *
+   * @return The property.
    */
   public com.google.datastore.v1.PropertyReference getProperty() {
     return property_ == null
@@ -478,6 +487,8 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+     *
+     * @return Whether the property field is set.
      */
     public boolean hasProperty() {
       return propertyBuilder_ != null || property_ != null;
@@ -490,6 +501,8 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+     *
+     * @return The property.
      */
     public com.google.datastore.v1.PropertyReference getProperty() {
       if (propertyBuilder_ == null) {

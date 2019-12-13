@@ -12,20 +12,24 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -40,6 +44,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
+   *
+   * @return Whether the partitionId field is set.
    */
   boolean hasPartitionId();
   /**
@@ -53,6 +59,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
+   *
+   * @return The partitionId.
    */
   com.google.datastore.v1.PartitionId getPartitionId();
   /**
@@ -77,6 +85,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return Whether the readOptions field is set.
    */
   boolean hasReadOptions();
   /**
@@ -87,6 +97,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return The readOptions.
    */
   com.google.datastore.v1.ReadOptions getReadOptions();
   /**
@@ -108,6 +120,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 3;</code>
+   *
+   * @return Whether the query field is set.
    */
   boolean hasQuery();
   /**
@@ -118,6 +132,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 3;</code>
+   *
+   * @return The query.
    */
   com.google.datastore.v1.Query getQuery();
   /**
@@ -139,6 +155,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
+   *
+   * @return Whether the gqlQuery field is set.
    */
   boolean hasGqlQuery();
   /**
@@ -149,6 +167,8 @@ public interface RunQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
+   *
+   * @return The gqlQuery.
    */
   com.google.datastore.v1.GqlQuery getGqlQuery();
   /**

@@ -16,6 +16,8 @@ public interface ProjectionOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   boolean hasProperty();
   /**
@@ -26,6 +28,8 @@ public interface ProjectionOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+   *
+   * @return The property.
    */
   com.google.datastore.v1.PropertyReference getProperty();
   /**

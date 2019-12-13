@@ -7,8 +7,7 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The request for
- * [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
+ * The request for [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.AllocateIdsRequest}
@@ -26,6 +25,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
   private AllocateIdsRequest() {
     projectId_ = "";
     keys_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AllocateIdsRequest();
   }
 
   @java.lang.Override
@@ -54,9 +59,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               keys_.add(input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
               break;
@@ -82,7 +87,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keys_ = java.util.Collections.unmodifiableList(keys_);
       }
       this.unknownFields = unknownFields.build();
@@ -105,17 +110,18 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
             com.google.datastore.v1.AllocateIdsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
   private volatile java.lang.Object projectId_;
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -132,10 +138,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -155,11 +163,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of keys with incomplete key paths for which to allocate IDs.
+   * Required. A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
@@ -168,11 +177,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of keys with incomplete key paths for which to allocate IDs.
+   * Required. A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
@@ -181,11 +191,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of keys with incomplete key paths for which to allocate IDs.
+   * Required. A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getKeysCount() {
     return keys_.size();
@@ -194,11 +205,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of keys with incomplete key paths for which to allocate IDs.
+   * Required. A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
@@ -207,11 +219,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of keys with incomplete key paths for which to allocate IDs.
+   * Required. A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
@@ -391,8 +404,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request for
-   * [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
+   * The request for [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.AllocateIdsRequest}
@@ -439,7 +451,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
 
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         keysBuilder_.clear();
       }
@@ -471,18 +483,16 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       com.google.datastore.v1.AllocateIdsRequest result =
           new com.google.datastore.v1.AllocateIdsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       if (keysBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.keys_ = keys_;
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -540,7 +550,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
         if (!other.keys_.isEmpty()) {
           if (keys_.isEmpty()) {
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureKeysIsMutable();
             keys_.addAll(other.keys_);
@@ -553,7 +563,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
             keysBuilder_.dispose();
             keysBuilder_ = null;
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             keysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKeysFieldBuilder()
@@ -599,10 +609,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -619,10 +631,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -639,10 +653,13 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -657,10 +674,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -672,10 +691,13 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -691,9 +713,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     private java.util.List<com.google.datastore.v1.Key> keys_ = java.util.Collections.emptyList();
 
     private void ensureKeysIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>(keys_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -707,11 +729,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.datastore.v1.Key> getKeysList() {
       if (keysBuilder_ == null) {
@@ -724,11 +747,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getKeysCount() {
       if (keysBuilder_ == null) {
@@ -741,11 +765,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key getKeys(int index) {
       if (keysBuilder_ == null) {
@@ -758,11 +783,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKeys(int index, com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
@@ -781,11 +807,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKeys(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
@@ -801,11 +828,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
@@ -824,11 +852,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(int index, com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
@@ -847,11 +876,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
@@ -867,11 +897,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
@@ -887,11 +918,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllKeys(java.lang.Iterable<? extends com.google.datastore.v1.Key> values) {
       if (keysBuilder_ == null) {
@@ -907,16 +939,17 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearKeys() {
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         keysBuilder_.clear();
@@ -927,11 +960,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeKeys(int index) {
       if (keysBuilder_ == null) {
@@ -947,11 +981,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
@@ -960,11 +995,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
       if (keysBuilder_ == null) {
@@ -977,11 +1013,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
       if (keysBuilder_ != null) {
@@ -994,11 +1031,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key.Builder addKeysBuilder() {
       return getKeysFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
@@ -1007,11 +1045,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key.Builder addKeysBuilder(int index) {
       return getKeysFieldBuilder()
@@ -1021,11 +1060,12 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of keys with incomplete key paths for which to allocate IDs.
+     * Required. A list of keys with incomplete key paths for which to allocate IDs.
      * No key may be reserved/read-only.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.datastore.v1.Key.Builder> getKeysBuilderList() {
       return getKeysFieldBuilder().getBuilderList();
@@ -1042,7 +1082,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
                 com.google.datastore.v1.Key,
                 com.google.datastore.v1.Key.Builder,
                 com.google.datastore.v1.KeyOrBuilder>(
-                keys_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                keys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         keys_ = null;
       }
       return keysBuilder_;

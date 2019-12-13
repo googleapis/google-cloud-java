@@ -17,6 +17,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Entity insert = 4;</code>
+   *
+   * @return Whether the insert field is set.
    */
   boolean hasInsert();
   /**
@@ -28,6 +30,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Entity insert = 4;</code>
+   *
+   * @return The insert.
    */
   com.google.datastore.v1.Entity getInsert();
   /**
@@ -51,6 +55,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Entity update = 5;</code>
+   *
+   * @return Whether the update field is set.
    */
   boolean hasUpdate();
   /**
@@ -62,6 +68,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Entity update = 5;</code>
+   *
+   * @return The update.
    */
   com.google.datastore.v1.Entity getUpdate();
   /**
@@ -85,6 +93,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Entity upsert = 6;</code>
+   *
+   * @return Whether the upsert field is set.
    */
   boolean hasUpsert();
   /**
@@ -96,6 +106,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Entity upsert = 6;</code>
+   *
+   * @return The upsert.
    */
   com.google.datastore.v1.Entity getUpsert();
   /**
@@ -119,6 +131,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Key delete = 7;</code>
+   *
+   * @return Whether the delete field is set.
    */
   boolean hasDelete();
   /**
@@ -130,6 +144,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Key delete = 7;</code>
+   *
+   * @return The delete.
    */
   com.google.datastore.v1.Key getDelete();
   /**
@@ -153,6 +169,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>int64 base_version = 8;</code>
+   *
+   * @return The baseVersion.
    */
   long getBaseVersion();
 

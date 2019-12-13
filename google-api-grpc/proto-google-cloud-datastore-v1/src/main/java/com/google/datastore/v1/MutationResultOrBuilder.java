@@ -17,6 +17,8 @@ public interface MutationResultOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Key key = 3;</code>
+   *
+   * @return Whether the key field is set.
    */
   boolean hasKey();
   /**
@@ -28,6 +30,8 @@ public interface MutationResultOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Key key = 3;</code>
+   *
+   * @return The key.
    */
   com.google.datastore.v1.Key getKey();
   /**
@@ -54,6 +58,8 @@ public interface MutationResultOrBuilder
    * </pre>
    *
    * <code>int64 version = 4;</code>
+   *
+   * @return The version.
    */
   long getVersion();
 
@@ -66,6 +72,8 @@ public interface MutationResultOrBuilder
    * </pre>
    *
    * <code>bool conflict_detected = 5;</code>
+   *
+   * @return The conflictDetected.
    */
   boolean getConflictDetected();
 }

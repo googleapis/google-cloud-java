@@ -28,6 +28,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LookupRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               keys_.add(input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
               break;
@@ -97,7 +103,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keys_ = java.util.Collections.unmodifiableList(keys_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,17 +126,18 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.LookupRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
   private volatile java.lang.Object projectId_;
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -147,10 +154,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -174,6 +183,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return Whether the readOptions field is set.
    */
   public boolean hasReadOptions() {
     return readOptions_ != null;
@@ -186,6 +197,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return The readOptions.
    */
   public com.google.datastore.v1.ReadOptions getReadOptions() {
     return readOptions_ == null
@@ -211,10 +224,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
@@ -223,10 +237,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
@@ -235,10 +250,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getKeysCount() {
     return keys_.size();
@@ -247,10 +263,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
@@ -259,10 +276,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
@@ -507,7 +525,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         keysBuilder_.clear();
       }
@@ -539,7 +557,6 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.datastore.v1.LookupRequest result =
           new com.google.datastore.v1.LookupRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       if (readOptionsBuilder_ == null) {
         result.readOptions_ = readOptions_;
@@ -547,15 +564,14 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         result.readOptions_ = readOptionsBuilder_.build();
       }
       if (keysBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.keys_ = keys_;
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -616,7 +632,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.keys_.isEmpty()) {
           if (keys_.isEmpty()) {
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureKeysIsMutable();
             keys_.addAll(other.keys_);
@@ -629,7 +645,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             keysBuilder_.dispose();
             keysBuilder_ = null;
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             keysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKeysFieldBuilder()
@@ -675,10 +691,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -695,10 +713,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -715,10 +735,13 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -733,10 +756,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -748,10 +773,13 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -778,6 +806,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+     *
+     * @return Whether the readOptions field is set.
      */
     public boolean hasReadOptions() {
       return readOptionsBuilder_ != null || readOptions_ != null;
@@ -790,6 +820,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+     *
+     * @return The readOptions.
      */
     public com.google.datastore.v1.ReadOptions getReadOptions() {
       if (readOptionsBuilder_ == null) {
@@ -948,9 +980,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.datastore.v1.Key> keys_ = java.util.Collections.emptyList();
 
     private void ensureKeysIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>(keys_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -964,10 +996,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.datastore.v1.Key> getKeysList() {
       if (keysBuilder_ == null) {
@@ -980,10 +1013,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getKeysCount() {
       if (keysBuilder_ == null) {
@@ -996,10 +1030,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key getKeys(int index) {
       if (keysBuilder_ == null) {
@@ -1012,10 +1047,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKeys(int index, com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
@@ -1034,10 +1070,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKeys(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
@@ -1053,10 +1090,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
@@ -1075,10 +1113,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(int index, com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
@@ -1097,10 +1136,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
@@ -1116,10 +1156,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addKeys(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
@@ -1135,10 +1176,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllKeys(java.lang.Iterable<? extends com.google.datastore.v1.Key> values) {
       if (keysBuilder_ == null) {
@@ -1154,15 +1196,16 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearKeys() {
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         keysBuilder_.clear();
@@ -1173,10 +1216,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeKeys(int index) {
       if (keysBuilder_ == null) {
@@ -1192,10 +1236,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
@@ -1204,10 +1249,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
       if (keysBuilder_ == null) {
@@ -1220,10 +1266,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
       if (keysBuilder_ != null) {
@@ -1236,10 +1283,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key.Builder addKeysBuilder() {
       return getKeysFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
@@ -1248,10 +1296,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.datastore.v1.Key.Builder addKeysBuilder(int index) {
       return getKeysFieldBuilder()
@@ -1261,10 +1310,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Keys of entities to look up.
+     * Required. Keys of entities to look up.
      * </pre>
      *
-     * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+     * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.datastore.v1.Key.Builder> getKeysBuilderList() {
       return getKeysFieldBuilder().getBuilderList();
@@ -1281,7 +1331,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Key,
                 com.google.datastore.v1.Key.Builder,
                 com.google.datastore.v1.KeyOrBuilder>(
-                keys_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                keys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         keys_ = null;
       }
       return keysBuilder_;

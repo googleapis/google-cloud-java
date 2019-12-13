@@ -16,6 +16,8 @@ public interface PropertyFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   boolean hasProperty();
   /**
@@ -26,6 +28,8 @@ public interface PropertyFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
+   *
+   * @return The property.
    */
   com.google.datastore.v1.PropertyReference getProperty();
   /**
@@ -47,6 +51,8 @@ public interface PropertyFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyFilter.Operator op = 2;</code>
+   *
+   * @return The enum numeric value on the wire for op.
    */
   int getOpValue();
   /**
@@ -57,6 +63,8 @@ public interface PropertyFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyFilter.Operator op = 2;</code>
+   *
+   * @return The op.
    */
   com.google.datastore.v1.PropertyFilter.Operator getOp();
 
@@ -68,6 +76,8 @@ public interface PropertyFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Value value = 3;</code>
+   *
+   * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
@@ -78,6 +88,8 @@ public interface PropertyFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Value value = 3;</code>
+   *
+   * @return The value.
    */
   com.google.datastore.v1.Value getValue();
   /**

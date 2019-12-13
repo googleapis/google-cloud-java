@@ -18,6 +18,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
+   *
+   * @return Whether the partitionId field is set.
    */
   boolean hasPartitionId();
   /**
@@ -30,6 +32,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
+   *
+   * @return The partitionId.
    */
   com.google.datastore.v1.PartitionId getPartitionId();
   /**

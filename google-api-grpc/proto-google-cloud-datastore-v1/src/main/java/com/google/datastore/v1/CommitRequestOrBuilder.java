@@ -12,20 +12,24 @@ public interface CommitRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -37,6 +41,8 @@ public interface CommitRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
   /**
@@ -47,6 +53,8 @@ public interface CommitRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+   *
+   * @return The mode.
    */
   com.google.datastore.v1.CommitRequest.Mode getMode();
 
@@ -60,6 +68,8 @@ public interface CommitRequestOrBuilder
    * </pre>
    *
    * <code>bytes transaction = 1;</code>
+   *
+   * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
 

@@ -16,6 +16,8 @@ public interface CompositeFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.CompositeFilter.Operator op = 1;</code>
+   *
+   * @return The enum numeric value on the wire for op.
    */
   int getOpValue();
   /**
@@ -26,6 +28,8 @@ public interface CompositeFilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.CompositeFilter.Operator op = 1;</code>
+   *
+   * @return The op.
    */
   com.google.datastore.v1.CompositeFilter.Operator getOp();
 

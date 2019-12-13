@@ -7,8 +7,7 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The request for
- * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+ * The request for [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.BeginTransactionRequest}
@@ -28,6 +27,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BeginTransactionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +45,6 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,10 +118,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -134,10 +140,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -161,6 +169,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
+   *
+   * @return Whether the transactionOptions field is set.
    */
   public boolean hasTransactionOptions() {
     return transactionOptions_ != null;
@@ -173,6 +183,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
+   *
+   * @return The transactionOptions.
    */
   public com.google.datastore.v1.TransactionOptions getTransactionOptions() {
     return transactionOptions_ == null
@@ -369,8 +381,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for
-   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * The request for [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.BeginTransactionRequest}
@@ -543,10 +554,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -563,10 +576,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -583,10 +598,13 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -601,10 +619,12 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -616,10 +636,13 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -646,6 +669,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
+     *
+     * @return Whether the transactionOptions field is set.
      */
     public boolean hasTransactionOptions() {
       return transactionOptionsBuilder_ != null || transactionOptions_ != null;
@@ -658,6 +683,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
+     *
+     * @return The transactionOptions.
      */
     public com.google.datastore.v1.TransactionOptions getTransactionOptions() {
       if (transactionOptionsBuilder_ == null) {

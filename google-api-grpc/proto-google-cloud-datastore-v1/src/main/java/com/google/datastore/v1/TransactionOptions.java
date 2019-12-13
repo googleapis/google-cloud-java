@@ -9,10 +9,8 @@ package com.google.datastore.v1;
  * <pre>
  * Options for beginning a new transaction.
  * Transactions can be created explicitly with calls to
- * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction]
- * or implicitly by setting
- * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
- * in read requests.
+ * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction] or implicitly by setting
+ * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction] in read requests.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.TransactionOptions}
@@ -30,6 +28,12 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
   private TransactionOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TransactionOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -42,7 +46,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +139,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bytes previous_transaction = 1;</code>
+     *
+     * @return The previousTransaction.
      */
     com.google.protobuf.ByteString getPreviousTransaction();
   }
@@ -163,6 +168,12 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadWrite();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -175,7 +186,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -235,6 +245,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bytes previous_transaction = 1;</code>
+     *
+     * @return The previousTransaction.
      */
     public com.google.protobuf.ByteString getPreviousTransaction() {
       return previousTransaction_;
@@ -572,6 +584,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bytes previous_transaction = 1;</code>
+       *
+       * @return The previousTransaction.
        */
       public com.google.protobuf.ByteString getPreviousTransaction() {
         return previousTransaction_;
@@ -584,6 +598,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bytes previous_transaction = 1;</code>
+       *
+       * @param value The previousTransaction to set.
+       * @return This builder for chaining.
        */
       public Builder setPreviousTransaction(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -602,6 +619,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bytes previous_transaction = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPreviousTransaction() {
 
@@ -686,6 +705,12 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     }
 
     private ReadOnly() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadOnly();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -1106,7 +1131,10 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
   private int modeCase_ = 0;
   private java.lang.Object mode_;
 
-  public enum ModeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ModeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     READ_WRITE(1),
     READ_ONLY(2),
     MODE_NOT_SET(0);
@@ -1115,7 +1143,11 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     private ModeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ModeCase valueOf(int value) {
       return forNumber(value);
@@ -1152,6 +1184,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+   *
+   * @return Whether the readWrite field is set.
    */
   public boolean hasReadWrite() {
     return modeCase_ == 1;
@@ -1164,6 +1198,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+   *
+   * @return The readWrite.
    */
   public com.google.datastore.v1.TransactionOptions.ReadWrite getReadWrite() {
     if (modeCase_ == 1) {
@@ -1196,6 +1232,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+   *
+   * @return Whether the readOnly field is set.
    */
   public boolean hasReadOnly() {
     return modeCase_ == 2;
@@ -1208,6 +1246,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+   *
+   * @return The readOnly.
    */
   public com.google.datastore.v1.TransactionOptions.ReadOnly getReadOnly() {
     if (modeCase_ == 2) {
@@ -1426,10 +1466,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Options for beginning a new transaction.
    * Transactions can be created explicitly with calls to
-   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction]
-   * or implicitly by setting
-   * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
-   * in read requests.
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction] or implicitly by setting
+   * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction] in read requests.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.TransactionOptions}
@@ -1635,6 +1673,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.datastore.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+     *
+     * @return Whether the readWrite field is set.
      */
     public boolean hasReadWrite() {
       return modeCase_ == 1;
@@ -1647,6 +1687,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.datastore.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+     *
+     * @return The readWrite.
      */
     public com.google.datastore.v1.TransactionOptions.ReadWrite getReadWrite() {
       if (readWriteBuilder_ == null) {
@@ -1837,6 +1879,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.datastore.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+     *
+     * @return Whether the readOnly field is set.
      */
     public boolean hasReadOnly() {
       return modeCase_ == 2;
@@ -1849,6 +1893,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.datastore.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+     *
+     * @return The readOnly.
      */
     public com.google.datastore.v1.TransactionOptions.ReadOnly getReadOnly() {
       if (readOnlyBuilder_ == null) {

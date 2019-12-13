@@ -16,6 +16,8 @@ public interface BeginTransactionResponseOrBuilder
    * </pre>
    *
    * <code>bytes transaction = 1;</code>
+   *
+   * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
 }

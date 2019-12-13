@@ -25,6 +25,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
   private Mutation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Mutation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -150,7 +155,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
   private int operationCase_ = 0;
   private java.lang.Object operation_;
 
-  public enum OperationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum OperationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INSERT(4),
     UPDATE(5),
     UPSERT(6),
@@ -161,7 +169,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     private OperationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static OperationCase valueOf(int value) {
       return forNumber(value);
@@ -196,7 +208,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
   private int conflictDetectionStrategyCase_ = 0;
   private java.lang.Object conflictDetectionStrategy_;
 
-  public enum ConflictDetectionStrategyCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ConflictDetectionStrategyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BASE_VERSION(8),
     CONFLICTDETECTIONSTRATEGY_NOT_SET(0);
     private final int value;
@@ -204,7 +219,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     private ConflictDetectionStrategyCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ConflictDetectionStrategyCase valueOf(int value) {
       return forNumber(value);
@@ -240,6 +259,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity insert = 4;</code>
+   *
+   * @return Whether the insert field is set.
    */
   public boolean hasInsert() {
     return operationCase_ == 4;
@@ -253,6 +274,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity insert = 4;</code>
+   *
+   * @return The insert.
    */
   public com.google.datastore.v1.Entity getInsert() {
     if (operationCase_ == 4) {
@@ -287,6 +310,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity update = 5;</code>
+   *
+   * @return Whether the update field is set.
    */
   public boolean hasUpdate() {
     return operationCase_ == 5;
@@ -300,6 +325,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity update = 5;</code>
+   *
+   * @return The update.
    */
   public com.google.datastore.v1.Entity getUpdate() {
     if (operationCase_ == 5) {
@@ -334,6 +361,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity upsert = 6;</code>
+   *
+   * @return Whether the upsert field is set.
    */
   public boolean hasUpsert() {
     return operationCase_ == 6;
@@ -347,6 +376,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity upsert = 6;</code>
+   *
+   * @return The upsert.
    */
   public com.google.datastore.v1.Entity getUpsert() {
     if (operationCase_ == 6) {
@@ -381,6 +412,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Key delete = 7;</code>
+   *
+   * @return Whether the delete field is set.
    */
   public boolean hasDelete() {
     return operationCase_ == 7;
@@ -394,6 +427,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Key delete = 7;</code>
+   *
+   * @return The delete.
    */
   public com.google.datastore.v1.Key getDelete() {
     if (operationCase_ == 7) {
@@ -428,6 +463,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 base_version = 8;</code>
+   *
+   * @return The baseVersion.
    */
   public long getBaseVersion() {
     if (conflictDetectionStrategyCase_ == 8) {
@@ -943,6 +980,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity insert = 4;</code>
+     *
+     * @return Whether the insert field is set.
      */
     public boolean hasInsert() {
       return operationCase_ == 4;
@@ -956,6 +995,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity insert = 4;</code>
+     *
+     * @return The insert.
      */
     public com.google.datastore.v1.Entity getInsert() {
       if (insertBuilder_ == null) {
@@ -1150,6 +1191,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity update = 5;</code>
+     *
+     * @return Whether the update field is set.
      */
     public boolean hasUpdate() {
       return operationCase_ == 5;
@@ -1163,6 +1206,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity update = 5;</code>
+     *
+     * @return The update.
      */
     public com.google.datastore.v1.Entity getUpdate() {
       if (updateBuilder_ == null) {
@@ -1357,6 +1402,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity upsert = 6;</code>
+     *
+     * @return Whether the upsert field is set.
      */
     public boolean hasUpsert() {
       return operationCase_ == 6;
@@ -1370,6 +1417,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity upsert = 6;</code>
+     *
+     * @return The upsert.
      */
     public com.google.datastore.v1.Entity getUpsert() {
       if (upsertBuilder_ == null) {
@@ -1564,6 +1613,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Key delete = 7;</code>
+     *
+     * @return Whether the delete field is set.
      */
     public boolean hasDelete() {
       return operationCase_ == 7;
@@ -1577,6 +1628,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Key delete = 7;</code>
+     *
+     * @return The delete.
      */
     public com.google.datastore.v1.Key getDelete() {
       if (deleteBuilder_ == null) {
@@ -1765,6 +1818,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 base_version = 8;</code>
+     *
+     * @return The baseVersion.
      */
     public long getBaseVersion() {
       if (conflictDetectionStrategyCase_ == 8) {
@@ -1781,6 +1836,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 base_version = 8;</code>
+     *
+     * @param value The baseVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseVersion(long value) {
       conflictDetectionStrategyCase_ = 8;
@@ -1797,6 +1855,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 base_version = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseVersion() {
       if (conflictDetectionStrategyCase_ == 8) {

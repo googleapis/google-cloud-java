@@ -25,6 +25,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   private ReadOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -177,12 +182,20 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ReadConsistency valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ReadConsistency forNumber(int value) {
       switch (value) {
         case 0:
@@ -245,7 +258,10 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   private int consistencyTypeCase_ = 0;
   private java.lang.Object consistencyType_;
 
-  public enum ConsistencyTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ConsistencyTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     READ_CONSISTENCY(1),
     TRANSACTION(2),
     CONSISTENCYTYPE_NOT_SET(0);
@@ -254,7 +270,11 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     private ConsistencyTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ConsistencyTypeCase valueOf(int value) {
       return forNumber(value);
@@ -292,6 +312,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+   *
+   * @return The enum numeric value on the wire for readConsistency.
    */
   public int getReadConsistencyValue() {
     if (consistencyTypeCase_ == 1) {
@@ -308,6 +330,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+   *
+   * @return The readConsistency.
    */
   public com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency() {
     if (consistencyTypeCase_ == 1) {
@@ -333,6 +357,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   public com.google.protobuf.ByteString getTransaction() {
     if (consistencyTypeCase_ == 2) {
@@ -725,6 +751,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+     *
+     * @return The enum numeric value on the wire for readConsistency.
      */
     public int getReadConsistencyValue() {
       if (consistencyTypeCase_ == 1) {
@@ -741,6 +769,9 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for readConsistency to set.
+     * @return This builder for chaining.
      */
     public Builder setReadConsistencyValue(int value) {
       consistencyTypeCase_ = 1;
@@ -757,6 +788,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+     *
+     * @return The readConsistency.
      */
     public com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency() {
       if (consistencyTypeCase_ == 1) {
@@ -779,6 +812,9 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+     *
+     * @param value The readConsistency to set.
+     * @return This builder for chaining.
      */
     public Builder setReadConsistency(com.google.datastore.v1.ReadOptions.ReadConsistency value) {
       if (value == null) {
@@ -798,6 +834,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReadConsistency() {
       if (consistencyTypeCase_ == 1) {
@@ -818,6 +856,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction = 2;</code>
+     *
+     * @return The transaction.
      */
     public com.google.protobuf.ByteString getTransaction() {
       if (consistencyTypeCase_ == 2) {
@@ -835,6 +875,9 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction = 2;</code>
+     *
+     * @param value The transaction to set.
+     * @return This builder for chaining.
      */
     public Builder setTransaction(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -855,6 +898,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTransaction() {
       if (consistencyTypeCase_ == 2) {

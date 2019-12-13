@@ -25,6 +25,12 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
   private MutationResult() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MutationResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Key key = 3;</code>
+   *
+   * @return Whether the key field is set.
    */
   public boolean hasKey() {
     return key_ != null;
@@ -130,6 +137,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Key key = 3;</code>
+   *
+   * @return The key.
    */
   public com.google.datastore.v1.Key getKey() {
     return key_ == null ? com.google.datastore.v1.Key.getDefaultInstance() : key_;
@@ -162,6 +171,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 version = 4;</code>
+   *
+   * @return The version.
    */
   public long getVersion() {
     return version_;
@@ -178,6 +189,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool conflict_detected = 5;</code>
+   *
+   * @return The conflictDetected.
    */
   public boolean getConflictDetected() {
     return conflictDetected_;
@@ -555,6 +568,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Key key = 3;</code>
+     *
+     * @return Whether the key field is set.
      */
     public boolean hasKey() {
       return keyBuilder_ != null || key_ != null;
@@ -568,6 +583,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Key key = 3;</code>
+     *
+     * @return The key.
      */
     public com.google.datastore.v1.Key getKey() {
       if (keyBuilder_ == null) {
@@ -735,6 +752,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 version = 4;</code>
+     *
+     * @return The version.
      */
     public long getVersion() {
       return version_;
@@ -751,6 +770,9 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 version = 4;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(long value) {
 
@@ -770,6 +792,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 version = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -788,6 +812,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool conflict_detected = 5;</code>
+     *
+     * @return The conflictDetected.
      */
     public boolean getConflictDetected() {
       return conflictDetected_;
@@ -801,6 +827,9 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool conflict_detected = 5;</code>
+     *
+     * @param value The conflictDetected to set.
+     * @return This builder for chaining.
      */
     public Builder setConflictDetected(boolean value) {
 
@@ -817,6 +846,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool conflict_detected = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConflictDetected() {
 

@@ -29,6 +29,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommitRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,9 +73,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mutations_ = new java.util.ArrayList<com.google.datastore.v1.Mutation>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               mutations_.add(
                   input.readMessage(com.google.datastore.v1.Mutation.parser(), extensionRegistry));
@@ -96,7 +102,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         mutations_ = java.util.Collections.unmodifiableList(mutations_);
       }
       this.unknownFields = unknownFields.build();
@@ -205,12 +211,20 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Mode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Mode forNumber(int value) {
       switch (value) {
         case 0:
@@ -268,11 +282,13 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.datastore.v1.CommitRequest.Mode)
   }
 
-  private int bitField0_;
   private int transactionSelectorCase_ = 0;
   private java.lang.Object transactionSelector_;
 
-  public enum TransactionSelectorCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TransactionSelectorCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSACTION(1),
     TRANSACTIONSELECTOR_NOT_SET(0);
     private final int value;
@@ -280,7 +296,11 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     private TransactionSelectorCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TransactionSelectorCase valueOf(int value) {
       return forNumber(value);
@@ -312,10 +332,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -332,10 +354,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -359,6 +383,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
    */
   public int getModeValue() {
     return mode_;
@@ -371,6 +397,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+   *
+   * @return The mode.
    */
   public com.google.datastore.v1.CommitRequest.Mode getMode() {
     @SuppressWarnings("deprecation")
@@ -390,6 +418,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes transaction = 1;</code>
+   *
+   * @return The transaction.
    */
   public com.google.protobuf.ByteString getTransaction() {
     if (transactionSelectorCase_ == 1) {
@@ -761,7 +791,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         mutationsBuilder_.clear();
       }
@@ -795,22 +825,20 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.datastore.v1.CommitRequest result =
           new com.google.datastore.v1.CommitRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.mode_ = mode_;
       if (transactionSelectorCase_ == 1) {
         result.transactionSelector_ = transactionSelector_;
       }
       if (mutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           mutations_ = java.util.Collections.unmodifiableList(mutations_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.mutations_ = mutations_;
       } else {
         result.mutations_ = mutationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.transactionSelectorCase_ = transactionSelectorCase_;
       onBuilt();
       return result;
@@ -872,7 +900,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.mutations_.isEmpty()) {
           if (mutations_.isEmpty()) {
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureMutationsIsMutable();
             mutations_.addAll(other.mutations_);
@@ -885,7 +913,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             mutationsBuilder_.dispose();
             mutationsBuilder_ = null;
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             mutationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMutationsFieldBuilder()
@@ -956,10 +984,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -976,10 +1006,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -996,10 +1028,13 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1014,10 +1049,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1029,10 +1066,13 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1054,6 +1094,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
      */
     public int getModeValue() {
       return mode_;
@@ -1066,6 +1108,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
       mode_ = value;
@@ -1080,6 +1125,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+     *
+     * @return The mode.
      */
     public com.google.datastore.v1.CommitRequest.Mode getMode() {
       @SuppressWarnings("deprecation")
@@ -1095,6 +1142,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
      */
     public Builder setMode(com.google.datastore.v1.CommitRequest.Mode value) {
       if (value == null) {
@@ -1113,6 +1163,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CommitRequest.Mode mode = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMode() {
 
@@ -1131,6 +1183,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction = 1;</code>
+     *
+     * @return The transaction.
      */
     public com.google.protobuf.ByteString getTransaction() {
       if (transactionSelectorCase_ == 1) {
@@ -1148,6 +1202,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction = 1;</code>
+     *
+     * @param value The transaction to set.
+     * @return This builder for chaining.
      */
     public Builder setTransaction(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1168,6 +1225,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes transaction = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTransaction() {
       if (transactionSelectorCase_ == 1) {
@@ -1182,9 +1241,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         mutations_ = new java.util.ArrayList<com.google.datastore.v1.Mutation>(mutations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1498,7 +1557,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMutations() {
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         mutationsBuilder_.clear();
@@ -1682,7 +1741,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Mutation,
                 com.google.datastore.v1.Mutation.Builder,
                 com.google.datastore.v1.MutationOrBuilder>(
-                mutations_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                mutations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         mutations_ = null;
       }
       return mutationsBuilder_;

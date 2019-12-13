@@ -17,6 +17,8 @@ public interface ReadOptionsOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+   *
+   * @return The enum numeric value on the wire for readConsistency.
    */
   int getReadConsistencyValue();
   /**
@@ -28,6 +30,8 @@ public interface ReadOptionsOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+   *
+   * @return The readConsistency.
    */
   com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency();
 
@@ -41,6 +45,8 @@ public interface ReadOptionsOrBuilder
    * </pre>
    *
    * <code>bytes transaction = 2;</code>
+   *
+   * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
 
