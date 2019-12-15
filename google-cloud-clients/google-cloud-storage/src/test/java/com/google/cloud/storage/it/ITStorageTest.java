@@ -69,6 +69,7 @@ import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobField;
+import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
@@ -589,6 +590,20 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).setContentType(CONTENT_TYPE).build();
     ByteArrayInputStream stream = new ByteArrayInputStream(BLOB_STRING_CONTENT.getBytes(UTF_8));
     Blob remoteBlob = storage.create(blob, stream);
+    assertNotNull(remoteBlob);
+    assertEquals(blob.getBucket(), remoteBlob.getBucket());
+    assertEquals(blob.getName(), remoteBlob.getName());
+    assertEquals(blob.getContentType(), remoteBlob.getContentType());
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertEquals(BLOB_STRING_CONTENT, new String(readBytes, UTF_8));
+  }
+
+  @Test
+  public void testCreateBlobStreamDisableGzipContent() {
+    String blobName = "test-create-blob-stream-disable-gzip-compression";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).setContentType(CONTENT_TYPE).build();
+    ByteArrayInputStream stream = new ByteArrayInputStream(BLOB_STRING_CONTENT.getBytes(UTF_8));
+    Blob remoteBlob = storage.create(blob, stream, BlobWriteOption.disableGzipContent());
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());

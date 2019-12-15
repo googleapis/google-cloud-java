@@ -706,6 +706,33 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testCreateBlobFromStreamDisableGzipContent() throws IOException {
+    Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
+
+    ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
+    BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
+    BlobInfo infoWithHashes = infoBuilder.setMd5(CONTENT_MD5).setCrc32c(CONTENT_CRC32C).build();
+    BlobInfo infoWithoutHashes = infoBuilder.setMd5(null).setCrc32c(null).build();
+    EasyMock.expect(
+        storageRpcMock.create(
+            EasyMock.eq(infoWithoutHashes.toPb()),
+            EasyMock.capture(capturedStream),
+            EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT)))
+        .andReturn(BLOB_INFO1.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+
+    Blob blob = storage.create(infoWithHashes, fileStream, BlobWriteOption.disableGzipContent());
+
+    assertEquals(expectedBlob1, blob);
+    ByteArrayInputStream byteStream = capturedStream.getValue();
+    byte[] streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+  }
+
+  @Test
   public void testCreateBlobFromStreamWithEncryptionKey() throws IOException {
     ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
     BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
