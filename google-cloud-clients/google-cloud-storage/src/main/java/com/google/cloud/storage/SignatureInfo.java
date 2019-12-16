@@ -46,6 +46,10 @@ public class SignatureInfo {
   public static final String SCOPE = "/auto/storage/goog4_request";
   private static final List<String> RESERVED_PARAMS_LOWER =
       ImmutableList.<String>of(
+          // V2:
+          "expires",
+          "googleaccessid",
+          // V4:
           "x-goog-algorithm",
           "x-goog-credential",
           "x-goog-date",
@@ -173,17 +177,13 @@ public class SignatureInfo {
   }
 
   /**
-   * Returns a query string constructed from this object's stored query parameters, sorted in code
-   * point order so that the query string can be used in a V4 canonical request string.
-   *
-   * @see <a href= "https://cloud.google.com/storage/docs/authentication/canonical-requests">
-   *     Canonical Requests</a>
+   * Returns a TreeMap containing the user-supplied query parameters that do not have reserved keys.
    */
-  public String constructV4QueryString() {
+  private TreeMap<String, String> getNonReservedUserQueryParams() {
     TreeMap<String, String> sortedParamMap = new TreeMap<String, String>();
 
     // Skip any instances of well-known required headers that might have been supplied by the
-    // caller. We'll calculate and populate them below.
+    // caller.
     for (Map.Entry<String, String> entry : queryParams.entrySet()) {
       // Convert to (and check for the existence of) lowercase keys to prevent cases like a user
       // supplying "x-goog-algorithm", in order to prevent the resulting query string from
@@ -194,6 +194,47 @@ public class SignatureInfo {
             Rfc3986UriEncode(entry.getKey(), true), Rfc3986UriEncode(entry.getValue(), true));
       }
     }
+
+    return sortedParamMap;
+  }
+
+  private String queryStringFromParamMap(Map<String, String> map) {
+    StringBuilder queryStringBuilder = new StringBuilder();
+
+    String sep = "";
+    for (Map.Entry<String, String> entry : map.entrySet()) {
+      queryStringBuilder.append(sep);
+      sep = "&";
+      queryStringBuilder.append(entry.getKey()).append('=').append(entry.getValue());
+    }
+
+    return queryStringBuilder.toString();
+  }
+
+  /**
+   * Returns a query string constructed from this object's stored query parameters, sorted in code
+   * point order. Note that these query parameters are not used when constructing the URL's
+   * signature. The returned value does not include the leading ? character, as this is not part of
+   * a query string.
+   *
+   * @return A URI query string. Returns an empty string if the user supplied no query parameters.
+   */
+  public String constructV2QueryString() {
+    TreeMap<String, String> sortedParamMap = getNonReservedUserQueryParams();
+    // The "GoogleAccessId", "Expires", and "Signature" params are not included here.
+    return queryStringFromParamMap(sortedParamMap);
+  }
+
+  /**
+   * Returns a query string constructed from this object's stored query parameters, sorted in code
+   * point order so that the query string can be used in a V4 canonical request string. The returned
+   * value does not include the leading ? character, as this is not part of a query string.
+   *
+   * @see <a href= "https://cloud.google.com/storage/docs/authentication/canonical-requests">
+   *     Canonical Requests</a>
+   */
+  public String constructV4QueryString() {
+    TreeMap<String, String> sortedParamMap = getNonReservedUserQueryParams();
 
     // Add in the reserved auth-specific query params.
     sortedParamMap.put("X-Goog-Algorithm", Rfc3986UriEncode(GOOG4_RSA_SHA256, true));
@@ -207,19 +248,8 @@ public class SignatureInfo {
     sortedParamMap.put(
         "X-Goog-SignedHeaders", Rfc3986UriEncode(signedHeadersBuilder.toString(), true));
 
-    StringBuilder queryStringBuilder = new StringBuilder();
-    for (Map.Entry<String, String> entry : sortedParamMap.entrySet()) {
-      // Implementation note: Because we use a Map to plumb query parameters through to form the
-      // URL, we can't have multiple values for the same parameter name (e.g.
-      // "filter=foo&filter=bar"). If we allowed this, e.g. using a ListMultimap, the V4 spec says
-      // that we'd need a secondary sorting condition here, sorting the values for the given key.
-      queryStringBuilder.append(entry.getKey()).append('=').append(entry.getValue()).append('&');
-    }
-    // Length will always be > 0 since we manually add parameters above, so we can always safely
-    // shorten the length by 1.
-    queryStringBuilder.setLength(queryStringBuilder.length() - 1);
-
-    return queryStringBuilder.toString();
+    // The "X-Goog-Signature" param is not included here.
+    return queryStringFromParamMap(sortedParamMap);
   }
 
   public HttpMethod getHttpVerb() {

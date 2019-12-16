@@ -659,9 +659,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 TimeUnit.MILLISECONDS);
 
     checkArgument(
-        !(!isV4 && optionMap.containsKey(SignUrlOption.Option.QUERY_PARAMS)),
-        "The QUERY_PARAMS SignUrlOption can only be used with the V4 signing method.");
-    checkArgument(
         !(optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)
             && optionMap.containsKey(SignUrlOption.Option.PATH_STYLE)),
         "Cannot specify both the VIRTUAL_HOSTED_STYLE and PATH_STYLE SignUrlOptions together.");
@@ -702,13 +699,22 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       if (isV4) {
         BaseEncoding encoding = BaseEncoding.base16().lowerCase();
         String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
-        stBuilder.append("?");
-        stBuilder.append(signatureInfo.constructV4QueryString());
-        stBuilder.append("&X-Goog-Signature=").append(signature);
+        String v4QueryString = signatureInfo.constructV4QueryString();
+
+        stBuilder.append('?');
+        if (!Strings.isNullOrEmpty(v4QueryString)) {
+          stBuilder.append(v4QueryString).append('&');
+        }
+        stBuilder.append("X-Goog-Signature=").append(signature);
       } else {
         BaseEncoding encoding = BaseEncoding.base64();
         String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
-        stBuilder.append("?");
+        String v2QueryString = signatureInfo.constructV2QueryString();
+
+        stBuilder.append('?');
+        if (!Strings.isNullOrEmpty(v2QueryString)) {
+          stBuilder.append(v2QueryString).append('&');
+        }
         stBuilder.append("GoogleAccessId=").append(credentials.getAccount());
         stBuilder.append("&Expires=").append(expiration);
         stBuilder.append("&Signature=").append(signature);
