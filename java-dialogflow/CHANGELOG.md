@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.118.0...v0.119.0) (2019-12-17)
+
+
+### Features
+
+* promote to beta ([#29](https://www.github.com/googleapis/java-dialogflow/issues/29)) ([87b3b70](https://www.github.com/googleapis/java-dialogflow/commit/87b3b7058fcf35f651b850ea39d71842675762a8))
+
+
+### Dependencies
+
+* update gax.version to v1.52.0 ([#36](https://www.github.com/googleapis/java-dialogflow/issues/36)) ([e9a012f](https://www.github.com/googleapis/java-dialogflow/commit/e9a012f4535852d9253c86f532aa38d68804b9fc))
+
+
+### Documentation
+
+* **regen:** javadoc proto class changes from protoc update ([#33](https://www.github.com/googleapis/java-dialogflow/issues/33)) ([1e77bd5](https://www.github.com/googleapis/java-dialogflow/commit/1e77bd5202baab9f4f1cd08529e8b79c45aec56c))
+
 ## [0.118.0](https://www.github.com/googleapis/java-dialogflow/compare/0.117.0...v0.118.0) (2019-12-04)
 
 
