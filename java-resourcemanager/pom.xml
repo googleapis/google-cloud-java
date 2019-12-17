@@ -82,7 +82,7 @@
     <google.auth.version>0.18.0</google.auth.version>
     <http-client-bom.version>1.33.0</http-client-bom.version>
     <google.test-core.version>1.91.3</google.test-core.version>
-    <oauth-client.version>1.30.4</oauth-client.version>
+    <oauth-client.version>1.30.5</oauth-client.version>
   </properties>
 
   <dependencyManagement>
