@@ -31,6 +31,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
+   *
+   * @return Whether the float64Stats field is set.
    */
   boolean hasFloat64Stats();
   /**
@@ -41,6 +43,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
+   *
+   * @return The float64Stats.
    */
   com.google.cloud.automl.v1beta1.Float64Stats getFloat64Stats();
   /**
@@ -62,6 +66,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
+   *
+   * @return Whether the stringStats field is set.
    */
   boolean hasStringStats();
   /**
@@ -72,6 +78,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
+   *
+   * @return The stringStats.
    */
   com.google.cloud.automl.v1beta1.StringStats getStringStats();
   /**
@@ -93,6 +101,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
+   *
+   * @return Whether the timestampStats field is set.
    */
   boolean hasTimestampStats();
   /**
@@ -103,6 +113,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
+   *
+   * @return The timestampStats.
    */
   com.google.cloud.automl.v1beta1.TimestampStats getTimestampStats();
   /**
@@ -124,6 +136,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
+   *
+   * @return Whether the arrayStats field is set.
    */
   boolean hasArrayStats();
   /**
@@ -134,6 +148,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
+   *
+   * @return The arrayStats.
    */
   com.google.cloud.automl.v1beta1.ArrayStats getArrayStats();
   /**
@@ -155,6 +171,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
+   *
+   * @return Whether the structStats field is set.
    */
   boolean hasStructStats();
   /**
@@ -165,6 +183,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
+   *
+   * @return The structStats.
    */
   com.google.cloud.automl.v1beta1.StructStats getStructStats();
   /**
@@ -186,6 +206,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
+   *
+   * @return Whether the categoryStats field is set.
    */
   boolean hasCategoryStats();
   /**
@@ -196,6 +218,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
+   *
+   * @return The categoryStats.
    */
   com.google.cloud.automl.v1beta1.CategoryStats getCategoryStats();
   /**
@@ -217,6 +241,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>int64 distinct_value_count = 1;</code>
+   *
+   * @return The distinctValueCount.
    */
   long getDistinctValueCount();
 
@@ -228,6 +254,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>int64 null_value_count = 2;</code>
+   *
+   * @return The nullValueCount.
    */
   long getNullValueCount();
 
@@ -239,6 +267,8 @@ public interface DataStatsOrBuilder
    * </pre>
    *
    * <code>int64 valid_value_count = 9;</code>
+   *
+   * @return The validValueCount.
    */
   long getValidValueCount();
 

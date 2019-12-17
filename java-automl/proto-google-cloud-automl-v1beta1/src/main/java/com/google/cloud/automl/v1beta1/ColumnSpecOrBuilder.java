@@ -33,6 +33,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
+   *
+   * @return Whether the dataType field is set.
    */
   boolean hasDataType();
   /**
@@ -66,6 +72,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
+   *
+   * @return The dataType.
    */
   com.google.cloud.automl.v1beta1.DataType getDataType();
   /**
@@ -90,6 +98,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -103,6 +113,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -117,6 +129,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
+   *
+   * @return Whether the dataStats field is set.
    */
   boolean hasDataStats();
   /**
@@ -130,6 +144,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
+   *
+   * @return The dataStats.
    */
   com.google.cloud.automl.v1beta1.DataStats getDataStats();
   /**
@@ -219,6 +235,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -230,6 +248,8 @@ public interface ColumnSpecOrBuilder
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 }

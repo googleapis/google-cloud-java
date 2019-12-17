@@ -40,6 +40,12 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
   private DoubleRange() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DoubleRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double start = 1;</code>
+   *
+   * @return The start.
    */
   public double getStart() {
     return start_;
@@ -132,6 +139,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double end = 2;</code>
+   *
+   * @return The end.
    */
   public double getEnd() {
     return end_;
@@ -482,6 +491,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double start = 1;</code>
+     *
+     * @return The start.
      */
     public double getStart() {
       return start_;
@@ -494,6 +505,9 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double start = 1;</code>
+     *
+     * @param value The start to set.
+     * @return This builder for chaining.
      */
     public Builder setStart(double value) {
 
@@ -509,6 +523,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double start = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStart() {
 
@@ -526,6 +542,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double end = 2;</code>
+     *
+     * @return The end.
      */
     public double getEnd() {
       return end_;
@@ -538,6 +556,9 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double end = 2;</code>
+     *
+     * @param value The end to set.
+     * @return This builder for chaining.
      */
     public Builder setEnd(double value) {
 
@@ -553,6 +574,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double end = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnd() {
 

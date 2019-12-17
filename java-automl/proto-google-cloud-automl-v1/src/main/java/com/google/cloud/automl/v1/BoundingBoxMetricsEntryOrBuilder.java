@@ -32,6 +32,8 @@ public interface BoundingBoxMetricsEntryOrBuilder
    * </pre>
    *
    * <code>float iou_threshold = 1;</code>
+   *
+   * @return The iouThreshold.
    */
   float getIouThreshold();
 
@@ -43,6 +45,8 @@ public interface BoundingBoxMetricsEntryOrBuilder
    * </pre>
    *
    * <code>float mean_average_precision = 2;</code>
+   *
+   * @return The meanAveragePrecision.
    */
   float getMeanAveragePrecision();
 

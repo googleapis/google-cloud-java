@@ -42,6 +42,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcsSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,6 +130,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the inputUris.
    */
   public com.google.protobuf.ProtocolStringList getInputUrisList() {
     return inputUris_;
@@ -138,6 +146,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of inputUris.
    */
   public int getInputUrisCount() {
     return inputUris_.size();
@@ -152,6 +162,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The inputUris at the given index.
    */
   public java.lang.String getInputUris(int index) {
     return inputUris_.get(index);
@@ -166,6 +179,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the inputUris at the given index.
    */
   public com.google.protobuf.ByteString getInputUrisBytes(int index) {
     return inputUris_.getByteString(index);
@@ -523,6 +539,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the inputUris.
      */
     public com.google.protobuf.ProtocolStringList getInputUrisList() {
       return inputUris_.getUnmodifiableView();
@@ -537,6 +555,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of inputUris.
      */
     public int getInputUrisCount() {
       return inputUris_.size();
@@ -551,6 +571,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The inputUris at the given index.
      */
     public java.lang.String getInputUris(int index) {
       return inputUris_.get(index);
@@ -565,6 +588,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the inputUris at the given index.
      */
     public com.google.protobuf.ByteString getInputUrisBytes(int index) {
       return inputUris_.getByteString(index);
@@ -579,6 +605,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The inputUris to set.
+     * @return This builder for chaining.
      */
     public Builder setInputUris(int index, java.lang.String value) {
       if (value == null) {
@@ -599,6 +629,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The inputUris to add.
+     * @return This builder for chaining.
      */
     public Builder addInputUris(java.lang.String value) {
       if (value == null) {
@@ -619,6 +652,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The inputUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllInputUris(java.lang.Iterable<java.lang.String> values) {
       ensureInputUrisIsMutable();
@@ -636,6 +672,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputUris() {
       inputUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -653,6 +691,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the inputUris to add.
+     * @return This builder for chaining.
      */
     public Builder addInputUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

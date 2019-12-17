@@ -31,6 +31,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TranslationAnnotation translation = 2;</code>
+   *
+   * @return Whether the translation field is set.
    */
   boolean hasTranslation();
   /**
@@ -41,6 +43,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TranslationAnnotation translation = 2;</code>
+   *
+   * @return The translation.
    */
   com.google.cloud.automl.v1.TranslationAnnotation getTranslation();
   /**
@@ -62,6 +66,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
+   *
+   * @return Whether the classification field is set.
    */
   boolean hasClassification();
   /**
@@ -72,6 +78,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
+   *
+   * @return The classification.
    */
   com.google.cloud.automl.v1.ClassificationAnnotation getClassification();
   /**
@@ -93,6 +101,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ImageObjectDetectionAnnotation image_object_detection = 4;</code>
+   *
+   * @return Whether the imageObjectDetection field is set.
    */
   boolean hasImageObjectDetection();
   /**
@@ -103,6 +113,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ImageObjectDetectionAnnotation image_object_detection = 4;</code>
+   *
+   * @return The imageObjectDetection.
    */
   com.google.cloud.automl.v1.ImageObjectDetectionAnnotation getImageObjectDetection();
   /**
@@ -125,6 +137,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TextExtractionAnnotation text_extraction = 6;</code>
+   *
+   * @return Whether the textExtraction field is set.
    */
   boolean hasTextExtraction();
   /**
@@ -135,6 +149,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TextExtractionAnnotation text_extraction = 6;</code>
+   *
+   * @return The textExtraction.
    */
   com.google.cloud.automl.v1.TextExtractionAnnotation getTextExtraction();
   /**
@@ -156,6 +172,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
+   *
+   * @return Whether the textSentiment field is set.
    */
   boolean hasTextSentiment();
   /**
@@ -166,6 +184,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
+   *
+   * @return The textSentiment.
    */
   com.google.cloud.automl.v1.TextSentimentAnnotation getTextSentiment();
   /**
@@ -189,6 +209,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_id = 1;</code>
+   *
+   * @return The annotationSpecId.
    */
   java.lang.String getAnnotationSpecId();
   /**
@@ -201,6 +223,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_id = 1;</code>
+   *
+   * @return The bytes for annotationSpecId.
    */
   com.google.protobuf.ByteString getAnnotationSpecIdBytes();
 
@@ -217,6 +241,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>string display_name = 5;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -232,6 +258,8 @@ public interface AnnotationPayloadOrBuilder
    * </pre>
    *
    * <code>string display_name = 5;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 

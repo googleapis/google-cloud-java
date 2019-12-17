@@ -40,6 +40,12 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
   private TextSentimentAnnotation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextSentimentAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int32 sentiment = 1;</code>
+   *
+   * @return The sentiment.
    */
   public int getSentiment() {
     return sentiment_;
@@ -465,6 +472,8 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 sentiment = 1;</code>
+     *
+     * @return The sentiment.
      */
     public int getSentiment() {
       return sentiment_;
@@ -488,6 +497,9 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 sentiment = 1;</code>
+     *
+     * @param value The sentiment to set.
+     * @return This builder for chaining.
      */
     public Builder setSentiment(int value) {
 
@@ -514,6 +526,8 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 sentiment = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSentiment() {
 

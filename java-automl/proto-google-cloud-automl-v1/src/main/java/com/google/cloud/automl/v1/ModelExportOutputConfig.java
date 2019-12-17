@@ -42,6 +42,12 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ModelExportOutputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,10 +89,10 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -146,11 +152,13 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.automl.v1.ModelExportOutputConfig.Builder.class);
   }
 
-  private int bitField0_;
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
 
-  public enum DestinationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DestinationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_DESTINATION(1),
     DESTINATION_NOT_SET(0);
     private final int value;
@@ -158,7 +166,11 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DestinationCase valueOf(int value) {
       return forNumber(value);
@@ -203,6 +215,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the gcsDestination field is set.
    */
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
@@ -225,6 +239,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The gcsDestination.
    */
   public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
@@ -288,6 +304,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string model_format = 4;</code>
+   *
+   * @return The modelFormat.
    */
   public java.lang.String getModelFormat() {
     java.lang.Object ref = modelFormat_;
@@ -328,6 +346,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string model_format = 4;</code>
+   *
+   * @return The bytes for modelFormat.
    */
   public com.google.protobuf.ByteString getModelFormatBytes() {
     java.lang.Object ref = modelFormat_;
@@ -740,7 +760,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       com.google.cloud.automl.v1.ModelExportOutputConfig result =
           new com.google.cloud.automl.v1.ModelExportOutputConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (destinationCase_ == 1) {
         if (gcsDestinationBuilder_ == null) {
           result.destination_ = destination_;
@@ -751,7 +770,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       result.modelFormat_ = modelFormat_;
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -888,6 +906,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the gcsDestination field is set.
      */
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
@@ -910,6 +930,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The gcsDestination.
      */
     public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
       if (gcsDestinationBuilder_ == null) {
@@ -1186,6 +1208,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string model_format = 4;</code>
+     *
+     * @return The modelFormat.
      */
     public java.lang.String getModelFormat() {
       java.lang.Object ref = modelFormat_;
@@ -1226,6 +1250,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string model_format = 4;</code>
+     *
+     * @return The bytes for modelFormat.
      */
     public com.google.protobuf.ByteString getModelFormatBytes() {
       java.lang.Object ref = modelFormat_;
@@ -1266,6 +1292,9 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string model_format = 4;</code>
+     *
+     * @param value The modelFormat to set.
+     * @return This builder for chaining.
      */
     public Builder setModelFormat(java.lang.String value) {
       if (value == null) {
@@ -1304,6 +1333,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string model_format = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModelFormat() {
 
@@ -1339,6 +1370,9 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string model_format = 4;</code>
+     *
+     * @param value The bytes for modelFormat to set.
+     * @return This builder for chaining.
      */
     public Builder setModelFormatBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

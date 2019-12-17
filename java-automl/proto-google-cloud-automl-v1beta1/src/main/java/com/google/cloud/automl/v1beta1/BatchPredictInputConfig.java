@@ -230,6 +230,12 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   private BatchPredictInputConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchPredictInputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -242,7 +248,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -322,7 +327,10 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_SOURCE(1),
     BIGQUERY_SOURCE(2),
     SOURCE_NOT_SET(0);
@@ -331,7 +339,11 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -368,6 +380,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
@@ -380,6 +394,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   public com.google.cloud.automl.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
@@ -412,6 +428,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
+   *
+   * @return Whether the bigquerySource field is set.
    */
   public boolean hasBigquerySource() {
     return sourceCase_ == 2;
@@ -424,6 +442,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
+   *
+   * @return The bigquerySource.
    */
   public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
     if (sourceCase_ == 2) {
@@ -1039,6 +1059,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
+     *
+     * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
@@ -1051,6 +1073,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
+     *
+     * @return The gcsSource.
      */
     public com.google.cloud.automl.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
@@ -1240,6 +1264,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
+     *
+     * @return Whether the bigquerySource field is set.
      */
     public boolean hasBigquerySource() {
       return sourceCase_ == 2;
@@ -1252,6 +1278,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
+     *
+     * @return The bigquerySource.
      */
     public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
       if (bigquerySourceBuilder_ == null) {

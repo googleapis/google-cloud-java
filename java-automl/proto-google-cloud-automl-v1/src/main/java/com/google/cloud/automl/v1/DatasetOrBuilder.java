@@ -32,6 +32,8 @@ public interface DatasetOrBuilder
    *
    * <code>.google.cloud.automl.v1.TranslationDatasetMetadata translation_dataset_metadata = 23;
    * </code>
+   *
+   * @return Whether the translationDatasetMetadata field is set.
    */
   boolean hasTranslationDatasetMetadata();
   /**
@@ -43,6 +45,8 @@ public interface DatasetOrBuilder
    *
    * <code>.google.cloud.automl.v1.TranslationDatasetMetadata translation_dataset_metadata = 23;
    * </code>
+   *
+   * @return The translationDatasetMetadata.
    */
   com.google.cloud.automl.v1.TranslationDatasetMetadata getTranslationDatasetMetadata();
   /**
@@ -68,6 +72,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
    * </code>
+   *
+   * @return Whether the imageClassificationDatasetMetadata field is set.
    */
   boolean hasImageClassificationDatasetMetadata();
   /**
@@ -80,6 +86,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
    * </code>
+   *
+   * @return The imageClassificationDatasetMetadata.
    */
   com.google.cloud.automl.v1.ImageClassificationDatasetMetadata
       getImageClassificationDatasetMetadata();
@@ -107,6 +115,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
    * </code>
+   *
+   * @return Whether the textClassificationDatasetMetadata field is set.
    */
   boolean hasTextClassificationDatasetMetadata();
   /**
@@ -119,6 +129,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
    * </code>
+   *
+   * @return The textClassificationDatasetMetadata.
    */
   com.google.cloud.automl.v1.TextClassificationDatasetMetadata
       getTextClassificationDatasetMetadata();
@@ -146,6 +158,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionDatasetMetadata field is set.
    */
   boolean hasImageObjectDetectionDatasetMetadata();
   /**
@@ -158,6 +172,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
    * </code>
+   *
+   * @return The imageObjectDetectionDatasetMetadata.
    */
   com.google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata
       getImageObjectDetectionDatasetMetadata();
@@ -185,6 +201,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
    * </code>
+   *
+   * @return Whether the textExtractionDatasetMetadata field is set.
    */
   boolean hasTextExtractionDatasetMetadata();
   /**
@@ -197,6 +215,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
    * </code>
+   *
+   * @return The textExtractionDatasetMetadata.
    */
   com.google.cloud.automl.v1.TextExtractionDatasetMetadata getTextExtractionDatasetMetadata();
   /**
@@ -223,6 +243,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
    * </code>
+   *
+   * @return Whether the textSentimentDatasetMetadata field is set.
    */
   boolean hasTextSentimentDatasetMetadata();
   /**
@@ -235,6 +257,8 @@ public interface DatasetOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
    * </code>
+   *
+   * @return The textSentimentDatasetMetadata.
    */
   com.google.cloud.automl.v1.TextSentimentDatasetMetadata getTextSentimentDatasetMetadata();
   /**
@@ -260,6 +284,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -271,6 +297,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -285,6 +313,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -298,6 +328,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -310,6 +342,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -321,6 +355,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -332,6 +368,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>int32 example_count = 21;</code>
+   *
+   * @return The exampleCount.
    */
   int getExampleCount();
 
@@ -343,6 +381,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 14;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -353,6 +393,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 14;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -375,6 +417,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string etag = 17;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -386,6 +430,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string etag = 17;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 

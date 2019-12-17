@@ -40,6 +40,12 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
   private TranslationEvaluationMetrics() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TranslationEvaluationMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>double bleu_score = 1;</code>
+   *
+   * @return The bleuScore.
    */
   public double getBleuScore() {
     return bleuScore_;
@@ -132,6 +139,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>double base_bleu_score = 2;</code>
+   *
+   * @return The baseBleuScore.
    */
   public double getBaseBleuScore() {
     return baseBleuScore_;
@@ -487,6 +496,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>double bleu_score = 1;</code>
+     *
+     * @return The bleuScore.
      */
     public double getBleuScore() {
       return bleuScore_;
@@ -499,6 +510,9 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>double bleu_score = 1;</code>
+     *
+     * @param value The bleuScore to set.
+     * @return This builder for chaining.
      */
     public Builder setBleuScore(double value) {
 
@@ -514,6 +528,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>double bleu_score = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBleuScore() {
 
@@ -531,6 +547,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>double base_bleu_score = 2;</code>
+     *
+     * @return The baseBleuScore.
      */
     public double getBaseBleuScore() {
       return baseBleuScore_;
@@ -543,6 +561,9 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>double base_bleu_score = 2;</code>
+     *
+     * @param value The baseBleuScore to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseBleuScore(double value) {
 
@@ -558,6 +579,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>double base_bleu_score = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseBleuScore() {
 

@@ -42,6 +42,12 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TablesAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -86,11 +92,11 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tablesModelColumnInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.TablesModelColumnInfo>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               tablesModelColumnInfo_.add(
                   input.readMessage(
@@ -128,7 +134,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -151,7 +157,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             com.google.cloud.automl.v1beta1.TablesAnnotation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_;
   /**
@@ -166,6 +171,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -184,6 +191,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
+   *
+   * @return Whether the predictionInterval field is set.
    */
   public boolean hasPredictionInterval() {
     return predictionInterval_ != null;
@@ -199,6 +208,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
+   *
+   * @return The predictionInterval.
    */
   public com.google.cloud.automl.v1beta1.DoubleRange getPredictionInterval() {
     return predictionInterval_ == null
@@ -236,6 +247,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
+   *
+   * @return Whether the value field is set.
    */
   public boolean hasValue() {
     return value_ != null;
@@ -253,6 +266,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
+   *
+   * @return The value.
    */
   public com.google.protobuf.Value getValue() {
     return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
@@ -646,7 +661,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         tablesModelColumnInfoBuilder_.clear();
       }
@@ -678,7 +693,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       com.google.cloud.automl.v1beta1.TablesAnnotation result =
           new com.google.cloud.automl.v1beta1.TablesAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.score_ = score_;
       if (predictionIntervalBuilder_ == null) {
         result.predictionInterval_ = predictionInterval_;
@@ -691,15 +705,14 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         result.value_ = valueBuilder_.build();
       }
       if (tablesModelColumnInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tablesModelColumnInfo_ = tablesModelColumnInfo_;
       } else {
         result.tablesModelColumnInfo_ = tablesModelColumnInfoBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -763,7 +776,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         if (!other.tablesModelColumnInfo_.isEmpty()) {
           if (tablesModelColumnInfo_.isEmpty()) {
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTablesModelColumnInfoIsMutable();
             tablesModelColumnInfo_.addAll(other.tablesModelColumnInfo_);
@@ -776,7 +789,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             tablesModelColumnInfoBuilder_.dispose();
             tablesModelColumnInfoBuilder_ = null;
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             tablesModelColumnInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTablesModelColumnInfoFieldBuilder()
@@ -830,6 +843,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -846,6 +861,9 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -865,6 +883,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -890,6 +910,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
+     *
+     * @return Whether the predictionInterval field is set.
      */
     public boolean hasPredictionInterval() {
       return predictionIntervalBuilder_ != null || predictionInterval_ != null;
@@ -905,6 +927,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
+     *
+     * @return The predictionInterval.
      */
     public com.google.cloud.automl.v1beta1.DoubleRange getPredictionInterval() {
       if (predictionIntervalBuilder_ == null) {
@@ -1101,6 +1125,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
+     *
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return valueBuilder_ != null || value_ != null;
@@ -1118,6 +1144,8 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Value value = 2;</code>
+     *
+     * @return The value.
      */
     public com.google.protobuf.Value getValue() {
       if (valueBuilder_ == null) {
@@ -1304,11 +1332,11 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
 
     private void ensureTablesModelColumnInfoIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         tablesModelColumnInfo_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>(
                 tablesModelColumnInfo_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1629,7 +1657,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder clearTablesModelColumnInfo() {
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         tablesModelColumnInfoBuilder_.clear();
@@ -1820,7 +1848,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfo.Builder,
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>(
                 tablesModelColumnInfo_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         tablesModelColumnInfo_ = null;

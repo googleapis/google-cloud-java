@@ -31,6 +31,8 @@ public interface TranslationDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
   /**
@@ -41,6 +43,8 @@ public interface TranslationDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -52,6 +56,8 @@ public interface TranslationDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
   /**
@@ -62,6 +68,8 @@ public interface TranslationDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for targetLanguageCode.
    */
   com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 }

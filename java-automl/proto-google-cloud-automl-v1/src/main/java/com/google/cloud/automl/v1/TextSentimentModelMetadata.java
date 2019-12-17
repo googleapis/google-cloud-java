@@ -40,6 +40,12 @@ public final class TextSentimentModelMetadata extends com.google.protobuf.Genera
   private TextSentimentModelMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextSentimentModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

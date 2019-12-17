@@ -42,6 +42,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BigQueryDestination();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string output_uri = 1;</code>
+   *
+   * @return The outputUri.
    */
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
@@ -140,6 +147,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string output_uri = 1;</code>
+   *
+   * @return The bytes for outputUri.
    */
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
@@ -482,6 +491,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string output_uri = 1;</code>
+     *
+     * @return The outputUri.
      */
     public java.lang.String getOutputUri() {
       java.lang.Object ref = outputUri_;
@@ -504,6 +515,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string output_uri = 1;</code>
+     *
+     * @return The bytes for outputUri.
      */
     public com.google.protobuf.ByteString getOutputUriBytes() {
       java.lang.Object ref = outputUri_;
@@ -526,6 +539,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string output_uri = 1;</code>
+     *
+     * @param value The outputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputUri(java.lang.String value) {
       if (value == null) {
@@ -546,6 +562,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string output_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutputUri() {
 
@@ -563,6 +581,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string output_uri = 1;</code>
+     *
+     * @param value The bytes for outputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

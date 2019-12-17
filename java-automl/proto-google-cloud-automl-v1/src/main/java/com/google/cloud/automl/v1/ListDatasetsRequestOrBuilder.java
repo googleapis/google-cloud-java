@@ -31,6 +31,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -41,6 +43,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -57,6 +61,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -72,6 +78,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -84,6 +92,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -99,6 +109,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -113,6 +125,8 @@ public interface ListDatasetsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

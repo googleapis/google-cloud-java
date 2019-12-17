@@ -36,6 +36,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
    * </code>
+   *
+   * @return Whether the classificationEvaluationMetrics field is set.
    */
   boolean hasClassificationEvaluationMetrics();
   /**
@@ -51,6 +53,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
    * </code>
+   *
+   * @return The classificationEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
       getClassificationEvaluationMetrics();
@@ -83,6 +87,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.RegressionEvaluationMetrics regression_evaluation_metrics = 24;
    * </code>
+   *
+   * @return Whether the regressionEvaluationMetrics field is set.
    */
   boolean hasRegressionEvaluationMetrics();
   /**
@@ -97,6 +103,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.RegressionEvaluationMetrics regression_evaluation_metrics = 24;
    * </code>
+   *
+   * @return The regressionEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetrics
       getRegressionEvaluationMetrics();
@@ -126,6 +134,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
    * </code>
+   *
+   * @return Whether the translationEvaluationMetrics field is set.
    */
   boolean hasTranslationEvaluationMetrics();
   /**
@@ -138,6 +148,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
    * </code>
+   *
+   * @return The translationEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics getTranslationEvaluationMetrics();
   /**
@@ -164,6 +176,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionEvaluationMetrics field is set.
    */
   boolean hasImageObjectDetectionEvaluationMetrics();
   /**
@@ -176,6 +190,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
    * </code>
+   *
+   * @return The imageObjectDetectionEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics
       getImageObjectDetectionEvaluationMetrics();
@@ -203,6 +219,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
    * </code>
+   *
+   * @return Whether the videoObjectTrackingEvaluationMetrics field is set.
    */
   boolean hasVideoObjectTrackingEvaluationMetrics();
   /**
@@ -215,6 +233,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
    * </code>
+   *
+   * @return The videoObjectTrackingEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
       getVideoObjectTrackingEvaluationMetrics();
@@ -242,6 +262,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
    * </code>
+   *
+   * @return Whether the textSentimentEvaluationMetrics field is set.
    */
   boolean hasTextSentimentEvaluationMetrics();
   /**
@@ -254,6 +276,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
    * </code>
+   *
+   * @return The textSentimentEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
       getTextSentimentEvaluationMetrics();
@@ -281,6 +305,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
    * </code>
+   *
+   * @return Whether the textExtractionEvaluationMetrics field is set.
    */
   boolean hasTextExtractionEvaluationMetrics();
   /**
@@ -293,6 +319,8 @@ public interface ModelEvaluationOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
    * </code>
+   *
+   * @return The textExtractionEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics
       getTextExtractionEvaluationMetrics();
@@ -320,6 +348,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -332,6 +362,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -350,6 +382,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
+   *
+   * @return The annotationSpecId.
    */
   java.lang.String getAnnotationSpecId();
   /**
@@ -367,6 +401,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
+   *
+   * @return The bytes for annotationSpecId.
    */
   com.google.protobuf.ByteString getAnnotationSpecIdBytes();
 
@@ -388,6 +424,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>string display_name = 15;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -408,6 +446,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>string display_name = 15;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -419,6 +459,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -429,6 +471,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -457,6 +501,8 @@ public interface ModelEvaluationOrBuilder
    * </pre>
    *
    * <code>int32 evaluated_example_count = 6;</code>
+   *
+   * @return The evaluatedExampleCount.
    */
   int getEvaluatedExampleCount();
 

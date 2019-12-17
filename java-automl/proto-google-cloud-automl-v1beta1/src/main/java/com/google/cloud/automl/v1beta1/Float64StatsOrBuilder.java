@@ -31,6 +31,8 @@ public interface Float64StatsOrBuilder
    * </pre>
    *
    * <code>double mean = 1;</code>
+   *
+   * @return The mean.
    */
   double getMean();
 
@@ -42,6 +44,8 @@ public interface Float64StatsOrBuilder
    * </pre>
    *
    * <code>double standard_deviation = 2;</code>
+   *
+   * @return The standardDeviation.
    */
   double getStandardDeviation();
 
@@ -56,6 +60,8 @@ public interface Float64StatsOrBuilder
    * </pre>
    *
    * <code>repeated double quantiles = 3;</code>
+   *
+   * @return A list containing the quantiles.
    */
   java.util.List<java.lang.Double> getQuantilesList();
   /**
@@ -69,6 +75,8 @@ public interface Float64StatsOrBuilder
    * </pre>
    *
    * <code>repeated double quantiles = 3;</code>
+   *
+   * @return The count of quantiles.
    */
   int getQuantilesCount();
   /**
@@ -82,6 +90,9 @@ public interface Float64StatsOrBuilder
    * </pre>
    *
    * <code>repeated double quantiles = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The quantiles at the given index.
    */
   double getQuantiles(int index);
 

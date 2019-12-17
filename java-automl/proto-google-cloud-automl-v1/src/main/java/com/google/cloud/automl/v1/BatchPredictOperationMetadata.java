@@ -40,6 +40,12 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
   private BatchPredictOperationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchPredictOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -148,6 +153,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
     /**
@@ -159,6 +166,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The bytes for gcsOutputDirectory.
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
 
@@ -191,6 +200,12 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     private BatchPredictOutputInfo() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchPredictOutputInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -203,7 +218,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -259,7 +273,10 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     private int outputLocationCase_ = 0;
     private java.lang.Object outputLocation_;
 
-    public enum OutputLocationCase implements com.google.protobuf.Internal.EnumLite {
+    public enum OutputLocationCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       GCS_OUTPUT_DIRECTORY(1),
       OUTPUTLOCATION_NOT_SET(0);
       private final int value;
@@ -267,7 +284,11 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       private OutputLocationCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static OutputLocationCase valueOf(int value) {
         return forNumber(value);
@@ -303,6 +324,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The gcsOutputDirectory.
      */
     public java.lang.String getGcsOutputDirectory() {
       java.lang.Object ref = "";
@@ -329,6 +352,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The bytes for gcsOutputDirectory.
      */
     public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
       java.lang.Object ref = "";
@@ -746,6 +771,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return The gcsOutputDirectory.
        */
       public java.lang.String getGcsOutputDirectory() {
         java.lang.Object ref = "";
@@ -772,6 +799,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return The bytes for gcsOutputDirectory.
        */
       public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
         java.lang.Object ref = "";
@@ -798,6 +827,9 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @param value The gcsOutputDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setGcsOutputDirectory(java.lang.String value) {
         if (value == null) {
@@ -817,6 +849,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGcsOutputDirectory() {
         if (outputLocationCase_ == 1) {
@@ -835,6 +869,9 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @param value The bytes for gcsOutputDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setGcsOutputDirectoryBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -915,6 +952,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   public boolean hasInputConfig() {
     return inputConfig_ != null;
@@ -928,6 +967,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   public com.google.cloud.automl.v1.BatchPredictInputConfig getInputConfig() {
     return inputConfig_ == null
@@ -961,6 +1002,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * <code>
    * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
    * </code>
+   *
+   * @return Whether the outputInfo field is set.
    */
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
@@ -975,6 +1018,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * <code>
    * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
    * </code>
+   *
+   * @return The outputInfo.
    */
   public com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
       getOutputInfo() {
@@ -1373,6 +1418,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
+     *
+     * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
       return inputConfigBuilder_ != null || inputConfig_ != null;
@@ -1386,6 +1433,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
+     *
+     * @return The inputConfig.
      */
     public com.google.cloud.automl.v1.BatchPredictInputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -1567,6 +1616,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * <code>
      * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
      * </code>
+     *
+     * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
       return outputInfoBuilder_ != null || outputInfo_ != null;
@@ -1581,6 +1632,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * <code>
      * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
      * </code>
+     *
+     * @return The outputInfo.
      */
     public com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
         getOutputInfo() {

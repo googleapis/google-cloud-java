@@ -31,6 +31,8 @@ public interface CreateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -41,6 +43,8 @@ public interface CreateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -52,6 +56,8 @@ public interface CreateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Dataset dataset = 2;</code>
+   *
+   * @return Whether the dataset field is set.
    */
   boolean hasDataset();
   /**
@@ -62,6 +68,8 @@ public interface CreateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Dataset dataset = 2;</code>
+   *
+   * @return The dataset.
    */
   com.google.cloud.automl.v1beta1.Dataset getDataset();
   /**

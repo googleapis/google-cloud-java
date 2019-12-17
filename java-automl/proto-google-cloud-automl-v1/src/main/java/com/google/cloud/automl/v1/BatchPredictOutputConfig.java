@@ -121,6 +121,12 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
   private BatchPredictOutputConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchPredictOutputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -133,7 +139,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -197,7 +202,10 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
 
-  public enum DestinationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DestinationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_DESTINATION(1),
     DESTINATION_NOT_SET(0);
     private final int value;
@@ -205,7 +213,11 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
     private DestinationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DestinationCase valueOf(int value) {
       return forNumber(value);
@@ -243,6 +255,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the gcsDestination field is set.
    */
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
@@ -258,6 +272,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The gcsDestination.
    */
   public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
@@ -742,6 +758,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the gcsDestination field is set.
      */
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
@@ -757,6 +775,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The gcsDestination.
      */
     public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
       if (gcsDestinationBuilder_ == null) {

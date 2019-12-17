@@ -32,6 +32,8 @@ public interface BatchPredictOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
+   *
+   * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
   /**
@@ -43,6 +45,8 @@ public interface BatchPredictOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
+   *
+   * @return The gcsDestination.
    */
   com.google.cloud.automl.v1beta1.GcsDestination getGcsDestination();
   /**
@@ -65,6 +69,8 @@ public interface BatchPredictOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   *
+   * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
   /**
@@ -75,6 +81,8 @@ public interface BatchPredictOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   *
+   * @return The bigqueryDestination.
    */
   com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination();
   /**

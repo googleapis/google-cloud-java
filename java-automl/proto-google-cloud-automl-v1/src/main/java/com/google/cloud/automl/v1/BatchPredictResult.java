@@ -43,6 +43,12 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
   private BatchPredictResult() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchPredictResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

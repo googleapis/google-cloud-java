@@ -42,6 +42,12 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoObjectTrackingAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,6 +163,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string instance_id = 1;</code>
+   *
+   * @return The instanceId.
    */
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
@@ -184,6 +191,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string instance_id = 1;</code>
+   *
+   * @return The bytes for instanceId.
    */
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
@@ -208,6 +217,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
@@ -221,6 +232,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
@@ -250,6 +263,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
@@ -263,6 +278,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
+   *
+   * @return The boundingBox.
    */
   public com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
@@ -297,6 +314,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>float score = 4;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -711,6 +730,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string instance_id = 1;</code>
+     *
+     * @return The instanceId.
      */
     public java.lang.String getInstanceId() {
       java.lang.Object ref = instanceId_;
@@ -737,6 +758,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string instance_id = 1;</code>
+     *
+     * @return The bytes for instanceId.
      */
     public com.google.protobuf.ByteString getInstanceIdBytes() {
       java.lang.Object ref = instanceId_;
@@ -763,6 +786,9 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string instance_id = 1;</code>
+     *
+     * @param value The instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceId(java.lang.String value) {
       if (value == null) {
@@ -787,6 +813,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string instance_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
 
@@ -808,6 +836,9 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string instance_id = 1;</code>
+     *
+     * @param value The bytes for instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -835,6 +866,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
+     *
+     * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
       return timeOffsetBuilder_ != null || timeOffset_ != null;
@@ -848,6 +881,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
+     *
+     * @return The timeOffset.
      */
     public com.google.protobuf.Duration getTimeOffset() {
       if (timeOffsetBuilder_ == null) {
@@ -1023,6 +1058,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
+     *
+     * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
       return boundingBoxBuilder_ != null || boundingBox_ != null;
@@ -1036,6 +1073,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
+     *
+     * @return The boundingBox.
      */
     public com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox() {
       if (boundingBoxBuilder_ == null) {
@@ -1212,6 +1251,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -1228,6 +1269,9 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -1247,6 +1291,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 

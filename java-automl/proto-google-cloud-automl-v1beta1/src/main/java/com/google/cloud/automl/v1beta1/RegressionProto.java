@@ -40,6 +40,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float root_mean_squared_error = 1;</code>
+     *
+     * @return The rootMeanSquaredError.
      */
     float getRootMeanSquaredError();
 
@@ -51,6 +53,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float mean_absolute_error = 2;</code>
+     *
+     * @return The meanAbsoluteError.
      */
     float getMeanAbsoluteError();
 
@@ -63,6 +67,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float mean_absolute_percentage_error = 3;</code>
+     *
+     * @return The meanAbsolutePercentageError.
      */
     float getMeanAbsolutePercentageError();
 
@@ -74,6 +80,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float r_squared = 4;</code>
+     *
+     * @return The rSquared.
      */
     float getRSquared();
 
@@ -85,6 +93,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float root_mean_squared_log_error = 5;</code>
+     *
+     * @return The rootMeanSquaredLogError.
      */
     float getRootMeanSquaredLogError();
   }
@@ -111,6 +121,12 @@ public final class RegressionProto {
     private RegressionEvaluationMetrics() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RegressionEvaluationMetrics();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -123,7 +139,6 @@ public final class RegressionProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -204,6 +219,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float root_mean_squared_error = 1;</code>
+     *
+     * @return The rootMeanSquaredError.
      */
     public float getRootMeanSquaredError() {
       return rootMeanSquaredError_;
@@ -219,6 +236,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float mean_absolute_error = 2;</code>
+     *
+     * @return The meanAbsoluteError.
      */
     public float getMeanAbsoluteError() {
       return meanAbsoluteError_;
@@ -235,6 +254,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float mean_absolute_percentage_error = 3;</code>
+     *
+     * @return The meanAbsolutePercentageError.
      */
     public float getMeanAbsolutePercentageError() {
       return meanAbsolutePercentageError_;
@@ -250,6 +271,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float r_squared = 4;</code>
+     *
+     * @return The rSquared.
      */
     public float getRSquared() {
       return rSquared_;
@@ -265,6 +288,8 @@ public final class RegressionProto {
      * </pre>
      *
      * <code>float root_mean_squared_log_error = 5;</code>
+     *
+     * @return The rootMeanSquaredLogError.
      */
     public float getRootMeanSquaredLogError() {
       return rootMeanSquaredLogError_;
@@ -687,6 +712,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float root_mean_squared_error = 1;</code>
+       *
+       * @return The rootMeanSquaredError.
        */
       public float getRootMeanSquaredError() {
         return rootMeanSquaredError_;
@@ -699,6 +726,9 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float root_mean_squared_error = 1;</code>
+       *
+       * @param value The rootMeanSquaredError to set.
+       * @return This builder for chaining.
        */
       public Builder setRootMeanSquaredError(float value) {
 
@@ -714,6 +744,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float root_mean_squared_error = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRootMeanSquaredError() {
 
@@ -731,6 +763,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float mean_absolute_error = 2;</code>
+       *
+       * @return The meanAbsoluteError.
        */
       public float getMeanAbsoluteError() {
         return meanAbsoluteError_;
@@ -743,6 +777,9 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float mean_absolute_error = 2;</code>
+       *
+       * @param value The meanAbsoluteError to set.
+       * @return This builder for chaining.
        */
       public Builder setMeanAbsoluteError(float value) {
 
@@ -758,6 +795,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float mean_absolute_error = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMeanAbsoluteError() {
 
@@ -776,6 +815,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float mean_absolute_percentage_error = 3;</code>
+       *
+       * @return The meanAbsolutePercentageError.
        */
       public float getMeanAbsolutePercentageError() {
         return meanAbsolutePercentageError_;
@@ -789,6 +830,9 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float mean_absolute_percentage_error = 3;</code>
+       *
+       * @param value The meanAbsolutePercentageError to set.
+       * @return This builder for chaining.
        */
       public Builder setMeanAbsolutePercentageError(float value) {
 
@@ -805,6 +849,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float mean_absolute_percentage_error = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMeanAbsolutePercentageError() {
 
@@ -822,6 +868,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float r_squared = 4;</code>
+       *
+       * @return The rSquared.
        */
       public float getRSquared() {
         return rSquared_;
@@ -834,6 +882,9 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float r_squared = 4;</code>
+       *
+       * @param value The rSquared to set.
+       * @return This builder for chaining.
        */
       public Builder setRSquared(float value) {
 
@@ -849,6 +900,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float r_squared = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRSquared() {
 
@@ -866,6 +919,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float root_mean_squared_log_error = 5;</code>
+       *
+       * @return The rootMeanSquaredLogError.
        */
       public float getRootMeanSquaredLogError() {
         return rootMeanSquaredLogError_;
@@ -878,6 +933,9 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float root_mean_squared_log_error = 5;</code>
+       *
+       * @param value The rootMeanSquaredLogError to set.
+       * @return This builder for chaining.
        */
       public Builder setRootMeanSquaredLogError(float value) {
 
@@ -893,6 +951,8 @@ public final class RegressionProto {
        * </pre>
        *
        * <code>float root_mean_squared_log_error = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRootMeanSquaredLogError() {
 
@@ -984,20 +1044,12 @@ public final class RegressionProto {
           + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
           + "proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_RegressionEvaluationMetrics_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_RegressionEvaluationMetrics_fieldAccessorTable =

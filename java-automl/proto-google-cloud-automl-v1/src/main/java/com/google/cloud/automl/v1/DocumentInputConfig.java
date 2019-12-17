@@ -40,6 +40,12 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   private DocumentInputConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DocumentInputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   public boolean hasGcsSource() {
     return gcsSource_ != null;
@@ -141,6 +148,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   public com.google.cloud.automl.v1.GcsSource getGcsSource() {
     return gcsSource_ == null
@@ -508,6 +517,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+     *
+     * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
       return gcsSourceBuilder_ != null || gcsSource_ != null;
@@ -523,6 +534,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+     *
+     * @return The gcsSource.
      */
     public com.google.cloud.automl.v1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {

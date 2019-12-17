@@ -32,6 +32,8 @@ public interface TablesModelColumnInfoOrBuilder
    * </pre>
    *
    * <code>string column_spec_name = 1;</code>
+   *
+   * @return The columnSpecName.
    */
   java.lang.String getColumnSpecName();
   /**
@@ -43,6 +45,8 @@ public interface TablesModelColumnInfoOrBuilder
    * </pre>
    *
    * <code>string column_spec_name = 1;</code>
+   *
+   * @return The bytes for columnSpecName.
    */
   com.google.protobuf.ByteString getColumnSpecNameBytes();
 
@@ -55,6 +59,8 @@ public interface TablesModelColumnInfoOrBuilder
    * </pre>
    *
    * <code>string column_display_name = 2;</code>
+   *
+   * @return The columnDisplayName.
    */
   java.lang.String getColumnDisplayName();
   /**
@@ -66,6 +72,8 @@ public interface TablesModelColumnInfoOrBuilder
    * </pre>
    *
    * <code>string column_display_name = 2;</code>
+   *
+   * @return The bytes for columnDisplayName.
    */
   com.google.protobuf.ByteString getColumnDisplayNameBytes();
 
@@ -92,6 +100,8 @@ public interface TablesModelColumnInfoOrBuilder
    * </pre>
    *
    * <code>float feature_importance = 3;</code>
+   *
+   * @return The featureImportance.
    */
   float getFeatureImportance();
 }

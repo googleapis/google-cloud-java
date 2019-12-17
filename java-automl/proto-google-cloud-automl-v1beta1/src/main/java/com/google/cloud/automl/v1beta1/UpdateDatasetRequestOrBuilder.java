@@ -31,6 +31,8 @@ public interface UpdateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Dataset dataset = 1;</code>
+   *
+   * @return Whether the dataset field is set.
    */
   boolean hasDataset();
   /**
@@ -41,6 +43,8 @@ public interface UpdateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Dataset dataset = 1;</code>
+   *
+   * @return The dataset.
    */
   com.google.cloud.automl.v1beta1.Dataset getDataset();
   /**
@@ -62,6 +66,8 @@ public interface UpdateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -72,6 +78,8 @@ public interface UpdateDatasetRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

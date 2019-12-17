@@ -43,6 +43,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Image();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +120,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   private int dataCase_ = 0;
   private java.lang.Object data_;
 
-  public enum DataCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_BYTES(1),
     DATA_NOT_SET(0);
     private final int value;
@@ -123,7 +131,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DataCase valueOf(int value) {
       return forNumber(value);
@@ -160,6 +172,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes image_bytes = 1;</code>
+   *
+   * @return The imageBytes.
    */
   public com.google.protobuf.ByteString getImageBytes() {
     if (dataCase_ == 1) {
@@ -178,6 +192,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
+   *
+   * @return The thumbnailUri.
    */
   public java.lang.String getThumbnailUri() {
     java.lang.Object ref = thumbnailUri_;
@@ -198,6 +214,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
+   *
+   * @return The bytes for thumbnailUri.
    */
   public com.google.protobuf.ByteString getThumbnailUriBytes() {
     java.lang.Object ref = thumbnailUri_;
@@ -590,6 +608,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes image_bytes = 1;</code>
+     *
+     * @return The imageBytes.
      */
     public com.google.protobuf.ByteString getImageBytes() {
       if (dataCase_ == 1) {
@@ -607,6 +627,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes image_bytes = 1;</code>
+     *
+     * @param value The imageBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setImageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -627,6 +650,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes image_bytes = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageBytes() {
       if (dataCase_ == 1) {
@@ -646,6 +671,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string thumbnail_uri = 4;</code>
+     *
+     * @return The thumbnailUri.
      */
     public java.lang.String getThumbnailUri() {
       java.lang.Object ref = thumbnailUri_;
@@ -666,6 +693,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string thumbnail_uri = 4;</code>
+     *
+     * @return The bytes for thumbnailUri.
      */
     public com.google.protobuf.ByteString getThumbnailUriBytes() {
       java.lang.Object ref = thumbnailUri_;
@@ -686,6 +715,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string thumbnail_uri = 4;</code>
+     *
+     * @param value The thumbnailUri to set.
+     * @return This builder for chaining.
      */
     public Builder setThumbnailUri(java.lang.String value) {
       if (value == null) {
@@ -704,6 +736,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string thumbnail_uri = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearThumbnailUri() {
 
@@ -719,6 +753,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string thumbnail_uri = 4;</code>
+     *
+     * @param value The bytes for thumbnailUri to set.
+     * @return This builder for chaining.
      */
     public Builder setThumbnailUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

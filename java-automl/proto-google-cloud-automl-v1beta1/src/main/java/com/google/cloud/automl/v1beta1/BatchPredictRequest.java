@@ -43,6 +43,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchPredictRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,10 +115,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -165,7 +171,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1beta1.BatchPredictRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -176,6 +181,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -196,6 +203,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -219,6 +228,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   public boolean hasInputConfig() {
     return inputConfig_ != null;
@@ -231,6 +242,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+   *
+   * @return The inputConfig.
    */
   public com.google.cloud.automl.v1beta1.BatchPredictInputConfig getInputConfig() {
     return inputConfig_ == null
@@ -262,6 +275,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -275,6 +290,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.automl.v1beta1.BatchPredictOutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -914,7 +931,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       com.google.cloud.automl.v1beta1.BatchPredictRequest result =
           new com.google.cloud.automl.v1beta1.BatchPredictRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (inputConfigBuilder_ == null) {
         result.inputConfig_ = inputConfig_;
@@ -928,7 +944,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       }
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1031,6 +1046,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1051,6 +1068,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1071,6 +1090,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1089,6 +1111,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1104,6 +1128,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1130,6 +1157,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     *
+     * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
       return inputConfigBuilder_ != null || inputConfig_ != null;
@@ -1142,6 +1171,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BatchPredictInputConfig input_config = 3;</code>
+     *
+     * @return The inputConfig.
      */
     public com.google.cloud.automl.v1beta1.BatchPredictInputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -1314,6 +1345,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -1327,6 +1360,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.BatchPredictOutputConfig output_config = 4;</code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.automl.v1beta1.BatchPredictOutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {

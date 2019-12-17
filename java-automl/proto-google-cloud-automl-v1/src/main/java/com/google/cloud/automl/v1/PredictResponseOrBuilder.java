@@ -98,6 +98,8 @@ public interface PredictResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   *
+   * @return Whether the preprocessedInput field is set.
    */
   boolean hasPreprocessedInput();
   /**
@@ -118,6 +120,8 @@ public interface PredictResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   *
+   * @return The preprocessedInput.
    */
   com.google.cloud.automl.v1.ExamplePayload getPreprocessedInput();
   /**

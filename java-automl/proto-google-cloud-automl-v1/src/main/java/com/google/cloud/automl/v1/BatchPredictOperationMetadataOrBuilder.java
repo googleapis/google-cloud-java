@@ -32,6 +32,8 @@ public interface BatchPredictOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -43,6 +45,8 @@ public interface BatchPredictOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.automl.v1.BatchPredictInputConfig getInputConfig();
   /**
@@ -67,6 +71,8 @@ public interface BatchPredictOperationMetadataOrBuilder
    * <code>
    * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
    * </code>
+   *
+   * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
   /**
@@ -79,6 +85,8 @@ public interface BatchPredictOperationMetadataOrBuilder
    * <code>
    * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
    * </code>
+   *
+   * @return The outputInfo.
    */
   com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo getOutputInfo();
   /**

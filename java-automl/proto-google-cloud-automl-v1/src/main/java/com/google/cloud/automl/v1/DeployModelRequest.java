@@ -43,6 +43,12 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeployModelRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,7 +163,10 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   private int modelDeploymentMetadataCase_ = 0;
   private java.lang.Object modelDeploymentMetadata_;
 
-  public enum ModelDeploymentMetadataCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ModelDeploymentMetadataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA(2),
     IMAGE_CLASSIFICATION_MODEL_DEPLOYMENT_METADATA(4),
     MODELDEPLOYMENTMETADATA_NOT_SET(0);
@@ -167,7 +175,11 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     private ModelDeploymentMetadataCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ModelDeploymentMetadataCase valueOf(int value) {
       return forNumber(value);
@@ -206,6 +218,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionModelDeploymentMetadata field is set.
    */
   public boolean hasImageObjectDetectionModelDeploymentMetadata() {
     return modelDeploymentMetadataCase_ == 2;
@@ -220,6 +234,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
    * </code>
+   *
+   * @return The imageObjectDetectionModelDeploymentMetadata.
    */
   public com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata
       getImageObjectDetectionModelDeploymentMetadata() {
@@ -262,6 +278,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
    * </code>
+   *
+   * @return Whether the imageClassificationModelDeploymentMetadata field is set.
    */
   public boolean hasImageClassificationModelDeploymentMetadata() {
     return modelDeploymentMetadataCase_ == 4;
@@ -276,6 +294,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
    * </code>
+   *
+   * @return The imageClassificationModelDeploymentMetadata.
    */
   public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata
       getImageClassificationModelDeploymentMetadata() {
@@ -317,6 +337,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -337,6 +359,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -785,6 +809,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
      * </code>
+     *
+     * @return Whether the imageObjectDetectionModelDeploymentMetadata field is set.
      */
     public boolean hasImageObjectDetectionModelDeploymentMetadata() {
       return modelDeploymentMetadataCase_ == 2;
@@ -799,6 +825,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
      * </code>
+     *
+     * @return The imageObjectDetectionModelDeploymentMetadata.
      */
     public com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata
         getImageObjectDetectionModelDeploymentMetadata() {
@@ -1023,6 +1051,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
      * </code>
+     *
+     * @return Whether the imageClassificationModelDeploymentMetadata field is set.
      */
     public boolean hasImageClassificationModelDeploymentMetadata() {
       return modelDeploymentMetadataCase_ == 4;
@@ -1037,6 +1067,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
      * </code>
+     *
+     * @return The imageClassificationModelDeploymentMetadata.
      */
     public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata
         getImageClassificationModelDeploymentMetadata() {
@@ -1255,6 +1287,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1275,6 +1309,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1295,6 +1331,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1313,6 +1352,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1328,6 +1369,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

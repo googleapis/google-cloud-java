@@ -38,6 +38,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
+   *
+   * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
   /**
@@ -55,6 +57,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
+   *
+   * @return The gcsDestination.
    */
   com.google.cloud.automl.v1beta1.GcsDestination getGcsDestination();
   /**
@@ -86,6 +90,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcrDestination gcr_destination = 3;</code>
+   *
+   * @return Whether the gcrDestination field is set.
    */
   boolean hasGcrDestination();
   /**
@@ -99,6 +105,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcrDestination gcr_destination = 3;</code>
+   *
+   * @return The gcrDestination.
    */
   com.google.cloud.automl.v1beta1.GcrDestination getGcrDestination();
   /**
@@ -147,6 +155,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>string model_format = 4;</code>
+   *
+   * @return The modelFormat.
    */
   java.lang.String getModelFormat();
   /**
@@ -181,6 +191,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>string model_format = 4;</code>
+   *
+   * @return The bytes for modelFormat.
    */
   com.google.protobuf.ByteString getModelFormatBytes();
 

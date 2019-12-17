@@ -33,6 +33,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the inputUris.
    */
   java.util.List<java.lang.String> getInputUrisList();
   /**
@@ -45,6 +47,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of inputUris.
    */
   int getInputUrisCount();
   /**
@@ -57,6 +61,9 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The inputUris at the given index.
    */
   java.lang.String getInputUris(int index);
   /**
@@ -69,6 +76,9 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the inputUris at the given index.
    */
   com.google.protobuf.ByteString getInputUrisBytes(int index);
 }

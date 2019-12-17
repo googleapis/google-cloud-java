@@ -32,6 +32,8 @@ public interface TextSnippetOrBuilder
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The content.
    */
   java.lang.String getContent();
   /**
@@ -43,6 +45,8 @@ public interface TextSnippetOrBuilder
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The bytes for content.
    */
   com.google.protobuf.ByteString getContentBytes();
 
@@ -58,6 +62,8 @@ public interface TextSnippetOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -72,6 +78,8 @@ public interface TextSnippetOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -83,6 +91,8 @@ public interface TextSnippetOrBuilder
    * </pre>
    *
    * <code>string content_uri = 4;</code>
+   *
+   * @return The contentUri.
    */
   java.lang.String getContentUri();
   /**
@@ -93,6 +103,8 @@ public interface TextSnippetOrBuilder
    * </pre>
    *
    * <code>string content_uri = 4;</code>
+   *
+   * @return The bytes for contentUri.
    */
   com.google.protobuf.ByteString getContentUriBytes();
 }

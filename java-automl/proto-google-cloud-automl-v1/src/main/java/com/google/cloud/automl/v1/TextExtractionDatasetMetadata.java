@@ -40,6 +40,12 @@ public final class TextExtractionDatasetMetadata extends com.google.protobuf.Gen
   private TextExtractionDatasetMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextExtractionDatasetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

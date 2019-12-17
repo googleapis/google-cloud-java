@@ -31,6 +31,8 @@ public interface UpdateColumnSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   *
+   * @return Whether the columnSpec field is set.
    */
   boolean hasColumnSpec();
   /**
@@ -41,6 +43,8 @@ public interface UpdateColumnSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec column_spec = 1;</code>
+   *
+   * @return The columnSpec.
    */
   com.google.cloud.automl.v1beta1.ColumnSpec getColumnSpec();
   /**
@@ -62,6 +66,8 @@ public interface UpdateColumnSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -72,6 +78,8 @@ public interface UpdateColumnSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

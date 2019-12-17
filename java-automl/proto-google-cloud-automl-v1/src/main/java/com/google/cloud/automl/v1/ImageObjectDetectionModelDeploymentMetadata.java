@@ -42,6 +42,12 @@ public final class ImageObjectDetectionModelDeploymentMetadata
   private ImageObjectDetectionModelDeploymentMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageObjectDetectionModelDeploymentMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ImageObjectDetectionModelDeploymentMetadata
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class ImageObjectDetectionModelDeploymentMetadata
    * </pre>
    *
    * <code>int64 node_count = 1;</code>
+   *
+   * @return The nodeCount.
    */
   public long getNodeCount() {
     return nodeCount_;
@@ -463,6 +470,8 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      * </pre>
      *
      * <code>int64 node_count = 1;</code>
+     *
+     * @return The nodeCount.
      */
     public long getNodeCount() {
       return nodeCount_;
@@ -479,6 +488,9 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      * </pre>
      *
      * <code>int64 node_count = 1;</code>
+     *
+     * @param value The nodeCount to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeCount(long value) {
 
@@ -498,6 +510,8 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      * </pre>
      *
      * <code>int64 node_count = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
 

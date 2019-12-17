@@ -31,6 +31,8 @@ public interface TranslationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSnippet translated_content = 1;</code>
+   *
+   * @return Whether the translatedContent field is set.
    */
   boolean hasTranslatedContent();
   /**
@@ -41,6 +43,8 @@ public interface TranslationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSnippet translated_content = 1;</code>
+   *
+   * @return The translatedContent.
    */
   com.google.cloud.automl.v1beta1.TextSnippet getTranslatedContent();
   /**

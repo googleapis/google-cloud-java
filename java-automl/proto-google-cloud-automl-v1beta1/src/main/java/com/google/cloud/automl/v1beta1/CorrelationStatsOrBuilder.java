@@ -31,6 +31,8 @@ public interface CorrelationStatsOrBuilder
    * </pre>
    *
    * <code>double cramers_v = 1;</code>
+   *
+   * @return The cramersV.
    */
   double getCramersV();
 }

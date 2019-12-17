@@ -42,6 +42,12 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
   private CorrelationStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CorrelationStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>double cramers_v = 1;</code>
+   *
+   * @return The cramersV.
    */
   public double getCramersV() {
     return cramersV_;
@@ -450,6 +457,8 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>double cramers_v = 1;</code>
+     *
+     * @return The cramersV.
      */
     public double getCramersV() {
       return cramersV_;
@@ -462,6 +471,9 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>double cramers_v = 1;</code>
+     *
+     * @param value The cramersV to set.
+     * @return This builder for chaining.
      */
     public Builder setCramersV(double value) {
 
@@ -477,6 +489,8 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>double cramers_v = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCramersV() {
 

@@ -35,6 +35,8 @@ public interface ImageClassificationModelDeploymentMetadataOrBuilder
    * </pre>
    *
    * <code>int64 node_count = 1;</code>
+   *
+   * @return The nodeCount.
    */
   long getNodeCount();
 }

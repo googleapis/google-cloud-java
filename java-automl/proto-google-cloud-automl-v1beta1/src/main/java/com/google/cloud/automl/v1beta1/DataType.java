@@ -43,6 +43,12 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DataType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,7 +159,10 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   private int detailsCase_ = 0;
   private java.lang.Object details_;
 
-  public enum DetailsCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DetailsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LIST_ELEMENT_TYPE(2),
     STRUCT_TYPE(3),
     TIME_FORMAT(5),
@@ -164,7 +172,11 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DetailsCase valueOf(int value) {
       return forNumber(value);
@@ -204,6 +216,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
+   *
+   * @return Whether the listElementType field is set.
    */
   public boolean hasListElementType() {
     return detailsCase_ == 2;
@@ -217,6 +231,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
+   *
+   * @return The listElementType.
    */
   public com.google.cloud.automl.v1beta1.DataType getListElementType() {
     if (detailsCase_ == 2) {
@@ -251,6 +267,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
+   *
+   * @return Whether the structType field is set.
    */
   public boolean hasStructType() {
     return detailsCase_ == 3;
@@ -264,6 +282,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
+   *
+   * @return The structType.
    */
   public com.google.cloud.automl.v1beta1.StructType getStructType() {
     if (detailsCase_ == 3) {
@@ -307,6 +327,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_format = 5;</code>
+   *
+   * @return The timeFormat.
    */
   public java.lang.String getTimeFormat() {
     java.lang.Object ref = "";
@@ -342,6 +364,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_format = 5;</code>
+   *
+   * @return The bytes for timeFormat.
    */
   public com.google.protobuf.ByteString getTimeFormatBytes() {
     java.lang.Object ref = "";
@@ -370,6 +394,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for typeCode.
    */
   public int getTypeCodeValue() {
     return typeCode_;
@@ -382,6 +408,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+   *
+   * @return The typeCode.
    */
   public com.google.cloud.automl.v1beta1.TypeCode getTypeCode() {
     @SuppressWarnings("deprecation")
@@ -401,6 +429,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool nullable = 4;</code>
+   *
+   * @return The nullable.
    */
   public boolean getNullable() {
     return nullable_;
@@ -859,6 +889,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
+     *
+     * @return Whether the listElementType field is set.
      */
     public boolean hasListElementType() {
       return detailsCase_ == 2;
@@ -872,6 +904,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
+     *
+     * @return The listElementType.
      */
     public com.google.cloud.automl.v1beta1.DataType getListElementType() {
       if (listElementTypeBuilder_ == null) {
@@ -1070,6 +1104,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
+     *
+     * @return Whether the structType field is set.
      */
     public boolean hasStructType() {
       return detailsCase_ == 3;
@@ -1083,6 +1119,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
+     *
+     * @return The structType.
      */
     public com.google.cloud.automl.v1beta1.StructType getStructType() {
       if (structTypeBuilder_ == null) {
@@ -1285,6 +1323,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_format = 5;</code>
+     *
+     * @return The timeFormat.
      */
     public java.lang.String getTimeFormat() {
       java.lang.Object ref = "";
@@ -1320,6 +1360,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_format = 5;</code>
+     *
+     * @return The bytes for timeFormat.
      */
     public com.google.protobuf.ByteString getTimeFormatBytes() {
       java.lang.Object ref = "";
@@ -1355,6 +1397,9 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_format = 5;</code>
+     *
+     * @param value The timeFormat to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeFormat(java.lang.String value) {
       if (value == null) {
@@ -1383,6 +1428,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_format = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeFormat() {
       if (detailsCase_ == 5) {
@@ -1410,6 +1457,9 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_format = 5;</code>
+     *
+     * @param value The bytes for timeFormat to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeFormatBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1431,6 +1481,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for typeCode.
      */
     public int getTypeCodeValue() {
       return typeCode_;
@@ -1443,6 +1495,9 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for typeCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeCodeValue(int value) {
       typeCode_ = value;
@@ -1457,6 +1512,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+     *
+     * @return The typeCode.
      */
     public com.google.cloud.automl.v1beta1.TypeCode getTypeCode() {
       @SuppressWarnings("deprecation")
@@ -1472,6 +1529,9 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+     *
+     * @param value The typeCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeCode(com.google.cloud.automl.v1beta1.TypeCode value) {
       if (value == null) {
@@ -1490,6 +1550,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTypeCode() {
 
@@ -1508,6 +1570,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool nullable = 4;</code>
+     *
+     * @return The nullable.
      */
     public boolean getNullable() {
       return nullable_;
@@ -1521,6 +1585,9 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool nullable = 4;</code>
+     *
+     * @param value The nullable to set.
+     * @return This builder for chaining.
      */
     public Builder setNullable(boolean value) {
 
@@ -1537,6 +1604,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool nullable = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNullable() {
 

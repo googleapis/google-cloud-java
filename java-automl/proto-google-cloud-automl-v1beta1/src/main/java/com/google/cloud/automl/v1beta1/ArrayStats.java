@@ -40,6 +40,12 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
   private ArrayStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ArrayStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
+   *
+   * @return Whether the memberStats field is set.
    */
   public boolean hasMemberStats() {
     return memberStats_ != null;
@@ -137,6 +144,8 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
+   *
+   * @return The memberStats.
    */
   public com.google.cloud.automl.v1beta1.DataStats getMemberStats() {
     return memberStats_ == null
@@ -500,6 +509,8 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
+     *
+     * @return Whether the memberStats field is set.
      */
     public boolean hasMemberStats() {
       return memberStatsBuilder_ != null || memberStats_ != null;
@@ -513,6 +524,8 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
+     *
+     * @return The memberStats.
      */
     public com.google.cloud.automl.v1beta1.DataStats getMemberStats() {
       if (memberStatsBuilder_ == null) {

@@ -31,6 +31,8 @@ public interface DocumentDimensionsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+   *
+   * @return The enum numeric value on the wire for unit.
    */
   int getUnitValue();
   /**
@@ -41,6 +43,8 @@ public interface DocumentDimensionsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+   *
+   * @return The unit.
    */
   com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit();
 
@@ -52,6 +56,8 @@ public interface DocumentDimensionsOrBuilder
    * </pre>
    *
    * <code>float width = 2;</code>
+   *
+   * @return The width.
    */
   float getWidth();
 
@@ -63,6 +69,8 @@ public interface DocumentDimensionsOrBuilder
    * </pre>
    *
    * <code>float height = 3;</code>
+   *
+   * @return The height.
    */
   float getHeight();
 }

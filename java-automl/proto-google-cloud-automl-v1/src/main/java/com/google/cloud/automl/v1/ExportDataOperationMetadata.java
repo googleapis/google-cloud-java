@@ -40,6 +40,12 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   private ExportDataOperationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportDataOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,6 +135,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
     /**
@@ -141,6 +148,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The bytes for gcsOutputDirectory.
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
 
@@ -172,6 +181,12 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     private ExportDataOutputInfo() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExportDataOutputInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -184,7 +199,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -240,7 +254,10 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     private int outputLocationCase_ = 0;
     private java.lang.Object outputLocation_;
 
-    public enum OutputLocationCase implements com.google.protobuf.Internal.EnumLite {
+    public enum OutputLocationCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       GCS_OUTPUT_DIRECTORY(1),
       OUTPUTLOCATION_NOT_SET(0);
       private final int value;
@@ -248,7 +265,11 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       private OutputLocationCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static OutputLocationCase valueOf(int value) {
         return forNumber(value);
@@ -284,6 +305,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The gcsOutputDirectory.
      */
     public java.lang.String getGcsOutputDirectory() {
       java.lang.Object ref = "";
@@ -310,6 +333,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The bytes for gcsOutputDirectory.
      */
     public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
       java.lang.Object ref = "";
@@ -721,6 +746,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return The gcsOutputDirectory.
        */
       public java.lang.String getGcsOutputDirectory() {
         java.lang.Object ref = "";
@@ -747,6 +774,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return The bytes for gcsOutputDirectory.
        */
       public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
         java.lang.Object ref = "";
@@ -773,6 +802,9 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @param value The gcsOutputDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setGcsOutputDirectory(java.lang.String value) {
         if (value == null) {
@@ -792,6 +824,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGcsOutputDirectory() {
         if (outputLocationCase_ == 1) {
@@ -810,6 +844,9 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @param value The bytes for gcsOutputDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setGcsOutputDirectoryBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -889,6 +926,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
    *
    * <code>.google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo output_info = 1;
    * </code>
+   *
+   * @return Whether the outputInfo field is set.
    */
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
@@ -902,6 +941,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
    *
    * <code>.google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo output_info = 1;
    * </code>
+   *
+   * @return The outputInfo.
    */
   public com.google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo
       getOutputInfo() {
@@ -1272,6 +1313,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * <code>
      * .google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo output_info = 1;
      * </code>
+     *
+     * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
       return outputInfoBuilder_ != null || outputInfo_ != null;
@@ -1286,6 +1329,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * <code>
      * .google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo output_info = 1;
      * </code>
+     *
+     * @return The outputInfo.
      */
     public com.google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo
         getOutputInfo() {

@@ -31,6 +31,8 @@ public interface TextClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for classificationType.
    */
   int getClassificationTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface TextClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   *
+   * @return The classificationType.
    */
   com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType getClassificationType();
 }

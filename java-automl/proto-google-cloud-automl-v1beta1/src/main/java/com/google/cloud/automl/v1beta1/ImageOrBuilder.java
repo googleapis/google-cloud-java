@@ -33,6 +33,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>bytes image_bytes = 1;</code>
+   *
+   * @return The imageBytes.
    */
   com.google.protobuf.ByteString getImageBytes();
 
@@ -44,6 +46,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 6;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -54,6 +58,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 6;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.automl.v1beta1.InputConfig getInputConfig();
   /**
@@ -75,6 +81,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
+   *
+   * @return The thumbnailUri.
    */
   java.lang.String getThumbnailUri();
   /**
@@ -85,6 +93,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
+   *
+   * @return The bytes for thumbnailUri.
    */
   com.google.protobuf.ByteString getThumbnailUriBytes();
 

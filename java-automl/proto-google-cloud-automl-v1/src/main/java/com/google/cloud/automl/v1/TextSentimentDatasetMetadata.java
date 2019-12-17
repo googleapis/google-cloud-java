@@ -40,6 +40,12 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
   private TextSentimentDatasetMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextSentimentDatasetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,6 +121,8 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>int32 sentiment_max = 1;</code>
+   *
+   * @return The sentimentMax.
    */
   public int getSentimentMax() {
     return sentimentMax_;
@@ -452,6 +459,8 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 sentiment_max = 1;</code>
+     *
+     * @return The sentimentMax.
      */
     public int getSentimentMax() {
       return sentimentMax_;
@@ -468,6 +477,9 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 sentiment_max = 1;</code>
+     *
+     * @param value The sentimentMax to set.
+     * @return This builder for chaining.
      */
     public Builder setSentimentMax(int value) {
 
@@ -487,6 +499,8 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 sentiment_max = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSentimentMax() {
 

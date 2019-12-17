@@ -35,6 +35,8 @@ public interface TextSentimentDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>int32 sentiment_max = 1;</code>
+   *
+   * @return The sentimentMax.
    */
   int getSentimentMax();
 }

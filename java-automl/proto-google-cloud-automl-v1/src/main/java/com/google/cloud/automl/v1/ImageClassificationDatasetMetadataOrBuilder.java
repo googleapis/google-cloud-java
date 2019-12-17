@@ -31,6 +31,8 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for classificationType.
    */
   int getClassificationTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+   *
+   * @return The classificationType.
    */
   com.google.cloud.automl.v1.ClassificationType getClassificationType();
 }

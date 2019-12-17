@@ -44,6 +44,12 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TablesModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,10 +91,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inputFeatureColumnSpecs_ =
                     new java.util.ArrayList<com.google.cloud.automl.v1beta1.ColumnSpec>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               inputFeatureColumnSpecs_.add(
                   input.readMessage(
@@ -104,11 +110,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tablesModelColumnInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.TablesModelColumnInfo>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               tablesModelColumnInfo_.add(
                   input.readMessage(
@@ -157,10 +163,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inputFeatureColumnSpecs_ = java.util.Collections.unmodifiableList(inputFeatureColumnSpecs_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -183,12 +189,13 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder.class);
   }
 
-  private int bitField0_;
   private int additionalOptimizationObjectiveConfigCase_ = 0;
   private java.lang.Object additionalOptimizationObjectiveConfig_;
 
   public enum AdditionalOptimizationObjectiveConfigCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     OPTIMIZATION_OBJECTIVE_RECALL_VALUE(17),
     OPTIMIZATION_OBJECTIVE_PRECISION_VALUE(18),
     ADDITIONALOPTIMIZATIONOBJECTIVECONFIG_NOT_SET(0);
@@ -197,7 +204,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     private AdditionalOptimizationObjectiveConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AdditionalOptimizationObjectiveConfigCase valueOf(int value) {
       return forNumber(value);
@@ -236,6 +247,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>float optimization_objective_recall_value = 17;</code>
+   *
+   * @return The optimizationObjectiveRecallValue.
    */
   public float getOptimizationObjectiveRecallValue() {
     if (additionalOptimizationObjectiveConfigCase_ == 17) {
@@ -254,6 +267,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>float optimization_objective_precision_value = 18;</code>
+   *
+   * @return The optimizationObjectivePrecisionValue.
    */
   public float getOptimizationObjectivePrecisionValue() {
     if (additionalOptimizationObjectiveConfigCase_ == 18) {
@@ -280,6 +295,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
+   *
+   * @return Whether the targetColumnSpec field is set.
    */
   public boolean hasTargetColumnSpec() {
     return targetColumnSpec_ != null;
@@ -300,6 +317,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
+   *
+   * @return The targetColumnSpec.
    */
   public com.google.cloud.automl.v1beta1.ColumnSpec getTargetColumnSpec() {
     return targetColumnSpec_ == null
@@ -492,6 +511,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
+   *
+   * @return The optimizationObjective.
    */
   public java.lang.String getOptimizationObjective() {
     java.lang.Object ref = optimizationObjective_;
@@ -531,6 +552,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
+   *
+   * @return The bytes for optimizationObjective.
    */
   public com.google.protobuf.ByteString getOptimizationObjectiveBytes() {
     java.lang.Object ref = optimizationObjective_;
@@ -641,6 +664,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 6;</code>
+   *
+   * @return The trainBudgetMilliNodeHours.
    */
   public long getTrainBudgetMilliNodeHours() {
     return trainBudgetMilliNodeHours_;
@@ -658,6 +683,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>int64 train_cost_milli_node_hours = 7;</code>
+   *
+   * @return The trainCostMilliNodeHours.
    */
   public long getTrainCostMilliNodeHours() {
     return trainCostMilliNodeHours_;
@@ -675,6 +702,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bool disable_early_stopping = 12;</code>
+   *
+   * @return The disableEarlyStopping.
    */
   public boolean getDisableEarlyStopping() {
     return disableEarlyStopping_;
@@ -1008,7 +1037,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       if (inputFeatureColumnSpecsBuilder_ == null) {
         inputFeatureColumnSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         inputFeatureColumnSpecsBuilder_.clear();
       }
@@ -1016,7 +1045,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
 
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         tablesModelColumnInfoBuilder_.clear();
       }
@@ -1056,7 +1085,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       com.google.cloud.automl.v1beta1.TablesModelMetadata result =
           new com.google.cloud.automl.v1beta1.TablesModelMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (additionalOptimizationObjectiveConfigCase_ == 17) {
         result.additionalOptimizationObjectiveConfig_ = additionalOptimizationObjectiveConfig_;
       }
@@ -1069,10 +1097,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         result.targetColumnSpec_ = targetColumnSpecBuilder_.build();
       }
       if (inputFeatureColumnSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           inputFeatureColumnSpecs_ =
               java.util.Collections.unmodifiableList(inputFeatureColumnSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.inputFeatureColumnSpecs_ = inputFeatureColumnSpecs_;
       } else {
@@ -1080,9 +1108,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       result.optimizationObjective_ = optimizationObjective_;
       if (tablesModelColumnInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tablesModelColumnInfo_ = tablesModelColumnInfo_;
       } else {
@@ -1091,7 +1119,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       result.trainBudgetMilliNodeHours_ = trainBudgetMilliNodeHours_;
       result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
       result.disableEarlyStopping_ = disableEarlyStopping_;
-      result.bitField0_ = to_bitField0_;
       result.additionalOptimizationObjectiveConfigCase_ =
           additionalOptimizationObjectiveConfigCase_;
       onBuilt();
@@ -1151,7 +1178,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         if (!other.inputFeatureColumnSpecs_.isEmpty()) {
           if (inputFeatureColumnSpecs_.isEmpty()) {
             inputFeatureColumnSpecs_ = other.inputFeatureColumnSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInputFeatureColumnSpecsIsMutable();
             inputFeatureColumnSpecs_.addAll(other.inputFeatureColumnSpecs_);
@@ -1164,7 +1191,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             inputFeatureColumnSpecsBuilder_.dispose();
             inputFeatureColumnSpecsBuilder_ = null;
             inputFeatureColumnSpecs_ = other.inputFeatureColumnSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             inputFeatureColumnSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputFeatureColumnSpecsFieldBuilder()
@@ -1182,7 +1209,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         if (!other.tablesModelColumnInfo_.isEmpty()) {
           if (tablesModelColumnInfo_.isEmpty()) {
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTablesModelColumnInfoIsMutable();
             tablesModelColumnInfo_.addAll(other.tablesModelColumnInfo_);
@@ -1195,7 +1222,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             tablesModelColumnInfoBuilder_.dispose();
             tablesModelColumnInfoBuilder_ = null;
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             tablesModelColumnInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTablesModelColumnInfoFieldBuilder()
@@ -1287,6 +1314,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>float optimization_objective_recall_value = 17;</code>
+     *
+     * @return The optimizationObjectiveRecallValue.
      */
     public float getOptimizationObjectiveRecallValue() {
       if (additionalOptimizationObjectiveConfigCase_ == 17) {
@@ -1303,6 +1332,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>float optimization_objective_recall_value = 17;</code>
+     *
+     * @param value The optimizationObjectiveRecallValue to set.
+     * @return This builder for chaining.
      */
     public Builder setOptimizationObjectiveRecallValue(float value) {
       additionalOptimizationObjectiveConfigCase_ = 17;
@@ -1319,6 +1351,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>float optimization_objective_recall_value = 17;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOptimizationObjectiveRecallValue() {
       if (additionalOptimizationObjectiveConfigCase_ == 17) {
@@ -1338,6 +1372,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>float optimization_objective_precision_value = 18;</code>
+     *
+     * @return The optimizationObjectivePrecisionValue.
      */
     public float getOptimizationObjectivePrecisionValue() {
       if (additionalOptimizationObjectiveConfigCase_ == 18) {
@@ -1354,6 +1390,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>float optimization_objective_precision_value = 18;</code>
+     *
+     * @param value The optimizationObjectivePrecisionValue to set.
+     * @return This builder for chaining.
      */
     public Builder setOptimizationObjectivePrecisionValue(float value) {
       additionalOptimizationObjectiveConfigCase_ = 18;
@@ -1370,6 +1409,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>float optimization_objective_precision_value = 18;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOptimizationObjectivePrecisionValue() {
       if (additionalOptimizationObjectiveConfigCase_ == 18) {
@@ -1402,6 +1443,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
+     *
+     * @return Whether the targetColumnSpec field is set.
      */
     public boolean hasTargetColumnSpec() {
       return targetColumnSpecBuilder_ != null || targetColumnSpec_ != null;
@@ -1422,6 +1465,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
+     *
+     * @return The targetColumnSpec.
      */
     public com.google.cloud.automl.v1beta1.ColumnSpec getTargetColumnSpec() {
       if (targetColumnSpecBuilder_ == null) {
@@ -1638,11 +1683,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureInputFeatureColumnSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inputFeatureColumnSpecs_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.ColumnSpec>(
                 inputFeatureColumnSpecs_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2015,7 +2060,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     public Builder clearInputFeatureColumnSpecs() {
       if (inputFeatureColumnSpecsBuilder_ == null) {
         inputFeatureColumnSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         inputFeatureColumnSpecsBuilder_.clear();
@@ -2239,7 +2284,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.automl.v1beta1.ColumnSpec.Builder,
                 com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder>(
                 inputFeatureColumnSpecs_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         inputFeatureColumnSpecs_ = null;
@@ -2275,6 +2320,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string optimization_objective = 4;</code>
+     *
+     * @return The optimizationObjective.
      */
     public java.lang.String getOptimizationObjective() {
       java.lang.Object ref = optimizationObjective_;
@@ -2314,6 +2361,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string optimization_objective = 4;</code>
+     *
+     * @return The bytes for optimizationObjective.
      */
     public com.google.protobuf.ByteString getOptimizationObjectiveBytes() {
       java.lang.Object ref = optimizationObjective_;
@@ -2353,6 +2402,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string optimization_objective = 4;</code>
+     *
+     * @param value The optimizationObjective to set.
+     * @return This builder for chaining.
      */
     public Builder setOptimizationObjective(java.lang.String value) {
       if (value == null) {
@@ -2390,6 +2442,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string optimization_objective = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOptimizationObjective() {
 
@@ -2424,6 +2478,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string optimization_objective = 4;</code>
+     *
+     * @param value The bytes for optimizationObjective to set.
+     * @return This builder for chaining.
      */
     public Builder setOptimizationObjectiveBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2440,11 +2497,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
 
     private void ensureTablesModelColumnInfoIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tablesModelColumnInfo_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>(
                 tablesModelColumnInfo_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2699,7 +2756,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     public Builder clearTablesModelColumnInfo() {
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         tablesModelColumnInfoBuilder_.clear();
@@ -2848,7 +2905,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfo.Builder,
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>(
                 tablesModelColumnInfo_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         tablesModelColumnInfo_ = null;
@@ -2875,6 +2932,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
+     *
+     * @return The trainBudgetMilliNodeHours.
      */
     public long getTrainBudgetMilliNodeHours() {
       return trainBudgetMilliNodeHours_;
@@ -2897,6 +2956,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
+     *
+     * @param value The trainBudgetMilliNodeHours to set.
+     * @return This builder for chaining.
      */
     public Builder setTrainBudgetMilliNodeHours(long value) {
 
@@ -2922,6 +2984,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 train_budget_milli_node_hours = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrainBudgetMilliNodeHours() {
 
@@ -2941,6 +3005,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 train_cost_milli_node_hours = 7;</code>
+     *
+     * @return The trainCostMilliNodeHours.
      */
     public long getTrainCostMilliNodeHours() {
       return trainCostMilliNodeHours_;
@@ -2955,6 +3021,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 train_cost_milli_node_hours = 7;</code>
+     *
+     * @param value The trainCostMilliNodeHours to set.
+     * @return This builder for chaining.
      */
     public Builder setTrainCostMilliNodeHours(long value) {
 
@@ -2972,6 +3041,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 train_cost_milli_node_hours = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrainCostMilliNodeHours() {
 
@@ -2991,6 +3062,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool disable_early_stopping = 12;</code>
+     *
+     * @return The disableEarlyStopping.
      */
     public boolean getDisableEarlyStopping() {
       return disableEarlyStopping_;
@@ -3005,6 +3078,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool disable_early_stopping = 12;</code>
+     *
+     * @param value The disableEarlyStopping to set.
+     * @return This builder for chaining.
      */
     public Builder setDisableEarlyStopping(boolean value) {
 
@@ -3022,6 +3098,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool disable_early_stopping = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisableEarlyStopping() {
 

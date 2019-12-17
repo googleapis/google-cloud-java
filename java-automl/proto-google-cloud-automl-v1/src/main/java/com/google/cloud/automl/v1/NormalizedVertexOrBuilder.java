@@ -31,6 +31,8 @@ public interface NormalizedVertexOrBuilder
    * </pre>
    *
    * <code>float x = 1;</code>
+   *
+   * @return The x.
    */
   float getX();
 
@@ -42,6 +44,8 @@ public interface NormalizedVertexOrBuilder
    * </pre>
    *
    * <code>float y = 2;</code>
+   *
+   * @return The y.
    */
   float getY();
 }

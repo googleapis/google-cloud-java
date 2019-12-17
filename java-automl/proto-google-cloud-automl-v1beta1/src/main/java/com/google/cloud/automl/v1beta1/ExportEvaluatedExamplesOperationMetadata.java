@@ -42,6 +42,12 @@ public final class ExportEvaluatedExamplesOperationMetadata
   private ExportEvaluatedExamplesOperationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportEvaluatedExamplesOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +138,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * </pre>
      *
      * <code>string bigquery_output_dataset = 2;</code>
+     *
+     * @return The bigqueryOutputDataset.
      */
     java.lang.String getBigqueryOutputDataset();
     /**
@@ -144,6 +151,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * </pre>
      *
      * <code>string bigquery_output_dataset = 2;</code>
+     *
+     * @return The bytes for bigqueryOutputDataset.
      */
     com.google.protobuf.ByteString getBigqueryOutputDatasetBytes();
   }
@@ -176,6 +185,12 @@ public final class ExportEvaluatedExamplesOperationMetadata
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExportEvaluatedExamplesOutputInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -188,7 +203,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -253,6 +267,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * </pre>
      *
      * <code>string bigquery_output_dataset = 2;</code>
+     *
+     * @return The bigqueryOutputDataset.
      */
     public java.lang.String getBigqueryOutputDataset() {
       java.lang.Object ref = bigqueryOutputDataset_;
@@ -274,6 +290,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * </pre>
      *
      * <code>string bigquery_output_dataset = 2;</code>
+     *
+     * @return The bytes for bigqueryOutputDataset.
      */
     public com.google.protobuf.ByteString getBigqueryOutputDatasetBytes() {
       java.lang.Object ref = bigqueryOutputDataset_;
@@ -680,6 +698,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
        * </pre>
        *
        * <code>string bigquery_output_dataset = 2;</code>
+       *
+       * @return The bigqueryOutputDataset.
        */
       public java.lang.String getBigqueryOutputDataset() {
         java.lang.Object ref = bigqueryOutputDataset_;
@@ -701,6 +721,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
        * </pre>
        *
        * <code>string bigquery_output_dataset = 2;</code>
+       *
+       * @return The bytes for bigqueryOutputDataset.
        */
       public com.google.protobuf.ByteString getBigqueryOutputDatasetBytes() {
         java.lang.Object ref = bigqueryOutputDataset_;
@@ -722,6 +744,9 @@ public final class ExportEvaluatedExamplesOperationMetadata
        * </pre>
        *
        * <code>string bigquery_output_dataset = 2;</code>
+       *
+       * @param value The bigqueryOutputDataset to set.
+       * @return This builder for chaining.
        */
       public Builder setBigqueryOutputDataset(java.lang.String value) {
         if (value == null) {
@@ -741,6 +766,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
        * </pre>
        *
        * <code>string bigquery_output_dataset = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearBigqueryOutputDataset() {
 
@@ -757,6 +784,9 @@ public final class ExportEvaluatedExamplesOperationMetadata
        * </pre>
        *
        * <code>string bigquery_output_dataset = 2;</code>
+       *
+       * @param value The bytes for bigqueryOutputDataset to set.
+       * @return This builder for chaining.
        */
       public Builder setBigqueryOutputDatasetBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -844,6 +874,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
    * <code>
    * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.ExportEvaluatedExamplesOutputInfo output_info = 2;
    * </code>
+   *
+   * @return Whether the outputInfo field is set.
    */
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
@@ -859,6 +891,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
    * <code>
    * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.ExportEvaluatedExamplesOutputInfo output_info = 2;
    * </code>
+   *
+   * @return The outputInfo.
    */
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
           .ExportEvaluatedExamplesOutputInfo
@@ -1251,6 +1285,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * <code>
      * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.ExportEvaluatedExamplesOutputInfo output_info = 2;
      * </code>
+     *
+     * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
       return outputInfoBuilder_ != null || outputInfo_ != null;
@@ -1266,6 +1302,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * <code>
      * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.ExportEvaluatedExamplesOutputInfo output_info = 2;
      * </code>
+     *
+     * @return The outputInfo.
      */
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
             .ExportEvaluatedExamplesOutputInfo

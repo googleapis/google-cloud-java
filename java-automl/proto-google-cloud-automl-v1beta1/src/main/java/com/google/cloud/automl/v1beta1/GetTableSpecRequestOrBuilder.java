@@ -31,6 +31,8 @@ public interface GetTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface GetTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface GetTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   *
+   * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
   /**
@@ -62,6 +68,8 @@ public interface GetTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   *
+   * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**

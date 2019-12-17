@@ -48,6 +48,12 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ColumnSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -119,11 +125,11 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 topCorrelatedColumns_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               topCorrelatedColumns_.add(
                   input.readMessage(
@@ -152,7 +158,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         topCorrelatedColumns_ = java.util.Collections.unmodifiableList(topCorrelatedColumns_);
       }
       this.unknownFields = unknownFields.build();
@@ -189,6 +195,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column_spec_id = 1;</code>
+     *
+     * @return The columnSpecId.
      */
     java.lang.String getColumnSpecId();
     /**
@@ -200,6 +208,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column_spec_id = 1;</code>
+     *
+     * @return The bytes for columnSpecId.
      */
     com.google.protobuf.ByteString getColumnSpecIdBytes();
 
@@ -211,6 +221,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
+     *
+     * @return Whether the correlationStats field is set.
      */
     boolean hasCorrelationStats();
     /**
@@ -221,6 +233,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
+     *
+     * @return The correlationStats.
      */
     com.google.cloud.automl.v1beta1.CorrelationStats getCorrelationStats();
     /**
@@ -259,6 +273,12 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CorrelatedColumn();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -271,7 +291,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -351,6 +370,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column_spec_id = 1;</code>
+     *
+     * @return The columnSpecId.
      */
     public java.lang.String getColumnSpecId() {
       java.lang.Object ref = columnSpecId_;
@@ -372,6 +393,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column_spec_id = 1;</code>
+     *
+     * @return The bytes for columnSpecId.
      */
     public com.google.protobuf.ByteString getColumnSpecIdBytes() {
       java.lang.Object ref = columnSpecId_;
@@ -395,6 +418,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
+     *
+     * @return Whether the correlationStats field is set.
      */
     public boolean hasCorrelationStats() {
       return correlationStats_ != null;
@@ -407,6 +432,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
+     *
+     * @return The correlationStats.
      */
     public com.google.cloud.automl.v1beta1.CorrelationStats getCorrelationStats() {
       return correlationStats_ == null
@@ -792,6 +819,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string column_spec_id = 1;</code>
+       *
+       * @return The columnSpecId.
        */
       public java.lang.String getColumnSpecId() {
         java.lang.Object ref = columnSpecId_;
@@ -813,6 +842,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string column_spec_id = 1;</code>
+       *
+       * @return The bytes for columnSpecId.
        */
       public com.google.protobuf.ByteString getColumnSpecIdBytes() {
         java.lang.Object ref = columnSpecId_;
@@ -834,6 +865,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string column_spec_id = 1;</code>
+       *
+       * @param value The columnSpecId to set.
+       * @return This builder for chaining.
        */
       public Builder setColumnSpecId(java.lang.String value) {
         if (value == null) {
@@ -853,6 +887,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string column_spec_id = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearColumnSpecId() {
 
@@ -869,6 +905,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string column_spec_id = 1;</code>
+       *
+       * @param value The bytes for columnSpecId to set.
+       * @return This builder for chaining.
        */
       public Builder setColumnSpecIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -895,6 +934,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
+       *
+       * @return Whether the correlationStats field is set.
        */
       public boolean hasCorrelationStats() {
         return correlationStatsBuilder_ != null || correlationStats_ != null;
@@ -907,6 +948,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
+       *
+       * @return The correlationStats.
        */
       public com.google.cloud.automl.v1beta1.CorrelationStats getCorrelationStats() {
         if (correlationStatsBuilder_ == null) {
@@ -1117,7 +1160,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1130,6 +1172,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1152,6 +1196,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1175,6 +1221,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
+   *
+   * @return Whether the dataType field is set.
    */
   public boolean hasDataType() {
     return dataType_ != null;
@@ -1187,6 +1235,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
+   *
+   * @return The dataType.
    */
   public com.google.cloud.automl.v1beta1.DataType getDataType() {
     return dataType_ == null
@@ -1219,6 +1269,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -1242,6 +1294,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -1268,6 +1322,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
+   *
+   * @return Whether the dataStats field is set.
    */
   public boolean hasDataStats() {
     return dataStats_ != null;
@@ -1283,6 +1339,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
+   *
+   * @return The dataStats.
    */
   public com.google.cloud.automl.v1beta1.DataStats getDataStats() {
     return dataStats_ == null
@@ -1395,6 +1453,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -1416,6 +1476,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -1714,7 +1776,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (topCorrelatedColumnsBuilder_ == null) {
         topCorrelatedColumns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         topCorrelatedColumnsBuilder_.clear();
       }
@@ -1748,7 +1810,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.automl.v1beta1.ColumnSpec result =
           new com.google.cloud.automl.v1beta1.ColumnSpec(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (dataTypeBuilder_ == null) {
         result.dataType_ = dataType_;
@@ -1762,16 +1823,15 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         result.dataStats_ = dataStatsBuilder_.build();
       }
       if (topCorrelatedColumnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           topCorrelatedColumns_ = java.util.Collections.unmodifiableList(topCorrelatedColumns_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.topCorrelatedColumns_ = topCorrelatedColumns_;
       } else {
         result.topCorrelatedColumns_ = topCorrelatedColumnsBuilder_.build();
       }
       result.etag_ = etag_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1839,7 +1899,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.topCorrelatedColumns_.isEmpty()) {
           if (topCorrelatedColumns_.isEmpty()) {
             topCorrelatedColumns_ = other.topCorrelatedColumns_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTopCorrelatedColumnsIsMutable();
             topCorrelatedColumns_.addAll(other.topCorrelatedColumns_);
@@ -1852,7 +1912,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             topCorrelatedColumnsBuilder_.dispose();
             topCorrelatedColumnsBuilder_ = null;
             topCorrelatedColumns_ = other.topCorrelatedColumns_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             topCorrelatedColumnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTopCorrelatedColumnsFieldBuilder()
@@ -1908,6 +1968,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1930,6 +1992,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1952,6 +2016,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1972,6 +2039,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1989,6 +2058,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2015,6 +2087,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
+     *
+     * @return Whether the dataType field is set.
      */
     public boolean hasDataType() {
       return dataTypeBuilder_ != null || dataType_ != null;
@@ -2027,6 +2101,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
+     *
+     * @return The dataType.
      */
     public com.google.cloud.automl.v1beta1.DataType getDataType() {
       if (dataTypeBuilder_ == null) {
@@ -2194,6 +2270,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2217,6 +2295,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -2240,6 +2320,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -2261,6 +2344,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -2279,6 +2364,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2308,6 +2396,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
+     *
+     * @return Whether the dataStats field is set.
      */
     public boolean hasDataStats() {
       return dataStatsBuilder_ != null || dataStats_ != null;
@@ -2323,6 +2413,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
+     *
+     * @return The dataStats.
      */
     public com.google.cloud.automl.v1beta1.DataStats getDataStats() {
       if (dataStatsBuilder_ == null) {
@@ -2503,11 +2595,11 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         topCorrelatedColumns_ = java.util.Collections.emptyList();
 
     private void ensureTopCorrelatedColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         topCorrelatedColumns_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn>(
                 topCorrelatedColumns_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2753,7 +2845,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTopCorrelatedColumns() {
       if (topCorrelatedColumnsBuilder_ == null) {
         topCorrelatedColumns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         topCorrelatedColumnsBuilder_.clear();
@@ -2898,7 +2990,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn.Builder,
                 com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumnOrBuilder>(
                 topCorrelatedColumns_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         topCorrelatedColumns_ = null;
@@ -2916,6 +3008,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -2937,6 +3031,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -2958,6 +3054,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -2977,6 +3076,8 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -2993,6 +3094,9 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

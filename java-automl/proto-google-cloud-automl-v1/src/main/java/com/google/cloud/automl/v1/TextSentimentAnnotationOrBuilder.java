@@ -42,6 +42,8 @@ public interface TextSentimentAnnotationOrBuilder
    * </pre>
    *
    * <code>int32 sentiment = 1;</code>
+   *
+   * @return The sentiment.
    */
   int getSentiment();
 }

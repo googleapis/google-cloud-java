@@ -46,6 +46,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Dataset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -355,7 +360,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   private int datasetMetadataCase_ = 0;
   private java.lang.Object datasetMetadata_;
 
-  public enum DatasetMetadataCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DatasetMetadataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSLATION_DATASET_METADATA(23),
     IMAGE_CLASSIFICATION_DATASET_METADATA(24),
     TEXT_CLASSIFICATION_DATASET_METADATA(25),
@@ -371,7 +379,11 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     private DatasetMetadataCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DatasetMetadataCase valueOf(int value) {
       return forNumber(value);
@@ -424,6 +436,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TranslationDatasetMetadata translation_dataset_metadata = 23;
    * </code>
+   *
+   * @return Whether the translationDatasetMetadata field is set.
    */
   public boolean hasTranslationDatasetMetadata() {
     return datasetMetadataCase_ == 23;
@@ -438,6 +452,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TranslationDatasetMetadata translation_dataset_metadata = 23;
    * </code>
+   *
+   * @return The translationDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.TranslationDatasetMetadata
       getTranslationDatasetMetadata() {
@@ -476,6 +492,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
    * </code>
+   *
+   * @return Whether the imageClassificationDatasetMetadata field is set.
    */
   public boolean hasImageClassificationDatasetMetadata() {
     return datasetMetadataCase_ == 24;
@@ -490,6 +508,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
    * </code>
+   *
+   * @return The imageClassificationDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata
       getImageClassificationDatasetMetadata() {
@@ -528,6 +548,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
    * </code>
+   *
+   * @return Whether the textClassificationDatasetMetadata field is set.
    */
   public boolean hasTextClassificationDatasetMetadata() {
     return datasetMetadataCase_ == 25;
@@ -542,6 +564,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
    * </code>
+   *
+   * @return The textClassificationDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata
       getTextClassificationDatasetMetadata() {
@@ -580,6 +604,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionDatasetMetadata field is set.
    */
   public boolean hasImageObjectDetectionDatasetMetadata() {
     return datasetMetadataCase_ == 26;
@@ -594,6 +620,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
    * </code>
+   *
+   * @return The imageObjectDetectionDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
       getImageObjectDetectionDatasetMetadata() {
@@ -632,6 +660,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
    * </code>
+   *
+   * @return Whether the videoClassificationDatasetMetadata field is set.
    */
   public boolean hasVideoClassificationDatasetMetadata() {
     return datasetMetadataCase_ == 31;
@@ -646,6 +676,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
    * </code>
+   *
+   * @return The videoClassificationDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
       getVideoClassificationDatasetMetadata() {
@@ -684,6 +716,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
    * </code>
+   *
+   * @return Whether the videoObjectTrackingDatasetMetadata field is set.
    */
   public boolean hasVideoObjectTrackingDatasetMetadata() {
     return datasetMetadataCase_ == 29;
@@ -698,6 +732,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
    * </code>
+   *
+   * @return The videoObjectTrackingDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
       getVideoObjectTrackingDatasetMetadata() {
@@ -736,6 +772,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
    * </code>
+   *
+   * @return Whether the textExtractionDatasetMetadata field is set.
    */
   public boolean hasTextExtractionDatasetMetadata() {
     return datasetMetadataCase_ == 28;
@@ -750,6 +788,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
    * </code>
+   *
+   * @return The textExtractionDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata
       getTextExtractionDatasetMetadata() {
@@ -788,6 +828,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
    * </code>
+   *
+   * @return Whether the textSentimentDatasetMetadata field is set.
    */
   public boolean hasTextSentimentDatasetMetadata() {
     return datasetMetadataCase_ == 30;
@@ -802,6 +844,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
    * </code>
+   *
+   * @return The textSentimentDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata
       getTextSentimentDatasetMetadata() {
@@ -838,6 +882,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   *
+   * @return Whether the tablesDatasetMetadata field is set.
    */
   public boolean hasTablesDatasetMetadata() {
     return datasetMetadataCase_ == 33;
@@ -850,6 +896,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   *
+   * @return The tablesDatasetMetadata.
    */
   public com.google.cloud.automl.v1beta1.TablesDatasetMetadata getTablesDatasetMetadata() {
     if (datasetMetadataCase_ == 33) {
@@ -885,6 +933,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -906,6 +956,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -932,6 +984,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -955,6 +1009,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -979,6 +1035,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -1000,6 +1058,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -1023,6 +1083,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 example_count = 21;</code>
+   *
+   * @return The exampleCount.
    */
   public int getExampleCount() {
     return exampleCount_;
@@ -1038,6 +1100,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 14;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -1050,6 +1114,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 14;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1078,6 +1144,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 17;</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -1099,6 +1167,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 17;</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -1840,6 +1910,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TranslationDatasetMetadata translation_dataset_metadata = 23;
      * </code>
+     *
+     * @return Whether the translationDatasetMetadata field is set.
      */
     public boolean hasTranslationDatasetMetadata() {
       return datasetMetadataCase_ == 23;
@@ -1854,6 +1926,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TranslationDatasetMetadata translation_dataset_metadata = 23;
      * </code>
+     *
+     * @return The translationDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.TranslationDatasetMetadata
         getTranslationDatasetMetadata() {
@@ -2068,6 +2142,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
      * </code>
+     *
+     * @return Whether the imageClassificationDatasetMetadata field is set.
      */
     public boolean hasImageClassificationDatasetMetadata() {
       return datasetMetadataCase_ == 24;
@@ -2082,6 +2158,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
      * </code>
+     *
+     * @return The imageClassificationDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata
         getImageClassificationDatasetMetadata() {
@@ -2305,6 +2383,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
      * </code>
+     *
+     * @return Whether the textClassificationDatasetMetadata field is set.
      */
     public boolean hasTextClassificationDatasetMetadata() {
       return datasetMetadataCase_ == 25;
@@ -2319,6 +2399,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
      * </code>
+     *
+     * @return The textClassificationDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata
         getTextClassificationDatasetMetadata() {
@@ -2541,6 +2623,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
      * </code>
+     *
+     * @return Whether the imageObjectDetectionDatasetMetadata field is set.
      */
     public boolean hasImageObjectDetectionDatasetMetadata() {
       return datasetMetadataCase_ == 26;
@@ -2555,6 +2639,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
      * </code>
+     *
+     * @return The imageObjectDetectionDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
         getImageObjectDetectionDatasetMetadata() {
@@ -2778,6 +2864,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
      * </code>
+     *
+     * @return Whether the videoClassificationDatasetMetadata field is set.
      */
     public boolean hasVideoClassificationDatasetMetadata() {
       return datasetMetadataCase_ == 31;
@@ -2792,6 +2880,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
      * </code>
+     *
+     * @return The videoClassificationDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
         getVideoClassificationDatasetMetadata() {
@@ -3015,6 +3105,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
      * </code>
+     *
+     * @return Whether the videoObjectTrackingDatasetMetadata field is set.
      */
     public boolean hasVideoObjectTrackingDatasetMetadata() {
       return datasetMetadataCase_ == 29;
@@ -3029,6 +3121,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata video_object_tracking_dataset_metadata = 29;
      * </code>
+     *
+     * @return The videoObjectTrackingDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
         getVideoObjectTrackingDatasetMetadata() {
@@ -3252,6 +3346,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
      * </code>
+     *
+     * @return Whether the textExtractionDatasetMetadata field is set.
      */
     public boolean hasTextExtractionDatasetMetadata() {
       return datasetMetadataCase_ == 28;
@@ -3266,6 +3362,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
      * </code>
+     *
+     * @return The textExtractionDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata
         getTextExtractionDatasetMetadata() {
@@ -3481,6 +3579,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
      * </code>
+     *
+     * @return Whether the textSentimentDatasetMetadata field is set.
      */
     public boolean hasTextSentimentDatasetMetadata() {
       return datasetMetadataCase_ == 30;
@@ -3495,6 +3595,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
      * </code>
+     *
+     * @return The textSentimentDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata
         getTextSentimentDatasetMetadata() {
@@ -3708,6 +3810,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     *
+     * @return Whether the tablesDatasetMetadata field is set.
      */
     public boolean hasTablesDatasetMetadata() {
       return datasetMetadataCase_ == 33;
@@ -3720,6 +3824,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     *
+     * @return The tablesDatasetMetadata.
      */
     public com.google.cloud.automl.v1beta1.TablesDatasetMetadata getTablesDatasetMetadata() {
       if (tablesDatasetMetadataBuilder_ == null) {
@@ -3913,6 +4019,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -3934,6 +4042,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -3955,6 +4065,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -3974,6 +4087,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -3990,6 +4105,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4014,6 +4132,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -4037,6 +4157,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -4060,6 +4182,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -4081,6 +4206,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -4099,6 +4226,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4121,6 +4251,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -4142,6 +4274,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -4163,6 +4297,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -4182,6 +4319,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -4198,6 +4337,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4219,6 +4361,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 example_count = 21;</code>
+     *
+     * @return The exampleCount.
      */
     public int getExampleCount() {
       return exampleCount_;
@@ -4231,6 +4375,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 example_count = 21;</code>
+     *
+     * @param value The exampleCount to set.
+     * @return This builder for chaining.
      */
     public Builder setExampleCount(int value) {
 
@@ -4246,6 +4393,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 example_count = 21;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExampleCount() {
 
@@ -4268,6 +4417,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -4280,6 +4431,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -4443,6 +4596,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 17;</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -4464,6 +4619,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 17;</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -4485,6 +4642,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 17;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -4504,6 +4664,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 17;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -4520,6 +4682,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 17;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

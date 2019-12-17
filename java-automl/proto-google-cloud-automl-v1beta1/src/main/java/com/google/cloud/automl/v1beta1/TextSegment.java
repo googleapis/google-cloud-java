@@ -42,6 +42,12 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextSegment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content = 3;</code>
+   *
+   * @return The content.
    */
   public java.lang.String getContent() {
     java.lang.Object ref = content_;
@@ -146,6 +153,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content = 3;</code>
+   *
+   * @return The bytes for content.
    */
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = content_;
@@ -170,6 +179,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 start_offset = 1;</code>
+   *
+   * @return The startOffset.
    */
   public long getStartOffset() {
     return startOffset_;
@@ -187,6 +198,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 end_offset = 2;</code>
+   *
+   * @return The endOffset.
    */
   public long getEndOffset() {
     return endOffset_;
@@ -547,6 +560,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 3;</code>
+     *
+     * @return The content.
      */
     public java.lang.String getContent() {
       java.lang.Object ref = content_;
@@ -567,6 +582,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 3;</code>
+     *
+     * @return The bytes for content.
      */
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = content_;
@@ -587,6 +604,9 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 3;</code>
+     *
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     public Builder setContent(java.lang.String value) {
       if (value == null) {
@@ -605,6 +625,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContent() {
 
@@ -620,6 +642,9 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 3;</code>
+     *
+     * @param value The bytes for content to set.
+     * @return This builder for chaining.
      */
     public Builder setContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -642,6 +667,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 start_offset = 1;</code>
+     *
+     * @return The startOffset.
      */
     public long getStartOffset() {
       return startOffset_;
@@ -655,6 +682,9 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 start_offset = 1;</code>
+     *
+     * @param value The startOffset to set.
+     * @return This builder for chaining.
      */
     public Builder setStartOffset(long value) {
 
@@ -671,6 +701,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 start_offset = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartOffset() {
 
@@ -690,6 +722,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 end_offset = 2;</code>
+     *
+     * @return The endOffset.
      */
     public long getEndOffset() {
       return endOffset_;
@@ -704,6 +738,9 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 end_offset = 2;</code>
+     *
+     * @param value The endOffset to set.
+     * @return This builder for chaining.
      */
     public Builder setEndOffset(long value) {
 
@@ -721,6 +758,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 end_offset = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndOffset() {
 

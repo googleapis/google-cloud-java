@@ -31,6 +31,8 @@ public interface ExportModelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface ExportModelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface ExportModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -62,6 +68,8 @@ public interface ExportModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ModelExportOutputConfig output_config = 3;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.automl.v1.ModelExportOutputConfig getOutputConfig();
   /**

@@ -33,6 +33,8 @@ public interface BigQuerySourceOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   java.lang.String getInputUri();
   /**
@@ -45,6 +47,8 @@ public interface BigQuerySourceOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   com.google.protobuf.ByteString getInputUriBytes();
 }

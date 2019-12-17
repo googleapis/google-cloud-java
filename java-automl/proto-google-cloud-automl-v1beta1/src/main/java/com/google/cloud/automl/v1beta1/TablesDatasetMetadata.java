@@ -45,6 +45,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TablesDatasetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -98,11 +104,11 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 targetColumnCorrelations_ =
                     com.google.protobuf.MapField.newMapField(
                         TargetColumnCorrelationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
@@ -176,7 +182,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRIMARY_TABLE_SPEC_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object primaryTableSpecId_;
   /**
@@ -187,6 +192,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string primary_table_spec_id = 1;</code>
+   *
+   * @return The primaryTableSpecId.
    */
   public java.lang.String getPrimaryTableSpecId() {
     java.lang.Object ref = primaryTableSpecId_;
@@ -207,6 +214,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string primary_table_spec_id = 1;</code>
+   *
+   * @return The bytes for primaryTableSpecId.
    */
   public com.google.protobuf.ByteString getPrimaryTableSpecIdBytes() {
     java.lang.Object ref = primaryTableSpecId_;
@@ -239,6 +248,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string target_column_spec_id = 2;</code>
+   *
+   * @return The targetColumnSpecId.
    */
   public java.lang.String getTargetColumnSpecId() {
     java.lang.Object ref = targetColumnSpecId_;
@@ -268,6 +279,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string target_column_spec_id = 2;</code>
+   *
+   * @return The bytes for targetColumnSpecId.
    */
   public com.google.protobuf.ByteString getTargetColumnSpecIdBytes() {
     java.lang.Object ref = targetColumnSpecId_;
@@ -299,6 +312,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string weight_column_spec_id = 3;</code>
+   *
+   * @return The weightColumnSpecId.
    */
   public java.lang.String getWeightColumnSpecId() {
     java.lang.Object ref = weightColumnSpecId_;
@@ -327,6 +342,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string weight_column_spec_id = 3;</code>
+   *
+   * @return The bytes for weightColumnSpecId.
    */
   public com.google.protobuf.ByteString getWeightColumnSpecIdBytes() {
     java.lang.Object ref = weightColumnSpecId_;
@@ -362,6 +379,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string ml_use_column_spec_id = 4;</code>
+   *
+   * @return The mlUseColumnSpecId.
    */
   public java.lang.String getMlUseColumnSpecId() {
     java.lang.Object ref = mlUseColumnSpecId_;
@@ -394,6 +413,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string ml_use_column_spec_id = 4;</code>
+   *
+   * @return The bytes for mlUseColumnSpecId.
    */
   public com.google.protobuf.ByteString getMlUseColumnSpecIdBytes() {
     java.lang.Object ref = mlUseColumnSpecId_;
@@ -566,6 +587,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
+   *
+   * @return Whether the statsUpdateTime field is set.
    */
   public boolean hasStatsUpdateTime() {
     return statsUpdateTime_ != null;
@@ -583,6 +606,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
+   *
+   * @return The statsUpdateTime.
    */
   public com.google.protobuf.Timestamp getStatsUpdateTime() {
     return statsUpdateTime_ == null
@@ -940,7 +965,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       com.google.cloud.automl.v1beta1.TablesDatasetMetadata result =
           new com.google.cloud.automl.v1beta1.TablesDatasetMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.primaryTableSpecId_ = primaryTableSpecId_;
       result.targetColumnSpecId_ = targetColumnSpecId_;
       result.weightColumnSpecId_ = weightColumnSpecId_;
@@ -952,7 +976,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       } else {
         result.statsUpdateTime_ = statsUpdateTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1065,6 +1088,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string primary_table_spec_id = 1;</code>
+     *
+     * @return The primaryTableSpecId.
      */
     public java.lang.String getPrimaryTableSpecId() {
       java.lang.Object ref = primaryTableSpecId_;
@@ -1085,6 +1110,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string primary_table_spec_id = 1;</code>
+     *
+     * @return The bytes for primaryTableSpecId.
      */
     public com.google.protobuf.ByteString getPrimaryTableSpecIdBytes() {
       java.lang.Object ref = primaryTableSpecId_;
@@ -1105,6 +1132,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string primary_table_spec_id = 1;</code>
+     *
+     * @param value The primaryTableSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setPrimaryTableSpecId(java.lang.String value) {
       if (value == null) {
@@ -1123,6 +1153,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string primary_table_spec_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPrimaryTableSpecId() {
 
@@ -1138,6 +1170,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string primary_table_spec_id = 1;</code>
+     *
+     * @param value The bytes for primaryTableSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setPrimaryTableSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1168,6 +1203,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string target_column_spec_id = 2;</code>
+     *
+     * @return The targetColumnSpecId.
      */
     public java.lang.String getTargetColumnSpecId() {
       java.lang.Object ref = targetColumnSpecId_;
@@ -1197,6 +1234,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string target_column_spec_id = 2;</code>
+     *
+     * @return The bytes for targetColumnSpecId.
      */
     public com.google.protobuf.ByteString getTargetColumnSpecIdBytes() {
       java.lang.Object ref = targetColumnSpecId_;
@@ -1226,6 +1265,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string target_column_spec_id = 2;</code>
+     *
+     * @param value The targetColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetColumnSpecId(java.lang.String value) {
       if (value == null) {
@@ -1253,6 +1295,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string target_column_spec_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetColumnSpecId() {
 
@@ -1277,6 +1321,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string target_column_spec_id = 2;</code>
+     *
+     * @param value The bytes for targetColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetColumnSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1306,6 +1353,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string weight_column_spec_id = 3;</code>
+     *
+     * @return The weightColumnSpecId.
      */
     public java.lang.String getWeightColumnSpecId() {
       java.lang.Object ref = weightColumnSpecId_;
@@ -1334,6 +1383,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string weight_column_spec_id = 3;</code>
+     *
+     * @return The bytes for weightColumnSpecId.
      */
     public com.google.protobuf.ByteString getWeightColumnSpecIdBytes() {
       java.lang.Object ref = weightColumnSpecId_;
@@ -1362,6 +1413,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string weight_column_spec_id = 3;</code>
+     *
+     * @param value The weightColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setWeightColumnSpecId(java.lang.String value) {
       if (value == null) {
@@ -1388,6 +1442,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string weight_column_spec_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWeightColumnSpecId() {
 
@@ -1411,6 +1467,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string weight_column_spec_id = 3;</code>
+     *
+     * @param value The bytes for weightColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setWeightColumnSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1444,6 +1503,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string ml_use_column_spec_id = 4;</code>
+     *
+     * @return The mlUseColumnSpecId.
      */
     public java.lang.String getMlUseColumnSpecId() {
       java.lang.Object ref = mlUseColumnSpecId_;
@@ -1476,6 +1537,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string ml_use_column_spec_id = 4;</code>
+     *
+     * @return The bytes for mlUseColumnSpecId.
      */
     public com.google.protobuf.ByteString getMlUseColumnSpecIdBytes() {
       java.lang.Object ref = mlUseColumnSpecId_;
@@ -1508,6 +1571,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string ml_use_column_spec_id = 4;</code>
+     *
+     * @param value The mlUseColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setMlUseColumnSpecId(java.lang.String value) {
       if (value == null) {
@@ -1538,6 +1604,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string ml_use_column_spec_id = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMlUseColumnSpecId() {
 
@@ -1565,6 +1633,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string ml_use_column_spec_id = 4;</code>
+     *
+     * @param value The bytes for mlUseColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setMlUseColumnSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1827,6 +1898,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
+     *
+     * @return Whether the statsUpdateTime field is set.
      */
     public boolean hasStatsUpdateTime() {
       return statsUpdateTimeBuilder_ != null || statsUpdateTime_ != null;
@@ -1844,6 +1917,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
+     *
+     * @return The statsUpdateTime.
      */
     public com.google.protobuf.Timestamp getStatsUpdateTime() {
       if (statsUpdateTimeBuilder_ == null) {

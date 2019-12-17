@@ -40,6 +40,12 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   private DataStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DataStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -211,7 +216,10 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   private int statsCase_ = 0;
   private java.lang.Object stats_;
 
-  public enum StatsCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StatsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     FLOAT64_STATS(3),
     STRING_STATS(4),
     TIMESTAMP_STATS(5),
@@ -224,7 +232,11 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     private StatsCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StatsCase valueOf(int value) {
       return forNumber(value);
@@ -269,6 +281,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
+   *
+   * @return Whether the float64Stats field is set.
    */
   public boolean hasFloat64Stats() {
     return statsCase_ == 3;
@@ -281,6 +295,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
+   *
+   * @return The float64Stats.
    */
   public com.google.cloud.automl.v1beta1.Float64Stats getFloat64Stats() {
     if (statsCase_ == 3) {
@@ -313,6 +329,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
+   *
+   * @return Whether the stringStats field is set.
    */
   public boolean hasStringStats() {
     return statsCase_ == 4;
@@ -325,6 +343,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
+   *
+   * @return The stringStats.
    */
   public com.google.cloud.automl.v1beta1.StringStats getStringStats() {
     if (statsCase_ == 4) {
@@ -357,6 +377,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
+   *
+   * @return Whether the timestampStats field is set.
    */
   public boolean hasTimestampStats() {
     return statsCase_ == 5;
@@ -369,6 +391,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
+   *
+   * @return The timestampStats.
    */
   public com.google.cloud.automl.v1beta1.TimestampStats getTimestampStats() {
     if (statsCase_ == 5) {
@@ -401,6 +425,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
+   *
+   * @return Whether the arrayStats field is set.
    */
   public boolean hasArrayStats() {
     return statsCase_ == 6;
@@ -413,6 +439,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
+   *
+   * @return The arrayStats.
    */
   public com.google.cloud.automl.v1beta1.ArrayStats getArrayStats() {
     if (statsCase_ == 6) {
@@ -445,6 +473,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
+   *
+   * @return Whether the structStats field is set.
    */
   public boolean hasStructStats() {
     return statsCase_ == 7;
@@ -457,6 +487,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
+   *
+   * @return The structStats.
    */
   public com.google.cloud.automl.v1beta1.StructStats getStructStats() {
     if (statsCase_ == 7) {
@@ -489,6 +521,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
+   *
+   * @return Whether the categoryStats field is set.
    */
   public boolean hasCategoryStats() {
     return statsCase_ == 8;
@@ -501,6 +535,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
+   *
+   * @return The categoryStats.
    */
   public com.google.cloud.automl.v1beta1.CategoryStats getCategoryStats() {
     if (statsCase_ == 8) {
@@ -534,6 +570,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 distinct_value_count = 1;</code>
+   *
+   * @return The distinctValueCount.
    */
   public long getDistinctValueCount() {
     return distinctValueCount_;
@@ -549,6 +587,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 null_value_count = 2;</code>
+   *
+   * @return The nullValueCount.
    */
   public long getNullValueCount() {
     return nullValueCount_;
@@ -564,6 +604,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 valid_value_count = 9;</code>
+   *
+   * @return The validValueCount.
    */
   public long getValidValueCount() {
     return validValueCount_;
@@ -1121,6 +1163,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
+     *
+     * @return Whether the float64Stats field is set.
      */
     public boolean hasFloat64Stats() {
       return statsCase_ == 3;
@@ -1133,6 +1177,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
+     *
+     * @return The float64Stats.
      */
     public com.google.cloud.automl.v1beta1.Float64Stats getFloat64Stats() {
       if (float64StatsBuilder_ == null) {
@@ -1323,6 +1369,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
+     *
+     * @return Whether the stringStats field is set.
      */
     public boolean hasStringStats() {
       return statsCase_ == 4;
@@ -1335,6 +1383,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
+     *
+     * @return The stringStats.
      */
     public com.google.cloud.automl.v1beta1.StringStats getStringStats() {
       if (stringStatsBuilder_ == null) {
@@ -1525,6 +1575,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
+     *
+     * @return Whether the timestampStats field is set.
      */
     public boolean hasTimestampStats() {
       return statsCase_ == 5;
@@ -1537,6 +1589,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
+     *
+     * @return The timestampStats.
      */
     public com.google.cloud.automl.v1beta1.TimestampStats getTimestampStats() {
       if (timestampStatsBuilder_ == null) {
@@ -1727,6 +1781,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
+     *
+     * @return Whether the arrayStats field is set.
      */
     public boolean hasArrayStats() {
       return statsCase_ == 6;
@@ -1739,6 +1795,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
+     *
+     * @return The arrayStats.
      */
     public com.google.cloud.automl.v1beta1.ArrayStats getArrayStats() {
       if (arrayStatsBuilder_ == null) {
@@ -1929,6 +1987,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
+     *
+     * @return Whether the structStats field is set.
      */
     public boolean hasStructStats() {
       return statsCase_ == 7;
@@ -1941,6 +2001,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
+     *
+     * @return The structStats.
      */
     public com.google.cloud.automl.v1beta1.StructStats getStructStats() {
       if (structStatsBuilder_ == null) {
@@ -2131,6 +2193,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
+     *
+     * @return Whether the categoryStats field is set.
      */
     public boolean hasCategoryStats() {
       return statsCase_ == 8;
@@ -2143,6 +2207,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
+     *
+     * @return The categoryStats.
      */
     public com.google.cloud.automl.v1beta1.CategoryStats getCategoryStats() {
       if (categoryStatsBuilder_ == null) {
@@ -2329,6 +2395,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 distinct_value_count = 1;</code>
+     *
+     * @return The distinctValueCount.
      */
     public long getDistinctValueCount() {
       return distinctValueCount_;
@@ -2341,6 +2409,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 distinct_value_count = 1;</code>
+     *
+     * @param value The distinctValueCount to set.
+     * @return This builder for chaining.
      */
     public Builder setDistinctValueCount(long value) {
 
@@ -2356,6 +2427,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 distinct_value_count = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDistinctValueCount() {
 
@@ -2373,6 +2446,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 null_value_count = 2;</code>
+     *
+     * @return The nullValueCount.
      */
     public long getNullValueCount() {
       return nullValueCount_;
@@ -2385,6 +2460,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 null_value_count = 2;</code>
+     *
+     * @param value The nullValueCount to set.
+     * @return This builder for chaining.
      */
     public Builder setNullValueCount(long value) {
 
@@ -2400,6 +2478,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 null_value_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNullValueCount() {
 
@@ -2417,6 +2497,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 valid_value_count = 9;</code>
+     *
+     * @return The validValueCount.
      */
     public long getValidValueCount() {
       return validValueCount_;
@@ -2429,6 +2511,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 valid_value_count = 9;</code>
+     *
+     * @param value The validValueCount to set.
+     * @return This builder for chaining.
      */
     public Builder setValidValueCount(long value) {
 
@@ -2444,6 +2529,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 valid_value_count = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidValueCount() {
 

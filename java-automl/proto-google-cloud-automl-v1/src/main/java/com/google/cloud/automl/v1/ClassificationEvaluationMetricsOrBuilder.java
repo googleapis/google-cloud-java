@@ -32,6 +32,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float au_prc = 1;</code>
+   *
+   * @return The auPrc.
    */
   float getAuPrc();
 
@@ -44,6 +46,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float au_roc = 6;</code>
+   *
+   * @return The auRoc.
    */
   float getAuRoc();
 
@@ -55,6 +59,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float log_loss = 7;</code>
+   *
+   * @return The logLoss.
    */
   float getLogLoss();
 
@@ -169,6 +175,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
    * </code>
+   *
+   * @return Whether the confusionMatrix field is set.
    */
   boolean hasConfusionMatrix();
   /**
@@ -184,6 +192,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
    * </code>
+   *
+   * @return The confusionMatrix.
    */
   com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix();
   /**
@@ -211,6 +221,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_id = 5;</code>
+   *
+   * @return A list containing the annotationSpecId.
    */
   java.util.List<java.lang.String> getAnnotationSpecIdList();
   /**
@@ -221,6 +233,8 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_id = 5;</code>
+   *
+   * @return The count of annotationSpecId.
    */
   int getAnnotationSpecIdCount();
   /**
@@ -231,6 +245,9 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_id = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The annotationSpecId at the given index.
    */
   java.lang.String getAnnotationSpecId(int index);
   /**
@@ -241,6 +258,9 @@ public interface ClassificationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_id = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the annotationSpecId at the given index.
    */
   com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
 }

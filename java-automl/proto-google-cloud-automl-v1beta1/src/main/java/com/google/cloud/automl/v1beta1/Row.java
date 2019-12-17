@@ -43,6 +43,12 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Row();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -141,6 +147,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @return A list containing the columnSpecIds.
    */
   public com.google.protobuf.ProtocolStringList getColumnSpecIdsList() {
     return columnSpecIds_;
@@ -159,6 +167,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @return The count of columnSpecIds.
    */
   public int getColumnSpecIdsCount() {
     return columnSpecIds_.size();
@@ -177,6 +187,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The columnSpecIds at the given index.
    */
   public java.lang.String getColumnSpecIds(int index) {
     return columnSpecIds_.get(index);
@@ -195,6 +208,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the columnSpecIds at the given index.
    */
   public com.google.protobuf.ByteString getColumnSpecIdsBytes(int index) {
     return columnSpecIds_.getByteString(index);
@@ -694,6 +710,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @return A list containing the columnSpecIds.
      */
     public com.google.protobuf.ProtocolStringList getColumnSpecIdsList() {
       return columnSpecIds_.getUnmodifiableView();
@@ -712,6 +730,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @return The count of columnSpecIds.
      */
     public int getColumnSpecIdsCount() {
       return columnSpecIds_.size();
@@ -730,6 +750,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The columnSpecIds at the given index.
      */
     public java.lang.String getColumnSpecIds(int index) {
       return columnSpecIds_.get(index);
@@ -748,6 +771,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the columnSpecIds at the given index.
      */
     public com.google.protobuf.ByteString getColumnSpecIdsBytes(int index) {
       return columnSpecIds_.getByteString(index);
@@ -766,6 +792,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The columnSpecIds to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnSpecIds(int index, java.lang.String value) {
       if (value == null) {
@@ -790,6 +820,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @param value The columnSpecIds to add.
+     * @return This builder for chaining.
      */
     public Builder addColumnSpecIds(java.lang.String value) {
       if (value == null) {
@@ -814,6 +847,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @param values The columnSpecIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllColumnSpecIds(java.lang.Iterable<java.lang.String> values) {
       ensureColumnSpecIdsIsMutable();
@@ -835,6 +871,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumnSpecIds() {
       columnSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -856,6 +894,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string column_spec_ids = 2;</code>
+     *
+     * @param value The bytes of the columnSpecIds to add.
+     * @return This builder for chaining.
      */
     public Builder addColumnSpecIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

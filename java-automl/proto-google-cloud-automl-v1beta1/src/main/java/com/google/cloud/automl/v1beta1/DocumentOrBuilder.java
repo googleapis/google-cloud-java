@@ -31,6 +31,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentInputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -41,6 +43,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentInputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.automl.v1beta1.DocumentInputConfig getInputConfig();
   /**
@@ -62,6 +66,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSnippet document_text = 2;</code>
+   *
+   * @return Whether the documentText field is set.
    */
   boolean hasDocumentText();
   /**
@@ -72,6 +78,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSnippet document_text = 2;</code>
+   *
+   * @return The documentText.
    */
   com.google.cloud.automl.v1beta1.TextSnippet getDocumentText();
   /**
@@ -150,6 +158,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentDimensions document_dimensions = 4;</code>
+   *
+   * @return Whether the documentDimensions field is set.
    */
   boolean hasDocumentDimensions();
   /**
@@ -160,6 +170,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentDimensions document_dimensions = 4;</code>
+   *
+   * @return The documentDimensions.
    */
   com.google.cloud.automl.v1beta1.DocumentDimensions getDocumentDimensions();
   /**
@@ -181,6 +193,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>int32 page_count = 5;</code>
+   *
+   * @return The pageCount.
    */
   int getPageCount();
 }

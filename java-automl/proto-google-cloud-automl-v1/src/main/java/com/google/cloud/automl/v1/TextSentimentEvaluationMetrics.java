@@ -41,6 +41,12 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
   private TextSentimentEvaluationMetrics() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextSentimentEvaluationMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -162,6 +167,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float precision = 1;</code>
+   *
+   * @return The precision.
    */
   public float getPrecision() {
     return precision_;
@@ -177,6 +184,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float recall = 2;</code>
+   *
+   * @return The recall.
    */
   public float getRecall() {
     return recall_;
@@ -192,6 +201,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float f1_score = 3;</code>
+   *
+   * @return The f1Score.
    */
   public float getF1Score() {
     return f1Score_;
@@ -208,6 +219,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float mean_absolute_error = 4;</code>
+   *
+   * @return The meanAbsoluteError.
    */
   public float getMeanAbsoluteError() {
     return meanAbsoluteError_;
@@ -224,6 +237,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float mean_squared_error = 5;</code>
+   *
+   * @return The meanSquaredError.
    */
   public float getMeanSquaredError() {
     return meanSquaredError_;
@@ -240,6 +255,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float linear_kappa = 6;</code>
+   *
+   * @return The linearKappa.
    */
   public float getLinearKappa() {
     return linearKappa_;
@@ -256,6 +273,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float quadratic_kappa = 7;</code>
+   *
+   * @return The quadraticKappa.
    */
   public float getQuadraticKappa() {
     return quadraticKappa_;
@@ -276,6 +295,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
    * </code>
+   *
+   * @return Whether the confusionMatrix field is set.
    */
   public boolean hasConfusionMatrix() {
     return confusionMatrix_ != null;
@@ -292,6 +313,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
    * </code>
+   *
+   * @return The confusionMatrix.
    */
   public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
       getConfusionMatrix() {
@@ -770,6 +793,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float precision = 1;</code>
+     *
+     * @return The precision.
      */
     public float getPrecision() {
       return precision_;
@@ -782,6 +807,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float precision = 1;</code>
+     *
+     * @param value The precision to set.
+     * @return This builder for chaining.
      */
     public Builder setPrecision(float value) {
 
@@ -797,6 +825,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float precision = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPrecision() {
 
@@ -814,6 +844,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @return The recall.
      */
     public float getRecall() {
       return recall_;
@@ -826,6 +858,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @param value The recall to set.
+     * @return This builder for chaining.
      */
     public Builder setRecall(float value) {
 
@@ -841,6 +876,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRecall() {
 
@@ -858,6 +895,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float f1_score = 3;</code>
+     *
+     * @return The f1Score.
      */
     public float getF1Score() {
       return f1Score_;
@@ -870,6 +909,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float f1_score = 3;</code>
+     *
+     * @param value The f1Score to set.
+     * @return This builder for chaining.
      */
     public Builder setF1Score(float value) {
 
@@ -885,6 +927,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float f1_score = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearF1Score() {
 
@@ -903,6 +947,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float mean_absolute_error = 4;</code>
+     *
+     * @return The meanAbsoluteError.
      */
     public float getMeanAbsoluteError() {
       return meanAbsoluteError_;
@@ -916,6 +962,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float mean_absolute_error = 4;</code>
+     *
+     * @param value The meanAbsoluteError to set.
+     * @return This builder for chaining.
      */
     public Builder setMeanAbsoluteError(float value) {
 
@@ -932,6 +981,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float mean_absolute_error = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMeanAbsoluteError() {
 
@@ -950,6 +1001,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float mean_squared_error = 5;</code>
+     *
+     * @return The meanSquaredError.
      */
     public float getMeanSquaredError() {
       return meanSquaredError_;
@@ -963,6 +1016,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float mean_squared_error = 5;</code>
+     *
+     * @param value The meanSquaredError to set.
+     * @return This builder for chaining.
      */
     public Builder setMeanSquaredError(float value) {
 
@@ -979,6 +1035,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float mean_squared_error = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMeanSquaredError() {
 
@@ -997,6 +1055,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float linear_kappa = 6;</code>
+     *
+     * @return The linearKappa.
      */
     public float getLinearKappa() {
       return linearKappa_;
@@ -1010,6 +1070,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float linear_kappa = 6;</code>
+     *
+     * @param value The linearKappa to set.
+     * @return This builder for chaining.
      */
     public Builder setLinearKappa(float value) {
 
@@ -1026,6 +1089,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float linear_kappa = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLinearKappa() {
 
@@ -1044,6 +1109,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float quadratic_kappa = 7;</code>
+     *
+     * @return The quadraticKappa.
      */
     public float getQuadraticKappa() {
       return quadraticKappa_;
@@ -1057,6 +1124,9 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float quadratic_kappa = 7;</code>
+     *
+     * @param value The quadraticKappa to set.
+     * @return This builder for chaining.
      */
     public Builder setQuadraticKappa(float value) {
 
@@ -1073,6 +1143,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float quadratic_kappa = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQuadraticKappa() {
 
@@ -1100,6 +1172,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * <code>
      * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
+     *
+     * @return Whether the confusionMatrix field is set.
      */
     public boolean hasConfusionMatrix() {
       return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
@@ -1116,6 +1190,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
      * <code>
      * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
+     *
+     * @return The confusionMatrix.
      */
     public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
         getConfusionMatrix() {

@@ -34,6 +34,8 @@ public interface TranslationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string base_model = 1;</code>
+   *
+   * @return The baseModel.
    */
   java.lang.String getBaseModel();
   /**
@@ -47,6 +49,8 @@ public interface TranslationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string base_model = 1;</code>
+   *
+   * @return The bytes for baseModel.
    */
   com.google.protobuf.ByteString getBaseModelBytes();
 
@@ -59,6 +63,8 @@ public interface TranslationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 2;</code>
+   *
+   * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
   /**
@@ -70,6 +76,8 @@ public interface TranslationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 2;</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -82,6 +90,8 @@ public interface TranslationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string target_language_code = 3;</code>
+   *
+   * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
   /**
@@ -93,6 +103,8 @@ public interface TranslationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string target_language_code = 3;</code>
+   *
+   * @return The bytes for targetLanguageCode.
    */
   com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 }

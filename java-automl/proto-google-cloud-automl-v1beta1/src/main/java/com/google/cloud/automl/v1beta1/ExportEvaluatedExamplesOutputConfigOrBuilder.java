@@ -31,6 +31,8 @@ public interface ExportEvaluatedExamplesOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   *
+   * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
   /**
@@ -41,6 +43,8 @@ public interface ExportEvaluatedExamplesOutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   *
+   * @return The bigqueryDestination.
    */
   com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination();
   /**

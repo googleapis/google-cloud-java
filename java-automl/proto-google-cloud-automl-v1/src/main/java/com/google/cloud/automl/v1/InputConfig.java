@@ -391,6 +391,12 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   private InputConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -432,10 +438,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -488,11 +494,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1.InputConfig.Builder.class);
   }
 
-  private int bitField0_;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_SOURCE(1),
     SOURCE_NOT_SET(0);
     private final int value;
@@ -500,7 +508,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -538,6 +550,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
@@ -553,6 +567,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   public com.google.cloud.automl.v1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
@@ -1317,7 +1333,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.automl.v1.InputConfig result =
           new com.google.cloud.automl.v1.InputConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (sourceCase_ == 1) {
         if (gcsSourceBuilder_ == null) {
           result.source_ = source_;
@@ -1327,7 +1342,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -1451,6 +1465,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+     *
+     * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
@@ -1466,6 +1482,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+     *
+     * @return The gcsSource.
      */
     public com.google.cloud.automl.v1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {

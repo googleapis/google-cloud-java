@@ -43,6 +43,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PredictResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,11 +87,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
@@ -158,7 +164,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1beta1.PredictResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PAYLOAD_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.automl.v1beta1.AnnotationPayload> payload_;
   /**
@@ -242,6 +247,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+   *
+   * @return Whether the preprocessedInput field is set.
    */
   public boolean hasPreprocessedInput() {
     return preprocessedInput_ != null;
@@ -258,6 +265,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+   *
+   * @return The preprocessedInput.
    */
   public com.google.cloud.automl.v1beta1.ExamplePayload getPreprocessedInput() {
     return preprocessedInput_ == null
@@ -724,7 +733,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.automl.v1beta1.PredictResponse result =
           new com.google.cloud.automl.v1beta1.PredictResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (payloadBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           payload_ = java.util.Collections.unmodifiableList(payload_);
@@ -741,7 +749,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1243,6 +1250,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+     *
+     * @return Whether the preprocessedInput field is set.
      */
     public boolean hasPreprocessedInput() {
       return preprocessedInputBuilder_ != null || preprocessedInput_ != null;
@@ -1259,6 +1268,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
+     *
+     * @return The preprocessedInput.
      */
     public com.google.cloud.automl.v1beta1.ExamplePayload getPreprocessedInput() {
       if (preprocessedInputBuilder_ == null) {

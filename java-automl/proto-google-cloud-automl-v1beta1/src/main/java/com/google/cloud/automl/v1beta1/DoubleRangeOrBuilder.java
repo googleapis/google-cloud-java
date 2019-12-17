@@ -31,6 +31,8 @@ public interface DoubleRangeOrBuilder
    * </pre>
    *
    * <code>double start = 1;</code>
+   *
+   * @return The start.
    */
   double getStart();
 
@@ -42,6 +44,8 @@ public interface DoubleRangeOrBuilder
    * </pre>
    *
    * <code>double end = 2;</code>
+   *
+   * @return The end.
    */
   double getEnd();
 }

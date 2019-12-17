@@ -37,6 +37,8 @@ public interface RowOrBuilder
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @return A list containing the columnSpecIds.
    */
   java.util.List<java.lang.String> getColumnSpecIdsList();
   /**
@@ -53,6 +55,8 @@ public interface RowOrBuilder
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @return The count of columnSpecIds.
    */
   int getColumnSpecIdsCount();
   /**
@@ -69,6 +73,9 @@ public interface RowOrBuilder
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The columnSpecIds at the given index.
    */
   java.lang.String getColumnSpecIds(int index);
   /**
@@ -85,6 +92,9 @@ public interface RowOrBuilder
    * </pre>
    *
    * <code>repeated string column_spec_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the columnSpecIds at the given index.
    */
   com.google.protobuf.ByteString getColumnSpecIdsBytes(int index);
 

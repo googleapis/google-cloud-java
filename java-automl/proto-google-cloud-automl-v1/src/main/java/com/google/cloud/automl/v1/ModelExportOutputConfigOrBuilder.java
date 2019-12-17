@@ -41,6 +41,8 @@ public interface ModelExportOutputConfigOrBuilder
    * <code>
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
   /**
@@ -61,6 +63,8 @@ public interface ModelExportOutputConfigOrBuilder
    * <code>
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The gcsDestination.
    */
   com.google.cloud.automl.v1.GcsDestination getGcsDestination();
   /**
@@ -112,6 +116,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>string model_format = 4;</code>
+   *
+   * @return The modelFormat.
    */
   java.lang.String getModelFormat();
   /**
@@ -142,6 +148,8 @@ public interface ModelExportOutputConfigOrBuilder
    * </pre>
    *
    * <code>string model_format = 4;</code>
+   *
+   * @return The bytes for modelFormat.
    */
   com.google.protobuf.ByteString getModelFormatBytes();
 

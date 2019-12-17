@@ -35,6 +35,8 @@ public interface ClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   float getScore();
 }

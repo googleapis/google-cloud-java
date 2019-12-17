@@ -31,6 +31,8 @@ public interface UpdateTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   *
+   * @return Whether the tableSpec field is set.
    */
   boolean hasTableSpec();
   /**
@@ -41,6 +43,8 @@ public interface UpdateTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TableSpec table_spec = 1;</code>
+   *
+   * @return The tableSpec.
    */
   com.google.cloud.automl.v1beta1.TableSpec getTableSpec();
   /**
@@ -62,6 +66,8 @@ public interface UpdateTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -72,6 +78,8 @@ public interface UpdateTableSpecRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

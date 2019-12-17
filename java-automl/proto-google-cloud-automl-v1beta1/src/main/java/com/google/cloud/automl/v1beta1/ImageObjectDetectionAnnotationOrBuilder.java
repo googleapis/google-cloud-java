@@ -31,6 +31,8 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 1;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
   /**
@@ -41,6 +43,8 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 1;</code>
+   *
+   * @return The boundingBox.
    */
   com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox();
   /**
@@ -63,6 +67,8 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 2;</code>
+   *
+   * @return The score.
    */
   float getScore();
 }

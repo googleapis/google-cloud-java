@@ -31,6 +31,8 @@ public interface PredictRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface PredictRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -53,6 +57,8 @@ public interface PredictRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload payload = 2;</code>
+   *
+   * @return Whether the payload field is set.
    */
   boolean hasPayload();
   /**
@@ -64,6 +70,8 @@ public interface PredictRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload payload = 2;</code>
+   *
+   * @return The payload.
    */
   com.google.cloud.automl.v1.ExamplePayload getPayload();
   /**

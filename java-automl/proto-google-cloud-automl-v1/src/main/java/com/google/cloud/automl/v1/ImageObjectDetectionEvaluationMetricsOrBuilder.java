@@ -32,6 +32,8 @@ public interface ImageObjectDetectionEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>int32 evaluated_bounding_box_count = 1;</code>
+   *
+   * @return The evaluatedBoundingBoxCount.
    */
   int getEvaluatedBoundingBoxCount();
 
@@ -123,6 +125,8 @@ public interface ImageObjectDetectionEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float bounding_box_mean_average_precision = 3;</code>
+   *
+   * @return The boundingBoxMeanAveragePrecision.
    */
   float getBoundingBoxMeanAveragePrecision();
 }

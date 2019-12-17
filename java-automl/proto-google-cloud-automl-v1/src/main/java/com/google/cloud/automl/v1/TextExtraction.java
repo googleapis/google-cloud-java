@@ -67,21 +67,13 @@ public final class TextExtraction {
           + "le.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl"
           + "\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.automl.v1.TextSegmentProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.cloud.automl.v1.TextSegmentProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1_TextExtractionAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1_TextExtractionAnnotation_fieldAccessorTable =

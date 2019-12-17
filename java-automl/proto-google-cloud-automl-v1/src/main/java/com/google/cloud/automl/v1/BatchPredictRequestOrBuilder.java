@@ -31,6 +31,8 @@ public interface BatchPredictRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface BatchPredictRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface BatchPredictRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 3;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -62,6 +68,8 @@ public interface BatchPredictRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 3;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.automl.v1.BatchPredictInputConfig getInputConfig();
   /**
@@ -84,6 +92,8 @@ public interface BatchPredictRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictOutputConfig output_config = 4;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -95,6 +105,8 @@ public interface BatchPredictRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BatchPredictOutputConfig output_config = 4;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.automl.v1.BatchPredictOutputConfig getOutputConfig();
   /**

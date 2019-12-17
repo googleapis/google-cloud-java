@@ -31,6 +31,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>string content = 3;</code>
+   *
+   * @return The content.
    */
   java.lang.String getContent();
   /**
@@ -41,6 +43,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>string content = 3;</code>
+   *
+   * @return The bytes for content.
    */
   com.google.protobuf.ByteString getContentBytes();
 
@@ -53,6 +57,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>int64 start_offset = 1;</code>
+   *
+   * @return The startOffset.
    */
   long getStartOffset();
 
@@ -66,6 +72,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>int64 end_offset = 2;</code>
+   *
+   * @return The endOffset.
    */
   long getEndOffset();
 }

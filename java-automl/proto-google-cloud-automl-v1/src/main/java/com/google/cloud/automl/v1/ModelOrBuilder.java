@@ -31,6 +31,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   *
+   * @return Whether the translationModelMetadata field is set.
    */
   boolean hasTranslationModelMetadata();
   /**
@@ -41,6 +43,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   *
+   * @return The translationModelMetadata.
    */
   com.google.cloud.automl.v1.TranslationModelMetadata getTranslationModelMetadata();
   /**
@@ -65,6 +69,8 @@ public interface ModelOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
    * </code>
+   *
+   * @return Whether the imageClassificationModelMetadata field is set.
    */
   boolean hasImageClassificationModelMetadata();
   /**
@@ -77,6 +83,8 @@ public interface ModelOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
    * </code>
+   *
+   * @return The imageClassificationModelMetadata.
    */
   com.google.cloud.automl.v1.ImageClassificationModelMetadata getImageClassificationModelMetadata();
   /**
@@ -103,6 +111,8 @@ public interface ModelOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
    * </code>
+   *
+   * @return Whether the textClassificationModelMetadata field is set.
    */
   boolean hasTextClassificationModelMetadata();
   /**
@@ -115,6 +125,8 @@ public interface ModelOrBuilder
    * <code>
    * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
    * </code>
+   *
+   * @return The textClassificationModelMetadata.
    */
   com.google.cloud.automl.v1.TextClassificationModelMetadata getTextClassificationModelMetadata();
   /**
@@ -141,6 +153,8 @@ public interface ModelOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionModelMetadata field is set.
    */
   boolean hasImageObjectDetectionModelMetadata();
   /**
@@ -153,6 +167,8 @@ public interface ModelOrBuilder
    * <code>
    * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
+   *
+   * @return The imageObjectDetectionModelMetadata.
    */
   com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
       getImageObjectDetectionModelMetadata();
@@ -179,6 +195,8 @@ public interface ModelOrBuilder
    *
    * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
    * </code>
+   *
+   * @return Whether the textExtractionModelMetadata field is set.
    */
   boolean hasTextExtractionModelMetadata();
   /**
@@ -190,6 +208,8 @@ public interface ModelOrBuilder
    *
    * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
    * </code>
+   *
+   * @return The textExtractionModelMetadata.
    */
   com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata();
   /**
@@ -214,6 +234,8 @@ public interface ModelOrBuilder
    *
    * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
    * </code>
+   *
+   * @return Whether the textSentimentModelMetadata field is set.
    */
   boolean hasTextSentimentModelMetadata();
   /**
@@ -225,6 +247,8 @@ public interface ModelOrBuilder
    *
    * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
    * </code>
+   *
+   * @return The textSentimentModelMetadata.
    */
   com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata();
   /**
@@ -249,6 +273,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -260,6 +286,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -274,6 +302,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -287,6 +317,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -299,6 +331,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
+   *
+   * @return The datasetId.
    */
   java.lang.String getDatasetId();
   /**
@@ -310,6 +344,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
+   *
+   * @return The bytes for datasetId.
    */
   com.google.protobuf.ByteString getDatasetIdBytes();
 
@@ -321,6 +357,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -331,6 +369,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -352,6 +392,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -362,6 +404,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -384,6 +428,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model.DeploymentState deployment_state = 8;</code>
+   *
+   * @return The enum numeric value on the wire for deploymentState.
    */
   int getDeploymentStateValue();
   /**
@@ -395,6 +441,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model.DeploymentState deployment_state = 8;</code>
+   *
+   * @return The deploymentState.
    */
   com.google.cloud.automl.v1.Model.DeploymentState getDeploymentState();
 
@@ -407,6 +455,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string etag = 10;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -418,6 +468,8 @@ public interface ModelOrBuilder
    * </pre>
    *
    * <code>string etag = 10;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 

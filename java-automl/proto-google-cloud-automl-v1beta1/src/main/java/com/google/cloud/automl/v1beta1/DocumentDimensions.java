@@ -42,6 +42,12 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DocumentDimensions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -218,12 +223,20 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DocumentDimensionUnit valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DocumentDimensionUnit forNumber(int value) {
       switch (value) {
         case 0:
@@ -298,6 +311,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+   *
+   * @return The enum numeric value on the wire for unit.
    */
   public int getUnitValue() {
     return unit_;
@@ -310,6 +325,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+   *
+   * @return The unit.
    */
   public com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit() {
     @SuppressWarnings("deprecation")
@@ -330,6 +347,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>float width = 2;</code>
+   *
+   * @return The width.
    */
   public float getWidth() {
     return width_;
@@ -345,6 +364,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>float height = 3;</code>
+   *
+   * @return The height.
    */
   public float getHeight() {
     return height_;
@@ -714,6 +735,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
      */
     public int getUnitValue() {
       return unit_;
@@ -726,6 +749,9 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for unit to set.
+     * @return This builder for chaining.
      */
     public Builder setUnitValue(int value) {
       unit_ = value;
@@ -740,6 +766,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+     *
+     * @return The unit.
      */
     public com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit() {
       @SuppressWarnings("deprecation")
@@ -757,6 +785,9 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+     *
+     * @param value The unit to set.
+     * @return This builder for chaining.
      */
     public Builder setUnit(
         com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit value) {
@@ -776,6 +807,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit unit = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUnit() {
 
@@ -793,6 +826,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>float width = 2;</code>
+     *
+     * @return The width.
      */
     public float getWidth() {
       return width_;
@@ -805,6 +840,9 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>float width = 2;</code>
+     *
+     * @param value The width to set.
+     * @return This builder for chaining.
      */
     public Builder setWidth(float value) {
 
@@ -820,6 +858,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>float width = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWidth() {
 
@@ -837,6 +877,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>float height = 3;</code>
+     *
+     * @return The height.
      */
     public float getHeight() {
       return height_;
@@ -849,6 +891,9 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>float height = 3;</code>
+     *
+     * @param value The height to set.
+     * @return This builder for chaining.
      */
     public Builder setHeight(float value) {
 
@@ -864,6 +909,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>float height = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHeight() {
 

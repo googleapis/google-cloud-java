@@ -38,6 +38,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>string model_type = 1;</code>
+   *
+   * @return The modelType.
    */
   java.lang.String getModelType();
   /**
@@ -55,6 +57,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>string model_type = 1;</code>
+   *
+   * @return The bytes for modelType.
    */
   com.google.protobuf.ByteString getModelTypeBytes();
 
@@ -68,6 +72,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 node_count = 3;</code>
+   *
+   * @return The nodeCount.
    */
   long getNodeCount();
 
@@ -80,6 +86,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>double node_qps = 4;</code>
+   *
+   * @return The nodeQps.
    */
   double getNodeQps();
 
@@ -92,6 +100,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
+   *
+   * @return The stopReason.
    */
   java.lang.String getStopReason();
   /**
@@ -103,6 +113,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
+   *
+   * @return The bytes for stopReason.
    */
   com.google.protobuf.ByteString getStopReasonBytes();
 
@@ -128,6 +140,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 6;</code>
+   *
+   * @return The trainBudgetMilliNodeHours.
    */
   long getTrainBudgetMilliNodeHours();
 
@@ -141,6 +155,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 train_cost_milli_node_hours = 7;</code>
+   *
+   * @return The trainCostMilliNodeHours.
    */
   long getTrainCostMilliNodeHours();
 }

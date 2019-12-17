@@ -32,6 +32,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>float optimization_objective_recall_value = 17;</code>
+   *
+   * @return The optimizationObjectiveRecallValue.
    */
   float getOptimizationObjectiveRecallValue();
 
@@ -44,6 +46,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>float optimization_objective_precision_value = 18;</code>
+   *
+   * @return The optimizationObjectivePrecisionValue.
    */
   float getOptimizationObjectivePrecisionValue();
 
@@ -63,6 +67,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
+   *
+   * @return Whether the targetColumnSpec field is set.
    */
   boolean hasTargetColumnSpec();
   /**
@@ -81,6 +87,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
+   *
+   * @return The targetColumnSpec.
    */
   com.google.cloud.automl.v1beta1.ColumnSpec getTargetColumnSpec();
   /**
@@ -252,6 +260,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
+   *
+   * @return The optimizationObjective.
    */
   java.lang.String getOptimizationObjective();
   /**
@@ -281,6 +291,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>string optimization_objective = 4;</code>
+   *
+   * @return The bytes for optimizationObjective.
    */
   com.google.protobuf.ByteString getOptimizationObjectiveBytes();
 
@@ -366,6 +378,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 6;</code>
+   *
+   * @return The trainBudgetMilliNodeHours.
    */
   long getTrainBudgetMilliNodeHours();
 
@@ -379,6 +393,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 train_cost_milli_node_hours = 7;</code>
+   *
+   * @return The trainCostMilliNodeHours.
    */
   long getTrainCostMilliNodeHours();
 
@@ -392,6 +408,8 @@ public interface TablesModelMetadataOrBuilder
    * </pre>
    *
    * <code>bool disable_early_stopping = 12;</code>
+   *
+   * @return The disableEarlyStopping.
    */
   boolean getDisableEarlyStopping();
 

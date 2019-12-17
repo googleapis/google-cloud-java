@@ -45,6 +45,12 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageClassificationModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -157,6 +162,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
+   *
+   * @return The baseModelId.
    */
   public java.lang.String getBaseModelId() {
     java.lang.Object ref = baseModelId_;
@@ -181,6 +188,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
+   *
+   * @return The bytes for baseModelId.
    */
   public com.google.protobuf.ByteString getBaseModelIdBytes() {
     java.lang.Object ref = baseModelId_;
@@ -205,6 +214,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>int64 train_budget = 2;</code>
+   *
+   * @return The trainBudget.
    */
   public long getTrainBudget() {
     return trainBudget_;
@@ -222,6 +233,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>int64 train_cost = 3;</code>
+   *
+   * @return The trainCost.
    */
   public long getTrainCost() {
     return trainCost_;
@@ -238,6 +251,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
+   *
+   * @return The stopReason.
    */
   public java.lang.String getStopReason() {
     java.lang.Object ref = stopReason_;
@@ -259,6 +274,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
+   *
+   * @return The bytes for stopReason.
    */
   public com.google.protobuf.ByteString getStopReasonBytes() {
     java.lang.Object ref = stopReason_;
@@ -318,6 +335,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>string model_type = 7;</code>
+   *
+   * @return The modelType.
    */
   public java.lang.String getModelType() {
     java.lang.Object ref = modelType_;
@@ -374,6 +393,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>string model_type = 7;</code>
+   *
+   * @return The bytes for modelType.
    */
   public com.google.protobuf.ByteString getModelTypeBytes() {
     java.lang.Object ref = modelType_;
@@ -398,6 +419,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>double node_qps = 13;</code>
+   *
+   * @return The nodeQps.
    */
   public double getNodeQps() {
     return nodeQps_;
@@ -415,6 +438,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * </pre>
    *
    * <code>int64 node_count = 14;</code>
+   *
+   * @return The nodeCount.
    */
   public long getNodeCount() {
     return nodeCount_;
@@ -852,6 +877,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
+     *
+     * @return The baseModelId.
      */
     public java.lang.String getBaseModelId() {
       java.lang.Object ref = baseModelId_;
@@ -876,6 +903,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
+     *
+     * @return The bytes for baseModelId.
      */
     public com.google.protobuf.ByteString getBaseModelIdBytes() {
       java.lang.Object ref = baseModelId_;
@@ -900,6 +929,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
+     *
+     * @param value The baseModelId to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseModelId(java.lang.String value) {
       if (value == null) {
@@ -922,6 +954,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseModelId() {
 
@@ -941,6 +975,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
+     *
+     * @param value The bytes for baseModelId to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseModelIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -963,6 +1000,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 train_budget = 2;</code>
+     *
+     * @return The trainBudget.
      */
     public long getTrainBudget() {
       return trainBudget_;
@@ -976,6 +1015,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 train_budget = 2;</code>
+     *
+     * @param value The trainBudget to set.
+     * @return This builder for chaining.
      */
     public Builder setTrainBudget(long value) {
 
@@ -992,6 +1034,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 train_budget = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrainBudget() {
 
@@ -1011,6 +1055,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 train_cost = 3;</code>
+     *
+     * @return The trainCost.
      */
     public long getTrainCost() {
       return trainCost_;
@@ -1025,6 +1071,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 train_cost = 3;</code>
+     *
+     * @param value The trainCost to set.
+     * @return This builder for chaining.
      */
     public Builder setTrainCost(long value) {
 
@@ -1042,6 +1091,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 train_cost = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrainCost() {
 
@@ -1060,6 +1111,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
+     *
+     * @return The stopReason.
      */
     public java.lang.String getStopReason() {
       java.lang.Object ref = stopReason_;
@@ -1081,6 +1134,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
+     *
+     * @return The bytes for stopReason.
      */
     public com.google.protobuf.ByteString getStopReasonBytes() {
       java.lang.Object ref = stopReason_;
@@ -1102,6 +1157,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
+     *
+     * @param value The stopReason to set.
+     * @return This builder for chaining.
      */
     public Builder setStopReason(java.lang.String value) {
       if (value == null) {
@@ -1121,6 +1179,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStopReason() {
 
@@ -1137,6 +1197,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
+     *
+     * @param value The bytes for stopReason to set.
+     * @return This builder for chaining.
      */
     public Builder setStopReasonBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1194,6 +1257,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string model_type = 7;</code>
+     *
+     * @return The modelType.
      */
     public java.lang.String getModelType() {
       java.lang.Object ref = modelType_;
@@ -1250,6 +1315,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string model_type = 7;</code>
+     *
+     * @return The bytes for modelType.
      */
     public com.google.protobuf.ByteString getModelTypeBytes() {
       java.lang.Object ref = modelType_;
@@ -1306,6 +1373,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string model_type = 7;</code>
+     *
+     * @param value The modelType to set.
+     * @return This builder for chaining.
      */
     public Builder setModelType(java.lang.String value) {
       if (value == null) {
@@ -1360,6 +1430,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string model_type = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModelType() {
 
@@ -1411,6 +1483,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>string model_type = 7;</code>
+     *
+     * @param value The bytes for modelType to set.
+     * @return This builder for chaining.
      */
     public Builder setModelTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1433,6 +1508,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>double node_qps = 13;</code>
+     *
+     * @return The nodeQps.
      */
     public double getNodeQps() {
       return nodeQps_;
@@ -1446,6 +1523,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>double node_qps = 13;</code>
+     *
+     * @param value The nodeQps to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeQps(double value) {
 
@@ -1462,6 +1542,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>double node_qps = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNodeQps() {
 
@@ -1481,6 +1563,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 node_count = 14;</code>
+     *
+     * @return The nodeCount.
      */
     public long getNodeCount() {
       return nodeCount_;
@@ -1495,6 +1579,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 node_count = 14;</code>
+     *
+     * @param value The nodeCount to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeCount(long value) {
 
@@ -1512,6 +1599,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 node_count = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
 

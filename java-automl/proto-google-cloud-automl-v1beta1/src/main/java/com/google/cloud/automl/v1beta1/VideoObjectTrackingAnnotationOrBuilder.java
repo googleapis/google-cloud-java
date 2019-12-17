@@ -37,6 +37,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>string instance_id = 1;</code>
+   *
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
@@ -53,6 +55,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>string instance_id = 1;</code>
+   *
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString getInstanceIdBytes();
 
@@ -65,6 +69,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -76,6 +82,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**
@@ -99,6 +107,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
   /**
@@ -110,6 +120,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
+   *
+   * @return The boundingBox.
    */
   com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox();
   /**
@@ -136,6 +148,8 @@ public interface VideoObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 4;</code>
+   *
+   * @return The score.
    */
   float getScore();
 }

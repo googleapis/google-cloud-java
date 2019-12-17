@@ -31,6 +31,8 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>int32 evaluated_frame_count = 1;</code>
+   *
+   * @return The evaluatedFrameCount.
    */
   int getEvaluatedFrameCount();
 
@@ -43,6 +45,8 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>int32 evaluated_bounding_box_count = 2;</code>
+   *
+   * @return The evaluatedBoundingBoxCount.
    */
   int getEvaluatedBoundingBoxCount();
 
@@ -134,6 +138,8 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float bounding_box_mean_average_precision = 6;</code>
+   *
+   * @return The boundingBoxMeanAveragePrecision.
    */
   float getBoundingBoxMeanAveragePrecision();
 }

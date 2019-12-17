@@ -44,6 +44,12 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TablesModelColumnInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string column_spec_name = 1;</code>
+   *
+   * @return The columnSpecName.
    */
   public java.lang.String getColumnSpecName() {
     java.lang.Object ref = columnSpecName_;
@@ -152,6 +159,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string column_spec_name = 1;</code>
+   *
+   * @return The bytes for columnSpecName.
    */
   public com.google.protobuf.ByteString getColumnSpecNameBytes() {
     java.lang.Object ref = columnSpecName_;
@@ -176,6 +185,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string column_display_name = 2;</code>
+   *
+   * @return The columnDisplayName.
    */
   public java.lang.String getColumnDisplayName() {
     java.lang.Object ref = columnDisplayName_;
@@ -197,6 +208,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string column_display_name = 2;</code>
+   *
+   * @return The bytes for columnDisplayName.
    */
   public com.google.protobuf.ByteString getColumnDisplayNameBytes() {
     java.lang.Object ref = columnDisplayName_;
@@ -235,6 +248,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>float feature_importance = 3;</code>
+   *
+   * @return The featureImportance.
    */
   public float getFeatureImportance() {
     return featureImportance_;
@@ -602,6 +617,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_spec_name = 1;</code>
+     *
+     * @return The columnSpecName.
      */
     public java.lang.String getColumnSpecName() {
       java.lang.Object ref = columnSpecName_;
@@ -623,6 +640,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_spec_name = 1;</code>
+     *
+     * @return The bytes for columnSpecName.
      */
     public com.google.protobuf.ByteString getColumnSpecNameBytes() {
       java.lang.Object ref = columnSpecName_;
@@ -644,6 +663,9 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_spec_name = 1;</code>
+     *
+     * @param value The columnSpecName to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnSpecName(java.lang.String value) {
       if (value == null) {
@@ -663,6 +685,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_spec_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumnSpecName() {
 
@@ -679,6 +703,9 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_spec_name = 1;</code>
+     *
+     * @param value The bytes for columnSpecName to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnSpecNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -701,6 +728,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_display_name = 2;</code>
+     *
+     * @return The columnDisplayName.
      */
     public java.lang.String getColumnDisplayName() {
       java.lang.Object ref = columnDisplayName_;
@@ -722,6 +751,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_display_name = 2;</code>
+     *
+     * @return The bytes for columnDisplayName.
      */
     public com.google.protobuf.ByteString getColumnDisplayNameBytes() {
       java.lang.Object ref = columnDisplayName_;
@@ -743,6 +774,9 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_display_name = 2;</code>
+     *
+     * @param value The columnDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnDisplayName(java.lang.String value) {
       if (value == null) {
@@ -762,6 +796,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumnDisplayName() {
 
@@ -778,6 +814,9 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string column_display_name = 2;</code>
+     *
+     * @param value The bytes for columnDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -814,6 +853,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float feature_importance = 3;</code>
+     *
+     * @return The featureImportance.
      */
     public float getFeatureImportance() {
       return featureImportance_;
@@ -841,6 +882,9 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float feature_importance = 3;</code>
+     *
+     * @param value The featureImportance to set.
+     * @return This builder for chaining.
      */
     public Builder setFeatureImportance(float value) {
 
@@ -871,6 +915,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float feature_importance = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFeatureImportance() {
 

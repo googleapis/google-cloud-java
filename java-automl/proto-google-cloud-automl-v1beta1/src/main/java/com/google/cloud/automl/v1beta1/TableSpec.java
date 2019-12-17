@@ -53,6 +53,12 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TableSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -102,10 +108,10 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inputConfigs_ =
                     new java.util.ArrayList<com.google.cloud.automl.v1beta1.InputConfig>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               inputConfigs_.add(
                   input.readMessage(
@@ -138,7 +144,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -161,7 +167,6 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TableSpec.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -174,6 +179,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -196,6 +203,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -226,6 +235,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_column_spec_id = 2;</code>
+   *
+   * @return The timeColumnSpecId.
    */
   public java.lang.String getTimeColumnSpecId() {
     java.lang.Object ref = timeColumnSpecId_;
@@ -253,6 +264,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_column_spec_id = 2;</code>
+   *
+   * @return The bytes for timeColumnSpecId.
    */
   public com.google.protobuf.ByteString getTimeColumnSpecIdBytes() {
     java.lang.Object ref = timeColumnSpecId_;
@@ -276,6 +289,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 row_count = 3;</code>
+   *
+   * @return The rowCount.
    */
   public long getRowCount() {
     return rowCount_;
@@ -292,6 +307,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 valid_row_count = 4;</code>
+   *
+   * @return The validRowCount.
    */
   public long getValidRowCount() {
     return validRowCount_;
@@ -308,6 +325,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 column_count = 7;</code>
+   *
+   * @return The columnCount.
    */
   public long getColumnCount() {
     return columnCount_;
@@ -393,6 +412,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -414,6 +435,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -709,7 +732,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
 
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         inputConfigsBuilder_.clear();
       }
@@ -743,23 +766,21 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.automl.v1beta1.TableSpec result =
           new com.google.cloud.automl.v1beta1.TableSpec(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.timeColumnSpecId_ = timeColumnSpecId_;
       result.rowCount_ = rowCount_;
       result.validRowCount_ = validRowCount_;
       result.columnCount_ = columnCount_;
       if (inputConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.inputConfigs_ = inputConfigs_;
       } else {
         result.inputConfigs_ = inputConfigsBuilder_.build();
       }
       result.etag_ = etag_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -830,7 +851,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.inputConfigs_.isEmpty()) {
           if (inputConfigs_.isEmpty()) {
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInputConfigsIsMutable();
             inputConfigs_.addAll(other.inputConfigs_);
@@ -843,7 +864,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
             inputConfigsBuilder_.dispose();
             inputConfigsBuilder_ = null;
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
             inputConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputConfigsFieldBuilder()
@@ -899,6 +920,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -921,6 +944,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -943,6 +968,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -963,6 +991,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -980,6 +1010,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1008,6 +1041,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_column_spec_id = 2;</code>
+     *
+     * @return The timeColumnSpecId.
      */
     public java.lang.String getTimeColumnSpecId() {
       java.lang.Object ref = timeColumnSpecId_;
@@ -1035,6 +1070,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_column_spec_id = 2;</code>
+     *
+     * @return The bytes for timeColumnSpecId.
      */
     public com.google.protobuf.ByteString getTimeColumnSpecIdBytes() {
       java.lang.Object ref = timeColumnSpecId_;
@@ -1062,6 +1099,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_column_spec_id = 2;</code>
+     *
+     * @param value The timeColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeColumnSpecId(java.lang.String value) {
       if (value == null) {
@@ -1087,6 +1127,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_column_spec_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeColumnSpecId() {
 
@@ -1109,6 +1151,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_column_spec_id = 2;</code>
+     *
+     * @param value The bytes for timeColumnSpecId to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeColumnSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1130,6 +1175,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count = 3;</code>
+     *
+     * @return The rowCount.
      */
     public long getRowCount() {
       return rowCount_;
@@ -1142,6 +1189,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count = 3;</code>
+     *
+     * @param value The rowCount to set.
+     * @return This builder for chaining.
      */
     public Builder setRowCount(long value) {
 
@@ -1157,6 +1207,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_count = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowCount() {
 
@@ -1175,6 +1227,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 valid_row_count = 4;</code>
+     *
+     * @return The validRowCount.
      */
     public long getValidRowCount() {
       return validRowCount_;
@@ -1188,6 +1242,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 valid_row_count = 4;</code>
+     *
+     * @param value The validRowCount to set.
+     * @return This builder for chaining.
      */
     public Builder setValidRowCount(long value) {
 
@@ -1204,6 +1261,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 valid_row_count = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidRowCount() {
 
@@ -1222,6 +1281,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 column_count = 7;</code>
+     *
+     * @return The columnCount.
      */
     public long getColumnCount() {
       return columnCount_;
@@ -1235,6 +1296,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 column_count = 7;</code>
+     *
+     * @param value The columnCount to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnCount(long value) {
 
@@ -1251,6 +1315,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 column_count = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumnCount() {
 
@@ -1263,10 +1329,10 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInputConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inputConfigs_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.InputConfig>(inputConfigs_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1493,7 +1559,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         inputConfigsBuilder_.clear();
@@ -1623,7 +1689,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.automl.v1beta1.InputConfig,
                 com.google.cloud.automl.v1beta1.InputConfig.Builder,
                 com.google.cloud.automl.v1beta1.InputConfigOrBuilder>(
-                inputConfigs_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                inputConfigs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         inputConfigs_ = null;
       }
       return inputConfigsBuilder_;
@@ -1639,6 +1705,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -1660,6 +1728,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -1681,6 +1751,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -1700,6 +1773,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -1716,6 +1791,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 6;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

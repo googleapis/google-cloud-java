@@ -31,6 +31,8 @@ public interface TranslationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>double bleu_score = 1;</code>
+   *
+   * @return The bleuScore.
    */
   double getBleuScore();
 
@@ -42,6 +44,8 @@ public interface TranslationEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>double base_bleu_score = 2;</code>
+   *
+   * @return The baseBleuScore.
    */
   double getBaseBleuScore();
 }

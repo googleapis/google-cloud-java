@@ -31,6 +31,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string primary_table_spec_id = 1;</code>
+   *
+   * @return The primaryTableSpecId.
    */
   java.lang.String getPrimaryTableSpecId();
   /**
@@ -41,6 +43,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string primary_table_spec_id = 1;</code>
+   *
+   * @return The bytes for primaryTableSpecId.
    */
   com.google.protobuf.ByteString getPrimaryTableSpecIdBytes();
 
@@ -61,6 +65,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string target_column_spec_id = 2;</code>
+   *
+   * @return The targetColumnSpecId.
    */
   java.lang.String getTargetColumnSpecId();
   /**
@@ -80,6 +86,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string target_column_spec_id = 2;</code>
+   *
+   * @return The bytes for targetColumnSpecId.
    */
   com.google.protobuf.ByteString getTargetColumnSpecIdBytes();
 
@@ -99,6 +107,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string weight_column_spec_id = 3;</code>
+   *
+   * @return The weightColumnSpecId.
    */
   java.lang.String getWeightColumnSpecId();
   /**
@@ -117,6 +127,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string weight_column_spec_id = 3;</code>
+   *
+   * @return The bytes for weightColumnSpecId.
    */
   com.google.protobuf.ByteString getWeightColumnSpecIdBytes();
 
@@ -140,6 +152,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string ml_use_column_spec_id = 4;</code>
+   *
+   * @return The mlUseColumnSpecId.
    */
   java.lang.String getMlUseColumnSpecId();
   /**
@@ -162,6 +176,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>string ml_use_column_spec_id = 4;</code>
+   *
+   * @return The bytes for mlUseColumnSpecId.
    */
   com.google.protobuf.ByteString getMlUseColumnSpecIdBytes();
 
@@ -281,6 +297,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
+   *
+   * @return Whether the statsUpdateTime field is set.
    */
   boolean hasStatsUpdateTime();
   /**
@@ -296,6 +314,8 @@ public interface TablesDatasetMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
+   *
+   * @return The statsUpdateTime.
    */
   com.google.protobuf.Timestamp getStatsUpdateTime();
   /**

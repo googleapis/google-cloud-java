@@ -40,6 +40,12 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
   private TextExtractionAnnotation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextExtractionAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,7 +127,10 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
   private int annotationCase_ = 0;
   private java.lang.Object annotation_;
 
-  public enum AnnotationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AnnotationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT_SEGMENT(3),
     ANNOTATION_NOT_SET(0);
     private final int value;
@@ -130,7 +138,11 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     private AnnotationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AnnotationCase valueOf(int value) {
       return forNumber(value);
@@ -166,6 +178,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+   *
+   * @return Whether the textSegment field is set.
    */
   public boolean hasTextSegment() {
     return annotationCase_ == 3;
@@ -179,6 +193,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+   *
+   * @return The textSegment.
    */
   public com.google.cloud.automl.v1beta1.TextSegment getTextSegment() {
     if (annotationCase_ == 3) {
@@ -214,6 +230,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -611,6 +629,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     *
+     * @return Whether the textSegment field is set.
      */
     public boolean hasTextSegment() {
       return annotationCase_ == 3;
@@ -624,6 +644,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
+     *
+     * @return The textSegment.
      */
     public com.google.cloud.automl.v1beta1.TextSegment getTextSegment() {
       if (textSegmentBuilder_ == null) {
@@ -818,6 +840,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -831,6 +855,9 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -847,6 +874,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 

@@ -32,6 +32,8 @@ public interface TextExtractionAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TextSegment text_segment = 3;</code>
+   *
+   * @return Whether the textSegment field is set.
    */
   boolean hasTextSegment();
   /**
@@ -43,6 +45,8 @@ public interface TextExtractionAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.TextSegment text_segment = 3;</code>
+   *
+   * @return The textSegment.
    */
   com.google.cloud.automl.v1.TextSegment getTextSegment();
   /**
@@ -66,6 +70,8 @@ public interface TextExtractionAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   float getScore();
 

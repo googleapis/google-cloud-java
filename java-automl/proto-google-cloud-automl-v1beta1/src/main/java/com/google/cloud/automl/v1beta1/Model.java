@@ -45,6 +45,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Model();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -437,12 +442,20 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DeploymentState valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DeploymentState forNumber(int value) {
       switch (value) {
         case 0:
@@ -505,7 +518,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   private int modelMetadataCase_ = 0;
   private java.lang.Object modelMetadata_;
 
-  public enum ModelMetadataCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ModelMetadataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSLATION_MODEL_METADATA(15),
     IMAGE_CLASSIFICATION_MODEL_METADATA(13),
     TEXT_CLASSIFICATION_MODEL_METADATA(14),
@@ -521,7 +537,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     private ModelMetadataCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ModelMetadataCase valueOf(int value) {
       return forNumber(value);
@@ -573,6 +593,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
    * </code>
+   *
+   * @return Whether the translationModelMetadata field is set.
    */
   public boolean hasTranslationModelMetadata() {
     return modelMetadataCase_ == 15;
@@ -586,6 +608,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
    * </code>
+   *
+   * @return The translationModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
     if (modelMetadataCase_ == 15) {
@@ -622,6 +646,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
    * </code>
+   *
+   * @return Whether the imageClassificationModelMetadata field is set.
    */
   public boolean hasImageClassificationModelMetadata() {
     return modelMetadataCase_ == 13;
@@ -636,6 +662,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
    * </code>
+   *
+   * @return The imageClassificationModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
       getImageClassificationModelMetadata() {
@@ -674,6 +702,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
    * </code>
+   *
+   * @return Whether the textClassificationModelMetadata field is set.
    */
   public boolean hasTextClassificationModelMetadata() {
     return modelMetadataCase_ == 14;
@@ -688,6 +718,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
    * </code>
+   *
+   * @return The textClassificationModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
       getTextClassificationModelMetadata() {
@@ -726,6 +758,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionModelMetadata field is set.
    */
   public boolean hasImageObjectDetectionModelMetadata() {
     return modelMetadataCase_ == 20;
@@ -740,6 +774,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
+   *
+   * @return The imageObjectDetectionModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
       getImageObjectDetectionModelMetadata() {
@@ -778,6 +814,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
    * </code>
+   *
+   * @return Whether the videoClassificationModelMetadata field is set.
    */
   public boolean hasVideoClassificationModelMetadata() {
     return modelMetadataCase_ == 23;
@@ -792,6 +830,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
    * </code>
+   *
+   * @return The videoClassificationModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
       getVideoClassificationModelMetadata() {
@@ -830,6 +870,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
    * </code>
+   *
+   * @return Whether the videoObjectTrackingModelMetadata field is set.
    */
   public boolean hasVideoObjectTrackingModelMetadata() {
     return modelMetadataCase_ == 21;
@@ -844,6 +886,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
    * </code>
+   *
+   * @return The videoObjectTrackingModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
       getVideoObjectTrackingModelMetadata() {
@@ -882,6 +926,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
    * </code>
+   *
+   * @return Whether the textExtractionModelMetadata field is set.
    */
   public boolean hasTextExtractionModelMetadata() {
     return modelMetadataCase_ == 19;
@@ -896,6 +942,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
    * </code>
+   *
+   * @return The textExtractionModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata
       getTextExtractionModelMetadata() {
@@ -932,6 +980,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   *
+   * @return Whether the tablesModelMetadata field is set.
    */
   public boolean hasTablesModelMetadata() {
     return modelMetadataCase_ == 24;
@@ -944,6 +994,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   *
+   * @return The tablesModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.TablesModelMetadata getTablesModelMetadata() {
     if (modelMetadataCase_ == 24) {
@@ -979,6 +1031,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
    * </code>
+   *
+   * @return Whether the textSentimentModelMetadata field is set.
    */
   public boolean hasTextSentimentModelMetadata() {
     return modelMetadataCase_ == 22;
@@ -993,6 +1047,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
    * </code>
+   *
+   * @return The textSentimentModelMetadata.
    */
   public com.google.cloud.automl.v1beta1.TextSentimentModelMetadata
       getTextSentimentModelMetadata() {
@@ -1031,6 +1087,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1052,6 +1110,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1078,6 +1138,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -1101,6 +1163,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -1125,6 +1189,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
+   *
+   * @return The datasetId.
    */
   public java.lang.String getDatasetId() {
     java.lang.Object ref = datasetId_;
@@ -1146,6 +1212,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
+   *
+   * @return The bytes for datasetId.
    */
   public com.google.protobuf.ByteString getDatasetIdBytes() {
     java.lang.Object ref = datasetId_;
@@ -1169,6 +1237,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -1181,6 +1251,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1208,6 +1280,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -1220,6 +1294,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -1248,6 +1324,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+   *
+   * @return The enum numeric value on the wire for deploymentState.
    */
   public int getDeploymentStateValue() {
     return deploymentState_;
@@ -1261,6 +1339,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+   *
+   * @return The deploymentState.
    */
   public com.google.cloud.automl.v1beta1.Model.DeploymentState getDeploymentState() {
     @SuppressWarnings("deprecation")
@@ -2001,6 +2081,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
      * </code>
+     *
+     * @return Whether the translationModelMetadata field is set.
      */
     public boolean hasTranslationModelMetadata() {
       return modelMetadataCase_ == 15;
@@ -2014,6 +2096,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
      * </code>
+     *
+     * @return The translationModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
       if (translationModelMetadataBuilder_ == null) {
@@ -2219,6 +2303,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
      * </code>
+     *
+     * @return Whether the imageClassificationModelMetadata field is set.
      */
     public boolean hasImageClassificationModelMetadata() {
       return modelMetadataCase_ == 13;
@@ -2233,6 +2319,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
      * </code>
+     *
+     * @return The imageClassificationModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
         getImageClassificationModelMetadata() {
@@ -2451,6 +2539,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
      * </code>
+     *
+     * @return Whether the textClassificationModelMetadata field is set.
      */
     public boolean hasTextClassificationModelMetadata() {
       return modelMetadataCase_ == 14;
@@ -2465,6 +2555,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
      * </code>
+     *
+     * @return The textClassificationModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
         getTextClassificationModelMetadata() {
@@ -2680,6 +2772,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
+     *
+     * @return Whether the imageObjectDetectionModelMetadata field is set.
      */
     public boolean hasImageObjectDetectionModelMetadata() {
       return modelMetadataCase_ == 20;
@@ -2694,6 +2788,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
+     *
+     * @return The imageObjectDetectionModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
         getImageObjectDetectionModelMetadata() {
@@ -2913,6 +3009,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
      * </code>
+     *
+     * @return Whether the videoClassificationModelMetadata field is set.
      */
     public boolean hasVideoClassificationModelMetadata() {
       return modelMetadataCase_ == 23;
@@ -2927,6 +3025,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
      * </code>
+     *
+     * @return The videoClassificationModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
         getVideoClassificationModelMetadata() {
@@ -3145,6 +3245,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
      * </code>
+     *
+     * @return Whether the videoObjectTrackingModelMetadata field is set.
      */
     public boolean hasVideoObjectTrackingModelMetadata() {
       return modelMetadataCase_ == 21;
@@ -3159,6 +3261,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata video_object_tracking_model_metadata = 21;
      * </code>
+     *
+     * @return The videoObjectTrackingModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
         getVideoObjectTrackingModelMetadata() {
@@ -3377,6 +3481,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
      * </code>
+     *
+     * @return Whether the textExtractionModelMetadata field is set.
      */
     public boolean hasTextExtractionModelMetadata() {
       return modelMetadataCase_ == 19;
@@ -3391,6 +3497,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
      * </code>
+     *
+     * @return The textExtractionModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata
         getTextExtractionModelMetadata() {
@@ -3603,6 +3711,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     *
+     * @return Whether the tablesModelMetadata field is set.
      */
     public boolean hasTablesModelMetadata() {
       return modelMetadataCase_ == 24;
@@ -3615,6 +3725,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     *
+     * @return The tablesModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.TablesModelMetadata getTablesModelMetadata() {
       if (tablesModelMetadataBuilder_ == null) {
@@ -3812,6 +3924,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
      * </code>
+     *
+     * @return Whether the textSentimentModelMetadata field is set.
      */
     public boolean hasTextSentimentModelMetadata() {
       return modelMetadataCase_ == 22;
@@ -3826,6 +3940,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
      * </code>
+     *
+     * @return The textSentimentModelMetadata.
      */
     public com.google.cloud.automl.v1beta1.TextSentimentModelMetadata
         getTextSentimentModelMetadata() {
@@ -4035,6 +4151,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -4056,6 +4174,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -4077,6 +4197,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -4096,6 +4219,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -4112,6 +4237,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4136,6 +4264,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -4159,6 +4289,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -4182,6 +4314,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -4203,6 +4338,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -4221,6 +4358,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4243,6 +4383,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
+     *
+     * @return The datasetId.
      */
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
@@ -4264,6 +4406,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
+     *
+     * @return The bytes for datasetId.
      */
     public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
@@ -4285,6 +4429,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
+     *
+     * @param value The datasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetId(java.lang.String value) {
       if (value == null) {
@@ -4304,6 +4451,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDatasetId() {
 
@@ -4320,6 +4469,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
+     *
+     * @param value The bytes for datasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4346,6 +4498,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -4358,6 +4512,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -4525,6 +4681,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -4537,6 +4695,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -4700,6 +4860,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+     *
+     * @return The enum numeric value on the wire for deploymentState.
      */
     public int getDeploymentStateValue() {
       return deploymentState_;
@@ -4713,6 +4875,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for deploymentState to set.
+     * @return This builder for chaining.
      */
     public Builder setDeploymentStateValue(int value) {
       deploymentState_ = value;
@@ -4728,6 +4893,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+     *
+     * @return The deploymentState.
      */
     public com.google.cloud.automl.v1beta1.Model.DeploymentState getDeploymentState() {
       @SuppressWarnings("deprecation")
@@ -4746,6 +4913,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+     *
+     * @param value The deploymentState to set.
+     * @return This builder for chaining.
      */
     public Builder setDeploymentState(com.google.cloud.automl.v1beta1.Model.DeploymentState value) {
       if (value == null) {
@@ -4765,6 +4935,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeploymentState() {
 

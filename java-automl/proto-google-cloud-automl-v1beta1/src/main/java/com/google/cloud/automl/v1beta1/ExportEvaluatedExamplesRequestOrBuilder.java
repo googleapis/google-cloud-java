@@ -32,6 +32,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    *
    * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
    * </code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -66,6 +72,8 @@ public interface ExportEvaluatedExamplesRequestOrBuilder
    *
    * <code>.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3;
    * </code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig getOutputConfig();
   /**

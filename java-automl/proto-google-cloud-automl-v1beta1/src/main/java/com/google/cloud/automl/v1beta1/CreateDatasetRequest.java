@@ -42,6 +42,12 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateDatasetRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -152,6 +159,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -175,6 +184,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Dataset dataset = 2;</code>
+   *
+   * @return Whether the dataset field is set.
    */
   public boolean hasDataset() {
     return dataset_ != null;
@@ -187,6 +198,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Dataset dataset = 2;</code>
+   *
+   * @return The dataset.
    */
   public com.google.cloud.automl.v1beta1.Dataset getDataset() {
     return dataset_ == null
@@ -561,6 +574,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -581,6 +596,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -601,6 +618,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -619,6 +639,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -634,6 +656,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -660,6 +685,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Dataset dataset = 2;</code>
+     *
+     * @return Whether the dataset field is set.
      */
     public boolean hasDataset() {
       return datasetBuilder_ != null || dataset_ != null;
@@ -672,6 +699,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Dataset dataset = 2;</code>
+     *
+     * @return The dataset.
      */
     public com.google.cloud.automl.v1beta1.Dataset getDataset() {
       if (datasetBuilder_ == null) {

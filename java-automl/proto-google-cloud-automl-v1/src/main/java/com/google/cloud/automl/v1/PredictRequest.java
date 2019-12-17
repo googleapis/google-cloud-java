@@ -43,6 +43,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PredictRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -91,10 +97,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -147,7 +153,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1.PredictRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -158,6 +163,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -178,6 +185,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -202,6 +211,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload payload = 2;</code>
+   *
+   * @return Whether the payload field is set.
    */
   public boolean hasPayload() {
     return payload_ != null;
@@ -215,6 +226,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.automl.v1.ExamplePayload payload = 2;</code>
+   *
+   * @return The payload.
    */
   public com.google.cloud.automl.v1.ExamplePayload getPayload() {
     return payload_ == null
@@ -669,7 +682,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.automl.v1.PredictRequest result =
           new com.google.cloud.automl.v1.PredictRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (payloadBuilder_ == null) {
         result.payload_ = payload_;
@@ -678,7 +690,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -776,6 +787,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -796,6 +809,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -816,6 +831,9 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -834,6 +852,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -849,6 +869,9 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -876,6 +899,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload payload = 2;</code>
+     *
+     * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
       return payloadBuilder_ != null || payload_ != null;
@@ -889,6 +914,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.automl.v1.ExamplePayload payload = 2;</code>
+     *
+     * @return The payload.
      */
     public com.google.cloud.automl.v1.ExamplePayload getPayload() {
       if (payloadBuilder_ == null) {

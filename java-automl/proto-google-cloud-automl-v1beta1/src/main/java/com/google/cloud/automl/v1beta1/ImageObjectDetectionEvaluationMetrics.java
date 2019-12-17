@@ -45,6 +45,12 @@ public final class ImageObjectDetectionEvaluationMetrics
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageObjectDetectionEvaluationMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,11 +81,11 @@ public final class ImageObjectDetectionEvaluationMetrics
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 boundingBoxMetricsEntries_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               boundingBoxMetricsEntries_.add(
                   input.readMessage(
@@ -106,7 +112,7 @@ public final class ImageObjectDetectionEvaluationMetrics
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         boundingBoxMetricsEntries_ =
             java.util.Collections.unmodifiableList(boundingBoxMetricsEntries_);
       }
@@ -130,7 +136,6 @@ public final class ImageObjectDetectionEvaluationMetrics
             com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics.Builder.class);
   }
 
-  private int bitField0_;
   public static final int EVALUATED_BOUNDING_BOX_COUNT_FIELD_NUMBER = 1;
   private int evaluatedBoundingBoxCount_;
   /**
@@ -142,6 +147,8 @@ public final class ImageObjectDetectionEvaluationMetrics
    * </pre>
    *
    * <code>int32 evaluated_bounding_box_count = 1;</code>
+   *
+   * @return The evaluatedBoundingBoxCount.
    */
   public int getEvaluatedBoundingBoxCount() {
     return evaluatedBoundingBoxCount_;
@@ -251,6 +258,8 @@ public final class ImageObjectDetectionEvaluationMetrics
    * </pre>
    *
    * <code>float bounding_box_mean_average_precision = 3;</code>
+   *
+   * @return The boundingBoxMeanAveragePrecision.
    */
   public float getBoundingBoxMeanAveragePrecision() {
     return boundingBoxMeanAveragePrecision_;
@@ -496,7 +505,7 @@ public final class ImageObjectDetectionEvaluationMetrics
 
       if (boundingBoxMetricsEntriesBuilder_ == null) {
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         boundingBoxMetricsEntriesBuilder_.clear();
       }
@@ -532,20 +541,18 @@ public final class ImageObjectDetectionEvaluationMetrics
       com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics result =
           new com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.evaluatedBoundingBoxCount_ = evaluatedBoundingBoxCount_;
       if (boundingBoxMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           boundingBoxMetricsEntries_ =
               java.util.Collections.unmodifiableList(boundingBoxMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.boundingBoxMetricsEntries_ = boundingBoxMetricsEntries_;
       } else {
         result.boundingBoxMetricsEntries_ = boundingBoxMetricsEntriesBuilder_.build();
       }
       result.boundingBoxMeanAveragePrecision_ = boundingBoxMeanAveragePrecision_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -606,7 +613,7 @@ public final class ImageObjectDetectionEvaluationMetrics
         if (!other.boundingBoxMetricsEntries_.isEmpty()) {
           if (boundingBoxMetricsEntries_.isEmpty()) {
             boundingBoxMetricsEntries_ = other.boundingBoxMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureBoundingBoxMetricsEntriesIsMutable();
             boundingBoxMetricsEntries_.addAll(other.boundingBoxMetricsEntries_);
@@ -619,7 +626,7 @@ public final class ImageObjectDetectionEvaluationMetrics
             boundingBoxMetricsEntriesBuilder_.dispose();
             boundingBoxMetricsEntriesBuilder_ = null;
             boundingBoxMetricsEntries_ = other.boundingBoxMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             boundingBoxMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBoundingBoxMetricsEntriesFieldBuilder()
@@ -675,6 +682,8 @@ public final class ImageObjectDetectionEvaluationMetrics
      * </pre>
      *
      * <code>int32 evaluated_bounding_box_count = 1;</code>
+     *
+     * @return The evaluatedBoundingBoxCount.
      */
     public int getEvaluatedBoundingBoxCount() {
       return evaluatedBoundingBoxCount_;
@@ -688,6 +697,9 @@ public final class ImageObjectDetectionEvaluationMetrics
      * </pre>
      *
      * <code>int32 evaluated_bounding_box_count = 1;</code>
+     *
+     * @param value The evaluatedBoundingBoxCount to set.
+     * @return This builder for chaining.
      */
     public Builder setEvaluatedBoundingBoxCount(int value) {
 
@@ -704,6 +716,8 @@ public final class ImageObjectDetectionEvaluationMetrics
      * </pre>
      *
      * <code>int32 evaluated_bounding_box_count = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEvaluatedBoundingBoxCount() {
 
@@ -716,11 +730,11 @@ public final class ImageObjectDetectionEvaluationMetrics
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureBoundingBoxMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         boundingBoxMetricsEntries_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>(
                 boundingBoxMetricsEntries_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -999,7 +1013,7 @@ public final class ImageObjectDetectionEvaluationMetrics
     public Builder clearBoundingBoxMetricsEntries() {
       if (boundingBoxMetricsEntriesBuilder_ == null) {
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         boundingBoxMetricsEntriesBuilder_.clear();
@@ -1163,7 +1177,7 @@ public final class ImageObjectDetectionEvaluationMetrics
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.Builder,
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntryOrBuilder>(
                 boundingBoxMetricsEntries_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         boundingBoxMetricsEntries_ = null;
@@ -1181,6 +1195,8 @@ public final class ImageObjectDetectionEvaluationMetrics
      * </pre>
      *
      * <code>float bounding_box_mean_average_precision = 3;</code>
+     *
+     * @return The boundingBoxMeanAveragePrecision.
      */
     public float getBoundingBoxMeanAveragePrecision() {
       return boundingBoxMeanAveragePrecision_;
@@ -1194,6 +1210,9 @@ public final class ImageObjectDetectionEvaluationMetrics
      * </pre>
      *
      * <code>float bounding_box_mean_average_precision = 3;</code>
+     *
+     * @param value The boundingBoxMeanAveragePrecision to set.
+     * @return This builder for chaining.
      */
     public Builder setBoundingBoxMeanAveragePrecision(float value) {
 
@@ -1210,6 +1229,8 @@ public final class ImageObjectDetectionEvaluationMetrics
      * </pre>
      *
      * <code>float bounding_box_mean_average_precision = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBoundingBoxMeanAveragePrecision() {
 

@@ -33,6 +33,8 @@ public interface BatchPredictInputConfigOrBuilder
    * <code>
    * .google.cloud.automl.v1.GcsSource gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -45,6 +47,8 @@ public interface BatchPredictInputConfigOrBuilder
    * <code>
    * .google.cloud.automl.v1.GcsSource gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.automl.v1.GcsSource getGcsSource();
   /**

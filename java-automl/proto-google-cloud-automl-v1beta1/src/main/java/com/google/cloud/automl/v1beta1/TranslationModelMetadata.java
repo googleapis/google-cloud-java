@@ -44,6 +44,12 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TranslationModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +140,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string base_model = 1;</code>
+   *
+   * @return The baseModel.
    */
   public java.lang.String getBaseModel() {
     java.lang.Object ref = baseModel_;
@@ -158,6 +165,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string base_model = 1;</code>
+   *
+   * @return The bytes for baseModel.
    */
   public com.google.protobuf.ByteString getBaseModelBytes() {
     java.lang.Object ref = baseModel_;
@@ -182,6 +191,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string source_language_code = 2;</code>
+   *
+   * @return The sourceLanguageCode.
    */
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -203,6 +214,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string source_language_code = 2;</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -227,6 +240,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string target_language_code = 3;</code>
+   *
+   * @return The targetLanguageCode.
    */
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
@@ -248,6 +263,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string target_language_code = 3;</code>
+   *
+   * @return The bytes for targetLanguageCode.
    */
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
@@ -624,6 +641,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string base_model = 1;</code>
+     *
+     * @return The baseModel.
      */
     public java.lang.String getBaseModel() {
       java.lang.Object ref = baseModel_;
@@ -647,6 +666,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string base_model = 1;</code>
+     *
+     * @return The bytes for baseModel.
      */
     public com.google.protobuf.ByteString getBaseModelBytes() {
       java.lang.Object ref = baseModel_;
@@ -670,6 +691,9 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string base_model = 1;</code>
+     *
+     * @param value The baseModel to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseModel(java.lang.String value) {
       if (value == null) {
@@ -691,6 +715,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string base_model = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseModel() {
 
@@ -709,6 +735,9 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string base_model = 1;</code>
+     *
+     * @param value The bytes for baseModel to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -731,6 +760,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
+     *
+     * @return The sourceLanguageCode.
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -752,6 +783,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
+     *
+     * @return The bytes for sourceLanguageCode.
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -773,6 +806,9 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
+     *
+     * @param value The sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -792,6 +828,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
 
@@ -808,6 +846,9 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string source_language_code = 2;</code>
+     *
+     * @param value The bytes for sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -830,6 +871,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
+     *
+     * @return The targetLanguageCode.
      */
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
@@ -851,6 +894,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
+     *
+     * @return The bytes for targetLanguageCode.
      */
     public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
@@ -872,6 +917,9 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
+     *
+     * @param value The targetLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -891,6 +939,8 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
 
@@ -907,6 +957,9 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string target_language_code = 3;</code>
+     *
+     * @param value The bytes for targetLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -32,6 +32,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.InputConfig input_config = 3;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -66,6 +72,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.InputConfig input_config = 3;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.automl.v1.InputConfig getInputConfig();
   /**

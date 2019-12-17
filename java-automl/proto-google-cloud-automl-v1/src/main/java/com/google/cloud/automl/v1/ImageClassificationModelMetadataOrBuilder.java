@@ -35,6 +35,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
+   *
+   * @return The baseModelId.
    */
   java.lang.String getBaseModelId();
   /**
@@ -49,6 +51,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
+   *
+   * @return The bytes for baseModelId.
    */
   com.google.protobuf.ByteString getBaseModelIdBytes();
 
@@ -73,6 +77,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 train_budget_milli_node_hours = 16;</code>
+   *
+   * @return The trainBudgetMilliNodeHours.
    */
   long getTrainBudgetMilliNodeHours();
 
@@ -86,6 +92,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 train_cost_milli_node_hours = 17;</code>
+   *
+   * @return The trainCostMilliNodeHours.
    */
   long getTrainCostMilliNodeHours();
 
@@ -98,6 +106,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
+   *
+   * @return The stopReason.
    */
   java.lang.String getStopReason();
   /**
@@ -109,6 +119,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
+   *
+   * @return The bytes for stopReason.
    */
   com.google.protobuf.ByteString getStopReasonBytes();
 
@@ -156,6 +168,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string model_type = 7;</code>
+   *
+   * @return The modelType.
    */
   java.lang.String getModelType();
   /**
@@ -202,6 +216,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>string model_type = 7;</code>
+   *
+   * @return The bytes for modelType.
    */
   com.google.protobuf.ByteString getModelTypeBytes();
 
@@ -214,6 +230,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>double node_qps = 13;</code>
+   *
+   * @return The nodeQps.
    */
   double getNodeQps();
 
@@ -227,6 +245,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    * </pre>
    *
    * <code>int64 node_count = 14;</code>
+   *
+   * @return The nodeCount.
    */
   long getNodeCount();
 }

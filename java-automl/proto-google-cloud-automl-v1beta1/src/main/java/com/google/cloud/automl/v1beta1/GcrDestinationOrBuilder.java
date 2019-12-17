@@ -39,6 +39,8 @@ public interface GcrDestinationOrBuilder
    * </pre>
    *
    * <code>string output_uri = 1;</code>
+   *
+   * @return The outputUri.
    */
   java.lang.String getOutputUri();
   /**
@@ -57,6 +59,8 @@ public interface GcrDestinationOrBuilder
    * </pre>
    *
    * <code>string output_uri = 1;</code>
+   *
+   * @return The bytes for outputUri.
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 }

@@ -41,6 +41,12 @@ public final class VideoObjectTrackingModelMetadata extends com.google.protobuf.
   private VideoObjectTrackingModelMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoObjectTrackingModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

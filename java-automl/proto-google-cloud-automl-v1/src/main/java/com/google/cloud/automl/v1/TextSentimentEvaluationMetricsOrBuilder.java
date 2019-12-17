@@ -31,6 +31,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float precision = 1;</code>
+   *
+   * @return The precision.
    */
   float getPrecision();
 
@@ -42,6 +44,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float recall = 2;</code>
+   *
+   * @return The recall.
    */
   float getRecall();
 
@@ -53,6 +57,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float f1_score = 3;</code>
+   *
+   * @return The f1Score.
    */
   float getF1Score();
 
@@ -65,6 +71,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float mean_absolute_error = 4;</code>
+   *
+   * @return The meanAbsoluteError.
    */
   float getMeanAbsoluteError();
 
@@ -77,6 +85,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float mean_squared_error = 5;</code>
+   *
+   * @return The meanSquaredError.
    */
   float getMeanSquaredError();
 
@@ -89,6 +99,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float linear_kappa = 6;</code>
+   *
+   * @return The linearKappa.
    */
   float getLinearKappa();
 
@@ -101,6 +113,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float quadratic_kappa = 7;</code>
+   *
+   * @return The quadraticKappa.
    */
   float getQuadraticKappa();
 
@@ -116,6 +130,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
    * </code>
+   *
+   * @return Whether the confusionMatrix field is set.
    */
   boolean hasConfusionMatrix();
   /**
@@ -130,6 +146,8 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
    * </code>
+   *
+   * @return The confusionMatrix.
    */
   com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix();
   /**

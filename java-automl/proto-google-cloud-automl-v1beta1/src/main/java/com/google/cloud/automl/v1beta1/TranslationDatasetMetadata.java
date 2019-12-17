@@ -43,6 +43,12 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TranslationDatasetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string source_language_code = 1;</code>
+   *
+   * @return The sourceLanguageCode.
    */
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -144,6 +151,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string source_language_code = 1;</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -167,6 +176,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string target_language_code = 2;</code>
+   *
+   * @return The targetLanguageCode.
    */
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
@@ -187,6 +198,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string target_language_code = 2;</code>
+   *
+   * @return The bytes for targetLanguageCode.
    */
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
@@ -544,6 +557,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return The sourceLanguageCode.
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -564,6 +579,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return The bytes for sourceLanguageCode.
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -584,6 +601,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @param value The sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -602,6 +622,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
 
@@ -617,6 +639,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @param value The bytes for sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -638,6 +663,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return The targetLanguageCode.
      */
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
@@ -658,6 +685,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return The bytes for targetLanguageCode.
      */
     public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
@@ -678,6 +707,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @param value The targetLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -696,6 +728,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
 
@@ -711,6 +745,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @param value The bytes for targetLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

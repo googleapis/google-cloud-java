@@ -51,6 +51,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>int32 sentiment = 1;</code>
+     *
+     * @return The sentiment.
      */
     int getSentiment();
   }
@@ -76,6 +78,12 @@ public final class TextSentimentProto {
     private TextSentimentAnnotation() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextSentimentAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -88,7 +96,6 @@ public final class TextSentimentProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -160,6 +167,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>int32 sentiment = 1;</code>
+     *
+     * @return The sentiment.
      */
     public int getSentiment() {
       return sentiment_;
@@ -526,6 +535,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>int32 sentiment = 1;</code>
+       *
+       * @return The sentiment.
        */
       public int getSentiment() {
         return sentiment_;
@@ -549,6 +560,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>int32 sentiment = 1;</code>
+       *
+       * @param value The sentiment to set.
+       * @return This builder for chaining.
        */
       public Builder setSentiment(int value) {
 
@@ -575,6 +589,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>int32 sentiment = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSentiment() {
 
@@ -652,6 +668,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float precision = 1;</code>
+     *
+     * @return The precision.
      */
     float getPrecision();
 
@@ -663,6 +681,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @return The recall.
      */
     float getRecall();
 
@@ -674,6 +694,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float f1_score = 3;</code>
+     *
+     * @return The f1Score.
      */
     float getF1Score();
 
@@ -686,6 +708,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float mean_absolute_error = 4;</code>
+     *
+     * @return The meanAbsoluteError.
      */
     float getMeanAbsoluteError();
 
@@ -698,6 +722,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float mean_squared_error = 5;</code>
+     *
+     * @return The meanSquaredError.
      */
     float getMeanSquaredError();
 
@@ -710,6 +736,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float linear_kappa = 6;</code>
+     *
+     * @return The linearKappa.
      */
     float getLinearKappa();
 
@@ -722,6 +750,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float quadratic_kappa = 7;</code>
+     *
+     * @return The quadraticKappa.
      */
     float getQuadraticKappa();
 
@@ -737,6 +767,8 @@ public final class TextSentimentProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
+     *
+     * @return Whether the confusionMatrix field is set.
      */
     boolean hasConfusionMatrix();
     /**
@@ -751,6 +783,8 @@ public final class TextSentimentProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
+     *
+     * @return The confusionMatrix.
      */
     com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
@@ -781,6 +815,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @return A list containing the annotationSpecId.
      */
     @java.lang.Deprecated
     java.util.List<java.lang.String> getAnnotationSpecIdList();
@@ -793,6 +829,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @return The count of annotationSpecId.
      */
     @java.lang.Deprecated
     int getAnnotationSpecIdCount();
@@ -805,6 +843,9 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The annotationSpecId at the given index.
      */
     @java.lang.Deprecated
     java.lang.String getAnnotationSpecId(int index);
@@ -817,6 +858,9 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the annotationSpecId at the given index.
      */
     @java.lang.Deprecated
     com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
@@ -844,6 +888,12 @@ public final class TextSentimentProto {
 
     private TextSentimentEvaluationMetrics() {
       annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextSentimentEvaluationMetrics();
     }
 
     @java.lang.Override
@@ -928,9 +978,9 @@ public final class TextSentimentProto {
             case 74:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000100;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 annotationSpecId_.add(s);
                 break;
@@ -949,7 +999,7 @@ public final class TextSentimentProto {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -974,7 +1024,6 @@ public final class TextSentimentProto {
                   .Builder.class);
     }
 
-    private int bitField0_;
     public static final int PRECISION_FIELD_NUMBER = 1;
     private float precision_;
     /**
@@ -985,6 +1034,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float precision = 1;</code>
+     *
+     * @return The precision.
      */
     public float getPrecision() {
       return precision_;
@@ -1000,6 +1051,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @return The recall.
      */
     public float getRecall() {
       return recall_;
@@ -1015,6 +1068,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float f1_score = 3;</code>
+     *
+     * @return The f1Score.
      */
     public float getF1Score() {
       return f1Score_;
@@ -1031,6 +1086,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float mean_absolute_error = 4;</code>
+     *
+     * @return The meanAbsoluteError.
      */
     public float getMeanAbsoluteError() {
       return meanAbsoluteError_;
@@ -1047,6 +1104,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float mean_squared_error = 5;</code>
+     *
+     * @return The meanSquaredError.
      */
     public float getMeanSquaredError() {
       return meanSquaredError_;
@@ -1063,6 +1122,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float linear_kappa = 6;</code>
+     *
+     * @return The linearKappa.
      */
     public float getLinearKappa() {
       return linearKappa_;
@@ -1079,6 +1140,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>float quadratic_kappa = 7;</code>
+     *
+     * @return The quadraticKappa.
      */
     public float getQuadraticKappa() {
       return quadraticKappa_;
@@ -1100,6 +1163,8 @@ public final class TextSentimentProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
+     *
+     * @return Whether the confusionMatrix field is set.
      */
     public boolean hasConfusionMatrix() {
       return confusionMatrix_ != null;
@@ -1116,6 +1181,8 @@ public final class TextSentimentProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
+     *
+     * @return The confusionMatrix.
      */
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
@@ -1155,6 +1222,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @return A list containing the annotationSpecId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
@@ -1169,6 +1238,8 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @return The count of annotationSpecId.
      */
     @java.lang.Deprecated
     public int getAnnotationSpecIdCount() {
@@ -1183,6 +1254,9 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The annotationSpecId at the given index.
      */
     @java.lang.Deprecated
     public java.lang.String getAnnotationSpecId(int index) {
@@ -1197,6 +1271,9 @@ public final class TextSentimentProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the annotationSpecId at the given index.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
@@ -1534,7 +1611,7 @@ public final class TextSentimentProto {
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1569,7 +1646,6 @@ public final class TextSentimentProto {
             new com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics(
                 this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.precision_ = precision_;
         result.recall_ = recall_;
         result.f1Score_ = f1Score_;
@@ -1582,12 +1658,11 @@ public final class TextSentimentProto {
         } else {
           result.confusionMatrix_ = confusionMatrixBuilder_.build();
         }
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.annotationSpecId_ = annotationSpecId_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1673,7 +1748,7 @@ public final class TextSentimentProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -1723,6 +1798,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float precision = 1;</code>
+       *
+       * @return The precision.
        */
       public float getPrecision() {
         return precision_;
@@ -1735,6 +1812,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float precision = 1;</code>
+       *
+       * @param value The precision to set.
+       * @return This builder for chaining.
        */
       public Builder setPrecision(float value) {
 
@@ -1750,6 +1830,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float precision = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrecision() {
 
@@ -1767,6 +1849,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @return The recall.
        */
       public float getRecall() {
         return recall_;
@@ -1779,6 +1863,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @param value The recall to set.
+       * @return This builder for chaining.
        */
       public Builder setRecall(float value) {
 
@@ -1794,6 +1881,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRecall() {
 
@@ -1811,6 +1900,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float f1_score = 3;</code>
+       *
+       * @return The f1Score.
        */
       public float getF1Score() {
         return f1Score_;
@@ -1823,6 +1914,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float f1_score = 3;</code>
+       *
+       * @param value The f1Score to set.
+       * @return This builder for chaining.
        */
       public Builder setF1Score(float value) {
 
@@ -1838,6 +1932,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float f1_score = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearF1Score() {
 
@@ -1856,6 +1952,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float mean_absolute_error = 4;</code>
+       *
+       * @return The meanAbsoluteError.
        */
       public float getMeanAbsoluteError() {
         return meanAbsoluteError_;
@@ -1869,6 +1967,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float mean_absolute_error = 4;</code>
+       *
+       * @param value The meanAbsoluteError to set.
+       * @return This builder for chaining.
        */
       public Builder setMeanAbsoluteError(float value) {
 
@@ -1885,6 +1986,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float mean_absolute_error = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMeanAbsoluteError() {
 
@@ -1903,6 +2006,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float mean_squared_error = 5;</code>
+       *
+       * @return The meanSquaredError.
        */
       public float getMeanSquaredError() {
         return meanSquaredError_;
@@ -1916,6 +2021,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float mean_squared_error = 5;</code>
+       *
+       * @param value The meanSquaredError to set.
+       * @return This builder for chaining.
        */
       public Builder setMeanSquaredError(float value) {
 
@@ -1932,6 +2040,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float mean_squared_error = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMeanSquaredError() {
 
@@ -1950,6 +2060,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float linear_kappa = 6;</code>
+       *
+       * @return The linearKappa.
        */
       public float getLinearKappa() {
         return linearKappa_;
@@ -1963,6 +2075,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float linear_kappa = 6;</code>
+       *
+       * @param value The linearKappa to set.
+       * @return This builder for chaining.
        */
       public Builder setLinearKappa(float value) {
 
@@ -1979,6 +2094,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float linear_kappa = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLinearKappa() {
 
@@ -1997,6 +2114,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float quadratic_kappa = 7;</code>
+       *
+       * @return The quadraticKappa.
        */
       public float getQuadraticKappa() {
         return quadraticKappa_;
@@ -2010,6 +2129,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float quadratic_kappa = 7;</code>
+       *
+       * @param value The quadraticKappa to set.
+       * @return This builder for chaining.
        */
       public Builder setQuadraticKappa(float value) {
 
@@ -2026,6 +2148,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>float quadratic_kappa = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearQuadraticKappa() {
 
@@ -2057,6 +2181,8 @@ public final class TextSentimentProto {
        * <code>
        * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
        * </code>
+       *
+       * @return Whether the confusionMatrix field is set.
        */
       public boolean hasConfusionMatrix() {
         return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
@@ -2073,6 +2199,8 @@ public final class TextSentimentProto {
        * <code>
        * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
        * </code>
+       *
+       * @return The confusionMatrix.
        */
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
               .ConfusionMatrix
@@ -2284,9 +2412,9 @@ public final class TextSentimentProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -2298,6 +2426,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @return A list containing the annotationSpecId.
        */
       @java.lang.Deprecated
       public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
@@ -2312,6 +2442,8 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @return The count of annotationSpecId.
        */
       @java.lang.Deprecated
       public int getAnnotationSpecIdCount() {
@@ -2326,6 +2458,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The annotationSpecId at the given index.
        */
       @java.lang.Deprecated
       public java.lang.String getAnnotationSpecId(int index) {
@@ -2340,6 +2475,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the annotationSpecId at the given index.
        */
       @java.lang.Deprecated
       public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
@@ -2354,6 +2492,10 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The annotationSpecId to set.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder setAnnotationSpecId(int index, java.lang.String value) {
@@ -2374,6 +2516,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @param value The annotationSpecId to add.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder addAnnotationSpecId(java.lang.String value) {
@@ -2394,6 +2539,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @param values The annotationSpecId to add.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
@@ -2411,11 +2559,13 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2428,6 +2578,9 @@ public final class TextSentimentProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
+       *
+       * @param value The bytes of the annotationSpecId to add.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder addAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
@@ -2535,21 +2688,13 @@ public final class TextSentimentProto {
           + "1beta1\352\002\036Google::Cloud::AutoML::V1beta1b"
           + "\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_fieldAccessorTable =

@@ -33,6 +33,8 @@ public interface DeployModelRequestOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
    * </code>
+   *
+   * @return Whether the imageObjectDetectionModelDeploymentMetadata field is set.
    */
   boolean hasImageObjectDetectionModelDeploymentMetadata();
   /**
@@ -45,6 +47,8 @@ public interface DeployModelRequestOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
    * </code>
+   *
+   * @return The imageObjectDetectionModelDeploymentMetadata.
    */
   com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
       getImageObjectDetectionModelDeploymentMetadata();
@@ -72,6 +76,8 @@ public interface DeployModelRequestOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
    * </code>
+   *
+   * @return Whether the imageClassificationModelDeploymentMetadata field is set.
    */
   boolean hasImageClassificationModelDeploymentMetadata();
   /**
@@ -84,6 +90,8 @@ public interface DeployModelRequestOrBuilder
    * <code>
    * .google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
    * </code>
+   *
+   * @return The imageClassificationModelDeploymentMetadata.
    */
   com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
       getImageClassificationModelDeploymentMetadata();
@@ -109,6 +117,8 @@ public interface DeployModelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -119,6 +129,8 @@ public interface DeployModelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 

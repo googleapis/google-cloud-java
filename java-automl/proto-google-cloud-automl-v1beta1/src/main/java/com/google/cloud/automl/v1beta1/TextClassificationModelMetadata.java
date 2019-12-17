@@ -43,6 +43,12 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextClassificationModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for classificationType.
    */
   public int getClassificationTypeValue() {
     return classificationType_;
@@ -129,6 +136,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   *
+   * @return The classificationType.
    */
   public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
       getClassificationType() {
@@ -478,6 +487,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for classificationType.
      */
     public int getClassificationTypeValue() {
       return classificationType_;
@@ -490,6 +501,9 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for classificationType to set.
+     * @return This builder for chaining.
      */
     public Builder setClassificationTypeValue(int value) {
       classificationType_ = value;
@@ -504,6 +518,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     *
+     * @return The classificationType.
      */
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
         getClassificationType() {
@@ -523,6 +539,9 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     *
+     * @param value The classificationType to set.
+     * @return This builder for chaining.
      */
     public Builder setClassificationType(
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType value) {
@@ -542,6 +561,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClassificationType() {
 

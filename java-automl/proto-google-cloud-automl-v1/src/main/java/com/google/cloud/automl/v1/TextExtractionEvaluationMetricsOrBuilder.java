@@ -31,6 +31,8 @@ public interface TextExtractionEvaluationMetricsOrBuilder
    * </pre>
    *
    * <code>float au_prc = 1;</code>
+   *
+   * @return The auPrc.
    */
   float getAuPrc();
 

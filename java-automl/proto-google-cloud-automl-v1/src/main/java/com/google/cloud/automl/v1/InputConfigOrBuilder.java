@@ -34,6 +34,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -47,6 +49,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.automl.v1.GcsSource getGcsSource();
   /**

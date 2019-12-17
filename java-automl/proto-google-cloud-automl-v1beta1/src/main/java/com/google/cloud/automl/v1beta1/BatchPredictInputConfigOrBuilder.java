@@ -31,6 +31,8 @@ public interface BatchPredictInputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -41,6 +43,8 @@ public interface BatchPredictInputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.automl.v1beta1.GcsSource getGcsSource();
   /**
@@ -62,6 +66,8 @@ public interface BatchPredictInputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
+   *
+   * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
   /**
@@ -72,6 +78,8 @@ public interface BatchPredictInputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
+   *
+   * @return The bigquerySource.
    */
   com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource();
   /**

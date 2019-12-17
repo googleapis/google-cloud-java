@@ -35,6 +35,8 @@ public interface TablesAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -49,6 +51,8 @@ public interface TablesAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
+   *
+   * @return Whether the predictionInterval field is set.
    */
   boolean hasPredictionInterval();
   /**
@@ -62,6 +66,8 @@ public interface TablesAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
+   *
+   * @return The predictionInterval.
    */
   com.google.cloud.automl.v1beta1.DoubleRange getPredictionInterval();
   /**
@@ -91,6 +97,8 @@ public interface TablesAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
+   *
+   * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
@@ -106,6 +114,8 @@ public interface TablesAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Value value = 2;</code>
+   *
+   * @return The value.
    */
   com.google.protobuf.Value getValue();
   /**

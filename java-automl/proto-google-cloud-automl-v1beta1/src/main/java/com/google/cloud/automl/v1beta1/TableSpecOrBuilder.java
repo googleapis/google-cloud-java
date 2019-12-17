@@ -33,6 +33,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>string time_column_spec_id = 2;</code>
+   *
+   * @return The timeColumnSpecId.
    */
   java.lang.String getTimeColumnSpecId();
   /**
@@ -80,6 +86,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>string time_column_spec_id = 2;</code>
+   *
+   * @return The bytes for timeColumnSpecId.
    */
   com.google.protobuf.ByteString getTimeColumnSpecIdBytes();
 
@@ -91,6 +99,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>int64 row_count = 3;</code>
+   *
+   * @return The rowCount.
    */
   long getRowCount();
 
@@ -103,6 +113,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>int64 valid_row_count = 4;</code>
+   *
+   * @return The validRowCount.
    */
   long getValidRowCount();
 
@@ -115,6 +127,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>int64 column_count = 7;</code>
+   *
+   * @return The columnCount.
    */
   long getColumnCount();
 
@@ -184,6 +198,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -195,6 +211,8 @@ public interface TableSpecOrBuilder
    * </pre>
    *
    * <code>string etag = 6;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 }

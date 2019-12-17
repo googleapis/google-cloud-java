@@ -31,6 +31,8 @@ public interface CreateModelRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -41,6 +43,8 @@ public interface CreateModelRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -52,6 +56,8 @@ public interface CreateModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model model = 4;</code>
+   *
+   * @return Whether the model field is set.
    */
   boolean hasModel();
   /**
@@ -62,6 +68,8 @@ public interface CreateModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model model = 4;</code>
+   *
+   * @return The model.
    */
   com.google.cloud.automl.v1.Model getModel();
   /**

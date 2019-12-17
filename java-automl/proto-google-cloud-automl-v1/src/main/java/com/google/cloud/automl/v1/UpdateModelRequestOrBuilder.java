@@ -31,6 +31,8 @@ public interface UpdateModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   *
+   * @return Whether the model field is set.
    */
   boolean hasModel();
   /**
@@ -41,6 +43,8 @@ public interface UpdateModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   *
+   * @return The model.
    */
   com.google.cloud.automl.v1.Model getModel();
   /**
@@ -62,6 +66,8 @@ public interface UpdateModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -72,6 +78,8 @@ public interface UpdateModelRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

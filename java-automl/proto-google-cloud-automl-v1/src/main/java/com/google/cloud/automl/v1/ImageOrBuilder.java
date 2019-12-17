@@ -33,6 +33,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>bytes image_bytes = 1;</code>
+   *
+   * @return The imageBytes.
    */
   com.google.protobuf.ByteString getImageBytes();
 
@@ -44,6 +46,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
+   *
+   * @return The thumbnailUri.
    */
   java.lang.String getThumbnailUri();
   /**
@@ -54,6 +58,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
+   *
+   * @return The bytes for thumbnailUri.
    */
   com.google.protobuf.ByteString getThumbnailUriBytes();
 

@@ -108,12 +108,20 @@ public final class ClassificationProto {
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ClassificationType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ClassificationType forNumber(int value) {
       switch (value) {
         case 0:
@@ -193,6 +201,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return The score.
      */
     float getScore();
   }
@@ -218,6 +228,12 @@ public final class ClassificationProto {
     private ClassificationAnnotation() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClassificationAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -230,7 +246,6 @@ public final class ClassificationProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -295,6 +310,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -657,6 +674,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float score = 1;</code>
+       *
+       * @return The score.
        */
       public float getScore() {
         return score_;
@@ -673,6 +692,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float score = 1;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
        */
       public Builder setScore(float value) {
 
@@ -692,6 +714,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float score = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearScore() {
 
@@ -789,6 +813,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The type.
      */
     java.lang.String getType();
     /**
@@ -818,6 +844,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString getTypeBytes();
 
@@ -830,6 +858,8 @@ public final class ClassificationProto {
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
      * </code>
+     *
+     * @return Whether the classificationAnnotation field is set.
      */
     boolean hasClassificationAnnotation();
     /**
@@ -841,6 +871,8 @@ public final class ClassificationProto {
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
      * </code>
+     *
+     * @return The classificationAnnotation.
      */
     com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
         getClassificationAnnotation();
@@ -866,6 +898,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     *
+     * @return Whether the timeSegment field is set.
      */
     boolean hasTimeSegment();
     /**
@@ -877,6 +911,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     *
+     * @return The timeSegment.
      */
     com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment();
     /**
@@ -917,6 +953,12 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VideoClassificationAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -929,7 +971,6 @@ public final class ClassificationProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1047,6 +1088,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -1086,6 +1129,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
@@ -1111,6 +1156,8 @@ public final class ClassificationProto {
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
      * </code>
+     *
+     * @return Whether the classificationAnnotation field is set.
      */
     public boolean hasClassificationAnnotation() {
       return classificationAnnotation_ != null;
@@ -1124,6 +1171,8 @@ public final class ClassificationProto {
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
      * </code>
+     *
+     * @return The classificationAnnotation.
      */
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
         getClassificationAnnotation() {
@@ -1158,6 +1207,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     *
+     * @return Whether the timeSegment field is set.
      */
     public boolean hasTimeSegment() {
       return timeSegment_ != null;
@@ -1171,6 +1222,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     *
+     * @return The timeSegment.
      */
     public com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment() {
       return timeSegment_ == null
@@ -1627,6 +1680,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
+       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -1666,6 +1721,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString getTypeBytes() {
         java.lang.Object ref = type_;
@@ -1705,6 +1762,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(java.lang.String value) {
         if (value == null) {
@@ -1742,6 +1802,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearType() {
 
@@ -1776,6 +1838,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1804,6 +1869,8 @@ public final class ClassificationProto {
        *
        * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
        * </code>
+       *
+       * @return Whether the classificationAnnotation field is set.
        */
       public boolean hasClassificationAnnotation() {
         return classificationAnnotationBuilder_ != null || classificationAnnotation_ != null;
@@ -1817,6 +1884,8 @@ public final class ClassificationProto {
        *
        * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
        * </code>
+       *
+       * @return The classificationAnnotation.
        */
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
           getClassificationAnnotation() {
@@ -2006,6 +2075,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       *
+       * @return Whether the timeSegment field is set.
        */
       public boolean hasTimeSegment() {
         return timeSegmentBuilder_ != null || timeSegment_ != null;
@@ -2019,6 +2090,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       *
+       * @return The timeSegment.
        */
       public com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment() {
         if (timeSegmentBuilder_ == null) {
@@ -2253,6 +2326,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float au_prc = 1;</code>
+     *
+     * @return The auPrc.
      */
     float getAuPrc();
 
@@ -2266,6 +2341,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float base_au_prc = 2 [deprecated = true];</code>
+     *
+     * @return The baseAuPrc.
      */
     @java.lang.Deprecated
     float getBaseAuPrc();
@@ -2279,6 +2356,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float au_roc = 6;</code>
+     *
+     * @return The auRoc.
      */
     float getAuRoc();
 
@@ -2290,6 +2369,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float log_loss = 7;</code>
+     *
+     * @return The logLoss.
      */
     float getLogLoss();
 
@@ -2408,6 +2489,8 @@ public final class ClassificationProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
      * </code>
+     *
+     * @return Whether the confusionMatrix field is set.
      */
     boolean hasConfusionMatrix();
     /**
@@ -2423,6 +2506,8 @@ public final class ClassificationProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
      * </code>
+     *
+     * @return The confusionMatrix.
      */
     com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
@@ -2453,6 +2538,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @return A list containing the annotationSpecId.
      */
     java.util.List<java.lang.String> getAnnotationSpecIdList();
     /**
@@ -2463,6 +2550,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @return The count of annotationSpecId.
      */
     int getAnnotationSpecIdCount();
     /**
@@ -2473,6 +2562,9 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The annotationSpecId at the given index.
      */
     java.lang.String getAnnotationSpecId(int index);
     /**
@@ -2483,6 +2575,9 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the annotationSpecId at the given index.
      */
     com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
   }
@@ -2512,6 +2607,12 @@ public final class ClassificationProto {
     private ClassificationEvaluationMetrics() {
       confidenceMetricsEntry_ = java.util.Collections.emptyList();
       annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClassificationEvaluationMetrics();
     }
 
     @java.lang.Override
@@ -2550,12 +2651,12 @@ public final class ClassificationProto {
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   confidenceMetricsEntry_ =
                       new java.util.ArrayList<
                           com.google.cloud.automl.v1beta1.ClassificationProto
                               .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 confidenceMetricsEntry_.add(
                     input.readMessage(
@@ -2587,9 +2688,9 @@ public final class ClassificationProto {
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000040;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 annotationSpecId_.add(s);
                 break;
@@ -2618,10 +2719,10 @@ public final class ClassificationProto {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           confidenceMetricsEntry_ = java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
         }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -2660,6 +2761,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
+       *
+       * @return The confidenceThreshold.
        */
       float getConfidenceThreshold();
 
@@ -2673,6 +2776,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int32 position_threshold = 14;</code>
+       *
+       * @return The positionThreshold.
        */
       int getPositionThreshold();
 
@@ -2685,6 +2790,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @return The recall.
        */
       float getRecall();
 
@@ -2696,6 +2803,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float precision = 3;</code>
+       *
+       * @return The precision.
        */
       float getPrecision();
 
@@ -2707,6 +2816,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float false_positive_rate = 8;</code>
+       *
+       * @return The falsePositiveRate.
        */
       float getFalsePositiveRate();
 
@@ -2718,6 +2829,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float f1_score = 4;</code>
+       *
+       * @return The f1Score.
        */
       float getF1Score();
 
@@ -2731,6 +2844,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
+       *
+       * @return The recallAt1.
        */
       float getRecallAt1();
 
@@ -2744,6 +2859,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float precision_at1 = 6;</code>
+       *
+       * @return The precisionAt1.
        */
       float getPrecisionAt1();
 
@@ -2757,6 +2874,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float false_positive_rate_at1 = 9;</code>
+       *
+       * @return The falsePositiveRateAt1.
        */
       float getFalsePositiveRateAt1();
 
@@ -2771,6 +2890,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
+       *
+       * @return The f1ScoreAt1.
        */
       float getF1ScoreAt1();
 
@@ -2783,6 +2904,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 true_positive_count = 10;</code>
+       *
+       * @return The truePositiveCount.
        */
       long getTruePositiveCount();
 
@@ -2795,6 +2918,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 false_positive_count = 11;</code>
+       *
+       * @return The falsePositiveCount.
        */
       long getFalsePositiveCount();
 
@@ -2807,6 +2932,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 false_negative_count = 12;</code>
+       *
+       * @return The falseNegativeCount.
        */
       long getFalseNegativeCount();
 
@@ -2819,6 +2946,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 true_negative_count = 13;</code>
+       *
+       * @return The trueNegativeCount.
        */
       long getTrueNegativeCount();
     }
@@ -2845,6 +2974,12 @@ public final class ClassificationProto {
       private ConfidenceMetricsEntry() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ConfidenceMetricsEntry();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -2857,7 +2992,6 @@ public final class ClassificationProto {
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -2986,6 +3120,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
+       *
+       * @return The confidenceThreshold.
        */
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
@@ -3003,6 +3139,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int32 position_threshold = 14;</code>
+       *
+       * @return The positionThreshold.
        */
       public int getPositionThreshold() {
         return positionThreshold_;
@@ -3019,6 +3157,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @return The recall.
        */
       public float getRecall() {
         return recall_;
@@ -3034,6 +3174,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float precision = 3;</code>
+       *
+       * @return The precision.
        */
       public float getPrecision() {
         return precision_;
@@ -3049,6 +3191,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float false_positive_rate = 8;</code>
+       *
+       * @return The falsePositiveRate.
        */
       public float getFalsePositiveRate() {
         return falsePositiveRate_;
@@ -3064,6 +3208,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float f1_score = 4;</code>
+       *
+       * @return The f1Score.
        */
       public float getF1Score() {
         return f1Score_;
@@ -3081,6 +3227,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
+       *
+       * @return The recallAt1.
        */
       public float getRecallAt1() {
         return recallAt1_;
@@ -3098,6 +3246,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float precision_at1 = 6;</code>
+       *
+       * @return The precisionAt1.
        */
       public float getPrecisionAt1() {
         return precisionAt1_;
@@ -3115,6 +3265,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float false_positive_rate_at1 = 9;</code>
+       *
+       * @return The falsePositiveRateAt1.
        */
       public float getFalsePositiveRateAt1() {
         return falsePositiveRateAt1_;
@@ -3133,6 +3285,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
+       *
+       * @return The f1ScoreAt1.
        */
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
@@ -3149,6 +3303,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 true_positive_count = 10;</code>
+       *
+       * @return The truePositiveCount.
        */
       public long getTruePositiveCount() {
         return truePositiveCount_;
@@ -3165,6 +3321,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 false_positive_count = 11;</code>
+       *
+       * @return The falsePositiveCount.
        */
       public long getFalsePositiveCount() {
         return falsePositiveCount_;
@@ -3181,6 +3339,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 false_negative_count = 12;</code>
+       *
+       * @return The falseNegativeCount.
        */
       public long getFalseNegativeCount() {
         return falseNegativeCount_;
@@ -3197,6 +3357,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>int64 true_negative_count = 13;</code>
+       *
+       * @return The trueNegativeCount.
        */
       public long getTrueNegativeCount() {
         return trueNegativeCount_;
@@ -3798,6 +3960,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float confidence_threshold = 1;</code>
+         *
+         * @return The confidenceThreshold.
          */
         public float getConfidenceThreshold() {
           return confidenceThreshold_;
@@ -3811,6 +3975,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float confidence_threshold = 1;</code>
+         *
+         * @param value The confidenceThreshold to set.
+         * @return This builder for chaining.
          */
         public Builder setConfidenceThreshold(float value) {
 
@@ -3827,6 +3994,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float confidence_threshold = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearConfidenceThreshold() {
 
@@ -3846,6 +4015,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int32 position_threshold = 14;</code>
+         *
+         * @return The positionThreshold.
          */
         public int getPositionThreshold() {
           return positionThreshold_;
@@ -3860,6 +4031,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int32 position_threshold = 14;</code>
+         *
+         * @param value The positionThreshold to set.
+         * @return This builder for chaining.
          */
         public Builder setPositionThreshold(int value) {
 
@@ -3877,6 +4051,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int32 position_threshold = 14;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPositionThreshold() {
 
@@ -3895,6 +4071,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float recall = 2;</code>
+         *
+         * @return The recall.
          */
         public float getRecall() {
           return recall_;
@@ -3908,6 +4086,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float recall = 2;</code>
+         *
+         * @param value The recall to set.
+         * @return This builder for chaining.
          */
         public Builder setRecall(float value) {
 
@@ -3924,6 +4105,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float recall = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearRecall() {
 
@@ -3941,6 +4124,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float precision = 3;</code>
+         *
+         * @return The precision.
          */
         public float getPrecision() {
           return precision_;
@@ -3953,6 +4138,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float precision = 3;</code>
+         *
+         * @param value The precision to set.
+         * @return This builder for chaining.
          */
         public Builder setPrecision(float value) {
 
@@ -3968,6 +4156,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float precision = 3;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPrecision() {
 
@@ -3985,6 +4175,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float false_positive_rate = 8;</code>
+         *
+         * @return The falsePositiveRate.
          */
         public float getFalsePositiveRate() {
           return falsePositiveRate_;
@@ -3997,6 +4189,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float false_positive_rate = 8;</code>
+         *
+         * @param value The falsePositiveRate to set.
+         * @return This builder for chaining.
          */
         public Builder setFalsePositiveRate(float value) {
 
@@ -4012,6 +4207,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float false_positive_rate = 8;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFalsePositiveRate() {
 
@@ -4029,6 +4226,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float f1_score = 4;</code>
+         *
+         * @return The f1Score.
          */
         public float getF1Score() {
           return f1Score_;
@@ -4041,6 +4240,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float f1_score = 4;</code>
+         *
+         * @param value The f1Score to set.
+         * @return This builder for chaining.
          */
         public Builder setF1Score(float value) {
 
@@ -4056,6 +4258,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float f1_score = 4;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearF1Score() {
 
@@ -4075,6 +4279,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float recall_at1 = 5;</code>
+         *
+         * @return The recallAt1.
          */
         public float getRecallAt1() {
           return recallAt1_;
@@ -4089,6 +4295,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float recall_at1 = 5;</code>
+         *
+         * @param value The recallAt1 to set.
+         * @return This builder for chaining.
          */
         public Builder setRecallAt1(float value) {
 
@@ -4106,6 +4315,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float recall_at1 = 5;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearRecallAt1() {
 
@@ -4125,6 +4336,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float precision_at1 = 6;</code>
+         *
+         * @return The precisionAt1.
          */
         public float getPrecisionAt1() {
           return precisionAt1_;
@@ -4139,6 +4352,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float precision_at1 = 6;</code>
+         *
+         * @param value The precisionAt1 to set.
+         * @return This builder for chaining.
          */
         public Builder setPrecisionAt1(float value) {
 
@@ -4156,6 +4372,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float precision_at1 = 6;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPrecisionAt1() {
 
@@ -4175,6 +4393,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float false_positive_rate_at1 = 9;</code>
+         *
+         * @return The falsePositiveRateAt1.
          */
         public float getFalsePositiveRateAt1() {
           return falsePositiveRateAt1_;
@@ -4189,6 +4409,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float false_positive_rate_at1 = 9;</code>
+         *
+         * @param value The falsePositiveRateAt1 to set.
+         * @return This builder for chaining.
          */
         public Builder setFalsePositiveRateAt1(float value) {
 
@@ -4206,6 +4429,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float false_positive_rate_at1 = 9;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFalsePositiveRateAt1() {
 
@@ -4226,6 +4451,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
+         *
+         * @return The f1ScoreAt1.
          */
         public float getF1ScoreAt1() {
           return f1ScoreAt1_;
@@ -4241,6 +4468,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
+         *
+         * @param value The f1ScoreAt1 to set.
+         * @return This builder for chaining.
          */
         public Builder setF1ScoreAt1(float value) {
 
@@ -4259,6 +4489,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearF1ScoreAt1() {
 
@@ -4277,6 +4509,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 true_positive_count = 10;</code>
+         *
+         * @return The truePositiveCount.
          */
         public long getTruePositiveCount() {
           return truePositiveCount_;
@@ -4290,6 +4524,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 true_positive_count = 10;</code>
+         *
+         * @param value The truePositiveCount to set.
+         * @return This builder for chaining.
          */
         public Builder setTruePositiveCount(long value) {
 
@@ -4306,6 +4543,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 true_positive_count = 10;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTruePositiveCount() {
 
@@ -4324,6 +4563,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 false_positive_count = 11;</code>
+         *
+         * @return The falsePositiveCount.
          */
         public long getFalsePositiveCount() {
           return falsePositiveCount_;
@@ -4337,6 +4578,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 false_positive_count = 11;</code>
+         *
+         * @param value The falsePositiveCount to set.
+         * @return This builder for chaining.
          */
         public Builder setFalsePositiveCount(long value) {
 
@@ -4353,6 +4597,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 false_positive_count = 11;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFalsePositiveCount() {
 
@@ -4371,6 +4617,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 false_negative_count = 12;</code>
+         *
+         * @return The falseNegativeCount.
          */
         public long getFalseNegativeCount() {
           return falseNegativeCount_;
@@ -4384,6 +4632,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 false_negative_count = 12;</code>
+         *
+         * @param value The falseNegativeCount to set.
+         * @return This builder for chaining.
          */
         public Builder setFalseNegativeCount(long value) {
 
@@ -4400,6 +4651,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 false_negative_count = 12;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFalseNegativeCount() {
 
@@ -4418,6 +4671,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 true_negative_count = 13;</code>
+         *
+         * @return The trueNegativeCount.
          */
         public long getTrueNegativeCount() {
           return trueNegativeCount_;
@@ -4431,6 +4686,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 true_negative_count = 13;</code>
+         *
+         * @param value The trueNegativeCount to set.
+         * @return This builder for chaining.
          */
         public Builder setTrueNegativeCount(long value) {
 
@@ -4447,6 +4705,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>int64 true_negative_count = 13;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearTrueNegativeCount() {
 
@@ -4531,6 +4791,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @return A list containing the annotationSpecId.
        */
       java.util.List<java.lang.String> getAnnotationSpecIdList();
       /**
@@ -4544,6 +4806,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @return The count of annotationSpecId.
        */
       int getAnnotationSpecIdCount();
       /**
@@ -4557,6 +4821,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The annotationSpecId at the given index.
        */
       java.lang.String getAnnotationSpecId(int index);
       /**
@@ -4570,6 +4837,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the annotationSpecId at the given index.
        */
       com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
 
@@ -4586,6 +4856,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @return A list containing the displayName.
        */
       java.util.List<java.lang.String> getDisplayNameList();
       /**
@@ -4601,6 +4873,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @return The count of displayName.
        */
       int getDisplayNameCount();
       /**
@@ -4616,6 +4890,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The displayName at the given index.
        */
       java.lang.String getDisplayName(int index);
       /**
@@ -4631,6 +4908,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the displayName at the given index.
        */
       com.google.protobuf.ByteString getDisplayNameBytes(int index);
 
@@ -4750,6 +5030,12 @@ public final class ClassificationProto {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         row_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ConfusionMatrix();
       }
 
       @java.lang.Override
@@ -4876,6 +5162,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
+         *
+         * @return A list containing the exampleCount.
          */
         java.util.List<java.lang.Integer> getExampleCountList();
         /**
@@ -4891,6 +5179,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
+         *
+         * @return The count of exampleCount.
          */
         int getExampleCountCount();
         /**
@@ -4906,6 +5196,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The exampleCount at the given index.
          */
         int getExampleCount(int index);
       }
@@ -4931,6 +5224,12 @@ public final class ClassificationProto {
 
         private Row() {
           exampleCount_ = emptyIntList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Row();
         }
 
         @java.lang.Override
@@ -5036,6 +5335,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
+         *
+         * @return A list containing the exampleCount.
          */
         public java.util.List<java.lang.Integer> getExampleCountList() {
           return exampleCount_;
@@ -5053,6 +5354,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
+         *
+         * @return The count of exampleCount.
          */
         public int getExampleCountCount() {
           return exampleCount_.size();
@@ -5070,6 +5373,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The exampleCount at the given index.
          */
         public int getExampleCount(int index) {
           return exampleCount_.getInt(index);
@@ -5516,6 +5822,8 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @return A list containing the exampleCount.
            */
           public java.util.List<java.lang.Integer> getExampleCountList() {
             return ((bitField0_ & 0x00000001) != 0)
@@ -5535,6 +5843,8 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @return The count of exampleCount.
            */
           public int getExampleCountCount() {
             return exampleCount_.size();
@@ -5552,6 +5862,9 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @param index The index of the element to return.
+           * @return The exampleCount at the given index.
            */
           public int getExampleCount(int index) {
             return exampleCount_.getInt(index);
@@ -5569,6 +5882,10 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @param index The index to set the value at.
+           * @param value The exampleCount to set.
+           * @return This builder for chaining.
            */
           public Builder setExampleCount(int index, int value) {
             ensureExampleCountIsMutable();
@@ -5589,6 +5906,9 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @param value The exampleCount to add.
+           * @return This builder for chaining.
            */
           public Builder addExampleCount(int value) {
             ensureExampleCountIsMutable();
@@ -5609,6 +5929,9 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @param values The exampleCount to add.
+           * @return This builder for chaining.
            */
           public Builder addAllExampleCount(
               java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5630,6 +5953,8 @@ public final class ClassificationProto {
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
+           *
+           * @return This builder for chaining.
            */
           public Builder clearExampleCount() {
             exampleCount_ = emptyIntList();
@@ -5711,6 +6036,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @return A list containing the annotationSpecId.
        */
       public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
         return annotationSpecId_;
@@ -5726,6 +6053,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @return The count of annotationSpecId.
        */
       public int getAnnotationSpecIdCount() {
         return annotationSpecId_.size();
@@ -5741,6 +6070,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The annotationSpecId at the given index.
        */
       public java.lang.String getAnnotationSpecId(int index) {
         return annotationSpecId_.get(index);
@@ -5756,6 +6088,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the annotationSpecId at the given index.
        */
       public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
@@ -5776,6 +6111,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @return A list containing the displayName.
        */
       public com.google.protobuf.ProtocolStringList getDisplayNameList() {
         return displayName_;
@@ -5793,6 +6130,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @return The count of displayName.
        */
       public int getDisplayNameCount() {
         return displayName_.size();
@@ -5810,6 +6149,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The displayName at the given index.
        */
       public java.lang.String getDisplayName(int index) {
         return displayName_.get(index);
@@ -5827,6 +6169,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string display_name = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the displayName at the given index.
        */
       public com.google.protobuf.ByteString getDisplayNameBytes(int index) {
         return displayName_.getByteString(index);
@@ -6451,6 +6796,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @return A list containing the annotationSpecId.
          */
         public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
           return annotationSpecId_.getUnmodifiableView();
@@ -6466,6 +6813,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @return The count of annotationSpecId.
          */
         public int getAnnotationSpecIdCount() {
           return annotationSpecId_.size();
@@ -6481,6 +6830,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The annotationSpecId at the given index.
          */
         public java.lang.String getAnnotationSpecId(int index) {
           return annotationSpecId_.get(index);
@@ -6496,6 +6848,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the annotationSpecId at the given index.
          */
         public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
           return annotationSpecId_.getByteString(index);
@@ -6511,6 +6866,10 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The annotationSpecId to set.
+         * @return This builder for chaining.
          */
         public Builder setAnnotationSpecId(int index, java.lang.String value) {
           if (value == null) {
@@ -6532,6 +6891,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @param value The annotationSpecId to add.
+         * @return This builder for chaining.
          */
         public Builder addAnnotationSpecId(java.lang.String value) {
           if (value == null) {
@@ -6553,6 +6915,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @param values The annotationSpecId to add.
+         * @return This builder for chaining.
          */
         public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
           ensureAnnotationSpecIdIsMutable();
@@ -6571,6 +6936,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearAnnotationSpecId() {
           annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -6589,6 +6956,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
+         *
+         * @param value The bytes of the annotationSpecId to add.
+         * @return This builder for chaining.
          */
         public Builder addAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -6623,6 +6993,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @return A list containing the displayName.
          */
         public com.google.protobuf.ProtocolStringList getDisplayNameList() {
           return displayName_.getUnmodifiableView();
@@ -6640,6 +7012,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @return The count of displayName.
          */
         public int getDisplayNameCount() {
           return displayName_.size();
@@ -6657,6 +7031,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The displayName at the given index.
          */
         public java.lang.String getDisplayName(int index) {
           return displayName_.get(index);
@@ -6674,6 +7051,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the displayName at the given index.
          */
         public com.google.protobuf.ByteString getDisplayNameBytes(int index) {
           return displayName_.getByteString(index);
@@ -6691,6 +7071,10 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The displayName to set.
+         * @return This builder for chaining.
          */
         public Builder setDisplayName(int index, java.lang.String value) {
           if (value == null) {
@@ -6714,6 +7098,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @param value The displayName to add.
+         * @return This builder for chaining.
          */
         public Builder addDisplayName(java.lang.String value) {
           if (value == null) {
@@ -6737,6 +7124,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @param values The displayName to add.
+         * @return This builder for chaining.
          */
         public Builder addAllDisplayName(java.lang.Iterable<java.lang.String> values) {
           ensureDisplayNameIsMutable();
@@ -6757,6 +7147,8 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearDisplayName() {
           displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -6777,6 +7169,9 @@ public final class ClassificationProto {
          * </pre>
          *
          * <code>repeated string display_name = 3;</code>
+         *
+         * @param value The bytes of the displayName to add.
+         * @return This builder for chaining.
          */
         public Builder addDisplayNameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -7367,7 +7762,6 @@ public final class ClassificationProto {
       }
     }
 
-    private int bitField0_;
     public static final int AU_PRC_FIELD_NUMBER = 1;
     private float auPrc_;
     /**
@@ -7379,6 +7773,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float au_prc = 1;</code>
+     *
+     * @return The auPrc.
      */
     public float getAuPrc() {
       return auPrc_;
@@ -7396,6 +7792,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float base_au_prc = 2 [deprecated = true];</code>
+     *
+     * @return The baseAuPrc.
      */
     @java.lang.Deprecated
     public float getBaseAuPrc() {
@@ -7413,6 +7811,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float au_roc = 6;</code>
+     *
+     * @return The auRoc.
      */
     public float getAuRoc() {
       return auRoc_;
@@ -7428,6 +7828,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>float log_loss = 7;</code>
+     *
+     * @return The logLoss.
      */
     public float getLogLoss() {
       return logLoss_;
@@ -7567,6 +7969,8 @@ public final class ClassificationProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
      * </code>
+     *
+     * @return Whether the confusionMatrix field is set.
      */
     public boolean hasConfusionMatrix() {
       return confusionMatrix_ != null;
@@ -7584,6 +7988,8 @@ public final class ClassificationProto {
      * <code>
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
      * </code>
+     *
+     * @return The confusionMatrix.
      */
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
@@ -7623,6 +8029,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @return A list containing the annotationSpecId.
      */
     public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
       return annotationSpecId_;
@@ -7635,6 +8043,8 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @return The count of annotationSpecId.
      */
     public int getAnnotationSpecIdCount() {
       return annotationSpecId_.size();
@@ -7647,6 +8057,9 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The annotationSpecId at the given index.
      */
     public java.lang.String getAnnotationSpecId(int index) {
       return annotationSpecId_.get(index);
@@ -7659,6 +8072,9 @@ public final class ClassificationProto {
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the annotationSpecId at the given index.
      */
     public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
       return annotationSpecId_.getByteString(index);
@@ -7985,7 +8401,7 @@ public final class ClassificationProto {
 
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           confidenceMetricsEntryBuilder_.clear();
         }
@@ -7996,7 +8412,7 @@ public final class ClassificationProto {
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -8031,16 +8447,15 @@ public final class ClassificationProto {
             new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics(
                 this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.auPrc_ = auPrc_;
         result.baseAuPrc_ = baseAuPrc_;
         result.auRoc_ = auRoc_;
         result.logLoss_ = logLoss_;
         if (confidenceMetricsEntryBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             confidenceMetricsEntry_ =
                 java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.confidenceMetricsEntry_ = confidenceMetricsEntry_;
         } else {
@@ -8051,12 +8466,11 @@ public final class ClassificationProto {
         } else {
           result.confusionMatrix_ = confusionMatrixBuilder_.build();
         }
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.annotationSpecId_ = annotationSpecId_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -8132,7 +8546,7 @@ public final class ClassificationProto {
           if (!other.confidenceMetricsEntry_.isEmpty()) {
             if (confidenceMetricsEntry_.isEmpty()) {
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureConfidenceMetricsEntryIsMutable();
               confidenceMetricsEntry_.addAll(other.confidenceMetricsEntry_);
@@ -8145,7 +8559,7 @@ public final class ClassificationProto {
               confidenceMetricsEntryBuilder_.dispose();
               confidenceMetricsEntryBuilder_ = null;
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               confidenceMetricsEntryBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConfidenceMetricsEntryFieldBuilder()
@@ -8161,7 +8575,7 @@ public final class ClassificationProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -8212,6 +8626,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float au_prc = 1;</code>
+       *
+       * @return The auPrc.
        */
       public float getAuPrc() {
         return auPrc_;
@@ -8225,6 +8641,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float au_prc = 1;</code>
+       *
+       * @param value The auPrc to set.
+       * @return This builder for chaining.
        */
       public Builder setAuPrc(float value) {
 
@@ -8241,6 +8660,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float au_prc = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAuPrc() {
 
@@ -8260,6 +8681,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float base_au_prc = 2 [deprecated = true];</code>
+       *
+       * @return The baseAuPrc.
        */
       @java.lang.Deprecated
       public float getBaseAuPrc() {
@@ -8275,6 +8698,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float base_au_prc = 2 [deprecated = true];</code>
+       *
+       * @param value The baseAuPrc to set.
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder setBaseAuPrc(float value) {
@@ -8293,6 +8719,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float base_au_prc = 2 [deprecated = true];</code>
+       *
+       * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder clearBaseAuPrc() {
@@ -8312,6 +8740,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float au_roc = 6;</code>
+       *
+       * @return The auRoc.
        */
       public float getAuRoc() {
         return auRoc_;
@@ -8325,6 +8755,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float au_roc = 6;</code>
+       *
+       * @param value The auRoc to set.
+       * @return This builder for chaining.
        */
       public Builder setAuRoc(float value) {
 
@@ -8341,6 +8774,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float au_roc = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAuRoc() {
 
@@ -8358,6 +8793,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float log_loss = 7;</code>
+       *
+       * @return The logLoss.
        */
       public float getLogLoss() {
         return logLoss_;
@@ -8370,6 +8807,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float log_loss = 7;</code>
+       *
+       * @param value The logLoss to set.
+       * @return This builder for chaining.
        */
       public Builder setLogLoss(float value) {
 
@@ -8385,6 +8825,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>float log_loss = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLogLoss() {
 
@@ -8399,13 +8841,13 @@ public final class ClassificationProto {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
 
       private void ensureConfidenceMetricsEntryIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           confidenceMetricsEntry_ =
               new java.util.ArrayList<
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>(
                   confidenceMetricsEntry_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -8740,7 +9182,7 @@ public final class ClassificationProto {
       public Builder clearConfidenceMetricsEntry() {
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           confidenceMetricsEntryBuilder_.clear();
@@ -8943,7 +9385,7 @@ public final class ClassificationProto {
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>(
                   confidenceMetricsEntry_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           confidenceMetricsEntry_ = null;
@@ -8975,6 +9417,8 @@ public final class ClassificationProto {
        * <code>
        * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
        * </code>
+       *
+       * @return Whether the confusionMatrix field is set.
        */
       public boolean hasConfusionMatrix() {
         return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
@@ -8992,6 +9436,8 @@ public final class ClassificationProto {
        * <code>
        * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
        * </code>
+       *
+       * @return The confusionMatrix.
        */
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
               .ConfusionMatrix
@@ -9210,9 +9656,9 @@ public final class ClassificationProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -9223,6 +9669,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @return A list containing the annotationSpecId.
        */
       public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
         return annotationSpecId_.getUnmodifiableView();
@@ -9235,6 +9683,8 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @return The count of annotationSpecId.
        */
       public int getAnnotationSpecIdCount() {
         return annotationSpecId_.size();
@@ -9247,6 +9697,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The annotationSpecId at the given index.
        */
       public java.lang.String getAnnotationSpecId(int index) {
         return annotationSpecId_.get(index);
@@ -9259,6 +9712,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the annotationSpecId at the given index.
        */
       public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
@@ -9271,6 +9727,10 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The annotationSpecId to set.
+       * @return This builder for chaining.
        */
       public Builder setAnnotationSpecId(int index, java.lang.String value) {
         if (value == null) {
@@ -9289,6 +9749,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @param value The annotationSpecId to add.
+       * @return This builder for chaining.
        */
       public Builder addAnnotationSpecId(java.lang.String value) {
         if (value == null) {
@@ -9307,6 +9770,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @param values The annotationSpecId to add.
+       * @return This builder for chaining.
        */
       public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
         ensureAnnotationSpecIdIsMutable();
@@ -9322,10 +9788,12 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -9337,6 +9805,9 @@ public final class ClassificationProto {
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
+       *
+       * @param value The bytes of the annotationSpecId to add.
+       * @return This builder for chaining.
        */
       public Builder addAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -9482,21 +9953,13 @@ public final class ClassificationProto {
           + "le\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud:"
           + ":AutoML::V1beta1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable =

@@ -41,6 +41,12 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
   private UpdateModelRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateModelRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   *
+   * @return Whether the model field is set.
    */
   public boolean hasModel() {
     return model_ != null;
@@ -150,6 +157,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.automl.v1.Model model = 1;</code>
+   *
+   * @return The model.
    */
   public com.google.cloud.automl.v1.Model getModel() {
     return model_ == null ? com.google.cloud.automl.v1.Model.getDefaultInstance() : model_;
@@ -177,6 +186,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -189,6 +200,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -577,6 +590,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     *
+     * @return Whether the model field is set.
      */
     public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
@@ -589,6 +604,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.automl.v1.Model model = 1;</code>
+     *
+     * @return The model.
      */
     public com.google.cloud.automl.v1.Model getModel() {
       if (modelBuilder_ == null) {
@@ -752,6 +769,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -764,6 +783,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

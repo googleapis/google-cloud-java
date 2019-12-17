@@ -40,6 +40,12 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
   private ExportModelOperationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportModelOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,6 +135,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
     /**
@@ -141,6 +148,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The bytes for gcsOutputDirectory.
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
   }
@@ -170,6 +179,12 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExportModelOutputInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -182,7 +197,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -246,6 +260,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The gcsOutputDirectory.
      */
     public java.lang.String getGcsOutputDirectory() {
       java.lang.Object ref = gcsOutputDirectory_;
@@ -267,6 +283,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     *
+     * @return The bytes for gcsOutputDirectory.
      */
     public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
       java.lang.Object ref = gcsOutputDirectory_;
@@ -638,6 +656,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return The gcsOutputDirectory.
        */
       public java.lang.String getGcsOutputDirectory() {
         java.lang.Object ref = gcsOutputDirectory_;
@@ -659,6 +679,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return The bytes for gcsOutputDirectory.
        */
       public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
         java.lang.Object ref = gcsOutputDirectory_;
@@ -680,6 +702,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @param value The gcsOutputDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setGcsOutputDirectory(java.lang.String value) {
         if (value == null) {
@@ -699,6 +724,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGcsOutputDirectory() {
 
@@ -715,6 +742,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>string gcs_output_directory = 1;</code>
+       *
+       * @param value The bytes for gcsOutputDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setGcsOutputDirectoryBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -797,6 +827,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo output_info = 2;
    * </code>
+   *
+   * @return Whether the outputInfo field is set.
    */
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
@@ -812,6 +844,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo output_info = 2;
    * </code>
+   *
+   * @return The outputInfo.
    */
   public com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo
       getOutputInfo() {
@@ -1186,6 +1220,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo output_info = 2;
      * </code>
+     *
+     * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
       return outputInfoBuilder_ != null || outputInfo_ != null;
@@ -1201,6 +1237,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo output_info = 2;
      * </code>
+     *
+     * @return The outputInfo.
      */
     public com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo
         getOutputInfo() {

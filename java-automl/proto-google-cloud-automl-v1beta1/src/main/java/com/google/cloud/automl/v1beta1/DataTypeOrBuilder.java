@@ -32,6 +32,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
+   *
+   * @return Whether the listElementType field is set.
    */
   boolean hasListElementType();
   /**
@@ -43,6 +45,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
+   *
+   * @return The listElementType.
    */
   com.google.cloud.automl.v1beta1.DataType getListElementType();
   /**
@@ -66,6 +70,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
+   *
+   * @return Whether the structType field is set.
    */
   boolean hasStructType();
   /**
@@ -77,6 +83,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
+   *
+   * @return The structType.
    */
   com.google.cloud.automl.v1beta1.StructType getStructType();
   /**
@@ -109,6 +117,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>string time_format = 5;</code>
+   *
+   * @return The timeFormat.
    */
   java.lang.String getTimeFormat();
   /**
@@ -129,6 +139,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>string time_format = 5;</code>
+   *
+   * @return The bytes for timeFormat.
    */
   com.google.protobuf.ByteString getTimeFormatBytes();
 
@@ -140,6 +152,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for typeCode.
    */
   int getTypeCodeValue();
   /**
@@ -150,6 +164,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TypeCode type_code = 1;</code>
+   *
+   * @return The typeCode.
    */
   com.google.cloud.automl.v1beta1.TypeCode getTypeCode();
 
@@ -162,6 +178,8 @@ public interface DataTypeOrBuilder
    * </pre>
    *
    * <code>bool nullable = 4;</code>
+   *
+   * @return The nullable.
    */
   boolean getNullable();
 

@@ -41,6 +41,12 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
   private ImageObjectDetectionAnnotation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageObjectDetectionAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BoundingPoly bounding_box = 1;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
@@ -141,6 +148,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.automl.v1.BoundingPoly bounding_box = 1;</code>
+   *
+   * @return The boundingBox.
    */
   public com.google.cloud.automl.v1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
@@ -171,6 +180,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>float score = 2;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -537,6 +548,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.automl.v1.BoundingPoly bounding_box = 1;</code>
+     *
+     * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
       return boundingBoxBuilder_ != null || boundingBox_ != null;
@@ -549,6 +562,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.automl.v1.BoundingPoly bounding_box = 1;</code>
+     *
+     * @return The boundingBox.
      */
     public com.google.cloud.automl.v1.BoundingPoly getBoundingBox() {
       if (boundingBoxBuilder_ == null) {
@@ -714,6 +729,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -727,6 +744,9 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -743,6 +763,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
