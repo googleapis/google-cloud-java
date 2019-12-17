@@ -61,6 +61,7 @@ public class EnhancedBigtableStubSettingsTest {
     String projectId = "my-project";
     String instanceId = "my-instance";
     String appProfileId = "my-app-profile-id";
+    boolean isRefreshingChannel = true;
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
     WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
@@ -71,6 +72,7 @@ public class EnhancedBigtableStubSettingsTest {
             .setProjectId(projectId)
             .setInstanceId(instanceId)
             .setAppProfileId(appProfileId)
+            .setRefreshingChannel(isRefreshingChannel)
             .setEndpoint(endpoint)
             .setCredentialsProvider(credentialsProvider)
             .setStreamWatchdogProvider(watchdogProvider)
@@ -81,6 +83,7 @@ public class EnhancedBigtableStubSettingsTest {
         projectId,
         instanceId,
         appProfileId,
+        isRefreshingChannel,
         endpoint,
         credentialsProvider,
         watchdogProvider,
@@ -90,6 +93,7 @@ public class EnhancedBigtableStubSettingsTest {
         projectId,
         instanceId,
         appProfileId,
+        isRefreshingChannel,
         endpoint,
         credentialsProvider,
         watchdogProvider,
@@ -99,6 +103,7 @@ public class EnhancedBigtableStubSettingsTest {
         projectId,
         instanceId,
         appProfileId,
+        isRefreshingChannel,
         endpoint,
         credentialsProvider,
         watchdogProvider,
@@ -110,6 +115,7 @@ public class EnhancedBigtableStubSettingsTest {
       String projectId,
       String instanceId,
       String appProfileId,
+      boolean isRefreshingChannel,
       String endpoint,
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
@@ -117,6 +123,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getProjectId()).isEqualTo(projectId);
     assertThat(builder.getInstanceId()).isEqualTo(instanceId);
     assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
+    assertThat(builder.isRefreshingChannel()).isEqualTo(isRefreshingChannel);
     assertThat(builder.getEndpoint()).isEqualTo(endpoint);
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(builder.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
@@ -128,6 +135,7 @@ public class EnhancedBigtableStubSettingsTest {
       String projectId,
       String instanceId,
       String appProfileId,
+      boolean isRefreshingChannel,
       String endpoint,
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
@@ -135,6 +143,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(settings.getProjectId()).isEqualTo(projectId);
     assertThat(settings.getInstanceId()).isEqualTo(instanceId);
     assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
+    assertThat(settings.isRefreshingChannel()).isEqualTo(isRefreshingChannel);
     assertThat(settings.getEndpoint()).isEqualTo(endpoint);
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(settings.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
@@ -520,5 +529,32 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(retrySettings.getInitialRpcTimeout()).isGreaterThan(Duration.ZERO);
     assertThat(retrySettings.getRpcTimeoutMultiplier()).isAtLeast(1.0);
     assertThat(retrySettings.getMaxRpcTimeout()).isGreaterThan(Duration.ZERO);
+  }
+
+  @Test
+  public void isRefreshingChannelDefaultValueTest() {
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
+    assertThat(builder.isRefreshingChannel()).isFalse();
+    assertThat(builder.build().isRefreshingChannel()).isFalse();
+    assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
+  }
+
+  @Test
+  public void isRefreshingChannelFalseValueTest() {
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(false);
+    assertThat(builder.isRefreshingChannel()).isFalse();
+    assertThat(builder.build().isRefreshingChannel()).isFalse();
+    assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
   }
 }

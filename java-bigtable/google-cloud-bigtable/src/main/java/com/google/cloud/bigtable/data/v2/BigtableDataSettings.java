@@ -184,6 +184,12 @@ public final class BigtableDataSettings {
     return stubSettings.getAppProfileId();
   }
 
+  /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
+  @BetaApi("This API depends on experimental gRPC APIs")
+  public boolean isRefreshingChannel() {
+    return stubSettings.isRefreshingChannel();
+  }
+
   /** Returns the underlying RPC settings. */
   public EnhancedBigtableStubSettings getStubSettings() {
     return stubSettings;
@@ -273,6 +279,26 @@ public final class BigtableDataSettings {
     /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
     public CredentialsProvider getCredentialsProvider() {
       return stubSettings.getCredentialsProvider();
+    }
+
+    /**
+     * Configure periodic gRPC channel refreshes.
+     *
+     * <p>This feature will gracefully refresh connections to the Cloud Bigtable service. This is an
+     * experimental feature to address tail latency caused by the service dropping long lived gRPC
+     * connections, which causes the client to renegotiate the gRPC connection in the request path,
+     * which causes periodic spikes in latency
+     */
+    @BetaApi("This API depends on experimental gRPC APIs")
+    public Builder setRefreshingChannel(boolean isRefreshingChannel) {
+      stubSettings.setRefreshingChannel(isRefreshingChannel);
+      return this;
+    }
+
+    /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
+    @BetaApi("This API depends on experimental gRPC APIs")
+    public boolean isRefreshingChannel() {
+      return stubSettings.isRefreshingChannel();
     }
 
     /**
