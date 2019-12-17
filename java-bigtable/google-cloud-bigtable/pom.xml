@@ -22,12 +22,12 @@
     <skipTests>false</skipTests>
     <skipUnitTests>${skipTests}</skipUnitTests>
 
-    <bigtable.cfe-data-endpoint>bigtable.googleapis.com:443</bigtable.cfe-data-endpoint>
-    <bigtable.cfe-admin-endpoint>bigtableadmin.googleapis.com:443</bigtable.cfe-admin-endpoint>
-
-    <!-- Use test DP env until prod endpoint is available -->
-    <bigtable.directpath-data-endpoint>testdirectpath-bigtable.sandbox.googleapis.com:443</bigtable.directpath-data-endpoint>
-    <bigtable.directpath-admin-endpoint>test-bigtableadmin.sandbox.googleapis.com:443</bigtable.directpath-admin-endpoint>
+    <!-- Use client defined default endpoints -->
+    <!-- Can be overriden on the commandline via `-Dbigtable.cfe-data-endpoint=bigtableadmin.googleapis.com:443` -->
+    <bigtable.cfe-data-endpoint/>
+    <bigtable.cfe-admin-endpoint/>
+    <bigtable.directpath-data-endpoint/>
+    <bigtable.directpath-admin-endpoint/>
   </properties>
   <dependencies>
     <!-- NOTE: Dependencies are organized into two groups, production and test.

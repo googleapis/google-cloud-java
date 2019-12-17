@@ -22,6 +22,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Strings;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
@@ -57,8 +58,8 @@ class CloudEnv extends AbstractTestEnv {
 
   static CloudEnv fromSystemProperties() {
     return new CloudEnv(
-        getOptionalProperty(DATA_ENDPOINT_PROPERTY_NAME, "bigtable.googleapis.com:443"),
-        getOptionalProperty(ADMIN_ENDPOINT_PROPERTY_NAME, "bigtableadmin.googleapis.com:443"),
+        getOptionalProperty(DATA_ENDPOINT_PROPERTY_NAME, ""),
+        getOptionalProperty(ADMIN_ENDPOINT_PROPERTY_NAME, ""),
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
         getRequiredProperty(TABLE_PROPERTY_NAME));
@@ -76,18 +77,18 @@ class CloudEnv extends AbstractTestEnv {
 
     this.dataSettings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
-    if (dataEndpoint != null) {
+    if (!Strings.isNullOrEmpty(dataEndpoint)) {
       dataSettings.stubSettings().setEndpoint(dataEndpoint);
     }
 
     this.tableAdminSettings =
         BigtableTableAdminSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
-    if (adminEndpoint != null) {
+    if (!Strings.isNullOrEmpty(adminEndpoint)) {
       this.tableAdminSettings.stubSettings().setEndpoint(adminEndpoint);
     }
 
     this.instanceAdminSettings = BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId);
-    if (adminEndpoint != null) {
+    if (!Strings.isNullOrEmpty(adminEndpoint)) {
       this.instanceAdminSettings.stubSettings().setEndpoint(adminEndpoint);
     }
   }
