@@ -29,6 +29,7 @@ import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -37,6 +38,7 @@ import org.junit.runners.JUnit4;
  * Integration (system) tests for {@link CreateInstruction}.
  */
 @RunWith(JUnit4.class)
+@Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreateInstructionIT {
 
@@ -78,7 +80,7 @@ public class CreateInstructionIT {
   }
 
   @Test
-  public void testCreateInstruction() {
+  public void testCreateInstruction() throws IOException {
     CreateInstruction.createInstruction(PROJECT_ID, GCS_SOURCE_URI);
 
     String output = bout.toString();

@@ -19,6 +19,7 @@ package com.example.datalabeling;
 // [START datalabeling_export_data_beta]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient;
+import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceSettings;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse;
 import com.google.cloud.datalabeling.v1beta1.ExportDataRequest;
@@ -33,7 +34,8 @@ import java.util.concurrent.ExecutionException;
 class ExportData {
 
   // Export data from an annotated dataset.
-  static void exportData(String datasetName, String annotatedDatasetName, String gcsOutputUri) {
+  static void exportData(String datasetName, String annotatedDatasetName, String gcsOutputUri)
+      throws IOException {
     // String datasetName = DataLabelingServiceClient.formatDatasetName(
     //     "YOUR_PROJECT_ID", "YOUR_DATASETS_UUID");
     // String annotatedDatasetName = DataLabelingServiceClient.formatAnnotatedDatasetName(
@@ -42,7 +44,21 @@ class ExportData {
     //     "YOUR_ANNOTATED_DATASET_UUID");
     // String gcsOutputUri = "gs://YOUR_BUCKET_ID/export_path";
 
-    try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+    // [END datalabeling_export_data_beta]
+    String endpoint = System.getenv("DATALABELING_ENDPOINT");
+    if (endpoint == null) {
+      endpoint = DataLabelingServiceSettings.getDefaultEndpoint();
+    }
+    // [START datalabeling_export_data_beta]
+
+    DataLabelingServiceSettings settings = DataLabelingServiceSettings
+        .newBuilder()
+        // [END datalabeling_export_data_beta]
+        .setEndpoint(endpoint)
+        // [START datalabeling_export_data_beta]
+        .build();
+    try (DataLabelingServiceClient dataLabelingServiceClient =
+             DataLabelingServiceClient.create(settings)) {
       GcsDestination gcsDestination = GcsDestination.newBuilder()
           .setOutputUri(gcsOutputUri)
           .setMimeType("text/csv")

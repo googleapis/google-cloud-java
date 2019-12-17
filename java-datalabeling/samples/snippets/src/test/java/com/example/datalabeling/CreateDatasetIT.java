@@ -29,6 +29,7 @@ import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -37,6 +38,7 @@ import org.junit.runners.JUnit4;
  * Integration (system) tests for {@link CreateDataset}.
  */
 @RunWith(JUnit4.class)
+@Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreateDatasetIT {
 
@@ -77,7 +79,7 @@ public class CreateDatasetIT {
   }
 
   @Test
-  public void testCreateDataset() {
+  public void testCreateDataset() throws IOException {
     CreateDataset.createDataset(PROJECT_ID,datasetName);
 
     String output = bout.toString();

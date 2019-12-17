@@ -29,6 +29,7 @@ import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -37,6 +38,7 @@ import org.junit.runners.JUnit4;
  * Integration (system) tests for {@link CreateAnnotationSpecSet}.
  */
 @RunWith(JUnit4.class)
+@Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreateAnnotationSpecSetIT {
 
@@ -76,7 +78,7 @@ public class CreateAnnotationSpecSetIT {
   }
 
   @Test
-  public void testCreateAnnotationSpecSet() {
+  public void testCreateAnnotationSpecSet() throws IOException {
     CreateAnnotationSpecSet.createAnnotationSpecSet(PROJECT_ID);
 
     String output = bout.toString();

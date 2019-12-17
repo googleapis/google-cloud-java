@@ -29,6 +29,7 @@ import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -37,6 +38,7 @@ import org.junit.runners.JUnit4;
  * Integration (system) tests for {@link ImportData}.
  */
 @RunWith(JUnit4.class)
+@Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ImportDataIT {
 
@@ -50,7 +52,7 @@ public class ImportDataIT {
   private static Dataset dataset;
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     System.setOut(new PrintStream(bout));
 
@@ -102,7 +104,7 @@ public class ImportDataIT {
   }
 
   @Test
-  public void testImportDataset() {
+  public void testImportDataset() throws IOException {
     ImportData.importData(dataset.getName(), GCS_SOURCE_URI);
 
     String output = bout.toString();

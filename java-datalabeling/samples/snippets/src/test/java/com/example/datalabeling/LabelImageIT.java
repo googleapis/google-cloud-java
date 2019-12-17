@@ -32,6 +32,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -40,6 +41,7 @@ import org.junit.runners.JUnit4;
  * Integration (system) tests for {@link LabelImage}.
  */
 @RunWith(JUnit4.class)
+@Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class LabelImageIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
@@ -127,7 +129,7 @@ public class LabelImageIT {
   }
 
   @Test
-  public void testLabelImage() {
+  public void testLabelImage() throws IOException {
     // Start the labeling task
     LabelImage.labelImage(instruction.getName(), annotationSpecSet.getName(), dataset.getName());
   }

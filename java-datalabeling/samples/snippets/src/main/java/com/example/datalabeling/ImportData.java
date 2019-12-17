@@ -19,6 +19,7 @@ package com.example.datalabeling;
 // [START datalabeling_import_data_beta]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient;
+import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceSettings;
 import com.google.cloud.datalabeling.v1beta1.DataType;
 import com.google.cloud.datalabeling.v1beta1.GcsSource;
 import com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata;
@@ -31,12 +32,26 @@ import java.util.concurrent.ExecutionException;
 class ImportData {
 
   // Import data to an existing dataset.
-  static void importData(String datasetName, String gcsSourceUri) {
+  static void importData(String datasetName, String gcsSourceUri) throws IOException {
     // String datasetName = DataLabelingServiceClient.formatDatasetName(
     //     "YOUR_PROJECT_ID", "YOUR_DATASETS_UUID");
     // String gcsSourceUri = "gs://YOUR_BUCKET_ID/path_to_data";
 
-    try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+    // [END datalabeling_import_data_beta]
+    String endpoint = System.getenv("DATALABELING_ENDPOINT");
+    if (endpoint == null) {
+      endpoint = DataLabelingServiceSettings.getDefaultEndpoint();
+    }
+    // [START datalabeling_import_data_beta]
+
+    DataLabelingServiceSettings settings = DataLabelingServiceSettings
+        .newBuilder()
+        // [END datalabeling_import_data_beta]
+        .setEndpoint(endpoint)
+        // [START datalabeling_import_data_beta]
+        .build();
+    try (DataLabelingServiceClient dataLabelingServiceClient =
+             DataLabelingServiceClient.create(settings)) {
       GcsSource gcsSource = GcsSource.newBuilder()
           .setInputUri(gcsSourceUri)
           .setMimeType("text/csv")

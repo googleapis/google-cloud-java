@@ -20,6 +20,7 @@ package com.example.datalabeling;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.datalabeling.v1beta1.AnnotatedDataset;
 import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient;
+import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceSettings;
 import com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig;
 import com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata;
 import com.google.cloud.datalabeling.v1beta1.LabelVideoRequest;
@@ -33,7 +34,7 @@ class LabelVideo {
 
   // Start a Video Labeling Task
   static void labelVideo(String formattedInstructionName, String formattedAnnotationSpecSetName,
-      String formattedDatasetName) {
+      String formattedDatasetName) throws IOException {
     // String formattedInstructionName = DataLabelingServiceClient.formatInstructionName(
     //      "YOUR_PROJECT_ID", "YOUR_INSTRUCTION_UUID");
     // String formattedAnnotationSpecSetName =
@@ -42,8 +43,21 @@ class LabelVideo {
     // String formattedDatasetName = DataLabelingServiceClient.formatDatasetName(
     //      "YOUR_PROJECT_ID", "YOUR_DATASET_UUID");
 
-    try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+    // [END datalabeling_label_video_beta]
+    String endpoint = System.getenv("DATALABELING_ENDPOINT");
+    if (endpoint == null) {
+      endpoint = DataLabelingServiceSettings.getDefaultEndpoint();
+    }
+    // [START datalabeling_label_video_beta]
 
+    DataLabelingServiceSettings settings = DataLabelingServiceSettings
+        .newBuilder()
+        // [END datalabeling_label_video_beta]
+        .setEndpoint(endpoint)
+        // [START datalabeling_label_video_beta]
+        .build();
+    try (DataLabelingServiceClient dataLabelingServiceClient =
+             DataLabelingServiceClient.create(settings)) {
       HumanAnnotationConfig humanAnnotationConfig = HumanAnnotationConfig.newBuilder()
           .setAnnotatedDatasetDisplayName("annotated_displayname")
           .setAnnotatedDatasetDescription("annotated_description")
