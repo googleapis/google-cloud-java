@@ -43,6 +43,12 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EncryptResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -142,6 +149,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -165,6 +174,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bytes ciphertext = 2;</code>
+   *
+   * @return The ciphertext.
    */
   public com.google.protobuf.ByteString getCiphertext() {
     return ciphertext_;
@@ -509,6 +520,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -529,6 +542,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -549,6 +564,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -567,6 +585,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -582,6 +602,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -603,6 +626,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes ciphertext = 2;</code>
+     *
+     * @return The ciphertext.
      */
     public com.google.protobuf.ByteString getCiphertext() {
       return ciphertext_;
@@ -615,6 +640,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes ciphertext = 2;</code>
+     *
+     * @param value The ciphertext to set.
+     * @return This builder for chaining.
      */
     public Builder setCiphertext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -633,6 +661,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes ciphertext = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCiphertext() {
 

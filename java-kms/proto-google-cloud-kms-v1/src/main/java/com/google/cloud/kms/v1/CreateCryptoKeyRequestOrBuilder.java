@@ -32,6 +32,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>string crypto_key_id = 2;</code>
+   *
+   * @return The cryptoKeyId.
    */
   java.lang.String getCryptoKeyId();
   /**
@@ -66,6 +72,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>string crypto_key_id = 2;</code>
+   *
+   * @return The bytes for cryptoKeyId.
    */
   com.google.protobuf.ByteString getCryptoKeyIdBytes();
 
@@ -77,6 +85,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
   /**
@@ -87,6 +97,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   *
+   * @return The cryptoKey.
    */
   com.google.cloud.kms.v1.CryptoKey getCryptoKey();
   /**
@@ -112,6 +124,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    * </pre>
    *
    * <code>bool skip_initial_version_creation = 5;</code>
+   *
+   * @return The skipInitialVersionCreation.
    */
   boolean getSkipInitialVersionCreation();
 }

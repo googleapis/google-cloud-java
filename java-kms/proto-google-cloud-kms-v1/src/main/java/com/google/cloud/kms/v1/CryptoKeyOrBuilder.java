@@ -32,6 +32,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -61,6 +65,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
+   *
+   * @return Whether the primary field is set.
    */
   boolean hasPrimary();
   /**
@@ -78,6 +84,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
+   *
+   * @return The primary.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getPrimary();
   /**
@@ -106,6 +114,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+   *
+   * @return The enum numeric value on the wire for purpose.
    */
   int getPurposeValue();
   /**
@@ -116,6 +126,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+   *
+   * @return The purpose.
    */
   com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose();
 
@@ -127,6 +139,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -137,6 +151,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -167,6 +183,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
+   *
+   * @return Whether the nextRotationTime field is set.
    */
   boolean hasNextRotationTime();
   /**
@@ -186,6 +204,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
+   *
+   * @return The nextRotationTime.
    */
   com.google.protobuf.Timestamp getNextRotationTime();
   /**
@@ -221,6 +241,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
+   *
+   * @return Whether the rotationPeriod field is set.
    */
   boolean hasRotationPeriod();
   /**
@@ -236,6 +258,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
+   *
+   * @return The rotationPeriod.
    */
   com.google.protobuf.Duration getRotationPeriod();
   /**
@@ -265,6 +289,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   *
+   * @return Whether the versionTemplate field is set.
    */
   boolean hasVersionTemplate();
   /**
@@ -278,6 +304,8 @@ public interface CryptoKeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   *
+   * @return The versionTemplate.
    */
   com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate();
   /**

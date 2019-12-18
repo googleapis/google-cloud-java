@@ -67,6 +67,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImportJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,7 +85,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -348,12 +353,20 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ImportMethod valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ImportMethod forNumber(int value) {
       switch (value) {
         case 0:
@@ -523,12 +536,20 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ImportJobState valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ImportJobState forNumber(int value) {
       switch (value) {
         case 0:
@@ -605,6 +626,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return The pem.
      */
     java.lang.String getPem();
     /**
@@ -619,6 +642,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return The bytes for pem.
      */
     com.google.protobuf.ByteString getPemBytes();
   }
@@ -647,6 +672,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WrappingPublicKey();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -659,7 +690,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -725,6 +755,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return The pem.
      */
     public java.lang.String getPem() {
       java.lang.Object ref = pem_;
@@ -749,6 +781,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return The bytes for pem.
      */
     public com.google.protobuf.ByteString getPemBytes() {
       java.lang.Object ref = pem_;
@@ -1099,6 +1133,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pem = 1;</code>
+       *
+       * @return The pem.
        */
       public java.lang.String getPem() {
         java.lang.Object ref = pem_;
@@ -1123,6 +1159,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pem = 1;</code>
+       *
+       * @return The bytes for pem.
        */
       public com.google.protobuf.ByteString getPemBytes() {
         java.lang.Object ref = pem_;
@@ -1147,6 +1185,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pem = 1;</code>
+       *
+       * @param value The pem to set.
+       * @return This builder for chaining.
        */
       public Builder setPem(java.lang.String value) {
         if (value == null) {
@@ -1169,6 +1210,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pem = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPem() {
 
@@ -1188,6 +1231,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pem = 1;</code>
+       *
+       * @param value The bytes for pem to set.
+       * @return This builder for chaining.
        */
       public Builder setPemBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1263,6 +1309,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1284,6 +1332,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1308,6 +1358,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for importMethod.
    */
   public int getImportMethodValue() {
     return importMethod_;
@@ -1321,6 +1373,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+   *
+   * @return The importMethod.
    */
   public com.google.cloud.kms.v1.ImportJob.ImportMethod getImportMethod() {
     @SuppressWarnings("deprecation")
@@ -1343,6 +1397,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
    */
   public int getProtectionLevelValue() {
     return protectionLevel_;
@@ -1359,6 +1415,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+   *
+   * @return The protectionLevel.
    */
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
     @SuppressWarnings("deprecation")
@@ -1377,6 +1435,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -1389,6 +1449,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1416,6 +1478,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   *
+   * @return Whether the generateTime field is set.
    */
   public boolean hasGenerateTime() {
     return generateTime_ != null;
@@ -1428,6 +1492,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   *
+   * @return The generateTime.
    */
   public com.google.protobuf.Timestamp getGenerateTime() {
     return generateTime_ == null
@@ -1458,6 +1524,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   *
+   * @return Whether the expireTime field is set.
    */
   public boolean hasExpireTime() {
     return expireTime_ != null;
@@ -1471,6 +1539,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   *
+   * @return The expireTime.
    */
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
@@ -1500,6 +1570,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   *
+   * @return Whether the expireEventTime field is set.
    */
   public boolean hasExpireEventTime() {
     return expireEventTime_ != null;
@@ -1513,6 +1585,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   *
+   * @return The expireEventTime.
    */
   public com.google.protobuf.Timestamp getExpireEventTime() {
     return expireEventTime_ == null
@@ -1544,6 +1618,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -1557,6 +1633,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.kms.v1.ImportJob.ImportJobState getState() {
     @SuppressWarnings("deprecation")
@@ -1577,6 +1655,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   *
+   * @return Whether the publicKey field is set.
    */
   public boolean hasPublicKey() {
     return publicKey_ != null;
@@ -1591,6 +1671,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   *
+   * @return The publicKey.
    */
   public com.google.cloud.kms.v1.ImportJob.WrappingPublicKey getPublicKey() {
     return publicKey_ == null
@@ -1626,6 +1708,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   public boolean hasAttestation() {
     return attestation_ != null;
@@ -1642,6 +1726,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   *
+   * @return The attestation.
    */
   public com.google.cloud.kms.v1.KeyOperationAttestation getAttestation() {
     return attestation_ == null
@@ -2231,6 +2317,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2252,6 +2340,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2273,6 +2363,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2292,6 +2385,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2308,6 +2403,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2330,6 +2428,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+     *
+     * @return The enum numeric value on the wire for importMethod.
      */
     public int getImportMethodValue() {
       return importMethod_;
@@ -2343,6 +2443,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for importMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setImportMethodValue(int value) {
       importMethod_ = value;
@@ -2358,6 +2461,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+     *
+     * @return The importMethod.
      */
     public com.google.cloud.kms.v1.ImportJob.ImportMethod getImportMethod() {
       @SuppressWarnings("deprecation")
@@ -2374,6 +2479,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+     *
+     * @param value The importMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setImportMethod(com.google.cloud.kms.v1.ImportJob.ImportMethod value) {
       if (value == null) {
@@ -2393,6 +2501,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImportMethod() {
 
@@ -2414,6 +2524,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+     *
+     * @return The enum numeric value on the wire for protectionLevel.
      */
     public int getProtectionLevelValue() {
       return protectionLevel_;
@@ -2430,6 +2542,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for protectionLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
       protectionLevel_ = value;
@@ -2448,6 +2563,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+     *
+     * @return The protectionLevel.
      */
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
       @SuppressWarnings("deprecation")
@@ -2467,6 +2584,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+     *
+     * @param value The protectionLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setProtectionLevel(com.google.cloud.kms.v1.ProtectionLevel value) {
       if (value == null) {
@@ -2489,6 +2609,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
 
@@ -2511,6 +2633,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2523,6 +2647,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2690,6 +2816,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+     *
+     * @return Whether the generateTime field is set.
      */
     public boolean hasGenerateTime() {
       return generateTimeBuilder_ != null || generateTime_ != null;
@@ -2702,6 +2830,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+     *
+     * @return The generateTime.
      */
     public com.google.protobuf.Timestamp getGenerateTime() {
       if (generateTimeBuilder_ == null) {
@@ -2872,6 +3002,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     *
+     * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
       return expireTimeBuilder_ != null || expireTime_ != null;
@@ -2885,6 +3017,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     *
+     * @return The expireTime.
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       if (expireTimeBuilder_ == null) {
@@ -3060,6 +3194,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+     *
+     * @return Whether the expireEventTime field is set.
      */
     public boolean hasExpireEventTime() {
       return expireEventTimeBuilder_ != null || expireEventTime_ != null;
@@ -3073,6 +3209,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+     *
+     * @return The expireEventTime.
      */
     public com.google.protobuf.Timestamp getExpireEventTime() {
       if (expireEventTimeBuilder_ == null) {
@@ -3245,6 +3383,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -3258,6 +3398,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -3273,6 +3416,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.kms.v1.ImportJob.ImportJobState getState() {
       @SuppressWarnings("deprecation")
@@ -3291,6 +3436,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.kms.v1.ImportJob.ImportJobState value) {
       if (value == null) {
@@ -3310,6 +3458,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -3334,6 +3484,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+     *
+     * @return Whether the publicKey field is set.
      */
     public boolean hasPublicKey() {
       return publicKeyBuilder_ != null || publicKey_ != null;
@@ -3348,6 +3500,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+     *
+     * @return The publicKey.
      */
     public com.google.cloud.kms.v1.ImportJob.WrappingPublicKey getPublicKey() {
       if (publicKeyBuilder_ == null) {
@@ -3536,6 +3690,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     *
+     * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
       return attestationBuilder_ != null || attestation_ != null;
@@ -3552,6 +3708,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     *
+     * @return The attestation.
      */
     public com.google.cloud.kms.v1.KeyOperationAttestation getAttestation() {
       if (attestationBuilder_ == null) {

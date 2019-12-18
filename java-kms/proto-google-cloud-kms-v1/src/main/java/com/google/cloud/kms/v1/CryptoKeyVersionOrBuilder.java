@@ -32,6 +32,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -64,6 +70,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState getState();
 
@@ -76,6 +84,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
   /**
@@ -87,6 +97,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   *
+   * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 
@@ -99,6 +111,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+   *
+   * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
   /**
@@ -110,6 +124,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+   *
+   * @return The algorithm.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm();
 
@@ -124,6 +140,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -137,6 +155,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   *
+   * @return The attestation.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation getAttestation();
   /**
@@ -161,6 +181,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -171,6 +193,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -193,6 +217,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   *
+   * @return Whether the generateTime field is set.
    */
   boolean hasGenerateTime();
   /**
@@ -204,6 +230,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   *
+   * @return The generateTime.
    */
   com.google.protobuf.Timestamp getGenerateTime();
   /**
@@ -228,6 +256,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 5;</code>
+   *
+   * @return Whether the destroyTime field is set.
    */
   boolean hasDestroyTime();
   /**
@@ -240,6 +270,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 5;</code>
+   *
+   * @return The destroyTime.
    */
   com.google.protobuf.Timestamp getDestroyTime();
   /**
@@ -265,6 +297,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_event_time = 6;</code>
+   *
+   * @return Whether the destroyEventTime field is set.
    */
   boolean hasDestroyEventTime();
   /**
@@ -277,6 +311,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_event_time = 6;</code>
+   *
+   * @return The destroyEventTime.
    */
   com.google.protobuf.Timestamp getDestroyEventTime();
   /**
@@ -302,6 +338,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>string import_job = 14;</code>
+   *
+   * @return The importJob.
    */
   java.lang.String getImportJob();
   /**
@@ -314,6 +352,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>string import_job = 14;</code>
+   *
+   * @return The bytes for importJob.
    */
   com.google.protobuf.ByteString getImportJobBytes();
 
@@ -326,6 +366,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15;</code>
+   *
+   * @return Whether the importTime field is set.
    */
   boolean hasImportTime();
   /**
@@ -337,6 +379,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15;</code>
+   *
+   * @return The importTime.
    */
   com.google.protobuf.Timestamp getImportTime();
   /**
@@ -361,6 +405,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>string import_failure_reason = 16;</code>
+   *
+   * @return The importFailureReason.
    */
   java.lang.String getImportFailureReason();
   /**
@@ -373,6 +419,8 @@ public interface CryptoKeyVersionOrBuilder
    * </pre>
    *
    * <code>string import_failure_reason = 16;</code>
+   *
+   * @return The bytes for importFailureReason.
    */
   com.google.protobuf.ByteString getImportFailureReasonBytes();
 }

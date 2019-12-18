@@ -43,6 +43,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateCryptoKeyRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -145,6 +150,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -166,6 +173,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -190,6 +199,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string crypto_key_id = 2;</code>
+   *
+   * @return The cryptoKeyId.
    */
   public java.lang.String getCryptoKeyId() {
     java.lang.Object ref = cryptoKeyId_;
@@ -211,6 +222,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string crypto_key_id = 2;</code>
+   *
+   * @return The bytes for cryptoKeyId.
    */
   public com.google.protobuf.ByteString getCryptoKeyIdBytes() {
     java.lang.Object ref = cryptoKeyId_;
@@ -234,6 +247,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
@@ -246,6 +261,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   *
+   * @return The cryptoKey.
    */
   public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
@@ -277,6 +294,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>bool skip_initial_version_creation = 5;</code>
+   *
+   * @return The skipInitialVersionCreation.
    */
   public boolean getSkipInitialVersionCreation() {
     return skipInitialVersionCreation_;
@@ -667,6 +686,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -688,6 +709,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -709,6 +732,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -728,6 +754,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -744,6 +772,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -766,6 +797,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string crypto_key_id = 2;</code>
+     *
+     * @return The cryptoKeyId.
      */
     public java.lang.String getCryptoKeyId() {
       java.lang.Object ref = cryptoKeyId_;
@@ -787,6 +820,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string crypto_key_id = 2;</code>
+     *
+     * @return The bytes for cryptoKeyId.
      */
     public com.google.protobuf.ByteString getCryptoKeyIdBytes() {
       java.lang.Object ref = cryptoKeyId_;
@@ -808,6 +843,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string crypto_key_id = 2;</code>
+     *
+     * @param value The cryptoKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyId(java.lang.String value) {
       if (value == null) {
@@ -827,6 +865,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string crypto_key_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCryptoKeyId() {
 
@@ -843,6 +883,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string crypto_key_id = 2;</code>
+     *
+     * @param value The bytes for cryptoKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -869,6 +912,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     *
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
@@ -881,6 +926,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     *
+     * @return The cryptoKey.
      */
     public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -1049,6 +1096,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool skip_initial_version_creation = 5;</code>
+     *
+     * @return The skipInitialVersionCreation.
      */
     public boolean getSkipInitialVersionCreation() {
       return skipInitialVersionCreation_;
@@ -1065,6 +1114,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool skip_initial_version_creation = 5;</code>
+     *
+     * @param value The skipInitialVersionCreation to set.
+     * @return This builder for chaining.
      */
     public Builder setSkipInitialVersionCreation(boolean value) {
 
@@ -1084,6 +1136,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool skip_initial_version_creation = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSkipInitialVersionCreation() {
 

@@ -43,6 +43,12 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateImportJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -161,6 +168,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -185,6 +194,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string import_job_id = 2;</code>
+   *
+   * @return The importJobId.
    */
   public java.lang.String getImportJobId() {
     java.lang.Object ref = importJobId_;
@@ -206,6 +217,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string import_job_id = 2;</code>
+   *
+   * @return The bytes for importJobId.
    */
   public com.google.protobuf.ByteString getImportJobIdBytes() {
     java.lang.Object ref = importJobId_;
@@ -229,6 +242,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   *
+   * @return Whether the importJob field is set.
    */
   public boolean hasImportJob() {
     return importJob_ != null;
@@ -241,6 +256,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   *
+   * @return The importJob.
    */
   public com.google.cloud.kms.v1.ImportJob getImportJob() {
     return importJob_ == null ? com.google.cloud.kms.v1.ImportJob.getDefaultInstance() : importJob_;
@@ -628,6 +645,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -649,6 +668,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -670,6 +691,9 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -689,6 +713,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -705,6 +731,9 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -727,6 +756,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string import_job_id = 2;</code>
+     *
+     * @return The importJobId.
      */
     public java.lang.String getImportJobId() {
       java.lang.Object ref = importJobId_;
@@ -748,6 +779,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string import_job_id = 2;</code>
+     *
+     * @return The bytes for importJobId.
      */
     public com.google.protobuf.ByteString getImportJobIdBytes() {
       java.lang.Object ref = importJobId_;
@@ -769,6 +802,9 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string import_job_id = 2;</code>
+     *
+     * @param value The importJobId to set.
+     * @return This builder for chaining.
      */
     public Builder setImportJobId(java.lang.String value) {
       if (value == null) {
@@ -788,6 +824,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string import_job_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImportJobId() {
 
@@ -804,6 +842,9 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string import_job_id = 2;</code>
+     *
+     * @param value The bytes for importJobId to set.
+     * @return This builder for chaining.
      */
     public Builder setImportJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -830,6 +871,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     *
+     * @return Whether the importJob field is set.
      */
     public boolean hasImportJob() {
       return importJobBuilder_ != null || importJob_ != null;
@@ -842,6 +885,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     *
+     * @return The importJob.
      */
     public com.google.cloud.kms.v1.ImportJob getImportJob() {
       if (importJobBuilder_ == null) {

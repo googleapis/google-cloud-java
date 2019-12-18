@@ -31,6 +31,8 @@ public interface AsymmetricSignResponseOrBuilder
    * </pre>
    *
    * <code>bytes signature = 1;</code>
+   *
+   * @return The signature.
    */
   com.google.protobuf.ByteString getSignature();
 }

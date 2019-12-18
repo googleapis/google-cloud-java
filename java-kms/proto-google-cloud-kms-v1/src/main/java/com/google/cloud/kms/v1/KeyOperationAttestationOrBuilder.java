@@ -31,6 +31,8 @@ public interface KeyOperationAttestationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   *
+   * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
   /**
@@ -41,6 +43,8 @@ public interface KeyOperationAttestationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   *
+   * @return The format.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat();
 
@@ -53,6 +57,8 @@ public interface KeyOperationAttestationOrBuilder
    * </pre>
    *
    * <code>bytes content = 5;</code>
+   *
+   * @return The content.
    */
   com.google.protobuf.ByteString getContent();
 }

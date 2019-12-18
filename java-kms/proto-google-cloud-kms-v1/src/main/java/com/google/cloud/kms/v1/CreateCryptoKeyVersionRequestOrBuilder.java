@@ -32,6 +32,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   *
+   * @return Whether the cryptoKeyVersion field is set.
    */
   boolean hasCryptoKeyVersion();
   /**
@@ -64,6 +70,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   *
+   * @return The cryptoKeyVersion.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion();
   /**

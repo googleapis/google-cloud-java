@@ -32,6 +32,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for importMethod.
    */
   int getImportMethodValue();
   /**
@@ -66,6 +72,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+   *
+   * @return The importMethod.
    */
   com.google.cloud.kms.v1.ImportJob.ImportMethod getImportMethod();
 
@@ -81,6 +89,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
   /**
@@ -95,6 +105,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+   *
+   * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 
@@ -106,6 +118,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -116,6 +130,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -137,6 +153,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   *
+   * @return Whether the generateTime field is set.
    */
   boolean hasGenerateTime();
   /**
@@ -147,6 +165,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   *
+   * @return The generateTime.
    */
   com.google.protobuf.Timestamp getGenerateTime();
   /**
@@ -169,6 +189,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   *
+   * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
   /**
@@ -180,6 +202,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   *
+   * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
@@ -203,6 +227,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   *
+   * @return Whether the expireEventTime field is set.
    */
   boolean hasExpireEventTime();
   /**
@@ -214,6 +240,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   *
+   * @return The expireEventTime.
    */
   com.google.protobuf.Timestamp getExpireEventTime();
   /**
@@ -237,6 +265,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -248,6 +278,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.kms.v1.ImportJob.ImportJobState getState();
 
@@ -261,6 +293,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   *
+   * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
   /**
@@ -273,6 +307,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   *
+   * @return The publicKey.
    */
   com.google.cloud.kms.v1.ImportJob.WrappingPublicKey getPublicKey();
   /**
@@ -300,6 +336,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -314,6 +352,8 @@ public interface ImportJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   *
+   * @return The attestation.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation getAttestation();
   /**

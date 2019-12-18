@@ -32,6 +32,8 @@ public interface CreateImportJobRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateImportJobRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface CreateImportJobRequestOrBuilder
    * </pre>
    *
    * <code>string import_job_id = 2;</code>
+   *
+   * @return The importJobId.
    */
   java.lang.String getImportJobId();
   /**
@@ -66,6 +72,8 @@ public interface CreateImportJobRequestOrBuilder
    * </pre>
    *
    * <code>string import_job_id = 2;</code>
+   *
+   * @return The bytes for importJobId.
    */
   com.google.protobuf.ByteString getImportJobIdBytes();
 
@@ -77,6 +85,8 @@ public interface CreateImportJobRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   *
+   * @return Whether the importJob field is set.
    */
   boolean hasImportJob();
   /**
@@ -87,6 +97,8 @@ public interface CreateImportJobRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   *
+   * @return The importJob.
    */
   com.google.cloud.kms.v1.ImportJob getImportJob();
   /**

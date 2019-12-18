@@ -46,6 +46,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -146,10 +152,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -335,12 +341,20 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CryptoKeyPurpose valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CryptoKeyPurpose forNumber(int value) {
       switch (value) {
         case 0:
@@ -402,11 +416,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose)
   }
 
-  private int bitField0_;
   private int rotationScheduleCase_ = 0;
   private java.lang.Object rotationSchedule_;
 
-  public enum RotationScheduleCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RotationScheduleCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ROTATION_PERIOD(8),
     ROTATIONSCHEDULE_NOT_SET(0);
     private final int value;
@@ -414,7 +430,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     private RotationScheduleCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RotationScheduleCase valueOf(int value) {
       return forNumber(value);
@@ -451,6 +471,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -472,6 +494,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -502,6 +526,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
+   *
+   * @return Whether the primary field is set.
    */
   public boolean hasPrimary() {
     return primary_ != null;
@@ -521,6 +547,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
+   *
+   * @return The primary.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion getPrimary() {
     return primary_ == null
@@ -557,6 +585,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+   *
+   * @return The enum numeric value on the wire for purpose.
    */
   public int getPurposeValue() {
     return purpose_;
@@ -569,6 +599,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+   *
+   * @return The purpose.
    */
   public com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose() {
     @SuppressWarnings("deprecation")
@@ -589,6 +621,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -601,6 +635,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -637,6 +673,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
+   *
+   * @return Whether the nextRotationTime field is set.
    */
   public boolean hasNextRotationTime() {
     return nextRotationTime_ != null;
@@ -658,6 +696,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
+   *
+   * @return The nextRotationTime.
    */
   public com.google.protobuf.Timestamp getNextRotationTime() {
     return nextRotationTime_ == null
@@ -700,6 +740,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
+   *
+   * @return Whether the rotationPeriod field is set.
    */
   public boolean hasRotationPeriod() {
     return rotationScheduleCase_ == 8;
@@ -717,6 +759,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
+   *
+   * @return The rotationPeriod.
    */
   public com.google.protobuf.Duration getRotationPeriod() {
     if (rotationScheduleCase_ == 8) {
@@ -758,6 +802,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   *
+   * @return Whether the versionTemplate field is set.
    */
   public boolean hasVersionTemplate() {
     return versionTemplate_ != null;
@@ -773,6 +819,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   *
+   * @return The versionTemplate.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate() {
     return versionTemplate_ == null
@@ -1285,7 +1333,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.kms.v1.CryptoKey buildPartial() {
       com.google.cloud.kms.v1.CryptoKey result = new com.google.cloud.kms.v1.CryptoKey(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (primaryBuilder_ == null) {
         result.primary_ = primary_;
@@ -1317,7 +1364,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.rotationScheduleCase_ = rotationScheduleCase_;
       onBuilt();
       return result;
@@ -1454,6 +1500,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1475,6 +1523,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1496,6 +1546,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1515,6 +1568,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1531,6 +1586,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1564,6 +1622,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
+     *
+     * @return Whether the primary field is set.
      */
     public boolean hasPrimary() {
       return primaryBuilder_ != null || primary_ != null;
@@ -1583,6 +1643,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
+     *
+     * @return The primary.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion getPrimary() {
       if (primaryBuilder_ == null) {
@@ -1796,6 +1858,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+     *
+     * @return The enum numeric value on the wire for purpose.
      */
     public int getPurposeValue() {
       return purpose_;
@@ -1808,6 +1872,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for purpose to set.
+     * @return This builder for chaining.
      */
     public Builder setPurposeValue(int value) {
       purpose_ = value;
@@ -1822,6 +1889,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+     *
+     * @return The purpose.
      */
     public com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose() {
       @SuppressWarnings("deprecation")
@@ -1839,6 +1908,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+     *
+     * @param value The purpose to set.
+     * @return This builder for chaining.
      */
     public Builder setPurpose(com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose value) {
       if (value == null) {
@@ -1857,6 +1929,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPurpose() {
 
@@ -1879,6 +1953,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1891,6 +1967,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2067,6 +2145,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
+     *
+     * @return Whether the nextRotationTime field is set.
      */
     public boolean hasNextRotationTime() {
       return nextRotationTimeBuilder_ != null || nextRotationTime_ != null;
@@ -2088,6 +2168,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
+     *
+     * @return The nextRotationTime.
      */
     public com.google.protobuf.Timestamp getNextRotationTime() {
       if (nextRotationTimeBuilder_ == null) {
@@ -2324,6 +2406,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
+     *
+     * @return Whether the rotationPeriod field is set.
      */
     public boolean hasRotationPeriod() {
       return rotationScheduleCase_ == 8;
@@ -2341,6 +2425,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
+     *
+     * @return The rotationPeriod.
      */
     public com.google.protobuf.Duration getRotationPeriod() {
       if (rotationPeriodBuilder_ == null) {
@@ -2569,6 +2655,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     *
+     * @return Whether the versionTemplate field is set.
      */
     public boolean hasVersionTemplate() {
       return versionTemplateBuilder_ != null || versionTemplate_ != null;
@@ -2584,6 +2672,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     *
+     * @return The versionTemplate.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate() {
       if (versionTemplateBuilder_ == null) {

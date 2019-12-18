@@ -32,6 +32,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -57,6 +61,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   *
+   * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
   /**
@@ -70,6 +76,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   *
+   * @return The algorithm.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm();
 
@@ -82,6 +90,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>string import_job = 4;</code>
+   *
+   * @return The importJob.
    */
   java.lang.String getImportJob();
   /**
@@ -93,6 +103,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>string import_job = 4;</code>
+   *
+   * @return The bytes for importJob.
    */
   com.google.protobuf.ByteString getImportJobBytes();
 
@@ -119,6 +131,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>bytes rsa_aes_wrapped_key = 5;</code>
+   *
+   * @return The rsaAesWrappedKey.
    */
   com.google.protobuf.ByteString getRsaAesWrappedKey();
 

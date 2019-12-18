@@ -31,6 +31,8 @@ public interface EncryptResponseOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface EncryptResponseOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface EncryptResponseOrBuilder
    * </pre>
    *
    * <code>bytes ciphertext = 2;</code>
+   *
+   * @return The ciphertext.
    */
   com.google.protobuf.ByteString getCiphertext();
 }

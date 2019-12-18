@@ -43,6 +43,12 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListImportJobsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -125,7 +131,6 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.kms.v1.ListImportJobsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int IMPORT_JOBS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.kms.v1.ImportJob> importJobs_;
   /**
@@ -201,6 +206,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -222,6 +229,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -245,6 +254,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
+   *
+   * @return The totalSize.
    */
   public int getTotalSize() {
     return totalSize_;
@@ -514,7 +525,6 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
       com.google.cloud.kms.v1.ListImportJobsResponse result =
           new com.google.cloud.kms.v1.ListImportJobsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (importJobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           importJobs_ = java.util.Collections.unmodifiableList(importJobs_);
@@ -526,7 +536,6 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -999,6 +1008,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1020,6 +1031,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1041,6 +1054,9 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1060,6 +1076,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1076,6 +1094,9 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1097,6 +1118,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
+     *
+     * @return The totalSize.
      */
     public int getTotalSize() {
       return totalSize_;
@@ -1109,6 +1132,9 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
+     *
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalSize(int value) {
 
@@ -1124,6 +1150,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
 

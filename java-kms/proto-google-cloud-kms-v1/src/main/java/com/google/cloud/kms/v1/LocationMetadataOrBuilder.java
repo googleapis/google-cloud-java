@@ -33,6 +33,8 @@ public interface LocationMetadataOrBuilder
    * </pre>
    *
    * <code>bool hsm_available = 1;</code>
+   *
+   * @return The hsmAvailable.
    */
   boolean getHsmAvailable();
 }

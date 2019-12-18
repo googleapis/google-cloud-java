@@ -34,6 +34,8 @@ public interface EncryptRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface EncryptRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -64,6 +68,8 @@ public interface EncryptRequestOrBuilder
    * </pre>
    *
    * <code>bytes plaintext = 2;</code>
+   *
+   * @return The plaintext.
    */
   com.google.protobuf.ByteString getPlaintext();
 
@@ -82,6 +88,8 @@ public interface EncryptRequestOrBuilder
    * </pre>
    *
    * <code>bytes additional_authenticated_data = 3;</code>
+   *
+   * @return The additionalAuthenticatedData.
    */
   com.google.protobuf.ByteString getAdditionalAuthenticatedData();
 }

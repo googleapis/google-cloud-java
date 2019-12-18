@@ -44,6 +44,12 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImportCryptoKeyVersionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,7 +136,10 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   private int wrappedKeyMaterialCase_ = 0;
   private java.lang.Object wrappedKeyMaterial_;
 
-  public enum WrappedKeyMaterialCase implements com.google.protobuf.Internal.EnumLite {
+  public enum WrappedKeyMaterialCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RSA_AES_WRAPPED_KEY(5),
     WRAPPEDKEYMATERIAL_NOT_SET(0);
     private final int value;
@@ -139,7 +147,11 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     private WrappedKeyMaterialCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static WrappedKeyMaterialCase valueOf(int value) {
       return forNumber(value);
@@ -176,6 +188,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -197,6 +211,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -223,6 +239,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   *
+   * @return The enum numeric value on the wire for algorithm.
    */
   public int getAlgorithmValue() {
     return algorithm_;
@@ -238,6 +256,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   *
+   * @return The algorithm.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
     @SuppressWarnings("deprecation")
@@ -259,6 +279,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string import_job = 4;</code>
+   *
+   * @return The importJob.
    */
   public java.lang.String getImportJob() {
     java.lang.Object ref = importJob_;
@@ -280,6 +302,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string import_job = 4;</code>
+   *
+   * @return The bytes for importJob.
    */
   public com.google.protobuf.ByteString getImportJobBytes() {
     java.lang.Object ref = importJob_;
@@ -317,6 +341,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>bytes rsa_aes_wrapped_key = 5;</code>
+   *
+   * @return The rsaAesWrappedKey.
    */
   public com.google.protobuf.ByteString getRsaAesWrappedKey() {
     if (wrappedKeyMaterialCase_ == 5) {
@@ -746,6 +772,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -767,6 +795,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -788,6 +818,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -807,6 +840,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -823,6 +858,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -847,6 +885,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @return The enum numeric value on the wire for algorithm.
      */
     public int getAlgorithmValue() {
       return algorithm_;
@@ -862,6 +902,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
       algorithm_ = value;
@@ -879,6 +922,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @return The algorithm.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
       @SuppressWarnings("deprecation")
@@ -899,6 +944,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @param value The algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithm(
         com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm value) {
@@ -921,6 +969,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
 
@@ -939,6 +989,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string import_job = 4;</code>
+     *
+     * @return The importJob.
      */
     public java.lang.String getImportJob() {
       java.lang.Object ref = importJob_;
@@ -960,6 +1012,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string import_job = 4;</code>
+     *
+     * @return The bytes for importJob.
      */
     public com.google.protobuf.ByteString getImportJobBytes() {
       java.lang.Object ref = importJob_;
@@ -981,6 +1035,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string import_job = 4;</code>
+     *
+     * @param value The importJob to set.
+     * @return This builder for chaining.
      */
     public Builder setImportJob(java.lang.String value) {
       if (value == null) {
@@ -1000,6 +1057,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string import_job = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImportJob() {
 
@@ -1016,6 +1075,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string import_job = 4;</code>
+     *
+     * @param value The bytes for importJob to set.
+     * @return This builder for chaining.
      */
     public Builder setImportJobBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1051,6 +1113,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes rsa_aes_wrapped_key = 5;</code>
+     *
+     * @return The rsaAesWrappedKey.
      */
     public com.google.protobuf.ByteString getRsaAesWrappedKey() {
       if (wrappedKeyMaterialCase_ == 5) {
@@ -1081,6 +1145,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes rsa_aes_wrapped_key = 5;</code>
+     *
+     * @param value The rsaAesWrappedKey to set.
+     * @return This builder for chaining.
      */
     public Builder setRsaAesWrappedKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1114,6 +1181,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes rsa_aes_wrapped_key = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRsaAesWrappedKey() {
       if (wrappedKeyMaterialCase_ == 5) {

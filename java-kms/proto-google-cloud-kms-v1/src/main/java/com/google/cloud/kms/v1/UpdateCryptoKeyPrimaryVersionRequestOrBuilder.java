@@ -31,6 +31,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    * </pre>
    *
    * <code>string crypto_key_version_id = 2;</code>
+   *
+   * @return The cryptoKeyVersionId.
    */
   java.lang.String getCryptoKeyVersionId();
   /**
@@ -62,6 +68,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    * </pre>
    *
    * <code>string crypto_key_version_id = 2;</code>
+   *
+   * @return The bytes for cryptoKeyVersionId.
    */
   com.google.protobuf.ByteString getCryptoKeyVersionIdBytes();
 }

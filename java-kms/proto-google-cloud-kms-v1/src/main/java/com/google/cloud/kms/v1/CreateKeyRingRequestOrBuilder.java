@@ -32,6 +32,8 @@ public interface CreateKeyRingRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateKeyRingRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface CreateKeyRingRequestOrBuilder
    * </pre>
    *
    * <code>string key_ring_id = 2;</code>
+   *
+   * @return The keyRingId.
    */
   java.lang.String getKeyRingId();
   /**
@@ -66,6 +72,8 @@ public interface CreateKeyRingRequestOrBuilder
    * </pre>
    *
    * <code>string key_ring_id = 2;</code>
+   *
+   * @return The bytes for keyRingId.
    */
   com.google.protobuf.ByteString getKeyRingIdBytes();
 
@@ -77,6 +85,8 @@ public interface CreateKeyRingRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   *
+   * @return Whether the keyRing field is set.
    */
   boolean hasKeyRing();
   /**
@@ -87,6 +97,8 @@ public interface CreateKeyRingRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   *
+   * @return The keyRing.
    */
   com.google.cloud.kms.v1.KeyRing getKeyRing();
   /**

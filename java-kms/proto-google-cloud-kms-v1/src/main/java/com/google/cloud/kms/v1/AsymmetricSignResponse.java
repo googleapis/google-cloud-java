@@ -42,6 +42,12 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsymmetricSignResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>bytes signature = 1;</code>
+   *
+   * @return The signature.
    */
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
@@ -443,6 +450,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bytes signature = 1;</code>
+     *
+     * @return The signature.
      */
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
@@ -455,6 +464,9 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bytes signature = 1;</code>
+     *
+     * @param value The signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -473,6 +485,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bytes signature = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignature() {
 

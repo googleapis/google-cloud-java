@@ -32,6 +32,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -70,6 +76,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -81,6 +89,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -92,6 +102,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -102,6 +114,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
+   *
+   * @return The view.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView getView();
 
@@ -113,6 +127,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -123,6 +139,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -135,6 +153,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -146,6 +166,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 }

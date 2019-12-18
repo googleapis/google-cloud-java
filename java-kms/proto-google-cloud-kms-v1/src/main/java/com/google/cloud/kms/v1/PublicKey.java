@@ -44,6 +44,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PublicKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string pem = 1;</code>
+   *
+   * @return The pem.
    */
   public java.lang.String getPem() {
     java.lang.Object ref = pem_;
@@ -153,6 +160,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string pem = 1;</code>
+   *
+   * @return The bytes for pem.
    */
   public com.google.protobuf.ByteString getPemBytes() {
     java.lang.Object ref = pem_;
@@ -177,6 +186,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   *
+   * @return The enum numeric value on the wire for algorithm.
    */
   public int getAlgorithmValue() {
     return algorithm_;
@@ -190,6 +201,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   *
+   * @return The algorithm.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
     @SuppressWarnings("deprecation")
@@ -548,6 +561,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return The pem.
      */
     public java.lang.String getPem() {
       java.lang.Object ref = pem_;
@@ -572,6 +587,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return The bytes for pem.
      */
     public com.google.protobuf.ByteString getPemBytes() {
       java.lang.Object ref = pem_;
@@ -596,6 +613,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @param value The pem to set.
+     * @return This builder for chaining.
      */
     public Builder setPem(java.lang.String value) {
       if (value == null) {
@@ -618,6 +638,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPem() {
 
@@ -637,6 +659,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pem = 1;</code>
+     *
+     * @param value The bytes for pem to set.
+     * @return This builder for chaining.
      */
     public Builder setPemBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -659,6 +684,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @return The enum numeric value on the wire for algorithm.
      */
     public int getAlgorithmValue() {
       return algorithm_;
@@ -672,6 +699,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
       algorithm_ = value;
@@ -687,6 +717,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @return The algorithm.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
       @SuppressWarnings("deprecation")
@@ -705,6 +737,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @param value The algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithm(
         com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm value) {
@@ -725,6 +760,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
 

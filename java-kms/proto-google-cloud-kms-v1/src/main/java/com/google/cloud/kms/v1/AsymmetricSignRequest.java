@@ -42,6 +42,12 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsymmetricSignRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -151,6 +158,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -176,6 +185,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   *
+   * @return Whether the digest field is set.
    */
   public boolean hasDigest() {
     return digest_ != null;
@@ -190,6 +201,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   *
+   * @return The digest.
    */
   public com.google.cloud.kms.v1.Digest getDigest() {
     return digest_ == null ? com.google.cloud.kms.v1.Digest.getDefaultInstance() : digest_;
@@ -562,6 +575,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -582,6 +597,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -602,6 +619,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -620,6 +640,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -635,6 +657,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -663,6 +688,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     *
+     * @return Whether the digest field is set.
      */
     public boolean hasDigest() {
       return digestBuilder_ != null || digest_ != null;
@@ -677,6 +704,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     *
+     * @return The digest.
      */
     public com.google.cloud.kms.v1.Digest getDigest() {
       if (digestBuilder_ == null) {

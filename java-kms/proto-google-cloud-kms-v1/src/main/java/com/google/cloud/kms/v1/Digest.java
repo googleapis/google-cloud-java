@@ -40,6 +40,12 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
   private Digest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Digest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,7 +121,10 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
   private int digestCase_ = 0;
   private java.lang.Object digest_;
 
-  public enum DigestCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DigestCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SHA256(1),
     SHA384(2),
     SHA512(3),
@@ -126,7 +134,11 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     private DigestCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DigestCase valueOf(int value) {
       return forNumber(value);
@@ -165,6 +177,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes sha256 = 1;</code>
+   *
+   * @return The sha256.
    */
   public com.google.protobuf.ByteString getSha256() {
     if (digestCase_ == 1) {
@@ -182,6 +196,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes sha384 = 2;</code>
+   *
+   * @return The sha384.
    */
   public com.google.protobuf.ByteString getSha384() {
     if (digestCase_ == 2) {
@@ -199,6 +215,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes sha512 = 3;</code>
+   *
+   * @return The sha512.
    */
   public com.google.protobuf.ByteString getSha512() {
     if (digestCase_ == 3) {
@@ -610,6 +628,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha256 = 1;</code>
+     *
+     * @return The sha256.
      */
     public com.google.protobuf.ByteString getSha256() {
       if (digestCase_ == 1) {
@@ -625,6 +645,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha256 = 1;</code>
+     *
+     * @param value The sha256 to set.
+     * @return This builder for chaining.
      */
     public Builder setSha256(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -643,6 +666,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha256 = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSha256() {
       if (digestCase_ == 1) {
@@ -661,6 +686,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha384 = 2;</code>
+     *
+     * @return The sha384.
      */
     public com.google.protobuf.ByteString getSha384() {
       if (digestCase_ == 2) {
@@ -676,6 +703,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha384 = 2;</code>
+     *
+     * @param value The sha384 to set.
+     * @return This builder for chaining.
      */
     public Builder setSha384(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -694,6 +724,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha384 = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSha384() {
       if (digestCase_ == 2) {
@@ -712,6 +744,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha512 = 3;</code>
+     *
+     * @return The sha512.
      */
     public com.google.protobuf.ByteString getSha512() {
       if (digestCase_ == 3) {
@@ -727,6 +761,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha512 = 3;</code>
+     *
+     * @param value The sha512 to set.
+     * @return This builder for chaining.
      */
     public Builder setSha512(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -745,6 +782,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes sha512 = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSha512() {
       if (digestCase_ == 3) {

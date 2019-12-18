@@ -31,6 +31,8 @@ public interface AsymmetricSignRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface AsymmetricSignRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface AsymmetricSignRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   *
+   * @return Whether the digest field is set.
    */
   boolean hasDigest();
   /**
@@ -66,6 +72,8 @@ public interface AsymmetricSignRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   *
+   * @return The digest.
    */
   com.google.cloud.kms.v1.Digest getDigest();
   /**

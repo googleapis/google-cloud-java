@@ -42,6 +42,12 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsymmetricDecryptResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>bytes plaintext = 1;</code>
+   *
+   * @return The plaintext.
    */
   public com.google.protobuf.ByteString getPlaintext() {
     return plaintext_;
@@ -445,6 +452,8 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bytes plaintext = 1;</code>
+     *
+     * @return The plaintext.
      */
     public com.google.protobuf.ByteString getPlaintext() {
       return plaintext_;
@@ -457,6 +466,9 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bytes plaintext = 1;</code>
+     *
+     * @param value The plaintext to set.
+     * @return This builder for chaining.
      */
     public Builder setPlaintext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -475,6 +487,8 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bytes plaintext = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPlaintext() {
 

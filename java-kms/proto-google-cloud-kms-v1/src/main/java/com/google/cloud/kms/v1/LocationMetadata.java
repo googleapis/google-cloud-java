@@ -40,6 +40,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   private LocationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LocationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>bool hsm_available = 1;</code>
+   *
+   * @return The hsmAvailable.
    */
   public boolean getHsmAvailable() {
     return hsmAvailable_;
@@ -444,6 +451,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
+     *
+     * @return The hsmAvailable.
      */
     public boolean getHsmAvailable() {
       return hsmAvailable_;
@@ -458,6 +467,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
+     *
+     * @param value The hsmAvailable to set.
+     * @return This builder for chaining.
      */
     public Builder setHsmAvailable(boolean value) {
 
@@ -475,6 +487,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHsmAvailable() {
 

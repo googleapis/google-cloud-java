@@ -31,6 +31,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   *
+   * @return Whether the cryptoKeyVersion field is set.
    */
   boolean hasCryptoKeyVersion();
   /**
@@ -41,6 +43,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   *
+   * @return The cryptoKeyVersion.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion();
   /**
@@ -62,6 +66,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -72,6 +78,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

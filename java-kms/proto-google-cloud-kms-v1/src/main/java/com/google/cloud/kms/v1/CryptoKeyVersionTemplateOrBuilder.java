@@ -32,6 +32,8 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
   /**
@@ -43,6 +45,8 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
+   *
+   * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 
@@ -58,6 +62,8 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+   *
+   * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
   /**
@@ -72,6 +78,8 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+   *
+   * @return The algorithm.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm();
 }

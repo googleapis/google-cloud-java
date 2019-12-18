@@ -16,8 +16,13 @@
 
 package com.google.cloud.kms.v1;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * AUTO-GENERATED DOCUMENTATION AND CLASS
+ *
+ * @deprecated This resource name class will be removed in the next major version.
+ */
 @javax.annotation.Generated("by GAPIC protoc plugin")
+@Deprecated
 public class KeyNames {
   private KeyNames() {}
 
