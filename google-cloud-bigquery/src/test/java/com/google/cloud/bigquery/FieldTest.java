@@ -32,6 +32,7 @@ public class FieldTest {
   private static final String FIELD_NAME3 = "RecordField";
   private static final LegacySQLTypeName FIELD_TYPE1 = LegacySQLTypeName.STRING;
   private static final LegacySQLTypeName FIELD_TYPE2 = LegacySQLTypeName.INTEGER;
+  private static final StandardSQLTypeName FIELD_TYPE1_STANDARD = StandardSQLTypeName.STRING;
   private static final Field.Mode FIELD_MODE1 = Field.Mode.NULLABLE;
   private static final Field.Mode FIELD_MODE2 = Field.Mode.REPEATED;
   private static final Field.Mode FIELD_MODE3 = Field.Mode.REQUIRED;
@@ -49,6 +50,7 @@ public class FieldTest {
           .setDescription(FIELD_DESCRIPTION2)
           .build();
   private static final LegacySQLTypeName FIELD_TYPE3 = LegacySQLTypeName.RECORD;
+  private static final StandardSQLTypeName FIELD_TYPE3_STANDARD = StandardSQLTypeName.STRUCT;
   private static final Field FIELD_SCHEMA3 =
       Field.newBuilder(FIELD_NAME3, FIELD_TYPE3, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(FIELD_MODE3)
@@ -109,6 +111,22 @@ public class FieldTest {
     Field field = Field.of(FIELD_NAME1, FIELD_TYPE1);
     compareFieldSchemas(field, field.toBuilder().build());
     field = Field.of(FIELD_NAME2, FIELD_TYPE3, STANDARD_FIELD_SCHEMA1, STANDARD_FIELD_SCHEMA2);
+    compareFieldSchemas(field, field.toBuilder().build());
+  }
+
+  @Test
+  public void testToBuilderIncompleteStandard() {
+    Field field = Field.of(FIELD_NAME1, FIELD_TYPE1_STANDARD);
+    compareFieldSchemas(field, field.toBuilder().build());
+    field = Field.of(FIELD_NAME2, FIELD_TYPE3_STANDARD, FIELD_SCHEMA1, FIELD_SCHEMA2);
+    compareFieldSchemas(field, field.toBuilder().build());
+  }
+
+  @Test
+  public void testToBuilderIncompleteStandardWithStandardSQLTypeName() {
+    Field field = Field.of(FIELD_NAME1, FIELD_TYPE1_STANDARD);
+    compareFieldSchemas(field, field.toBuilder().build());
+    field = Field.of(FIELD_NAME2, FIELD_TYPE3_STANDARD, STANDARD_FIELD_SCHEMA1, STANDARD_FIELD_SCHEMA2);
     compareFieldSchemas(field, field.toBuilder().build());
   }
 
