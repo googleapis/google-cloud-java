@@ -27,12 +27,16 @@ public interface EvaluationJobConfigOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return Whether the imageClassificationConfig field is set.
    */
   boolean hasImageClassificationConfig();
   /**
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return The imageClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig getImageClassificationConfig();
   /**
@@ -45,10 +49,14 @@ public interface EvaluationJobConfigOrBuilder
 
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return Whether the boundingPolyConfig field is set.
    */
   boolean hasBoundingPolyConfig();
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return The boundingPolyConfig.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig();
   /**
@@ -61,12 +69,16 @@ public interface EvaluationJobConfigOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
    * </code>
+   *
+   * @return Whether the videoClassificationConfig field is set.
    */
   boolean hasVideoClassificationConfig();
   /**
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
    * </code>
+   *
+   * @return The videoClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig getVideoClassificationConfig();
   /**
@@ -80,11 +92,15 @@ public interface EvaluationJobConfigOrBuilder
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
    * </code>
+   *
+   * @return Whether the objectDetectionConfig field is set.
    */
   boolean hasObjectDetectionConfig();
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
    * </code>
+   *
+   * @return The objectDetectionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig();
   /**
@@ -98,12 +114,16 @@ public interface EvaluationJobConfigOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
+   *
+   * @return Whether the textClassificationConfig field is set.
    */
   boolean hasTextClassificationConfig();
   /**
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
+   *
+   * @return The textClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationConfig getTextClassificationConfig();
   /**
@@ -117,11 +137,15 @@ public interface EvaluationJobConfigOrBuilder
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig();
   /**
@@ -140,6 +164,8 @@ public interface EvaluationJobConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -151,6 +177,8 @@ public interface EvaluationJobConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig();
   /**
@@ -173,6 +201,8 @@ public interface EvaluationJobConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
+   *
+   * @return Whether the evaluationConfig field is set.
    */
   boolean hasEvaluationConfig();
   /**
@@ -183,6 +213,8 @@ public interface EvaluationJobConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
+   *
+   * @return The evaluationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationConfig getEvaluationConfig();
   /**
@@ -199,11 +231,15 @@ public interface EvaluationJobConfigOrBuilder
   /**
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
+   *
+   * @return Whether the humanAnnotationConfig field is set.
    */
   boolean hasHumanAnnotationConfig();
   /**
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
+   *
+   * @return The humanAnnotationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig();
   /**
@@ -306,6 +342,8 @@ public interface EvaluationJobConfigOrBuilder
    * </pre>
    *
    * <code>int32 example_count = 10;</code>
+   *
+   * @return The exampleCount.
    */
   int getExampleCount();
 
@@ -318,6 +356,8 @@ public interface EvaluationJobConfigOrBuilder
    * </pre>
    *
    * <code>double example_sample_percentage = 11;</code>
+   *
+   * @return The exampleSamplePercentage.
    */
   double getExampleSamplePercentage();
 
@@ -332,6 +372,8 @@ public interface EvaluationJobConfigOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
    * </code>
+   *
+   * @return Whether the evaluationJobAlertConfig field is set.
    */
   boolean hasEvaluationJobAlertConfig();
   /**
@@ -345,6 +387,8 @@ public interface EvaluationJobConfigOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
    * </code>
+   *
+   * @return The evaluationJobAlertConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig getEvaluationJobAlertConfig();
   /**

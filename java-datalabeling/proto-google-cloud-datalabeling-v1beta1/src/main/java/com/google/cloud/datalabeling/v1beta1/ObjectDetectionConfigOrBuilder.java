@@ -31,6 +31,8 @@ public interface ObjectDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
   /**
@@ -41,6 +43,8 @@ public interface ObjectDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   com.google.protobuf.ByteString getAnnotationSpecSetBytes();
 
@@ -52,6 +56,8 @@ public interface ObjectDetectionConfigOrBuilder
    * </pre>
    *
    * <code>double extraction_frame_rate = 3;</code>
+   *
+   * @return The extractionFrameRate.
    */
   double getExtractionFrameRate();
 }

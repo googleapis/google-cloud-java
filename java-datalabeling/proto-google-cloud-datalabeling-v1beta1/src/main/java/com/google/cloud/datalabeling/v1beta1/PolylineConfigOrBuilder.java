@@ -31,6 +31,8 @@ public interface PolylineConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
   /**
@@ -41,6 +43,8 @@ public interface PolylineConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   com.google.protobuf.ByteString getAnnotationSpecSetBytes();
 
@@ -52,6 +56,8 @@ public interface PolylineConfigOrBuilder
    * </pre>
    *
    * <code>string instruction_message = 2;</code>
+   *
+   * @return The instructionMessage.
    */
   java.lang.String getInstructionMessage();
   /**
@@ -62,6 +68,8 @@ public interface PolylineConfigOrBuilder
    * </pre>
    *
    * <code>string instruction_message = 2;</code>
+   *
+   * @return The bytes for instructionMessage.
    */
   com.google.protobuf.ByteString getInstructionMessageBytes();
 }

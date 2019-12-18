@@ -31,6 +31,8 @@ public interface LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
   /**
@@ -41,6 +43,8 @@ public interface LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
+   *
+   * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
   /**

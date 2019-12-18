@@ -32,6 +32,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -64,6 +70,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -76,6 +84,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -87,6 +97,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -98,6 +110,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -108,6 +122,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -129,6 +145,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -139,6 +157,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -160,6 +180,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 6;</code>
+   *
+   * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
   /**
@@ -170,6 +192,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 6;</code>
+   *
+   * @return The dataType.
    */
   com.google.cloud.datalabeling.v1beta1.DataType getDataType();
 
@@ -185,6 +209,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   *
+   * @return Whether the csvInstruction field is set.
    */
   boolean hasCsvInstruction();
   /**
@@ -199,6 +225,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   *
+   * @return The csvInstruction.
    */
   com.google.cloud.datalabeling.v1beta1.CsvInstruction getCsvInstruction();
   /**
@@ -226,6 +254,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
+   *
+   * @return Whether the pdfInstruction field is set.
    */
   boolean hasPdfInstruction();
   /**
@@ -238,6 +268,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
+   *
+   * @return The pdfInstruction.
    */
   com.google.cloud.datalabeling.v1beta1.PdfInstruction getPdfInstruction();
   /**
@@ -262,6 +294,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 10;</code>
+   *
+   * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
   /**
@@ -273,6 +307,8 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 10;</code>
+   *
+   * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
   /**
@@ -284,6 +320,9 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
   /**
@@ -295,6 +334,9 @@ public interface InstructionOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the blockingResources at the given index.
    */
   com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 }

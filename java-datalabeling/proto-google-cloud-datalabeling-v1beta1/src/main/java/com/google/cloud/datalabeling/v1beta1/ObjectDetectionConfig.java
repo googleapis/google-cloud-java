@@ -46,6 +46,12 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ObjectDetectionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The annotationSpecSet.
    */
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
@@ -145,6 +152,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
@@ -168,6 +177,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>double extraction_frame_rate = 3;</code>
+   *
+   * @return The extractionFrameRate.
    */
   public double getExtractionFrameRate() {
     return extractionFrameRate_;
@@ -524,6 +535,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
@@ -544,6 +557,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
@@ -564,6 +579,9 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @param value The annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSet(java.lang.String value) {
       if (value == null) {
@@ -582,6 +600,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
 
@@ -597,6 +617,9 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @param value The bytes for annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -618,6 +641,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>double extraction_frame_rate = 3;</code>
+     *
+     * @return The extractionFrameRate.
      */
     public double getExtractionFrameRate() {
       return extractionFrameRate_;
@@ -630,6 +655,9 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>double extraction_frame_rate = 3;</code>
+     *
+     * @param value The extractionFrameRate to set.
+     * @return This builder for chaining.
      */
     public Builder setExtractionFrameRate(double value) {
 
@@ -645,6 +673,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>double extraction_frame_rate = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExtractionFrameRate() {
 

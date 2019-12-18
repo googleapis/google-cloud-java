@@ -32,6 +32,12 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
   private ClassificationMetrics() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClassificationMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -44,7 +50,6 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return Whether the prCurve field is set.
    */
   public boolean hasPrCurve() {
     return prCurve_ != null;
@@ -144,6 +151,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return The prCurve.
    */
   public com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve() {
     return prCurve_ == null
@@ -165,11 +174,19 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
 
   public static final int CONFUSION_MATRIX_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusionMatrix_;
-  /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+   *
+   * @return Whether the confusionMatrix field is set.
+   */
   public boolean hasConfusionMatrix() {
     return confusionMatrix_ != null;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+   *
+   * @return The confusionMatrix.
+   */
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix getConfusionMatrix() {
     return confusionMatrix_ == null
         ? com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.getDefaultInstance()
@@ -546,6 +563,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+     *
+     * @return Whether the prCurve field is set.
      */
     public boolean hasPrCurve() {
       return prCurveBuilder_ != null || prCurve_ != null;
@@ -558,6 +577,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+     *
+     * @return The prCurve.
      */
     public com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve() {
       if (prCurveBuilder_ == null) {
@@ -720,11 +741,19 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder,
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder>
         confusionMatrixBuilder_;
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     *
+     * @return Whether the confusionMatrix field is set.
+     */
     public boolean hasConfusionMatrix() {
       return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     *
+     * @return The confusionMatrix.
+     */
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix getConfusionMatrix() {
       if (confusionMatrixBuilder_ == null) {
         return confusionMatrix_ == null

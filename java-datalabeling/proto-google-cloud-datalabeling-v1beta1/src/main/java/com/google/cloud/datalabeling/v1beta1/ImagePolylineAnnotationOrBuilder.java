@@ -23,16 +23,32 @@ public interface ImagePolylineAnnotationOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
+   *
+   * @return Whether the polyline field is set.
+   */
   boolean hasPolyline();
-  /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
+   *
+   * @return The polyline.
+   */
   com.google.cloud.datalabeling.v1beta1.Polyline getPolyline();
   /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
   com.google.cloud.datalabeling.v1beta1.PolylineOrBuilder getPolylineOrBuilder();
 
-  /** <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
+   *
+   * @return Whether the normalizedPolyline field is set.
+   */
   boolean hasNormalizedPolyline();
-  /** <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
+   *
+   * @return The normalizedPolyline.
+   */
   com.google.cloud.datalabeling.v1beta1.NormalizedPolyline getNormalizedPolyline();
   /** <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code> */
   com.google.cloud.datalabeling.v1beta1.NormalizedPolylineOrBuilder
@@ -46,6 +62,8 @@ public interface ImagePolylineAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
   /**
@@ -56,6 +74,8 @@ public interface ImagePolylineAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
   /**

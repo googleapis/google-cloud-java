@@ -35,6 +35,8 @@ public interface LabelImageRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return Whether the imageClassificationConfig field is set.
    */
   boolean hasImageClassificationConfig();
   /**
@@ -49,6 +51,8 @@ public interface LabelImageRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return The imageClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig getImageClassificationConfig();
   /**
@@ -77,6 +81,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return Whether the boundingPolyConfig field is set.
    */
   boolean hasBoundingPolyConfig();
   /**
@@ -89,6 +95,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return The boundingPolyConfig.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig();
   /**
@@ -115,6 +123,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
+   *
+   * @return Whether the polylineConfig field is set.
    */
   boolean hasPolylineConfig();
   /**
@@ -127,6 +137,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
+   *
+   * @return The polylineConfig.
    */
   com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig();
   /**
@@ -152,6 +164,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
+   *
+   * @return Whether the segmentationConfig field is set.
    */
   boolean hasSegmentationConfig();
   /**
@@ -164,6 +178,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
+   *
+   * @return The segmentationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig();
   /**
@@ -189,6 +205,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -200,6 +218,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -211,6 +231,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
   /**
@@ -221,6 +243,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
   /**
@@ -242,6 +266,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
   /**
@@ -252,6 +278,8 @@ public interface LabelImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+   *
+   * @return The feature.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature();
 

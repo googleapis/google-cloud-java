@@ -32,6 +32,8 @@ public interface CreateInstructionMetadataOrBuilder
    * </pre>
    *
    * <code>string instruction = 1;</code>
+   *
+   * @return The instruction.
    */
   java.lang.String getInstruction();
   /**
@@ -43,6 +45,8 @@ public interface CreateInstructionMetadataOrBuilder
    * </pre>
    *
    * <code>string instruction = 1;</code>
+   *
+   * @return The bytes for instruction.
    */
   com.google.protobuf.ByteString getInstructionBytes();
 
@@ -115,6 +119,8 @@ public interface CreateInstructionMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -125,6 +131,8 @@ public interface CreateInstructionMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**

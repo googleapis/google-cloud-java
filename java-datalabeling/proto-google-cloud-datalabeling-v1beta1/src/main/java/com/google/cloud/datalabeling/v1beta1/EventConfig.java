@@ -42,6 +42,12 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EventConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,6 +130,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @return A list containing the annotationSpecSets.
    */
   public com.google.protobuf.ProtocolStringList getAnnotationSpecSetsList() {
     return annotationSpecSets_;
@@ -138,6 +146,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @return The count of annotationSpecSets.
    */
   public int getAnnotationSpecSetsCount() {
     return annotationSpecSets_.size();
@@ -152,6 +162,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The annotationSpecSets at the given index.
    */
   public java.lang.String getAnnotationSpecSets(int index) {
     return annotationSpecSets_.get(index);
@@ -166,6 +179,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the annotationSpecSets at the given index.
    */
   public com.google.protobuf.ByteString getAnnotationSpecSetsBytes(int index) {
     return annotationSpecSets_.getByteString(index);
@@ -528,6 +544,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @return A list containing the annotationSpecSets.
      */
     public com.google.protobuf.ProtocolStringList getAnnotationSpecSetsList() {
       return annotationSpecSets_.getUnmodifiableView();
@@ -542,6 +560,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @return The count of annotationSpecSets.
      */
     public int getAnnotationSpecSetsCount() {
       return annotationSpecSets_.size();
@@ -556,6 +576,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The annotationSpecSets at the given index.
      */
     public java.lang.String getAnnotationSpecSets(int index) {
       return annotationSpecSets_.get(index);
@@ -570,6 +593,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the annotationSpecSets at the given index.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetsBytes(int index) {
       return annotationSpecSets_.getByteString(index);
@@ -584,6 +610,10 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The annotationSpecSets to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSets(int index, java.lang.String value) {
       if (value == null) {
@@ -604,6 +634,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @param value The annotationSpecSets to add.
+     * @return This builder for chaining.
      */
     public Builder addAnnotationSpecSets(java.lang.String value) {
       if (value == null) {
@@ -624,6 +657,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @param values The annotationSpecSets to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAnnotationSpecSets(java.lang.Iterable<java.lang.String> values) {
       ensureAnnotationSpecSetsIsMutable();
@@ -641,6 +677,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSets() {
       annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -658,6 +696,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string annotation_spec_sets = 1;</code>
+     *
+     * @param value The bytes of the annotationSpecSets to add.
+     * @return This builder for chaining.
      */
     public Builder addAnnotationSpecSetsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

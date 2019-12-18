@@ -31,6 +31,8 @@ public interface SequentialSegmentOrBuilder
    * </pre>
    *
    * <code>int32 start = 1;</code>
+   *
+   * @return The start.
    */
   int getStart();
 
@@ -42,6 +44,8 @@ public interface SequentialSegmentOrBuilder
    * </pre>
    *
    * <code>int32 end = 2;</code>
+   *
+   * @return The end.
    */
   int getEnd();
 }

@@ -32,6 +32,12 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
   private ObjectDetectionMetrics() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ObjectDetectionMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -44,7 +50,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +120,8 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return Whether the prCurve field is set.
    */
   public boolean hasPrCurve() {
     return prCurve_ != null;
@@ -127,6 +134,8 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return The prCurve.
    */
   public com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve() {
     return prCurve_ == null
@@ -485,6 +494,8 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+     *
+     * @return Whether the prCurve field is set.
      */
     public boolean hasPrCurve() {
       return prCurveBuilder_ != null || prCurve_ != null;
@@ -497,6 +508,8 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+     *
+     * @return The prCurve.
      */
     public com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve() {
       if (prCurveBuilder_ == null) {

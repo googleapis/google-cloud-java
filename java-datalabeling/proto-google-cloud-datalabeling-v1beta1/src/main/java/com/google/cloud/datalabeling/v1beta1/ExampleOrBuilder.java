@@ -31,6 +31,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+   *
+   * @return Whether the imagePayload field is set.
    */
   boolean hasImagePayload();
   /**
@@ -41,6 +43,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+   *
+   * @return The imagePayload.
    */
   com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload();
   /**
@@ -62,6 +66,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
+   *
+   * @return Whether the textPayload field is set.
    */
   boolean hasTextPayload();
   /**
@@ -72,6 +78,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
+   *
+   * @return The textPayload.
    */
   com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload();
   /**
@@ -93,6 +101,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
+   *
+   * @return Whether the videoPayload field is set.
    */
   boolean hasVideoPayload();
   /**
@@ -103,6 +113,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
+   *
+   * @return The videoPayload.
    */
   com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload();
   /**
@@ -126,6 +138,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -138,6 +152,8 @@ public interface ExampleOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 

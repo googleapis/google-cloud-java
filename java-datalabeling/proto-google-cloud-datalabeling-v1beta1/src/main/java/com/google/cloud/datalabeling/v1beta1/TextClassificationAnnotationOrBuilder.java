@@ -31,6 +31,8 @@ public interface TextClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
   /**
@@ -41,6 +43,8 @@ public interface TextClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
   /**

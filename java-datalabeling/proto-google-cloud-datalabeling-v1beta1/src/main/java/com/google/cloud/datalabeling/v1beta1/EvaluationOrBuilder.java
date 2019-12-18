@@ -33,6 +33,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -66,6 +72,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
+   *
+   * @return The config.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationConfig getConfig();
   /**
@@ -88,6 +96,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
+   *
+   * @return Whether the evaluationJobRunTime field is set.
    */
   boolean hasEvaluationJobRunTime();
   /**
@@ -99,6 +109,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
+   *
+   * @return The evaluationJobRunTime.
    */
   com.google.protobuf.Timestamp getEvaluationJobRunTime();
   /**
@@ -121,6 +133,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -131,6 +145,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -152,6 +168,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
+   *
+   * @return Whether the evaluationMetrics field is set.
    */
   boolean hasEvaluationMetrics();
   /**
@@ -162,6 +180,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
+   *
+   * @return The evaluationMetrics.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationMetrics getEvaluationMetrics();
   /**
@@ -184,6 +204,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 6;</code>
+   *
+   * @return The enum numeric value on the wire for annotationType.
    */
   int getAnnotationTypeValue();
   /**
@@ -195,6 +217,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 6;</code>
+   *
+   * @return The annotationType.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType();
 
@@ -207,6 +231,8 @@ public interface EvaluationOrBuilder
    * </pre>
    *
    * <code>int64 evaluated_item_count = 7;</code>
+   *
+   * @return The evaluatedItemCount.
    */
   long getEvaluatedItemCount();
 }

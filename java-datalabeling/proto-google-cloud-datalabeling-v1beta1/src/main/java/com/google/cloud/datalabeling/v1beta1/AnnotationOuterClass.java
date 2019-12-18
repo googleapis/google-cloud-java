@@ -263,23 +263,15 @@ public final class AnnotationOuterClass {
           + "e.golang.org/genproto/googleapis/cloud/d"
           + "atalabeling/v1beta1;datalabelingb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.DataPayloads.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.DataPayloads.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+            });
     internal_static_google_cloud_datalabeling_v1beta1_Annotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_datalabeling_v1beta1_Annotation_fieldAccessorTable =

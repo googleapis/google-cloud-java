@@ -32,6 +32,12 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   private EvaluationMetrics() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EvaluationMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -44,7 +50,6 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,7 +138,10 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   private int metricsCase_ = 0;
   private java.lang.Object metrics_;
 
-  public enum MetricsCase implements com.google.protobuf.Internal.EnumLite {
+  public enum MetricsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLASSIFICATION_METRICS(1),
     OBJECT_DETECTION_METRICS(2),
     METRICS_NOT_SET(0);
@@ -142,7 +150,11 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     private MetricsCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MetricsCase valueOf(int value) {
       return forNumber(value);
@@ -174,6 +186,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
+   *
+   * @return Whether the classificationMetrics field is set.
    */
   public boolean hasClassificationMetrics() {
     return metricsCase_ == 1;
@@ -181,6 +195,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
+   *
+   * @return The classificationMetrics.
    */
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetrics getClassificationMetrics() {
     if (metricsCase_ == 1) {
@@ -204,6 +220,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
+   *
+   * @return Whether the objectDetectionMetrics field is set.
    */
   public boolean hasObjectDetectionMetrics() {
     return metricsCase_ == 2;
@@ -211,6 +229,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
+   *
+   * @return The objectDetectionMetrics.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics getObjectDetectionMetrics() {
     if (metricsCase_ == 2) {
@@ -621,6 +641,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
+     *
+     * @return Whether the classificationMetrics field is set.
      */
     public boolean hasClassificationMetrics() {
       return metricsCase_ == 1;
@@ -628,6 +650,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
+     *
+     * @return The classificationMetrics.
      */
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetrics getClassificationMetrics() {
       if (classificationMetricsBuilder_ == null) {
@@ -785,6 +809,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
+     *
+     * @return Whether the objectDetectionMetrics field is set.
      */
     public boolean hasObjectDetectionMetrics() {
       return metricsCase_ == 2;
@@ -792,6 +818,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
+     *
+     * @return The objectDetectionMetrics.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics
         getObjectDetectionMetrics() {

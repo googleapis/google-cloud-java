@@ -42,6 +42,12 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DataItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -163,7 +168,10 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
 
-  public enum PayloadCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PayloadCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_PAYLOAD(2),
     TEXT_PAYLOAD(3),
     VIDEO_PAYLOAD(4),
@@ -173,7 +181,11 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PayloadCase valueOf(int value) {
       return forNumber(value);
@@ -212,6 +224,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+   *
+   * @return Whether the imagePayload field is set.
    */
   public boolean hasImagePayload() {
     return payloadCase_ == 2;
@@ -224,6 +238,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+   *
+   * @return The imagePayload.
    */
   public com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload() {
     if (payloadCase_ == 2) {
@@ -256,6 +272,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 3;</code>
+   *
+   * @return Whether the textPayload field is set.
    */
   public boolean hasTextPayload() {
     return payloadCase_ == 3;
@@ -268,6 +286,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 3;</code>
+   *
+   * @return The textPayload.
    */
   public com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload() {
     if (payloadCase_ == 3) {
@@ -300,6 +320,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 4;</code>
+   *
+   * @return Whether the videoPayload field is set.
    */
   public boolean hasVideoPayload() {
     return payloadCase_ == 4;
@@ -312,6 +334,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 4;</code>
+   *
+   * @return The videoPayload.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload() {
     if (payloadCase_ == 4) {
@@ -346,6 +370,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -367,6 +393,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -822,6 +850,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+     *
+     * @return Whether the imagePayload field is set.
      */
     public boolean hasImagePayload() {
       return payloadCase_ == 2;
@@ -834,6 +864,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+     *
+     * @return The imagePayload.
      */
     public com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload() {
       if (imagePayloadBuilder_ == null) {
@@ -1025,6 +1057,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 3;</code>
+     *
+     * @return Whether the textPayload field is set.
      */
     public boolean hasTextPayload() {
       return payloadCase_ == 3;
@@ -1037,6 +1071,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 3;</code>
+     *
+     * @return The textPayload.
      */
     public com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload() {
       if (textPayloadBuilder_ == null) {
@@ -1227,6 +1263,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 4;</code>
+     *
+     * @return Whether the videoPayload field is set.
      */
     public boolean hasVideoPayload() {
       return payloadCase_ == 4;
@@ -1239,6 +1277,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 4;</code>
+     *
+     * @return The videoPayload.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload() {
       if (videoPayloadBuilder_ == null) {
@@ -1427,6 +1467,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1448,6 +1490,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1469,6 +1513,9 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1488,6 +1535,8 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1504,6 +1553,9 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

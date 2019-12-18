@@ -31,6 +31,8 @@ public interface CsvInstructionOrBuilder
    * </pre>
    *
    * <code>string gcs_file_uri = 1;</code>
+   *
+   * @return The gcsFileUri.
    */
   java.lang.String getGcsFileUri();
   /**
@@ -41,6 +43,8 @@ public interface CsvInstructionOrBuilder
    * </pre>
    *
    * <code>string gcs_file_uri = 1;</code>
+   *
+   * @return The bytes for gcsFileUri.
    */
   com.google.protobuf.ByteString getGcsFileUriBytes();
 }

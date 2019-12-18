@@ -32,6 +32,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSource annotation_source = 2;</code>
+   *
+   * @return The enum numeric value on the wire for annotationSource.
    */
   int getAnnotationSourceValue();
   /**
@@ -64,6 +70,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSource annotation_source = 2;</code>
+   *
+   * @return The annotationSource.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource();
 
@@ -76,6 +84,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationValue annotation_value = 3;</code>
+   *
+   * @return Whether the annotationValue field is set.
    */
   boolean hasAnnotationValue();
   /**
@@ -87,6 +97,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationValue annotation_value = 3;</code>
+   *
+   * @return The annotationValue.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationValue getAnnotationValue();
   /**
@@ -110,6 +122,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationMetadata annotation_metadata = 4;</code>
+   *
+   * @return Whether the annotationMetadata field is set.
    */
   boolean hasAnnotationMetadata();
   /**
@@ -121,6 +135,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationMetadata annotation_metadata = 4;</code>
+   *
+   * @return The annotationMetadata.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationMetadata getAnnotationMetadata();
   /**
@@ -144,6 +160,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSentiment annotation_sentiment = 6;</code>
+   *
+   * @return The enum numeric value on the wire for annotationSentiment.
    */
   int getAnnotationSentimentValue();
   /**
@@ -154,6 +172,8 @@ public interface AnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSentiment annotation_sentiment = 6;</code>
+   *
+   * @return The annotationSentiment.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSentiment getAnnotationSentiment();
 }

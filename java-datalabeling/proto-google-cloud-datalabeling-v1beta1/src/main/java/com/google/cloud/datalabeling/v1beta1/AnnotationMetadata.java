@@ -40,6 +40,12 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
   private AnnotationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
+   *
+   * @return Whether the operatorMetadata field is set.
    */
   public boolean hasOperatorMetadata() {
     return operatorMetadata_ != null;
@@ -136,6 +143,8 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
+   *
+   * @return The operatorMetadata.
    */
   public com.google.cloud.datalabeling.v1beta1.OperatorMetadata getOperatorMetadata() {
     return operatorMetadata_ == null
@@ -501,6 +510,8 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
+     *
+     * @return Whether the operatorMetadata field is set.
      */
     public boolean hasOperatorMetadata() {
       return operatorMetadataBuilder_ != null || operatorMetadata_ != null;
@@ -513,6 +524,8 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
+     *
+     * @return The operatorMetadata.
      */
     public com.google.cloud.datalabeling.v1beta1.OperatorMetadata getOperatorMetadata() {
       if (operatorMetadataBuilder_ == null) {

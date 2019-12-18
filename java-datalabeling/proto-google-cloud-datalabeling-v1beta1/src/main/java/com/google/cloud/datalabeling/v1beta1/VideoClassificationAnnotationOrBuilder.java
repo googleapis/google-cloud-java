@@ -31,6 +31,8 @@ public interface VideoClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
+   *
+   * @return Whether the timeSegment field is set.
    */
   boolean hasTimeSegment();
   /**
@@ -41,6 +43,8 @@ public interface VideoClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
+   *
+   * @return The timeSegment.
    */
   com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment();
   /**
@@ -62,6 +66,8 @@ public interface VideoClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
   /**
@@ -72,6 +78,8 @@ public interface VideoClassificationAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
+   *
+   * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
   /**

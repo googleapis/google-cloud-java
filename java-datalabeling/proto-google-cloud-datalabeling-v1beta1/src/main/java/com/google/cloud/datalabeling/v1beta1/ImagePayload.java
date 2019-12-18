@@ -45,6 +45,12 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImagePayload();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 1;</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -158,6 +165,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 1;</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -181,6 +190,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes image_thumbnail = 2;</code>
+   *
+   * @return The imageThumbnail.
    */
   public com.google.protobuf.ByteString getImageThumbnail() {
     return imageThumbnail_;
@@ -196,6 +207,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_uri = 3;</code>
+   *
+   * @return The imageUri.
    */
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
@@ -216,6 +229,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_uri = 3;</code>
+   *
+   * @return The bytes for imageUri.
    */
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
@@ -239,6 +254,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string signed_uri = 4;</code>
+   *
+   * @return The signedUri.
    */
   public java.lang.String getSignedUri() {
     java.lang.Object ref = signedUri_;
@@ -259,6 +276,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string signed_uri = 4;</code>
+   *
+   * @return The bytes for signedUri.
    */
   public com.google.protobuf.ByteString getSignedUriBytes() {
     java.lang.Object ref = signedUri_;
@@ -646,6 +665,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1;</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -666,6 +687,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1;</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -686,6 +709,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1;</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -704,6 +730,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -719,6 +747,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1;</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -740,6 +771,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes image_thumbnail = 2;</code>
+     *
+     * @return The imageThumbnail.
      */
     public com.google.protobuf.ByteString getImageThumbnail() {
       return imageThumbnail_;
@@ -752,6 +785,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes image_thumbnail = 2;</code>
+     *
+     * @param value The imageThumbnail to set.
+     * @return This builder for chaining.
      */
     public Builder setImageThumbnail(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -770,6 +806,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes image_thumbnail = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageThumbnail() {
 
@@ -787,6 +825,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     *
+     * @return The imageUri.
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -807,6 +847,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     *
+     * @return The bytes for imageUri.
      */
     public com.google.protobuf.ByteString getImageUriBytes() {
       java.lang.Object ref = imageUri_;
@@ -827,6 +869,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     *
+     * @param value The imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUri(java.lang.String value) {
       if (value == null) {
@@ -845,6 +890,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageUri() {
 
@@ -860,6 +907,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     *
+     * @param value The bytes for imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -881,6 +931,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string signed_uri = 4;</code>
+     *
+     * @return The signedUri.
      */
     public java.lang.String getSignedUri() {
       java.lang.Object ref = signedUri_;
@@ -901,6 +953,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string signed_uri = 4;</code>
+     *
+     * @return The bytes for signedUri.
      */
     public com.google.protobuf.ByteString getSignedUriBytes() {
       java.lang.Object ref = signedUri_;
@@ -921,6 +975,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string signed_uri = 4;</code>
+     *
+     * @param value The signedUri to set.
+     * @return This builder for chaining.
      */
     public Builder setSignedUri(java.lang.String value) {
       if (value == null) {
@@ -939,6 +996,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string signed_uri = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignedUri() {
 
@@ -954,6 +1013,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string signed_uri = 4;</code>
+     *
+     * @param value The bytes for signedUri to set.
+     * @return This builder for chaining.
      */
     public Builder setSignedUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

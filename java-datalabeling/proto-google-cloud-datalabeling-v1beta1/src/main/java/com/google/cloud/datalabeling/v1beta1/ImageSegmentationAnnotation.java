@@ -43,6 +43,12 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageSegmentationAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -142,7 +148,6 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
             com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ANNOTATION_COLORS_FIELD_NUMBER = 1;
 
   private static final class AnnotationColorsDefaultEntryHolder {
@@ -277,6 +282,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -297,6 +304,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -320,6 +329,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>bytes image_bytes = 3;</code>
+   *
+   * @return The imageBytes.
    */
   public com.google.protobuf.ByteString getImageBytes() {
     return imageBytes_;
@@ -614,12 +625,10 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation result =
           new com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.annotationColors_ = internalGetAnnotationColors();
       result.annotationColors_.makeImmutable();
       result.mimeType_ = mimeType_;
       result.imageBytes_ = imageBytes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -919,6 +928,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -939,6 +950,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -959,6 +972,9 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -977,6 +993,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -992,6 +1010,9 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1013,6 +1034,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>bytes image_bytes = 3;</code>
+     *
+     * @return The imageBytes.
      */
     public com.google.protobuf.ByteString getImageBytes() {
       return imageBytes_;
@@ -1025,6 +1048,9 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>bytes image_bytes = 3;</code>
+     *
+     * @param value The imageBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setImageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1043,6 +1069,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>bytes image_bytes = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageBytes() {
 

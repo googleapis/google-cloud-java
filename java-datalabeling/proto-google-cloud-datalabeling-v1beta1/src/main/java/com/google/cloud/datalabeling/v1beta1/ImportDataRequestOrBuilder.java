@@ -32,6 +32,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -64,6 +70,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig();
   /**
@@ -86,6 +94,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>string user_email_address = 3;</code>
+   *
+   * @return The userEmailAddress.
    */
   java.lang.String getUserEmailAddress();
   /**
@@ -97,6 +107,8 @@ public interface ImportDataRequestOrBuilder
    * </pre>
    *
    * <code>string user_email_address = 3;</code>
+   *
+   * @return The bytes for userEmailAddress.
    */
   com.google.protobuf.ByteString getUserEmailAddressBytes();
 }

@@ -33,6 +33,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;
    * </code>
+   *
+   * @return Whether the imageClassificationAnnotation field is set.
    */
   boolean hasImageClassificationAnnotation();
   /**
@@ -45,6 +47,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;
    * </code>
+   *
+   * @return The imageClassificationAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation
       getImageClassificationAnnotation();
@@ -73,6 +77,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;
    * </code>
+   *
+   * @return Whether the imageBoundingPolyAnnotation field is set.
    */
   boolean hasImageBoundingPolyAnnotation();
   /**
@@ -86,6 +92,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;
    * </code>
+   *
+   * @return The imageBoundingPolyAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation
       getImageBoundingPolyAnnotation();
@@ -116,6 +124,8 @@ public interface AnnotationValueOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;
    * </code>
+   *
+   * @return Whether the imagePolylineAnnotation field is set.
    */
   boolean hasImagePolylineAnnotation();
   /**
@@ -130,6 +140,8 @@ public interface AnnotationValueOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;
    * </code>
+   *
+   * @return The imagePolylineAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation getImagePolylineAnnotation();
   /**
@@ -158,6 +170,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;
    * </code>
+   *
+   * @return Whether the imageSegmentationAnnotation field is set.
    */
   boolean hasImageSegmentationAnnotation();
   /**
@@ -170,6 +184,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;
    * </code>
+   *
+   * @return The imageSegmentationAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation
       getImageSegmentationAnnotation();
@@ -197,6 +213,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;
    * </code>
+   *
+   * @return Whether the textClassificationAnnotation field is set.
    */
   boolean hasTextClassificationAnnotation();
   /**
@@ -209,6 +227,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;
    * </code>
+   *
+   * @return The textClassificationAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation
       getTextClassificationAnnotation();
@@ -236,6 +256,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
    * </code>
+   *
+   * @return Whether the textEntityExtractionAnnotation field is set.
    */
   boolean hasTextEntityExtractionAnnotation();
   /**
@@ -248,6 +270,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
    * </code>
+   *
+   * @return The textEntityExtractionAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
       getTextEntityExtractionAnnotation();
@@ -275,6 +299,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;
    * </code>
+   *
+   * @return Whether the videoClassificationAnnotation field is set.
    */
   boolean hasVideoClassificationAnnotation();
   /**
@@ -287,6 +313,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;
    * </code>
+   *
+   * @return The videoClassificationAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation
       getVideoClassificationAnnotation();
@@ -314,6 +342,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;
    * </code>
+   *
+   * @return Whether the videoObjectTrackingAnnotation field is set.
    */
   boolean hasVideoObjectTrackingAnnotation();
   /**
@@ -326,6 +356,8 @@ public interface AnnotationValueOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;
    * </code>
+   *
+   * @return The videoObjectTrackingAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation
       getVideoObjectTrackingAnnotation();
@@ -352,6 +384,8 @@ public interface AnnotationValueOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;
    * </code>
+   *
+   * @return Whether the videoEventAnnotation field is set.
    */
   boolean hasVideoEventAnnotation();
   /**
@@ -363,6 +397,8 @@ public interface AnnotationValueOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;
    * </code>
+   *
+   * @return The videoEventAnnotation.
    */
   com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation getVideoEventAnnotation();
   /**

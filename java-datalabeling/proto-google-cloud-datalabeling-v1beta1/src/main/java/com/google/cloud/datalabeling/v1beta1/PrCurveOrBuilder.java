@@ -31,6 +31,8 @@ public interface PrCurveOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
   /**
@@ -41,6 +43,8 @@ public interface PrCurveOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
   /**
@@ -62,6 +66,8 @@ public interface PrCurveOrBuilder
    * </pre>
    *
    * <code>float area_under_curve = 2;</code>
+   *
+   * @return The areaUnderCurve.
    */
   float getAreaUnderCurve();
 
@@ -139,6 +145,8 @@ public interface PrCurveOrBuilder
    * </pre>
    *
    * <code>float mean_average_precision = 4;</code>
+   *
+   * @return The meanAveragePrecision.
    */
   float getMeanAveragePrecision();
 }

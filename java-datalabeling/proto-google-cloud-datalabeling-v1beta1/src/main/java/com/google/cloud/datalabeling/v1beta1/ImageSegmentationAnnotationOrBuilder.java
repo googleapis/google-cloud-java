@@ -109,6 +109,8 @@ public interface ImageSegmentationAnnotationOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -119,6 +121,8 @@ public interface ImageSegmentationAnnotationOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -130,6 +134,8 @@ public interface ImageSegmentationAnnotationOrBuilder
    * </pre>
    *
    * <code>bytes image_bytes = 3;</code>
+   *
+   * @return The imageBytes.
    */
   com.google.protobuf.ByteString getImageBytes();
 }

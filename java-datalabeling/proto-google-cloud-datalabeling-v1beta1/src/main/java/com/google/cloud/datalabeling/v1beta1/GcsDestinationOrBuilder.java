@@ -31,6 +31,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string output_uri = 1;</code>
+   *
+   * @return The outputUri.
    */
   java.lang.String getOutputUri();
   /**
@@ -41,6 +43,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string output_uri = 1;</code>
+   *
+   * @return The bytes for outputUri.
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 
@@ -54,6 +58,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -66,6 +72,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 }

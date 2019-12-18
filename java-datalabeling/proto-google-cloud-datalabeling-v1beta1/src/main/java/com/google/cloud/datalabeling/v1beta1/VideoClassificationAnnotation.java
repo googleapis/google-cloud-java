@@ -40,6 +40,12 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
   private VideoClassificationAnnotation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoClassificationAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -141,6 +146,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
+   *
+   * @return Whether the timeSegment field is set.
    */
   public boolean hasTimeSegment() {
     return timeSegment_ != null;
@@ -153,6 +160,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
+   *
+   * @return The timeSegment.
    */
   public com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment() {
     return timeSegment_ == null
@@ -182,6 +191,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
@@ -194,6 +205,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
+   *
+   * @return The annotationSpec.
    */
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
@@ -595,6 +608,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
+     *
+     * @return Whether the timeSegment field is set.
      */
     public boolean hasTimeSegment() {
       return timeSegmentBuilder_ != null || timeSegment_ != null;
@@ -607,6 +622,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
+     *
+     * @return The timeSegment.
      */
     public com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment() {
       if (timeSegmentBuilder_ == null) {
@@ -777,6 +794,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
+     *
+     * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
       return annotationSpecBuilder_ != null || annotationSpec_ != null;
@@ -789,6 +808,8 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
+     *
+     * @return The annotationSpec.
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
       if (annotationSpecBuilder_ == null) {

@@ -31,6 +31,8 @@ public interface AnnotationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
+   *
+   * @return Whether the operatorMetadata field is set.
    */
   boolean hasOperatorMetadata();
   /**
@@ -41,6 +43,8 @@ public interface AnnotationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
+   *
+   * @return The operatorMetadata.
    */
   com.google.cloud.datalabeling.v1beta1.OperatorMetadata getOperatorMetadata();
   /**

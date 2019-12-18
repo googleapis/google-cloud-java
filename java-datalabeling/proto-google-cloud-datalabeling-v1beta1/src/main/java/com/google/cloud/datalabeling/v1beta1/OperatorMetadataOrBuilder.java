@@ -33,6 +33,8 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -44,6 +46,8 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>int32 total_votes = 2;</code>
+   *
+   * @return The totalVotes.
    */
   int getTotalVotes();
 
@@ -55,6 +59,8 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>int32 label_votes = 3;</code>
+   *
+   * @return The labelVotes.
    */
   int getLabelVotes();
 
@@ -66,6 +72,8 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @return A list containing the comments.
    */
   java.util.List<java.lang.String> getCommentsList();
   /**
@@ -76,6 +84,8 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @return The count of comments.
    */
   int getCommentsCount();
   /**
@@ -86,6 +96,9 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The comments at the given index.
    */
   java.lang.String getComments(int index);
   /**
@@ -96,6 +109,9 @@ public interface OperatorMetadataOrBuilder
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the comments at the given index.
    */
   com.google.protobuf.ByteString getCommentsBytes(int index);
 }

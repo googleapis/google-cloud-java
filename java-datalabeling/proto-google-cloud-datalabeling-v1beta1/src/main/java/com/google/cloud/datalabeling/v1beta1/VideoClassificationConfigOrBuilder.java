@@ -125,6 +125,8 @@ public interface VideoClassificationConfigOrBuilder
    * </pre>
    *
    * <code>bool apply_shot_detection = 2;</code>
+   *
+   * @return The applyShotDetection.
    */
   boolean getApplyShotDetection();
 }

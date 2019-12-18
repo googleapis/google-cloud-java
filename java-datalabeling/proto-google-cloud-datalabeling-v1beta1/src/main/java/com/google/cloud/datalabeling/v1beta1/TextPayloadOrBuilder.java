@@ -31,6 +31,8 @@ public interface TextPayloadOrBuilder
    * </pre>
    *
    * <code>string text_content = 1;</code>
+   *
+   * @return The textContent.
    */
   java.lang.String getTextContent();
   /**
@@ -41,6 +43,8 @@ public interface TextPayloadOrBuilder
    * </pre>
    *
    * <code>string text_content = 1;</code>
+   *
+   * @return The bytes for textContent.
    */
   com.google.protobuf.ByteString getTextContentBytes();
 }

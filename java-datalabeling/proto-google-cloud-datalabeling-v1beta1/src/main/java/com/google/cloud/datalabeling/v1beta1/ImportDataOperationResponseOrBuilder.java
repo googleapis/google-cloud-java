@@ -31,6 +31,8 @@ public interface ImportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The dataset.
    */
   java.lang.String getDataset();
   /**
@@ -41,6 +43,8 @@ public interface ImportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The bytes for dataset.
    */
   com.google.protobuf.ByteString getDatasetBytes();
 
@@ -52,6 +56,8 @@ public interface ImportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>int32 total_count = 2;</code>
+   *
+   * @return The totalCount.
    */
   int getTotalCount();
 
@@ -63,6 +69,8 @@ public interface ImportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>int32 import_count = 3;</code>
+   *
+   * @return The importCount.
    */
   int getImportCount();
 }

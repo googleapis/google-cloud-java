@@ -32,6 +32,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string annotated_dataset = 2;</code>
+   *
+   * @return The annotatedDataset.
    */
   java.lang.String getAnnotatedDataset();
   /**
@@ -72,6 +78,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string annotated_dataset = 2;</code>
+   *
+   * @return The bytes for annotatedDataset.
    */
   com.google.protobuf.ByteString getAnnotatedDatasetBytes();
 
@@ -83,6 +91,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -93,6 +103,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -104,6 +116,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -114,6 +128,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig();
   /**
@@ -136,6 +152,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string user_email_address = 5;</code>
+   *
+   * @return The userEmailAddress.
    */
   java.lang.String getUserEmailAddress();
   /**
@@ -147,6 +165,8 @@ public interface ExportDataRequestOrBuilder
    * </pre>
    *
    * <code>string user_email_address = 5;</code>
+   *
+   * @return The bytes for userEmailAddress.
    */
   com.google.protobuf.ByteString getUserEmailAddressBytes();
 }

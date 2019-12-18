@@ -33,6 +33,8 @@ public interface TextMetadataOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -45,6 +47,8 @@ public interface TextMetadataOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

@@ -33,6 +33,8 @@ public interface EventConfigOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @return A list containing the annotationSpecSets.
    */
   java.util.List<java.lang.String> getAnnotationSpecSetsList();
   /**
@@ -45,6 +47,8 @@ public interface EventConfigOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @return The count of annotationSpecSets.
    */
   int getAnnotationSpecSetsCount();
   /**
@@ -57,6 +61,9 @@ public interface EventConfigOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The annotationSpecSets at the given index.
    */
   java.lang.String getAnnotationSpecSets(int index);
   /**
@@ -69,6 +76,9 @@ public interface EventConfigOrBuilder
    * </pre>
    *
    * <code>repeated string annotation_spec_sets = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the annotationSpecSets at the given index.
    */
   com.google.protobuf.ByteString getAnnotationSpecSetsBytes(int index);
 }

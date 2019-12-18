@@ -41,6 +41,12 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
   private TextEntityExtractionAnnotation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextEntityExtractionAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
@@ -154,6 +161,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return The annotationSpec.
    */
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
@@ -184,6 +193,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SequentialSegment sequential_segment = 2;</code>
+   *
+   * @return Whether the sequentialSegment field is set.
    */
   public boolean hasSequentialSegment() {
     return sequentialSegment_ != null;
@@ -196,6 +207,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SequentialSegment sequential_segment = 2;</code>
+   *
+   * @return The sequentialSegment.
    */
   public com.google.cloud.datalabeling.v1beta1.SequentialSegment getSequentialSegment() {
     return sequentialSegment_ == null
@@ -597,6 +610,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+     *
+     * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
       return annotationSpecBuilder_ != null || annotationSpec_ != null;
@@ -609,6 +624,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+     *
+     * @return The annotationSpec.
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
       if (annotationSpecBuilder_ == null) {
@@ -780,6 +797,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SequentialSegment sequential_segment = 2;</code>
+     *
+     * @return Whether the sequentialSegment field is set.
      */
     public boolean hasSequentialSegment() {
       return sequentialSegmentBuilder_ != null || sequentialSegment_ != null;
@@ -792,6 +811,8 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SequentialSegment sequential_segment = 2;</code>
+     *
+     * @return The sequentialSegment.
      */
     public com.google.cloud.datalabeling.v1beta1.SequentialSegment getSequentialSegment() {
       if (sequentialSegmentBuilder_ == null) {

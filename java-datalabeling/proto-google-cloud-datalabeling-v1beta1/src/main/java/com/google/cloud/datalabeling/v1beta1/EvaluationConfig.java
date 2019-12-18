@@ -32,6 +32,12 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   private EvaluationConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EvaluationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -44,7 +50,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +120,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   private int verticalOptionCase_ = 0;
   private java.lang.Object verticalOption_;
 
-  public enum VerticalOptionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum VerticalOptionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BOUNDING_BOX_EVALUATION_OPTIONS(1),
     VERTICALOPTION_NOT_SET(0);
     private final int value;
@@ -123,7 +131,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     private VerticalOptionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static VerticalOptionCase valueOf(int value) {
       return forNumber(value);
@@ -154,6 +166,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
+   *
+   * @return Whether the boundingBoxEvaluationOptions field is set.
    */
   public boolean hasBoundingBoxEvaluationOptions() {
     return verticalOptionCase_ == 1;
@@ -162,6 +176,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
+   *
+   * @return The boundingBoxEvaluationOptions.
    */
   public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions
       getBoundingBoxEvaluationOptions() {
@@ -549,6 +565,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
+     *
+     * @return Whether the boundingBoxEvaluationOptions field is set.
      */
     public boolean hasBoundingBoxEvaluationOptions() {
       return verticalOptionCase_ == 1;
@@ -557,6 +575,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
+     *
+     * @return The boundingBoxEvaluationOptions.
      */
     public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions
         getBoundingBoxEvaluationOptions() {

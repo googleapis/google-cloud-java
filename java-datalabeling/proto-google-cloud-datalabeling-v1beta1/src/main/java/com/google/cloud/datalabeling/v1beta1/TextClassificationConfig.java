@@ -42,6 +42,12 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextClassificationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>bool allow_multi_label = 1;</code>
+   *
+   * @return The allowMultiLabel.
    */
   public boolean getAllowMultiLabel() {
     return allowMultiLabel_;
@@ -154,6 +161,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string annotation_spec_set = 2;</code>
+   *
+   * @return The annotationSpecSet.
    */
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
@@ -174,6 +183,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string annotation_spec_set = 2;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
@@ -197,6 +208,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   *
+   * @return Whether the sentimentConfig field is set.
    */
   public boolean hasSentimentConfig() {
     return sentimentConfig_ != null;
@@ -209,6 +222,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   *
+   * @return The sentimentConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.SentimentConfig getSentimentConfig() {
     return sentimentConfig_ == null
@@ -604,6 +619,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool allow_multi_label = 1;</code>
+     *
+     * @return The allowMultiLabel.
      */
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
@@ -617,6 +634,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool allow_multi_label = 1;</code>
+     *
+     * @param value The allowMultiLabel to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowMultiLabel(boolean value) {
 
@@ -633,6 +653,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool allow_multi_label = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowMultiLabel() {
 
@@ -650,6 +672,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string annotation_spec_set = 2;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
@@ -670,6 +694,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string annotation_spec_set = 2;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
@@ -690,6 +716,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string annotation_spec_set = 2;</code>
+     *
+     * @param value The annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSet(java.lang.String value) {
       if (value == null) {
@@ -708,6 +737,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string annotation_spec_set = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
 
@@ -723,6 +754,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string annotation_spec_set = 2;</code>
+     *
+     * @param value The bytes for annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -749,6 +783,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     *
+     * @return Whether the sentimentConfig field is set.
      */
     public boolean hasSentimentConfig() {
       return sentimentConfigBuilder_ != null || sentimentConfig_ != null;
@@ -761,6 +797,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     *
+     * @return The sentimentConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.SentimentConfig getSentimentConfig() {
       if (sentimentConfigBuilder_ == null) {

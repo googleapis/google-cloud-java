@@ -31,6 +31,8 @@ public interface ImageClassificationConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
   /**
@@ -41,6 +43,8 @@ public interface ImageClassificationConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   com.google.protobuf.ByteString getAnnotationSpecSetBytes();
 
@@ -53,6 +57,8 @@ public interface ImageClassificationConfigOrBuilder
    * </pre>
    *
    * <code>bool allow_multi_label = 2;</code>
+   *
+   * @return The allowMultiLabel.
    */
   boolean getAllowMultiLabel();
 
@@ -65,6 +71,8 @@ public interface ImageClassificationConfigOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
    * </code>
+   *
+   * @return The enum numeric value on the wire for answerAggregationType.
    */
   int getAnswerAggregationTypeValue();
   /**
@@ -76,6 +84,8 @@ public interface ImageClassificationConfigOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
    * </code>
+   *
+   * @return The answerAggregationType.
    */
   com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType();
 }

@@ -40,6 +40,12 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
   private SentimentConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SentimentConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool enable_label_sentiment_selection = 1;</code>
+   *
+   * @return The enableLabelSentimentSelection.
    */
   public boolean getEnableLabelSentimentSelection() {
     return enableLabelSentimentSelection_;
@@ -451,6 +458,8 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool enable_label_sentiment_selection = 1;</code>
+     *
+     * @return The enableLabelSentimentSelection.
      */
     public boolean getEnableLabelSentimentSelection() {
       return enableLabelSentimentSelection_;
@@ -465,6 +474,9 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool enable_label_sentiment_selection = 1;</code>
+     *
+     * @param value The enableLabelSentimentSelection to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableLabelSentimentSelection(boolean value) {
 
@@ -482,6 +494,8 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool enable_label_sentiment_selection = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableLabelSentimentSelection() {
 

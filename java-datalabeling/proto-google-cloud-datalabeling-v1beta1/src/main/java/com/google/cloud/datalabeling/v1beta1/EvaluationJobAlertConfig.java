@@ -34,6 +34,12 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EvaluationJobAlertConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -46,7 +52,6 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -113,6 +118,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string email = 1;</code>
+   *
+   * @return The email.
    */
   public java.lang.String getEmail() {
     java.lang.Object ref = email_;
@@ -133,6 +140,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string email = 1;</code>
+   *
+   * @return The bytes for email.
    */
   public com.google.protobuf.ByteString getEmailBytes() {
     java.lang.Object ref = email_;
@@ -157,6 +166,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>double min_acceptable_mean_average_precision = 2;</code>
+   *
+   * @return The minAcceptableMeanAveragePrecision.
    */
   public double getMinAcceptableMeanAveragePrecision() {
     return minAcceptableMeanAveragePrecision_;
@@ -507,6 +518,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string email = 1;</code>
+     *
+     * @return The email.
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -527,6 +540,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string email = 1;</code>
+     *
+     * @return The bytes for email.
      */
     public com.google.protobuf.ByteString getEmailBytes() {
       java.lang.Object ref = email_;
@@ -547,6 +562,9 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string email = 1;</code>
+     *
+     * @param value The email to set.
+     * @return This builder for chaining.
      */
     public Builder setEmail(java.lang.String value) {
       if (value == null) {
@@ -565,6 +583,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string email = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEmail() {
 
@@ -580,6 +600,9 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string email = 1;</code>
+     *
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
      */
     public Builder setEmailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -602,6 +625,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double min_acceptable_mean_average_precision = 2;</code>
+     *
+     * @return The minAcceptableMeanAveragePrecision.
      */
     public double getMinAcceptableMeanAveragePrecision() {
       return minAcceptableMeanAveragePrecision_;
@@ -615,6 +640,9 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double min_acceptable_mean_average_precision = 2;</code>
+     *
+     * @param value The minAcceptableMeanAveragePrecision to set.
+     * @return This builder for chaining.
      */
     public Builder setMinAcceptableMeanAveragePrecision(double value) {
 
@@ -631,6 +659,8 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double min_acceptable_mean_average_precision = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMinAcceptableMeanAveragePrecision() {
 

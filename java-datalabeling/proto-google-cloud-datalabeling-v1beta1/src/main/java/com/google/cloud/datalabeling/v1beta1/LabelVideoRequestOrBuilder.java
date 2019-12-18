@@ -35,6 +35,8 @@ public interface LabelVideoRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;
    * </code>
+   *
+   * @return Whether the videoClassificationConfig field is set.
    */
   boolean hasVideoClassificationConfig();
   /**
@@ -49,6 +51,8 @@ public interface LabelVideoRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;
    * </code>
+   *
+   * @return The videoClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig getVideoClassificationConfig();
   /**
@@ -78,6 +82,8 @@ public interface LabelVideoRequestOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;
    * </code>
+   *
+   * @return Whether the objectDetectionConfig field is set.
    */
   boolean hasObjectDetectionConfig();
   /**
@@ -91,6 +97,8 @@ public interface LabelVideoRequestOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;
    * </code>
+   *
+   * @return The objectDetectionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig();
   /**
@@ -119,6 +127,8 @@ public interface LabelVideoRequestOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
   /**
@@ -132,6 +142,8 @@ public interface LabelVideoRequestOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig();
   /**
@@ -159,6 +171,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
+   *
+   * @return Whether the eventConfig field is set.
    */
   boolean hasEventConfig();
   /**
@@ -171,6 +185,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
+   *
+   * @return The eventConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig();
   /**
@@ -195,6 +211,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -206,6 +224,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -217,6 +237,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
   /**
@@ -227,6 +249,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
   /**
@@ -248,6 +272,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
   /**
@@ -258,6 +284,8 @@ public interface LabelVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+   *
+   * @return The feature.
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature getFeature();
 

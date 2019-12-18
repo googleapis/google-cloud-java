@@ -31,6 +31,8 @@ public interface EvaluationJobAlertConfigOrBuilder
    * </pre>
    *
    * <code>string email = 1;</code>
+   *
+   * @return The email.
    */
   java.lang.String getEmail();
   /**
@@ -41,6 +43,8 @@ public interface EvaluationJobAlertConfigOrBuilder
    * </pre>
    *
    * <code>string email = 1;</code>
+   *
+   * @return The bytes for email.
    */
   com.google.protobuf.ByteString getEmailBytes();
 
@@ -53,6 +57,8 @@ public interface EvaluationJobAlertConfigOrBuilder
    * </pre>
    *
    * <code>double min_acceptable_mean_average_precision = 2;</code>
+   *
+   * @return The minAcceptableMeanAveragePrecision.
    */
   double getMinAcceptableMeanAveragePrecision();
 }

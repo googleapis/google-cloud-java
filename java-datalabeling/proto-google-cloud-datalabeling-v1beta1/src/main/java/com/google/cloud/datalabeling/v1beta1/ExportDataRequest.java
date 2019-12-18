@@ -45,6 +45,12 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportDataRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,6 +163,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -179,6 +186,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -206,6 +215,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string annotated_dataset = 2;</code>
+   *
+   * @return The annotatedDataset.
    */
   public java.lang.String getAnnotatedDataset() {
     java.lang.Object ref = annotatedDataset_;
@@ -230,6 +241,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string annotated_dataset = 2;</code>
+   *
+   * @return The bytes for annotatedDataset.
    */
   public com.google.protobuf.ByteString getAnnotatedDatasetBytes() {
     java.lang.Object ref = annotatedDataset_;
@@ -253,6 +266,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -273,6 +288,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -296,6 +313,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -308,6 +327,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -338,6 +359,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string user_email_address = 5;</code>
+   *
+   * @return The userEmailAddress.
    */
   public java.lang.String getUserEmailAddress() {
     java.lang.Object ref = userEmailAddress_;
@@ -359,6 +382,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string user_email_address = 5;</code>
+   *
+   * @return The bytes for userEmailAddress.
    */
   public com.google.protobuf.ByteString getUserEmailAddressBytes() {
     java.lang.Object ref = userEmailAddress_;
@@ -777,6 +802,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -798,6 +825,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -819,6 +848,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -838,6 +870,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -854,6 +888,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -879,6 +916,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string annotated_dataset = 2;</code>
+     *
+     * @return The annotatedDataset.
      */
     public java.lang.String getAnnotatedDataset() {
       java.lang.Object ref = annotatedDataset_;
@@ -903,6 +942,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string annotated_dataset = 2;</code>
+     *
+     * @return The bytes for annotatedDataset.
      */
     public com.google.protobuf.ByteString getAnnotatedDatasetBytes() {
       java.lang.Object ref = annotatedDataset_;
@@ -927,6 +968,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string annotated_dataset = 2;</code>
+     *
+     * @param value The annotatedDataset to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotatedDataset(java.lang.String value) {
       if (value == null) {
@@ -949,6 +993,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string annotated_dataset = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotatedDataset() {
 
@@ -968,6 +1014,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string annotated_dataset = 2;</code>
+     *
+     * @param value The bytes for annotatedDataset to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotatedDatasetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -989,6 +1038,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1009,6 +1060,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1029,6 +1082,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1047,6 +1103,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1062,6 +1120,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1088,6 +1149,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -1100,6 +1163,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1266,6 +1331,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string user_email_address = 5;</code>
+     *
+     * @return The userEmailAddress.
      */
     public java.lang.String getUserEmailAddress() {
       java.lang.Object ref = userEmailAddress_;
@@ -1287,6 +1354,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string user_email_address = 5;</code>
+     *
+     * @return The bytes for userEmailAddress.
      */
     public com.google.protobuf.ByteString getUserEmailAddressBytes() {
       java.lang.Object ref = userEmailAddress_;
@@ -1308,6 +1377,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string user_email_address = 5;</code>
+     *
+     * @param value The userEmailAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUserEmailAddress(java.lang.String value) {
       if (value == null) {
@@ -1327,6 +1399,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string user_email_address = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserEmailAddress() {
 
@@ -1343,6 +1417,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string user_email_address = 5;</code>
+     *
+     * @param value The bytes for userEmailAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUserEmailAddressBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

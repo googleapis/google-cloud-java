@@ -31,6 +31,8 @@ public interface BoundingBoxEvaluationOptionsOrBuilder
    * </pre>
    *
    * <code>float iou_threshold = 1;</code>
+   *
+   * @return The iouThreshold.
    */
   float getIouThreshold();
 }

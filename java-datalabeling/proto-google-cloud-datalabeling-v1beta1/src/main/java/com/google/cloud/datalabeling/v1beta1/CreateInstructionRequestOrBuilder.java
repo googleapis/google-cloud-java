@@ -32,6 +32,8 @@ public interface CreateInstructionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateInstructionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface CreateInstructionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+   *
+   * @return Whether the instruction field is set.
    */
   boolean hasInstruction();
   /**
@@ -64,6 +70,8 @@ public interface CreateInstructionRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+   *
+   * @return The instruction.
    */
   com.google.cloud.datalabeling.v1beta1.Instruction getInstruction();
   /**

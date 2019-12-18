@@ -34,6 +34,12 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PrCurve();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,11 +87,11 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 confidenceMetricsEntries_ =
                     new java.util.ArrayList<
                         com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               confidenceMetricsEntries_.add(
                   input.readMessage(
@@ -112,7 +118,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         confidenceMetricsEntries_ =
             java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
       }
@@ -150,6 +156,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence_threshold = 1;</code>
+     *
+     * @return The confidenceThreshold.
      */
     float getConfidenceThreshold();
 
@@ -161,6 +169,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @return The recall.
      */
     float getRecall();
 
@@ -172,6 +182,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float precision = 3;</code>
+     *
+     * @return The precision.
      */
     float getPrecision();
 
@@ -183,6 +195,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float f1_score = 4;</code>
+     *
+     * @return The f1Score.
      */
     float getF1Score();
 
@@ -194,6 +208,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float recall_at1 = 5;</code>
+     *
+     * @return The recallAt1.
      */
     float getRecallAt1();
 
@@ -205,6 +221,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float precision_at1 = 6;</code>
+     *
+     * @return The precisionAt1.
      */
     float getPrecisionAt1();
 
@@ -219,6 +237,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float f1_score_at1 = 7;</code>
+     *
+     * @return The f1ScoreAt1.
      */
     float getF1ScoreAt1();
 
@@ -230,6 +250,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float recall_at5 = 8;</code>
+     *
+     * @return The recallAt5.
      */
     float getRecallAt5();
 
@@ -241,6 +263,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float precision_at5 = 9;</code>
+     *
+     * @return The precisionAt5.
      */
     float getPrecisionAt5();
 
@@ -255,6 +279,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float f1_score_at5 = 10;</code>
+     *
+     * @return The f1ScoreAt5.
      */
     float getF1ScoreAt5();
   }
@@ -272,6 +298,12 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     private ConfidenceMetricsEntry() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConfidenceMetricsEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -284,7 +316,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -390,6 +421,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence_threshold = 1;</code>
+     *
+     * @return The confidenceThreshold.
      */
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
@@ -405,6 +438,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float recall = 2;</code>
+     *
+     * @return The recall.
      */
     public float getRecall() {
       return recall_;
@@ -420,6 +455,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float precision = 3;</code>
+     *
+     * @return The precision.
      */
     public float getPrecision() {
       return precision_;
@@ -435,6 +472,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float f1_score = 4;</code>
+     *
+     * @return The f1Score.
      */
     public float getF1Score() {
       return f1Score_;
@@ -450,6 +489,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float recall_at1 = 5;</code>
+     *
+     * @return The recallAt1.
      */
     public float getRecallAt1() {
       return recallAt1_;
@@ -465,6 +506,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float precision_at1 = 6;</code>
+     *
+     * @return The precisionAt1.
      */
     public float getPrecisionAt1() {
       return precisionAt1_;
@@ -483,6 +526,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float f1_score_at1 = 7;</code>
+     *
+     * @return The f1ScoreAt1.
      */
     public float getF1ScoreAt1() {
       return f1ScoreAt1_;
@@ -498,6 +543,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float recall_at5 = 8;</code>
+     *
+     * @return The recallAt5.
      */
     public float getRecallAt5() {
       return recallAt5_;
@@ -513,6 +560,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float precision_at5 = 9;</code>
+     *
+     * @return The precisionAt5.
      */
     public float getPrecisionAt5() {
       return precisionAt5_;
@@ -531,6 +580,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float f1_score_at5 = 10;</code>
+     *
+     * @return The f1ScoreAt5.
      */
     public float getF1ScoreAt5() {
       return f1ScoreAt5_;
@@ -1014,6 +1065,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
+       *
+       * @return The confidenceThreshold.
        */
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
@@ -1027,6 +1080,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
+       *
+       * @param value The confidenceThreshold to set.
+       * @return This builder for chaining.
        */
       public Builder setConfidenceThreshold(float value) {
 
@@ -1043,6 +1099,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearConfidenceThreshold() {
 
@@ -1060,6 +1118,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @return The recall.
        */
       public float getRecall() {
         return recall_;
@@ -1072,6 +1132,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @param value The recall to set.
+       * @return This builder for chaining.
        */
       public Builder setRecall(float value) {
 
@@ -1087,6 +1150,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRecall() {
 
@@ -1104,6 +1169,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision = 3;</code>
+       *
+       * @return The precision.
        */
       public float getPrecision() {
         return precision_;
@@ -1116,6 +1183,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision = 3;</code>
+       *
+       * @param value The precision to set.
+       * @return This builder for chaining.
        */
       public Builder setPrecision(float value) {
 
@@ -1131,6 +1201,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrecision() {
 
@@ -1148,6 +1220,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score = 4;</code>
+       *
+       * @return The f1Score.
        */
       public float getF1Score() {
         return f1Score_;
@@ -1160,6 +1234,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score = 4;</code>
+       *
+       * @param value The f1Score to set.
+       * @return This builder for chaining.
        */
       public Builder setF1Score(float value) {
 
@@ -1175,6 +1252,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearF1Score() {
 
@@ -1192,6 +1271,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
+       *
+       * @return The recallAt1.
        */
       public float getRecallAt1() {
         return recallAt1_;
@@ -1204,6 +1285,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
+       *
+       * @param value The recallAt1 to set.
+       * @return This builder for chaining.
        */
       public Builder setRecallAt1(float value) {
 
@@ -1219,6 +1303,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRecallAt1() {
 
@@ -1236,6 +1322,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision_at1 = 6;</code>
+       *
+       * @return The precisionAt1.
        */
       public float getPrecisionAt1() {
         return precisionAt1_;
@@ -1248,6 +1336,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision_at1 = 6;</code>
+       *
+       * @param value The precisionAt1 to set.
+       * @return This builder for chaining.
        */
       public Builder setPrecisionAt1(float value) {
 
@@ -1263,6 +1354,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision_at1 = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrecisionAt1() {
 
@@ -1283,6 +1376,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
+       *
+       * @return The f1ScoreAt1.
        */
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
@@ -1298,6 +1393,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
+       *
+       * @param value The f1ScoreAt1 to set.
+       * @return This builder for chaining.
        */
       public Builder setF1ScoreAt1(float value) {
 
@@ -1316,6 +1414,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearF1ScoreAt1() {
 
@@ -1333,6 +1433,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall_at5 = 8;</code>
+       *
+       * @return The recallAt5.
        */
       public float getRecallAt5() {
         return recallAt5_;
@@ -1345,6 +1447,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall_at5 = 8;</code>
+       *
+       * @param value The recallAt5 to set.
+       * @return This builder for chaining.
        */
       public Builder setRecallAt5(float value) {
 
@@ -1360,6 +1465,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float recall_at5 = 8;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRecallAt5() {
 
@@ -1377,6 +1484,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision_at5 = 9;</code>
+       *
+       * @return The precisionAt5.
        */
       public float getPrecisionAt5() {
         return precisionAt5_;
@@ -1389,6 +1498,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision_at5 = 9;</code>
+       *
+       * @param value The precisionAt5 to set.
+       * @return This builder for chaining.
        */
       public Builder setPrecisionAt5(float value) {
 
@@ -1404,6 +1516,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float precision_at5 = 9;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrecisionAt5() {
 
@@ -1424,6 +1538,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score_at5 = 10;</code>
+       *
+       * @return The f1ScoreAt5.
        */
       public float getF1ScoreAt5() {
         return f1ScoreAt5_;
@@ -1439,6 +1555,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score_at5 = 10;</code>
+       *
+       * @param value The f1ScoreAt5 to set.
+       * @return This builder for chaining.
        */
       public Builder setF1ScoreAt5(float value) {
 
@@ -1457,6 +1576,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float f1_score_at5 = 10;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearF1ScoreAt5() {
 
@@ -1520,7 +1641,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
   /**
@@ -1531,6 +1651,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
@@ -1543,6 +1665,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return The annotationSpec.
    */
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
@@ -1573,6 +1697,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float area_under_curve = 2;</code>
+   *
+   * @return The areaUnderCurve.
    */
   public float getAreaUnderCurve() {
     return areaUnderCurve_;
@@ -1667,6 +1793,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float mean_average_precision = 4;</code>
+   *
+   * @return The meanAveragePrecision.
    */
   public float getMeanAveragePrecision() {
     return meanAveragePrecision_;
@@ -1919,7 +2047,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         confidenceMetricsEntriesBuilder_.clear();
       }
@@ -1953,7 +2081,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.PrCurve result =
           new com.google.cloud.datalabeling.v1beta1.PrCurve(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (annotationSpecBuilder_ == null) {
         result.annotationSpec_ = annotationSpec_;
       } else {
@@ -1961,17 +2088,16 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       result.areaUnderCurve_ = areaUnderCurve_;
       if (confidenceMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           confidenceMetricsEntries_ =
               java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.confidenceMetricsEntries_ = confidenceMetricsEntries_;
       } else {
         result.confidenceMetricsEntries_ = confidenceMetricsEntriesBuilder_.build();
       }
       result.meanAveragePrecision_ = meanAveragePrecision_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2031,7 +2157,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         if (!other.confidenceMetricsEntries_.isEmpty()) {
           if (confidenceMetricsEntries_.isEmpty()) {
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureConfidenceMetricsEntriesIsMutable();
             confidenceMetricsEntries_.addAll(other.confidenceMetricsEntries_);
@@ -2044,7 +2170,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             confidenceMetricsEntriesBuilder_.dispose();
             confidenceMetricsEntriesBuilder_ = null;
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             confidenceMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConfidenceMetricsEntriesFieldBuilder()
@@ -2102,6 +2228,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+     *
+     * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
       return annotationSpecBuilder_ != null || annotationSpec_ != null;
@@ -2114,6 +2242,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+     *
+     * @return The annotationSpec.
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
       if (annotationSpecBuilder_ == null) {
@@ -2280,6 +2410,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float area_under_curve = 2;</code>
+     *
+     * @return The areaUnderCurve.
      */
     public float getAreaUnderCurve() {
       return areaUnderCurve_;
@@ -2292,6 +2424,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float area_under_curve = 2;</code>
+     *
+     * @param value The areaUnderCurve to set.
+     * @return This builder for chaining.
      */
     public Builder setAreaUnderCurve(float value) {
 
@@ -2307,6 +2442,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float area_under_curve = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAreaUnderCurve() {
 
@@ -2319,12 +2456,12 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureConfidenceMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         confidenceMetricsEntries_ =
             new java.util.ArrayList<
                 com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>(
                 confidenceMetricsEntries_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2574,7 +2711,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConfidenceMetricsEntries() {
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         confidenceMetricsEntriesBuilder_.clear();
@@ -2722,7 +2859,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.Builder,
                 com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntryOrBuilder>(
                 confidenceMetricsEntries_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         confidenceMetricsEntries_ = null;
@@ -2739,6 +2876,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float mean_average_precision = 4;</code>
+     *
+     * @return The meanAveragePrecision.
      */
     public float getMeanAveragePrecision() {
       return meanAveragePrecision_;
@@ -2751,6 +2890,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float mean_average_precision = 4;</code>
+     *
+     * @param value The meanAveragePrecision to set.
+     * @return This builder for chaining.
      */
     public Builder setMeanAveragePrecision(float value) {
 
@@ -2766,6 +2908,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float mean_average_precision = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMeanAveragePrecision() {
 

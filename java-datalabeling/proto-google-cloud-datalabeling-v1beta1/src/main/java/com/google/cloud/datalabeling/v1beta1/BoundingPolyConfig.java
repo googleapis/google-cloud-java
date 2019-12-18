@@ -43,6 +43,12 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BoundingPolyConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The annotationSpecSet.
    */
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
@@ -144,6 +151,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
@@ -167,6 +176,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string instruction_message = 2;</code>
+   *
+   * @return The instructionMessage.
    */
   public java.lang.String getInstructionMessage() {
     java.lang.Object ref = instructionMessage_;
@@ -187,6 +198,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string instruction_message = 2;</code>
+   *
+   * @return The bytes for instructionMessage.
    */
   public com.google.protobuf.ByteString getInstructionMessageBytes() {
     java.lang.Object ref = instructionMessage_;
@@ -544,6 +557,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
@@ -564,6 +579,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
@@ -584,6 +601,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @param value The annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSet(java.lang.String value) {
       if (value == null) {
@@ -602,6 +622,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
 
@@ -617,6 +639,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @param value The bytes for annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -638,6 +663,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instruction_message = 2;</code>
+     *
+     * @return The instructionMessage.
      */
     public java.lang.String getInstructionMessage() {
       java.lang.Object ref = instructionMessage_;
@@ -658,6 +685,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instruction_message = 2;</code>
+     *
+     * @return The bytes for instructionMessage.
      */
     public com.google.protobuf.ByteString getInstructionMessageBytes() {
       java.lang.Object ref = instructionMessage_;
@@ -678,6 +707,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instruction_message = 2;</code>
+     *
+     * @param value The instructionMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setInstructionMessage(java.lang.String value) {
       if (value == null) {
@@ -696,6 +728,8 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instruction_message = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstructionMessage() {
 
@@ -711,6 +745,9 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instruction_message = 2;</code>
+     *
+     * @param value The bytes for instructionMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setInstructionMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface ObjectDetectionMetricsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return Whether the prCurve field is set.
    */
   boolean hasPrCurve();
   /**
@@ -41,6 +43,8 @@ public interface ObjectDetectionMetricsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return The prCurve.
    */
   com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve();
   /**

@@ -44,6 +44,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchExampleComparisonsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -132,9 +138,17 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       // @@protoc_insertion_point(interface_extends:google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+     *
+     * @return Whether the groundTruthExample field is set.
+     */
     boolean hasGroundTruthExample();
-    /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+     *
+     * @return The groundTruthExample.
+     */
     com.google.cloud.datalabeling.v1beta1.Example getGroundTruthExample();
     /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
     com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getGroundTruthExampleOrBuilder();
@@ -188,6 +202,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExampleComparison();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -229,10 +249,10 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   modelCreatedExamples_ =
                       new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Example>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 modelCreatedExamples_.add(
                     input.readMessage(
@@ -253,7 +273,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           modelCreatedExamples_ = java.util.Collections.unmodifiableList(modelCreatedExamples_);
         }
         this.unknownFields = unknownFields.build();
@@ -278,14 +298,21 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
                   .ExampleComparison.Builder.class);
     }
 
-    private int bitField0_;
     public static final int GROUND_TRUTH_EXAMPLE_FIELD_NUMBER = 1;
     private com.google.cloud.datalabeling.v1beta1.Example groundTruthExample_;
-    /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+     *
+     * @return Whether the groundTruthExample field is set.
+     */
     public boolean hasGroundTruthExample() {
       return groundTruthExample_ != null;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+     *
+     * @return The groundTruthExample.
+     */
     public com.google.cloud.datalabeling.v1beta1.Example getGroundTruthExample() {
       return groundTruthExample_ == null
           ? com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance()
@@ -599,7 +626,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
         if (modelCreatedExamplesBuilder_ == null) {
           modelCreatedExamples_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           modelCreatedExamplesBuilder_.clear();
         }
@@ -641,22 +668,20 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
                 new com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
                     .ExampleComparison(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (groundTruthExampleBuilder_ == null) {
           result.groundTruthExample_ = groundTruthExample_;
         } else {
           result.groundTruthExample_ = groundTruthExampleBuilder_.build();
         }
         if (modelCreatedExamplesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             modelCreatedExamples_ = java.util.Collections.unmodifiableList(modelCreatedExamples_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.modelCreatedExamples_ = modelCreatedExamples_;
         } else {
           result.modelCreatedExamples_ = modelCreatedExamplesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -725,7 +750,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           if (!other.modelCreatedExamples_.isEmpty()) {
             if (modelCreatedExamples_.isEmpty()) {
               modelCreatedExamples_ = other.modelCreatedExamples_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureModelCreatedExamplesIsMutable();
               modelCreatedExamples_.addAll(other.modelCreatedExamples_);
@@ -738,7 +763,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               modelCreatedExamplesBuilder_.dispose();
               modelCreatedExamplesBuilder_ = null;
               modelCreatedExamples_ = other.modelCreatedExamples_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               modelCreatedExamplesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getModelCreatedExamplesFieldBuilder()
@@ -789,11 +814,19 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               com.google.cloud.datalabeling.v1beta1.Example.Builder,
               com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
           groundTruthExampleBuilder_;
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       *
+       * @return Whether the groundTruthExample field is set.
+       */
       public boolean hasGroundTruthExample() {
         return groundTruthExampleBuilder_ != null || groundTruthExample_ != null;
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       *
+       * @return The groundTruthExample.
+       */
       public com.google.cloud.datalabeling.v1beta1.Example getGroundTruthExample() {
         if (groundTruthExampleBuilder_ == null) {
           return groundTruthExample_ == null
@@ -898,11 +931,11 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           java.util.Collections.emptyList();
 
       private void ensureModelCreatedExamplesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           modelCreatedExamples_ =
               new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Example>(
                   modelCreatedExamples_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -1066,7 +1099,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       public Builder clearModelCreatedExamples() {
         if (modelCreatedExamplesBuilder_ == null) {
           modelCreatedExamples_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           modelCreatedExamplesBuilder_.clear();
@@ -1158,7 +1191,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
                   com.google.cloud.datalabeling.v1beta1.Example.Builder,
                   com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>(
                   modelCreatedExamples_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           modelCreatedExamples_ = null;
@@ -1225,7 +1258,6 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     }
   }
 
-  private int bitField0_;
   public static final int EXAMPLE_COMPARISONS_FIELD_NUMBER = 1;
   private java.util.List<
           com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison>
@@ -1290,6 +1322,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -1310,6 +1344,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -1583,7 +1619,6 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse result =
           new com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (exampleComparisonsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           exampleComparisons_ = java.util.Collections.unmodifiableList(exampleComparisons_);
@@ -1594,7 +1629,6 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         result.exampleComparisons_ = exampleComparisonsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2058,6 +2092,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -2078,6 +2114,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -2098,6 +2136,9 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -2116,6 +2157,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -2131,6 +2174,9 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

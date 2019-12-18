@@ -40,6 +40,12 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
   private SequentialSegment() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SequentialSegment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 start = 1;</code>
+   *
+   * @return The start.
    */
   public int getStart() {
     return start_;
@@ -132,6 +139,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 end = 2;</code>
+   *
+   * @return The end.
    */
   public int getEnd() {
     return end_;
@@ -479,6 +488,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 start = 1;</code>
+     *
+     * @return The start.
      */
     public int getStart() {
       return start_;
@@ -491,6 +502,9 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 start = 1;</code>
+     *
+     * @param value The start to set.
+     * @return This builder for chaining.
      */
     public Builder setStart(int value) {
 
@@ -506,6 +520,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 start = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStart() {
 
@@ -523,6 +539,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 end = 2;</code>
+     *
+     * @return The end.
      */
     public int getEnd() {
       return end_;
@@ -535,6 +553,9 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 end = 2;</code>
+     *
+     * @param value The end to set.
+     * @return This builder for chaining.
      */
     public Builder setEnd(int value) {
 
@@ -550,6 +571,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 end = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnd() {
 

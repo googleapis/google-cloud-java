@@ -27,12 +27,16 @@ public interface EvaluationConfigOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
+   *
+   * @return Whether the boundingBoxEvaluationOptions field is set.
    */
   boolean hasBoundingBoxEvaluationOptions();
   /**
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
+   *
+   * @return The boundingBoxEvaluationOptions.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions
       getBoundingBoxEvaluationOptions();

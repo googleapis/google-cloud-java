@@ -33,6 +33,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
    * </code>
+   *
+   * @return Whether the imageClassificationDetails field is set.
    */
   boolean hasImageClassificationDetails();
   /**
@@ -45,6 +47,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
    * </code>
+   *
+   * @return The imageClassificationDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
       getImageClassificationDetails();
@@ -72,6 +76,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
    * </code>
+   *
+   * @return Whether the imageBoundingBoxDetails field is set.
    */
   boolean hasImageBoundingBoxDetails();
   /**
@@ -84,6 +90,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
    * </code>
+   *
+   * @return The imageBoundingBoxDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
       getImageBoundingBoxDetails();
@@ -111,6 +119,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
    * </code>
+   *
+   * @return Whether the imageBoundingPolyDetails field is set.
    */
   boolean hasImageBoundingPolyDetails();
   /**
@@ -123,6 +133,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
    * </code>
+   *
+   * @return The imageBoundingPolyDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
       getImageBoundingPolyDetails();
@@ -150,6 +162,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
    * </code>
+   *
+   * @return Whether the imageOrientedBoundingBoxDetails field is set.
    */
   boolean hasImageOrientedBoundingBoxDetails();
   /**
@@ -162,6 +176,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
    * </code>
+   *
+   * @return The imageOrientedBoundingBoxDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
       getImageOrientedBoundingBoxDetails();
@@ -189,6 +205,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
    * </code>
+   *
+   * @return Whether the imagePolylineDetails field is set.
    */
   boolean hasImagePolylineDetails();
   /**
@@ -201,6 +219,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
    * </code>
+   *
+   * @return The imagePolylineDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
       getImagePolylineDetails();
@@ -228,6 +248,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
    * </code>
+   *
+   * @return Whether the imageSegmentationDetails field is set.
    */
   boolean hasImageSegmentationDetails();
   /**
@@ -240,6 +262,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
    * </code>
+   *
+   * @return The imageSegmentationDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
       getImageSegmentationDetails();
@@ -267,6 +291,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
    * </code>
+   *
+   * @return Whether the videoClassificationDetails field is set.
    */
   boolean hasVideoClassificationDetails();
   /**
@@ -279,6 +305,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
    * </code>
+   *
+   * @return The videoClassificationDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
       getVideoClassificationDetails();
@@ -306,6 +334,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
    * </code>
+   *
+   * @return Whether the videoObjectDetectionDetails field is set.
    */
   boolean hasVideoObjectDetectionDetails();
   /**
@@ -318,6 +348,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
    * </code>
+   *
+   * @return The videoObjectDetectionDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
       getVideoObjectDetectionDetails();
@@ -345,6 +377,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
    * </code>
+   *
+   * @return Whether the videoObjectTrackingDetails field is set.
    */
   boolean hasVideoObjectTrackingDetails();
   /**
@@ -357,6 +391,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
    * </code>
+   *
+   * @return The videoObjectTrackingDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
       getVideoObjectTrackingDetails();
@@ -384,6 +420,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
    * </code>
+   *
+   * @return Whether the videoEventDetails field is set.
    */
   boolean hasVideoEventDetails();
   /**
@@ -396,6 +434,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
    * </code>
+   *
+   * @return The videoEventDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata getVideoEventDetails();
   /**
@@ -422,6 +462,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
    * </code>
+   *
+   * @return Whether the textClassificationDetails field is set.
    */
   boolean hasTextClassificationDetails();
   /**
@@ -434,6 +476,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
    * </code>
+   *
+   * @return The textClassificationDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
       getTextClassificationDetails();
@@ -461,6 +505,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
    * </code>
+   *
+   * @return Whether the textEntityExtractionDetails field is set.
    */
   boolean hasTextEntityExtractionDetails();
   /**
@@ -473,6 +519,8 @@ public interface LabelOperationMetadataOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
    * </code>
+   *
+   * @return The textEntityExtractionDetails.
    */
   com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
       getTextEntityExtractionDetails();
@@ -498,6 +546,8 @@ public interface LabelOperationMetadataOrBuilder
    * </pre>
    *
    * <code>int32 progress_percent = 1;</code>
+   *
+   * @return The progressPercent.
    */
   int getProgressPercent();
 
@@ -570,6 +620,8 @@ public interface LabelOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 16;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -580,6 +632,8 @@ public interface LabelOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 16;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**

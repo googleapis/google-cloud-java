@@ -31,6 +31,8 @@ public interface GcsFolderDestinationOrBuilder
    * </pre>
    *
    * <code>string output_folder_uri = 1;</code>
+   *
+   * @return The outputFolderUri.
    */
   java.lang.String getOutputFolderUri();
   /**
@@ -41,6 +43,8 @@ public interface GcsFolderDestinationOrBuilder
    * </pre>
    *
    * <code>string output_folder_uri = 1;</code>
+   *
+   * @return The bytes for outputFolderUri.
    */
   com.google.protobuf.ByteString getOutputFolderUriBytes();
 }

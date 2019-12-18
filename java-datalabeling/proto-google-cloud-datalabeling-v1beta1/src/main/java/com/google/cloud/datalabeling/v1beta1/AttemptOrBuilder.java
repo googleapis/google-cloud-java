@@ -23,9 +23,17 @@ public interface AttemptOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.datalabeling.v1beta1.Attempt)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+  /**
+   * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
+   *
+   * @return Whether the attemptTime field is set.
+   */
   boolean hasAttemptTime();
-  /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+  /**
+   * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
+   *
+   * @return The attemptTime.
+   */
   com.google.protobuf.Timestamp getAttemptTime();
   /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
   com.google.protobuf.TimestampOrBuilder getAttemptTimeOrBuilder();

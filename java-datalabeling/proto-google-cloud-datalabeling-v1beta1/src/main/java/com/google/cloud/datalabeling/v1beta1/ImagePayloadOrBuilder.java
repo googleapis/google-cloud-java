@@ -31,6 +31,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>string mime_type = 1;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -41,6 +43,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>string mime_type = 1;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -52,6 +56,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>bytes image_thumbnail = 2;</code>
+   *
+   * @return The imageThumbnail.
    */
   com.google.protobuf.ByteString getImageThumbnail();
 
@@ -63,6 +69,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>string image_uri = 3;</code>
+   *
+   * @return The imageUri.
    */
   java.lang.String getImageUri();
   /**
@@ -73,6 +81,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>string image_uri = 3;</code>
+   *
+   * @return The bytes for imageUri.
    */
   com.google.protobuf.ByteString getImageUriBytes();
 
@@ -84,6 +94,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>string signed_uri = 4;</code>
+   *
+   * @return The signedUri.
    */
   java.lang.String getSignedUri();
   /**
@@ -94,6 +106,8 @@ public interface ImagePayloadOrBuilder
    * </pre>
    *
    * <code>string signed_uri = 4;</code>
+   *
+   * @return The bytes for signedUri.
    */
   com.google.protobuf.ByteString getSignedUriBytes();
 }

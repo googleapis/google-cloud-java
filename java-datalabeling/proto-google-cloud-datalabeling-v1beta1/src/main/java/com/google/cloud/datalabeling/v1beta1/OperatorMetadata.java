@@ -42,6 +42,12 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OperatorMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,9 +89,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 comments_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               comments_.add(s);
               break;
@@ -104,7 +110,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         comments_ = comments_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -127,7 +133,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.OperatorMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_;
   /**
@@ -140,6 +145,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float score = 1;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -155,6 +162,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 total_votes = 2;</code>
+   *
+   * @return The totalVotes.
    */
   public int getTotalVotes() {
     return totalVotes_;
@@ -170,6 +179,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 label_votes = 3;</code>
+   *
+   * @return The labelVotes.
    */
   public int getLabelVotes() {
     return labelVotes_;
@@ -185,6 +196,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @return A list containing the comments.
    */
   public com.google.protobuf.ProtocolStringList getCommentsList() {
     return comments_;
@@ -197,6 +210,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @return The count of comments.
    */
   public int getCommentsCount() {
     return comments_.size();
@@ -209,6 +224,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The comments at the given index.
    */
   public java.lang.String getComments(int index) {
     return comments_.get(index);
@@ -221,6 +239,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>repeated string comments = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the comments at the given index.
    */
   public com.google.protobuf.ByteString getCommentsBytes(int index) {
     return comments_.getByteString(index);
@@ -473,7 +494,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       labelVotes_ = 0;
 
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -502,16 +523,14 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       com.google.cloud.datalabeling.v1beta1.OperatorMetadata result =
           new com.google.cloud.datalabeling.v1beta1.OperatorMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.score_ = score_;
       result.totalVotes_ = totalVotes_;
       result.labelVotes_ = labelVotes_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         comments_ = comments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.comments_ = comments_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -574,7 +593,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       if (!other.comments_.isEmpty()) {
         if (comments_.isEmpty()) {
           comments_ = other.comments_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureCommentsIsMutable();
           comments_.addAll(other.comments_);
@@ -624,6 +643,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -638,6 +659,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -655,6 +679,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -672,6 +698,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 total_votes = 2;</code>
+     *
+     * @return The totalVotes.
      */
     public int getTotalVotes() {
       return totalVotes_;
@@ -684,6 +712,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 total_votes = 2;</code>
+     *
+     * @param value The totalVotes to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalVotes(int value) {
 
@@ -699,6 +730,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 total_votes = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalVotes() {
 
@@ -716,6 +749,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 label_votes = 3;</code>
+     *
+     * @return The labelVotes.
      */
     public int getLabelVotes() {
       return labelVotes_;
@@ -728,6 +763,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 label_votes = 3;</code>
+     *
+     * @param value The labelVotes to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelVotes(int value) {
 
@@ -743,6 +781,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 label_votes = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLabelVotes() {
 
@@ -755,9 +795,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCommentsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -768,6 +808,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @return A list containing the comments.
      */
     public com.google.protobuf.ProtocolStringList getCommentsList() {
       return comments_.getUnmodifiableView();
@@ -780,6 +822,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @return The count of comments.
      */
     public int getCommentsCount() {
       return comments_.size();
@@ -792,6 +836,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The comments at the given index.
      */
     public java.lang.String getComments(int index) {
       return comments_.get(index);
@@ -804,6 +851,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the comments at the given index.
      */
     public com.google.protobuf.ByteString getCommentsBytes(int index) {
       return comments_.getByteString(index);
@@ -816,6 +866,10 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The comments to set.
+     * @return This builder for chaining.
      */
     public Builder setComments(int index, java.lang.String value) {
       if (value == null) {
@@ -834,6 +888,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @param value The comments to add.
+     * @return This builder for chaining.
      */
     public Builder addComments(java.lang.String value) {
       if (value == null) {
@@ -852,6 +909,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @param values The comments to add.
+     * @return This builder for chaining.
      */
     public Builder addAllComments(java.lang.Iterable<java.lang.String> values) {
       ensureCommentsIsMutable();
@@ -867,10 +927,12 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearComments() {
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -882,6 +944,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>repeated string comments = 4;</code>
+     *
+     * @param value The bytes of the comments to add.
+     * @return This builder for chaining.
      */
     public Builder addCommentsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

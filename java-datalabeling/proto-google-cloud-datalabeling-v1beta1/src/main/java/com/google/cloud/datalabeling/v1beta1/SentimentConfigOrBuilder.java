@@ -33,6 +33,8 @@ public interface SentimentConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_label_sentiment_selection = 1;</code>
+   *
+   * @return The enableLabelSentimentSelection.
    */
   boolean getEnableLabelSentimentSelection();
 }

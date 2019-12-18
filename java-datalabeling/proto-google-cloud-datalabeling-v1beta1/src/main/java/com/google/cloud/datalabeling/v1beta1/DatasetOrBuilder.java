@@ -32,6 +32,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -64,6 +70,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -76,6 +84,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -87,6 +97,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -98,6 +110,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -108,6 +122,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -192,6 +208,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 6;</code>
+   *
+   * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
   /**
@@ -203,6 +221,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 6;</code>
+   *
+   * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
   /**
@@ -214,6 +234,9 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
   /**
@@ -225,6 +248,9 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the blockingResources at the given index.
    */
   com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 
@@ -236,6 +262,8 @@ public interface DatasetOrBuilder
    * </pre>
    *
    * <code>int64 data_item_count = 7;</code>
+   *
+   * @return The dataItemCount.
    */
   long getDataItemCount();
 }

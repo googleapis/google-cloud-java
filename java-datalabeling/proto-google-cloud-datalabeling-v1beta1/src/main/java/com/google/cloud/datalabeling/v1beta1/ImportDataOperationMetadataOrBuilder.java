@@ -32,6 +32,8 @@ public interface ImportDataOperationMetadataOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The dataset.
    */
   java.lang.String getDataset();
   /**
@@ -43,6 +45,8 @@ public interface ImportDataOperationMetadataOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The bytes for dataset.
    */
   com.google.protobuf.ByteString getDatasetBytes();
 
@@ -115,6 +119,8 @@ public interface ImportDataOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -125,6 +131,8 @@ public interface ImportDataOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**

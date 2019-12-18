@@ -536,32 +536,24 @@ public final class DataLabelingServiceOuterClass {
           + "rg/genproto/googleapis/cloud/datalabelin"
           + "g/v1beta1;datalabelingb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.EvaluationJobOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.InstructionOuterClass.getDescriptor(),
-          com.google.cloud.datalabeling.v1beta1.Operations.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.EvaluationJobOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.InstructionOuterClass.getDescriptor(),
+              com.google.cloud.datalabeling.v1beta1.Operations.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+            });
     internal_static_google_cloud_datalabeling_v1beta1_CreateDatasetRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_datalabeling_v1beta1_CreateDatasetRequest_fieldAccessorTable =

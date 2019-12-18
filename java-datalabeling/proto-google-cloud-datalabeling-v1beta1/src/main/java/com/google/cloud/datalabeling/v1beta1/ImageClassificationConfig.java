@@ -43,6 +43,12 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageClassificationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The annotationSpecSet.
    */
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
@@ -149,6 +156,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string annotation_spec_set = 1;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
@@ -173,6 +182,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>bool allow_multi_label = 2;</code>
+   *
+   * @return The allowMultiLabel.
    */
   public boolean getAllowMultiLabel() {
     return allowMultiLabel_;
@@ -189,6 +200,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
    * </code>
+   *
+   * @return The enum numeric value on the wire for answerAggregationType.
    */
   public int getAnswerAggregationTypeValue() {
     return answerAggregationType_;
@@ -202,6 +215,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
    * </code>
+   *
+   * @return The answerAggregationType.
    */
   public com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType() {
     @SuppressWarnings("deprecation")
@@ -580,6 +595,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
@@ -600,6 +617,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
@@ -620,6 +639,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @param value The annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSet(java.lang.String value) {
       if (value == null) {
@@ -638,6 +660,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
 
@@ -653,6 +677,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @param value The bytes for annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -675,6 +702,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool allow_multi_label = 2;</code>
+     *
+     * @return The allowMultiLabel.
      */
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
@@ -688,6 +717,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool allow_multi_label = 2;</code>
+     *
+     * @param value The allowMultiLabel to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowMultiLabel(boolean value) {
 
@@ -704,6 +736,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool allow_multi_label = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowMultiLabel() {
 
@@ -722,6 +756,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
      * </code>
+     *
+     * @return The enum numeric value on the wire for answerAggregationType.
      */
     public int getAnswerAggregationTypeValue() {
       return answerAggregationType_;
@@ -735,6 +771,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for answerAggregationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAnswerAggregationTypeValue(int value) {
       answerAggregationType_ = value;
@@ -750,6 +789,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
      * </code>
+     *
+     * @return The answerAggregationType.
      */
     public com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType() {
       @SuppressWarnings("deprecation")
@@ -769,6 +810,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
      * </code>
+     *
+     * @param value The answerAggregationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAnswerAggregationType(
         com.google.cloud.datalabeling.v1beta1.StringAggregationType value) {
@@ -789,6 +833,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnswerAggregationType() {
 

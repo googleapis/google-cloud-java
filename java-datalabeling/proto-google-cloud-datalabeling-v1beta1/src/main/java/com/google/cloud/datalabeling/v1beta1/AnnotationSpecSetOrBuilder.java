@@ -32,6 +32,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -66,6 +72,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -78,6 +86,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -89,6 +99,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -154,6 +166,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 5;</code>
+   *
+   * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
   /**
@@ -165,6 +179,8 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 5;</code>
+   *
+   * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
   /**
@@ -176,6 +192,9 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
   /**
@@ -187,6 +206,9 @@ public interface AnnotationSpecSetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the blockingResources at the given index.
    */
   com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 }

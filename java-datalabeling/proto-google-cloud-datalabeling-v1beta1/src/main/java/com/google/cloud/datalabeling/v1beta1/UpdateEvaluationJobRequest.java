@@ -40,6 +40,12 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
   private UpdateEvaluationJobRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateEvaluationJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   *
+   * @return Whether the evaluationJob field is set.
    */
   public boolean hasEvaluationJob() {
     return evaluationJob_ != null;
@@ -151,6 +158,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   *
+   * @return The evaluationJob.
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJob getEvaluationJob() {
     return evaluationJob_ == null
@@ -180,6 +189,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -192,6 +203,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -586,6 +599,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     *
+     * @return Whether the evaluationJob field is set.
      */
     public boolean hasEvaluationJob() {
       return evaluationJobBuilder_ != null || evaluationJob_ != null;
@@ -598,6 +613,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     *
+     * @return The evaluationJob.
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob getEvaluationJob() {
       if (evaluationJobBuilder_ == null) {
@@ -769,6 +786,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -781,6 +800,8 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

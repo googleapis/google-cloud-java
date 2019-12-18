@@ -40,6 +40,12 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   private ImagePolylineAnnotation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImagePolylineAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,7 +157,10 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   private int polyCase_ = 0;
   private java.lang.Object poly_;
 
-  public enum PolyCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PolyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     POLYLINE(2),
     NORMALIZED_POLYLINE(3),
     POLY_NOT_SET(0);
@@ -161,7 +169,11 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
     private PolyCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PolyCase valueOf(int value) {
       return forNumber(value);
@@ -190,11 +202,19 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   }
 
   public static final int POLYLINE_FIELD_NUMBER = 2;
-  /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
+   *
+   * @return Whether the polyline field is set.
+   */
   public boolean hasPolyline() {
     return polyCase_ == 2;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
+   *
+   * @return The polyline.
+   */
   public com.google.cloud.datalabeling.v1beta1.Polyline getPolyline() {
     if (polyCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.Polyline) poly_;
@@ -210,11 +230,19 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
   }
 
   public static final int NORMALIZED_POLYLINE_FIELD_NUMBER = 3;
-  /** <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
+   *
+   * @return Whether the normalizedPolyline field is set.
+   */
   public boolean hasNormalizedPolyline() {
     return polyCase_ == 3;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
+   *
+   * @return The normalizedPolyline.
+   */
   public com.google.cloud.datalabeling.v1beta1.NormalizedPolyline getNormalizedPolyline() {
     if (polyCase_ == 3) {
       return (com.google.cloud.datalabeling.v1beta1.NormalizedPolyline) poly_;
@@ -240,6 +268,8 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return Whether the annotationSpec field is set.
    */
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
@@ -252,6 +282,8 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+   *
+   * @return The annotationSpec.
    */
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
@@ -697,11 +729,19 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
             com.google.cloud.datalabeling.v1beta1.Polyline.Builder,
             com.google.cloud.datalabeling.v1beta1.PolylineOrBuilder>
         polylineBuilder_;
-    /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
+     *
+     * @return Whether the polyline field is set.
+     */
     public boolean hasPolyline() {
       return polyCase_ == 2;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
+     *
+     * @return The polyline.
+     */
     public com.google.cloud.datalabeling.v1beta1.Polyline getPolyline() {
       if (polylineBuilder_ == null) {
         if (polyCase_ == 2) {
@@ -829,12 +869,16 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
         normalizedPolylineBuilder_;
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
+     *
+     * @return Whether the normalizedPolyline field is set.
      */
     public boolean hasNormalizedPolyline() {
       return polyCase_ == 3;
     }
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
+     *
+     * @return The normalizedPolyline.
      */
     public com.google.cloud.datalabeling.v1beta1.NormalizedPolyline getNormalizedPolyline() {
       if (normalizedPolylineBuilder_ == null) {
@@ -989,6 +1033,8 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+     *
+     * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
       return annotationSpecBuilder_ != null || annotationSpec_ != null;
@@ -1001,6 +1047,8 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
+     *
+     * @return The annotationSpec.
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
       if (annotationSpecBuilder_ == null) {

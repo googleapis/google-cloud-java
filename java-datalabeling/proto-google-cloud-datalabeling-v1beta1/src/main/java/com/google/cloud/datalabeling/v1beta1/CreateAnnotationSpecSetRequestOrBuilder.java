@@ -32,6 +32,8 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   *
+   * @return Whether the annotationSpecSet field is set.
    */
   boolean hasAnnotationSpecSet();
   /**
@@ -68,6 +74,8 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   *
+   * @return The annotationSpecSet.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSet();
   /**

@@ -32,6 +32,8 @@ public interface OutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
+   *
+   * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
   /**
@@ -43,6 +45,8 @@ public interface OutputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
+   *
+   * @return The gcsDestination.
    */
   com.google.cloud.datalabeling.v1beta1.GcsDestination getGcsDestination();
   /**
@@ -67,6 +71,8 @@ public interface OutputConfigOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;
    * </code>
+   *
+   * @return Whether the gcsFolderDestination field is set.
    */
   boolean hasGcsFolderDestination();
   /**
@@ -79,6 +85,8 @@ public interface OutputConfigOrBuilder
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;
    * </code>
+   *
+   * @return The gcsFolderDestination.
    */
   com.google.cloud.datalabeling.v1beta1.GcsFolderDestination getGcsFolderDestination();
   /**

@@ -40,6 +40,12 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
   private ClassificationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClassificationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>bool is_multi_label = 1;</code>
+   *
+   * @return The isMultiLabel.
    */
   public boolean getIsMultiLabel() {
     return isMultiLabel_;
@@ -446,6 +453,8 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool is_multi_label = 1;</code>
+     *
+     * @return The isMultiLabel.
      */
     public boolean getIsMultiLabel() {
       return isMultiLabel_;
@@ -458,6 +467,9 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool is_multi_label = 1;</code>
+     *
+     * @param value The isMultiLabel to set.
+     * @return This builder for chaining.
      */
     public Builder setIsMultiLabel(boolean value) {
 
@@ -473,6 +485,8 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool is_multi_label = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsMultiLabel() {
 

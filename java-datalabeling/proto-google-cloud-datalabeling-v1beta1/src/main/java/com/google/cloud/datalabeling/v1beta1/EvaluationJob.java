@@ -49,6 +49,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EvaluationJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -138,10 +144,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attempts_ =
                     new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Attempt>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000001;
               }
               attempts_.add(
                   input.readMessage(
@@ -177,7 +183,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         attempts_ = java.util.Collections.unmodifiableList(attempts_);
       }
       this.unknownFields = unknownFields.build();
@@ -242,12 +248,20 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -311,7 +325,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.datalabeling.v1beta1.EvaluationJob.State)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -322,6 +335,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -342,6 +357,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -366,6 +383,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -387,6 +406,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -402,11 +423,19 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_;
-  /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
   public int getStateValue() {
     return state_;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+   *
+   * @return The state.
+   */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJob.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.EvaluationJob.State result =
@@ -432,6 +461,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schedule = 4;</code>
+   *
+   * @return The schedule.
    */
   public java.lang.String getSchedule() {
     java.lang.Object ref = schedule_;
@@ -458,6 +489,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schedule = 4;</code>
+   *
+   * @return The bytes for schedule.
    */
   public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
@@ -483,6 +516,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string model_version = 5;</code>
+   *
+   * @return The modelVersion.
    */
   public java.lang.String getModelVersion() {
     java.lang.Object ref = modelVersion_;
@@ -505,6 +540,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string model_version = 5;</code>
+   *
+   * @return The bytes for modelVersion.
    */
   public com.google.protobuf.ByteString getModelVersionBytes() {
     java.lang.Object ref = modelVersion_;
@@ -528,6 +565,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
+   *
+   * @return Whether the evaluationJobConfig field is set.
    */
   public boolean hasEvaluationJobConfig() {
     return evaluationJobConfig_ != null;
@@ -540,6 +579,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
+   *
+   * @return The evaluationJobConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig getEvaluationJobConfig() {
     return evaluationJobConfig_ == null
@@ -570,6 +611,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
+   *
+   * @return The annotationSpecSet.
    */
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
@@ -590,6 +633,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
@@ -614,6 +659,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool label_missing_ground_truth = 8;</code>
+   *
+   * @return The labelMissingGroundTruth.
    */
   public boolean getLabelMissingGroundTruth() {
     return labelMissingGroundTruth_;
@@ -698,6 +745,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -710,6 +759,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1053,7 +1104,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
       if (attemptsBuilder_ == null) {
         attempts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         attemptsBuilder_.clear();
       }
@@ -1091,7 +1142,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.EvaluationJob result =
           new com.google.cloud.datalabeling.v1beta1.EvaluationJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.state_ = state_;
@@ -1105,9 +1155,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       result.annotationSpecSet_ = annotationSpecSet_;
       result.labelMissingGroundTruth_ = labelMissingGroundTruth_;
       if (attemptsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           attempts_ = java.util.Collections.unmodifiableList(attempts_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.attempts_ = attempts_;
       } else {
@@ -1118,7 +1168,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1202,7 +1251,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         if (!other.attempts_.isEmpty()) {
           if (attempts_.isEmpty()) {
             attempts_ = other.attempts_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAttemptsIsMutable();
             attempts_.addAll(other.attempts_);
@@ -1215,7 +1264,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             attemptsBuilder_.dispose();
             attemptsBuilder_ = null;
             attempts_ = other.attempts_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
             attemptsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttemptsFieldBuilder()
@@ -1269,6 +1318,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1289,6 +1340,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1309,6 +1362,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1327,6 +1383,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1342,6 +1400,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1364,6 +1425,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1385,6 +1448,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1406,6 +1471,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1425,6 +1493,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1441,6 +1511,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1454,17 +1527,30 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-    /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
     public int getStateValue() {
       return state_;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
     public Builder setStateValue(int value) {
       state_ = value;
       onChanged();
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+     *
+     * @return The state.
+     */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.EvaluationJob.State result =
@@ -1473,7 +1559,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datalabeling.v1beta1.EvaluationJob.State.UNRECOGNIZED
           : result;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
     public Builder setState(com.google.cloud.datalabeling.v1beta1.EvaluationJob.State value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1483,7 +1574,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearState() {
 
       state_ = 0;
@@ -1506,6 +1601,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 4;</code>
+     *
+     * @return The schedule.
      */
     public java.lang.String getSchedule() {
       java.lang.Object ref = schedule_;
@@ -1532,6 +1629,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 4;</code>
+     *
+     * @return The bytes for schedule.
      */
     public com.google.protobuf.ByteString getScheduleBytes() {
       java.lang.Object ref = schedule_;
@@ -1558,6 +1657,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 4;</code>
+     *
+     * @param value The schedule to set.
+     * @return This builder for chaining.
      */
     public Builder setSchedule(java.lang.String value) {
       if (value == null) {
@@ -1582,6 +1684,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSchedule() {
 
@@ -1603,6 +1707,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 4;</code>
+     *
+     * @param value The bytes for schedule to set.
+     * @return This builder for chaining.
      */
     public Builder setScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1626,6 +1733,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model_version = 5;</code>
+     *
+     * @return The modelVersion.
      */
     public java.lang.String getModelVersion() {
       java.lang.Object ref = modelVersion_;
@@ -1648,6 +1757,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model_version = 5;</code>
+     *
+     * @return The bytes for modelVersion.
      */
     public com.google.protobuf.ByteString getModelVersionBytes() {
       java.lang.Object ref = modelVersion_;
@@ -1670,6 +1781,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model_version = 5;</code>
+     *
+     * @param value The modelVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setModelVersion(java.lang.String value) {
       if (value == null) {
@@ -1690,6 +1804,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model_version = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModelVersion() {
 
@@ -1707,6 +1823,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model_version = 5;</code>
+     *
+     * @param value The bytes for modelVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setModelVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1734,6 +1853,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
      * </code>
+     *
+     * @return Whether the evaluationJobConfig field is set.
      */
     public boolean hasEvaluationJobConfig() {
       return evaluationJobConfigBuilder_ != null || evaluationJobConfig_ != null;
@@ -1747,6 +1868,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
      * </code>
+     *
+     * @return The evaluationJobConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig getEvaluationJobConfig() {
       if (evaluationJobConfigBuilder_ == null) {
@@ -1924,6 +2047,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
@@ -1944,6 +2069,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
@@ -1964,6 +2091,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
+     *
+     * @param value The annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSet(java.lang.String value) {
       if (value == null) {
@@ -1982,6 +2112,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
 
@@ -1997,6 +2129,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
+     *
+     * @param value The bytes for annotationSpecSet to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationSpecSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2019,6 +2154,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool label_missing_ground_truth = 8;</code>
+     *
+     * @return The labelMissingGroundTruth.
      */
     public boolean getLabelMissingGroundTruth() {
       return labelMissingGroundTruth_;
@@ -2032,6 +2169,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool label_missing_ground_truth = 8;</code>
+     *
+     * @param value The labelMissingGroundTruth to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelMissingGroundTruth(boolean value) {
 
@@ -2048,6 +2188,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool label_missing_ground_truth = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLabelMissingGroundTruth() {
 
@@ -2060,10 +2202,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAttemptsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         attempts_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Attempt>(attempts_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2290,7 +2432,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAttempts() {
       if (attemptsBuilder_ == null) {
         attempts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         attemptsBuilder_.clear();
@@ -2419,7 +2561,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.Attempt,
                 com.google.cloud.datalabeling.v1beta1.Attempt.Builder,
                 com.google.cloud.datalabeling.v1beta1.AttemptOrBuilder>(
-                attempts_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                attempts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         attempts_ = null;
       }
       return attemptsBuilder_;
@@ -2439,6 +2581,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2451,6 +2595,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {

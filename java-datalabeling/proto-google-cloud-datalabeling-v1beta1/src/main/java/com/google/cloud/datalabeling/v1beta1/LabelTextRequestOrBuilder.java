@@ -35,6 +35,8 @@ public interface LabelTextRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
    * </code>
+   *
+   * @return Whether the textClassificationConfig field is set.
    */
   boolean hasTextClassificationConfig();
   /**
@@ -49,6 +51,8 @@ public interface LabelTextRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
    * </code>
+   *
+   * @return The textClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationConfig getTextClassificationConfig();
   /**
@@ -79,6 +83,8 @@ public interface LabelTextRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
    * </code>
+   *
+   * @return Whether the textEntityExtractionConfig field is set.
    */
   boolean hasTextEntityExtractionConfig();
   /**
@@ -93,6 +99,8 @@ public interface LabelTextRequestOrBuilder
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
    * </code>
+   *
+   * @return The textEntityExtractionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig getTextEntityExtractionConfig();
   /**
@@ -120,6 +128,8 @@ public interface LabelTextRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -131,6 +141,8 @@ public interface LabelTextRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -142,6 +154,8 @@ public interface LabelTextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
   /**
@@ -152,6 +166,8 @@ public interface LabelTextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
   /**
@@ -173,6 +189,8 @@ public interface LabelTextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
   /**
@@ -183,6 +201,8 @@ public interface LabelTextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+   *
+   * @return The feature.
    */
   com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature();
 

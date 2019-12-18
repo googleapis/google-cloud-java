@@ -31,6 +31,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -53,6 +57,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -64,12 +70,22 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
-  /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
   int getStateValue();
-  /** <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
+   *
+   * @return The state.
+   */
   com.google.cloud.datalabeling.v1beta1.EvaluationJob.State getState();
 
   /**
@@ -86,6 +102,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string schedule = 4;</code>
+   *
+   * @return The schedule.
    */
   java.lang.String getSchedule();
   /**
@@ -102,6 +120,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string schedule = 4;</code>
+   *
+   * @return The bytes for schedule.
    */
   com.google.protobuf.ByteString getScheduleBytes();
 
@@ -115,6 +135,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string model_version = 5;</code>
+   *
+   * @return The modelVersion.
    */
   java.lang.String getModelVersion();
   /**
@@ -127,6 +149,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string model_version = 5;</code>
+   *
+   * @return The bytes for modelVersion.
    */
   com.google.protobuf.ByteString getModelVersionBytes();
 
@@ -138,6 +162,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
+   *
+   * @return Whether the evaluationJobConfig field is set.
    */
   boolean hasEvaluationJobConfig();
   /**
@@ -148,6 +174,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
+   *
+   * @return The evaluationJobConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig getEvaluationJobConfig();
   /**
@@ -170,6 +198,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
+   *
+   * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
   /**
@@ -180,6 +210,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   com.google.protobuf.ByteString getAnnotationSpecSetBytes();
 
@@ -192,6 +224,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>bool label_missing_ground_truth = 8;</code>
+   *
+   * @return The labelMissingGroundTruth.
    */
   boolean getLabelMissingGroundTruth();
 
@@ -260,6 +294,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -270,6 +306,8 @@ public interface EvaluationJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**

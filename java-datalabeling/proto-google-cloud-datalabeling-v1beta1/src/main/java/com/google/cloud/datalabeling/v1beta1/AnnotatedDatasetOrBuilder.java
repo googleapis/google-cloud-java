@@ -33,6 +33,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -83,6 +91,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>string description = 9;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -95,6 +105,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>string description = 9;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -106,6 +118,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSource annotation_source = 3;</code>
+   *
+   * @return The enum numeric value on the wire for annotationSource.
    */
   int getAnnotationSourceValue();
   /**
@@ -116,6 +130,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSource annotation_source = 3;</code>
+   *
+   * @return The annotationSource.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource();
 
@@ -128,6 +144,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 8;</code>
+   *
+   * @return The enum numeric value on the wire for annotationType.
    */
   int getAnnotationTypeValue();
   /**
@@ -139,6 +157,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 8;</code>
+   *
+   * @return The annotationType.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType();
 
@@ -150,6 +170,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>int64 example_count = 4;</code>
+   *
+   * @return The exampleCount.
    */
   long getExampleCount();
 
@@ -162,6 +184,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>int64 completed_example_count = 5;</code>
+   *
+   * @return The completedExampleCount.
    */
   long getCompletedExampleCount();
 
@@ -173,6 +197,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 6;</code>
+   *
+   * @return Whether the labelStats field is set.
    */
   boolean hasLabelStats();
   /**
@@ -183,6 +209,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 6;</code>
+   *
+   * @return The labelStats.
    */
   com.google.cloud.datalabeling.v1beta1.LabelStats getLabelStats();
   /**
@@ -204,6 +232,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -214,6 +244,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -235,6 +267,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata metadata = 10;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -245,6 +279,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata metadata = 10;</code>
+   *
+   * @return The metadata.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata getMetadata();
   /**
@@ -267,6 +303,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 11;</code>
+   *
+   * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
   /**
@@ -278,6 +316,8 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 11;</code>
+   *
+   * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
   /**
@@ -289,6 +329,9 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
   /**
@@ -300,6 +343,9 @@ public interface AnnotatedDatasetOrBuilder
    * </pre>
    *
    * <code>repeated string blocking_resources = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the blockingResources at the given index.
    */
   com.google.protobuf.ByteString getBlockingResourcesBytes(int index);
 }

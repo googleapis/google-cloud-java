@@ -42,6 +42,12 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateEvaluationJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -155,6 +162,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -178,6 +187,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   *
+   * @return Whether the job field is set.
    */
   public boolean hasJob() {
     return job_ != null;
@@ -190,6 +201,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   *
+   * @return The job.
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJob getJob() {
     return job_ == null
@@ -570,6 +583,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -591,6 +606,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -612,6 +629,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -631,6 +651,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -647,6 +669,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -673,6 +698,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     *
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -685,6 +712,8 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     *
+     * @return The job.
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob getJob() {
       if (jobBuilder_ == null) {

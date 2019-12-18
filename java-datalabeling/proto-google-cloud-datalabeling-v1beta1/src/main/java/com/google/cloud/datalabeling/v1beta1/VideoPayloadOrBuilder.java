@@ -31,6 +31,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>string mime_type = 1;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -41,6 +43,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>string mime_type = 1;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -52,6 +56,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>string video_uri = 2;</code>
+   *
+   * @return The videoUri.
    */
   java.lang.String getVideoUri();
   /**
@@ -62,6 +68,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>string video_uri = 2;</code>
+   *
+   * @return The bytes for videoUri.
    */
   com.google.protobuf.ByteString getVideoUriBytes();
 
@@ -126,6 +134,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>float frame_rate = 4;</code>
+   *
+   * @return The frameRate.
    */
   float getFrameRate();
 
@@ -137,6 +147,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>string signed_uri = 5;</code>
+   *
+   * @return The signedUri.
    */
   java.lang.String getSignedUri();
   /**
@@ -147,6 +159,8 @@ public interface VideoPayloadOrBuilder
    * </pre>
    *
    * <code>string signed_uri = 5;</code>
+   *
+   * @return The bytes for signedUri.
    */
   com.google.protobuf.ByteString getSignedUriBytes();
 }

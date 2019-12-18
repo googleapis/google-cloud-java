@@ -32,6 +32,8 @@ public interface TextClassificationConfigOrBuilder
    * </pre>
    *
    * <code>bool allow_multi_label = 1;</code>
+   *
+   * @return The allowMultiLabel.
    */
   boolean getAllowMultiLabel();
 
@@ -43,6 +45,8 @@ public interface TextClassificationConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 2;</code>
+   *
+   * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
   /**
@@ -53,6 +57,8 @@ public interface TextClassificationConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_spec_set = 2;</code>
+   *
+   * @return The bytes for annotationSpecSet.
    */
   com.google.protobuf.ByteString getAnnotationSpecSetBytes();
 
@@ -64,6 +70,8 @@ public interface TextClassificationConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   *
+   * @return Whether the sentimentConfig field is set.
    */
   boolean hasSentimentConfig();
   /**
@@ -74,6 +82,8 @@ public interface TextClassificationConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   *
+   * @return The sentimentConfig.
    */
   com.google.cloud.datalabeling.v1beta1.SentimentConfig getSentimentConfig();
   /**

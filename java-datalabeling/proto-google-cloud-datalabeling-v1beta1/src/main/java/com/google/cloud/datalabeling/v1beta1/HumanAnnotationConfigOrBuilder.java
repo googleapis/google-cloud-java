@@ -31,6 +31,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string instruction = 1;</code>
+   *
+   * @return The instruction.
    */
   java.lang.String getInstruction();
   /**
@@ -41,6 +43,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string instruction = 1;</code>
+   *
+   * @return The bytes for instruction.
    */
   com.google.protobuf.ByteString getInstructionBytes();
 
@@ -54,6 +58,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string annotated_dataset_display_name = 2;</code>
+   *
+   * @return The annotatedDatasetDisplayName.
    */
   java.lang.String getAnnotatedDatasetDisplayName();
   /**
@@ -66,6 +72,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string annotated_dataset_display_name = 2;</code>
+   *
+   * @return The bytes for annotatedDatasetDisplayName.
    */
   com.google.protobuf.ByteString getAnnotatedDatasetDisplayNameBytes();
 
@@ -78,6 +86,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string annotated_dataset_description = 3;</code>
+   *
+   * @return The annotatedDatasetDescription.
    */
   java.lang.String getAnnotatedDatasetDescription();
   /**
@@ -89,6 +99,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string annotated_dataset_description = 3;</code>
+   *
+   * @return The bytes for annotatedDatasetDescription.
    */
   com.google.protobuf.ByteString getAnnotatedDatasetDescriptionBytes();
 
@@ -101,6 +113,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string label_group = 4;</code>
+   *
+   * @return The labelGroup.
    */
   java.lang.String getLabelGroup();
   /**
@@ -112,6 +126,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string label_group = 4;</code>
+   *
+   * @return The bytes for labelGroup.
    */
   com.google.protobuf.ByteString getLabelGroupBytes();
 
@@ -127,6 +143,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 5;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -141,6 +159,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 5;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -155,6 +175,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>int32 replica_count = 6;</code>
+   *
+   * @return The replicaCount.
    */
   int getReplicaCount();
 
@@ -167,6 +189,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration question_duration = 7;</code>
+   *
+   * @return Whether the questionDuration field is set.
    */
   boolean hasQuestionDuration();
   /**
@@ -178,6 +202,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration question_duration = 7;</code>
+   *
+   * @return The questionDuration.
    */
   com.google.protobuf.Duration getQuestionDuration();
   /**
@@ -204,6 +230,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @return A list containing the contributorEmails.
    */
   java.util.List<java.lang.String> getContributorEmailsList();
   /**
@@ -218,6 +246,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @return The count of contributorEmails.
    */
   int getContributorEmailsCount();
   /**
@@ -232,6 +262,9 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The contributorEmails at the given index.
    */
   java.lang.String getContributorEmails(int index);
   /**
@@ -246,6 +279,9 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the contributorEmails at the given index.
    */
   com.google.protobuf.ByteString getContributorEmailsBytes(int index);
 
@@ -258,6 +294,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string user_email_address = 10;</code>
+   *
+   * @return The userEmailAddress.
    */
   java.lang.String getUserEmailAddress();
   /**
@@ -269,6 +307,8 @@ public interface HumanAnnotationConfigOrBuilder
    * </pre>
    *
    * <code>string user_email_address = 10;</code>
+   *
+   * @return The bytes for userEmailAddress.
    */
   com.google.protobuf.ByteString getUserEmailAddressBytes();
 }

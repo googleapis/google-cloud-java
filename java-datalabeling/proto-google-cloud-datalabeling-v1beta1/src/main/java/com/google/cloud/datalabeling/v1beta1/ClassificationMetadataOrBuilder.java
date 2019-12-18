@@ -31,6 +31,8 @@ public interface ClassificationMetadataOrBuilder
    * </pre>
    *
    * <code>bool is_multi_label = 1;</code>
+   *
+   * @return The isMultiLabel.
    */
   boolean getIsMultiLabel();
 }

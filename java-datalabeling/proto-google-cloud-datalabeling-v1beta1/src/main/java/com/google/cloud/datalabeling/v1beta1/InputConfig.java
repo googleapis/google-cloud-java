@@ -43,6 +43,12 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -191,7 +196,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   private int dataTypeMetadataCase_ = 0;
   private java.lang.Object dataTypeMetadata_;
 
-  public enum DataTypeMetadataCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DataTypeMetadataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT_METADATA(6),
     DATATYPEMETADATA_NOT_SET(0);
     private final int value;
@@ -199,7 +207,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private DataTypeMetadataCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DataTypeMetadataCase valueOf(int value) {
       return forNumber(value);
@@ -228,7 +240,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_SOURCE(2),
     BIGQUERY_SOURCE(5),
     SOURCE_NOT_SET(0);
@@ -237,7 +252,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -274,6 +293,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   *
+   * @return Whether the textMetadata field is set.
    */
   public boolean hasTextMetadata() {
     return dataTypeMetadataCase_ == 6;
@@ -286,6 +307,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+   *
+   * @return The textMetadata.
    */
   public com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata() {
     if (dataTypeMetadataCase_ == 6) {
@@ -318,6 +341,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
@@ -330,6 +355,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+   *
+   * @return The gcsSource.
    */
   public com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 2) {
@@ -354,11 +381,19 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 5;
-  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+   *
+   * @return Whether the bigquerySource field is set.
+   */
   public boolean hasBigquerySource() {
     return sourceCase_ == 5;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+   *
+   * @return The bigquerySource.
+   */
   public com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource() {
     if (sourceCase_ == 5) {
       return (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_;
@@ -384,6 +419,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for dataType.
    */
   public int getDataTypeValue() {
     return dataType_;
@@ -396,6 +433,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+   *
+   * @return The dataType.
    */
   public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
     @SuppressWarnings("deprecation")
@@ -416,6 +455,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for annotationType.
    */
   public int getAnnotationTypeValue() {
     return annotationType_;
@@ -430,6 +471,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+   *
+   * @return The annotationType.
    */
   public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
     @SuppressWarnings("deprecation")
@@ -453,6 +496,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
    * </code>
+   *
+   * @return Whether the classificationMetadata field is set.
    */
   public boolean hasClassificationMetadata() {
     return classificationMetadata_ != null;
@@ -468,6 +513,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
    * </code>
+   *
+   * @return The classificationMetadata.
    */
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata getClassificationMetadata() {
     return classificationMetadata_ == null
@@ -1017,6 +1064,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     *
+     * @return Whether the textMetadata field is set.
      */
     public boolean hasTextMetadata() {
       return dataTypeMetadataCase_ == 6;
@@ -1029,6 +1078,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
+     *
+     * @return The textMetadata.
      */
     public com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata() {
       if (textMetadataBuilder_ == null) {
@@ -1221,6 +1272,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
@@ -1233,6 +1286,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return The gcsSource.
      */
     public com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
@@ -1415,11 +1470,19 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder,
             com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     *
+     * @return Whether the bigquerySource field is set.
+     */
     public boolean hasBigquerySource() {
       return sourceCase_ == 5;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     *
+     * @return The bigquerySource.
+     */
     public com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
         if (sourceCase_ == 5) {
@@ -1551,6 +1614,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for dataType.
      */
     public int getDataTypeValue() {
       return dataType_;
@@ -1563,6 +1628,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for dataType to set.
+     * @return This builder for chaining.
      */
     public Builder setDataTypeValue(int value) {
       dataType_ = value;
@@ -1577,6 +1645,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+     *
+     * @return The dataType.
      */
     public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
       @SuppressWarnings("deprecation")
@@ -1592,6 +1662,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+     *
+     * @param value The dataType to set.
+     * @return This builder for chaining.
      */
     public Builder setDataType(com.google.cloud.datalabeling.v1beta1.DataType value) {
       if (value == null) {
@@ -1610,6 +1683,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.DataType data_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataType() {
 
@@ -1629,6 +1704,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for annotationType.
      */
     public int getAnnotationTypeValue() {
       return annotationType_;
@@ -1643,6 +1720,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for annotationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationTypeValue(int value) {
       annotationType_ = value;
@@ -1659,6 +1739,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     *
+     * @return The annotationType.
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
       @SuppressWarnings("deprecation")
@@ -1678,6 +1760,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     *
+     * @param value The annotationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationType(com.google.cloud.datalabeling.v1beta1.AnnotationType value) {
       if (value == null) {
@@ -1698,6 +1783,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationType() {
 
@@ -1723,6 +1810,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
      * </code>
+     *
+     * @return Whether the classificationMetadata field is set.
      */
     public boolean hasClassificationMetadata() {
       return classificationMetadataBuilder_ != null || classificationMetadata_ != null;
@@ -1738,6 +1827,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
      * </code>
+     *
+     * @return The classificationMetadata.
      */
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata
         getClassificationMetadata() {

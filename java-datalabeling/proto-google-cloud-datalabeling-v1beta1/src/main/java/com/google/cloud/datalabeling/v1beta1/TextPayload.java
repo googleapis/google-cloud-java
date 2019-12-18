@@ -42,6 +42,12 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextPayload();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,6 +121,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text_content = 1;</code>
+   *
+   * @return The textContent.
    */
   public java.lang.String getTextContent() {
     java.lang.Object ref = textContent_;
@@ -136,6 +143,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text_content = 1;</code>
+   *
+   * @return The bytes for textContent.
    */
   public com.google.protobuf.ByteString getTextContentBytes() {
     java.lang.Object ref = textContent_;
@@ -476,6 +485,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_content = 1;</code>
+     *
+     * @return The textContent.
      */
     public java.lang.String getTextContent() {
       java.lang.Object ref = textContent_;
@@ -496,6 +507,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_content = 1;</code>
+     *
+     * @return The bytes for textContent.
      */
     public com.google.protobuf.ByteString getTextContentBytes() {
       java.lang.Object ref = textContent_;
@@ -516,6 +529,9 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_content = 1;</code>
+     *
+     * @param value The textContent to set.
+     * @return This builder for chaining.
      */
     public Builder setTextContent(java.lang.String value) {
       if (value == null) {
@@ -534,6 +550,8 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_content = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTextContent() {
 
@@ -549,6 +567,9 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_content = 1;</code>
+     *
+     * @param value The bytes for textContent to set.
+     * @return This builder for chaining.
      */
     public Builder setTextContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

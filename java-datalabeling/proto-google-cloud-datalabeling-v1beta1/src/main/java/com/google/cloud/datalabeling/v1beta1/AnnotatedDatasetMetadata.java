@@ -40,6 +40,12 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
   private AnnotatedDatasetMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotatedDatasetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -339,7 +344,10 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
   private int annotationRequestConfigCase_ = 0;
   private java.lang.Object annotationRequestConfig_;
 
-  public enum AnnotationRequestConfigCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AnnotationRequestConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_CLASSIFICATION_CONFIG(2),
     BOUNDING_POLY_CONFIG(3),
     POLYLINE_CONFIG(4),
@@ -356,7 +364,11 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     private AnnotationRequestConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AnnotationRequestConfigCase valueOf(int value) {
       return forNumber(value);
@@ -411,6 +423,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 2;
    * </code>
+   *
+   * @return Whether the imageClassificationConfig field is set.
    */
   public boolean hasImageClassificationConfig() {
     return annotationRequestConfigCase_ == 2;
@@ -425,6 +439,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 2;
    * </code>
+   *
+   * @return The imageClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
       getImageClassificationConfig() {
@@ -463,6 +479,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 3;</code>
+   *
+   * @return Whether the boundingPolyConfig field is set.
    */
   public boolean hasBoundingPolyConfig() {
     return annotationRequestConfigCase_ == 3;
@@ -475,6 +493,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 3;</code>
+   *
+   * @return The boundingPolyConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
     if (annotationRequestConfigCase_ == 3) {
@@ -508,6 +528,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 4;</code>
+   *
+   * @return Whether the polylineConfig field is set.
    */
   public boolean hasPolylineConfig() {
     return annotationRequestConfigCase_ == 4;
@@ -520,6 +542,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 4;</code>
+   *
+   * @return The polylineConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig() {
     if (annotationRequestConfigCase_ == 4) {
@@ -553,6 +577,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 5;</code>
+   *
+   * @return Whether the segmentationConfig field is set.
    */
   public boolean hasSegmentationConfig() {
     return annotationRequestConfigCase_ == 5;
@@ -565,6 +591,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 5;</code>
+   *
+   * @return The segmentationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig() {
     if (annotationRequestConfigCase_ == 5) {
@@ -600,6 +628,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
    * </code>
+   *
+   * @return Whether the videoClassificationConfig field is set.
    */
   public boolean hasVideoClassificationConfig() {
     return annotationRequestConfigCase_ == 6;
@@ -614,6 +644,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
    * </code>
+   *
+   * @return The videoClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
       getVideoClassificationConfig() {
@@ -653,6 +685,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
    * </code>
+   *
+   * @return Whether the objectDetectionConfig field is set.
    */
   public boolean hasObjectDetectionConfig() {
     return annotationRequestConfigCase_ == 7;
@@ -666,6 +700,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
    * </code>
+   *
+   * @return The objectDetectionConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
     if (annotationRequestConfigCase_ == 7) {
@@ -701,6 +737,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 8;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   public boolean hasObjectTrackingConfig() {
     return annotationRequestConfigCase_ == 8;
@@ -714,6 +752,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 8;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
     if (annotationRequestConfigCase_ == 8) {
@@ -748,6 +788,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 9;</code>
+   *
+   * @return Whether the eventConfig field is set.
    */
   public boolean hasEventConfig() {
     return annotationRequestConfigCase_ == 9;
@@ -760,6 +802,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 9;</code>
+   *
+   * @return The eventConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig() {
     if (annotationRequestConfigCase_ == 9) {
@@ -794,6 +838,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 10;
    * </code>
+   *
+   * @return Whether the textClassificationConfig field is set.
    */
   public boolean hasTextClassificationConfig() {
     return annotationRequestConfigCase_ == 10;
@@ -808,6 +854,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 10;
    * </code>
+   *
+   * @return The textClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
       getTextClassificationConfig() {
@@ -848,6 +896,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 11;
    * </code>
+   *
+   * @return Whether the textEntityExtractionConfig field is set.
    */
   public boolean hasTextEntityExtractionConfig() {
     return annotationRequestConfigCase_ == 11;
@@ -862,6 +912,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 11;
    * </code>
+   *
+   * @return The textEntityExtractionConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig
       getTextEntityExtractionConfig() {
@@ -903,6 +955,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
    * </code>
+   *
+   * @return Whether the humanAnnotationConfig field is set.
    */
   public boolean hasHumanAnnotationConfig() {
     return humanAnnotationConfig_ != null;
@@ -917,6 +971,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
    * </code>
+   *
+   * @return The humanAnnotationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
     return humanAnnotationConfig_ == null
@@ -1629,6 +1685,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 2;
      * </code>
+     *
+     * @return Whether the imageClassificationConfig field is set.
      */
     public boolean hasImageClassificationConfig() {
       return annotationRequestConfigCase_ == 2;
@@ -1643,6 +1701,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 2;
      * </code>
+     *
+     * @return The imageClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
         getImageClassificationConfig() {
@@ -1859,6 +1919,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 3;</code>
+     *
+     * @return Whether the boundingPolyConfig field is set.
      */
     public boolean hasBoundingPolyConfig() {
       return annotationRequestConfigCase_ == 3;
@@ -1871,6 +1933,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 3;</code>
+     *
+     * @return The boundingPolyConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
       if (boundingPolyConfigBuilder_ == null) {
@@ -2070,6 +2134,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 4;</code>
+     *
+     * @return Whether the polylineConfig field is set.
      */
     public boolean hasPolylineConfig() {
       return annotationRequestConfigCase_ == 4;
@@ -2082,6 +2148,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 4;</code>
+     *
+     * @return The polylineConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig() {
       if (polylineConfigBuilder_ == null) {
@@ -2276,6 +2344,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 5;</code>
+     *
+     * @return Whether the segmentationConfig field is set.
      */
     public boolean hasSegmentationConfig() {
       return annotationRequestConfigCase_ == 5;
@@ -2288,6 +2358,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 5;</code>
+     *
+     * @return The segmentationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig() {
       if (segmentationConfigBuilder_ == null) {
@@ -2489,6 +2561,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
      * </code>
+     *
+     * @return Whether the videoClassificationConfig field is set.
      */
     public boolean hasVideoClassificationConfig() {
       return annotationRequestConfigCase_ == 6;
@@ -2503,6 +2577,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
      * </code>
+     *
+     * @return The videoClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
         getVideoClassificationConfig() {
@@ -2720,6 +2796,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
      * </code>
+     *
+     * @return Whether the objectDetectionConfig field is set.
      */
     public boolean hasObjectDetectionConfig() {
       return annotationRequestConfigCase_ == 7;
@@ -2733,6 +2811,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
      * </code>
+     *
+     * @return The objectDetectionConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
       if (objectDetectionConfigBuilder_ == null) {
@@ -2942,6 +3022,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 8;
      * </code>
+     *
+     * @return Whether the objectTrackingConfig field is set.
      */
     public boolean hasObjectTrackingConfig() {
       return annotationRequestConfigCase_ == 8;
@@ -2955,6 +3037,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 8;
      * </code>
+     *
+     * @return The objectTrackingConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
       if (objectTrackingConfigBuilder_ == null) {
@@ -3163,6 +3247,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 9;</code>
+     *
+     * @return Whether the eventConfig field is set.
      */
     public boolean hasEventConfig() {
       return annotationRequestConfigCase_ == 9;
@@ -3175,6 +3261,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 9;</code>
+     *
+     * @return The eventConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig() {
       if (eventConfigBuilder_ == null) {
@@ -3369,6 +3457,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 10;
      * </code>
+     *
+     * @return Whether the textClassificationConfig field is set.
      */
     public boolean hasTextClassificationConfig() {
       return annotationRequestConfigCase_ == 10;
@@ -3383,6 +3473,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 10;
      * </code>
+     *
+     * @return The textClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
         getTextClassificationConfig() {
@@ -3601,6 +3693,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 11;
      * </code>
+     *
+     * @return Whether the textEntityExtractionConfig field is set.
      */
     public boolean hasTextEntityExtractionConfig() {
       return annotationRequestConfigCase_ == 11;
@@ -3615,6 +3709,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 11;
      * </code>
+     *
+     * @return The textEntityExtractionConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig
         getTextEntityExtractionConfig() {
@@ -3837,6 +3933,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
      * </code>
+     *
+     * @return Whether the humanAnnotationConfig field is set.
      */
     public boolean hasHumanAnnotationConfig() {
       return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
@@ -3851,6 +3949,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;
      * </code>
+     *
+     * @return The humanAnnotationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
       if (humanAnnotationConfigBuilder_ == null) {

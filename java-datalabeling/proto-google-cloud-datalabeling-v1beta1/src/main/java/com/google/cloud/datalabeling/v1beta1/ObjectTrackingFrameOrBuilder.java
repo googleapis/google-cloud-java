@@ -23,9 +23,17 @@ public interface ObjectTrackingFrameOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.datalabeling.v1beta1.ObjectTrackingFrame)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return Whether the boundingPoly field is set.
+   */
   boolean hasBoundingPoly();
-  /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return The boundingPoly.
+   */
   com.google.cloud.datalabeling.v1beta1.BoundingPoly getBoundingPoly();
   /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
@@ -33,11 +41,15 @@ public interface ObjectTrackingFrameOrBuilder
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
    * </code>
+   *
+   * @return Whether the normalizedBoundingPoly field is set.
    */
   boolean hasNormalizedBoundingPoly();
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
    * </code>
+   *
+   * @return The normalizedBoundingPoly.
    */
   com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly getNormalizedBoundingPoly();
   /**
@@ -55,6 +67,8 @@ public interface ObjectTrackingFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 3;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -65,6 +79,8 @@ public interface ObjectTrackingFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 3;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**

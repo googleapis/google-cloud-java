@@ -44,6 +44,12 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Example();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -94,10 +100,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 annotations_ =
                     new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               annotations_.add(
                   input.readMessage(
@@ -155,7 +161,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         annotations_ = java.util.Collections.unmodifiableList(annotations_);
       }
       this.unknownFields = unknownFields.build();
@@ -178,11 +184,13 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.Example.Builder.class);
   }
 
-  private int bitField0_;
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
 
-  public enum PayloadCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PayloadCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_PAYLOAD(2),
     TEXT_PAYLOAD(6),
     VIDEO_PAYLOAD(7),
@@ -192,7 +200,11 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PayloadCase valueOf(int value) {
       return forNumber(value);
@@ -231,6 +243,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+   *
+   * @return Whether the imagePayload field is set.
    */
   public boolean hasImagePayload() {
     return payloadCase_ == 2;
@@ -243,6 +257,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+   *
+   * @return The imagePayload.
    */
   public com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload() {
     if (payloadCase_ == 2) {
@@ -275,6 +291,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
+   *
+   * @return Whether the textPayload field is set.
    */
   public boolean hasTextPayload() {
     return payloadCase_ == 6;
@@ -287,6 +305,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
+   *
+   * @return The textPayload.
    */
   public com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload() {
     if (payloadCase_ == 6) {
@@ -319,6 +339,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
+   *
+   * @return Whether the videoPayload field is set.
    */
   public boolean hasVideoPayload() {
     return payloadCase_ == 7;
@@ -331,6 +353,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
+   *
+   * @return The videoPayload.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload() {
     if (payloadCase_ == 7) {
@@ -366,6 +390,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -388,6 +414,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -747,7 +775,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
 
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         annotationsBuilder_.clear();
       }
@@ -781,7 +809,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.Example result =
           new com.google.cloud.datalabeling.v1beta1.Example(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (payloadCase_ == 2) {
         if (imagePayloadBuilder_ == null) {
           result.payload_ = payload_;
@@ -805,15 +832,14 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       }
       result.name_ = name_;
       if (annotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           annotations_ = java.util.Collections.unmodifiableList(annotations_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.annotations_ = annotations_;
       } else {
         result.annotations_ = annotationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -872,7 +898,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         if (!other.annotations_.isEmpty()) {
           if (annotations_.isEmpty()) {
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAnnotationsIsMutable();
             annotations_.addAll(other.annotations_);
@@ -885,7 +911,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             annotationsBuilder_.dispose();
             annotationsBuilder_ = null;
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             annotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnnotationsFieldBuilder()
@@ -974,6 +1000,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+     *
+     * @return Whether the imagePayload field is set.
      */
     public boolean hasImagePayload() {
       return payloadCase_ == 2;
@@ -986,6 +1014,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
+     *
+     * @return The imagePayload.
      */
     public com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload() {
       if (imagePayloadBuilder_ == null) {
@@ -1177,6 +1207,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
+     *
+     * @return Whether the textPayload field is set.
      */
     public boolean hasTextPayload() {
       return payloadCase_ == 6;
@@ -1189,6 +1221,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
+     *
+     * @return The textPayload.
      */
     public com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload() {
       if (textPayloadBuilder_ == null) {
@@ -1379,6 +1413,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
+     *
+     * @return Whether the videoPayload field is set.
      */
     public boolean hasVideoPayload() {
       return payloadCase_ == 7;
@@ -1391,6 +1427,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
+     *
+     * @return The videoPayload.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload() {
       if (videoPayloadBuilder_ == null) {
@@ -1580,6 +1618,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1602,6 +1642,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1624,6 +1666,9 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1644,6 +1689,8 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1661,6 +1708,9 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1677,10 +1727,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         annotations_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>(annotations_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1909,7 +1959,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAnnotations() {
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         annotationsBuilder_.clear();
@@ -2041,7 +2091,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.Annotation,
                 com.google.cloud.datalabeling.v1beta1.Annotation.Builder,
                 com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder>(
-                annotations_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                annotations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         annotations_ = null;
       }
       return annotationsBuilder_;

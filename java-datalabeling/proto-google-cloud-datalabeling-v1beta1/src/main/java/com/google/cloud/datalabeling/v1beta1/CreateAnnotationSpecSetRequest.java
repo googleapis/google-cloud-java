@@ -43,6 +43,12 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateAnnotationSpecSetRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +140,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -156,6 +163,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -181,6 +190,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   *
+   * @return Whether the annotationSpecSet field is set.
    */
   public boolean hasAnnotationSpecSet() {
     return annotationSpecSet_ != null;
@@ -195,6 +206,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   *
+   * @return The annotationSpecSet.
    */
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSet() {
     return annotationSpecSet_ == null
@@ -582,6 +595,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -603,6 +618,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -624,6 +641,9 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -643,6 +663,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -659,6 +681,9 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -687,6 +712,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+     *
+     * @return Whether the annotationSpecSet field is set.
      */
     public boolean hasAnnotationSpecSet() {
       return annotationSpecSetBuilder_ != null || annotationSpecSet_ != null;
@@ -701,6 +728,8 @@ public final class CreateAnnotationSpecSetRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSet() {
       if (annotationSpecSetBuilder_ == null) {

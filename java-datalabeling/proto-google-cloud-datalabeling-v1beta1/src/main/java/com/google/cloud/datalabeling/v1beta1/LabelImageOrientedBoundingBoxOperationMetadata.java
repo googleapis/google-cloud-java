@@ -43,6 +43,12 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
   private LabelImageOrientedBoundingBoxOperationMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelImageOrientedBoundingBoxOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
@@ -141,6 +148,8 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
+   *
+   * @return The basicConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
@@ -535,6 +544,8 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
+     *
+     * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
       return basicConfigBuilder_ != null || basicConfig_ != null;
@@ -547,6 +558,8 @@ public final class LabelImageOrientedBoundingBoxOperationMetadata
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
+     *
+     * @return The basicConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
       if (basicConfigBuilder_ == null) {

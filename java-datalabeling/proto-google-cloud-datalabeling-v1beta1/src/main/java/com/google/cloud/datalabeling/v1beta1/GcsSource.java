@@ -43,6 +43,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcsSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
@@ -146,6 +153,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
@@ -169,6 +178,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -189,6 +200,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -545,6 +558,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @return The inputUri.
      */
     public java.lang.String getInputUri() {
       java.lang.Object ref = inputUri_;
@@ -566,6 +581,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @return The bytes for inputUri.
      */
     public com.google.protobuf.ByteString getInputUriBytes() {
       java.lang.Object ref = inputUri_;
@@ -587,6 +604,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @param value The inputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setInputUri(java.lang.String value) {
       if (value == null) {
@@ -606,6 +626,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputUri() {
 
@@ -622,6 +644,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @param value The bytes for inputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setInputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -643,6 +668,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -663,6 +690,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -683,6 +712,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -701,6 +733,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -716,6 +750,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

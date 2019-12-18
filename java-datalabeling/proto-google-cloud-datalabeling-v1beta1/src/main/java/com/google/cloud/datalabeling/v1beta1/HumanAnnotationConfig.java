@@ -48,6 +48,12 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HumanAnnotationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -129,9 +135,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
           case 74:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 contributorEmails_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               contributorEmails_.add(s);
               break;
@@ -157,7 +163,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         contributorEmails_ = contributorEmails_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -180,7 +186,6 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INSTRUCTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object instruction_;
   /**
@@ -191,6 +196,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string instruction = 1;</code>
+   *
+   * @return The instruction.
    */
   public java.lang.String getInstruction() {
     java.lang.Object ref = instruction_;
@@ -211,6 +218,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string instruction = 1;</code>
+   *
+   * @return The bytes for instruction.
    */
   public com.google.protobuf.ByteString getInstructionBytes() {
     java.lang.Object ref = instruction_;
@@ -236,6 +245,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string annotated_dataset_display_name = 2;</code>
+   *
+   * @return The annotatedDatasetDisplayName.
    */
   public java.lang.String getAnnotatedDatasetDisplayName() {
     java.lang.Object ref = annotatedDatasetDisplayName_;
@@ -258,6 +269,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string annotated_dataset_display_name = 2;</code>
+   *
+   * @return The bytes for annotatedDatasetDisplayName.
    */
   public com.google.protobuf.ByteString getAnnotatedDatasetDisplayNameBytes() {
     java.lang.Object ref = annotatedDatasetDisplayName_;
@@ -282,6 +295,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string annotated_dataset_description = 3;</code>
+   *
+   * @return The annotatedDatasetDescription.
    */
   public java.lang.String getAnnotatedDatasetDescription() {
     java.lang.Object ref = annotatedDatasetDescription_;
@@ -303,6 +318,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string annotated_dataset_description = 3;</code>
+   *
+   * @return The bytes for annotatedDatasetDescription.
    */
   public com.google.protobuf.ByteString getAnnotatedDatasetDescriptionBytes() {
     java.lang.Object ref = annotatedDatasetDescription_;
@@ -327,6 +344,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string label_group = 4;</code>
+   *
+   * @return The labelGroup.
    */
   public java.lang.String getLabelGroup() {
     java.lang.Object ref = labelGroup_;
@@ -348,6 +367,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string label_group = 4;</code>
+   *
+   * @return The bytes for labelGroup.
    */
   public com.google.protobuf.ByteString getLabelGroupBytes() {
     java.lang.Object ref = labelGroup_;
@@ -375,6 +396,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string language_code = 5;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -399,6 +422,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string language_code = 5;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -425,6 +450,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>int32 replica_count = 6;</code>
+   *
+   * @return The replicaCount.
    */
   public int getReplicaCount() {
     return replicaCount_;
@@ -441,6 +468,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Duration question_duration = 7;</code>
+   *
+   * @return Whether the questionDuration field is set.
    */
   public boolean hasQuestionDuration() {
     return questionDuration_ != null;
@@ -454,6 +483,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Duration question_duration = 7;</code>
+   *
+   * @return The questionDuration.
    */
   public com.google.protobuf.Duration getQuestionDuration() {
     return questionDuration_ == null
@@ -488,6 +519,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @return A list containing the contributorEmails.
    */
   public com.google.protobuf.ProtocolStringList getContributorEmailsList() {
     return contributorEmails_;
@@ -504,6 +537,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @return The count of contributorEmails.
    */
   public int getContributorEmailsCount() {
     return contributorEmails_.size();
@@ -520,6 +555,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The contributorEmails at the given index.
    */
   public java.lang.String getContributorEmails(int index) {
     return contributorEmails_.get(index);
@@ -536,6 +574,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string contributor_emails = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the contributorEmails at the given index.
    */
   public com.google.protobuf.ByteString getContributorEmailsBytes(int index) {
     return contributorEmails_.getByteString(index);
@@ -552,6 +593,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string user_email_address = 10;</code>
+   *
+   * @return The userEmailAddress.
    */
   public java.lang.String getUserEmailAddress() {
     java.lang.Object ref = userEmailAddress_;
@@ -573,6 +616,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string user_email_address = 10;</code>
+   *
+   * @return The bytes for userEmailAddress.
    */
   public com.google.protobuf.ByteString getUserEmailAddressBytes() {
     java.lang.Object ref = userEmailAddress_;
@@ -898,7 +943,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         questionDurationBuilder_ = null;
       }
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       userEmailAddress_ = "";
 
       return this;
@@ -929,7 +974,6 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig result =
           new com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.instruction_ = instruction_;
       result.annotatedDatasetDisplayName_ = annotatedDatasetDisplayName_;
       result.annotatedDatasetDescription_ = annotatedDatasetDescription_;
@@ -941,13 +985,12 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       } else {
         result.questionDuration_ = questionDurationBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         contributorEmails_ = contributorEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.contributorEmails_ = contributorEmails_;
       result.userEmailAddress_ = userEmailAddress_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1027,7 +1070,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (!other.contributorEmails_.isEmpty()) {
         if (contributorEmails_.isEmpty()) {
           contributorEmails_ = other.contributorEmails_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureContributorEmailsIsMutable();
           contributorEmails_.addAll(other.contributorEmails_);
@@ -1079,6 +1122,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instruction = 1;</code>
+     *
+     * @return The instruction.
      */
     public java.lang.String getInstruction() {
       java.lang.Object ref = instruction_;
@@ -1099,6 +1144,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instruction = 1;</code>
+     *
+     * @return The bytes for instruction.
      */
     public com.google.protobuf.ByteString getInstructionBytes() {
       java.lang.Object ref = instruction_;
@@ -1119,6 +1166,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instruction = 1;</code>
+     *
+     * @param value The instruction to set.
+     * @return This builder for chaining.
      */
     public Builder setInstruction(java.lang.String value) {
       if (value == null) {
@@ -1137,6 +1187,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instruction = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstruction() {
 
@@ -1152,6 +1204,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instruction = 1;</code>
+     *
+     * @param value The bytes for instruction to set.
+     * @return This builder for chaining.
      */
     public Builder setInstructionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1175,6 +1230,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_display_name = 2;</code>
+     *
+     * @return The annotatedDatasetDisplayName.
      */
     public java.lang.String getAnnotatedDatasetDisplayName() {
       java.lang.Object ref = annotatedDatasetDisplayName_;
@@ -1197,6 +1254,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_display_name = 2;</code>
+     *
+     * @return The bytes for annotatedDatasetDisplayName.
      */
     public com.google.protobuf.ByteString getAnnotatedDatasetDisplayNameBytes() {
       java.lang.Object ref = annotatedDatasetDisplayName_;
@@ -1219,6 +1278,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_display_name = 2;</code>
+     *
+     * @param value The annotatedDatasetDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotatedDatasetDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1239,6 +1301,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotatedDatasetDisplayName() {
 
@@ -1256,6 +1320,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_display_name = 2;</code>
+     *
+     * @param value The bytes for annotatedDatasetDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotatedDatasetDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1278,6 +1345,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_description = 3;</code>
+     *
+     * @return The annotatedDatasetDescription.
      */
     public java.lang.String getAnnotatedDatasetDescription() {
       java.lang.Object ref = annotatedDatasetDescription_;
@@ -1299,6 +1368,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_description = 3;</code>
+     *
+     * @return The bytes for annotatedDatasetDescription.
      */
     public com.google.protobuf.ByteString getAnnotatedDatasetDescriptionBytes() {
       java.lang.Object ref = annotatedDatasetDescription_;
@@ -1320,6 +1391,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_description = 3;</code>
+     *
+     * @param value The annotatedDatasetDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotatedDatasetDescription(java.lang.String value) {
       if (value == null) {
@@ -1339,6 +1413,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotatedDatasetDescription() {
 
@@ -1355,6 +1431,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string annotated_dataset_description = 3;</code>
+     *
+     * @param value The bytes for annotatedDatasetDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotatedDatasetDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1377,6 +1456,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string label_group = 4;</code>
+     *
+     * @return The labelGroup.
      */
     public java.lang.String getLabelGroup() {
       java.lang.Object ref = labelGroup_;
@@ -1398,6 +1479,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string label_group = 4;</code>
+     *
+     * @return The bytes for labelGroup.
      */
     public com.google.protobuf.ByteString getLabelGroupBytes() {
       java.lang.Object ref = labelGroup_;
@@ -1419,6 +1502,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string label_group = 4;</code>
+     *
+     * @param value The labelGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelGroup(java.lang.String value) {
       if (value == null) {
@@ -1438,6 +1524,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string label_group = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLabelGroup() {
 
@@ -1454,6 +1542,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string label_group = 4;</code>
+     *
+     * @param value The bytes for labelGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1479,6 +1570,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string language_code = 5;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1503,6 +1596,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string language_code = 5;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1527,6 +1622,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string language_code = 5;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1549,6 +1647,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string language_code = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1568,6 +1668,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string language_code = 5;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1592,6 +1695,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 replica_count = 6;</code>
+     *
+     * @return The replicaCount.
      */
     public int getReplicaCount() {
       return replicaCount_;
@@ -1607,6 +1712,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 replica_count = 6;</code>
+     *
+     * @param value The replicaCount to set.
+     * @return This builder for chaining.
      */
     public Builder setReplicaCount(int value) {
 
@@ -1625,6 +1733,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 replica_count = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReplicaCount() {
 
@@ -1648,6 +1758,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Duration question_duration = 7;</code>
+     *
+     * @return Whether the questionDuration field is set.
      */
     public boolean hasQuestionDuration() {
       return questionDurationBuilder_ != null || questionDuration_ != null;
@@ -1661,6 +1773,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Duration question_duration = 7;</code>
+     *
+     * @return The questionDuration.
      */
     public com.google.protobuf.Duration getQuestionDuration() {
       if (questionDurationBuilder_ == null) {
@@ -1827,9 +1941,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureContributorEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         contributorEmails_ = new com.google.protobuf.LazyStringArrayList(contributorEmails_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1844,6 +1958,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @return A list containing the contributorEmails.
      */
     public com.google.protobuf.ProtocolStringList getContributorEmailsList() {
       return contributorEmails_.getUnmodifiableView();
@@ -1860,6 +1976,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @return The count of contributorEmails.
      */
     public int getContributorEmailsCount() {
       return contributorEmails_.size();
@@ -1876,6 +1994,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The contributorEmails at the given index.
      */
     public java.lang.String getContributorEmails(int index) {
       return contributorEmails_.get(index);
@@ -1892,6 +2013,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the contributorEmails at the given index.
      */
     public com.google.protobuf.ByteString getContributorEmailsBytes(int index) {
       return contributorEmails_.getByteString(index);
@@ -1908,6 +2032,10 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The contributorEmails to set.
+     * @return This builder for chaining.
      */
     public Builder setContributorEmails(int index, java.lang.String value) {
       if (value == null) {
@@ -1930,6 +2058,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @param value The contributorEmails to add.
+     * @return This builder for chaining.
      */
     public Builder addContributorEmails(java.lang.String value) {
       if (value == null) {
@@ -1952,6 +2083,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @param values The contributorEmails to add.
+     * @return This builder for chaining.
      */
     public Builder addAllContributorEmails(java.lang.Iterable<java.lang.String> values) {
       ensureContributorEmailsIsMutable();
@@ -1971,10 +2105,12 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContributorEmails() {
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1990,6 +2126,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string contributor_emails = 9;</code>
+     *
+     * @param value The bytes of the contributorEmails to add.
+     * @return This builder for chaining.
      */
     public Builder addContributorEmailsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2012,6 +2151,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string user_email_address = 10;</code>
+     *
+     * @return The userEmailAddress.
      */
     public java.lang.String getUserEmailAddress() {
       java.lang.Object ref = userEmailAddress_;
@@ -2033,6 +2174,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string user_email_address = 10;</code>
+     *
+     * @return The bytes for userEmailAddress.
      */
     public com.google.protobuf.ByteString getUserEmailAddressBytes() {
       java.lang.Object ref = userEmailAddress_;
@@ -2054,6 +2197,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string user_email_address = 10;</code>
+     *
+     * @param value The userEmailAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUserEmailAddress(java.lang.String value) {
       if (value == null) {
@@ -2073,6 +2219,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string user_email_address = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserEmailAddress() {
 
@@ -2089,6 +2237,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string user_email_address = 10;</code>
+     *
+     * @param value The bytes for userEmailAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUserEmailAddressBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

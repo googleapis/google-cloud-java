@@ -32,6 +32,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   java.lang.String getInputUri();
   /**
@@ -43,6 +45,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   com.google.protobuf.ByteString getInputUriBytes();
 
@@ -54,6 +58,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -64,6 +70,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 }

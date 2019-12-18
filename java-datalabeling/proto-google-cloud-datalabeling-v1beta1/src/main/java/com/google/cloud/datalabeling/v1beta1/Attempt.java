@@ -42,6 +42,12 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Attempt();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -82,9 +88,9 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               partialFailures_.add(
                   input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
@@ -104,7 +110,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
       }
       this.unknownFields = unknownFields.build();
@@ -127,14 +133,21 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.Attempt.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ATTEMPT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp attemptTime_;
-  /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+  /**
+   * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
+   *
+   * @return Whether the attemptTime field is set.
+   */
   public boolean hasAttemptTime() {
     return attemptTime_ != null;
   }
-  /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+  /**
+   * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
+   *
+   * @return The attemptTime.
+   */
   public com.google.protobuf.Timestamp getAttemptTime() {
     return attemptTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : attemptTime_;
   }
@@ -397,7 +410,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         partialFailuresBuilder_.clear();
       }
@@ -429,22 +442,20 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.Attempt result =
           new com.google.cloud.datalabeling.v1beta1.Attempt(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (attemptTimeBuilder_ == null) {
         result.attemptTime_ = attemptTime_;
       } else {
         result.attemptTime_ = attemptTimeBuilder_.build();
       }
       if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.partialFailures_ = partialFailures_;
       } else {
         result.partialFailures_ = partialFailuresBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -501,7 +512,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -514,7 +525,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -561,11 +572,19 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         attemptTimeBuilder_;
-    /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+    /**
+     * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
+     *
+     * @return Whether the attemptTime field is set.
+     */
     public boolean hasAttemptTime() {
       return attemptTimeBuilder_ != null || attemptTime_ != null;
     }
-    /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+    /**
+     * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
+     *
+     * @return The attemptTime.
+     */
     public com.google.protobuf.Timestamp getAttemptTime() {
       if (attemptTimeBuilder_ == null) {
         return attemptTime_ == null
@@ -668,9 +687,9 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -793,7 +812,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -857,7 +876,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;

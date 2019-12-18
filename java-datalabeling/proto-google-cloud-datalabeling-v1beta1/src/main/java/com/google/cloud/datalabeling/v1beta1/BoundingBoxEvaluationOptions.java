@@ -40,6 +40,12 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
   private BoundingBoxEvaluationOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BoundingBoxEvaluationOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>float iou_threshold = 1;</code>
+   *
+   * @return The iouThreshold.
    */
   public float getIouThreshold() {
     return iouThreshold_;
@@ -453,6 +460,8 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>float iou_threshold = 1;</code>
+     *
+     * @return The iouThreshold.
      */
     public float getIouThreshold() {
       return iouThreshold_;
@@ -465,6 +474,9 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>float iou_threshold = 1;</code>
+     *
+     * @param value The iouThreshold to set.
+     * @return This builder for chaining.
      */
     public Builder setIouThreshold(float value) {
 
@@ -480,6 +492,8 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>float iou_threshold = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIouThreshold() {
 

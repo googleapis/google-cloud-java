@@ -31,6 +31,8 @@ public interface VideoThumbnailOrBuilder
    * </pre>
    *
    * <code>bytes thumbnail = 1;</code>
+   *
+   * @return The thumbnail.
    */
   com.google.protobuf.ByteString getThumbnail();
 
@@ -43,6 +45,8 @@ public interface VideoThumbnailOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -54,6 +58,8 @@ public interface VideoThumbnailOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**

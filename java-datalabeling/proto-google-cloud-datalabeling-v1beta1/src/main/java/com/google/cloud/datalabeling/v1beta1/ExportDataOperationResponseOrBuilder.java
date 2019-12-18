@@ -32,6 +32,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The dataset.
    */
   java.lang.String getDataset();
   /**
@@ -43,6 +45,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>string dataset = 1;</code>
+   *
+   * @return The bytes for dataset.
    */
   com.google.protobuf.ByteString getDatasetBytes();
 
@@ -54,6 +58,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>int32 total_count = 2;</code>
+   *
+   * @return The totalCount.
    */
   int getTotalCount();
 
@@ -65,6 +71,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>int32 export_count = 3;</code>
+   *
+   * @return The exportCount.
    */
   int getExportCount();
 
@@ -76,6 +84,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 4;</code>
+   *
+   * @return Whether the labelStats field is set.
    */
   boolean hasLabelStats();
   /**
@@ -86,6 +96,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 4;</code>
+   *
+   * @return The labelStats.
    */
   com.google.cloud.datalabeling.v1beta1.LabelStats getLabelStats();
   /**
@@ -107,6 +119,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 5;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -117,6 +131,8 @@ public interface ExportDataOperationResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 5;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig();
   /**

@@ -32,6 +32,12 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   private EvaluationJobConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EvaluationJobConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -221,11 +227,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bigqueryImportKeys_ =
                     com.google.protobuf.MapField.newMapField(
                         BigqueryImportKeysDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                   bigqueryImportKeys__ =
@@ -332,11 +338,13 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig.Builder.class);
   }
 
-  private int bitField0_;
   private int humanAnnotationRequestConfigCase_ = 0;
   private java.lang.Object humanAnnotationRequestConfig_;
 
-  public enum HumanAnnotationRequestConfigCase implements com.google.protobuf.Internal.EnumLite {
+  public enum HumanAnnotationRequestConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_CLASSIFICATION_CONFIG(4),
     BOUNDING_POLY_CONFIG(5),
     VIDEO_CLASSIFICATION_CONFIG(6),
@@ -349,7 +357,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     private HumanAnnotationRequestConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static HumanAnnotationRequestConfigCase valueOf(int value) {
       return forNumber(value);
@@ -390,6 +402,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return Whether the imageClassificationConfig field is set.
    */
   public boolean hasImageClassificationConfig() {
     return humanAnnotationRequestConfigCase_ == 4;
@@ -398,6 +412,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return The imageClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
       getImageClassificationConfig() {
@@ -424,12 +440,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   public static final int BOUNDING_POLY_CONFIG_FIELD_NUMBER = 5;
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return Whether the boundingPolyConfig field is set.
    */
   public boolean hasBoundingPolyConfig() {
     return humanAnnotationRequestConfigCase_ == 5;
   }
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return The boundingPolyConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
     if (humanAnnotationRequestConfigCase_ == 5) {
@@ -455,6 +475,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
    * </code>
+   *
+   * @return Whether the videoClassificationConfig field is set.
    */
   public boolean hasVideoClassificationConfig() {
     return humanAnnotationRequestConfigCase_ == 6;
@@ -463,6 +485,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
    * </code>
+   *
+   * @return The videoClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
       getVideoClassificationConfig() {
@@ -490,6 +514,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
    * </code>
+   *
+   * @return Whether the objectDetectionConfig field is set.
    */
   public boolean hasObjectDetectionConfig() {
     return humanAnnotationRequestConfigCase_ == 7;
@@ -497,6 +523,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
    * </code>
+   *
+   * @return The objectDetectionConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
     if (humanAnnotationRequestConfigCase_ == 7) {
@@ -523,6 +551,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
+   *
+   * @return Whether the textClassificationConfig field is set.
    */
   public boolean hasTextClassificationConfig() {
     return humanAnnotationRequestConfigCase_ == 8;
@@ -531,6 +561,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
+   *
+   * @return The textClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
       getTextClassificationConfig() {
@@ -558,6 +590,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   public boolean hasObjectTrackingConfig() {
     return humanAnnotationRequestConfigCase_ == 12;
@@ -565,6 +599,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
     if (humanAnnotationRequestConfigCase_ == 12) {
@@ -597,6 +633,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   public boolean hasInputConfig() {
     return inputConfig_ != null;
@@ -610,6 +648,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
@@ -640,6 +680,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
+   *
+   * @return Whether the evaluationConfig field is set.
    */
   public boolean hasEvaluationConfig() {
     return evaluationConfig_ != null;
@@ -652,6 +694,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
+   *
+   * @return The evaluationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationConfig getEvaluationConfig() {
     return evaluationConfig_ == null
@@ -677,6 +721,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   /**
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
+   *
+   * @return Whether the humanAnnotationConfig field is set.
    */
   public boolean hasHumanAnnotationConfig() {
     return humanAnnotationConfig_ != null;
@@ -684,6 +730,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   /**
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
+   *
+   * @return The humanAnnotationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
     return humanAnnotationConfig_ == null
@@ -831,6 +879,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>int32 example_count = 10;</code>
+   *
+   * @return The exampleCount.
    */
   public int getExampleCount() {
     return exampleCount_;
@@ -847,6 +897,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>double example_sample_percentage = 11;</code>
+   *
+   * @return The exampleSamplePercentage.
    */
   public double getExampleSamplePercentage() {
     return exampleSamplePercentage_;
@@ -865,6 +917,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
    * </code>
+   *
+   * @return Whether the evaluationJobAlertConfig field is set.
    */
   public boolean hasEvaluationJobAlertConfig() {
     return evaluationJobAlertConfig_ != null;
@@ -880,6 +934,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
    * </code>
+   *
+   * @return The evaluationJobAlertConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig
       getEvaluationJobAlertConfig() {
@@ -1405,7 +1461,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig result =
           new com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (humanAnnotationRequestConfigCase_ == 4) {
         if (imageClassificationConfigBuilder_ == null) {
           result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
@@ -1472,7 +1527,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       } else {
         result.evaluationJobAlertConfig_ = evaluationJobAlertConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.humanAnnotationRequestConfigCase_ = humanAnnotationRequestConfigCase_;
       onBuilt();
       return result;
@@ -1634,6 +1688,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
+     *
+     * @return Whether the imageClassificationConfig field is set.
      */
     public boolean hasImageClassificationConfig() {
       return humanAnnotationRequestConfigCase_ == 4;
@@ -1642,6 +1698,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
+     *
+     * @return The imageClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
         getImageClassificationConfig() {
@@ -1810,12 +1868,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         boundingPolyConfigBuilder_;
     /**
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+     *
+     * @return Whether the boundingPolyConfig field is set.
      */
     public boolean hasBoundingPolyConfig() {
       return humanAnnotationRequestConfigCase_ == 5;
     }
     /**
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+     *
+     * @return The boundingPolyConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
       if (boundingPolyConfigBuilder_ == null) {
@@ -1970,6 +2032,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
      * </code>
+     *
+     * @return Whether the videoClassificationConfig field is set.
      */
     public boolean hasVideoClassificationConfig() {
       return humanAnnotationRequestConfigCase_ == 6;
@@ -1978,6 +2042,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
      * </code>
+     *
+     * @return The videoClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
         getVideoClassificationConfig() {
@@ -2147,6 +2213,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
      * </code>
+     *
+     * @return Whether the objectDetectionConfig field is set.
      */
     public boolean hasObjectDetectionConfig() {
       return humanAnnotationRequestConfigCase_ == 7;
@@ -2154,6 +2222,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
      * </code>
+     *
+     * @return The objectDetectionConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
       if (objectDetectionConfigBuilder_ == null) {
@@ -2316,6 +2386,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
+     *
+     * @return Whether the textClassificationConfig field is set.
      */
     public boolean hasTextClassificationConfig() {
       return humanAnnotationRequestConfigCase_ == 8;
@@ -2324,6 +2396,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
+     *
+     * @return The textClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
         getTextClassificationConfig() {
@@ -2493,6 +2567,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
      * </code>
+     *
+     * @return Whether the objectTrackingConfig field is set.
      */
     public boolean hasObjectTrackingConfig() {
       return humanAnnotationRequestConfigCase_ == 12;
@@ -2500,6 +2576,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /**
      * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
      * </code>
+     *
+     * @return The objectTrackingConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
       if (objectTrackingConfigBuilder_ == null) {
@@ -2668,6 +2746,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
+     *
+     * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
       return inputConfigBuilder_ != null || inputConfig_ != null;
@@ -2681,6 +2761,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
+     *
+     * @return The inputConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -2858,6 +2940,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
+     *
+     * @return Whether the evaluationConfig field is set.
      */
     public boolean hasEvaluationConfig() {
       return evaluationConfigBuilder_ != null || evaluationConfig_ != null;
@@ -2870,6 +2954,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
+     *
+     * @return The evaluationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationConfig getEvaluationConfig() {
       if (evaluationConfigBuilder_ == null) {
@@ -3039,6 +3125,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /**
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
+     *
+     * @return Whether the humanAnnotationConfig field is set.
      */
     public boolean hasHumanAnnotationConfig() {
       return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
@@ -3046,6 +3134,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /**
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
+     *
+     * @return The humanAnnotationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
       if (humanAnnotationConfigBuilder_ == null) {
@@ -3382,6 +3472,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int32 example_count = 10;</code>
+     *
+     * @return The exampleCount.
      */
     public int getExampleCount() {
       return exampleCount_;
@@ -3394,6 +3486,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int32 example_count = 10;</code>
+     *
+     * @param value The exampleCount to set.
+     * @return This builder for chaining.
      */
     public Builder setExampleCount(int value) {
 
@@ -3409,6 +3504,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int32 example_count = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExampleCount() {
 
@@ -3427,6 +3524,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>double example_sample_percentage = 11;</code>
+     *
+     * @return The exampleSamplePercentage.
      */
     public double getExampleSamplePercentage() {
       return exampleSamplePercentage_;
@@ -3440,6 +3539,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>double example_sample_percentage = 11;</code>
+     *
+     * @param value The exampleSamplePercentage to set.
+     * @return This builder for chaining.
      */
     public Builder setExampleSamplePercentage(double value) {
 
@@ -3456,6 +3558,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>double example_sample_percentage = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExampleSamplePercentage() {
 
@@ -3482,6 +3586,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
      * </code>
+     *
+     * @return Whether the evaluationJobAlertConfig field is set.
      */
     public boolean hasEvaluationJobAlertConfig() {
       return evaluationJobAlertConfigBuilder_ != null || evaluationJobAlertConfig_ != null;
@@ -3497,6 +3603,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
      * </code>
+     *
+     * @return The evaluationJobAlertConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig
         getEvaluationJobAlertConfig() {

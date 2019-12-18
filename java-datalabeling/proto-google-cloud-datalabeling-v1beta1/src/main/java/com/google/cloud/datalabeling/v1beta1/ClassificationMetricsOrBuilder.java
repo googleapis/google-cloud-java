@@ -31,6 +31,8 @@ public interface ClassificationMetricsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return Whether the prCurve field is set.
    */
   boolean hasPrCurve();
   /**
@@ -41,6 +43,8 @@ public interface ClassificationMetricsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
+   *
+   * @return The prCurve.
    */
   com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve();
   /**
@@ -54,9 +58,17 @@ public interface ClassificationMetricsOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder getPrCurveOrBuilder();
 
-  /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+   *
+   * @return Whether the confusionMatrix field is set.
+   */
   boolean hasConfusionMatrix();
-  /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+  /**
+   * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+   *
+   * @return The confusionMatrix.
+   */
   com.google.cloud.datalabeling.v1beta1.ConfusionMatrix getConfusionMatrix();
   /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
   com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder getConfusionMatrixOrBuilder();

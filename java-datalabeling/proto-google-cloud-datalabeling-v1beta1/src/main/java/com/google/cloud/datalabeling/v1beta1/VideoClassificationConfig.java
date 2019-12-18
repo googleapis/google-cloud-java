@@ -46,6 +46,12 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoClassificationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -141,6 +147,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The annotationSpecSet.
      */
     java.lang.String getAnnotationSpecSet();
     /**
@@ -151,6 +159,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     com.google.protobuf.ByteString getAnnotationSpecSetBytes();
 
@@ -163,6 +173,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool allow_multi_label = 2;</code>
+     *
+     * @return The allowMultiLabel.
      */
     boolean getAllowMultiLabel();
   }
@@ -191,6 +203,12 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AnnotationSpecSetConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -203,7 +221,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -272,6 +289,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The annotationSpecSet.
      */
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
@@ -292,6 +311,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string annotation_spec_set = 1;</code>
+     *
+     * @return The bytes for annotationSpecSet.
      */
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
@@ -316,6 +337,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool allow_multi_label = 2;</code>
+     *
+     * @return The allowMultiLabel.
      */
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
@@ -717,6 +740,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>string annotation_spec_set = 1;</code>
+       *
+       * @return The annotationSpecSet.
        */
       public java.lang.String getAnnotationSpecSet() {
         java.lang.Object ref = annotationSpecSet_;
@@ -737,6 +762,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>string annotation_spec_set = 1;</code>
+       *
+       * @return The bytes for annotationSpecSet.
        */
       public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
         java.lang.Object ref = annotationSpecSet_;
@@ -757,6 +784,9 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>string annotation_spec_set = 1;</code>
+       *
+       * @param value The annotationSpecSet to set.
+       * @return This builder for chaining.
        */
       public Builder setAnnotationSpecSet(java.lang.String value) {
         if (value == null) {
@@ -775,6 +805,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>string annotation_spec_set = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAnnotationSpecSet() {
 
@@ -790,6 +822,9 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>string annotation_spec_set = 1;</code>
+       *
+       * @param value The bytes for annotationSpecSet to set.
+       * @return This builder for chaining.
        */
       public Builder setAnnotationSpecSetBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -812,6 +847,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>bool allow_multi_label = 2;</code>
+       *
+       * @return The allowMultiLabel.
        */
       public boolean getAllowMultiLabel() {
         return allowMultiLabel_;
@@ -825,6 +862,9 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>bool allow_multi_label = 2;</code>
+       *
+       * @param value The allowMultiLabel to set.
+       * @return This builder for chaining.
        */
       public Builder setAllowMultiLabel(boolean value) {
 
@@ -841,6 +881,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        * </pre>
        *
        * <code>bool allow_multi_label = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAllowMultiLabel() {
 
@@ -908,7 +950,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
   }
 
-  private int bitField0_;
   public static final int ANNOTATION_SPEC_SET_CONFIGS_FIELD_NUMBER = 1;
   private java.util.List<
           com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig>
@@ -1028,6 +1069,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>bool apply_shot_detection = 2;</code>
+   *
+   * @return The applyShotDetection.
    */
   public boolean getApplyShotDetection() {
     return applyShotDetection_;
@@ -1295,7 +1338,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig result =
           new com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (annotationSpecSetConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           annotationSpecSetConfigs_ =
@@ -1307,7 +1349,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         result.annotationSpecSetConfigs_ = annotationSpecSetConfigsBuilder_.build();
       }
       result.applyShotDetection_ = applyShotDetection_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1963,6 +2004,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool apply_shot_detection = 2;</code>
+     *
+     * @return The applyShotDetection.
      */
     public boolean getApplyShotDetection() {
       return applyShotDetection_;
@@ -1975,6 +2018,9 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool apply_shot_detection = 2;</code>
+     *
+     * @param value The applyShotDetection to set.
+     * @return This builder for chaining.
      */
     public Builder setApplyShotDetection(boolean value) {
 
@@ -1990,6 +2036,8 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bool apply_shot_detection = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearApplyShotDetection() {
 

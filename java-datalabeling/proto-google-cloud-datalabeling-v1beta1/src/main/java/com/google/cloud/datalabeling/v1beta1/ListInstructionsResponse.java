@@ -43,6 +43,12 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListInstructionsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,7 +129,6 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
             com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INSTRUCTIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.datalabeling.v1beta1.Instruction> instructions_;
   /**
@@ -199,6 +204,8 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -219,6 +226,8 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -487,7 +496,6 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
       com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse result =
           new com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (instructionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instructions_ = java.util.Collections.unmodifiableList(instructions_);
@@ -498,7 +506,6 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
         result.instructions_ = instructionsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -981,6 +988,8 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1001,6 +1010,8 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1021,6 +1032,9 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1039,6 +1053,8 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1054,6 +1070,9 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

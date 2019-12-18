@@ -43,6 +43,12 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelVideoRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -320,12 +325,20 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Feature valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Feature forNumber(int value) {
       switch (value) {
         case 0:
@@ -392,7 +405,10 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   private int requestConfigCase_ = 0;
   private java.lang.Object requestConfig_;
 
-  public enum RequestConfigCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RequestConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VIDEO_CLASSIFICATION_CONFIG(4),
     OBJECT_DETECTION_CONFIG(5),
     OBJECT_TRACKING_CONFIG(6),
@@ -403,7 +419,11 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     private RequestConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RequestConfigCase valueOf(int value) {
       return forNumber(value);
@@ -448,6 +468,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;
    * </code>
+   *
+   * @return Whether the videoClassificationConfig field is set.
    */
   public boolean hasVideoClassificationConfig() {
     return requestConfigCase_ == 4;
@@ -464,6 +486,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;
    * </code>
+   *
+   * @return The videoClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
       getVideoClassificationConfig() {
@@ -505,6 +529,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;
    * </code>
+   *
+   * @return Whether the objectDetectionConfig field is set.
    */
   public boolean hasObjectDetectionConfig() {
     return requestConfigCase_ == 5;
@@ -520,6 +546,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;
    * </code>
+   *
+   * @return The objectDetectionConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
     if (requestConfigCase_ == 5) {
@@ -559,6 +587,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   public boolean hasObjectTrackingConfig() {
     return requestConfigCase_ == 6;
@@ -574,6 +604,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
     if (requestConfigCase_ == 6) {
@@ -612,6 +644,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
+   *
+   * @return Whether the eventConfig field is set.
    */
   public boolean hasEventConfig() {
     return requestConfigCase_ == 7;
@@ -626,6 +660,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
+   *
+   * @return The eventConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig() {
     if (requestConfigCase_ == 7) {
@@ -662,6 +698,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -683,6 +721,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -706,6 +746,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
@@ -718,6 +760,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return The basicConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
@@ -748,6 +792,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   public int getFeatureValue() {
     return feature_;
@@ -760,6 +806,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+   *
+   * @return The feature.
    */
   public com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature getFeature() {
     @SuppressWarnings("deprecation")
@@ -1297,6 +1345,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;
      * </code>
+     *
+     * @return Whether the videoClassificationConfig field is set.
      */
     public boolean hasVideoClassificationConfig() {
       return requestConfigCase_ == 4;
@@ -1313,6 +1363,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;
      * </code>
+     *
+     * @return The videoClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
         getVideoClassificationConfig() {
@@ -1543,6 +1595,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;
      * </code>
+     *
+     * @return Whether the objectDetectionConfig field is set.
      */
     public boolean hasObjectDetectionConfig() {
       return requestConfigCase_ == 5;
@@ -1558,6 +1612,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;
      * </code>
+     *
+     * @return The objectDetectionConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
       if (objectDetectionConfigBuilder_ == null) {
@@ -1779,6 +1835,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;
      * </code>
+     *
+     * @return Whether the objectTrackingConfig field is set.
      */
     public boolean hasObjectTrackingConfig() {
       return requestConfigCase_ == 6;
@@ -1794,6 +1852,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;
      * </code>
+     *
+     * @return The objectTrackingConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
       if (objectTrackingConfigBuilder_ == null) {
@@ -2014,6 +2074,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
+     *
+     * @return Whether the eventConfig field is set.
      */
     public boolean hasEventConfig() {
       return requestConfigCase_ == 7;
@@ -2028,6 +2090,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
+     *
+     * @return The eventConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig() {
       if (eventConfigBuilder_ == null) {
@@ -2230,6 +2294,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -2251,6 +2317,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -2272,6 +2340,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -2291,6 +2362,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -2307,6 +2380,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2333,6 +2409,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     *
+     * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
       return basicConfigBuilder_ != null || basicConfig_ != null;
@@ -2345,6 +2423,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     *
+     * @return The basicConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
       if (basicConfigBuilder_ == null) {
@@ -2514,6 +2594,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     *
+     * @return The enum numeric value on the wire for feature.
      */
     public int getFeatureValue() {
       return feature_;
@@ -2526,6 +2608,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
       feature_ = value;
@@ -2540,6 +2625,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     *
+     * @return The feature.
      */
     public com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature getFeature() {
       @SuppressWarnings("deprecation")
@@ -2557,6 +2644,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     *
+     * @param value The feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeature(
         com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature value) {
@@ -2576,6 +2666,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFeature() {
 

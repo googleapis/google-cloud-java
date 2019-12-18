@@ -43,6 +43,12 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelTextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -243,12 +248,20 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Feature valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Feature forNumber(int value) {
       switch (value) {
         case 0:
@@ -311,7 +324,10 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   private int requestConfigCase_ = 0;
   private java.lang.Object requestConfig_;
 
-  public enum RequestConfigCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RequestConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT_CLASSIFICATION_CONFIG(4),
     TEXT_ENTITY_EXTRACTION_CONFIG(5),
     REQUESTCONFIG_NOT_SET(0);
@@ -320,7 +336,11 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     private RequestConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RequestConfigCase valueOf(int value) {
       return forNumber(value);
@@ -361,6 +381,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
    * </code>
+   *
+   * @return Whether the textClassificationConfig field is set.
    */
   public boolean hasTextClassificationConfig() {
     return requestConfigCase_ == 4;
@@ -377,6 +399,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
    * </code>
+   *
+   * @return The textClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
       getTextClassificationConfig() {
@@ -419,6 +443,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
    * </code>
+   *
+   * @return Whether the textEntityExtractionConfig field is set.
    */
   public boolean hasTextEntityExtractionConfig() {
     return requestConfigCase_ == 5;
@@ -435,6 +461,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
    * </code>
+   *
+   * @return The textEntityExtractionConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig
       getTextEntityExtractionConfig() {
@@ -475,6 +503,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -496,6 +526,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -519,6 +551,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
@@ -531,6 +565,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return The basicConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
@@ -561,6 +597,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   public int getFeatureValue() {
     return feature_;
@@ -573,6 +611,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+   *
+   * @return The feature.
    */
   public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature() {
     @SuppressWarnings("deprecation")
@@ -1056,6 +1096,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
      * </code>
+     *
+     * @return Whether the textClassificationConfig field is set.
      */
     public boolean hasTextClassificationConfig() {
       return requestConfigCase_ == 4;
@@ -1072,6 +1114,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
      * </code>
+     *
+     * @return The textClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
         getTextClassificationConfig() {
@@ -1303,6 +1347,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
      * </code>
+     *
+     * @return Whether the textEntityExtractionConfig field is set.
      */
     public boolean hasTextEntityExtractionConfig() {
       return requestConfigCase_ == 5;
@@ -1319,6 +1365,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
      * </code>
+     *
+     * @return The textEntityExtractionConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig
         getTextEntityExtractionConfig() {
@@ -1546,6 +1594,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1567,6 +1617,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1588,6 +1640,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1607,6 +1662,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1623,6 +1680,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1649,6 +1709,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     *
+     * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
       return basicConfigBuilder_ != null || basicConfig_ != null;
@@ -1661,6 +1723,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     *
+     * @return The basicConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
       if (basicConfigBuilder_ == null) {
@@ -1830,6 +1894,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+     *
+     * @return The enum numeric value on the wire for feature.
      */
     public int getFeatureValue() {
       return feature_;
@@ -1842,6 +1908,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
       feature_ = value;
@@ -1856,6 +1925,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+     *
+     * @return The feature.
      */
     public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature() {
       @SuppressWarnings("deprecation")
@@ -1873,6 +1944,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+     *
+     * @param value The feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeature(
         com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature value) {
@@ -1892,6 +1966,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature feature = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFeature() {
 

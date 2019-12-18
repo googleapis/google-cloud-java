@@ -40,6 +40,12 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   private AnnotationValue() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotationValue();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -298,7 +303,10 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   private int valueTypeCase_ = 0;
   private java.lang.Object valueType_;
 
-  public enum ValueTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ValueTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_CLASSIFICATION_ANNOTATION(1),
     IMAGE_BOUNDING_POLY_ANNOTATION(2),
     IMAGE_POLYLINE_ANNOTATION(8),
@@ -314,7 +322,11 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     private ValueTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ValueTypeCase valueOf(int value) {
       return forNumber(value);
@@ -367,6 +379,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;
    * </code>
+   *
+   * @return Whether the imageClassificationAnnotation field is set.
    */
   public boolean hasImageClassificationAnnotation() {
     return valueTypeCase_ == 1;
@@ -381,6 +395,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;
    * </code>
+   *
+   * @return The imageClassificationAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation
       getImageClassificationAnnotation() {
@@ -420,6 +436,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;
    * </code>
+   *
+   * @return Whether the imageBoundingPolyAnnotation field is set.
    */
   public boolean hasImageBoundingPolyAnnotation() {
     return valueTypeCase_ == 2;
@@ -435,6 +453,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;
    * </code>
+   *
+   * @return The imageBoundingPolyAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation
       getImageBoundingPolyAnnotation() {
@@ -476,6 +496,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;
    * </code>
+   *
+   * @return Whether the imagePolylineAnnotation field is set.
    */
   public boolean hasImagePolylineAnnotation() {
     return valueTypeCase_ == 8;
@@ -492,6 +514,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;
    * </code>
+   *
+   * @return The imagePolylineAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation
       getImagePolylineAnnotation() {
@@ -532,6 +556,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;
    * </code>
+   *
+   * @return Whether the imageSegmentationAnnotation field is set.
    */
   public boolean hasImageSegmentationAnnotation() {
     return valueTypeCase_ == 9;
@@ -546,6 +572,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;
    * </code>
+   *
+   * @return The imageSegmentationAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation
       getImageSegmentationAnnotation() {
@@ -584,6 +612,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;
    * </code>
+   *
+   * @return Whether the textClassificationAnnotation field is set.
    */
   public boolean hasTextClassificationAnnotation() {
     return valueTypeCase_ == 3;
@@ -598,6 +628,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;
    * </code>
+   *
+   * @return The textClassificationAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation
       getTextClassificationAnnotation() {
@@ -636,6 +668,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
    * </code>
+   *
+   * @return Whether the textEntityExtractionAnnotation field is set.
    */
   public boolean hasTextEntityExtractionAnnotation() {
     return valueTypeCase_ == 10;
@@ -650,6 +684,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
    * </code>
+   *
+   * @return The textEntityExtractionAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
       getTextEntityExtractionAnnotation() {
@@ -690,6 +726,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;
    * </code>
+   *
+   * @return Whether the videoClassificationAnnotation field is set.
    */
   public boolean hasVideoClassificationAnnotation() {
     return valueTypeCase_ == 4;
@@ -704,6 +742,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;
    * </code>
+   *
+   * @return The videoClassificationAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation
       getVideoClassificationAnnotation() {
@@ -742,6 +782,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;
    * </code>
+   *
+   * @return Whether the videoObjectTrackingAnnotation field is set.
    */
   public boolean hasVideoObjectTrackingAnnotation() {
     return valueTypeCase_ == 5;
@@ -756,6 +798,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;
    * </code>
+   *
+   * @return The videoObjectTrackingAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation
       getVideoObjectTrackingAnnotation() {
@@ -793,6 +837,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;
    * </code>
+   *
+   * @return Whether the videoEventAnnotation field is set.
    */
   public boolean hasVideoEventAnnotation() {
     return valueTypeCase_ == 6;
@@ -806,6 +852,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;
    * </code>
+   *
+   * @return The videoEventAnnotation.
    */
   public com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation getVideoEventAnnotation() {
     if (valueTypeCase_ == 6) {
@@ -1441,6 +1489,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;
      * </code>
+     *
+     * @return Whether the imageClassificationAnnotation field is set.
      */
     public boolean hasImageClassificationAnnotation() {
       return valueTypeCase_ == 1;
@@ -1455,6 +1505,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;
      * </code>
+     *
+     * @return The imageClassificationAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation
         getImageClassificationAnnotation() {
@@ -1676,6 +1728,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;
      * </code>
+     *
+     * @return Whether the imageBoundingPolyAnnotation field is set.
      */
     public boolean hasImageBoundingPolyAnnotation() {
       return valueTypeCase_ == 2;
@@ -1691,6 +1745,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;
      * </code>
+     *
+     * @return The imageBoundingPolyAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation
         getImageBoundingPolyAnnotation() {
@@ -1920,6 +1976,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;
      * </code>
+     *
+     * @return Whether the imagePolylineAnnotation field is set.
      */
     public boolean hasImagePolylineAnnotation() {
       return valueTypeCase_ == 8;
@@ -1937,6 +1995,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;
      * </code>
+     *
+     * @return The imagePolylineAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation
         getImagePolylineAnnotation() {
@@ -2172,6 +2232,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;
      * </code>
+     *
+     * @return Whether the imageSegmentationAnnotation field is set.
      */
     public boolean hasImageSegmentationAnnotation() {
       return valueTypeCase_ == 9;
@@ -2186,6 +2248,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;
      * </code>
+     *
+     * @return The imageSegmentationAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation
         getImageSegmentationAnnotation() {
@@ -2405,6 +2469,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;
      * </code>
+     *
+     * @return Whether the textClassificationAnnotation field is set.
      */
     public boolean hasTextClassificationAnnotation() {
       return valueTypeCase_ == 3;
@@ -2419,6 +2485,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;
      * </code>
+     *
+     * @return The textClassificationAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation
         getTextClassificationAnnotation() {
@@ -2639,6 +2707,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
      * </code>
+     *
+     * @return Whether the textEntityExtractionAnnotation field is set.
      */
     public boolean hasTextEntityExtractionAnnotation() {
       return valueTypeCase_ == 10;
@@ -2653,6 +2723,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;
      * </code>
+     *
+     * @return The textEntityExtractionAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
         getTextEntityExtractionAnnotation() {
@@ -2873,6 +2945,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;
      * </code>
+     *
+     * @return Whether the videoClassificationAnnotation field is set.
      */
     public boolean hasVideoClassificationAnnotation() {
       return valueTypeCase_ == 4;
@@ -2887,6 +2961,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;
      * </code>
+     *
+     * @return The videoClassificationAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation
         getVideoClassificationAnnotation() {
@@ -3107,6 +3183,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;
      * </code>
+     *
+     * @return Whether the videoObjectTrackingAnnotation field is set.
      */
     public boolean hasVideoObjectTrackingAnnotation() {
       return valueTypeCase_ == 5;
@@ -3121,6 +3199,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;
      * </code>
+     *
+     * @return The videoObjectTrackingAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation
         getVideoObjectTrackingAnnotation() {
@@ -3340,6 +3420,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;
      * </code>
+     *
+     * @return Whether the videoEventAnnotation field is set.
      */
     public boolean hasVideoEventAnnotation() {
       return valueTypeCase_ == 6;
@@ -3353,6 +3435,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;
      * </code>
+     *
+     * @return The videoEventAnnotation.
      */
     public com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation getVideoEventAnnotation() {
       if (videoEventAnnotationBuilder_ == null) {

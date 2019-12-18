@@ -43,6 +43,12 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelImageRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -368,12 +373,20 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Feature valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Feature forNumber(int value) {
       switch (value) {
         case 0:
@@ -444,7 +457,10 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
   private int requestConfigCase_ = 0;
   private java.lang.Object requestConfig_;
 
-  public enum RequestConfigCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RequestConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_CLASSIFICATION_CONFIG(4),
     BOUNDING_POLY_CONFIG(5),
     POLYLINE_CONFIG(6),
@@ -455,7 +471,11 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
     private RequestConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RequestConfigCase valueOf(int value) {
       return forNumber(value);
@@ -500,6 +520,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return Whether the imageClassificationConfig field is set.
    */
   public boolean hasImageClassificationConfig() {
     return requestConfigCase_ == 4;
@@ -516,6 +538,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
+   *
+   * @return The imageClassificationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
       getImageClassificationConfig() {
@@ -556,6 +580,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return Whether the boundingPolyConfig field is set.
    */
   public boolean hasBoundingPolyConfig() {
     return requestConfigCase_ == 5;
@@ -570,6 +596,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+   *
+   * @return The boundingPolyConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
     if (requestConfigCase_ == 5) {
@@ -607,6 +635,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
+   *
+   * @return Whether the polylineConfig field is set.
    */
   public boolean hasPolylineConfig() {
     return requestConfigCase_ == 6;
@@ -621,6 +651,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
+   *
+   * @return The polylineConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig() {
     if (requestConfigCase_ == 6) {
@@ -658,6 +690,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
+   *
+   * @return Whether the segmentationConfig field is set.
    */
   public boolean hasSegmentationConfig() {
     return requestConfigCase_ == 7;
@@ -672,6 +706,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
+   *
+   * @return The segmentationConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig() {
     if (requestConfigCase_ == 7) {
@@ -709,6 +745,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -730,6 +768,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -753,6 +793,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return Whether the basicConfig field is set.
    */
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
@@ -765,6 +807,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   *
+   * @return The basicConfig.
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
@@ -795,6 +839,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   public int getFeatureValue() {
     return feature_;
@@ -807,6 +853,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+   *
+   * @return The feature.
    */
   public com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature() {
     @SuppressWarnings("deprecation")
@@ -1344,6 +1392,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
+     *
+     * @return Whether the imageClassificationConfig field is set.
      */
     public boolean hasImageClassificationConfig() {
       return requestConfigCase_ == 4;
@@ -1360,6 +1410,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
+     *
+     * @return The imageClassificationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
         getImageClassificationConfig() {
@@ -1589,6 +1641,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+     *
+     * @return Whether the boundingPolyConfig field is set.
      */
     public boolean hasBoundingPolyConfig() {
       return requestConfigCase_ == 5;
@@ -1603,6 +1657,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
+     *
+     * @return The boundingPolyConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
       if (boundingPolyConfigBuilder_ == null) {
@@ -1815,6 +1871,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
+     *
+     * @return Whether the polylineConfig field is set.
      */
     public boolean hasPolylineConfig() {
       return requestConfigCase_ == 6;
@@ -1829,6 +1887,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
+     *
+     * @return The polylineConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig() {
       if (polylineConfigBuilder_ == null) {
@@ -2038,6 +2098,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
+     *
+     * @return Whether the segmentationConfig field is set.
      */
     public boolean hasSegmentationConfig() {
       return requestConfigCase_ == 7;
@@ -2052,6 +2114,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
+     *
+     * @return The segmentationConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig() {
       if (segmentationConfigBuilder_ == null) {
@@ -2259,6 +2323,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -2280,6 +2346,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -2301,6 +2369,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -2320,6 +2391,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -2336,6 +2409,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2362,6 +2438,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     *
+     * @return Whether the basicConfig field is set.
      */
     public boolean hasBasicConfig() {
       return basicConfigBuilder_ != null || basicConfig_ != null;
@@ -2374,6 +2452,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     *
+     * @return The basicConfig.
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
       if (basicConfigBuilder_ == null) {
@@ -2543,6 +2623,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+     *
+     * @return The enum numeric value on the wire for feature.
      */
     public int getFeatureValue() {
       return feature_;
@@ -2555,6 +2637,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
       feature_ = value;
@@ -2569,6 +2654,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+     *
+     * @return The feature.
      */
     public com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature() {
       @SuppressWarnings("deprecation")
@@ -2586,6 +2673,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+     *
+     * @param value The feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeature(
         com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature value) {
@@ -2605,6 +2695,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature feature = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFeature() {
 
