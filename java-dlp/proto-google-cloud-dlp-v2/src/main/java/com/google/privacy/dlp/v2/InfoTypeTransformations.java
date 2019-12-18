@@ -45,6 +45,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InfoTypeTransformations();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -195,6 +201,8 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     *
+     * @return Whether the primitiveTransformation field is set.
      */
     boolean hasPrimitiveTransformation();
     /**
@@ -205,6 +213,8 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     *
+     * @return The primitiveTransformation.
      */
     com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
     /**
@@ -241,6 +251,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
 
     private InfoTypeTransformation() {
       infoTypes_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InfoTypeTransformation();
     }
 
     @java.lang.Override
@@ -333,7 +349,6 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
                   .class);
     }
 
-    private int bitField0_;
     public static final int INFO_TYPES_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
     /**
@@ -418,6 +433,8 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     *
+     * @return Whether the primitiveTransformation field is set.
      */
     public boolean hasPrimitiveTransformation() {
       return primitiveTransformation_ != null;
@@ -430,6 +447,8 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     *
+     * @return The primitiveTransformation.
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
       return primitiveTransformation_ == null
@@ -731,7 +750,6 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation result =
             new com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (infoTypesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -746,7 +764,6 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         } else {
           result.primitiveTransformation_ = primitiveTransformationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1265,6 +1282,8 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       *
+       * @return Whether the primitiveTransformation field is set.
        */
       public boolean hasPrimitiveTransformation() {
         return primitiveTransformationBuilder_ != null || primitiveTransformation_ != null;
@@ -1277,6 +1296,8 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       *
+       * @return The primitiveTransformation.
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
         if (primitiveTransformationBuilder_ == null) {

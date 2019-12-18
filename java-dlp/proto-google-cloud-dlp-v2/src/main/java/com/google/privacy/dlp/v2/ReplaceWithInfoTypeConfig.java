@@ -40,6 +40,12 @@ public final class ReplaceWithInfoTypeConfig extends com.google.protobuf.Generat
   private ReplaceWithInfoTypeConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReplaceWithInfoTypeConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

@@ -43,6 +43,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TimePartConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -245,12 +250,20 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TimePart valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TimePart forNumber(int value) {
       switch (value) {
         case 0:
@@ -318,11 +331,19 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PART_TO_EXTRACT_FIELD_NUMBER = 1;
   private int partToExtract_;
-  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+   *
+   * @return The enum numeric value on the wire for partToExtract.
+   */
   public int getPartToExtractValue() {
     return partToExtract_;
   }
-  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+   *
+   * @return The partToExtract.
+   */
   public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
@@ -648,17 +669,30 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int partToExtract_ = 0;
-    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     *
+     * @return The enum numeric value on the wire for partToExtract.
+     */
     public int getPartToExtractValue() {
       return partToExtract_;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for partToExtract to set.
+     * @return This builder for chaining.
+     */
     public Builder setPartToExtractValue(int value) {
       partToExtract_ = value;
       onChanged();
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     *
+     * @return The partToExtract.
+     */
     public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
@@ -667,7 +701,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED
           : result;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     *
+     * @param value The partToExtract to set.
+     * @return This builder for chaining.
+     */
     public Builder setPartToExtract(com.google.privacy.dlp.v2.TimePartConfig.TimePart value) {
       if (value == null) {
         throw new NullPointerException();
@@ -677,7 +716,11 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearPartToExtract() {
 
       partToExtract_ = 0;

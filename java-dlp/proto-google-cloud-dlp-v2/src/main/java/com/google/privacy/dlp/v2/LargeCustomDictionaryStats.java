@@ -40,6 +40,12 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
   private LargeCustomDictionaryStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LargeCustomDictionaryStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>int64 approx_num_phrases = 1;</code>
+   *
+   * @return The approxNumPhrases.
    */
   public long getApproxNumPhrases() {
     return approxNumPhrases_;
@@ -443,6 +450,8 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int64 approx_num_phrases = 1;</code>
+     *
+     * @return The approxNumPhrases.
      */
     public long getApproxNumPhrases() {
       return approxNumPhrases_;
@@ -455,6 +464,9 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int64 approx_num_phrases = 1;</code>
+     *
+     * @param value The approxNumPhrases to set.
+     * @return This builder for chaining.
      */
     public Builder setApproxNumPhrases(long value) {
 
@@ -470,6 +482,8 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int64 approx_num_phrases = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearApproxNumPhrases() {
 

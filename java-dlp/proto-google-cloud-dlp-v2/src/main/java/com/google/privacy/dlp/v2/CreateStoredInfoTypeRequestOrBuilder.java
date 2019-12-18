@@ -34,6 +34,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -68,6 +74,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   *
+   * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
   /**
@@ -92,6 +100,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * </pre>
    *
    * <code>string stored_info_type_id = 3;</code>
+   *
+   * @return The storedInfoTypeId.
    */
   java.lang.String getStoredInfoTypeId();
   /**
@@ -105,6 +115,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * </pre>
    *
    * <code>string stored_info_type_id = 3;</code>
+   *
+   * @return The bytes for storedInfoTypeId.
    */
   com.google.protobuf.ByteString getStoredInfoTypeIdBytes();
 
@@ -117,6 +129,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -128,6 +142,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

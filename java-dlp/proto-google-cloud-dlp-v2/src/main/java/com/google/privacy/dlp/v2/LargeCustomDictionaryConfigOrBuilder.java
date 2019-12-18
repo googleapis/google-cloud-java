@@ -34,6 +34,8 @@ public interface LargeCustomDictionaryConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
+   *
+   * @return Whether the outputPath field is set.
    */
   boolean hasOutputPath();
   /**
@@ -47,6 +49,8 @@ public interface LargeCustomDictionaryConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
+   *
+   * @return The outputPath.
    */
   com.google.privacy.dlp.v2.CloudStoragePath getOutputPath();
   /**
@@ -71,6 +75,8 @@ public interface LargeCustomDictionaryConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
+   *
+   * @return Whether the cloudStorageFileSet field is set.
    */
   boolean hasCloudStorageFileSet();
   /**
@@ -81,6 +87,8 @@ public interface LargeCustomDictionaryConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
+   *
+   * @return The cloudStorageFileSet.
    */
   com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet();
   /**
@@ -102,6 +110,8 @@ public interface LargeCustomDictionaryConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
+   *
+   * @return Whether the bigQueryField field is set.
    */
   boolean hasBigQueryField();
   /**
@@ -112,6 +122,8 @@ public interface LargeCustomDictionaryConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
+   *
+   * @return The bigQueryField.
    */
   com.google.privacy.dlp.v2.BigQueryField getBigQueryField();
   /**

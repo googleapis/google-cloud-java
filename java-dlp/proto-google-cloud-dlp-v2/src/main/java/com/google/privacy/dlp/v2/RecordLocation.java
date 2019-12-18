@@ -40,6 +40,12 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
   private RecordLocation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecordLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,6 +159,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
+   *
+   * @return Whether the recordKey field is set.
    */
   public boolean hasRecordKey() {
     return recordKey_ != null;
@@ -166,6 +173,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
+   *
+   * @return The recordKey.
    */
   public com.google.privacy.dlp.v2.RecordKey getRecordKey() {
     return recordKey_ == null
@@ -195,6 +204,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
+   *
+   * @return Whether the fieldId field is set.
    */
   public boolean hasFieldId() {
     return fieldId_ != null;
@@ -207,6 +218,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
+   *
+   * @return The fieldId.
    */
   public com.google.privacy.dlp.v2.FieldId getFieldId() {
     return fieldId_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : fieldId_;
@@ -234,6 +247,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
+   *
+   * @return Whether the tableLocation field is set.
    */
   public boolean hasTableLocation() {
     return tableLocation_ != null;
@@ -246,6 +261,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
+   *
+   * @return The tableLocation.
    */
   public com.google.privacy.dlp.v2.TableLocation getTableLocation() {
     return tableLocation_ == null
@@ -662,6 +679,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
+     *
+     * @return Whether the recordKey field is set.
      */
     public boolean hasRecordKey() {
       return recordKeyBuilder_ != null || recordKey_ != null;
@@ -674,6 +693,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
+     *
+     * @return The recordKey.
      */
     public com.google.privacy.dlp.v2.RecordKey getRecordKey() {
       if (recordKeyBuilder_ == null) {
@@ -843,6 +864,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
+     *
+     * @return Whether the fieldId field is set.
      */
     public boolean hasFieldId() {
       return fieldIdBuilder_ != null || fieldId_ != null;
@@ -855,6 +878,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
+     *
+     * @return The fieldId.
      */
     public com.google.privacy.dlp.v2.FieldId getFieldId() {
       if (fieldIdBuilder_ == null) {
@@ -1020,6 +1045,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
+     *
+     * @return Whether the tableLocation field is set.
      */
     public boolean hasTableLocation() {
       return tableLocationBuilder_ != null || tableLocation_ != null;
@@ -1032,6 +1059,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
+     *
+     * @return The tableLocation.
      */
     public com.google.privacy.dlp.v2.TableLocation getTableLocation() {
       if (tableLocationBuilder_ == null) {

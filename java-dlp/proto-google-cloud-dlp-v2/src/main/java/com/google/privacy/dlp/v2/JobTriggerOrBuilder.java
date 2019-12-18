@@ -33,6 +33,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -66,6 +72,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -77,6 +85,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -87,12 +97,22 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+   *
+   * @return Whether the inspectJob field is set.
+   */
   boolean hasInspectJob();
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+   *
+   * @return The inspectJob.
+   */
   com.google.privacy.dlp.v2.InspectJobConfig getInspectJob();
   /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder();
@@ -233,6 +253,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -243,6 +265,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -264,6 +288,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -274,6 +300,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -295,6 +323,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   *
+   * @return Whether the lastRunTime field is set.
    */
   boolean hasLastRunTime();
   /**
@@ -305,6 +335,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   *
+   * @return The lastRunTime.
    */
   com.google.protobuf.Timestamp getLastRunTime();
   /**
@@ -326,6 +358,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -336,6 +370,8 @@ public interface JobTriggerOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+   *
+   * @return The status.
    */
   com.google.privacy.dlp.v2.JobTrigger.Status getStatus();
 

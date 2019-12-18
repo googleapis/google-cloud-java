@@ -23,8 +23,16 @@ public interface TimePartConfigOrBuilder
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TimePartConfig)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+   *
+   * @return The enum numeric value on the wire for partToExtract.
+   */
   int getPartToExtractValue();
-  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+   *
+   * @return The partToExtract.
+   */
   com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract();
 }

@@ -31,6 +31,8 @@ public interface EntityIdOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   *
+   * @return Whether the field field is set.
    */
   boolean hasField();
   /**
@@ -41,6 +43,8 @@ public interface EntityIdOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   *
+   * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
   /**

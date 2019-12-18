@@ -32,6 +32,8 @@ public interface BigQueryTableOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface BigQueryTableOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface BigQueryTableOrBuilder
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
+   *
+   * @return The datasetId.
    */
   java.lang.String getDatasetId();
   /**
@@ -64,6 +70,8 @@ public interface BigQueryTableOrBuilder
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
+   *
+   * @return The bytes for datasetId.
    */
   com.google.protobuf.ByteString getDatasetIdBytes();
 
@@ -75,6 +83,8 @@ public interface BigQueryTableOrBuilder
    * </pre>
    *
    * <code>string table_id = 3;</code>
+   *
+   * @return The tableId.
    */
   java.lang.String getTableId();
   /**
@@ -85,6 +95,8 @@ public interface BigQueryTableOrBuilder
    * </pre>
    *
    * <code>string table_id = 3;</code>
+   *
+   * @return The bytes for tableId.
    */
   com.google.protobuf.ByteString getTableIdBytes();
 }

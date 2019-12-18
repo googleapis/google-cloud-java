@@ -40,6 +40,12 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
   private ReidentifyContentResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReidentifyContentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
+   *
+   * @return Whether the item field is set.
    */
   public boolean hasItem() {
     return item_ != null;
@@ -151,6 +158,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
+   *
+   * @return The item.
    */
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
@@ -178,6 +187,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
+   *
+   * @return Whether the overview field is set.
    */
   public boolean hasOverview() {
     return overview_ != null;
@@ -190,6 +201,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
+   *
+   * @return The overview.
    */
   public com.google.privacy.dlp.v2.TransformationOverview getOverview() {
     return overview_ == null
@@ -581,6 +594,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
+     *
+     * @return Whether the item field is set.
      */
     public boolean hasItem() {
       return itemBuilder_ != null || item_ != null;
@@ -593,6 +608,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
+     *
+     * @return The item.
      */
     public com.google.privacy.dlp.v2.ContentItem getItem() {
       if (itemBuilder_ == null) {
@@ -758,6 +775,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
+     *
+     * @return Whether the overview field is set.
      */
     public boolean hasOverview() {
       return overviewBuilder_ != null || overview_ != null;
@@ -770,6 +789,8 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
+     *
+     * @return The overview.
      */
     public com.google.privacy.dlp.v2.TransformationOverview getOverview() {
       if (overviewBuilder_ == null) {

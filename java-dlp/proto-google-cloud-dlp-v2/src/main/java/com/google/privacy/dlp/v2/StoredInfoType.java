@@ -44,6 +44,12 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StoredInfoType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -92,10 +98,10 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 pendingVersions_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoTypeVersion>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               pendingVersions_.add(
                   input.readMessage(
@@ -116,7 +122,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         pendingVersions_ = java.util.Collections.unmodifiableList(pendingVersions_);
       }
       this.unknownFields = unknownFields.build();
@@ -139,7 +145,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.StoredInfoType.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -150,6 +155,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -170,6 +177,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -193,6 +202,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+   *
+   * @return Whether the currentVersion field is set.
    */
   public boolean hasCurrentVersion() {
     return currentVersion_ != null;
@@ -205,6 +216,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+   *
+   * @return The currentVersion.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion() {
     return currentVersion_ == null
@@ -535,7 +548,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       if (pendingVersionsBuilder_ == null) {
         pendingVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         pendingVersionsBuilder_.clear();
       }
@@ -567,7 +580,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.StoredInfoType result =
           new com.google.privacy.dlp.v2.StoredInfoType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (currentVersionBuilder_ == null) {
         result.currentVersion_ = currentVersion_;
@@ -575,15 +587,14 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         result.currentVersion_ = currentVersionBuilder_.build();
       }
       if (pendingVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           pendingVersions_ = java.util.Collections.unmodifiableList(pendingVersions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.pendingVersions_ = pendingVersions_;
       } else {
         result.pendingVersions_ = pendingVersionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -644,7 +655,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         if (!other.pendingVersions_.isEmpty()) {
           if (pendingVersions_.isEmpty()) {
             pendingVersions_ = other.pendingVersions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePendingVersionsIsMutable();
             pendingVersions_.addAll(other.pendingVersions_);
@@ -657,7 +668,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             pendingVersionsBuilder_.dispose();
             pendingVersionsBuilder_ = null;
             pendingVersions_ = other.pendingVersions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             pendingVersionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPendingVersionsFieldBuilder()
@@ -707,6 +718,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -727,6 +740,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -747,6 +762,9 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -765,6 +783,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -780,6 +800,9 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -806,6 +829,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+     *
+     * @return Whether the currentVersion field is set.
      */
     public boolean hasCurrentVersion() {
       return currentVersionBuilder_ != null || currentVersion_ != null;
@@ -818,6 +843,8 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+     *
+     * @return The currentVersion.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion() {
       if (currentVersionBuilder_ == null) {
@@ -978,11 +1005,11 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePendingVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         pendingVersions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoTypeVersion>(
                 pendingVersions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1212,7 +1239,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPendingVersions() {
       if (pendingVersionsBuilder_ == null) {
         pendingVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         pendingVersionsBuilder_.clear();
@@ -1345,7 +1372,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder,
                 com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder>(
                 pendingVersions_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         pendingVersions_ = null;

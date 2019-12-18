@@ -23,9 +23,17 @@ public interface ErrorOrBuilder
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Error)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.rpc.Status details = 1;</code> */
+  /**
+   * <code>.google.rpc.Status details = 1;</code>
+   *
+   * @return Whether the details field is set.
+   */
   boolean hasDetails();
-  /** <code>.google.rpc.Status details = 1;</code> */
+  /**
+   * <code>.google.rpc.Status details = 1;</code>
+   *
+   * @return The details.
+   */
   com.google.rpc.Status getDetails();
   /** <code>.google.rpc.Status details = 1;</code> */
   com.google.rpc.StatusOrBuilder getDetailsOrBuilder();

@@ -279,21 +279,13 @@ public final class DlpStorage {
           + "Cloud.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2b\006prot"
           + "o3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_privacy_dlp_v2_InfoType_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_privacy_dlp_v2_InfoType_fieldAccessorTable =

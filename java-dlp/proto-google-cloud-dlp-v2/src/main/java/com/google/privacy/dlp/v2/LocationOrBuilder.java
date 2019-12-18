@@ -35,6 +35,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
+   *
+   * @return Whether the byteRange field is set.
    */
   boolean hasByteRange();
   /**
@@ -49,6 +51,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
+   *
+   * @return The byteRange.
    */
   com.google.privacy.dlp.v2.Range getByteRange();
   /**
@@ -76,6 +80,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
+   *
+   * @return Whether the codepointRange field is set.
    */
   boolean hasCodepointRange();
   /**
@@ -88,6 +94,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
+   *
+   * @return The codepointRange.
    */
   com.google.privacy.dlp.v2.Range getCodepointRange();
   /**

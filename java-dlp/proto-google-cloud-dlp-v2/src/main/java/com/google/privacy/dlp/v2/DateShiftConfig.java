@@ -42,6 +42,12 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   private DateShiftConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DateShiftConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,7 +148,10 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   private int methodCase_ = 0;
   private java.lang.Object method_;
 
-  public enum MethodCase implements com.google.protobuf.Internal.EnumLite {
+  public enum MethodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CRYPTO_KEY(4),
     METHOD_NOT_SET(0);
     private final int value;
@@ -151,7 +159,11 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     private MethodCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MethodCase valueOf(int value) {
       return forNumber(value);
@@ -191,6 +203,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>int32 upper_bound_days = 1;</code>
+   *
+   * @return The upperBoundDays.
    */
   public int getUpperBoundDays() {
     return upperBoundDays_;
@@ -207,6 +221,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>int32 lower_bound_days = 2;</code>
+   *
+   * @return The lowerBoundDays.
    */
   public int getLowerBoundDays() {
     return lowerBoundDays_;
@@ -224,6 +240,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -238,6 +256,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   *
+   * @return The context.
    */
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
@@ -268,6 +288,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return methodCase_ == 4;
@@ -282,6 +304,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   *
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     if (methodCase_ == 4) {
@@ -739,6 +763,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 upper_bound_days = 1;</code>
+     *
+     * @return The upperBoundDays.
      */
     public int getUpperBoundDays() {
       return upperBoundDays_;
@@ -755,6 +781,9 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 upper_bound_days = 1;</code>
+     *
+     * @param value The upperBoundDays to set.
+     * @return This builder for chaining.
      */
     public Builder setUpperBoundDays(int value) {
 
@@ -774,6 +803,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 upper_bound_days = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUpperBoundDays() {
 
@@ -792,6 +823,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 lower_bound_days = 2;</code>
+     *
+     * @return The lowerBoundDays.
      */
     public int getLowerBoundDays() {
       return lowerBoundDays_;
@@ -805,6 +838,9 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 lower_bound_days = 2;</code>
+     *
+     * @param value The lowerBoundDays to set.
+     * @return This builder for chaining.
      */
     public Builder setLowerBoundDays(int value) {
 
@@ -821,6 +857,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 lower_bound_days = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLowerBoundDays() {
 
@@ -845,6 +883,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -859,6 +899,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     *
+     * @return The context.
      */
     public com.google.privacy.dlp.v2.FieldId getContext() {
       if (contextBuilder_ == null) {
@@ -1039,6 +1081,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+     *
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return methodCase_ == 4;
@@ -1053,6 +1097,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+     *
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {

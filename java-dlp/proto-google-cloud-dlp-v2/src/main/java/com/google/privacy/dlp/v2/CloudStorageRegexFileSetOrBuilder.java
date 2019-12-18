@@ -31,6 +31,8 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>string bucket_name = 1;</code>
+   *
+   * @return The bucketName.
    */
   java.lang.String getBucketName();
   /**
@@ -41,6 +43,8 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>string bucket_name = 1;</code>
+   *
+   * @return The bytes for bucketName.
    */
   com.google.protobuf.ByteString getBucketNameBytes();
 
@@ -59,6 +63,8 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @return A list containing the includeRegex.
    */
   java.util.List<java.lang.String> getIncludeRegexList();
   /**
@@ -76,6 +82,8 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @return The count of includeRegex.
    */
   int getIncludeRegexCount();
   /**
@@ -93,6 +101,9 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeRegex at the given index.
    */
   java.lang.String getIncludeRegex(int index);
   /**
@@ -110,6 +121,9 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeRegex at the given index.
    */
   com.google.protobuf.ByteString getIncludeRegexBytes(int index);
 
@@ -126,6 +140,8 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @return A list containing the excludeRegex.
    */
   java.util.List<java.lang.String> getExcludeRegexList();
   /**
@@ -141,6 +157,8 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @return The count of excludeRegex.
    */
   int getExcludeRegexCount();
   /**
@@ -156,6 +174,9 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeRegex at the given index.
    */
   java.lang.String getExcludeRegex(int index);
   /**
@@ -171,6 +192,9 @@ public interface CloudStorageRegexFileSetOrBuilder
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeRegex at the given index.
    */
   com.google.protobuf.ByteString getExcludeRegexBytes(int index);
 }

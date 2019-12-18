@@ -23,19 +23,31 @@ public interface CharsToIgnoreOrBuilder
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CharsToIgnore)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>string characters_to_skip = 1;</code> */
+  /**
+   * <code>string characters_to_skip = 1;</code>
+   *
+   * @return The charactersToSkip.
+   */
   java.lang.String getCharactersToSkip();
-  /** <code>string characters_to_skip = 1;</code> */
+  /**
+   * <code>string characters_to_skip = 1;</code>
+   *
+   * @return The bytes for charactersToSkip.
+   */
   com.google.protobuf.ByteString getCharactersToSkipBytes();
 
   /**
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for commonCharactersToIgnore.
    */
   int getCommonCharactersToIgnoreValue();
   /**
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
+   *
+   * @return The commonCharactersToIgnore.
    */
   com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore();
 

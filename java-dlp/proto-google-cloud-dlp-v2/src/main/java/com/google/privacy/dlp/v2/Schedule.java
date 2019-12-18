@@ -40,6 +40,12 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   private Schedule() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Schedule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,7 +119,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   private int optionCase_ = 0;
   private java.lang.Object option_;
 
-  public enum OptionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum OptionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RECURRENCE_PERIOD_DURATION(1),
     OPTION_NOT_SET(0);
     private final int value;
@@ -122,7 +130,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     private OptionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static OptionCase valueOf(int value) {
       return forNumber(value);
@@ -162,6 +174,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+   *
+   * @return Whether the recurrencePeriodDuration field is set.
    */
   public boolean hasRecurrencePeriodDuration() {
     return optionCase_ == 1;
@@ -179,6 +193,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+   *
+   * @return The recurrencePeriodDuration.
    */
   public com.google.protobuf.Duration getRecurrencePeriodDuration() {
     if (optionCase_ == 1) {
@@ -582,6 +598,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+     *
+     * @return Whether the recurrencePeriodDuration field is set.
      */
     public boolean hasRecurrencePeriodDuration() {
       return optionCase_ == 1;
@@ -599,6 +617,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+     *
+     * @return The recurrencePeriodDuration.
      */
     public com.google.protobuf.Duration getRecurrencePeriodDuration() {
       if (recurrencePeriodDurationBuilder_ == null) {

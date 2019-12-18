@@ -31,6 +31,8 @@ public interface DatastoreKeyOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
+   *
+   * @return Whether the entityKey field is set.
    */
   boolean hasEntityKey();
   /**
@@ -41,6 +43,8 @@ public interface DatastoreKeyOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
+   *
+   * @return The entityKey.
    */
   com.google.privacy.dlp.v2.Key getEntityKey();
   /**

@@ -42,6 +42,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FieldTransformation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -168,11 +174,13 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
   }
 
-  private int bitField0_;
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
 
-  public enum TransformationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TransformationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PRIMITIVE_TRANSFORMATION(4),
     INFO_TYPE_TRANSFORMATIONS(5),
     TRANSFORMATION_NOT_SET(0);
@@ -181,7 +189,11 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     private TransformationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TransformationCase valueOf(int value) {
       return forNumber(value);
@@ -289,6 +301,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   *
+   * @return Whether the condition field is set.
    */
   public boolean hasCondition() {
     return condition_ != null;
@@ -307,6 +321,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   *
+   * @return The condition.
    */
   public com.google.privacy.dlp.v2.RecordCondition getCondition() {
     return condition_ == null
@@ -341,6 +357,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   *
+   * @return Whether the primitiveTransformation field is set.
    */
   public boolean hasPrimitiveTransformation() {
     return transformationCase_ == 4;
@@ -353,6 +371,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   *
+   * @return The primitiveTransformation.
    */
   public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
     if (transformationCase_ == 4) {
@@ -387,6 +407,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   *
+   * @return Whether the infoTypeTransformations field is set.
    */
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 5;
@@ -400,6 +422,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   *
+   * @return The infoTypeTransformations.
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
     if (transformationCase_ == 5) {
@@ -728,7 +752,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       com.google.privacy.dlp.v2.FieldTransformation result =
           new com.google.privacy.dlp.v2.FieldTransformation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -757,7 +780,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
           result.transformation_ = infoTypeTransformationsBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.transformationCase_ = transformationCase_;
       onBuilt();
       return result;
@@ -1265,6 +1287,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+     *
+     * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
       return conditionBuilder_ != null || condition_ != null;
@@ -1283,6 +1307,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+     *
+     * @return The condition.
      */
     public com.google.privacy.dlp.v2.RecordCondition getCondition() {
       if (conditionBuilder_ == null) {
@@ -1493,6 +1519,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+     *
+     * @return Whether the primitiveTransformation field is set.
      */
     public boolean hasPrimitiveTransformation() {
       return transformationCase_ == 4;
@@ -1505,6 +1533,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+     *
+     * @return The primitiveTransformation.
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
       if (primitiveTransformationBuilder_ == null) {
@@ -1701,6 +1731,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+     *
+     * @return Whether the infoTypeTransformations field is set.
      */
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 5;
@@ -1714,6 +1746,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+     *
+     * @return The infoTypeTransformations.
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
       if (infoTypeTransformationsBuilder_ == null) {

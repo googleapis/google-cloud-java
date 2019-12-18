@@ -31,6 +31,8 @@ public interface KmsWrappedCryptoKeyOrBuilder
    * </pre>
    *
    * <code>bytes wrapped_key = 1;</code>
+   *
+   * @return The wrappedKey.
    */
   com.google.protobuf.ByteString getWrappedKey();
 
@@ -42,6 +44,8 @@ public interface KmsWrappedCryptoKeyOrBuilder
    * </pre>
    *
    * <code>string crypto_key_name = 2;</code>
+   *
+   * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
   /**
@@ -52,6 +56,8 @@ public interface KmsWrappedCryptoKeyOrBuilder
    * </pre>
    *
    * <code>string crypto_key_name = 2;</code>
+   *
+   * @return The bytes for cryptoKeyName.
    */
   com.google.protobuf.ByteString getCryptoKeyNameBytes();
 }

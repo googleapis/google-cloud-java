@@ -42,6 +42,12 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CloudStoragePath();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string path = 1;</code>
+   *
+   * @return The path.
    */
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
@@ -138,6 +145,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string path = 1;</code>
+   *
+   * @return The bytes for path.
    */
   public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
@@ -477,6 +486,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
+     * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -498,6 +509,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
      */
     public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
@@ -519,6 +532,9 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
+     * @param value The path to set.
+     * @return This builder for chaining.
      */
     public Builder setPath(java.lang.String value) {
       if (value == null) {
@@ -538,6 +554,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPath() {
 
@@ -554,6 +572,9 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
+     * @param value The bytes for path to set.
+     * @return This builder for chaining.
      */
     public Builder setPathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

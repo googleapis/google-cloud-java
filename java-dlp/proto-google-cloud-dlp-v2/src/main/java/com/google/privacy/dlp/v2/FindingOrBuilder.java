@@ -35,6 +35,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string quote = 1;</code>
+   *
+   * @return The quote.
    */
   java.lang.String getQuote();
   /**
@@ -49,6 +51,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string quote = 1;</code>
+   *
+   * @return The bytes for quote.
    */
   com.google.protobuf.ByteString getQuoteBytes();
 
@@ -61,6 +65,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+   *
+   * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
   /**
@@ -72,6 +78,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+   *
+   * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
@@ -94,6 +102,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+   *
+   * @return The enum numeric value on the wire for likelihood.
    */
   int getLikelihoodValue();
   /**
@@ -104,6 +114,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+   *
+   * @return The likelihood.
    */
   com.google.privacy.dlp.v2.Likelihood getLikelihood();
 
@@ -115,6 +127,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Location location = 4;</code>
+   *
+   * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
@@ -125,6 +139,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Location location = 4;</code>
+   *
+   * @return The location.
    */
   com.google.privacy.dlp.v2.Location getLocation();
   /**
@@ -146,6 +162,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -156,6 +174,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -179,6 +199,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
+   *
+   * @return Whether the quoteInfo field is set.
    */
   boolean hasQuoteInfo();
   /**
@@ -191,6 +213,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
+   *
+   * @return The quoteInfo.
    */
   com.google.privacy.dlp.v2.QuoteInfo getQuoteInfo();
   /**

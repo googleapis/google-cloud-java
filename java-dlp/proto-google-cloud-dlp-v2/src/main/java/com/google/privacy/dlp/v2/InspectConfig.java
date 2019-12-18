@@ -48,6 +48,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InspectConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -118,10 +124,10 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 customInfoTypes_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               customInfoTypes_.add(
                   input.readMessage(
@@ -131,9 +137,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           case 64:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 contentOptions_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000004;
               }
               contentOptions_.add(rawValue);
               break;
@@ -144,9 +150,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   contentOptions_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000040;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 contentOptions_.add(rawValue);
               }
@@ -155,9 +161,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000008;
               }
               ruleSet_.add(
                   input.readMessage(
@@ -181,13 +187,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         customInfoTypes_ = java.util.Collections.unmodifiableList(customInfoTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         contentOptions_ = java.util.Collections.unmodifiableList(contentOptions_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
       }
       this.unknownFields = unknownFields.build();
@@ -226,6 +232,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_findings_per_item = 1;</code>
+     *
+     * @return The maxFindingsPerItem.
      */
     int getMaxFindingsPerItem();
 
@@ -239,6 +247,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_findings_per_request = 2;</code>
+     *
+     * @return The maxFindingsPerRequest.
      */
     int getMaxFindingsPerRequest();
 
@@ -324,6 +334,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FindingLimits();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -359,11 +375,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   maxFindingsPerInfoType_ =
                       new java.util.ArrayList<
                           com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 maxFindingsPerInfoType_.add(
                     input.readMessage(
@@ -386,7 +402,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           maxFindingsPerInfoType_ = java.util.Collections.unmodifiableList(maxFindingsPerInfoType_);
         }
         this.unknownFields = unknownFields.build();
@@ -425,6 +441,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return Whether the infoType field is set.
        */
       boolean hasInfoType();
       /**
@@ -438,6 +456,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return The infoType.
        */
       com.google.privacy.dlp.v2.InfoType getInfoType();
       /**
@@ -462,6 +482,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings = 2;</code>
+       *
+       * @return The maxFindings.
        */
       int getMaxFindings();
     }
@@ -488,6 +510,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       private InfoTypeLimit() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new InfoTypeLimit();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -500,7 +528,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -580,6 +607,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return Whether the infoType field is set.
        */
       public boolean hasInfoType() {
         return infoType_ != null;
@@ -595,6 +624,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return The infoType.
        */
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         return infoType_ == null
@@ -627,6 +658,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings = 2;</code>
+       *
+       * @return The maxFindings.
        */
       public int getMaxFindings() {
         return maxFindings_;
@@ -1012,6 +1045,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+         *
+         * @return Whether the infoType field is set.
          */
         public boolean hasInfoType() {
           return infoTypeBuilder_ != null || infoType_ != null;
@@ -1027,6 +1062,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+         *
+         * @return The infoType.
          */
         public com.google.privacy.dlp.v2.InfoType getInfoType() {
           if (infoTypeBuilder_ == null) {
@@ -1212,6 +1249,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 max_findings = 2;</code>
+         *
+         * @return The maxFindings.
          */
         public int getMaxFindings() {
           return maxFindings_;
@@ -1224,6 +1263,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 max_findings = 2;</code>
+         *
+         * @param value The maxFindings to set.
+         * @return This builder for chaining.
          */
         public Builder setMaxFindings(int value) {
 
@@ -1239,6 +1281,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 max_findings = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearMaxFindings() {
 
@@ -1303,7 +1347,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
-    private int bitField0_;
     public static final int MAX_FINDINGS_PER_ITEM_FIELD_NUMBER = 1;
     private int maxFindingsPerItem_;
     /**
@@ -1317,6 +1360,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_findings_per_item = 1;</code>
+     *
+     * @return The maxFindingsPerItem.
      */
     public int getMaxFindingsPerItem() {
       return maxFindingsPerItem_;
@@ -1334,6 +1379,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_findings_per_request = 2;</code>
+     *
+     * @return The maxFindingsPerRequest.
      */
     public int getMaxFindingsPerRequest() {
       return maxFindingsPerRequest_;
@@ -1648,7 +1695,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
         if (maxFindingsPerInfoTypeBuilder_ == null) {
           maxFindingsPerInfoType_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           maxFindingsPerInfoTypeBuilder_.clear();
         }
@@ -1680,20 +1727,18 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.InspectConfig.FindingLimits result =
             new com.google.privacy.dlp.v2.InspectConfig.FindingLimits(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.maxFindingsPerItem_ = maxFindingsPerItem_;
         result.maxFindingsPerRequest_ = maxFindingsPerRequest_;
         if (maxFindingsPerInfoTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             maxFindingsPerInfoType_ =
                 java.util.Collections.unmodifiableList(maxFindingsPerInfoType_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.maxFindingsPerInfoType_ = maxFindingsPerInfoType_;
         } else {
           result.maxFindingsPerInfoType_ = maxFindingsPerInfoTypeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1756,7 +1801,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           if (!other.maxFindingsPerInfoType_.isEmpty()) {
             if (maxFindingsPerInfoType_.isEmpty()) {
               maxFindingsPerInfoType_ = other.maxFindingsPerInfoType_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMaxFindingsPerInfoTypeIsMutable();
               maxFindingsPerInfoType_.addAll(other.maxFindingsPerInfoType_);
@@ -1769,7 +1814,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
               maxFindingsPerInfoTypeBuilder_.dispose();
               maxFindingsPerInfoTypeBuilder_ = null;
               maxFindingsPerInfoType_ = other.maxFindingsPerInfoType_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               maxFindingsPerInfoTypeBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getMaxFindingsPerInfoTypeFieldBuilder()
@@ -1823,6 +1868,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings_per_item = 1;</code>
+       *
+       * @return The maxFindingsPerItem.
        */
       public int getMaxFindingsPerItem() {
         return maxFindingsPerItem_;
@@ -1838,6 +1885,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings_per_item = 1;</code>
+       *
+       * @param value The maxFindingsPerItem to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxFindingsPerItem(int value) {
 
@@ -1856,6 +1906,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings_per_item = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMaxFindingsPerItem() {
 
@@ -1875,6 +1927,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings_per_request = 2;</code>
+       *
+       * @return The maxFindingsPerRequest.
        */
       public int getMaxFindingsPerRequest() {
         return maxFindingsPerRequest_;
@@ -1889,6 +1943,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings_per_request = 2;</code>
+       *
+       * @param value The maxFindingsPerRequest to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxFindingsPerRequest(int value) {
 
@@ -1906,6 +1963,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 max_findings_per_request = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMaxFindingsPerRequest() {
 
@@ -1918,12 +1977,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           maxFindingsPerInfoType_ = java.util.Collections.emptyList();
 
       private void ensureMaxFindingsPerInfoTypeIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           maxFindingsPerInfoType_ =
               new java.util.ArrayList<
                   com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit>(
                   maxFindingsPerInfoType_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -2173,7 +2232,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clearMaxFindingsPerInfoType() {
         if (maxFindingsPerInfoTypeBuilder_ == null) {
           maxFindingsPerInfoType_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           maxFindingsPerInfoTypeBuilder_.clear();
@@ -2322,7 +2381,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                   com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit.Builder,
                   com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimitOrBuilder>(
                   maxFindingsPerInfoType_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           maxFindingsPerInfoType_ = null;
@@ -2382,7 +2441,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int INFO_TYPES_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
   /**
@@ -2499,6 +2557,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+   *
+   * @return The enum numeric value on the wire for minLikelihood.
    */
   public int getMinLikelihoodValue() {
     return minLikelihood_;
@@ -2513,6 +2573,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+   *
+   * @return The minLikelihood.
    */
   public com.google.privacy.dlp.v2.Likelihood getMinLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2523,11 +2585,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIMITS_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectConfig.FindingLimits limits_;
-  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+   *
+   * @return Whether the limits field is set.
+   */
   public boolean hasLimits() {
     return limits_ != null;
   }
-  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+   *
+   * @return The limits.
+   */
   public com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits() {
     return limits_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.FindingLimits.getDefaultInstance()
@@ -2549,6 +2619,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool include_quote = 4;</code>
+   *
+   * @return The includeQuote.
    */
   public boolean getIncludeQuote() {
     return includeQuote_;
@@ -2564,6 +2636,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool exclude_info_types = 5;</code>
+   *
+   * @return The excludeInfoTypes.
    */
   public boolean getExcludeInfoTypes() {
     return excludeInfoTypes_;
@@ -2661,6 +2735,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   *
+   * @return A list containing the contentOptions.
    */
   public java.util.List<com.google.privacy.dlp.v2.ContentOption> getContentOptionsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -2676,6 +2752,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   *
+   * @param value The contentOptions to add.
    */
   public int getContentOptionsCount() {
     return contentOptions_.size();
@@ -2689,6 +2767,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The contentOptions at the given index.
    */
   public com.google.privacy.dlp.v2.ContentOption getContentOptions(int index) {
     return contentOptions_converter_.convert(contentOptions_.get(index));
@@ -2702,6 +2783,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for contentOptions.
    */
   public java.util.List<java.lang.Integer> getContentOptionsValueList() {
     return contentOptions_;
@@ -2715,6 +2798,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of contentOptions at the given index.
    */
   public int getContentOptionsValue(int index) {
     return contentOptions_.get(index);
@@ -3116,15 +3202,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
       if (customInfoTypesBuilder_ == null) {
         customInfoTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         customInfoTypesBuilder_.clear();
       }
       contentOptions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (ruleSetBuilder_ == null) {
         ruleSet_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         ruleSetBuilder_.clear();
       }
@@ -3156,7 +3242,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.InspectConfig result =
           new com.google.privacy.dlp.v2.InspectConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (infoTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -3175,29 +3260,28 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       result.includeQuote_ = includeQuote_;
       result.excludeInfoTypes_ = excludeInfoTypes_;
       if (customInfoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           customInfoTypes_ = java.util.Collections.unmodifiableList(customInfoTypes_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.customInfoTypes_ = customInfoTypes_;
       } else {
         result.customInfoTypes_ = customInfoTypesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         contentOptions_ = java.util.Collections.unmodifiableList(contentOptions_);
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.contentOptions_ = contentOptions_;
       if (ruleSetBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.ruleSet_ = ruleSet_;
       } else {
         result.ruleSet_ = ruleSetBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3290,7 +3374,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.customInfoTypes_.isEmpty()) {
           if (customInfoTypes_.isEmpty()) {
             customInfoTypes_ = other.customInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCustomInfoTypesIsMutable();
             customInfoTypes_.addAll(other.customInfoTypes_);
@@ -3303,7 +3387,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             customInfoTypesBuilder_.dispose();
             customInfoTypesBuilder_ = null;
             customInfoTypes_ = other.customInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             customInfoTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCustomInfoTypesFieldBuilder()
@@ -3316,7 +3400,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.contentOptions_.isEmpty()) {
         if (contentOptions_.isEmpty()) {
           contentOptions_ = other.contentOptions_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureContentOptionsIsMutable();
           contentOptions_.addAll(other.contentOptions_);
@@ -3327,7 +3411,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.ruleSet_.isEmpty()) {
           if (ruleSet_.isEmpty()) {
             ruleSet_ = other.ruleSet_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureRuleSetIsMutable();
             ruleSet_.addAll(other.ruleSet_);
@@ -3340,7 +3424,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             ruleSetBuilder_.dispose();
             ruleSetBuilder_ = null;
             ruleSet_ = other.ruleSet_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000008);
             ruleSetBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRuleSetFieldBuilder()
@@ -3884,6 +3968,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return The enum numeric value on the wire for minLikelihood.
      */
     public int getMinLikelihoodValue() {
       return minLikelihood_;
@@ -3898,6 +3984,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for minLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setMinLikelihoodValue(int value) {
       minLikelihood_ = value;
@@ -3914,6 +4003,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return The minLikelihood.
      */
     public com.google.privacy.dlp.v2.Likelihood getMinLikelihood() {
       @SuppressWarnings("deprecation")
@@ -3931,6 +4022,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @param value The minLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setMinLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
       if (value == null) {
@@ -3951,6 +4045,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMinLikelihood() {
 
@@ -3965,11 +4061,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InspectConfig.FindingLimits.Builder,
             com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder>
         limitsBuilder_;
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     *
+     * @return Whether the limits field is set.
+     */
     public boolean hasLimits() {
       return limitsBuilder_ != null || limits_ != null;
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     *
+     * @return The limits.
+     */
     public com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits() {
       if (limitsBuilder_ == null) {
         return limits_ == null
@@ -4079,6 +4183,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
+     *
+     * @return The includeQuote.
      */
     public boolean getIncludeQuote() {
       return includeQuote_;
@@ -4092,6 +4198,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
+     *
+     * @param value The includeQuote to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeQuote(boolean value) {
 
@@ -4108,6 +4217,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludeQuote() {
 
@@ -4125,6 +4236,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool exclude_info_types = 5;</code>
+     *
+     * @return The excludeInfoTypes.
      */
     public boolean getExcludeInfoTypes() {
       return excludeInfoTypes_;
@@ -4137,6 +4250,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool exclude_info_types = 5;</code>
+     *
+     * @param value The excludeInfoTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setExcludeInfoTypes(boolean value) {
 
@@ -4152,6 +4268,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool exclude_info_types = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExcludeInfoTypes() {
 
@@ -4164,10 +4282,10 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCustomInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         customInfoTypes_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType>(customInfoTypes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -4394,7 +4512,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCustomInfoTypes() {
       if (customInfoTypesBuilder_ == null) {
         customInfoTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         customInfoTypesBuilder_.clear();
@@ -4525,7 +4643,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.Builder,
                 com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder>(
                 customInfoTypes_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         customInfoTypes_ = null;
@@ -4536,9 +4654,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> contentOptions_ = java.util.Collections.emptyList();
 
     private void ensureContentOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         contentOptions_ = new java.util.ArrayList<java.lang.Integer>(contentOptions_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -4550,6 +4668,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @return A list containing the contentOptions.
      */
     public java.util.List<com.google.privacy.dlp.v2.ContentOption> getContentOptionsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -4565,6 +4685,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @return The count of contentOptions.
      */
     public int getContentOptionsCount() {
       return contentOptions_.size();
@@ -4578,6 +4700,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The contentOptions at the given index.
      */
     public com.google.privacy.dlp.v2.ContentOption getContentOptions(int index) {
       return contentOptions_converter_.convert(contentOptions_.get(index));
@@ -4591,6 +4716,10 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The contentOptions to set.
+     * @return This builder for chaining.
      */
     public Builder setContentOptions(int index, com.google.privacy.dlp.v2.ContentOption value) {
       if (value == null) {
@@ -4610,6 +4739,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param value The contentOptions to add.
+     * @return This builder for chaining.
      */
     public Builder addContentOptions(com.google.privacy.dlp.v2.ContentOption value) {
       if (value == null) {
@@ -4629,6 +4761,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param values The contentOptions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllContentOptions(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.ContentOption> values) {
@@ -4648,10 +4783,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContentOptions() {
       contentOptions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -4664,6 +4801,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for contentOptions.
      */
     public java.util.List<java.lang.Integer> getContentOptionsValueList() {
       return java.util.Collections.unmodifiableList(contentOptions_);
@@ -4677,6 +4816,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of contentOptions at the given index.
      */
     public int getContentOptionsValue(int index) {
       return contentOptions_.get(index);
@@ -4690,6 +4832,10 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of contentOptions at the given index.
+     * @return This builder for chaining.
      */
     public Builder setContentOptionsValue(int index, int value) {
       ensureContentOptionsIsMutable();
@@ -4706,6 +4852,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for contentOptions to add.
+     * @return This builder for chaining.
      */
     public Builder addContentOptionsValue(int value) {
       ensureContentOptionsIsMutable();
@@ -4722,6 +4871,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+     *
+     * @param values The enum numeric values on the wire for contentOptions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllContentOptionsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureContentOptionsIsMutable();
@@ -4736,9 +4888,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRuleSetIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>(ruleSet_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -4975,7 +5127,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRuleSet() {
       if (ruleSetBuilder_ == null) {
         ruleSet_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         ruleSetBuilder_.clear();
@@ -5111,7 +5263,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.InspectionRuleSet,
                 com.google.privacy.dlp.v2.InspectionRuleSet.Builder,
                 com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>(
-                ruleSet_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                ruleSet_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         ruleSet_ = null;
       }
       return ruleSetBuilder_;

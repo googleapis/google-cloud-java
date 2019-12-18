@@ -47,6 +47,12 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InspectTemplate();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -184,6 +189,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -207,6 +214,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -230,6 +239,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -250,6 +261,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -273,6 +286,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -293,6 +308,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -316,6 +333,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -328,6 +347,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -355,6 +376,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -367,6 +390,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -394,6 +419,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   *
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -406,6 +433,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   *
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
@@ -872,6 +901,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -895,6 +926,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -918,6 +951,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -939,6 +975,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -957,6 +995,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -978,6 +1019,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -998,6 +1041,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1018,6 +1063,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1036,6 +1084,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1051,6 +1101,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1072,6 +1125,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1092,6 +1147,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1112,6 +1169,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1130,6 +1190,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1145,6 +1207,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1171,6 +1236,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1183,6 +1250,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1350,6 +1419,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1362,6 +1433,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1529,6 +1602,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+     *
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -1541,6 +1616,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+     *
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {

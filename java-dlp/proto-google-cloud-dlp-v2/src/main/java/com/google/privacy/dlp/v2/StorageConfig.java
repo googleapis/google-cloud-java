@@ -40,6 +40,12 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   private StorageConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StorageConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -175,6 +180,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
@@ -185,6 +192,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
     /**
@@ -207,6 +216,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
     /**
@@ -218,6 +229,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
     /**
@@ -251,6 +264,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     *
+     * @return Whether the timestampField field is set.
      */
     boolean hasTimestampField();
     /**
@@ -272,6 +287,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     *
+     * @return The timestampField.
      */
     com.google.privacy.dlp.v2.FieldId getTimestampField();
     /**
@@ -307,6 +324,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+     *
+     * @return The enableAutoPopulationOfTimespanConfig.
      */
     boolean getEnableAutoPopulationOfTimespanConfig();
   }
@@ -333,6 +352,12 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     private TimespanConfig() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TimespanConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -345,7 +370,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -451,6 +475,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTime_ != null;
@@ -463,6 +489,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -491,6 +519,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTime_ != null;
@@ -504,6 +534,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -543,6 +575,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     *
+     * @return Whether the timestampField field is set.
      */
     public boolean hasTimestampField() {
       return timestampField_ != null;
@@ -566,6 +600,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     *
+     * @return The timestampField.
      */
     public com.google.privacy.dlp.v2.FieldId getTimestampField() {
       return timestampField_ == null
@@ -609,6 +645,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+     *
+     * @return The enableAutoPopulationOfTimespanConfig.
      */
     public boolean getEnableAutoPopulationOfTimespanConfig() {
       return enableAutoPopulationOfTimespanConfig_;
@@ -1040,6 +1078,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
         return startTimeBuilder_ != null || startTime_ != null;
@@ -1052,6 +1092,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return The startTime.
        */
       public com.google.protobuf.Timestamp getStartTime() {
         if (startTimeBuilder_ == null) {
@@ -1222,6 +1264,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       *
+       * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
         return endTimeBuilder_ != null || endTime_ != null;
@@ -1235,6 +1279,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       *
+       * @return The endTime.
        */
       public com.google.protobuf.Timestamp getEndTime() {
         if (endTimeBuilder_ == null) {
@@ -1416,6 +1462,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+       *
+       * @return Whether the timestampField field is set.
        */
       public boolean hasTimestampField() {
         return timestampFieldBuilder_ != null || timestampField_ != null;
@@ -1439,6 +1487,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+       *
+       * @return The timestampField.
        */
       public com.google.privacy.dlp.v2.FieldId getTimestampField() {
         if (timestampFieldBuilder_ == null) {
@@ -1683,6 +1733,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+       *
+       * @return The enableAutoPopulationOfTimespanConfig.
        */
       public boolean getEnableAutoPopulationOfTimespanConfig() {
         return enableAutoPopulationOfTimespanConfig_;
@@ -1698,6 +1750,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+       *
+       * @param value The enableAutoPopulationOfTimespanConfig to set.
+       * @return This builder for chaining.
        */
       public Builder setEnableAutoPopulationOfTimespanConfig(boolean value) {
 
@@ -1716,6 +1771,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearEnableAutoPopulationOfTimespanConfig() {
 
@@ -1779,7 +1836,10 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
-  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATASTORE_OPTIONS(2),
     CLOUD_STORAGE_OPTIONS(3),
     BIG_QUERY_OPTIONS(4),
@@ -1789,7 +1849,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -1828,6 +1892,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+   *
+   * @return Whether the datastoreOptions field is set.
    */
   public boolean hasDatastoreOptions() {
     return typeCase_ == 2;
@@ -1840,6 +1906,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+   *
+   * @return The datastoreOptions.
    */
   public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
     if (typeCase_ == 2) {
@@ -1872,6 +1940,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+   *
+   * @return Whether the cloudStorageOptions field is set.
    */
   public boolean hasCloudStorageOptions() {
     return typeCase_ == 3;
@@ -1884,6 +1954,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+   *
+   * @return The cloudStorageOptions.
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
     if (typeCase_ == 3) {
@@ -1916,6 +1988,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+   *
+   * @return Whether the bigQueryOptions field is set.
    */
   public boolean hasBigQueryOptions() {
     return typeCase_ == 4;
@@ -1928,6 +2002,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+   *
+   * @return The bigQueryOptions.
    */
   public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
     if (typeCase_ == 4) {
@@ -1953,11 +2029,19 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESPAN_CONFIG_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;
-  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   *
+   * @return Whether the timespanConfig field is set.
+   */
   public boolean hasTimespanConfig() {
     return timespanConfig_ != null;
   }
-  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   *
+   * @return The timespanConfig.
+   */
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
     return timespanConfig_ == null
         ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
@@ -2422,6 +2506,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+     *
+     * @return Whether the datastoreOptions field is set.
      */
     public boolean hasDatastoreOptions() {
       return typeCase_ == 2;
@@ -2434,6 +2520,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+     *
+     * @return The datastoreOptions.
      */
     public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
       if (datastoreOptionsBuilder_ == null) {
@@ -2624,6 +2712,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+     *
+     * @return Whether the cloudStorageOptions field is set.
      */
     public boolean hasCloudStorageOptions() {
       return typeCase_ == 3;
@@ -2636,6 +2726,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+     *
+     * @return The cloudStorageOptions.
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
       if (cloudStorageOptionsBuilder_ == null) {
@@ -2827,6 +2919,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+     *
+     * @return Whether the bigQueryOptions field is set.
      */
     public boolean hasBigQueryOptions() {
       return typeCase_ == 4;
@@ -2839,6 +2933,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+     *
+     * @return The bigQueryOptions.
      */
     public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
       if (bigQueryOptionsBuilder_ == null) {
@@ -3022,11 +3118,19 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>
         timespanConfigBuilder_;
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     *
+     * @return Whether the timespanConfig field is set.
+     */
     public boolean hasTimespanConfig() {
       return timespanConfigBuilder_ != null || timespanConfig_ != null;
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     *
+     * @return The timespanConfig.
+     */
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
       if (timespanConfigBuilder_ == null) {
         return timespanConfig_ == null

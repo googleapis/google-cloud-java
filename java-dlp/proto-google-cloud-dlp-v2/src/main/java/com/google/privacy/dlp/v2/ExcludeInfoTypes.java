@@ -42,6 +42,12 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExcludeInfoTypes();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

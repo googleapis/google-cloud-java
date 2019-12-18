@@ -43,6 +43,12 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RedactImageResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes redacted_image = 1;</code>
+   *
+   * @return The redactedImage.
    */
   public com.google.protobuf.ByteString getRedactedImage() {
     return redactedImage_;
@@ -155,6 +162,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string extracted_text = 2;</code>
+   *
+   * @return The extractedText.
    */
   public java.lang.String getExtractedText() {
     java.lang.Object ref = extractedText_;
@@ -177,6 +186,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string extracted_text = 2;</code>
+   *
+   * @return The bytes for extractedText.
    */
   public com.google.protobuf.ByteString getExtractedTextBytes() {
     java.lang.Object ref = extractedText_;
@@ -200,6 +211,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   *
+   * @return Whether the inspectResult field is set.
    */
   public boolean hasInspectResult() {
     return inspectResult_ != null;
@@ -212,6 +225,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   *
+   * @return The inspectResult.
    */
   public com.google.privacy.dlp.v2.InspectResult getInspectResult() {
     return inspectResult_ == null
@@ -599,6 +614,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes redacted_image = 1;</code>
+     *
+     * @return The redactedImage.
      */
     public com.google.protobuf.ByteString getRedactedImage() {
       return redactedImage_;
@@ -611,6 +628,9 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes redacted_image = 1;</code>
+     *
+     * @param value The redactedImage to set.
+     * @return This builder for chaining.
      */
     public Builder setRedactedImage(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -629,6 +649,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes redacted_image = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRedactedImage() {
 
@@ -648,6 +670,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string extracted_text = 2;</code>
+     *
+     * @return The extractedText.
      */
     public java.lang.String getExtractedText() {
       java.lang.Object ref = extractedText_;
@@ -670,6 +694,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string extracted_text = 2;</code>
+     *
+     * @return The bytes for extractedText.
      */
     public com.google.protobuf.ByteString getExtractedTextBytes() {
       java.lang.Object ref = extractedText_;
@@ -692,6 +718,9 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string extracted_text = 2;</code>
+     *
+     * @param value The extractedText to set.
+     * @return This builder for chaining.
      */
     public Builder setExtractedText(java.lang.String value) {
       if (value == null) {
@@ -712,6 +741,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string extracted_text = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExtractedText() {
 
@@ -729,6 +760,9 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string extracted_text = 2;</code>
+     *
+     * @param value The bytes for extractedText to set.
+     * @return This builder for chaining.
      */
     public Builder setExtractedTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -755,6 +789,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+     *
+     * @return Whether the inspectResult field is set.
      */
     public boolean hasInspectResult() {
       return inspectResultBuilder_ != null || inspectResult_ != null;
@@ -767,6 +803,8 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+     *
+     * @return The inspectResult.
      */
     public com.google.privacy.dlp.v2.InspectResult getInspectResult() {
       if (inspectResultBuilder_ == null) {

@@ -31,6 +31,8 @@ public interface ColorOrBuilder
    * </pre>
    *
    * <code>float red = 1;</code>
+   *
+   * @return The red.
    */
   float getRed();
 
@@ -42,6 +44,8 @@ public interface ColorOrBuilder
    * </pre>
    *
    * <code>float green = 2;</code>
+   *
+   * @return The green.
    */
   float getGreen();
 
@@ -53,6 +57,8 @@ public interface ColorOrBuilder
    * </pre>
    *
    * <code>float blue = 3;</code>
+   *
+   * @return The blue.
    */
   float getBlue();
 }

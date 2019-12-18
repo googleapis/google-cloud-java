@@ -51,6 +51,12 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
   private FixedSizeBucketingConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FixedSizeBucketingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,7 +69,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -155,6 +160,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   *
+   * @return Whether the lowerBound field is set.
    */
   public boolean hasLowerBound() {
     return lowerBound_ != null;
@@ -169,6 +176,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   *
+   * @return The lowerBound.
    */
   public com.google.privacy.dlp.v2.Value getLowerBound() {
     return lowerBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : lowerBound_;
@@ -201,6 +210,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   *
+   * @return Whether the upperBound field is set.
    */
   public boolean hasUpperBound() {
     return upperBound_ != null;
@@ -216,6 +227,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   *
+   * @return The upperBound.
    */
   public com.google.privacy.dlp.v2.Value getUpperBound() {
     return upperBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : upperBound_;
@@ -249,6 +262,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>double bucket_size = 3;</code>
+   *
+   * @return The bucketSize.
    */
   public double getBucketSize() {
     return bucketSize_;
@@ -658,6 +673,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     *
+     * @return Whether the lowerBound field is set.
      */
     public boolean hasLowerBound() {
       return lowerBoundBuilder_ != null || lowerBound_ != null;
@@ -672,6 +689,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     *
+     * @return The lowerBound.
      */
     public com.google.privacy.dlp.v2.Value getLowerBound() {
       if (lowerBoundBuilder_ == null) {
@@ -858,6 +877,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     *
+     * @return Whether the upperBound field is set.
      */
     public boolean hasUpperBound() {
       return upperBoundBuilder_ != null || upperBound_ != null;
@@ -873,6 +894,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     *
+     * @return The upperBound.
      */
     public com.google.privacy.dlp.v2.Value getUpperBound() {
       if (upperBoundBuilder_ == null) {
@@ -1061,6 +1084,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double bucket_size = 3;</code>
+     *
+     * @return The bucketSize.
      */
     public double getBucketSize() {
       return bucketSize_;
@@ -1076,6 +1101,9 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double bucket_size = 3;</code>
+     *
+     * @param value The bucketSize to set.
+     * @return This builder for chaining.
      */
     public Builder setBucketSize(double value) {
 
@@ -1094,6 +1122,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double bucket_size = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBucketSize() {
 

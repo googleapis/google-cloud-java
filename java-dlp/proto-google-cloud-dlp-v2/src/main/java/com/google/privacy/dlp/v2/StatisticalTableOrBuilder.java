@@ -31,6 +31,8 @@ public interface StatisticalTableOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   *
+   * @return Whether the table field is set.
    */
   boolean hasTable();
   /**
@@ -41,6 +43,8 @@ public interface StatisticalTableOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   *
+   * @return The table.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
   /**
@@ -122,6 +126,8 @@ public interface StatisticalTableOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   *
+   * @return Whether the relativeFrequency field is set.
    */
   boolean hasRelativeFrequency();
   /**
@@ -134,6 +140,8 @@ public interface StatisticalTableOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   *
+   * @return The relativeFrequency.
    */
   com.google.privacy.dlp.v2.FieldId getRelativeFrequency();
   /**

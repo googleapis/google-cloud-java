@@ -41,6 +41,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   private CharsToIgnore() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CharsToIgnore();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -230,12 +235,20 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CommonCharsToIgnore valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CommonCharsToIgnore forNumber(int value) {
       switch (value) {
         case 0:
@@ -305,7 +318,10 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   private int charactersCase_ = 0;
   private java.lang.Object characters_;
 
-  public enum CharactersCase implements com.google.protobuf.Internal.EnumLite {
+  public enum CharactersCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CHARACTERS_TO_SKIP(1),
     COMMON_CHARACTERS_TO_IGNORE(2),
     CHARACTERS_NOT_SET(0);
@@ -314,7 +330,11 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     private CharactersCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CharactersCase valueOf(int value) {
       return forNumber(value);
@@ -343,7 +363,11 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHARACTERS_TO_SKIP_FIELD_NUMBER = 1;
-  /** <code>string characters_to_skip = 1;</code> */
+  /**
+   * <code>string characters_to_skip = 1;</code>
+   *
+   * @return The charactersToSkip.
+   */
   public java.lang.String getCharactersToSkip() {
     java.lang.Object ref = "";
     if (charactersCase_ == 1) {
@@ -360,7 +384,11 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-  /** <code>string characters_to_skip = 1;</code> */
+  /**
+   * <code>string characters_to_skip = 1;</code>
+   *
+   * @return The bytes for charactersToSkip.
+   */
   public com.google.protobuf.ByteString getCharactersToSkipBytes() {
     java.lang.Object ref = "";
     if (charactersCase_ == 1) {
@@ -382,6 +410,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   /**
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for commonCharactersToIgnore.
    */
   public int getCommonCharactersToIgnoreValue() {
     if (charactersCase_ == 2) {
@@ -392,6 +422,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   /**
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
+   *
+   * @return The commonCharactersToIgnore.
    */
   public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore() {
     if (charactersCase_ == 2) {
@@ -786,7 +818,11 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    /** <code>string characters_to_skip = 1;</code> */
+    /**
+     * <code>string characters_to_skip = 1;</code>
+     *
+     * @return The charactersToSkip.
+     */
     public java.lang.String getCharactersToSkip() {
       java.lang.Object ref = "";
       if (charactersCase_ == 1) {
@@ -803,7 +839,11 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-    /** <code>string characters_to_skip = 1;</code> */
+    /**
+     * <code>string characters_to_skip = 1;</code>
+     *
+     * @return The bytes for charactersToSkip.
+     */
     public com.google.protobuf.ByteString getCharactersToSkipBytes() {
       java.lang.Object ref = "";
       if (charactersCase_ == 1) {
@@ -820,7 +860,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    /** <code>string characters_to_skip = 1;</code> */
+    /**
+     * <code>string characters_to_skip = 1;</code>
+     *
+     * @param value The charactersToSkip to set.
+     * @return This builder for chaining.
+     */
     public Builder setCharactersToSkip(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -830,7 +875,11 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>string characters_to_skip = 1;</code> */
+    /**
+     * <code>string characters_to_skip = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearCharactersToSkip() {
       if (charactersCase_ == 1) {
         charactersCase_ = 0;
@@ -839,7 +888,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>string characters_to_skip = 1;</code> */
+    /**
+     * <code>string characters_to_skip = 1;</code>
+     *
+     * @param value The bytes for charactersToSkip to set.
+     * @return This builder for chaining.
+     */
     public Builder setCharactersToSkipBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -855,6 +909,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for commonCharactersToIgnore.
      */
     public int getCommonCharactersToIgnoreValue() {
       if (charactersCase_ == 2) {
@@ -866,6 +922,9 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for commonCharactersToIgnore to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonCharactersToIgnoreValue(int value) {
       charactersCase_ = 2;
@@ -877,6 +936,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
+     *
+     * @return The commonCharactersToIgnore.
      */
     public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore
         getCommonCharactersToIgnore() {
@@ -896,6 +957,9 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
+     *
+     * @param value The commonCharactersToIgnore to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonCharactersToIgnore(
         com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore value) {
@@ -911,6 +975,8 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCommonCharactersToIgnore() {
       if (charactersCase_ == 2) {

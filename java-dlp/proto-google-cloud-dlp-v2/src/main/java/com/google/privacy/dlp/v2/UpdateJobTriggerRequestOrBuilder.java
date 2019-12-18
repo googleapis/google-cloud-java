@@ -34,6 +34,8 @@ public interface UpdateJobTriggerRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface UpdateJobTriggerRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface UpdateJobTriggerRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   *
+   * @return Whether the jobTrigger field is set.
    */
   boolean hasJobTrigger();
   /**
@@ -68,6 +74,8 @@ public interface UpdateJobTriggerRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   *
+   * @return The jobTrigger.
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTrigger();
   /**
@@ -89,6 +97,8 @@ public interface UpdateJobTriggerRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -99,6 +109,8 @@ public interface UpdateJobTriggerRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

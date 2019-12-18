@@ -31,6 +31,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -41,6 +43,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+   *
+   * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
   /**
@@ -63,6 +67,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -74,6 +80,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -97,6 +105,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -108,6 +118,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   *
+   * @return The state.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeState getState();
 
@@ -220,6 +232,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   *
+   * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
@@ -230,6 +244,8 @@ public interface StoredInfoTypeVersionOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   *
+   * @return The stats.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeStats getStats();
   /**

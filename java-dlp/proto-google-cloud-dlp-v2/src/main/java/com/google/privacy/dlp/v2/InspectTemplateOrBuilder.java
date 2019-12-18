@@ -34,6 +34,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -68,6 +74,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -79,6 +87,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -89,6 +99,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -100,6 +112,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -110,6 +124,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -131,6 +147,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -141,6 +159,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -162,6 +182,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   *
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -172,6 +194,8 @@ public interface InspectTemplateOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   *
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**

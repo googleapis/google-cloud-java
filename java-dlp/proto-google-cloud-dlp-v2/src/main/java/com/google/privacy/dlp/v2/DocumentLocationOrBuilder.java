@@ -32,6 +32,8 @@ public interface DocumentLocationOrBuilder
    * </pre>
    *
    * <code>int64 file_offset = 1;</code>
+   *
+   * @return The fileOffset.
    */
   long getFileOffset();
 }

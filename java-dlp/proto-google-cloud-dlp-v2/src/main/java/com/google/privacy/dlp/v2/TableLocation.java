@@ -40,6 +40,12 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
   private TableLocation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TableLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 row_index = 1;</code>
+   *
+   * @return The rowIndex.
    */
   public long getRowIndex() {
     return rowIndex_;
@@ -440,6 +447,8 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_index = 1;</code>
+     *
+     * @return The rowIndex.
      */
     public long getRowIndex() {
       return rowIndex_;
@@ -452,6 +461,9 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_index = 1;</code>
+     *
+     * @param value The rowIndex to set.
+     * @return This builder for chaining.
      */
     public Builder setRowIndex(long value) {
 
@@ -467,6 +479,8 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 row_index = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowIndex() {
 

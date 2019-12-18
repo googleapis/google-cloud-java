@@ -23,23 +23,47 @@ public interface CryptoKeyOrBuilder
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CryptoKey)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   *
+   * @return Whether the transient field is set.
+   */
   boolean hasTransient();
-  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   *
+   * @return The transient.
+   */
   com.google.privacy.dlp.v2.TransientCryptoKey getTransient();
   /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
   com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder();
 
-  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   *
+   * @return Whether the unwrapped field is set.
+   */
   boolean hasUnwrapped();
-  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   *
+   * @return The unwrapped.
+   */
   com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped();
   /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
   com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder();
 
-  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   *
+   * @return Whether the kmsWrapped field is set.
+   */
   boolean hasKmsWrapped();
-  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   *
+   * @return The kmsWrapped.
+   */
   com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped();
   /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
   com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder();

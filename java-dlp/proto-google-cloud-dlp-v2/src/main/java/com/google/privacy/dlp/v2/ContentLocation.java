@@ -43,6 +43,12 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ContentLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -180,7 +185,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   private int locationCase_ = 0;
   private java.lang.Object location_;
 
-  public enum LocationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum LocationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RECORD_LOCATION(2),
     IMAGE_LOCATION(3),
     DOCUMENT_LOCATION(5),
@@ -190,7 +198,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     private LocationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static LocationCase valueOf(int value) {
       return forNumber(value);
@@ -237,6 +249,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string container_name = 1;</code>
+   *
+   * @return The containerName.
    */
   public java.lang.String getContainerName() {
     java.lang.Object ref = containerName_;
@@ -264,6 +278,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string container_name = 1;</code>
+   *
+   * @return The bytes for containerName.
    */
   public com.google.protobuf.ByteString getContainerNameBytes() {
     java.lang.Object ref = containerName_;
@@ -286,6 +302,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+   *
+   * @return Whether the recordLocation field is set.
    */
   public boolean hasRecordLocation() {
     return locationCase_ == 2;
@@ -298,6 +316,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+   *
+   * @return The recordLocation.
    */
   public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
     if (locationCase_ == 2) {
@@ -330,6 +350,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+   *
+   * @return Whether the imageLocation field is set.
    */
   public boolean hasImageLocation() {
     return locationCase_ == 3;
@@ -342,6 +364,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+   *
+   * @return The imageLocation.
    */
   public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
     if (locationCase_ == 3) {
@@ -374,6 +398,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+   *
+   * @return Whether the documentLocation field is set.
    */
   public boolean hasDocumentLocation() {
     return locationCase_ == 5;
@@ -386,6 +412,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+   *
+   * @return The documentLocation.
    */
   public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
     if (locationCase_ == 5) {
@@ -422,6 +450,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+   *
+   * @return Whether the containerTimestamp field is set.
    */
   public boolean hasContainerTimestamp() {
     return containerTimestamp_ != null;
@@ -437,6 +467,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+   *
+   * @return The containerTimestamp.
    */
   public com.google.protobuf.Timestamp getContainerTimestamp() {
     return containerTimestamp_ == null
@@ -470,6 +502,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string container_version = 7;</code>
+   *
+   * @return The containerVersion.
    */
   public java.lang.String getContainerVersion() {
     java.lang.Object ref = containerVersion_;
@@ -491,6 +525,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string container_version = 7;</code>
+   *
+   * @return The bytes for containerVersion.
    */
   public com.google.protobuf.ByteString getContainerVersionBytes() {
     java.lang.Object ref = containerVersion_;
@@ -993,6 +1029,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     *
+     * @return The containerName.
      */
     public java.lang.String getContainerName() {
       java.lang.Object ref = containerName_;
@@ -1020,6 +1058,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     *
+     * @return The bytes for containerName.
      */
     public com.google.protobuf.ByteString getContainerNameBytes() {
       java.lang.Object ref = containerName_;
@@ -1047,6 +1087,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     *
+     * @param value The containerName to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerName(java.lang.String value) {
       if (value == null) {
@@ -1072,6 +1115,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContainerName() {
 
@@ -1094,6 +1139,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     *
+     * @param value The bytes for containerName to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1119,6 +1167,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+     *
+     * @return Whether the recordLocation field is set.
      */
     public boolean hasRecordLocation() {
       return locationCase_ == 2;
@@ -1131,6 +1181,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+     *
+     * @return The recordLocation.
      */
     public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
       if (recordLocationBuilder_ == null) {
@@ -1321,6 +1373,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+     *
+     * @return Whether the imageLocation field is set.
      */
     public boolean hasImageLocation() {
       return locationCase_ == 3;
@@ -1333,6 +1387,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+     *
+     * @return The imageLocation.
      */
     public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
       if (imageLocationBuilder_ == null) {
@@ -1523,6 +1579,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+     *
+     * @return Whether the documentLocation field is set.
      */
     public boolean hasDocumentLocation() {
       return locationCase_ == 5;
@@ -1535,6 +1593,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+     *
+     * @return The documentLocation.
      */
     public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
       if (documentLocationBuilder_ == null) {
@@ -1729,6 +1789,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+     *
+     * @return Whether the containerTimestamp field is set.
      */
     public boolean hasContainerTimestamp() {
       return containerTimestampBuilder_ != null || containerTimestamp_ != null;
@@ -1744,6 +1806,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+     *
+     * @return The containerTimestamp.
      */
     public com.google.protobuf.Timestamp getContainerTimestamp() {
       if (containerTimestampBuilder_ == null) {
@@ -1930,6 +1994,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     *
+     * @return The containerVersion.
      */
     public java.lang.String getContainerVersion() {
       java.lang.Object ref = containerVersion_;
@@ -1951,6 +2017,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     *
+     * @return The bytes for containerVersion.
      */
     public com.google.protobuf.ByteString getContainerVersionBytes() {
       java.lang.Object ref = containerVersion_;
@@ -1972,6 +2040,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     *
+     * @param value The containerVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerVersion(java.lang.String value) {
       if (value == null) {
@@ -1991,6 +2062,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContainerVersion() {
 
@@ -2007,6 +2080,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     *
+     * @param value The bytes for containerVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

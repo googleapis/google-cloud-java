@@ -26,11 +26,15 @@ public interface PrivacyMetricOrBuilder
   /**
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
+   *
+   * @return Whether the numericalStatsConfig field is set.
    */
   boolean hasNumericalStatsConfig();
   /**
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
+   *
+   * @return The numericalStatsConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig();
   /**
@@ -43,11 +47,15 @@ public interface PrivacyMetricOrBuilder
   /**
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
+   *
+   * @return Whether the categoricalStatsConfig field is set.
    */
   boolean hasCategoricalStatsConfig();
   /**
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
+   *
+   * @return The categoricalStatsConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig();
   /**
@@ -57,16 +65,32 @@ public interface PrivacyMetricOrBuilder
   com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder
       getCategoricalStatsConfigOrBuilder();
 
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+   *
+   * @return Whether the kAnonymityConfig field is set.
+   */
   boolean hasKAnonymityConfig();
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+   *
+   * @return The kAnonymityConfig.
+   */
   com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig();
   /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
   com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder getKAnonymityConfigOrBuilder();
 
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+   *
+   * @return Whether the lDiversityConfig field is set.
+   */
   boolean hasLDiversityConfig();
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+   *
+   * @return The lDiversityConfig.
+   */
   com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig();
   /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
   com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder getLDiversityConfigOrBuilder();
@@ -74,11 +98,15 @@ public interface PrivacyMetricOrBuilder
   /**
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
+   *
+   * @return Whether the kMapEstimationConfig field is set.
    */
   boolean hasKMapEstimationConfig();
   /**
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
+   *
+   * @return The kMapEstimationConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig();
   /**
@@ -92,12 +120,16 @@ public interface PrivacyMetricOrBuilder
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
+   *
+   * @return Whether the deltaPresenceEstimationConfig field is set.
    */
   boolean hasDeltaPresenceEstimationConfig();
   /**
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
+   *
+   * @return The deltaPresenceEstimationConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
       getDeltaPresenceEstimationConfig();

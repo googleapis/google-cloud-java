@@ -33,6 +33,8 @@ public interface ListInfoTypesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -45,6 +47,8 @@ public interface ListInfoTypesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -57,6 +61,8 @@ public interface ListInfoTypesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -68,6 +74,8 @@ public interface ListInfoTypesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -80,6 +88,8 @@ public interface ListInfoTypesRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 3;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -91,6 +101,8 @@ public interface ListInfoTypesRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 3;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

@@ -48,6 +48,12 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BigQueryTable();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,6 +142,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -158,6 +165,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -181,6 +190,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
+   *
+   * @return The datasetId.
    */
   public java.lang.String getDatasetId() {
     java.lang.Object ref = datasetId_;
@@ -201,6 +212,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
+   *
+   * @return The bytes for datasetId.
    */
   public com.google.protobuf.ByteString getDatasetIdBytes() {
     java.lang.Object ref = datasetId_;
@@ -224,6 +237,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string table_id = 3;</code>
+   *
+   * @return The tableId.
    */
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
@@ -244,6 +259,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string table_id = 3;</code>
+   *
+   * @return The bytes for tableId.
    */
   public com.google.protobuf.ByteString getTableIdBytes() {
     java.lang.Object ref = tableId_;
@@ -618,6 +635,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -639,6 +658,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -660,6 +681,9 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -679,6 +703,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -695,6 +721,9 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -716,6 +745,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return The datasetId.
      */
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
@@ -736,6 +767,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return The bytes for datasetId.
      */
     public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
@@ -756,6 +789,9 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @param value The datasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetId(java.lang.String value) {
       if (value == null) {
@@ -774,6 +810,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDatasetId() {
 
@@ -789,6 +827,9 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @param value The bytes for datasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -810,6 +851,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return The tableId.
      */
     public java.lang.String getTableId() {
       java.lang.Object ref = tableId_;
@@ -830,6 +873,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return The bytes for tableId.
      */
     public com.google.protobuf.ByteString getTableIdBytes() {
       java.lang.Object ref = tableId_;
@@ -850,6 +895,9 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @param value The tableId to set.
+     * @return This builder for chaining.
      */
     public Builder setTableId(java.lang.String value) {
       if (value == null) {
@@ -868,6 +916,8 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTableId() {
 
@@ -883,6 +933,9 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @param value The bytes for tableId to set.
+     * @return This builder for chaining.
      */
     public Builder setTableIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -44,6 +44,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateStoredInfoTypeRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -174,6 +181,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -197,6 +206,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -209,6 +220,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   *
+   * @return The config.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
     return config_ == null
@@ -241,6 +254,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string stored_info_type_id = 3;</code>
+   *
+   * @return The storedInfoTypeId.
    */
   public java.lang.String getStoredInfoTypeId() {
     java.lang.Object ref = storedInfoTypeId_;
@@ -264,6 +279,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string stored_info_type_id = 3;</code>
+   *
+   * @return The bytes for storedInfoTypeId.
    */
   public com.google.protobuf.ByteString getStoredInfoTypeIdBytes() {
     java.lang.Object ref = storedInfoTypeId_;
@@ -288,6 +305,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -309,6 +328,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -713,6 +734,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -736,6 +759,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -759,6 +784,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -780,6 +808,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -798,6 +828,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -824,6 +857,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -836,6 +871,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     *
+     * @return The config.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
       if (configBuilder_ == null) {
@@ -1004,6 +1041,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string stored_info_type_id = 3;</code>
+     *
+     * @return The storedInfoTypeId.
      */
     public java.lang.String getStoredInfoTypeId() {
       java.lang.Object ref = storedInfoTypeId_;
@@ -1027,6 +1066,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string stored_info_type_id = 3;</code>
+     *
+     * @return The bytes for storedInfoTypeId.
      */
     public com.google.protobuf.ByteString getStoredInfoTypeIdBytes() {
       java.lang.Object ref = storedInfoTypeId_;
@@ -1050,6 +1091,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string stored_info_type_id = 3;</code>
+     *
+     * @param value The storedInfoTypeId to set.
+     * @return This builder for chaining.
      */
     public Builder setStoredInfoTypeId(java.lang.String value) {
       if (value == null) {
@@ -1071,6 +1115,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string stored_info_type_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStoredInfoTypeId() {
 
@@ -1089,6 +1135,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string stored_info_type_id = 3;</code>
+     *
+     * @param value The bytes for storedInfoTypeId to set.
+     * @return This builder for chaining.
      */
     public Builder setStoredInfoTypeIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1111,6 +1160,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1132,6 +1183,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -1153,6 +1206,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -1172,6 +1228,8 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -1188,6 +1246,9 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

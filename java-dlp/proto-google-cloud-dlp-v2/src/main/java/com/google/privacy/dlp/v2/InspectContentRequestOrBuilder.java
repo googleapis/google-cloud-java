@@ -31,6 +31,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -41,6 +43,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -53,6 +57,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   *
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -64,6 +70,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   *
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
@@ -86,6 +94,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
+   *
+   * @return Whether the item field is set.
    */
   boolean hasItem();
   /**
@@ -96,6 +106,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
+   *
+   * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
@@ -121,6 +133,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>string inspect_template_name = 4;</code>
+   *
+   * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
   /**
@@ -135,6 +149,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>string inspect_template_name = 4;</code>
+   *
+   * @return The bytes for inspectTemplateName.
    */
   com.google.protobuf.ByteString getInspectTemplateNameBytes();
 
@@ -147,6 +163,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -158,6 +176,8 @@ public interface InspectContentRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

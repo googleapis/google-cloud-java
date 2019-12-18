@@ -46,6 +46,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateDlpJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -159,7 +164,10 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   private int jobCase_ = 0;
   private java.lang.Object job_;
 
-  public enum JobCase implements com.google.protobuf.Internal.EnumLite {
+  public enum JobCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INSPECT_JOB(2),
     RISK_JOB(3),
     JOB_NOT_SET(0);
@@ -168,7 +176,11 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     private JobCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static JobCase valueOf(int value) {
       return forNumber(value);
@@ -208,6 +220,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -230,6 +244,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -244,11 +260,19 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 2;
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   *
+   * @return Whether the inspectJob field is set.
+   */
   public boolean hasInspectJob() {
     return jobCase_ == 2;
   }
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   *
+   * @return The inspectJob.
+   */
   public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
     if (jobCase_ == 2) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -264,11 +288,19 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RISK_JOB_FIELD_NUMBER = 3;
-  /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   *
+   * @return Whether the riskJob field is set.
+   */
   public boolean hasRiskJob() {
     return jobCase_ == 3;
   }
-  /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   *
+   * @return The riskJob.
+   */
   public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob() {
     if (jobCase_ == 3) {
       return (com.google.privacy.dlp.v2.RiskAnalysisJobConfig) job_;
@@ -296,6 +328,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string job_id = 4;</code>
+   *
+   * @return The jobId.
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -319,6 +353,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string job_id = 4;</code>
+   *
+   * @return The bytes for jobId.
    */
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
@@ -343,6 +379,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -364,6 +402,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -824,6 +864,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -846,6 +888,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -868,6 +912,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -888,6 +935,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -905,6 +954,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -922,11 +974,19 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.InspectJobConfig.Builder,
             com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
         inspectJobBuilder_;
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     *
+     * @return Whether the inspectJob field is set.
+     */
     public boolean hasInspectJob() {
       return jobCase_ == 2;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     *
+     * @return The inspectJob.
+     */
     public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 2) {
@@ -1052,11 +1112,19 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder,
             com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder>
         riskJobBuilder_;
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     *
+     * @return Whether the riskJob field is set.
+     */
     public boolean hasRiskJob() {
       return jobCase_ == 3;
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     *
+     * @return The riskJob.
+     */
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob() {
       if (riskJobBuilder_ == null) {
         if (jobCase_ == 3) {
@@ -1189,6 +1257,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     *
+     * @return The jobId.
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -1212,6 +1282,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     *
+     * @return The bytes for jobId.
      */
     public com.google.protobuf.ByteString getJobIdBytes() {
       java.lang.Object ref = jobId_;
@@ -1235,6 +1307,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     *
+     * @param value The jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobId(java.lang.String value) {
       if (value == null) {
@@ -1256,6 +1331,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobId() {
 
@@ -1274,6 +1351,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     *
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1296,6 +1376,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1317,6 +1399,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -1338,6 +1422,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -1357,6 +1444,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -1373,6 +1462,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

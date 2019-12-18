@@ -40,6 +40,12 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
   private ReplaceValueConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReplaceValueConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+   *
+   * @return Whether the newValue field is set.
    */
   public boolean hasNewValue() {
     return newValue_ != null;
@@ -134,6 +141,8 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+   *
+   * @return The newValue.
    */
   public com.google.privacy.dlp.v2.Value getNewValue() {
     return newValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : newValue_;
@@ -493,6 +502,8 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+     *
+     * @return Whether the newValue field is set.
      */
     public boolean hasNewValue() {
       return newValueBuilder_ != null || newValue_ != null;
@@ -505,6 +516,8 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+     *
+     * @return The newValue.
      */
     public com.google.privacy.dlp.v2.Value getNewValue() {
       if (newValueBuilder_ == null) {

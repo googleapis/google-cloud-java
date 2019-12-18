@@ -45,6 +45,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CustomInfoType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -161,11 +167,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 detectionRules_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               detectionRules_.add(
                   input.readMessage(
@@ -194,7 +200,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -273,12 +279,20 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ExclusionType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ExclusionType forNumber(int value) {
       switch (value) {
         case 0:
@@ -347,6 +361,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     *
+     * @return Whether the wordList field is set.
      */
     boolean hasWordList();
     /**
@@ -357,6 +373,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     *
+     * @return The wordList.
      */
     com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList();
     /**
@@ -379,6 +397,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     *
+     * @return Whether the cloudStoragePath field is set.
      */
     boolean hasCloudStoragePath();
     /**
@@ -390,6 +410,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     *
+     * @return The cloudStoragePath.
      */
     com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath();
     /**
@@ -448,6 +470,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private Dictionary() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Dictionary();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -460,7 +488,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -557,6 +584,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @return A list containing the words.
        */
       java.util.List<java.lang.String> getWordsList();
       /**
@@ -569,6 +598,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @return The count of words.
        */
       int getWordsCount();
       /**
@@ -581,6 +612,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The words at the given index.
        */
       java.lang.String getWords(int index);
       /**
@@ -593,6 +627,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the words at the given index.
        */
       com.google.protobuf.ByteString getWordsBytes(int index);
     }
@@ -617,6 +654,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       private WordList() {
         words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new WordList();
       }
 
       @java.lang.Override
@@ -703,6 +746,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @return A list containing the words.
        */
       public com.google.protobuf.ProtocolStringList getWordsList() {
         return words_;
@@ -717,6 +762,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @return The count of words.
        */
       public int getWordsCount() {
         return words_.size();
@@ -731,6 +778,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The words at the given index.
        */
       public java.lang.String getWords(int index) {
         return words_.get(index);
@@ -745,6 +795,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the words at the given index.
        */
       public com.google.protobuf.ByteString getWordsBytes(int index) {
         return words_.getByteString(index);
@@ -1116,6 +1169,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @return A list containing the words.
          */
         public com.google.protobuf.ProtocolStringList getWordsList() {
           return words_.getUnmodifiableView();
@@ -1130,6 +1185,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @return The count of words.
          */
         public int getWordsCount() {
           return words_.size();
@@ -1144,6 +1201,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The words at the given index.
          */
         public java.lang.String getWords(int index) {
           return words_.get(index);
@@ -1158,6 +1218,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the words at the given index.
          */
         public com.google.protobuf.ByteString getWordsBytes(int index) {
           return words_.getByteString(index);
@@ -1172,6 +1235,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The words to set.
+         * @return This builder for chaining.
          */
         public Builder setWords(int index, java.lang.String value) {
           if (value == null) {
@@ -1192,6 +1259,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @param value The words to add.
+         * @return This builder for chaining.
          */
         public Builder addWords(java.lang.String value) {
           if (value == null) {
@@ -1212,6 +1282,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @param values The words to add.
+         * @return This builder for chaining.
          */
         public Builder addAllWords(java.lang.Iterable<java.lang.String> values) {
           ensureWordsIsMutable();
@@ -1229,6 +1302,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearWords() {
           words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1246,6 +1321,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         *
+         * @param value The bytes of the words to add.
+         * @return This builder for chaining.
          */
         public Builder addWordsBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1316,7 +1394,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private int sourceCase_ = 0;
     private java.lang.Object source_;
 
-    public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+    public enum SourceCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       WORD_LIST(1),
       CLOUD_STORAGE_PATH(3),
       SOURCE_NOT_SET(0);
@@ -1325,7 +1406,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private SourceCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static SourceCase valueOf(int value) {
         return forNumber(value);
@@ -1362,6 +1447,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     *
+     * @return Whether the wordList field is set.
      */
     public boolean hasWordList() {
       return sourceCase_ == 1;
@@ -1374,6 +1461,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     *
+     * @return The wordList.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList() {
       if (sourceCase_ == 1) {
@@ -1408,6 +1497,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     *
+     * @return Whether the cloudStoragePath field is set.
      */
     public boolean hasCloudStoragePath() {
       return sourceCase_ == 3;
@@ -1421,6 +1512,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     *
+     * @return The cloudStoragePath.
      */
     public com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath() {
       if (sourceCase_ == 3) {
@@ -1872,6 +1965,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+       *
+       * @return Whether the wordList field is set.
        */
       public boolean hasWordList() {
         return sourceCase_ == 1;
@@ -1884,6 +1979,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+       *
+       * @return The wordList.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList() {
         if (wordListBuilder_ == null) {
@@ -2082,6 +2179,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+       *
+       * @return Whether the cloudStoragePath field is set.
        */
       public boolean hasCloudStoragePath() {
         return sourceCase_ == 3;
@@ -2095,6 +2194,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+       *
+       * @return The cloudStoragePath.
        */
       public com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath() {
         if (cloudStoragePathBuilder_ == null) {
@@ -2346,6 +2447,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     *
+     * @return The pattern.
      */
     java.lang.String getPattern();
     /**
@@ -2358,6 +2461,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     *
+     * @return The bytes for pattern.
      */
     com.google.protobuf.ByteString getPatternBytes();
 
@@ -2370,6 +2475,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     *
+     * @return A list containing the groupIndexes.
      */
     java.util.List<java.lang.Integer> getGroupIndexesList();
     /**
@@ -2381,6 +2488,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     *
+     * @return The count of groupIndexes.
      */
     int getGroupIndexesCount();
     /**
@@ -2392,6 +2501,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The groupIndexes at the given index.
      */
     int getGroupIndexes(int index);
   }
@@ -2417,6 +2529,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private Regex() {
       pattern_ = "";
       groupIndexes_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Regex();
     }
 
     @java.lang.Override
@@ -2452,9 +2570,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               }
             case 16:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   groupIndexes_ = newIntList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 groupIndexes_.addInt(input.readInt32());
                 break;
@@ -2463,9 +2581,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                   groupIndexes_ = newIntList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   groupIndexes_.addInt(input.readInt32());
@@ -2487,7 +2605,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           groupIndexes_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -2510,7 +2628,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PATTERN_FIELD_NUMBER = 1;
     private volatile java.lang.Object pattern_;
     /**
@@ -2523,6 +2640,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     *
+     * @return The pattern.
      */
     public java.lang.String getPattern() {
       java.lang.Object ref = pattern_;
@@ -2545,6 +2664,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     *
+     * @return The bytes for pattern.
      */
     public com.google.protobuf.ByteString getPatternBytes() {
       java.lang.Object ref = pattern_;
@@ -2569,6 +2690,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     *
+     * @return A list containing the groupIndexes.
      */
     public java.util.List<java.lang.Integer> getGroupIndexesList() {
       return groupIndexes_;
@@ -2582,6 +2705,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     *
+     * @return The count of groupIndexes.
      */
     public int getGroupIndexesCount() {
       return groupIndexes_.size();
@@ -2595,6 +2720,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The groupIndexes at the given index.
      */
     public int getGroupIndexes(int index) {
       return groupIndexes_.getInt(index);
@@ -2837,7 +2965,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         pattern_ = "";
 
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2866,14 +2994,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.CustomInfoType.Regex result =
             new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.pattern_ = pattern_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           groupIndexes_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.groupIndexes_ = groupIndexes_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2933,7 +3059,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (!other.groupIndexes_.isEmpty()) {
           if (groupIndexes_.isEmpty()) {
             groupIndexes_ = other.groupIndexes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureGroupIndexesIsMutable();
             groupIndexes_.addAll(other.groupIndexes_);
@@ -2982,6 +3108,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       *
+       * @return The pattern.
        */
       public java.lang.String getPattern() {
         java.lang.Object ref = pattern_;
@@ -3004,6 +3132,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       *
+       * @return The bytes for pattern.
        */
       public com.google.protobuf.ByteString getPatternBytes() {
         java.lang.Object ref = pattern_;
@@ -3026,6 +3156,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       *
+       * @param value The pattern to set.
+       * @return This builder for chaining.
        */
       public Builder setPattern(java.lang.String value) {
         if (value == null) {
@@ -3046,6 +3179,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPattern() {
 
@@ -3063,6 +3198,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       *
+       * @param value The bytes for pattern to set.
+       * @return This builder for chaining.
        */
       public Builder setPatternBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3078,9 +3216,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.Internal.IntList groupIndexes_ = emptyIntList();
 
       private void ensureGroupIndexesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           groupIndexes_ = mutableCopy(groupIndexes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -3092,9 +3230,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @return A list containing the groupIndexes.
        */
       public java.util.List<java.lang.Integer> getGroupIndexesList() {
-        return ((bitField0_ & 0x00000002) != 0)
+        return ((bitField0_ & 0x00000001) != 0)
             ? java.util.Collections.unmodifiableList(groupIndexes_)
             : groupIndexes_;
       }
@@ -3107,6 +3247,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @return The count of groupIndexes.
        */
       public int getGroupIndexesCount() {
         return groupIndexes_.size();
@@ -3120,6 +3262,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The groupIndexes at the given index.
        */
       public int getGroupIndexes(int index) {
         return groupIndexes_.getInt(index);
@@ -3133,6 +3278,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The groupIndexes to set.
+       * @return This builder for chaining.
        */
       public Builder setGroupIndexes(int index, int value) {
         ensureGroupIndexesIsMutable();
@@ -3149,6 +3298,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @param value The groupIndexes to add.
+       * @return This builder for chaining.
        */
       public Builder addGroupIndexes(int value) {
         ensureGroupIndexesIsMutable();
@@ -3165,6 +3317,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @param values The groupIndexes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllGroupIndexes(java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureGroupIndexesIsMutable();
@@ -3181,10 +3336,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGroupIndexes() {
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3272,6 +3429,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private SurrogateType() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SurrogateType();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -3710,6 +3873,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
      * </code>
+     *
+     * @return Whether the hotwordRule field is set.
      */
     boolean hasHotwordRule();
     /**
@@ -3721,6 +3886,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
      * </code>
+     *
+     * @return The hotwordRule.
      */
     com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule();
     /**
@@ -3763,6 +3930,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private DetectionRule() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DetectionRule();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3775,7 +3948,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3854,6 +4026,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
+       *
+       * @return The windowBefore.
        */
       int getWindowBefore();
 
@@ -3865,6 +4039,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 window_after = 2;</code>
+       *
+       * @return The windowAfter.
        */
       int getWindowAfter();
     }
@@ -3891,6 +4067,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private Proximity() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Proximity();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -3903,7 +4085,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -3969,6 +4150,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
+       *
+       * @return The windowBefore.
        */
       public int getWindowBefore() {
         return windowBefore_;
@@ -3984,6 +4167,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 window_after = 2;</code>
+       *
+       * @return The windowAfter.
        */
       public int getWindowAfter() {
         return windowAfter_;
@@ -4345,6 +4530,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
+         *
+         * @return The windowBefore.
          */
         public int getWindowBefore() {
           return windowBefore_;
@@ -4357,6 +4544,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
+         *
+         * @param value The windowBefore to set.
+         * @return This builder for chaining.
          */
         public Builder setWindowBefore(int value) {
 
@@ -4372,6 +4562,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearWindowBefore() {
 
@@ -4389,6 +4581,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 window_after = 2;</code>
+         *
+         * @return The windowAfter.
          */
         public int getWindowAfter() {
           return windowAfter_;
@@ -4401,6 +4595,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 window_after = 2;</code>
+         *
+         * @param value The windowAfter to set.
+         * @return This builder for chaining.
          */
         public Builder setWindowAfter(int value) {
 
@@ -4416,6 +4613,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 window_after = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearWindowAfter() {
 
@@ -4492,6 +4691,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       *
+       * @return The enum numeric value on the wire for fixedLikelihood.
        */
       int getFixedLikelihoodValue();
       /**
@@ -4502,6 +4703,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       *
+       * @return The fixedLikelihood.
        */
       com.google.privacy.dlp.v2.Likelihood getFixedLikelihood();
 
@@ -4520,6 +4723,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 relative_likelihood = 2;</code>
+       *
+       * @return The relativeLikelihood.
        */
       int getRelativeLikelihood();
 
@@ -4550,6 +4755,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private LikelihoodAdjustment() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LikelihoodAdjustment();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -4562,7 +4773,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -4625,7 +4835,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private int adjustmentCase_ = 0;
       private java.lang.Object adjustment_;
 
-      public enum AdjustmentCase implements com.google.protobuf.Internal.EnumLite {
+      public enum AdjustmentCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         FIXED_LIKELIHOOD(1),
         RELATIVE_LIKELIHOOD(2),
         ADJUSTMENT_NOT_SET(0);
@@ -4634,7 +4847,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         private AdjustmentCase(int value) {
           this.value = value;
         }
-        /** @deprecated Use {@link #forNumber(int)} instead. */
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
         @java.lang.Deprecated
         public static AdjustmentCase valueOf(int value) {
           return forNumber(value);
@@ -4671,6 +4888,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       *
+       * @return The enum numeric value on the wire for fixedLikelihood.
        */
       public int getFixedLikelihoodValue() {
         if (adjustmentCase_ == 1) {
@@ -4686,6 +4905,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       *
+       * @return The fixedLikelihood.
        */
       public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
         if (adjustmentCase_ == 1) {
@@ -4713,6 +4934,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 relative_likelihood = 2;</code>
+       *
+       * @return The relativeLikelihood.
        */
       public int getRelativeLikelihood() {
         if (adjustmentCase_ == 2) {
@@ -5140,6 +5363,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         *
+         * @return The enum numeric value on the wire for fixedLikelihood.
          */
         public int getFixedLikelihoodValue() {
           if (adjustmentCase_ == 1) {
@@ -5155,6 +5380,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         *
+         * @param value The enum numeric value on the wire for fixedLikelihood to set.
+         * @return This builder for chaining.
          */
         public Builder setFixedLikelihoodValue(int value) {
           adjustmentCase_ = 1;
@@ -5170,6 +5398,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         *
+         * @return The fixedLikelihood.
          */
         public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
           if (adjustmentCase_ == 1) {
@@ -5188,6 +5418,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         *
+         * @param value The fixedLikelihood to set.
+         * @return This builder for chaining.
          */
         public Builder setFixedLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
           if (value == null) {
@@ -5206,6 +5439,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFixedLikelihood() {
           if (adjustmentCase_ == 1) {
@@ -5231,6 +5466,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 relative_likelihood = 2;</code>
+         *
+         * @return The relativeLikelihood.
          */
         public int getRelativeLikelihood() {
           if (adjustmentCase_ == 2) {
@@ -5253,6 +5490,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 relative_likelihood = 2;</code>
+         *
+         * @param value The relativeLikelihood to set.
+         * @return This builder for chaining.
          */
         public Builder setRelativeLikelihood(int value) {
           adjustmentCase_ = 2;
@@ -5275,6 +5515,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 relative_likelihood = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearRelativeLikelihood() {
           if (adjustmentCase_ == 2) {
@@ -5355,6 +5597,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       *
+       * @return Whether the hotwordRegex field is set.
        */
       boolean hasHotwordRegex();
       /**
@@ -5365,6 +5609,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       *
+       * @return The hotwordRegex.
        */
       com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex();
       /**
@@ -5393,6 +5639,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       *
+       * @return Whether the proximity field is set.
        */
       boolean hasProximity();
       /**
@@ -5410,6 +5658,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       *
+       * @return The proximity.
        */
       com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity();
       /**
@@ -5441,6 +5691,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
        * </code>
+       *
+       * @return Whether the likelihoodAdjustment field is set.
        */
       boolean hasLikelihoodAdjustment();
       /**
@@ -5453,6 +5705,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
        * </code>
+       *
+       * @return The likelihoodAdjustment.
        */
       com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
           getLikelihoodAdjustment();
@@ -5493,6 +5747,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private HotwordRule() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new HotwordRule();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -5505,7 +5765,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -5616,6 +5875,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       *
+       * @return Whether the hotwordRegex field is set.
        */
       public boolean hasHotwordRegex() {
         return hotwordRegex_ != null;
@@ -5628,6 +5889,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       *
+       * @return The hotwordRegex.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex() {
         return hotwordRegex_ == null
@@ -5664,6 +5927,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       *
+       * @return Whether the proximity field is set.
        */
       public boolean hasProximity() {
         return proximity_ != null;
@@ -5683,6 +5948,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       *
+       * @return The proximity.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity() {
         return proximity_ == null
@@ -5723,6 +5990,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
        * </code>
+       *
+       * @return Whether the likelihoodAdjustment field is set.
        */
       public boolean hasLikelihoodAdjustment() {
         return likelihoodAdjustment_ != null;
@@ -5737,6 +6006,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
        * </code>
+       *
+       * @return The likelihoodAdjustment.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
           getLikelihoodAdjustment() {
@@ -6179,6 +6450,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+         *
+         * @return Whether the hotwordRegex field is set.
          */
         public boolean hasHotwordRegex() {
           return hotwordRegexBuilder_ != null || hotwordRegex_ != null;
@@ -6191,6 +6464,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+         *
+         * @return The hotwordRegex.
          */
         public com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex() {
           if (hotwordRegexBuilder_ == null) {
@@ -6368,6 +6643,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+         *
+         * @return Whether the proximity field is set.
          */
         public boolean hasProximity() {
           return proximityBuilder_ != null || proximity_ != null;
@@ -6387,6 +6664,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+         *
+         * @return The proximity.
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity() {
           if (proximityBuilder_ == null) {
@@ -6618,6 +6897,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
          * </code>
+         *
+         * @return Whether the likelihoodAdjustment field is set.
          */
         public boolean hasLikelihoodAdjustment() {
           return likelihoodAdjustmentBuilder_ != null || likelihoodAdjustment_ != null;
@@ -6632,6 +6913,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
          * </code>
+         *
+         * @return The likelihoodAdjustment.
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
             getLikelihoodAdjustment() {
@@ -6872,7 +7155,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private int typeCase_ = 0;
     private java.lang.Object type_;
 
-    public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+    public enum TypeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       HOTWORD_RULE(1),
       TYPE_NOT_SET(0);
       private final int value;
@@ -6880,7 +7166,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private TypeCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static TypeCase valueOf(int value) {
         return forNumber(value);
@@ -6916,6 +7206,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
      * </code>
+     *
+     * @return Whether the hotwordRule field is set.
      */
     public boolean hasHotwordRule() {
       return typeCase_ == 1;
@@ -6929,6 +7221,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
      * </code>
+     *
+     * @return The hotwordRule.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
       if (typeCase_ == 1) {
@@ -7340,6 +7634,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
        * </code>
+       *
+       * @return Whether the hotwordRule field is set.
        */
       public boolean hasHotwordRule() {
         return typeCase_ == 1;
@@ -7353,6 +7649,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
        * </code>
+       *
+       * @return The hotwordRule.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
         if (hotwordRuleBuilder_ == null) {
@@ -7601,11 +7899,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
-  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DICTIONARY(2),
     REGEX(3),
     SURROGATE_TYPE(4),
@@ -7616,7 +7916,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -7663,6 +7967,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   *
+   * @return Whether the infoType field is set.
    */
   public boolean hasInfoType() {
     return infoType_ != null;
@@ -7680,6 +7986,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   *
+   * @return The infoType.
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
@@ -7714,6 +8022,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+   *
+   * @return The enum numeric value on the wire for likelihood.
    */
   public int getLikelihoodValue() {
     return likelihood_;
@@ -7728,6 +8038,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+   *
+   * @return The likelihood.
    */
   public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
     @SuppressWarnings("deprecation")
@@ -7745,6 +8057,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+   *
+   * @return Whether the dictionary field is set.
    */
   public boolean hasDictionary() {
     return typeCase_ == 2;
@@ -7757,6 +8071,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+   *
+   * @return The dictionary.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
     if (typeCase_ == 2) {
@@ -7789,6 +8105,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+   *
+   * @return Whether the regex field is set.
    */
   public boolean hasRegex() {
     return typeCase_ == 3;
@@ -7801,6 +8119,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+   *
+   * @return The regex.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
     if (typeCase_ == 3) {
@@ -7834,6 +8154,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+   *
+   * @return Whether the surrogateType field is set.
    */
   public boolean hasSurrogateType() {
     return typeCase_ == 4;
@@ -7847,6 +8169,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+   *
+   * @return The surrogateType.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType() {
     if (typeCase_ == 4) {
@@ -7882,6 +8206,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   *
+   * @return Whether the storedType field is set.
    */
   public boolean hasStoredType() {
     return typeCase_ == 5;
@@ -7895,6 +8221,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   *
+   * @return The storedType.
    */
   public com.google.privacy.dlp.v2.StoredType getStoredType() {
     if (typeCase_ == 5) {
@@ -8006,6 +8334,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   *
+   * @return The enum numeric value on the wire for exclusionType.
    */
   public int getExclusionTypeValue() {
     return exclusionType_;
@@ -8019,6 +8349,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   *
+   * @return The exclusionType.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
     @SuppressWarnings("deprecation")
@@ -8352,7 +8684,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         detectionRulesBuilder_.clear();
       }
@@ -8388,7 +8720,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.CustomInfoType result =
           new com.google.privacy.dlp.v2.CustomInfoType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (infoTypeBuilder_ == null) {
         result.infoType_ = infoType_;
       } else {
@@ -8424,16 +8755,15 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.detectionRules_ = detectionRules_;
       } else {
         result.detectionRules_ = detectionRulesBuilder_.build();
       }
       result.exclusionType_ = exclusionType_;
-      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -8494,7 +8824,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -8507,7 +8837,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             detectionRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDetectionRulesFieldBuilder()
@@ -8610,6 +8940,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return infoTypeBuilder_ != null || infoType_ != null;
@@ -8627,6 +8959,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
@@ -8828,6 +9162,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     *
+     * @return The enum numeric value on the wire for likelihood.
      */
     public int getLikelihoodValue() {
       return likelihood_;
@@ -8842,6 +9178,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for likelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setLikelihoodValue(int value) {
       likelihood_ = value;
@@ -8858,6 +9197,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     *
+     * @return The likelihood.
      */
     public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
       @SuppressWarnings("deprecation")
@@ -8875,6 +9216,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     *
+     * @param value The likelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
       if (value == null) {
@@ -8895,6 +9239,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLikelihood() {
 
@@ -8916,6 +9262,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+     *
+     * @return Whether the dictionary field is set.
      */
     public boolean hasDictionary() {
       return typeCase_ == 2;
@@ -8928,6 +9276,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+     *
+     * @return The dictionary.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
       if (dictionaryBuilder_ == null) {
@@ -9118,6 +9468,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+     *
+     * @return Whether the regex field is set.
      */
     public boolean hasRegex() {
       return typeCase_ == 3;
@@ -9130,6 +9482,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+     *
+     * @return The regex.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
       if (regexBuilder_ == null) {
@@ -9321,6 +9675,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+     *
+     * @return Whether the surrogateType field is set.
      */
     public boolean hasSurrogateType() {
       return typeCase_ == 4;
@@ -9334,6 +9690,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+     *
+     * @return The surrogateType.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType() {
       if (surrogateTypeBuilder_ == null) {
@@ -9536,6 +9894,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     *
+     * @return Whether the storedType field is set.
      */
     public boolean hasStoredType() {
       return typeCase_ == 5;
@@ -9549,6 +9909,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     *
+     * @return The storedType.
      */
     public com.google.privacy.dlp.v2.StoredType getStoredType() {
       if (storedTypeBuilder_ == null) {
@@ -9733,11 +10095,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         detectionRules_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
                 detectionRules_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -9990,7 +10352,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -10139,7 +10501,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
@@ -10157,6 +10519,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     *
+     * @return The enum numeric value on the wire for exclusionType.
      */
     public int getExclusionTypeValue() {
       return exclusionType_;
@@ -10170,6 +10534,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for exclusionType to set.
+     * @return This builder for chaining.
      */
     public Builder setExclusionTypeValue(int value) {
       exclusionType_ = value;
@@ -10185,6 +10552,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     *
+     * @return The exclusionType.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
       @SuppressWarnings("deprecation")
@@ -10203,6 +10572,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     *
+     * @param value The exclusionType to set.
+     * @return This builder for chaining.
      */
     public Builder setExclusionType(com.google.privacy.dlp.v2.CustomInfoType.ExclusionType value) {
       if (value == null) {
@@ -10222,6 +10594,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExclusionType() {
 

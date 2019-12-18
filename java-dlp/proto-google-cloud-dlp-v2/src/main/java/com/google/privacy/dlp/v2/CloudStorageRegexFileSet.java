@@ -69,6 +69,12 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CloudStorageRegexFileSet();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -102,9 +108,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 includeRegex_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               includeRegex_.add(s);
               break;
@@ -112,9 +118,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 excludeRegex_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               excludeRegex_.add(s);
               break;
@@ -133,10 +139,10 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         includeRegex_ = includeRegex_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         excludeRegex_ = excludeRegex_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -159,7 +165,6 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder.class);
   }
 
-  private int bitField0_;
   public static final int BUCKET_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object bucketName_;
   /**
@@ -170,6 +175,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string bucket_name = 1;</code>
+   *
+   * @return The bucketName.
    */
   public java.lang.String getBucketName() {
     java.lang.Object ref = bucketName_;
@@ -190,6 +197,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string bucket_name = 1;</code>
+   *
+   * @return The bytes for bucketName.
    */
   public com.google.protobuf.ByteString getBucketNameBytes() {
     java.lang.Object ref = bucketName_;
@@ -220,6 +229,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @return A list containing the includeRegex.
    */
   public com.google.protobuf.ProtocolStringList getIncludeRegexList() {
     return includeRegex_;
@@ -239,6 +250,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @return The count of includeRegex.
    */
   public int getIncludeRegexCount() {
     return includeRegex_.size();
@@ -258,6 +271,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeRegex at the given index.
    */
   public java.lang.String getIncludeRegex(int index) {
     return includeRegex_.get(index);
@@ -277,6 +293,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string include_regex = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeRegex at the given index.
    */
   public com.google.protobuf.ByteString getIncludeRegexBytes(int index) {
     return includeRegex_.getByteString(index);
@@ -297,6 +316,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @return A list containing the excludeRegex.
    */
   public com.google.protobuf.ProtocolStringList getExcludeRegexList() {
     return excludeRegex_;
@@ -314,6 +335,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @return The count of excludeRegex.
    */
   public int getExcludeRegexCount() {
     return excludeRegex_.size();
@@ -331,6 +354,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeRegex at the given index.
    */
   public java.lang.String getExcludeRegex(int index) {
     return excludeRegex_.get(index);
@@ -348,6 +374,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string exclude_regex = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeRegex at the given index.
    */
   public com.google.protobuf.ByteString getExcludeRegexBytes(int index) {
     return excludeRegex_.getByteString(index);
@@ -617,9 +646,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       bucketName_ = "";
 
       includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -648,19 +677,17 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       com.google.privacy.dlp.v2.CloudStorageRegexFileSet result =
           new com.google.privacy.dlp.v2.CloudStorageRegexFileSet(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.bucketName_ = bucketName_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         includeRegex_ = includeRegex_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.includeRegex_ = includeRegex_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         excludeRegex_ = excludeRegex_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.excludeRegex_ = excludeRegex_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -718,7 +745,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       if (!other.includeRegex_.isEmpty()) {
         if (includeRegex_.isEmpty()) {
           includeRegex_ = other.includeRegex_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureIncludeRegexIsMutable();
           includeRegex_.addAll(other.includeRegex_);
@@ -728,7 +755,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       if (!other.excludeRegex_.isEmpty()) {
         if (excludeRegex_.isEmpty()) {
           excludeRegex_ = other.excludeRegex_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureExcludeRegexIsMutable();
           excludeRegex_.addAll(other.excludeRegex_);
@@ -776,6 +803,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
+     *
+     * @return The bucketName.
      */
     public java.lang.String getBucketName() {
       java.lang.Object ref = bucketName_;
@@ -796,6 +825,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
+     *
+     * @return The bytes for bucketName.
      */
     public com.google.protobuf.ByteString getBucketNameBytes() {
       java.lang.Object ref = bucketName_;
@@ -816,6 +847,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
+     *
+     * @param value The bucketName to set.
+     * @return This builder for chaining.
      */
     public Builder setBucketName(java.lang.String value) {
       if (value == null) {
@@ -834,6 +868,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBucketName() {
 
@@ -849,6 +885,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
+     *
+     * @param value The bytes for bucketName to set.
+     * @return This builder for chaining.
      */
     public Builder setBucketNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -865,9 +904,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIncludeRegexIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         includeRegex_ = new com.google.protobuf.LazyStringArrayList(includeRegex_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -885,6 +924,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @return A list containing the includeRegex.
      */
     public com.google.protobuf.ProtocolStringList getIncludeRegexList() {
       return includeRegex_.getUnmodifiableView();
@@ -904,6 +945,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @return The count of includeRegex.
      */
     public int getIncludeRegexCount() {
       return includeRegex_.size();
@@ -923,6 +966,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeRegex at the given index.
      */
     public java.lang.String getIncludeRegex(int index) {
       return includeRegex_.get(index);
@@ -942,6 +988,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeRegex at the given index.
      */
     public com.google.protobuf.ByteString getIncludeRegexBytes(int index) {
       return includeRegex_.getByteString(index);
@@ -961,6 +1010,10 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includeRegex to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeRegex(int index, java.lang.String value) {
       if (value == null) {
@@ -986,6 +1039,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @param value The includeRegex to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludeRegex(java.lang.String value) {
       if (value == null) {
@@ -1011,6 +1067,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @param values The includeRegex to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIncludeRegex(java.lang.Iterable<java.lang.String> values) {
       ensureIncludeRegexIsMutable();
@@ -1033,10 +1092,12 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludeRegex() {
       includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1055,6 +1116,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string include_regex = 2;</code>
+     *
+     * @param value The bytes of the includeRegex to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludeRegexBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1071,9 +1135,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExcludeRegexIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         excludeRegex_ = new com.google.protobuf.LazyStringArrayList(excludeRegex_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1089,6 +1153,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @return A list containing the excludeRegex.
      */
     public com.google.protobuf.ProtocolStringList getExcludeRegexList() {
       return excludeRegex_.getUnmodifiableView();
@@ -1106,6 +1172,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @return The count of excludeRegex.
      */
     public int getExcludeRegexCount() {
       return excludeRegex_.size();
@@ -1123,6 +1191,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeRegex at the given index.
      */
     public java.lang.String getExcludeRegex(int index) {
       return excludeRegex_.get(index);
@@ -1140,6 +1211,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeRegex at the given index.
      */
     public com.google.protobuf.ByteString getExcludeRegexBytes(int index) {
       return excludeRegex_.getByteString(index);
@@ -1157,6 +1231,10 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludeRegex to set.
+     * @return This builder for chaining.
      */
     public Builder setExcludeRegex(int index, java.lang.String value) {
       if (value == null) {
@@ -1180,6 +1258,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @param value The excludeRegex to add.
+     * @return This builder for chaining.
      */
     public Builder addExcludeRegex(java.lang.String value) {
       if (value == null) {
@@ -1203,6 +1284,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @param values The excludeRegex to add.
+     * @return This builder for chaining.
      */
     public Builder addAllExcludeRegex(java.lang.Iterable<java.lang.String> values) {
       ensureExcludeRegexIsMutable();
@@ -1223,10 +1307,12 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExcludeRegex() {
       excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1243,6 +1329,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string exclude_regex = 3;</code>
+     *
+     * @param value The bytes of the excludeRegex to add.
+     * @return This builder for chaining.
      */
     public Builder addExcludeRegexBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

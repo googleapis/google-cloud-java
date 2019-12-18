@@ -40,6 +40,12 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
   private Color() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Color();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +126,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float red = 1;</code>
+   *
+   * @return The red.
    */
   public float getRed() {
     return red_;
@@ -136,6 +143,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float green = 2;</code>
+   *
+   * @return The green.
    */
   public float getGreen() {
     return green_;
@@ -151,6 +160,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float blue = 3;</code>
+   *
+   * @return The blue.
    */
   public float getBlue() {
     return blue_;
@@ -509,6 +520,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float red = 1;</code>
+     *
+     * @return The red.
      */
     public float getRed() {
       return red_;
@@ -521,6 +534,9 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float red = 1;</code>
+     *
+     * @param value The red to set.
+     * @return This builder for chaining.
      */
     public Builder setRed(float value) {
 
@@ -536,6 +552,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float red = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRed() {
 
@@ -553,6 +571,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float green = 2;</code>
+     *
+     * @return The green.
      */
     public float getGreen() {
       return green_;
@@ -565,6 +585,9 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float green = 2;</code>
+     *
+     * @param value The green to set.
+     * @return This builder for chaining.
      */
     public Builder setGreen(float value) {
 
@@ -580,6 +603,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float green = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGreen() {
 
@@ -597,6 +622,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float blue = 3;</code>
+     *
+     * @return The blue.
      */
     public float getBlue() {
       return blue_;
@@ -609,6 +636,9 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float blue = 3;</code>
+     *
+     * @param value The blue to set.
+     * @return This builder for chaining.
      */
     public Builder setBlue(float value) {
 
@@ -624,6 +654,8 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float blue = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBlue() {
 

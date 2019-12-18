@@ -44,6 +44,12 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
   private EntityId() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EntityId();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   *
+   * @return Whether the field field is set.
    */
   public boolean hasField() {
     return field_ != null;
@@ -138,6 +145,8 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   *
+   * @return The field.
    */
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
@@ -498,6 +507,8 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return Whether the field field is set.
      */
     public boolean hasField() {
       return fieldBuilder_ != null || field_ != null;
@@ -510,6 +521,8 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return The field.
      */
     public com.google.privacy.dlp.v2.FieldId getField() {
       if (fieldBuilder_ == null) {

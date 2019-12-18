@@ -33,6 +33,8 @@ public interface CreateDlpJobRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,19 +47,37 @@ public interface CreateDlpJobRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   *
+   * @return Whether the inspectJob field is set.
+   */
   boolean hasInspectJob();
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   *
+   * @return The inspectJob.
+   */
   com.google.privacy.dlp.v2.InspectJobConfig getInspectJob();
   /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
   com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder();
 
-  /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   *
+   * @return Whether the riskJob field is set.
+   */
   boolean hasRiskJob();
-  /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   *
+   * @return The riskJob.
+   */
   com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob();
   /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
   com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder();
@@ -73,6 +93,8 @@ public interface CreateDlpJobRequestOrBuilder
    * </pre>
    *
    * <code>string job_id = 4;</code>
+   *
+   * @return The jobId.
    */
   java.lang.String getJobId();
   /**
@@ -86,6 +108,8 @@ public interface CreateDlpJobRequestOrBuilder
    * </pre>
    *
    * <code>string job_id = 4;</code>
+   *
+   * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString getJobIdBytes();
 
@@ -98,6 +122,8 @@ public interface CreateDlpJobRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -109,6 +135,8 @@ public interface CreateDlpJobRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 

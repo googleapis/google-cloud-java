@@ -34,6 +34,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   *
+   * @return Whether the inspectTemplate field is set.
    */
   boolean hasInspectTemplate();
   /**
@@ -68,6 +74,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   *
+   * @return The inspectTemplate.
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate();
   /**
@@ -92,6 +100,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   *
+   * @return The templateId.
    */
   java.lang.String getTemplateId();
   /**
@@ -105,6 +115,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   *
+   * @return The bytes for templateId.
    */
   com.google.protobuf.ByteString getTemplateIdBytes();
 
@@ -117,6 +129,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -128,6 +142,8 @@ public interface CreateInspectTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

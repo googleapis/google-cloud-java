@@ -42,6 +42,12 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OutputStorageConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -250,12 +255,20 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static OutputSchema valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static OutputSchema forNumber(int value) {
       switch (value) {
         case 0:
@@ -322,7 +335,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
-  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TABLE(1),
     TYPE_NOT_SET(0);
     private final int value;
@@ -330,7 +346,11 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     private TypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -376,6 +396,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+   *
+   * @return Whether the table field is set.
    */
   public boolean hasTable() {
     return typeCase_ == 1;
@@ -399,6 +421,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+   *
+   * @return The table.
    */
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     if (typeCase_ == 1) {
@@ -450,6 +474,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+   *
+   * @return The enum numeric value on the wire for outputSchema.
    */
   public int getOutputSchemaValue() {
     return outputSchema_;
@@ -469,6 +495,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+   *
+   * @return The outputSchema.
    */
   public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
     @SuppressWarnings("deprecation")
@@ -881,6 +909,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+     *
+     * @return Whether the table field is set.
      */
     public boolean hasTable() {
       return typeCase_ == 1;
@@ -904,6 +934,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+     *
+     * @return The table.
      */
     public com.google.privacy.dlp.v2.BigQueryTable getTable() {
       if (tableBuilder_ == null) {
@@ -1171,6 +1203,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     *
+     * @return The enum numeric value on the wire for outputSchema.
      */
     public int getOutputSchemaValue() {
       return outputSchema_;
@@ -1190,6 +1224,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for outputSchema to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputSchemaValue(int value) {
       outputSchema_ = value;
@@ -1211,6 +1248,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     *
+     * @return The outputSchema.
      */
     public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
       @SuppressWarnings("deprecation")
@@ -1235,6 +1274,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     *
+     * @param value The outputSchema to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputSchema(
         com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema value) {
@@ -1261,6 +1303,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutputSchema() {
 

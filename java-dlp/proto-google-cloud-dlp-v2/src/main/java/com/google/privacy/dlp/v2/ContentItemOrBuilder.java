@@ -31,6 +31,8 @@ public interface ContentItemOrBuilder
    * </pre>
    *
    * <code>string value = 3;</code>
+   *
+   * @return The value.
    */
   java.lang.String getValue();
   /**
@@ -41,6 +43,8 @@ public interface ContentItemOrBuilder
    * </pre>
    *
    * <code>string value = 3;</code>
+   *
+   * @return The bytes for value.
    */
   com.google.protobuf.ByteString getValueBytes();
 
@@ -54,6 +58,8 @@ public interface ContentItemOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
+   *
+   * @return Whether the table field is set.
    */
   boolean hasTable();
   /**
@@ -66,6 +72,8 @@ public interface ContentItemOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
+   *
+   * @return The table.
    */
   com.google.privacy.dlp.v2.Table getTable();
   /**
@@ -89,6 +97,8 @@ public interface ContentItemOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
+   *
+   * @return Whether the byteItem field is set.
    */
   boolean hasByteItem();
   /**
@@ -99,6 +109,8 @@ public interface ContentItemOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
+   *
+   * @return The byteItem.
    */
   com.google.privacy.dlp.v2.ByteContentItem getByteItem();
   /**

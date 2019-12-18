@@ -45,6 +45,12 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StoredInfoTypeConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,7 +142,10 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
-  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LARGE_CUSTOM_DICTIONARY(3),
     TYPE_NOT_SET(0);
     private final int value;
@@ -145,7 +153,11 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     private TypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -181,6 +193,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -201,6 +215,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -224,6 +240,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -244,6 +262,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -266,6 +286,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+   *
+   * @return Whether the largeCustomDictionary field is set.
    */
   public boolean hasLargeCustomDictionary() {
     return typeCase_ == 3;
@@ -278,6 +300,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+   *
+   * @return The largeCustomDictionary.
    */
   public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary() {
     if (typeCase_ == 3) {
@@ -704,6 +728,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -724,6 +750,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -744,6 +772,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -762,6 +793,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -777,6 +810,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -798,6 +834,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -818,6 +856,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -838,6 +878,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -856,6 +899,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -871,6 +916,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -896,6 +944,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+     *
+     * @return Whether the largeCustomDictionary field is set.
      */
     public boolean hasLargeCustomDictionary() {
       return typeCase_ == 3;
@@ -908,6 +958,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+     *
+     * @return The largeCustomDictionary.
      */
     public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary() {
       if (largeCustomDictionaryBuilder_ == null) {

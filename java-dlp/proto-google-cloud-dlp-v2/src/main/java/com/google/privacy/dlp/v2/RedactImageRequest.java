@@ -45,6 +45,12 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RedactImageRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -93,11 +99,11 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 imageRedactionConfigs_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               imageRedactionConfigs_.add(
                   input.readMessage(
@@ -147,7 +153,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -186,6 +192,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return Whether the infoType field is set.
      */
     boolean hasInfoType();
     /**
@@ -199,6 +207,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return The infoType.
      */
     com.google.privacy.dlp.v2.InfoType getInfoType();
     /**
@@ -224,6 +234,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
+     *
+     * @return The redactAllText.
      */
     boolean getRedactAllText();
 
@@ -236,6 +248,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     *
+     * @return Whether the redactionColor field is set.
      */
     boolean hasRedactionColor();
     /**
@@ -247,6 +261,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     *
+     * @return The redactionColor.
      */
     com.google.privacy.dlp.v2.Color getRedactionColor();
     /**
@@ -286,6 +302,12 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     private ImageRedactionConfig() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ImageRedactionConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -298,7 +320,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -383,7 +404,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     private int targetCase_ = 0;
     private java.lang.Object target_;
 
-    public enum TargetCase implements com.google.protobuf.Internal.EnumLite {
+    public enum TargetCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       INFO_TYPE(1),
       REDACT_ALL_TEXT(2),
       TARGET_NOT_SET(0);
@@ -392,7 +416,11 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       private TargetCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static TargetCase valueOf(int value) {
         return forNumber(value);
@@ -432,6 +460,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return targetCase_ == 1;
@@ -447,6 +477,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (targetCase_ == 1) {
@@ -483,6 +515,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
+     *
+     * @return The redactAllText.
      */
     public boolean getRedactAllText() {
       if (targetCase_ == 2) {
@@ -502,6 +536,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     *
+     * @return Whether the redactionColor field is set.
      */
     public boolean hasRedactionColor() {
       return redactionColor_ != null;
@@ -515,6 +551,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     *
+     * @return The redactionColor.
      */
     public com.google.privacy.dlp.v2.Color getRedactionColor() {
       return redactionColor_ == null
@@ -976,6 +1014,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return Whether the infoType field is set.
        */
       public boolean hasInfoType() {
         return targetCase_ == 1;
@@ -991,6 +1031,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return The infoType.
        */
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         if (infoTypeBuilder_ == null) {
@@ -1195,6 +1237,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
+       *
+       * @return The redactAllText.
        */
       public boolean getRedactAllText() {
         if (targetCase_ == 2) {
@@ -1211,6 +1255,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
+       *
+       * @param value The redactAllText to set.
+       * @return This builder for chaining.
        */
       public Builder setRedactAllText(boolean value) {
         targetCase_ = 2;
@@ -1227,6 +1274,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRedactAllText() {
         if (targetCase_ == 2) {
@@ -1252,6 +1301,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+       *
+       * @return Whether the redactionColor field is set.
        */
       public boolean hasRedactionColor() {
         return redactionColorBuilder_ != null || redactionColor_ != null;
@@ -1265,6 +1316,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+       *
+       * @return The redactionColor.
        */
       public com.google.privacy.dlp.v2.Color getRedactionColor() {
         if (redactionColorBuilder_ == null) {
@@ -1482,7 +1535,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -1493,6 +1545,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -1513,6 +1567,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -1537,6 +1593,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string location_id = 8;</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -1558,6 +1616,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string location_id = 8;</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -1581,6 +1641,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   *
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -1593,6 +1655,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   *
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
@@ -1702,6 +1766,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool include_findings = 6;</code>
+   *
+   * @return The includeFindings.
    */
   public boolean getIncludeFindings() {
     return includeFindings_;
@@ -1717,6 +1783,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+   *
+   * @return Whether the byteItem field is set.
    */
   public boolean hasByteItem() {
     return byteItem_ != null;
@@ -1729,6 +1797,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+   *
+   * @return The byteItem.
    */
   public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
     return byteItem_ == null
@@ -2026,7 +2096,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       if (imageRedactionConfigsBuilder_ == null) {
         imageRedactionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         imageRedactionConfigsBuilder_.clear();
       }
@@ -2066,7 +2136,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       com.google.privacy.dlp.v2.RedactImageRequest result =
           new com.google.privacy.dlp.v2.RedactImageRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.locationId_ = locationId_;
       if (inspectConfigBuilder_ == null) {
@@ -2075,9 +2144,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         result.inspectConfig_ = inspectConfigBuilder_.build();
       }
       if (imageRedactionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.imageRedactionConfigs_ = imageRedactionConfigs_;
       } else {
@@ -2089,7 +2158,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       } else {
         result.byteItem_ = byteItemBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2154,7 +2222,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         if (!other.imageRedactionConfigs_.isEmpty()) {
           if (imageRedactionConfigs_.isEmpty()) {
             imageRedactionConfigs_ = other.imageRedactionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureImageRedactionConfigsIsMutable();
             imageRedactionConfigs_.addAll(other.imageRedactionConfigs_);
@@ -2167,7 +2235,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             imageRedactionConfigsBuilder_.dispose();
             imageRedactionConfigsBuilder_ = null;
             imageRedactionConfigs_ = other.imageRedactionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             imageRedactionConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getImageRedactionConfigsFieldBuilder()
@@ -2223,6 +2291,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -2243,6 +2313,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -2263,6 +2335,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -2281,6 +2356,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -2296,6 +2373,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2318,6 +2398,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -2339,6 +2421,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -2360,6 +2444,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -2379,6 +2466,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -2395,6 +2484,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2421,6 +2513,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     *
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -2433,6 +2527,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     *
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
@@ -2593,12 +2689,12 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         imageRedactionConfigs_ = java.util.Collections.emptyList();
 
     private void ensureImageRedactionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         imageRedactionConfigs_ =
             new java.util.ArrayList<
                 com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>(
                 imageRedactionConfigs_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2845,7 +2941,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public Builder clearImageRedactionConfigs() {
       if (imageRedactionConfigsBuilder_ == null) {
         imageRedactionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         imageRedactionConfigsBuilder_.clear();
@@ -2992,7 +3088,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
                 com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.Builder,
                 com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>(
                 imageRedactionConfigs_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         imageRedactionConfigs_ = null;
@@ -3010,6 +3106,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_findings = 6;</code>
+     *
+     * @return The includeFindings.
      */
     public boolean getIncludeFindings() {
       return includeFindings_;
@@ -3023,6 +3121,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_findings = 6;</code>
+     *
+     * @param value The includeFindings to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeFindings(boolean value) {
 
@@ -3039,6 +3140,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_findings = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludeFindings() {
 
@@ -3061,6 +3164,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+     *
+     * @return Whether the byteItem field is set.
      */
     public boolean hasByteItem() {
       return byteItemBuilder_ != null || byteItem_ != null;
@@ -3073,6 +3178,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+     *
+     * @return The byteItem.
      */
     public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
       if (byteItemBuilder_ == null) {

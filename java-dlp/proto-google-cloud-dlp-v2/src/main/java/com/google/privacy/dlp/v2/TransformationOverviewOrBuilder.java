@@ -31,6 +31,8 @@ public interface TransformationOverviewOrBuilder
    * </pre>
    *
    * <code>int64 transformed_bytes = 2;</code>
+   *
+   * @return The transformedBytes.
    */
   long getTransformedBytes();
 

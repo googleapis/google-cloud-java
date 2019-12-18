@@ -31,6 +31,8 @@ public interface DeidentifyContentResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
+   *
+   * @return Whether the item field is set.
    */
   boolean hasItem();
   /**
@@ -41,6 +43,8 @@ public interface DeidentifyContentResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
+   *
+   * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
@@ -62,6 +66,8 @@ public interface DeidentifyContentResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
+   *
+   * @return Whether the overview field is set.
    */
   boolean hasOverview();
   /**
@@ -72,6 +78,8 @@ public interface DeidentifyContentResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
+   *
+   * @return The overview.
    */
   com.google.privacy.dlp.v2.TransformationOverview getOverview();
   /**

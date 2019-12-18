@@ -33,6 +33,8 @@ public interface StoredTypeOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface StoredTypeOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface StoredTypeOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -68,6 +74,8 @@ public interface StoredTypeOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**

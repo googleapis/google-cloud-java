@@ -42,6 +42,12 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InspectResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -117,7 +123,6 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InspectResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FINDINGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.Finding> findings_;
   /**
@@ -197,6 +202,8 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool findings_truncated = 2;</code>
+   *
+   * @return The findingsTruncated.
    */
   public boolean getFindingsTruncated() {
     return findingsTruncated_;
@@ -454,7 +461,6 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.InspectResult result =
           new com.google.privacy.dlp.v2.InspectResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (findingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           findings_ = java.util.Collections.unmodifiableList(findings_);
@@ -465,7 +471,6 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
         result.findings_ = findingsBuilder_.build();
       }
       result.findingsTruncated_ = findingsTruncated_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -938,6 +943,8 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool findings_truncated = 2;</code>
+     *
+     * @return The findingsTruncated.
      */
     public boolean getFindingsTruncated() {
       return findingsTruncated_;
@@ -955,6 +962,9 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool findings_truncated = 2;</code>
+     *
+     * @param value The findingsTruncated to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingsTruncated(boolean value) {
 
@@ -975,6 +985,8 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool findings_truncated = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingsTruncated() {
 

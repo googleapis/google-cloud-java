@@ -45,6 +45,12 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   private Value() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Value();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -178,7 +183,10 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
-  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INTEGER_VALUE(1),
     FLOAT_VALUE(2),
     STRING_VALUE(3),
@@ -193,7 +201,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -234,7 +246,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTEGER_VALUE_FIELD_NUMBER = 1;
-  /** <code>int64 integer_value = 1;</code> */
+  /**
+   * <code>int64 integer_value = 1;</code>
+   *
+   * @return The integerValue.
+   */
   public long getIntegerValue() {
     if (typeCase_ == 1) {
       return (java.lang.Long) type_;
@@ -243,7 +259,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOAT_VALUE_FIELD_NUMBER = 2;
-  /** <code>double float_value = 2;</code> */
+  /**
+   * <code>double float_value = 2;</code>
+   *
+   * @return The floatValue.
+   */
   public double getFloatValue() {
     if (typeCase_ == 2) {
       return (java.lang.Double) type_;
@@ -252,7 +272,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
-  /** <code>string string_value = 3;</code> */
+  /**
+   * <code>string string_value = 3;</code>
+   *
+   * @return The stringValue.
+   */
   public java.lang.String getStringValue() {
     java.lang.Object ref = "";
     if (typeCase_ == 3) {
@@ -269,7 +293,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-  /** <code>string string_value = 3;</code> */
+  /**
+   * <code>string string_value = 3;</code>
+   *
+   * @return The bytes for stringValue.
+   */
   public com.google.protobuf.ByteString getStringValueBytes() {
     java.lang.Object ref = "";
     if (typeCase_ == 3) {
@@ -288,7 +316,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOLEAN_VALUE_FIELD_NUMBER = 4;
-  /** <code>bool boolean_value = 4;</code> */
+  /**
+   * <code>bool boolean_value = 4;</code>
+   *
+   * @return The booleanValue.
+   */
   public boolean getBooleanValue() {
     if (typeCase_ == 4) {
       return (java.lang.Boolean) type_;
@@ -297,11 +329,19 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 5;
-  /** <code>.google.protobuf.Timestamp timestamp_value = 5;</code> */
+  /**
+   * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   *
+   * @return Whether the timestampValue field is set.
+   */
   public boolean hasTimestampValue() {
     return typeCase_ == 5;
   }
-  /** <code>.google.protobuf.Timestamp timestamp_value = 5;</code> */
+  /**
+   * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   *
+   * @return The timestampValue.
+   */
   public com.google.protobuf.Timestamp getTimestampValue() {
     if (typeCase_ == 5) {
       return (com.google.protobuf.Timestamp) type_;
@@ -317,11 +357,19 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_VALUE_FIELD_NUMBER = 6;
-  /** <code>.google.type.TimeOfDay time_value = 6;</code> */
+  /**
+   * <code>.google.type.TimeOfDay time_value = 6;</code>
+   *
+   * @return Whether the timeValue field is set.
+   */
   public boolean hasTimeValue() {
     return typeCase_ == 6;
   }
-  /** <code>.google.type.TimeOfDay time_value = 6;</code> */
+  /**
+   * <code>.google.type.TimeOfDay time_value = 6;</code>
+   *
+   * @return The timeValue.
+   */
   public com.google.type.TimeOfDay getTimeValue() {
     if (typeCase_ == 6) {
       return (com.google.type.TimeOfDay) type_;
@@ -337,11 +385,19 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATE_VALUE_FIELD_NUMBER = 7;
-  /** <code>.google.type.Date date_value = 7;</code> */
+  /**
+   * <code>.google.type.Date date_value = 7;</code>
+   *
+   * @return Whether the dateValue field is set.
+   */
   public boolean hasDateValue() {
     return typeCase_ == 7;
   }
-  /** <code>.google.type.Date date_value = 7;</code> */
+  /**
+   * <code>.google.type.Date date_value = 7;</code>
+   *
+   * @return The dateValue.
+   */
   public com.google.type.Date getDateValue() {
     if (typeCase_ == 7) {
       return (com.google.type.Date) type_;
@@ -357,14 +413,22 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DAY_OF_WEEK_VALUE_FIELD_NUMBER = 8;
-  /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+  /**
+   * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   *
+   * @return The enum numeric value on the wire for dayOfWeekValue.
+   */
   public int getDayOfWeekValueValue() {
     if (typeCase_ == 8) {
       return (java.lang.Integer) type_;
     }
     return 0;
   }
-  /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+  /**
+   * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   *
+   * @return The dayOfWeekValue.
+   */
   public com.google.type.DayOfWeek getDayOfWeekValue() {
     if (typeCase_ == 8) {
       @SuppressWarnings("deprecation")
@@ -905,21 +969,34 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    /** <code>int64 integer_value = 1;</code> */
+    /**
+     * <code>int64 integer_value = 1;</code>
+     *
+     * @return The integerValue.
+     */
     public long getIntegerValue() {
       if (typeCase_ == 1) {
         return (java.lang.Long) type_;
       }
       return 0L;
     }
-    /** <code>int64 integer_value = 1;</code> */
+    /**
+     * <code>int64 integer_value = 1;</code>
+     *
+     * @param value The integerValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setIntegerValue(long value) {
       typeCase_ = 1;
       type_ = value;
       onChanged();
       return this;
     }
-    /** <code>int64 integer_value = 1;</code> */
+    /**
+     * <code>int64 integer_value = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearIntegerValue() {
       if (typeCase_ == 1) {
         typeCase_ = 0;
@@ -929,21 +1006,34 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    /** <code>double float_value = 2;</code> */
+    /**
+     * <code>double float_value = 2;</code>
+     *
+     * @return The floatValue.
+     */
     public double getFloatValue() {
       if (typeCase_ == 2) {
         return (java.lang.Double) type_;
       }
       return 0D;
     }
-    /** <code>double float_value = 2;</code> */
+    /**
+     * <code>double float_value = 2;</code>
+     *
+     * @param value The floatValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setFloatValue(double value) {
       typeCase_ = 2;
       type_ = value;
       onChanged();
       return this;
     }
-    /** <code>double float_value = 2;</code> */
+    /**
+     * <code>double float_value = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearFloatValue() {
       if (typeCase_ == 2) {
         typeCase_ = 0;
@@ -953,7 +1043,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    /** <code>string string_value = 3;</code> */
+    /**
+     * <code>string string_value = 3;</code>
+     *
+     * @return The stringValue.
+     */
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
       if (typeCase_ == 3) {
@@ -970,7 +1064,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-    /** <code>string string_value = 3;</code> */
+    /**
+     * <code>string string_value = 3;</code>
+     *
+     * @return The bytes for stringValue.
+     */
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
       if (typeCase_ == 3) {
@@ -987,7 +1085,12 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    /** <code>string string_value = 3;</code> */
+    /**
+     * <code>string string_value = 3;</code>
+     *
+     * @param value The stringValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setStringValue(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -997,7 +1100,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>string string_value = 3;</code> */
+    /**
+     * <code>string string_value = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearStringValue() {
       if (typeCase_ == 3) {
         typeCase_ = 0;
@@ -1006,7 +1113,12 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>string string_value = 3;</code> */
+    /**
+     * <code>string string_value = 3;</code>
+     *
+     * @param value The bytes for stringValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setStringValueBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1018,21 +1130,34 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    /** <code>bool boolean_value = 4;</code> */
+    /**
+     * <code>bool boolean_value = 4;</code>
+     *
+     * @return The booleanValue.
+     */
     public boolean getBooleanValue() {
       if (typeCase_ == 4) {
         return (java.lang.Boolean) type_;
       }
       return false;
     }
-    /** <code>bool boolean_value = 4;</code> */
+    /**
+     * <code>bool boolean_value = 4;</code>
+     *
+     * @param value The booleanValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setBooleanValue(boolean value) {
       typeCase_ = 4;
       type_ = value;
       onChanged();
       return this;
     }
-    /** <code>bool boolean_value = 4;</code> */
+    /**
+     * <code>bool boolean_value = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearBooleanValue() {
       if (typeCase_ == 4) {
         typeCase_ = 0;
@@ -1047,11 +1172,19 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampValueBuilder_;
-    /** <code>.google.protobuf.Timestamp timestamp_value = 5;</code> */
+    /**
+     * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+     *
+     * @return Whether the timestampValue field is set.
+     */
     public boolean hasTimestampValue() {
       return typeCase_ == 5;
     }
-    /** <code>.google.protobuf.Timestamp timestamp_value = 5;</code> */
+    /**
+     * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+     *
+     * @return The timestampValue.
+     */
     public com.google.protobuf.Timestamp getTimestampValue() {
       if (timestampValueBuilder_ == null) {
         if (typeCase_ == 5) {
@@ -1172,11 +1305,19 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         timeValueBuilder_;
-    /** <code>.google.type.TimeOfDay time_value = 6;</code> */
+    /**
+     * <code>.google.type.TimeOfDay time_value = 6;</code>
+     *
+     * @return Whether the timeValue field is set.
+     */
     public boolean hasTimeValue() {
       return typeCase_ == 6;
     }
-    /** <code>.google.type.TimeOfDay time_value = 6;</code> */
+    /**
+     * <code>.google.type.TimeOfDay time_value = 6;</code>
+     *
+     * @return The timeValue.
+     */
     public com.google.type.TimeOfDay getTimeValue() {
       if (timeValueBuilder_ == null) {
         if (typeCase_ == 6) {
@@ -1295,11 +1436,19 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateValueBuilder_;
-    /** <code>.google.type.Date date_value = 7;</code> */
+    /**
+     * <code>.google.type.Date date_value = 7;</code>
+     *
+     * @return Whether the dateValue field is set.
+     */
     public boolean hasDateValue() {
       return typeCase_ == 7;
     }
-    /** <code>.google.type.Date date_value = 7;</code> */
+    /**
+     * <code>.google.type.Date date_value = 7;</code>
+     *
+     * @return The dateValue.
+     */
     public com.google.type.Date getDateValue() {
       if (dateValueBuilder_ == null) {
         if (typeCase_ == 7) {
@@ -1411,21 +1560,34 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return dateValueBuilder_;
     }
 
-    /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     *
+     * @return The enum numeric value on the wire for dayOfWeekValue.
+     */
     public int getDayOfWeekValueValue() {
       if (typeCase_ == 8) {
         return ((java.lang.Integer) type_).intValue();
       }
       return 0;
     }
-    /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for dayOfWeekValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setDayOfWeekValueValue(int value) {
       typeCase_ = 8;
       type_ = value;
       onChanged();
       return this;
     }
-    /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     *
+     * @return The dayOfWeekValue.
+     */
     public com.google.type.DayOfWeek getDayOfWeekValue() {
       if (typeCase_ == 8) {
         @SuppressWarnings("deprecation")
@@ -1435,7 +1597,12 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED;
     }
-    /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     *
+     * @param value The dayOfWeekValue to set.
+     * @return This builder for chaining.
+     */
     public Builder setDayOfWeekValue(com.google.type.DayOfWeek value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1445,7 +1612,11 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.type.DayOfWeek day_of_week_value = 8;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearDayOfWeekValue() {
       if (typeCase_ == 8) {
         typeCase_ = 0;

@@ -45,6 +45,12 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReidentifyContentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -190,6 +195,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -212,6 +219,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -243,6 +252,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
+   *
+   * @return Whether the reidentifyConfig field is set.
    */
   public boolean hasReidentifyConfig() {
     return reidentifyConfig_ != null;
@@ -263,6 +274,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
+   *
+   * @return The reidentifyConfig.
    */
   public com.google.privacy.dlp.v2.DeidentifyConfig getReidentifyConfig() {
     return reidentifyConfig_ == null
@@ -300,6 +313,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+   *
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -312,6 +327,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+   *
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
@@ -341,6 +358,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+   *
+   * @return Whether the item field is set.
    */
   public boolean hasItem() {
     return item_ != null;
@@ -353,6 +372,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+   *
+   * @return The item.
    */
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
@@ -384,6 +405,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string inspect_template_name = 5;</code>
+   *
+   * @return The inspectTemplateName.
    */
   public java.lang.String getInspectTemplateName() {
     java.lang.Object ref = inspectTemplateName_;
@@ -408,6 +431,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string inspect_template_name = 5;</code>
+   *
+   * @return The bytes for inspectTemplateName.
    */
   public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
     java.lang.Object ref = inspectTemplateName_;
@@ -436,6 +461,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string reidentify_template_name = 6;</code>
+   *
+   * @return The reidentifyTemplateName.
    */
   public java.lang.String getReidentifyTemplateName() {
     java.lang.Object ref = reidentifyTemplateName_;
@@ -461,6 +488,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string reidentify_template_name = 6;</code>
+   *
+   * @return The bytes for reidentifyTemplateName.
    */
   public com.google.protobuf.ByteString getReidentifyTemplateNameBytes() {
     java.lang.Object ref = reidentifyTemplateName_;
@@ -485,6 +514,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -506,6 +537,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -980,6 +1013,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1002,6 +1037,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1024,6 +1061,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1044,6 +1084,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1061,6 +1103,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1095,6 +1140,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
+     *
+     * @return Whether the reidentifyConfig field is set.
      */
     public boolean hasReidentifyConfig() {
       return reidentifyConfigBuilder_ != null || reidentifyConfig_ != null;
@@ -1115,6 +1162,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
+     *
+     * @return The reidentifyConfig.
      */
     public com.google.privacy.dlp.v2.DeidentifyConfig getReidentifyConfig() {
       if (reidentifyConfigBuilder_ == null) {
@@ -1341,6 +1390,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+     *
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -1353,6 +1404,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+     *
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
@@ -1523,6 +1576,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+     *
+     * @return Whether the item field is set.
      */
     public boolean hasItem() {
       return itemBuilder_ != null || item_ != null;
@@ -1535,6 +1590,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+     *
+     * @return The item.
      */
     public com.google.privacy.dlp.v2.ContentItem getItem() {
       if (itemBuilder_ == null) {
@@ -1699,6 +1756,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string inspect_template_name = 5;</code>
+     *
+     * @return The inspectTemplateName.
      */
     public java.lang.String getInspectTemplateName() {
       java.lang.Object ref = inspectTemplateName_;
@@ -1723,6 +1782,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string inspect_template_name = 5;</code>
+     *
+     * @return The bytes for inspectTemplateName.
      */
     public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
       java.lang.Object ref = inspectTemplateName_;
@@ -1747,6 +1808,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string inspect_template_name = 5;</code>
+     *
+     * @param value The inspectTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInspectTemplateName(java.lang.String value) {
       if (value == null) {
@@ -1769,6 +1833,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string inspect_template_name = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInspectTemplateName() {
 
@@ -1788,6 +1854,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string inspect_template_name = 5;</code>
+     *
+     * @param value The bytes for inspectTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInspectTemplateNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1814,6 +1883,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string reidentify_template_name = 6;</code>
+     *
+     * @return The reidentifyTemplateName.
      */
     public java.lang.String getReidentifyTemplateName() {
       java.lang.Object ref = reidentifyTemplateName_;
@@ -1839,6 +1910,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string reidentify_template_name = 6;</code>
+     *
+     * @return The bytes for reidentifyTemplateName.
      */
     public com.google.protobuf.ByteString getReidentifyTemplateNameBytes() {
       java.lang.Object ref = reidentifyTemplateName_;
@@ -1864,6 +1937,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string reidentify_template_name = 6;</code>
+     *
+     * @param value The reidentifyTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setReidentifyTemplateName(java.lang.String value) {
       if (value == null) {
@@ -1887,6 +1963,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string reidentify_template_name = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReidentifyTemplateName() {
 
@@ -1907,6 +1985,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string reidentify_template_name = 6;</code>
+     *
+     * @param value The bytes for reidentifyTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setReidentifyTemplateNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1929,6 +2010,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1950,6 +2033,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -1971,6 +2056,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -1990,6 +2078,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -2006,6 +2096,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -62,6 +68,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -73,6 +81,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   *
+   * @return A list containing the supportedBy.
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeSupportedBy> getSupportedByList();
   /**
@@ -83,6 +93,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   *
+   * @return The count of supportedBy.
    */
   int getSupportedByCount();
   /**
@@ -93,6 +105,9 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedBy at the given index.
    */
   com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index);
   /**
@@ -103,6 +118,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedBy.
    */
   java.util.List<java.lang.Integer> getSupportedByValueList();
   /**
@@ -113,6 +130,9 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedBy at the given index.
    */
   int getSupportedByValue(int index);
 
@@ -125,6 +145,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -136,6 +158,8 @@ public interface InfoTypeDescriptionOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 }

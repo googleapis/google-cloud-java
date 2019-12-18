@@ -31,6 +31,8 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
+   *
+   * @return Whether the requestedPrivacyMetric field is set.
    */
   boolean hasRequestedPrivacyMetric();
   /**
@@ -41,6 +43,8 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
+   *
+   * @return The requestedPrivacyMetric.
    */
   com.google.privacy.dlp.v2.PrivacyMetric getRequestedPrivacyMetric();
   /**
@@ -62,6 +66,8 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
+   *
+   * @return Whether the requestedSourceTable field is set.
    */
   boolean hasRequestedSourceTable();
   /**
@@ -72,6 +78,8 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
+   *
+   * @return The requestedSourceTable.
    */
   com.google.privacy.dlp.v2.BigQueryTable getRequestedSourceTable();
   /**
@@ -89,12 +97,16 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
+   *
+   * @return Whether the numericalStatsResult field is set.
    */
   boolean hasNumericalStatsResult();
   /**
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
+   *
+   * @return The numericalStatsResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult
       getNumericalStatsResult();
@@ -110,12 +122,16 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
+   *
+   * @return Whether the categoricalStatsResult field is set.
    */
   boolean hasCategoricalStatsResult();
   /**
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
+   *
+   * @return The categoricalStatsResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
       getCategoricalStatsResult();
@@ -131,12 +147,16 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
+   *
+   * @return Whether the kAnonymityResult field is set.
    */
   boolean hasKAnonymityResult();
   /**
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
+   *
+   * @return The kAnonymityResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getKAnonymityResult();
   /**
@@ -151,12 +171,16 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
+   *
+   * @return Whether the lDiversityResult field is set.
    */
   boolean hasLDiversityResult();
   /**
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
+   *
+   * @return The lDiversityResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getLDiversityResult();
   /**
@@ -171,12 +195,16 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
+   *
+   * @return Whether the kMapEstimationResult field is set.
    */
   boolean hasKMapEstimationResult();
   /**
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
+   *
+   * @return The kMapEstimationResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
       getKMapEstimationResult();
@@ -192,12 +220,16 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
+   *
+   * @return Whether the deltaPresenceEstimationResult field is set.
    */
   boolean hasDeltaPresenceEstimationResult();
   /**
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
+   *
+   * @return The deltaPresenceEstimationResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
       getDeltaPresenceEstimationResult();

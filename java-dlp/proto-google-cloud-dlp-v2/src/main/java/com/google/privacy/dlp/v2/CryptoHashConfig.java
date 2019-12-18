@@ -46,6 +46,12 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
   private CryptoHashConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CryptoHashConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
@@ -141,6 +148,8 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null
@@ -508,6 +517,8 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     *
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
@@ -520,6 +531,8 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     *
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {

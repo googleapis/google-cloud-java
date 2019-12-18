@@ -42,6 +42,12 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
   private CryptoDeterministicConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CryptoDeterministicConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -155,6 +160,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
@@ -167,6 +174,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null
@@ -221,6 +230,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+   *
+   * @return Whether the surrogateInfoType field is set.
    */
   public boolean hasSurrogateInfoType() {
     return surrogateInfoType_ != null;
@@ -258,6 +269,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+   *
+   * @return The surrogateInfoType.
    */
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
     return surrogateInfoType_ == null
@@ -325,6 +338,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -350,6 +365,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   *
+   * @return The context.
    */
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
@@ -782,6 +799,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     *
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
@@ -794,6 +813,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     *
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -988,6 +1009,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+     *
+     * @return Whether the surrogateInfoType field is set.
      */
     public boolean hasSurrogateInfoType() {
       return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
@@ -1025,6 +1048,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+     *
+     * @return The surrogateInfoType.
      */
     public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
       if (surrogateInfoTypeBuilder_ == null) {
@@ -1383,6 +1408,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -1408,6 +1435,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     *
+     * @return The context.
      */
     public com.google.privacy.dlp.v2.FieldId getContext() {
       if (contextBuilder_ == null) {

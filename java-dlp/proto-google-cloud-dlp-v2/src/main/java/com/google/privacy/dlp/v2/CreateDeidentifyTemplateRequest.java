@@ -45,6 +45,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateDeidentifyTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,6 +157,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -175,6 +182,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -198,6 +207,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   *
+   * @return Whether the deidentifyTemplate field is set.
    */
   public boolean hasDeidentifyTemplate() {
     return deidentifyTemplate_ != null;
@@ -210,6 +221,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   *
+   * @return The deidentifyTemplate.
    */
   public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate() {
     return deidentifyTemplate_ == null
@@ -242,6 +255,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   *
+   * @return The templateId.
    */
   public java.lang.String getTemplateId() {
     java.lang.Object ref = templateId_;
@@ -265,6 +280,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   *
+   * @return The bytes for templateId.
    */
   public com.google.protobuf.ByteString getTemplateIdBytes() {
     java.lang.Object ref = templateId_;
@@ -289,6 +306,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -310,6 +329,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -714,6 +735,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -737,6 +760,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -760,6 +785,9 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -781,6 +809,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -799,6 +829,9 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -825,6 +858,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     *
+     * @return Whether the deidentifyTemplate field is set.
      */
     public boolean hasDeidentifyTemplate() {
       return deidentifyTemplateBuilder_ != null || deidentifyTemplate_ != null;
@@ -837,6 +872,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     *
+     * @return The deidentifyTemplate.
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate() {
       if (deidentifyTemplateBuilder_ == null) {
@@ -1005,6 +1042,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     *
+     * @return The templateId.
      */
     public java.lang.String getTemplateId() {
       java.lang.Object ref = templateId_;
@@ -1028,6 +1067,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     *
+     * @return The bytes for templateId.
      */
     public com.google.protobuf.ByteString getTemplateIdBytes() {
       java.lang.Object ref = templateId_;
@@ -1051,6 +1092,9 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     *
+     * @param value The templateId to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateId(java.lang.String value) {
       if (value == null) {
@@ -1072,6 +1116,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTemplateId() {
 
@@ -1090,6 +1136,9 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     *
+     * @param value The bytes for templateId to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1112,6 +1161,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1133,6 +1184,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -1154,6 +1207,9 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -1173,6 +1229,8 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -1189,6 +1247,9 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

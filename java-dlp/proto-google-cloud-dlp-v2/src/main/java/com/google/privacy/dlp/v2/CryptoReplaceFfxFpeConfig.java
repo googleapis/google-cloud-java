@@ -51,6 +51,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
   private CryptoReplaceFfxFpeConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CryptoReplaceFfxFpeConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,7 +69,6 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -282,12 +287,20 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static FfxCommonNativeAlphabet valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static FfxCommonNativeAlphabet forNumber(int value) {
       switch (value) {
         case 0:
@@ -357,7 +370,10 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
   private int alphabetCase_ = 0;
   private java.lang.Object alphabet_;
 
-  public enum AlphabetCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AlphabetCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMMON_ALPHABET(4),
     CUSTOM_ALPHABET(5),
     RADIX(6),
@@ -367,7 +383,11 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     private AlphabetCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AlphabetCase valueOf(int value) {
       return forNumber(value);
@@ -407,6 +427,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
@@ -419,6 +441,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null
@@ -461,6 +485,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -486,6 +512,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   *
+   * @return The context.
    */
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
@@ -521,6 +549,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for commonAlphabet.
    */
   public int getCommonAlphabetValue() {
     if (alphabetCase_ == 4) {
@@ -532,6 +562,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
+   *
+   * @return The commonAlphabet.
    */
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
       getCommonAlphabet() {
@@ -563,6 +595,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   *
+   * @return The customAlphabet.
    */
   public java.lang.String getCustomAlphabet() {
     java.lang.Object ref = "";
@@ -594,6 +628,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   *
+   * @return The bytes for customAlphabet.
    */
   public com.google.protobuf.ByteString getCustomAlphabetBytes() {
     java.lang.Object ref = "";
@@ -621,6 +657,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>int32 radix = 6;</code>
+   *
+   * @return The radix.
    */
   public int getRadix() {
     if (alphabetCase_ == 6) {
@@ -660,6 +698,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   *
+   * @return Whether the surrogateInfoType field is set.
    */
   public boolean hasSurrogateInfoType() {
     return surrogateInfoType_ != null;
@@ -693,6 +733,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   *
+   * @return The surrogateInfoType.
    */
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
     return surrogateInfoType_ == null
@@ -1244,6 +1286,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     *
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
@@ -1256,6 +1300,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     *
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -1438,6 +1484,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -1463,6 +1511,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+     *
+     * @return The context.
      */
     public com.google.privacy.dlp.v2.FieldId getContext() {
       if (contextBuilder_ == null) {
@@ -1709,6 +1759,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
+     *
+     * @return The enum numeric value on the wire for commonAlphabet.
      */
     public int getCommonAlphabetValue() {
       if (alphabetCase_ == 4) {
@@ -1720,6 +1772,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for commonAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonAlphabetValue(int value) {
       alphabetCase_ = 4;
@@ -1731,6 +1786,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
+     *
+     * @return The commonAlphabet.
      */
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
         getCommonAlphabet() {
@@ -1751,6 +1808,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
+     *
+     * @param value The commonAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonAlphabet(
         com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet value) {
@@ -1766,6 +1826,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCommonAlphabet() {
       if (alphabetCase_ == 4) {
@@ -1790,6 +1852,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     *
+     * @return The customAlphabet.
      */
     public java.lang.String getCustomAlphabet() {
       java.lang.Object ref = "";
@@ -1821,6 +1885,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     *
+     * @return The bytes for customAlphabet.
      */
     public com.google.protobuf.ByteString getCustomAlphabetBytes() {
       java.lang.Object ref = "";
@@ -1852,6 +1918,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     *
+     * @param value The customAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomAlphabet(java.lang.String value) {
       if (value == null) {
@@ -1876,6 +1945,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCustomAlphabet() {
       if (alphabetCase_ == 5) {
@@ -1899,6 +1970,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     *
+     * @param value The bytes for customAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomAlphabetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1919,6 +1993,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>int32 radix = 6;</code>
+     *
+     * @return The radix.
      */
     public int getRadix() {
       if (alphabetCase_ == 6) {
@@ -1934,6 +2010,9 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>int32 radix = 6;</code>
+     *
+     * @param value The radix to set.
+     * @return This builder for chaining.
      */
     public Builder setRadix(int value) {
       alphabetCase_ = 6;
@@ -1949,6 +2028,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>int32 radix = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRadix() {
       if (alphabetCase_ == 6) {
@@ -1994,6 +2075,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+     *
+     * @return Whether the surrogateInfoType field is set.
      */
     public boolean hasSurrogateInfoType() {
       return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
@@ -2027,6 +2110,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+     *
+     * @return The surrogateInfoType.
      */
     public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
       if (surrogateInfoTypeBuilder_ == null) {

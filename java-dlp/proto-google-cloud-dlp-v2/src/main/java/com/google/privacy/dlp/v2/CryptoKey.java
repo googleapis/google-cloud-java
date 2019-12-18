@@ -44,6 +44,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   private CryptoKey() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,7 +157,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSIENT(1),
     UNWRAPPED(2),
     KMS_WRAPPED(3),
@@ -162,7 +170,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -193,11 +205,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSIENT_FIELD_NUMBER = 1;
-  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   *
+   * @return Whether the transient field is set.
+   */
   public boolean hasTransient() {
     return sourceCase_ == 1;
   }
-  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   *
+   * @return The transient.
+   */
   public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
     if (sourceCase_ == 1) {
       return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
@@ -213,11 +233,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNWRAPPED_FIELD_NUMBER = 2;
-  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   *
+   * @return Whether the unwrapped field is set.
+   */
   public boolean hasUnwrapped() {
     return sourceCase_ == 2;
   }
-  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   *
+   * @return The unwrapped.
+   */
   public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
     if (sourceCase_ == 2) {
       return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
@@ -233,11 +261,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_WRAPPED_FIELD_NUMBER = 3;
-  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   *
+   * @return Whether the kmsWrapped field is set.
+   */
   public boolean hasKmsWrapped() {
     return sourceCase_ == 3;
   }
-  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   *
+   * @return The kmsWrapped.
+   */
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
     if (sourceCase_ == 3) {
       return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
@@ -671,11 +707,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.TransientCryptoKey.Builder,
             com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder>
         transientBuilder_;
-    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+     *
+     * @return Whether the transient field is set.
+     */
     public boolean hasTransient() {
       return sourceCase_ == 1;
     }
-    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+     *
+     * @return The transient.
+     */
     public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
       if (transientBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -801,11 +845,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder,
             com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder>
         unwrappedBuilder_;
-    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+     *
+     * @return Whether the unwrapped field is set.
+     */
     public boolean hasUnwrapped() {
       return sourceCase_ == 2;
     }
-    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+     *
+     * @return The unwrapped.
+     */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
       if (unwrappedBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -931,11 +983,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder,
             com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder>
         kmsWrappedBuilder_;
-    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+     *
+     * @return Whether the kmsWrapped field is set.
+     */
     public boolean hasKmsWrapped() {
       return sourceCase_ == 3;
     }
-    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+     *
+     * @return The kmsWrapped.
+     */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
       if (kmsWrappedBuilder_ == null) {
         if (sourceCase_ == 3) {

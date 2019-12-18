@@ -41,6 +41,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
   private RecordCondition() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecordCondition();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,6 +133,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return Whether the field field is set.
      */
     boolean hasField();
     /**
@@ -138,6 +145,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return The field.
      */
     com.google.privacy.dlp.v2.FieldId getField();
     /**
@@ -159,6 +168,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     *
+     * @return The enum numeric value on the wire for operator.
      */
     int getOperatorValue();
     /**
@@ -169,6 +180,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     *
+     * @return The operator.
      */
     com.google.privacy.dlp.v2.RelationalOperator getOperator();
 
@@ -180,6 +193,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     *
+     * @return Whether the value field is set.
      */
     boolean hasValue();
     /**
@@ -190,6 +205,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     *
+     * @return The value.
      */
     com.google.privacy.dlp.v2.Value getValue();
     /**
@@ -243,6 +260,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Condition();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -255,7 +278,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -348,6 +370,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return Whether the field field is set.
      */
     public boolean hasField() {
       return field_ != null;
@@ -360,6 +384,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return The field.
      */
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
@@ -387,6 +413,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     *
+     * @return The enum numeric value on the wire for operator.
      */
     public int getOperatorValue() {
       return operator_;
@@ -399,6 +427,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     *
+     * @return The operator.
      */
     public com.google.privacy.dlp.v2.RelationalOperator getOperator() {
       @SuppressWarnings("deprecation")
@@ -417,6 +447,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     *
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return value_ != null;
@@ -429,6 +461,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     *
+     * @return The value.
      */
     public com.google.privacy.dlp.v2.Value getValue() {
       return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
@@ -858,6 +892,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       *
+       * @return Whether the field field is set.
        */
       public boolean hasField() {
         return fieldBuilder_ != null || field_ != null;
@@ -870,6 +906,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       *
+       * @return The field.
        */
       public com.google.privacy.dlp.v2.FieldId getField() {
         if (fieldBuilder_ == null) {
@@ -1030,6 +1068,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       *
+       * @return The enum numeric value on the wire for operator.
        */
       public int getOperatorValue() {
         return operator_;
@@ -1042,6 +1082,9 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatorValue(int value) {
         operator_ = value;
@@ -1056,6 +1099,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       *
+       * @return The operator.
        */
       public com.google.privacy.dlp.v2.RelationalOperator getOperator() {
         @SuppressWarnings("deprecation")
@@ -1071,6 +1116,9 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       *
+       * @param value The operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperator(com.google.privacy.dlp.v2.RelationalOperator value) {
         if (value == null) {
@@ -1089,6 +1137,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearOperator() {
 
@@ -1111,6 +1161,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+       *
+       * @return Whether the value field is set.
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
@@ -1123,6 +1175,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+       *
+       * @return The value.
        */
       public com.google.privacy.dlp.v2.Value getValue() {
         if (valueBuilder_ == null) {
@@ -1362,6 +1416,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
     private Conditions() {
       conditions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Conditions();
     }
 
     @java.lang.Override
@@ -2113,6 +2173,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for logicalOperator.
      */
     int getLogicalOperatorValue();
     /**
@@ -2126,12 +2188,22 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
      * </code>
+     *
+     * @return The logicalOperator.
      */
     com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator getLogicalOperator();
 
-    /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     *
+     * @return Whether the conditions field is set.
+     */
     boolean hasConditions();
-    /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     *
+     * @return The conditions.
+     */
     com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions();
     /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
     com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder();
@@ -2162,6 +2234,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Expressions();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2174,7 +2252,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2267,12 +2344,20 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static LogicalOperator valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static LogicalOperator forNumber(int value) {
         switch (value) {
           case 0:
@@ -2336,7 +2421,10 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     private int typeCase_ = 0;
     private java.lang.Object type_;
 
-    public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+    public enum TypeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONDITIONS(3),
       TYPE_NOT_SET(0);
       private final int value;
@@ -2344,7 +2432,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       private TypeCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static TypeCase valueOf(int value) {
         return forNumber(value);
@@ -2383,6 +2475,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for logicalOperator.
      */
     public int getLogicalOperatorValue() {
       return logicalOperator_;
@@ -2398,6 +2492,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
      * </code>
+     *
+     * @return The logicalOperator.
      */
     public com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator
         getLogicalOperator() {
@@ -2411,11 +2507,19 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int CONDITIONS_FIELD_NUMBER = 3;
-    /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     *
+     * @return Whether the conditions field is set.
+     */
     public boolean hasConditions() {
       return typeCase_ == 3;
     }
-    /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     *
+     * @return The conditions.
+     */
     public com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions() {
       if (typeCase_ == 3) {
         return (com.google.privacy.dlp.v2.RecordCondition.Conditions) type_;
@@ -2829,6 +2933,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>
        * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
        * </code>
+       *
+       * @return The enum numeric value on the wire for logicalOperator.
        */
       public int getLogicalOperatorValue() {
         return logicalOperator_;
@@ -2844,6 +2950,9 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>
        * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
        * </code>
+       *
+       * @param value The enum numeric value on the wire for logicalOperator to set.
+       * @return This builder for chaining.
        */
       public Builder setLogicalOperatorValue(int value) {
         logicalOperator_ = value;
@@ -2861,6 +2970,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>
        * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
        * </code>
+       *
+       * @return The logicalOperator.
        */
       public com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator
           getLogicalOperator() {
@@ -2883,6 +2994,9 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>
        * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
        * </code>
+       *
+       * @param value The logicalOperator to set.
+       * @return This builder for chaining.
        */
       public Builder setLogicalOperator(
           com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator value) {
@@ -2905,6 +3019,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>
        * .google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLogicalOperator() {
 
@@ -2918,11 +3034,19 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.RecordCondition.Conditions.Builder,
               com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder>
           conditionsBuilder_;
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       *
+       * @return Whether the conditions field is set.
+       */
       public boolean hasConditions() {
         return typeCase_ == 3;
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       *
+       * @return The conditions.
+       */
       public com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions() {
         if (conditionsBuilder_ == null) {
           if (typeCase_ == 3) {
@@ -3107,6 +3231,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+   *
+   * @return Whether the expressions field is set.
    */
   public boolean hasExpressions() {
     return expressions_ != null;
@@ -3119,6 +3245,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+   *
+   * @return The expressions.
    */
   public com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions() {
     return expressions_ == null
@@ -3481,6 +3609,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+     *
+     * @return Whether the expressions field is set.
      */
     public boolean hasExpressions() {
       return expressionsBuilder_ != null || expressions_ != null;
@@ -3493,6 +3623,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+     *
+     * @return The expressions.
      */
     public com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions() {
       if (expressionsBuilder_ == null) {

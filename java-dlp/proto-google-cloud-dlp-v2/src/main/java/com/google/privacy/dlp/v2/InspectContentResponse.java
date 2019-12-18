@@ -40,6 +40,12 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
   private InspectContentResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InspectContentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
+   *
+   * @return Whether the result field is set.
    */
   public boolean hasResult() {
     return result_ != null;
@@ -135,6 +142,8 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
+   *
+   * @return The result.
    */
   public com.google.privacy.dlp.v2.InspectResult getResult() {
     return result_ == null ? com.google.privacy.dlp.v2.InspectResult.getDefaultInstance() : result_;
@@ -495,6 +504,8 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
+     *
+     * @return Whether the result field is set.
      */
     public boolean hasResult() {
       return resultBuilder_ != null || result_ != null;
@@ -507,6 +518,8 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
+     *
+     * @return The result.
      */
     public com.google.privacy.dlp.v2.InspectResult getResult() {
       if (resultBuilder_ == null) {

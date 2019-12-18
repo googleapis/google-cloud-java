@@ -1629,32 +1629,24 @@ public final class DlpProto {
           + ";dlp\252\002\023Google.Cloud.Dlp.V2\312\002\023Google\\Clou"
           + "d\\Dlp\\V2b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.FieldBehaviorProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.privacy.dlp.v2.DlpStorage.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-          com.google.type.DateProto.getDescriptor(),
-          com.google.type.DayOfWeekProto.getDescriptor(),
-          com.google.type.TimeOfDayProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.privacy.dlp.v2.DlpStorage.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
+              com.google.type.DayOfWeekProto.getDescriptor(),
+              com.google.type.TimeOfDayProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+            });
     internal_static_google_privacy_dlp_v2_ExcludeInfoTypes_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_privacy_dlp_v2_ExcludeInfoTypes_fieldAccessorTable =

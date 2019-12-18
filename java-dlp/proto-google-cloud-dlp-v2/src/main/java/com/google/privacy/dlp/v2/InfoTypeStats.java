@@ -40,6 +40,12 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
   private InfoTypeStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InfoTypeStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   *
+   * @return Whether the infoType field is set.
    */
   public boolean hasInfoType() {
     return infoType_ != null;
@@ -139,6 +146,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   *
+   * @return The infoType.
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
@@ -166,6 +175,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   *
+   * @return The count.
    */
   public long getCount() {
     return count_;
@@ -527,6 +538,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return infoTypeBuilder_ != null || infoType_ != null;
@@ -539,6 +552,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
@@ -703,6 +718,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     *
+     * @return The count.
      */
     public long getCount() {
       return count_;
@@ -715,6 +732,9 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     *
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(long value) {
 
@@ -730,6 +750,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
 

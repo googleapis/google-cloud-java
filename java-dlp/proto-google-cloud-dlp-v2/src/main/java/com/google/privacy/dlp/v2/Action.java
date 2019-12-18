@@ -41,6 +41,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   private Action() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Action();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -213,9 +218,17 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.SaveFindings)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     *
+     * @return Whether the outputConfig field is set.
+     */
     boolean hasOutputConfig();
-    /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     *
+     * @return The outputConfig.
+     */
     com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig();
     /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
     com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder();
@@ -245,6 +258,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private SaveFindings() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SaveFindings();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -257,7 +276,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -320,11 +338,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OUTPUT_CONFIG_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_;
-    /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     *
+     * @return Whether the outputConfig field is set.
+     */
     public boolean hasOutputConfig() {
       return outputConfig_ != null;
     }
-    /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     *
+     * @return The outputConfig.
+     */
     public com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig() {
       return outputConfig_ == null
           ? com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance()
@@ -677,11 +703,19 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.OutputStorageConfig.Builder,
               com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder>
           outputConfigBuilder_;
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       *
+       * @return Whether the outputConfig field is set.
+       */
       public boolean hasOutputConfig() {
         return outputConfigBuilder_ != null || outputConfig_ != null;
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       *
+       * @return The outputConfig.
+       */
       public com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig() {
         if (outputConfigBuilder_ == null) {
           return outputConfig_ == null
@@ -849,6 +883,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
@@ -862,6 +898,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString getTopicBytes();
   }
@@ -893,6 +931,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishToPubSub();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -905,7 +949,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -970,6 +1013,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -993,6 +1038,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -1344,6 +1391,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string topic = 1;</code>
+       *
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1367,6 +1416,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string topic = 1;</code>
+       *
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString getTopicBytes() {
         java.lang.Object ref = topic_;
@@ -1390,6 +1441,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string topic = 1;</code>
+       *
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(java.lang.String value) {
         if (value == null) {
@@ -1411,6 +1465,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string topic = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
 
@@ -1429,6 +1485,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string topic = 1;</code>
+       *
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1526,6 +1585,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private PublishSummaryToCscc() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishSummaryToCscc();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -1987,6 +2052,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private PublishFindingsToCloudDataCatalog() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishFindingsToCloudDataCatalog();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -2451,6 +2522,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private JobNotificationEmails() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new JobNotificationEmails();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2896,6 +2973,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private PublishToStackdriver() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishToStackdriver();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3317,7 +3400,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   private int actionCase_ = 0;
   private java.lang.Object action_;
 
-  public enum ActionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ActionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SAVE_FINDINGS(1),
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
@@ -3330,7 +3416,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private ActionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ActionCase valueOf(int value) {
       return forNumber(value);
@@ -3375,6 +3465,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+   *
+   * @return Whether the saveFindings field is set.
    */
   public boolean hasSaveFindings() {
     return actionCase_ == 1;
@@ -3387,6 +3479,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+   *
+   * @return The saveFindings.
    */
   public com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings() {
     if (actionCase_ == 1) {
@@ -3419,6 +3513,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+   *
+   * @return Whether the pubSub field is set.
    */
   public boolean hasPubSub() {
     return actionCase_ == 2;
@@ -3431,6 +3527,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+   *
+   * @return The pubSub.
    */
   public com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub() {
     if (actionCase_ == 2) {
@@ -3463,6 +3561,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+   *
+   * @return Whether the publishSummaryToCscc field is set.
    */
   public boolean hasPublishSummaryToCscc() {
     return actionCase_ == 3;
@@ -3475,6 +3575,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+   *
+   * @return The publishSummaryToCscc.
    */
   public com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc() {
     if (actionCase_ == 3) {
@@ -3510,6 +3612,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
    * </code>
+   *
+   * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   public boolean hasPublishFindingsToCloudDataCatalog() {
     return actionCase_ == 5;
@@ -3524,6 +3628,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
    * </code>
+   *
+   * @return The publishFindingsToCloudDataCatalog.
    */
   public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
       getPublishFindingsToCloudDataCatalog() {
@@ -3561,6 +3667,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   *
+   * @return Whether the jobNotificationEmails field is set.
    */
   public boolean hasJobNotificationEmails() {
     return actionCase_ == 8;
@@ -3574,6 +3682,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   *
+   * @return The jobNotificationEmails.
    */
   public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
     if (actionCase_ == 8) {
@@ -3608,6 +3718,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   *
+   * @return Whether the publishToStackdriver field is set.
    */
   public boolean hasPublishToStackdriver() {
     return actionCase_ == 9;
@@ -3620,6 +3732,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   *
+   * @return The publishToStackdriver.
    */
   public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
     if (actionCase_ == 9) {
@@ -4151,6 +4265,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+     *
+     * @return Whether the saveFindings field is set.
      */
     public boolean hasSaveFindings() {
       return actionCase_ == 1;
@@ -4163,6 +4279,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+     *
+     * @return The saveFindings.
      */
     public com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings() {
       if (saveFindingsBuilder_ == null) {
@@ -4353,6 +4471,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+     *
+     * @return Whether the pubSub field is set.
      */
     public boolean hasPubSub() {
       return actionCase_ == 2;
@@ -4365,6 +4485,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+     *
+     * @return The pubSub.
      */
     public com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub() {
       if (pubSubBuilder_ == null) {
@@ -4555,6 +4677,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+     *
+     * @return Whether the publishSummaryToCscc field is set.
      */
     public boolean hasPublishSummaryToCscc() {
       return actionCase_ == 3;
@@ -4567,6 +4691,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+     *
+     * @return The publishSummaryToCscc.
      */
     public com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc() {
       if (publishSummaryToCsccBuilder_ == null) {
@@ -4764,6 +4890,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
      * </code>
+     *
+     * @return Whether the publishFindingsToCloudDataCatalog field is set.
      */
     public boolean hasPublishFindingsToCloudDataCatalog() {
       return actionCase_ == 5;
@@ -4778,6 +4906,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
      * </code>
+     *
+     * @return The publishFindingsToCloudDataCatalog.
      */
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
         getPublishFindingsToCloudDataCatalog() {
@@ -4996,6 +5126,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     *
+     * @return Whether the jobNotificationEmails field is set.
      */
     public boolean hasJobNotificationEmails() {
       return actionCase_ == 8;
@@ -5009,6 +5141,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     *
+     * @return The jobNotificationEmails.
      */
     public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
       if (jobNotificationEmailsBuilder_ == null) {
@@ -5211,6 +5345,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     *
+     * @return Whether the publishToStackdriver field is set.
      */
     public boolean hasPublishToStackdriver() {
       return actionCase_ == 9;
@@ -5223,6 +5359,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     *
+     * @return The publishToStackdriver.
      */
     public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
       if (publishToStackdriverBuilder_ == null) {

@@ -44,6 +44,12 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListInfoTypesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -156,6 +163,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -180,6 +189,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -201,6 +212,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -225,6 +238,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string location_id = 3;</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -246,6 +261,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string location_id = 3;</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -618,6 +635,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -640,6 +659,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -662,6 +683,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -682,6 +706,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -699,6 +725,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -721,6 +750,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -742,6 +773,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -763,6 +796,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -782,6 +818,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -798,6 +836,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -820,6 +861,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -841,6 +884,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -862,6 +907,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -881,6 +929,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -897,6 +947,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

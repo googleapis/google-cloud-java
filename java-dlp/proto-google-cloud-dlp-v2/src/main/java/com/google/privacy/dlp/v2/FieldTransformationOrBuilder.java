@@ -88,6 +88,8 @@ public interface FieldTransformationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   *
+   * @return Whether the condition field is set.
    */
   boolean hasCondition();
   /**
@@ -104,6 +106,8 @@ public interface FieldTransformationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   *
+   * @return The condition.
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
   /**
@@ -131,6 +135,8 @@ public interface FieldTransformationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   *
+   * @return Whether the primitiveTransformation field is set.
    */
   boolean hasPrimitiveTransformation();
   /**
@@ -141,6 +147,8 @@ public interface FieldTransformationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   *
+   * @return The primitiveTransformation.
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
   /**
@@ -163,6 +171,8 @@ public interface FieldTransformationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   *
+   * @return Whether the infoTypeTransformations field is set.
    */
   boolean hasInfoTypeTransformations();
   /**
@@ -174,6 +184,8 @@ public interface FieldTransformationOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   *
+   * @return The infoTypeTransformations.
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations();
   /**

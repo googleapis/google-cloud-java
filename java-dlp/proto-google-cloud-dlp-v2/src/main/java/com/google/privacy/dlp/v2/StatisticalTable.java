@@ -48,6 +48,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StatisticalTable();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -73,11 +79,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 quasiIds_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               quasiIds_.add(
                   input.readMessage(
@@ -130,7 +136,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
       }
       this.unknownFields = unknownFields.build();
@@ -158,16 +164,32 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return Whether the field field is set.
+     */
     boolean hasField();
-    /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return The field.
+     */
     com.google.privacy.dlp.v2.FieldId getField();
     /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
     com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
-    /** <code>string custom_tag = 2;</code> */
+    /**
+     * <code>string custom_tag = 2;</code>
+     *
+     * @return The customTag.
+     */
     java.lang.String getCustomTag();
-    /** <code>string custom_tag = 2;</code> */
+    /**
+     * <code>string custom_tag = 2;</code>
+     *
+     * @return The bytes for customTag.
+     */
     com.google.protobuf.ByteString getCustomTagBytes();
   }
   /**
@@ -195,6 +217,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new QuasiIdentifierField();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -207,7 +235,6 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -277,11 +304,19 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
     public static final int FIELD_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.FieldId field_;
-    /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return Whether the field field is set.
+     */
     public boolean hasField() {
       return field_ != null;
     }
-    /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     *
+     * @return The field.
+     */
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
@@ -292,7 +327,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
     public static final int CUSTOM_TAG_FIELD_NUMBER = 2;
     private volatile java.lang.Object customTag_;
-    /** <code>string custom_tag = 2;</code> */
+    /**
+     * <code>string custom_tag = 2;</code>
+     *
+     * @return The customTag.
+     */
     public java.lang.String getCustomTag() {
       java.lang.Object ref = customTag_;
       if (ref instanceof java.lang.String) {
@@ -304,7 +343,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-    /** <code>string custom_tag = 2;</code> */
+    /**
+     * <code>string custom_tag = 2;</code>
+     *
+     * @return The bytes for customTag.
+     */
     public com.google.protobuf.ByteString getCustomTagBytes() {
       java.lang.Object ref = customTag_;
       if (ref instanceof java.lang.String) {
@@ -681,11 +724,19 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
               com.google.privacy.dlp.v2.FieldId.Builder,
               com.google.privacy.dlp.v2.FieldIdOrBuilder>
           fieldBuilder_;
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       *
+       * @return Whether the field field is set.
+       */
       public boolean hasField() {
         return fieldBuilder_ != null || field_ != null;
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       *
+       * @return The field.
+       */
       public com.google.privacy.dlp.v2.FieldId getField() {
         if (fieldBuilder_ == null) {
           return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
@@ -781,7 +832,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object customTag_ = "";
-      /** <code>string custom_tag = 2;</code> */
+      /**
+       * <code>string custom_tag = 2;</code>
+       *
+       * @return The customTag.
+       */
       public java.lang.String getCustomTag() {
         java.lang.Object ref = customTag_;
         if (!(ref instanceof java.lang.String)) {
@@ -793,7 +848,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-      /** <code>string custom_tag = 2;</code> */
+      /**
+       * <code>string custom_tag = 2;</code>
+       *
+       * @return The bytes for customTag.
+       */
       public com.google.protobuf.ByteString getCustomTagBytes() {
         java.lang.Object ref = customTag_;
         if (ref instanceof String) {
@@ -805,7 +864,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /** <code>string custom_tag = 2;</code> */
+      /**
+       * <code>string custom_tag = 2;</code>
+       *
+       * @param value The customTag to set.
+       * @return This builder for chaining.
+       */
       public Builder setCustomTag(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -815,14 +879,23 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-      /** <code>string custom_tag = 2;</code> */
+      /**
+       * <code>string custom_tag = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
       public Builder clearCustomTag() {
 
         customTag_ = getDefaultInstance().getCustomTag();
         onChanged();
         return this;
       }
-      /** <code>string custom_tag = 2;</code> */
+      /**
+       * <code>string custom_tag = 2;</code>
+       *
+       * @param value The bytes for customTag to set.
+       * @return This builder for chaining.
+       */
       public Builder setCustomTagBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -889,7 +962,6 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  private int bitField0_;
   public static final int TABLE_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.BigQueryTable table_;
   /**
@@ -900,6 +972,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   *
+   * @return Whether the table field is set.
    */
   public boolean hasTable() {
     return table_ != null;
@@ -912,6 +986,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   *
+   * @return The table.
    */
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
@@ -1013,6 +1089,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   *
+   * @return Whether the relativeFrequency field is set.
    */
   public boolean hasRelativeFrequency() {
     return relativeFrequency_ != null;
@@ -1027,6 +1105,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   *
+   * @return The relativeFrequency.
    */
   public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
     return relativeFrequency_ == null
@@ -1298,7 +1378,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       }
       if (quasiIdsBuilder_ == null) {
         quasiIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         quasiIdsBuilder_.clear();
       }
@@ -1336,16 +1416,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       com.google.privacy.dlp.v2.StatisticalTable result =
           new com.google.privacy.dlp.v2.StatisticalTable(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (tableBuilder_ == null) {
         result.table_ = table_;
       } else {
         result.table_ = tableBuilder_.build();
       }
       if (quasiIdsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.quasiIds_ = quasiIds_;
       } else {
@@ -1356,7 +1435,6 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       } else {
         result.relativeFrequency_ = relativeFrequencyBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1413,7 +1491,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         if (!other.quasiIds_.isEmpty()) {
           if (quasiIds_.isEmpty()) {
             quasiIds_ = other.quasiIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureQuasiIdsIsMutable();
             quasiIds_.addAll(other.quasiIds_);
@@ -1426,7 +1504,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
             quasiIdsBuilder_.dispose();
             quasiIdsBuilder_ = null;
             quasiIds_ = other.quasiIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             quasiIdsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQuasiIdsFieldBuilder()
@@ -1484,6 +1562,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     *
+     * @return Whether the table field is set.
      */
     public boolean hasTable() {
       return tableBuilder_ != null || table_ != null;
@@ -1496,6 +1576,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     *
+     * @return The table.
      */
     public com.google.privacy.dlp.v2.BigQueryTable getTable() {
       if (tableBuilder_ == null) {
@@ -1655,11 +1737,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         quasiIds_ = java.util.Collections.emptyList();
 
     private void ensureQuasiIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         quasiIds_ =
             new java.util.ArrayList<
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField>(quasiIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1894,7 +1976,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public Builder clearQuasiIds() {
       if (quasiIdsBuilder_ == null) {
         quasiIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         quasiIdsBuilder_.clear();
@@ -2031,7 +2113,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField,
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField.Builder,
                 com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder>(
-                quasiIds_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                quasiIds_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         quasiIds_ = null;
       }
       return quasiIdsBuilder_;
@@ -2053,6 +2135,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     *
+     * @return Whether the relativeFrequency field is set.
      */
     public boolean hasRelativeFrequency() {
       return relativeFrequencyBuilder_ != null || relativeFrequency_ != null;
@@ -2067,6 +2151,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     *
+     * @return The relativeFrequency.
      */
     public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
       if (relativeFrequencyBuilder_ == null) {

@@ -43,6 +43,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DateTime();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -165,6 +170,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 offset_minutes = 1;</code>
+     *
+     * @return The offsetMinutes.
      */
     int getOffsetMinutes();
   }
@@ -182,6 +189,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     private TimeZone() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TimeZone();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -194,7 +207,6 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -255,6 +267,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 offset_minutes = 1;</code>
+     *
+     * @return The offsetMinutes.
      */
     public int getOffsetMinutes() {
       return offsetMinutes_;
@@ -581,6 +595,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 offset_minutes = 1;</code>
+       *
+       * @return The offsetMinutes.
        */
       public int getOffsetMinutes() {
         return offsetMinutes_;
@@ -594,6 +610,9 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 offset_minutes = 1;</code>
+       *
+       * @param value The offsetMinutes to set.
+       * @return This builder for chaining.
        */
       public Builder setOffsetMinutes(int value) {
 
@@ -610,6 +629,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 offset_minutes = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearOffsetMinutes() {
 
@@ -681,6 +702,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
+   *
+   * @return Whether the date field is set.
    */
   public boolean hasDate() {
     return date_ != null;
@@ -694,6 +717,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
+   *
+   * @return The date.
    */
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
@@ -714,11 +739,19 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
   private int dayOfWeek_;
-  /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+  /**
+   * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+   *
+   * @return The enum numeric value on the wire for dayOfWeek.
+   */
   public int getDayOfWeekValue() {
     return dayOfWeek_;
   }
-  /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+  /**
+   * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+   *
+   * @return The dayOfWeek.
+   */
   public com.google.type.DayOfWeek getDayOfWeek() {
     @SuppressWarnings("deprecation")
     com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -727,11 +760,19 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_FIELD_NUMBER = 3;
   private com.google.type.TimeOfDay time_;
-  /** <code>.google.type.TimeOfDay time = 3;</code> */
+  /**
+   * <code>.google.type.TimeOfDay time = 3;</code>
+   *
+   * @return Whether the time field is set.
+   */
   public boolean hasTime() {
     return time_ != null;
   }
-  /** <code>.google.type.TimeOfDay time = 3;</code> */
+  /**
+   * <code>.google.type.TimeOfDay time = 3;</code>
+   *
+   * @return The time.
+   */
   public com.google.type.TimeOfDay getTime() {
     return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
   }
@@ -742,11 +783,19 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_ZONE_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_;
-  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   *
+   * @return Whether the timeZone field is set.
+   */
   public boolean hasTimeZone() {
     return timeZone_ != null;
   }
-  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   *
+   * @return The timeZone.
+   */
   public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
     return timeZone_ == null
         ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
@@ -1167,6 +1216,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
+     *
+     * @return Whether the date field is set.
      */
     public boolean hasDate() {
       return dateBuilder_ != null || date_ != null;
@@ -1180,6 +1231,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
+     *
+     * @return The date.
      */
     public com.google.type.Date getDate() {
       if (dateBuilder_ == null) {
@@ -1332,23 +1385,41 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dayOfWeek_ = 0;
-    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     *
+     * @return The enum numeric value on the wire for dayOfWeek.
+     */
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
-    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for dayOfWeek to set.
+     * @return This builder for chaining.
+     */
     public Builder setDayOfWeekValue(int value) {
       dayOfWeek_ = value;
       onChanged();
       return this;
     }
-    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     *
+     * @return The dayOfWeek.
+     */
     public com.google.type.DayOfWeek getDayOfWeek() {
       @SuppressWarnings("deprecation")
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
-    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     *
+     * @param value The dayOfWeek to set.
+     * @return This builder for chaining.
+     */
     public Builder setDayOfWeek(com.google.type.DayOfWeek value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1358,7 +1429,11 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
+    /**
+     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearDayOfWeek() {
 
       dayOfWeek_ = 0;
@@ -1372,11 +1447,19 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         timeBuilder_;
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     *
+     * @return Whether the time field is set.
+     */
     public boolean hasTime() {
       return timeBuilder_ != null || time_ != null;
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     *
+     * @return The time.
+     */
     public com.google.type.TimeOfDay getTime() {
       if (timeBuilder_ == null) {
         return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
@@ -1473,11 +1556,19 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DateTime.TimeZone.Builder,
             com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder>
         timeZoneBuilder_;
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     *
+     * @return Whether the timeZone field is set.
+     */
     public boolean hasTimeZone() {
       return timeZoneBuilder_ != null || timeZone_ != null;
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     *
+     * @return The timeZone.
+     */
     public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
       if (timeZoneBuilder_ == null) {
         return timeZone_ == null

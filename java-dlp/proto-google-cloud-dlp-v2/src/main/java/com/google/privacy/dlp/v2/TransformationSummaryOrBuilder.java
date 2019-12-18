@@ -31,6 +31,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   *
+   * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
   /**
@@ -41,6 +43,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   *
+   * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
@@ -62,6 +66,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
+   *
+   * @return Whether the field field is set.
    */
   boolean hasField();
   /**
@@ -72,6 +78,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
+   *
+   * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
   /**
@@ -93,6 +101,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation transformation = 3;</code>
+   *
+   * @return Whether the transformation field is set.
    */
   boolean hasTransformation();
   /**
@@ -103,6 +113,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation transformation = 3;</code>
+   *
+   * @return The transformation.
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getTransformation();
   /**
@@ -187,6 +199,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordSuppression record_suppress = 6;</code>
+   *
+   * @return Whether the recordSuppress field is set.
    */
   boolean hasRecordSuppress();
   /**
@@ -197,6 +211,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordSuppression record_suppress = 6;</code>
+   *
+   * @return The recordSuppress.
    */
   com.google.privacy.dlp.v2.RecordSuppression getRecordSuppress();
   /**
@@ -241,6 +257,8 @@ public interface TransformationSummaryOrBuilder
    * </pre>
    *
    * <code>int64 transformed_bytes = 7;</code>
+   *
+   * @return The transformedBytes.
    */
   long getTransformedBytes();
 }

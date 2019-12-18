@@ -48,6 +48,12 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CharacterMaskConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -90,10 +96,10 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 charactersToIgnore_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.CharsToIgnore>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               charactersToIgnore_.add(
                   input.readMessage(
@@ -114,7 +120,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         charactersToIgnore_ = java.util.Collections.unmodifiableList(charactersToIgnore_);
       }
       this.unknownFields = unknownFields.build();
@@ -137,7 +143,6 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.CharacterMaskConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MASKING_CHARACTER_FIELD_NUMBER = 1;
   private volatile java.lang.Object maskingCharacter_;
   /**
@@ -151,6 +156,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string masking_character = 1;</code>
+   *
+   * @return The maskingCharacter.
    */
   public java.lang.String getMaskingCharacter() {
     java.lang.Object ref = maskingCharacter_;
@@ -174,6 +181,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string masking_character = 1;</code>
+   *
+   * @return The bytes for maskingCharacter.
    */
   public com.google.protobuf.ByteString getMaskingCharacterBytes() {
     java.lang.Object ref = maskingCharacter_;
@@ -198,6 +207,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>int32 number_to_mask = 2;</code>
+   *
+   * @return The numberToMask.
    */
   public int getNumberToMask() {
     return numberToMask_;
@@ -217,6 +228,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bool reverse_order = 3;</code>
+   *
+   * @return The reverseOrder.
    */
   public boolean getReverseOrder() {
     return reverseOrder_;
@@ -551,7 +564,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
 
       if (charactersToIgnoreBuilder_ == null) {
         charactersToIgnore_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         charactersToIgnoreBuilder_.clear();
       }
@@ -583,20 +596,18 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
       com.google.privacy.dlp.v2.CharacterMaskConfig result =
           new com.google.privacy.dlp.v2.CharacterMaskConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.maskingCharacter_ = maskingCharacter_;
       result.numberToMask_ = numberToMask_;
       result.reverseOrder_ = reverseOrder_;
       if (charactersToIgnoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           charactersToIgnore_ = java.util.Collections.unmodifiableList(charactersToIgnore_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.charactersToIgnore_ = charactersToIgnore_;
       } else {
         result.charactersToIgnore_ = charactersToIgnoreBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -660,7 +671,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         if (!other.charactersToIgnore_.isEmpty()) {
           if (charactersToIgnore_.isEmpty()) {
             charactersToIgnore_ = other.charactersToIgnore_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCharactersToIgnoreIsMutable();
             charactersToIgnore_.addAll(other.charactersToIgnore_);
@@ -673,7 +684,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
             charactersToIgnoreBuilder_.dispose();
             charactersToIgnoreBuilder_ = null;
             charactersToIgnore_ = other.charactersToIgnore_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             charactersToIgnoreBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCharactersToIgnoreFieldBuilder()
@@ -726,6 +737,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string masking_character = 1;</code>
+     *
+     * @return The maskingCharacter.
      */
     public java.lang.String getMaskingCharacter() {
       java.lang.Object ref = maskingCharacter_;
@@ -749,6 +762,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string masking_character = 1;</code>
+     *
+     * @return The bytes for maskingCharacter.
      */
     public com.google.protobuf.ByteString getMaskingCharacterBytes() {
       java.lang.Object ref = maskingCharacter_;
@@ -772,6 +787,9 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string masking_character = 1;</code>
+     *
+     * @param value The maskingCharacter to set.
+     * @return This builder for chaining.
      */
     public Builder setMaskingCharacter(java.lang.String value) {
       if (value == null) {
@@ -793,6 +811,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string masking_character = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaskingCharacter() {
 
@@ -811,6 +831,9 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string masking_character = 1;</code>
+     *
+     * @param value The bytes for maskingCharacter to set.
+     * @return This builder for chaining.
      */
     public Builder setMaskingCharacterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -833,6 +856,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int32 number_to_mask = 2;</code>
+     *
+     * @return The numberToMask.
      */
     public int getNumberToMask() {
       return numberToMask_;
@@ -846,6 +871,9 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int32 number_to_mask = 2;</code>
+     *
+     * @param value The numberToMask to set.
+     * @return This builder for chaining.
      */
     public Builder setNumberToMask(int value) {
 
@@ -862,6 +890,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int32 number_to_mask = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNumberToMask() {
 
@@ -883,6 +913,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool reverse_order = 3;</code>
+     *
+     * @return The reverseOrder.
      */
     public boolean getReverseOrder() {
       return reverseOrder_;
@@ -899,6 +931,9 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool reverse_order = 3;</code>
+     *
+     * @param value The reverseOrder to set.
+     * @return This builder for chaining.
      */
     public Builder setReverseOrder(boolean value) {
 
@@ -918,6 +953,8 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool reverse_order = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReverseOrder() {
 
@@ -930,10 +967,10 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureCharactersToIgnoreIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         charactersToIgnore_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CharsToIgnore>(charactersToIgnore_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1182,7 +1219,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
     public Builder clearCharactersToIgnore() {
       if (charactersToIgnoreBuilder_ == null) {
         charactersToIgnore_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         charactersToIgnoreBuilder_.clear();
@@ -1327,7 +1364,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.CharsToIgnore.Builder,
                 com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder>(
                 charactersToIgnore_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         charactersToIgnore_ = null;

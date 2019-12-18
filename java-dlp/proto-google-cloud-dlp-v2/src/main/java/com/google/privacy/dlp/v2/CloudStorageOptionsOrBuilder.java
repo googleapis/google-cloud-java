@@ -31,6 +31,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
+   *
+   * @return Whether the fileSet field is set.
    */
   boolean hasFileSet();
   /**
@@ -41,6 +43,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
+   *
+   * @return The fileSet.
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet();
   /**
@@ -64,6 +68,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
+   *
+   * @return The bytesLimitPerFile.
    */
   long getBytesLimitPerFile();
 
@@ -78,6 +84,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>int32 bytes_limit_per_file_percent = 8;</code>
+   *
+   * @return The bytesLimitPerFilePercent.
    */
   int getBytesLimitPerFilePercent();
 
@@ -92,6 +100,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   *
+   * @return A list containing the fileTypes.
    */
   java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesList();
   /**
@@ -105,6 +115,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   *
+   * @return The count of fileTypes.
    */
   int getFileTypesCount();
   /**
@@ -118,6 +130,9 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fileTypes at the given index.
    */
   com.google.privacy.dlp.v2.FileType getFileTypes(int index);
   /**
@@ -131,6 +146,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for fileTypes.
    */
   java.util.List<java.lang.Integer> getFileTypesValueList();
   /**
@@ -144,12 +161,23 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of fileTypes at the given index.
    */
   int getFileTypesValue(int index);
 
-  /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   *
+   * @return The enum numeric value on the wire for sampleMethod.
+   */
   int getSampleMethodValue();
-  /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   *
+   * @return The sampleMethod.
+   */
   com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod();
 
   /**
@@ -162,6 +190,8 @@ public interface CloudStorageOptionsOrBuilder
    * </pre>
    *
    * <code>int32 files_limit_percent = 7;</code>
+   *
+   * @return The filesLimitPercent.
    */
   int getFilesLimitPercent();
 }

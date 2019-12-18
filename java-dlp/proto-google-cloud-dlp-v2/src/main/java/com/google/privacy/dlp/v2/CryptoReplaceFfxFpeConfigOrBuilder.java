@@ -31,6 +31,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
   /**
@@ -41,6 +43,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   *
+   * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
@@ -75,6 +79,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   *
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -98,6 +104,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   *
+   * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
@@ -128,12 +136,16 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for commonAlphabet.
    */
   int getCommonAlphabetValue();
   /**
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
+   *
+   * @return The commonAlphabet.
    */
   com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet();
 
@@ -151,6 +163,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   *
+   * @return The customAlphabet.
    */
   java.lang.String getCustomAlphabet();
   /**
@@ -167,6 +181,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   *
+   * @return The bytes for customAlphabet.
    */
   com.google.protobuf.ByteString getCustomAlphabetBytes();
 
@@ -178,6 +194,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>int32 radix = 6;</code>
+   *
+   * @return The radix.
    */
   int getRadix();
 
@@ -210,6 +228,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   *
+   * @return Whether the surrogateInfoType field is set.
    */
   boolean hasSurrogateInfoType();
   /**
@@ -241,6 +261,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   *
+   * @return The surrogateInfoType.
    */
   com.google.privacy.dlp.v2.InfoType getSurrogateInfoType();
   /**

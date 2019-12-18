@@ -31,6 +31,8 @@ public interface RedactImageResponseOrBuilder
    * </pre>
    *
    * <code>bytes redacted_image = 1;</code>
+   *
+   * @return The redactedImage.
    */
   com.google.protobuf.ByteString getRedactedImage();
 
@@ -44,6 +46,8 @@ public interface RedactImageResponseOrBuilder
    * </pre>
    *
    * <code>string extracted_text = 2;</code>
+   *
+   * @return The extractedText.
    */
   java.lang.String getExtractedText();
   /**
@@ -56,6 +60,8 @@ public interface RedactImageResponseOrBuilder
    * </pre>
    *
    * <code>string extracted_text = 2;</code>
+   *
+   * @return The bytes for extractedText.
    */
   com.google.protobuf.ByteString getExtractedTextBytes();
 
@@ -67,6 +73,8 @@ public interface RedactImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   *
+   * @return Whether the inspectResult field is set.
    */
   boolean hasInspectResult();
   /**
@@ -77,6 +85,8 @@ public interface RedactImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   *
+   * @return The inspectResult.
    */
   com.google.privacy.dlp.v2.InspectResult getInspectResult();
   /**

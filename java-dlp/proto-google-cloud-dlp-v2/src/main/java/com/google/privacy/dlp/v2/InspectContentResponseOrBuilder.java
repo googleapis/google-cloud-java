@@ -31,6 +31,8 @@ public interface InspectContentResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
+   *
+   * @return Whether the result field is set.
    */
   boolean hasResult();
   /**
@@ -41,6 +43,8 @@ public interface InspectContentResponseOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
+   *
+   * @return The result.
    */
   com.google.privacy.dlp.v2.InspectResult getResult();
   /**

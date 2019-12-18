@@ -40,6 +40,12 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   private ContentItem() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ContentItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,7 +143,10 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
   private int dataItemCase_ = 0;
   private java.lang.Object dataItem_;
 
-  public enum DataItemCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DataItemCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VALUE(3),
     TABLE(4),
     BYTE_ITEM(5),
@@ -148,7 +156,11 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     private DataItemCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DataItemCase valueOf(int value) {
       return forNumber(value);
@@ -187,6 +199,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string value = 3;</code>
+   *
+   * @return The value.
    */
   public java.lang.String getValue() {
     java.lang.Object ref = "";
@@ -212,6 +226,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string value = 3;</code>
+   *
+   * @return The bytes for value.
    */
   public com.google.protobuf.ByteString getValueBytes() {
     java.lang.Object ref = "";
@@ -241,6 +257,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
+   *
+   * @return Whether the table field is set.
    */
   public boolean hasTable() {
     return dataItemCase_ == 4;
@@ -255,6 +273,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
+   *
+   * @return The table.
    */
   public com.google.privacy.dlp.v2.Table getTable() {
     if (dataItemCase_ == 4) {
@@ -289,6 +309,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
+   *
+   * @return Whether the byteItem field is set.
    */
   public boolean hasByteItem() {
     return dataItemCase_ == 5;
@@ -301,6 +323,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
+   *
+   * @return The byteItem.
    */
   public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
     if (dataItemCase_ == 5) {
@@ -739,6 +763,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3;</code>
+     *
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = "";
@@ -764,6 +790,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3;</code>
+     *
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = "";
@@ -789,6 +817,9 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3;</code>
+     *
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(java.lang.String value) {
       if (value == null) {
@@ -807,6 +838,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       if (dataItemCase_ == 3) {
@@ -824,6 +857,9 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 3;</code>
+     *
+     * @param value The bytes for value to set.
+     * @return This builder for chaining.
      */
     public Builder setValueBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -851,6 +887,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
+     *
+     * @return Whether the table field is set.
      */
     public boolean hasTable() {
       return dataItemCase_ == 4;
@@ -865,6 +903,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
+     *
+     * @return The table.
      */
     public com.google.privacy.dlp.v2.Table getTable() {
       if (tableBuilder_ == null) {
@@ -1066,6 +1106,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
+     *
+     * @return Whether the byteItem field is set.
      */
     public boolean hasByteItem() {
       return dataItemCase_ == 5;
@@ -1078,6 +1120,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
+     *
+     * @return The byteItem.
      */
     public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
       if (byteItemBuilder_ == null) {

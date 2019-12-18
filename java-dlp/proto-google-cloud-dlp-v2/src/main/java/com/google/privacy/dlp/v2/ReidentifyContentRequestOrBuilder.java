@@ -33,6 +33,8 @@ public interface ReidentifyContentRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface ReidentifyContentRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -64,6 +68,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
+   *
+   * @return Whether the reidentifyConfig field is set.
    */
   boolean hasReidentifyConfig();
   /**
@@ -82,6 +88,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
+   *
+   * @return The reidentifyConfig.
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getReidentifyConfig();
   /**
@@ -111,6 +119,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+   *
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -121,6 +131,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+   *
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
@@ -142,6 +154,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+   *
+   * @return Whether the item field is set.
    */
   boolean hasItem();
   /**
@@ -152,6 +166,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+   *
+   * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
@@ -177,6 +193,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>string inspect_template_name = 5;</code>
+   *
+   * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
   /**
@@ -191,6 +209,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>string inspect_template_name = 5;</code>
+   *
+   * @return The bytes for inspectTemplateName.
    */
   com.google.protobuf.ByteString getInspectTemplateNameBytes();
 
@@ -207,6 +227,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>string reidentify_template_name = 6;</code>
+   *
+   * @return The reidentifyTemplateName.
    */
   java.lang.String getReidentifyTemplateName();
   /**
@@ -222,6 +244,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>string reidentify_template_name = 6;</code>
+   *
+   * @return The bytes for reidentifyTemplateName.
    */
   com.google.protobuf.ByteString getReidentifyTemplateNameBytes();
 
@@ -234,6 +258,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -245,6 +271,8 @@ public interface ReidentifyContentRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

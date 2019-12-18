@@ -33,6 +33,8 @@ public interface ListDlpJobsRequestOrBuilder
    * <code>
    * string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface ListDlpJobsRequestOrBuilder
    * <code>
    * string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -78,6 +82,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 1;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -110,6 +116,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 1;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -121,6 +129,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -132,6 +142,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -142,6 +154,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -153,6 +167,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -163,6 +179,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
+   *
+   * @return The type.
    */
   com.google.privacy.dlp.v2.DlpJobType getType();
 
@@ -183,6 +201,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -202,6 +222,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 
@@ -214,6 +236,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -225,6 +249,8 @@ public interface ListDlpJobsRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

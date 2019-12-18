@@ -31,6 +31,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -62,6 +68,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+   *
+   * @return The type.
    */
   com.google.privacy.dlp.v2.DlpJobType getType();
 
@@ -73,6 +81,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -83,6 +93,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+   *
+   * @return The state.
    */
   com.google.privacy.dlp.v2.DlpJob.JobState getState();
 
@@ -94,6 +106,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
+   *
+   * @return Whether the riskDetails field is set.
    */
   boolean hasRiskDetails();
   /**
@@ -104,6 +118,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
+   *
+   * @return The riskDetails.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails();
   /**
@@ -125,6 +141,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
+   *
+   * @return Whether the inspectDetails field is set.
    */
   boolean hasInspectDetails();
   /**
@@ -135,6 +153,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
+   *
+   * @return The inspectDetails.
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails();
   /**
@@ -156,6 +176,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -166,6 +188,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -187,6 +211,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -197,6 +223,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -218,6 +246,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -228,6 +258,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -250,6 +282,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>string job_trigger_name = 10;</code>
+   *
+   * @return The jobTriggerName.
    */
   java.lang.String getJobTriggerName();
   /**
@@ -261,6 +295,8 @@ public interface DlpJobOrBuilder
    * </pre>
    *
    * <code>string job_trigger_name = 10;</code>
+   *
+   * @return The bytes for jobTriggerName.
    */
   com.google.protobuf.ByteString getJobTriggerNameBytes();
 

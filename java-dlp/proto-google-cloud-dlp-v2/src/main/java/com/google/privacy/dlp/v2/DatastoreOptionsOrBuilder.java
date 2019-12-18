@@ -32,6 +32,8 @@ public interface DatastoreOptionsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+   *
+   * @return Whether the partitionId field is set.
    */
   boolean hasPartitionId();
   /**
@@ -43,6 +45,8 @@ public interface DatastoreOptionsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+   *
+   * @return The partitionId.
    */
   com.google.privacy.dlp.v2.PartitionId getPartitionId();
   /**
@@ -65,6 +69,8 @@ public interface DatastoreOptionsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
+   *
+   * @return Whether the kind field is set.
    */
   boolean hasKind();
   /**
@@ -75,6 +81,8 @@ public interface DatastoreOptionsOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
+   *
+   * @return The kind.
    */
   com.google.privacy.dlp.v2.KindExpression getKind();
   /**

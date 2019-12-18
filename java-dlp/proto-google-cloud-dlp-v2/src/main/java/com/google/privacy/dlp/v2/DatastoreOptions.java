@@ -40,6 +40,12 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
   private DatastoreOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DatastoreOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+   *
+   * @return Whether the partitionId field is set.
    */
   public boolean hasPartitionId() {
     return partitionId_ != null;
@@ -153,6 +160,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+   *
+   * @return The partitionId.
    */
   public com.google.privacy.dlp.v2.PartitionId getPartitionId() {
     return partitionId_ == null
@@ -183,6 +192,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
+   *
+   * @return Whether the kind field is set.
    */
   public boolean hasKind() {
     return kind_ != null;
@@ -195,6 +206,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
+   *
+   * @return The kind.
    */
   public com.google.privacy.dlp.v2.KindExpression getKind() {
     return kind_ == null ? com.google.privacy.dlp.v2.KindExpression.getDefaultInstance() : kind_;
@@ -583,6 +596,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+     *
+     * @return Whether the partitionId field is set.
      */
     public boolean hasPartitionId() {
       return partitionIdBuilder_ != null || partitionId_ != null;
@@ -596,6 +611,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+     *
+     * @return The partitionId.
      */
     public com.google.privacy.dlp.v2.PartitionId getPartitionId() {
       if (partitionIdBuilder_ == null) {
@@ -772,6 +789,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
+     *
+     * @return Whether the kind field is set.
      */
     public boolean hasKind() {
       return kindBuilder_ != null || kind_ != null;
@@ -784,6 +803,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
+     *
+     * @return The kind.
      */
     public com.google.privacy.dlp.v2.KindExpression getKind() {
       if (kindBuilder_ == null) {

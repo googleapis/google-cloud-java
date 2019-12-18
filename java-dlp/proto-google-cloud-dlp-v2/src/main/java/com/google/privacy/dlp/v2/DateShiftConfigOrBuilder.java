@@ -35,6 +35,8 @@ public interface DateShiftConfigOrBuilder
    * </pre>
    *
    * <code>int32 upper_bound_days = 1;</code>
+   *
+   * @return The upperBoundDays.
    */
   int getUpperBoundDays();
 
@@ -47,6 +49,8 @@ public interface DateShiftConfigOrBuilder
    * </pre>
    *
    * <code>int32 lower_bound_days = 2;</code>
+   *
+   * @return The lowerBoundDays.
    */
   int getLowerBoundDays();
 
@@ -60,6 +64,8 @@ public interface DateShiftConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   *
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -72,6 +78,8 @@ public interface DateShiftConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   *
+   * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
@@ -97,6 +105,8 @@ public interface DateShiftConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   *
+   * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
   /**
@@ -109,6 +119,8 @@ public interface DateShiftConfigOrBuilder
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   *
+   * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**

@@ -40,6 +40,12 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
   private DatastoreKey() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DatastoreKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
+   *
+   * @return Whether the entityKey field is set.
    */
   public boolean hasEntityKey() {
     return entityKey_ != null;
@@ -134,6 +141,8 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
+   *
+   * @return The entityKey.
    */
   public com.google.privacy.dlp.v2.Key getEntityKey() {
     return entityKey_ == null ? com.google.privacy.dlp.v2.Key.getDefaultInstance() : entityKey_;
@@ -492,6 +501,8 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
+     *
+     * @return Whether the entityKey field is set.
      */
     public boolean hasEntityKey() {
       return entityKeyBuilder_ != null || entityKey_ != null;
@@ -504,6 +515,8 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
+     *
+     * @return The entityKey.
      */
     public com.google.privacy.dlp.v2.Key getEntityKey() {
       if (entityKeyBuilder_ == null) {

@@ -40,6 +40,12 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   private DeidentifyConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeidentifyConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,7 +143,10 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
 
-  public enum TransformationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TransformationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INFO_TYPE_TRANSFORMATIONS(1),
     RECORD_TRANSFORMATIONS(2),
     TRANSFORMATION_NOT_SET(0);
@@ -147,7 +155,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     private TransformationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TransformationCase valueOf(int value) {
       return forNumber(value);
@@ -185,6 +197,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+   *
+   * @return Whether the infoTypeTransformations field is set.
    */
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 1;
@@ -198,6 +212,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+   *
+   * @return The infoTypeTransformations.
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
     if (transformationCase_ == 1) {
@@ -234,6 +250,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+   *
+   * @return Whether the recordTransformations field is set.
    */
   public boolean hasRecordTransformations() {
     return transformationCase_ == 2;
@@ -248,6 +266,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+   *
+   * @return The recordTransformations.
    */
   public com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations() {
     if (transformationCase_ == 2) {
@@ -674,6 +694,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+     *
+     * @return Whether the infoTypeTransformations field is set.
      */
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 1;
@@ -687,6 +709,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+     *
+     * @return The infoTypeTransformations.
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
       if (infoTypeTransformationsBuilder_ == null) {
@@ -891,6 +915,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+     *
+     * @return Whether the recordTransformations field is set.
      */
     public boolean hasRecordTransformations() {
       return transformationCase_ == 2;
@@ -905,6 +931,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+     *
+     * @return The recordTransformations.
      */
     public com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations() {
       if (recordTransformationsBuilder_ == null) {

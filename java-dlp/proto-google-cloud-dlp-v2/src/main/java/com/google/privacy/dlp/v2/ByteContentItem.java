@@ -43,6 +43,12 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ByteContentItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,12 +163,20 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static BytesType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static BytesType forNumber(int value) {
       switch (value) {
         case 0:
@@ -241,6 +254,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -253,6 +268,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+   *
+   * @return The type.
    */
   public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
     @SuppressWarnings("deprecation")
@@ -273,6 +290,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bytes data = 2;</code>
+   *
+   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
@@ -619,6 +638,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -631,6 +652,9 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -645,6 +669,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     *
+     * @return The type.
      */
     public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
       @SuppressWarnings("deprecation")
@@ -662,6 +688,9 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.privacy.dlp.v2.ByteContentItem.BytesType value) {
       if (value == null) {
@@ -680,6 +709,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -697,6 +728,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes data = 2;</code>
+     *
+     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -709,6 +742,9 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes data = 2;</code>
+     *
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -727,6 +763,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes data = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearData() {
 

@@ -47,6 +47,12 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new KmsWrappedCryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes wrapped_key = 1;</code>
+   *
+   * @return The wrappedKey.
    */
   public com.google.protobuf.ByteString getWrappedKey() {
     return wrappedKey_;
@@ -141,6 +148,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string crypto_key_name = 2;</code>
+   *
+   * @return The cryptoKeyName.
    */
   public java.lang.String getCryptoKeyName() {
     java.lang.Object ref = cryptoKeyName_;
@@ -161,6 +170,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string crypto_key_name = 2;</code>
+   *
+   * @return The bytes for cryptoKeyName.
    */
   public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
     java.lang.Object ref = cryptoKeyName_;
@@ -518,6 +529,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes wrapped_key = 1;</code>
+     *
+     * @return The wrappedKey.
      */
     public com.google.protobuf.ByteString getWrappedKey() {
       return wrappedKey_;
@@ -530,6 +543,9 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes wrapped_key = 1;</code>
+     *
+     * @param value The wrappedKey to set.
+     * @return This builder for chaining.
      */
     public Builder setWrappedKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -548,6 +564,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes wrapped_key = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWrappedKey() {
 
@@ -565,6 +583,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string crypto_key_name = 2;</code>
+     *
+     * @return The cryptoKeyName.
      */
     public java.lang.String getCryptoKeyName() {
       java.lang.Object ref = cryptoKeyName_;
@@ -585,6 +605,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string crypto_key_name = 2;</code>
+     *
+     * @return The bytes for cryptoKeyName.
      */
     public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
       java.lang.Object ref = cryptoKeyName_;
@@ -605,6 +627,9 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string crypto_key_name = 2;</code>
+     *
+     * @param value The cryptoKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyName(java.lang.String value) {
       if (value == null) {
@@ -623,6 +648,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string crypto_key_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCryptoKeyName() {
 
@@ -638,6 +665,9 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string crypto_key_name = 2;</code>
+     *
+     * @param value The bytes for cryptoKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
