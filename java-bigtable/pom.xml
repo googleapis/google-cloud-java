@@ -159,7 +159,7 @@
         <google.common-protos.version>1.17.0</google.common-protos.version>
         <google.core.version>1.92.0</google.core.version>
          <!-- make sure to update the grpc version in README -->
-        <grpc.version>1.25.0</grpc.version>
+        <grpc.version>1.26.0</grpc.version>
         <guava.version>28.1-android</guava.version>
         <opencensus.version>0.24.0</opencensus.version>
         <protobuf.version>3.11.1</protobuf.version>
