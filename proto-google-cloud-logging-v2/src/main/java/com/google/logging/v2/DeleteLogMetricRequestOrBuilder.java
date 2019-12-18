@@ -32,6 +32,8 @@ public interface DeleteLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>string metric_name = 1;</code>
+   *
+   * @return The metricName.
    */
   java.lang.String getMetricName();
   /**
@@ -43,6 +45,8 @@ public interface DeleteLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>string metric_name = 1;</code>
+   *
+   * @return The bytes for metricName.
    */
   com.google.protobuf.ByteString getMetricNameBytes();
 }

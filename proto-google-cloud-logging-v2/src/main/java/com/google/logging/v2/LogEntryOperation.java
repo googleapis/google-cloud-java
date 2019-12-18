@@ -44,6 +44,12 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogEntryOperation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +141,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -157,6 +164,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -182,6 +191,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string producer = 2;</code>
+   *
+   * @return The producer.
    */
   public java.lang.String getProducer() {
     java.lang.Object ref = producer_;
@@ -204,6 +215,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string producer = 2;</code>
+   *
+   * @return The bytes for producer.
    */
   public com.google.protobuf.ByteString getProducerBytes() {
     java.lang.Object ref = producer_;
@@ -227,6 +240,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool first = 3;</code>
+   *
+   * @return The first.
    */
   public boolean getFirst() {
     return first_;
@@ -242,6 +257,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool last = 4;</code>
+   *
+   * @return The last.
    */
   public boolean getLast() {
     return last_;
@@ -619,6 +636,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -640,6 +659,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -661,6 +682,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -680,6 +704,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -696,6 +722,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -719,6 +748,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string producer = 2;</code>
+     *
+     * @return The producer.
      */
     public java.lang.String getProducer() {
       java.lang.Object ref = producer_;
@@ -741,6 +772,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string producer = 2;</code>
+     *
+     * @return The bytes for producer.
      */
     public com.google.protobuf.ByteString getProducerBytes() {
       java.lang.Object ref = producer_;
@@ -763,6 +796,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string producer = 2;</code>
+     *
+     * @param value The producer to set.
+     * @return This builder for chaining.
      */
     public Builder setProducer(java.lang.String value) {
       if (value == null) {
@@ -783,6 +819,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string producer = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProducer() {
 
@@ -800,6 +838,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string producer = 2;</code>
+     *
+     * @param value The bytes for producer to set.
+     * @return This builder for chaining.
      */
     public Builder setProducerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -821,6 +862,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool first = 3;</code>
+     *
+     * @return The first.
      */
     public boolean getFirst() {
       return first_;
@@ -833,6 +876,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool first = 3;</code>
+     *
+     * @param value The first to set.
+     * @return This builder for chaining.
      */
     public Builder setFirst(boolean value) {
 
@@ -848,6 +894,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool first = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFirst() {
 
@@ -865,6 +913,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool last = 4;</code>
+     *
+     * @return The last.
      */
     public boolean getLast() {
       return last_;
@@ -877,6 +927,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool last = 4;</code>
+     *
+     * @param value The last to set.
+     * @return This builder for chaining.
      */
     public Builder setLast(boolean value) {
 
@@ -892,6 +945,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool last = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLast() {
 

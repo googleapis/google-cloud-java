@@ -35,6 +35,8 @@ public interface UpdateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>string metric_name = 1;</code>
+   *
+   * @return The metricName.
    */
   java.lang.String getMetricName();
   /**
@@ -49,6 +51,8 @@ public interface UpdateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>string metric_name = 1;</code>
+   *
+   * @return The bytes for metricName.
    */
   com.google.protobuf.ByteString getMetricNameBytes();
 
@@ -60,6 +64,8 @@ public interface UpdateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   *
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
@@ -70,6 +76,8 @@ public interface UpdateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   *
+   * @return The metric.
    */
   com.google.logging.v2.LogMetric getMetric();
   /**

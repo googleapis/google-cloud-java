@@ -36,6 +36,8 @@ public interface UpdateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -51,6 +53,8 @@ public interface UpdateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface UpdateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   *
+   * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
   /**
@@ -74,6 +80,8 @@ public interface UpdateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   *
+   * @return The exclusion.
    */
   com.google.logging.v2.LogExclusion getExclusion();
   /**
@@ -101,6 +109,8 @@ public interface UpdateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -116,6 +126,8 @@ public interface UpdateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

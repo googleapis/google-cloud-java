@@ -31,6 +31,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string request_method = 1;</code>
+   *
+   * @return The requestMethod.
    */
   java.lang.String getRequestMethod();
   /**
@@ -41,6 +43,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string request_method = 1;</code>
+   *
+   * @return The bytes for requestMethod.
    */
   com.google.protobuf.ByteString getRequestMethodBytes();
 
@@ -54,6 +58,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string request_url = 2;</code>
+   *
+   * @return The requestUrl.
    */
   java.lang.String getRequestUrl();
   /**
@@ -66,6 +72,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string request_url = 2;</code>
+   *
+   * @return The bytes for requestUrl.
    */
   com.google.protobuf.ByteString getRequestUrlBytes();
 
@@ -78,6 +86,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>int64 request_size = 3;</code>
+   *
+   * @return The requestSize.
    */
   long getRequestSize();
 
@@ -90,6 +100,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>int32 status = 4;</code>
+   *
+   * @return The status.
    */
   int getStatus();
 
@@ -102,6 +114,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>int64 response_size = 5;</code>
+   *
+   * @return The responseSize.
    */
   long getResponseSize();
 
@@ -115,6 +129,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string user_agent = 6;</code>
+   *
+   * @return The userAgent.
    */
   java.lang.String getUserAgent();
   /**
@@ -127,6 +143,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string user_agent = 6;</code>
+   *
+   * @return The bytes for userAgent.
    */
   com.google.protobuf.ByteString getUserAgentBytes();
 
@@ -139,6 +157,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string remote_ip = 7;</code>
+   *
+   * @return The remoteIp.
    */
   java.lang.String getRemoteIp();
   /**
@@ -150,6 +170,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string remote_ip = 7;</code>
+   *
+   * @return The bytes for remoteIp.
    */
   com.google.protobuf.ByteString getRemoteIpBytes();
 
@@ -162,6 +184,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string server_ip = 13;</code>
+   *
+   * @return The serverIp.
    */
   java.lang.String getServerIp();
   /**
@@ -173,6 +197,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string server_ip = 13;</code>
+   *
+   * @return The bytes for serverIp.
    */
   com.google.protobuf.ByteString getServerIpBytes();
 
@@ -186,6 +212,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string referer = 8;</code>
+   *
+   * @return The referer.
    */
   java.lang.String getReferer();
   /**
@@ -198,6 +226,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string referer = 8;</code>
+   *
+   * @return The bytes for referer.
    */
   com.google.protobuf.ByteString getRefererBytes();
 
@@ -210,6 +240,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration latency = 14;</code>
+   *
+   * @return Whether the latency field is set.
    */
   boolean hasLatency();
   /**
@@ -221,6 +253,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration latency = 14;</code>
+   *
+   * @return The latency.
    */
   com.google.protobuf.Duration getLatency();
   /**
@@ -243,6 +277,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>bool cache_lookup = 11;</code>
+   *
+   * @return The cacheLookup.
    */
   boolean getCacheLookup();
 
@@ -255,6 +291,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>bool cache_hit = 9;</code>
+   *
+   * @return The cacheHit.
    */
   boolean getCacheHit();
 
@@ -268,6 +306,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>bool cache_validated_with_origin_server = 10;</code>
+   *
+   * @return The cacheValidatedWithOriginServer.
    */
   boolean getCacheValidatedWithOriginServer();
 
@@ -280,6 +320,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>int64 cache_fill_bytes = 12;</code>
+   *
+   * @return The cacheFillBytes.
    */
   long getCacheFillBytes();
 
@@ -291,6 +333,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string protocol = 15;</code>
+   *
+   * @return The protocol.
    */
   java.lang.String getProtocol();
   /**
@@ -301,6 +345,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string protocol = 15;</code>
+   *
+   * @return The bytes for protocol.
    */
   com.google.protobuf.ByteString getProtocolBytes();
 }

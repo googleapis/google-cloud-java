@@ -50,6 +50,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HttpRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,7 +68,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -216,6 +221,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string request_method = 1;</code>
+   *
+   * @return The requestMethod.
    */
   public java.lang.String getRequestMethod() {
     java.lang.Object ref = requestMethod_;
@@ -236,6 +243,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string request_method = 1;</code>
+   *
+   * @return The bytes for requestMethod.
    */
   public com.google.protobuf.ByteString getRequestMethodBytes() {
     java.lang.Object ref = requestMethod_;
@@ -261,6 +270,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string request_url = 2;</code>
+   *
+   * @return The requestUrl.
    */
   public java.lang.String getRequestUrl() {
     java.lang.Object ref = requestUrl_;
@@ -283,6 +294,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string request_url = 2;</code>
+   *
+   * @return The bytes for requestUrl.
    */
   public com.google.protobuf.ByteString getRequestUrlBytes() {
     java.lang.Object ref = requestUrl_;
@@ -307,6 +320,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 request_size = 3;</code>
+   *
+   * @return The requestSize.
    */
   public long getRequestSize() {
     return requestSize_;
@@ -323,6 +338,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 status = 4;</code>
+   *
+   * @return The status.
    */
   public int getStatus() {
     return status_;
@@ -339,6 +356,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 response_size = 5;</code>
+   *
+   * @return The responseSize.
    */
   public long getResponseSize() {
     return responseSize_;
@@ -356,6 +375,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user_agent = 6;</code>
+   *
+   * @return The userAgent.
    */
   public java.lang.String getUserAgent() {
     java.lang.Object ref = userAgent_;
@@ -378,6 +399,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user_agent = 6;</code>
+   *
+   * @return The bytes for userAgent.
    */
   public com.google.protobuf.ByteString getUserAgentBytes() {
     java.lang.Object ref = userAgent_;
@@ -402,6 +425,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string remote_ip = 7;</code>
+   *
+   * @return The remoteIp.
    */
   public java.lang.String getRemoteIp() {
     java.lang.Object ref = remoteIp_;
@@ -423,6 +448,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string remote_ip = 7;</code>
+   *
+   * @return The bytes for remoteIp.
    */
   public com.google.protobuf.ByteString getRemoteIpBytes() {
     java.lang.Object ref = remoteIp_;
@@ -447,6 +474,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string server_ip = 13;</code>
+   *
+   * @return The serverIp.
    */
   public java.lang.String getServerIp() {
     java.lang.Object ref = serverIp_;
@@ -468,6 +497,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string server_ip = 13;</code>
+   *
+   * @return The bytes for serverIp.
    */
   public com.google.protobuf.ByteString getServerIpBytes() {
     java.lang.Object ref = serverIp_;
@@ -493,6 +524,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string referer = 8;</code>
+   *
+   * @return The referer.
    */
   public java.lang.String getReferer() {
     java.lang.Object ref = referer_;
@@ -515,6 +548,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string referer = 8;</code>
+   *
+   * @return The bytes for referer.
    */
   public com.google.protobuf.ByteString getRefererBytes() {
     java.lang.Object ref = referer_;
@@ -539,6 +574,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration latency = 14;</code>
+   *
+   * @return Whether the latency field is set.
    */
   public boolean hasLatency() {
     return latency_ != null;
@@ -552,6 +589,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration latency = 14;</code>
+   *
+   * @return The latency.
    */
   public com.google.protobuf.Duration getLatency() {
     return latency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : latency_;
@@ -580,6 +619,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool cache_lookup = 11;</code>
+   *
+   * @return The cacheLookup.
    */
   public boolean getCacheLookup() {
     return cacheLookup_;
@@ -596,6 +637,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool cache_hit = 9;</code>
+   *
+   * @return The cacheHit.
    */
   public boolean getCacheHit() {
     return cacheHit_;
@@ -613,6 +656,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool cache_validated_with_origin_server = 10;</code>
+   *
+   * @return The cacheValidatedWithOriginServer.
    */
   public boolean getCacheValidatedWithOriginServer() {
     return cacheValidatedWithOriginServer_;
@@ -629,6 +674,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 cache_fill_bytes = 12;</code>
+   *
+   * @return The cacheFillBytes.
    */
   public long getCacheFillBytes() {
     return cacheFillBytes_;
@@ -644,6 +691,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string protocol = 15;</code>
+   *
+   * @return The protocol.
    */
   public java.lang.String getProtocol() {
     java.lang.Object ref = protocol_;
@@ -664,6 +713,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string protocol = 15;</code>
+   *
+   * @return The bytes for protocol.
    */
   public com.google.protobuf.ByteString getProtocolBytes() {
     java.lang.Object ref = protocol_;
@@ -1234,6 +1285,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_method = 1;</code>
+     *
+     * @return The requestMethod.
      */
     public java.lang.String getRequestMethod() {
       java.lang.Object ref = requestMethod_;
@@ -1254,6 +1307,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_method = 1;</code>
+     *
+     * @return The bytes for requestMethod.
      */
     public com.google.protobuf.ByteString getRequestMethodBytes() {
       java.lang.Object ref = requestMethod_;
@@ -1274,6 +1329,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_method = 1;</code>
+     *
+     * @param value The requestMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestMethod(java.lang.String value) {
       if (value == null) {
@@ -1292,6 +1350,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_method = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestMethod() {
 
@@ -1307,6 +1367,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_method = 1;</code>
+     *
+     * @param value The bytes for requestMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestMethodBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1330,6 +1393,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_url = 2;</code>
+     *
+     * @return The requestUrl.
      */
     public java.lang.String getRequestUrl() {
       java.lang.Object ref = requestUrl_;
@@ -1352,6 +1417,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_url = 2;</code>
+     *
+     * @return The bytes for requestUrl.
      */
     public com.google.protobuf.ByteString getRequestUrlBytes() {
       java.lang.Object ref = requestUrl_;
@@ -1374,6 +1441,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_url = 2;</code>
+     *
+     * @param value The requestUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestUrl(java.lang.String value) {
       if (value == null) {
@@ -1394,6 +1464,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_url = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestUrl() {
 
@@ -1411,6 +1483,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_url = 2;</code>
+     *
+     * @param value The bytes for requestUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1433,6 +1508,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 request_size = 3;</code>
+     *
+     * @return The requestSize.
      */
     public long getRequestSize() {
       return requestSize_;
@@ -1446,6 +1523,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 request_size = 3;</code>
+     *
+     * @param value The requestSize to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestSize(long value) {
 
@@ -1462,6 +1542,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 request_size = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestSize() {
 
@@ -1480,6 +1562,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 status = 4;</code>
+     *
+     * @return The status.
      */
     public int getStatus() {
       return status_;
@@ -1493,6 +1577,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 status = 4;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(int value) {
 
@@ -1509,6 +1596,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 status = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 
@@ -1527,6 +1616,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 response_size = 5;</code>
+     *
+     * @return The responseSize.
      */
     public long getResponseSize() {
       return responseSize_;
@@ -1540,6 +1631,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 response_size = 5;</code>
+     *
+     * @param value The responseSize to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseSize(long value) {
 
@@ -1556,6 +1650,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 response_size = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseSize() {
 
@@ -1575,6 +1671,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 6;</code>
+     *
+     * @return The userAgent.
      */
     public java.lang.String getUserAgent() {
       java.lang.Object ref = userAgent_;
@@ -1597,6 +1695,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 6;</code>
+     *
+     * @return The bytes for userAgent.
      */
     public com.google.protobuf.ByteString getUserAgentBytes() {
       java.lang.Object ref = userAgent_;
@@ -1619,6 +1719,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 6;</code>
+     *
+     * @param value The userAgent to set.
+     * @return This builder for chaining.
      */
     public Builder setUserAgent(java.lang.String value) {
       if (value == null) {
@@ -1639,6 +1742,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
 
@@ -1656,6 +1761,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 6;</code>
+     *
+     * @param value The bytes for userAgent to set.
+     * @return This builder for chaining.
      */
     public Builder setUserAgentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1678,6 +1786,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remote_ip = 7;</code>
+     *
+     * @return The remoteIp.
      */
     public java.lang.String getRemoteIp() {
       java.lang.Object ref = remoteIp_;
@@ -1699,6 +1809,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remote_ip = 7;</code>
+     *
+     * @return The bytes for remoteIp.
      */
     public com.google.protobuf.ByteString getRemoteIpBytes() {
       java.lang.Object ref = remoteIp_;
@@ -1720,6 +1832,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remote_ip = 7;</code>
+     *
+     * @param value The remoteIp to set.
+     * @return This builder for chaining.
      */
     public Builder setRemoteIp(java.lang.String value) {
       if (value == null) {
@@ -1739,6 +1854,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remote_ip = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRemoteIp() {
 
@@ -1755,6 +1872,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remote_ip = 7;</code>
+     *
+     * @param value The bytes for remoteIp to set.
+     * @return This builder for chaining.
      */
     public Builder setRemoteIpBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1777,6 +1897,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string server_ip = 13;</code>
+     *
+     * @return The serverIp.
      */
     public java.lang.String getServerIp() {
       java.lang.Object ref = serverIp_;
@@ -1798,6 +1920,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string server_ip = 13;</code>
+     *
+     * @return The bytes for serverIp.
      */
     public com.google.protobuf.ByteString getServerIpBytes() {
       java.lang.Object ref = serverIp_;
@@ -1819,6 +1943,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string server_ip = 13;</code>
+     *
+     * @param value The serverIp to set.
+     * @return This builder for chaining.
      */
     public Builder setServerIp(java.lang.String value) {
       if (value == null) {
@@ -1838,6 +1965,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string server_ip = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServerIp() {
 
@@ -1854,6 +1983,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string server_ip = 13;</code>
+     *
+     * @param value The bytes for serverIp to set.
+     * @return This builder for chaining.
      */
     public Builder setServerIpBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1877,6 +2009,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string referer = 8;</code>
+     *
+     * @return The referer.
      */
     public java.lang.String getReferer() {
       java.lang.Object ref = referer_;
@@ -1899,6 +2033,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string referer = 8;</code>
+     *
+     * @return The bytes for referer.
      */
     public com.google.protobuf.ByteString getRefererBytes() {
       java.lang.Object ref = referer_;
@@ -1921,6 +2057,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string referer = 8;</code>
+     *
+     * @param value The referer to set.
+     * @return This builder for chaining.
      */
     public Builder setReferer(java.lang.String value) {
       if (value == null) {
@@ -1941,6 +2080,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string referer = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReferer() {
 
@@ -1958,6 +2099,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string referer = 8;</code>
+     *
+     * @param value The bytes for referer to set.
+     * @return This builder for chaining.
      */
     public Builder setRefererBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1985,6 +2129,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration latency = 14;</code>
+     *
+     * @return Whether the latency field is set.
      */
     public boolean hasLatency() {
       return latencyBuilder_ != null || latency_ != null;
@@ -1998,6 +2144,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration latency = 14;</code>
+     *
+     * @return The latency.
      */
     public com.google.protobuf.Duration getLatency() {
       if (latencyBuilder_ == null) {
@@ -2163,6 +2311,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_lookup = 11;</code>
+     *
+     * @return The cacheLookup.
      */
     public boolean getCacheLookup() {
       return cacheLookup_;
@@ -2175,6 +2325,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_lookup = 11;</code>
+     *
+     * @param value The cacheLookup to set.
+     * @return This builder for chaining.
      */
     public Builder setCacheLookup(boolean value) {
 
@@ -2190,6 +2343,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_lookup = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCacheLookup() {
 
@@ -2208,6 +2363,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_hit = 9;</code>
+     *
+     * @return The cacheHit.
      */
     public boolean getCacheHit() {
       return cacheHit_;
@@ -2221,6 +2378,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_hit = 9;</code>
+     *
+     * @param value The cacheHit to set.
+     * @return This builder for chaining.
      */
     public Builder setCacheHit(boolean value) {
 
@@ -2237,6 +2397,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_hit = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCacheHit() {
 
@@ -2256,6 +2418,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_validated_with_origin_server = 10;</code>
+     *
+     * @return The cacheValidatedWithOriginServer.
      */
     public boolean getCacheValidatedWithOriginServer() {
       return cacheValidatedWithOriginServer_;
@@ -2270,6 +2434,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_validated_with_origin_server = 10;</code>
+     *
+     * @param value The cacheValidatedWithOriginServer to set.
+     * @return This builder for chaining.
      */
     public Builder setCacheValidatedWithOriginServer(boolean value) {
 
@@ -2287,6 +2454,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool cache_validated_with_origin_server = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCacheValidatedWithOriginServer() {
 
@@ -2305,6 +2474,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 cache_fill_bytes = 12;</code>
+     *
+     * @return The cacheFillBytes.
      */
     public long getCacheFillBytes() {
       return cacheFillBytes_;
@@ -2318,6 +2489,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 cache_fill_bytes = 12;</code>
+     *
+     * @param value The cacheFillBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setCacheFillBytes(long value) {
 
@@ -2334,6 +2508,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 cache_fill_bytes = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCacheFillBytes() {
 
@@ -2351,6 +2527,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string protocol = 15;</code>
+     *
+     * @return The protocol.
      */
     public java.lang.String getProtocol() {
       java.lang.Object ref = protocol_;
@@ -2371,6 +2549,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string protocol = 15;</code>
+     *
+     * @return The bytes for protocol.
      */
     public com.google.protobuf.ByteString getProtocolBytes() {
       java.lang.Object ref = protocol_;
@@ -2391,6 +2571,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string protocol = 15;</code>
+     *
+     * @param value The protocol to set.
+     * @return This builder for chaining.
      */
     public Builder setProtocol(java.lang.String value) {
       if (value == null) {
@@ -2409,6 +2592,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string protocol = 15;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProtocol() {
 
@@ -2424,6 +2609,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string protocol = 15;</code>
+     *
+     * @param value The bytes for protocol to set.
+     * @return This builder for chaining.
      */
     public Builder setProtocolBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

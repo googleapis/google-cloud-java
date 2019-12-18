@@ -40,6 +40,8 @@ public interface DeleteLogRequestOrBuilder
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The logName.
    */
   java.lang.String getLogName();
   /**
@@ -59,6 +61,8 @@ public interface DeleteLogRequestOrBuilder
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The bytes for logName.
    */
   com.google.protobuf.ByteString getLogNameBytes();
 }

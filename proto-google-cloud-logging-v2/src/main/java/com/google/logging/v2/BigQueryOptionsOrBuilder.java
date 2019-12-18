@@ -37,6 +37,8 @@ public interface BigQueryOptionsOrBuilder
    * </pre>
    *
    * <code>bool use_partitioned_tables = 1;</code>
+   *
+   * @return The usePartitionedTables.
    */
   boolean getUsePartitionedTables();
 }

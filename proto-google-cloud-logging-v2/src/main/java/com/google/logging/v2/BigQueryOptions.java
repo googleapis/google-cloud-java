@@ -40,6 +40,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   private BigQueryOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BigQueryOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool use_partitioned_tables = 1;</code>
+   *
+   * @return The usePartitionedTables.
    */
   public boolean getUsePartitionedTables() {
     return usePartitionedTables_;
@@ -451,6 +458,8 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool use_partitioned_tables = 1;</code>
+     *
+     * @return The usePartitionedTables.
      */
     public boolean getUsePartitionedTables() {
       return usePartitionedTables_;
@@ -469,6 +478,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool use_partitioned_tables = 1;</code>
+     *
+     * @param value The usePartitionedTables to set.
+     * @return This builder for chaining.
      */
     public Builder setUsePartitionedTables(boolean value) {
 
@@ -490,6 +502,8 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool use_partitioned_tables = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUsePartitionedTables() {
 

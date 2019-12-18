@@ -46,6 +46,12 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListLogEntriesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -155,7 +161,6 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
             com.google.logging.v2.ListLogEntriesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_IDS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList projectIds_;
   /**
@@ -168,6 +173,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   *
+   * @return A list containing the projectIds.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getProjectIdsList() {
@@ -183,6 +190,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   *
+   * @return The count of projectIds.
    */
   @java.lang.Deprecated
   public int getProjectIdsCount() {
@@ -198,6 +207,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The projectIds at the given index.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectIds(int index) {
@@ -213,6 +225,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the projectIds at the given index.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdsBytes(int index) {
@@ -235,6 +250,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string resource_names = 8;</code>
+   *
+   * @return A list containing the resourceNames.
    */
   public com.google.protobuf.ProtocolStringList getResourceNamesList() {
     return resourceNames_;
@@ -253,6 +270,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string resource_names = 8;</code>
+   *
+   * @return The count of resourceNames.
    */
   public int getResourceNamesCount() {
     return resourceNames_.size();
@@ -271,6 +290,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string resource_names = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceNames at the given index.
    */
   public java.lang.String getResourceNames(int index) {
     return resourceNames_.get(index);
@@ -289,6 +311,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string resource_names = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceNames at the given index.
    */
   public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
     return resourceNames_.getByteString(index);
@@ -310,6 +335,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -336,6 +363,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -364,6 +393,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   *
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -389,6 +420,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   *
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
@@ -414,6 +447,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -432,6 +467,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -455,6 +492,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -771,7 +810,6 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
       com.google.logging.v2.ListLogEntriesRequest result =
           new com.google.logging.v2.ListLogEntriesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         projectIds_ = projectIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -786,7 +824,6 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
       result.orderBy_ = orderBy_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -921,6 +958,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @return A list containing the projectIds.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getProjectIdsList() {
@@ -936,6 +975,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @return The count of projectIds.
      */
     @java.lang.Deprecated
     public int getProjectIdsCount() {
@@ -951,6 +992,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The projectIds at the given index.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectIds(int index) {
@@ -966,6 +1010,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the projectIds at the given index.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdsBytes(int index) {
@@ -981,6 +1028,10 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The projectIds to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIds(int index, java.lang.String value) {
@@ -1002,6 +1053,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @param value The projectIds to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addProjectIds(java.lang.String value) {
@@ -1023,6 +1077,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @param values The projectIds to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addAllProjectIds(java.lang.Iterable<java.lang.String> values) {
@@ -1041,6 +1098,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectIds() {
@@ -1059,6 +1118,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string project_ids = 1 [deprecated = true];</code>
+     *
+     * @param value The bytes of the projectIds to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addProjectIdsBytes(com.google.protobuf.ByteString value) {
@@ -1095,6 +1157,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @return A list containing the resourceNames.
      */
     public com.google.protobuf.ProtocolStringList getResourceNamesList() {
       return resourceNames_.getUnmodifiableView();
@@ -1113,6 +1177,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @return The count of resourceNames.
      */
     public int getResourceNamesCount() {
       return resourceNames_.size();
@@ -1131,6 +1197,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceNames at the given index.
      */
     public java.lang.String getResourceNames(int index) {
       return resourceNames_.get(index);
@@ -1149,6 +1218,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceNames at the given index.
      */
     public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
       return resourceNames_.getByteString(index);
@@ -1167,6 +1239,10 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceNames to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceNames(int index, java.lang.String value) {
       if (value == null) {
@@ -1191,6 +1267,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @param value The resourceNames to add.
+     * @return This builder for chaining.
      */
     public Builder addResourceNames(java.lang.String value) {
       if (value == null) {
@@ -1215,6 +1294,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @param values The resourceNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
       ensureResourceNamesIsMutable();
@@ -1236,6 +1318,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResourceNames() {
       resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1257,6 +1341,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string resource_names = 8;</code>
+     *
+     * @param value The bytes of the resourceNames to add.
+     * @return This builder for chaining.
      */
     public Builder addResourceNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1284,6 +1371,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1310,6 +1399,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1336,6 +1427,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1360,6 +1454,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1381,6 +1477,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1407,6 +1506,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     *
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -1432,6 +1533,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     *
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
@@ -1457,6 +1560,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
@@ -1480,6 +1586,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
 
@@ -1500,6 +1608,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1523,6 +1634,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1537,6 +1650,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1554,6 +1670,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1574,6 +1692,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1597,6 +1717,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1620,6 +1742,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1641,6 +1766,8 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1659,6 +1786,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

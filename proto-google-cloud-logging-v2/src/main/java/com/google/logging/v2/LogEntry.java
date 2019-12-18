@@ -46,6 +46,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogEntry();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -166,10 +172,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -310,11 +316,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.logging.v2.LogEntry.class, com.google.logging.v2.LogEntry.Builder.class);
   }
 
-  private int bitField0_;
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
 
-  public enum PayloadCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PayloadCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROTO_PAYLOAD(2),
     TEXT_PAYLOAD(3),
     JSON_PAYLOAD(6),
@@ -324,7 +332,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PayloadCase valueOf(int value) {
       return forNumber(value);
@@ -381,6 +393,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string log_name = 12;</code>
+   *
+   * @return The logName.
    */
   public java.lang.String getLogName() {
     java.lang.Object ref = logName_;
@@ -418,6 +432,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string log_name = 12;</code>
+   *
+   * @return The bytes for logName.
    */
   public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
@@ -444,6 +460,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 8;</code>
+   *
+   * @return Whether the resource field is set.
    */
   public boolean hasResource() {
     return resource_ != null;
@@ -459,6 +477,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 8;</code>
+   *
+   * @return The resource.
    */
   public com.google.api.MonitoredResource getResource() {
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
@@ -493,6 +513,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Any proto_payload = 2;</code>
+   *
+   * @return Whether the protoPayload field is set.
    */
   public boolean hasProtoPayload() {
     return payloadCase_ == 2;
@@ -510,6 +532,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Any proto_payload = 2;</code>
+   *
+   * @return The protoPayload.
    */
   public com.google.protobuf.Any getProtoPayload() {
     if (payloadCase_ == 2) {
@@ -547,6 +571,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text_payload = 3;</code>
+   *
+   * @return The textPayload.
    */
   public java.lang.String getTextPayload() {
     java.lang.Object ref = "";
@@ -572,6 +598,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text_payload = 3;</code>
+   *
+   * @return The bytes for textPayload.
    */
   public com.google.protobuf.ByteString getTextPayloadBytes() {
     java.lang.Object ref = "";
@@ -600,6 +628,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct json_payload = 6;</code>
+   *
+   * @return Whether the jsonPayload field is set.
    */
   public boolean hasJsonPayload() {
     return payloadCase_ == 6;
@@ -613,6 +643,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct json_payload = 6;</code>
+   *
+   * @return The jsonPayload.
    */
   public com.google.protobuf.Struct getJsonPayload() {
     if (payloadCase_ == 6) {
@@ -657,6 +689,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+   *
+   * @return Whether the timestamp field is set.
    */
   public boolean hasTimestamp() {
     return timestamp_ != null;
@@ -679,6 +713,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+   *
+   * @return The timestamp.
    */
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
@@ -716,6 +752,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+   *
+   * @return Whether the receiveTimestamp field is set.
    */
   public boolean hasReceiveTimestamp() {
     return receiveTimestamp_ != null;
@@ -728,6 +766,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+   *
+   * @return The receiveTimestamp.
    */
   public com.google.protobuf.Timestamp getReceiveTimestamp() {
     return receiveTimestamp_ == null
@@ -758,6 +798,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.type.LogSeverity severity = 10;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
    */
   public int getSeverityValue() {
     return severity_;
@@ -771,6 +813,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.type.LogSeverity severity = 10;</code>
+   *
+   * @return The severity.
    */
   public com.google.logging.type.LogSeverity getSeverity() {
     @SuppressWarnings("deprecation")
@@ -794,6 +838,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string insert_id = 4;</code>
+   *
+   * @return The insertId.
    */
   public java.lang.String getInsertId() {
     java.lang.Object ref = insertId_;
@@ -819,6 +865,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string insert_id = 4;</code>
+   *
+   * @return The bytes for insertId.
    */
   public com.google.protobuf.ByteString getInsertIdBytes() {
     java.lang.Object ref = insertId_;
@@ -843,6 +891,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+   *
+   * @return Whether the httpRequest field is set.
    */
   public boolean hasHttpRequest() {
     return httpRequest_ != null;
@@ -856,6 +906,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+   *
+   * @return The httpRequest.
    */
   public com.google.logging.type.HttpRequest getHttpRequest() {
     return httpRequest_ == null
@@ -990,6 +1042,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
+   *
+   * @return Whether the metadata field is set.
    */
   @java.lang.Deprecated
   public boolean hasMetadata() {
@@ -1010,6 +1064,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
+   *
+   * @return The metadata.
    */
   @java.lang.Deprecated
   public com.google.api.MonitoredResourceMetadata getMetadata() {
@@ -1049,6 +1105,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+   *
+   * @return Whether the operation field is set.
    */
   public boolean hasOperation() {
     return operation_ != null;
@@ -1062,6 +1120,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+   *
+   * @return The operation.
    */
   public com.google.logging.v2.LogEntryOperation getOperation() {
     return operation_ == null
@@ -1095,6 +1155,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string trace = 22;</code>
+   *
+   * @return The trace.
    */
   public java.lang.String getTrace() {
     java.lang.Object ref = trace_;
@@ -1118,6 +1180,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string trace = 22;</code>
+   *
+   * @return The bytes for trace.
    */
   public com.google.protobuf.ByteString getTraceBytes() {
     java.lang.Object ref = trace_;
@@ -1144,6 +1208,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string span_id = 27;</code>
+   *
+   * @return The spanId.
    */
   public java.lang.String getSpanId() {
     java.lang.Object ref = spanId_;
@@ -1167,6 +1233,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string span_id = 27;</code>
+   *
+   * @return The bytes for spanId.
    */
   public com.google.protobuf.ByteString getSpanIdBytes() {
     java.lang.Object ref = spanId_;
@@ -1195,6 +1263,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool trace_sampled = 30;</code>
+   *
+   * @return The traceSampled.
    */
   public boolean getTraceSampled() {
     return traceSampled_;
@@ -1211,6 +1281,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+   *
+   * @return Whether the sourceLocation field is set.
    */
   public boolean hasSourceLocation() {
     return sourceLocation_ != null;
@@ -1224,6 +1296,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+   *
+   * @return The sourceLocation.
    */
   public com.google.logging.v2.LogEntrySourceLocation getSourceLocation() {
     return sourceLocation_ == null
@@ -1761,7 +1835,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.LogEntry buildPartial() {
       com.google.logging.v2.LogEntry result = new com.google.logging.v2.LogEntry(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.logName_ = logName_;
       if (resourceBuilder_ == null) {
         result.resource_ = resource_;
@@ -1822,7 +1895,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.sourceLocation_ = sourceLocationBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -2011,6 +2083,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string log_name = 12;</code>
+     *
+     * @return The logName.
      */
     public java.lang.String getLogName() {
       java.lang.Object ref = logName_;
@@ -2048,6 +2122,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string log_name = 12;</code>
+     *
+     * @return The bytes for logName.
      */
     public com.google.protobuf.ByteString getLogNameBytes() {
       java.lang.Object ref = logName_;
@@ -2085,6 +2161,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string log_name = 12;</code>
+     *
+     * @param value The logName to set.
+     * @return This builder for chaining.
      */
     public Builder setLogName(java.lang.String value) {
       if (value == null) {
@@ -2120,6 +2199,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string log_name = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogName() {
 
@@ -2152,6 +2233,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string log_name = 12;</code>
+     *
+     * @param value The bytes for logName to set.
+     * @return This builder for chaining.
      */
     public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2181,6 +2265,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 8;</code>
+     *
+     * @return Whether the resource field is set.
      */
     public boolean hasResource() {
       return resourceBuilder_ != null || resource_ != null;
@@ -2196,6 +2282,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 8;</code>
+     *
+     * @return The resource.
      */
     public com.google.api.MonitoredResource getResource() {
       if (resourceBuilder_ == null) {
@@ -2390,6 +2478,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Any proto_payload = 2;</code>
+     *
+     * @return Whether the protoPayload field is set.
      */
     public boolean hasProtoPayload() {
       return payloadCase_ == 2;
@@ -2407,6 +2497,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Any proto_payload = 2;</code>
+     *
+     * @return The protoPayload.
      */
     public com.google.protobuf.Any getProtoPayload() {
       if (protoPayloadBuilder_ == null) {
@@ -2622,6 +2714,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_payload = 3;</code>
+     *
+     * @return The textPayload.
      */
     public java.lang.String getTextPayload() {
       java.lang.Object ref = "";
@@ -2647,6 +2741,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_payload = 3;</code>
+     *
+     * @return The bytes for textPayload.
      */
     public com.google.protobuf.ByteString getTextPayloadBytes() {
       java.lang.Object ref = "";
@@ -2672,6 +2768,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_payload = 3;</code>
+     *
+     * @param value The textPayload to set.
+     * @return This builder for chaining.
      */
     public Builder setTextPayload(java.lang.String value) {
       if (value == null) {
@@ -2690,6 +2789,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_payload = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTextPayload() {
       if (payloadCase_ == 3) {
@@ -2707,6 +2808,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text_payload = 3;</code>
+     *
+     * @param value The bytes for textPayload to set.
+     * @return This builder for chaining.
      */
     public Builder setTextPayloadBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2733,6 +2837,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct json_payload = 6;</code>
+     *
+     * @return Whether the jsonPayload field is set.
      */
     public boolean hasJsonPayload() {
       return payloadCase_ == 6;
@@ -2746,6 +2852,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct json_payload = 6;</code>
+     *
+     * @return The jsonPayload.
      */
     public com.google.protobuf.Struct getJsonPayload() {
       if (jsonPayloadBuilder_ == null) {
@@ -2949,6 +3057,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     *
+     * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
       return timestampBuilder_ != null || timestamp_ != null;
@@ -2971,6 +3081,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     *
+     * @return The timestamp.
      */
     public com.google.protobuf.Timestamp getTimestamp() {
       if (timestampBuilder_ == null) {
@@ -3204,6 +3316,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     *
+     * @return Whether the receiveTimestamp field is set.
      */
     public boolean hasReceiveTimestamp() {
       return receiveTimestampBuilder_ != null || receiveTimestamp_ != null;
@@ -3216,6 +3330,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     *
+     * @return The receiveTimestamp.
      */
     public com.google.protobuf.Timestamp getReceiveTimestamp() {
       if (receiveTimestampBuilder_ == null) {
@@ -3381,6 +3497,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     *
+     * @return The enum numeric value on the wire for severity.
      */
     public int getSeverityValue() {
       return severity_;
@@ -3394,6 +3512,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
       severity_ = value;
@@ -3409,6 +3530,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     *
+     * @return The severity.
      */
     public com.google.logging.type.LogSeverity getSeverity() {
       @SuppressWarnings("deprecation")
@@ -3425,6 +3548,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverity(com.google.logging.type.LogSeverity value) {
       if (value == null) {
@@ -3444,6 +3570,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSeverity() {
 
@@ -3466,6 +3594,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string insert_id = 4;</code>
+     *
+     * @return The insertId.
      */
     public java.lang.String getInsertId() {
       java.lang.Object ref = insertId_;
@@ -3491,6 +3621,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string insert_id = 4;</code>
+     *
+     * @return The bytes for insertId.
      */
     public com.google.protobuf.ByteString getInsertIdBytes() {
       java.lang.Object ref = insertId_;
@@ -3516,6 +3648,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string insert_id = 4;</code>
+     *
+     * @param value The insertId to set.
+     * @return This builder for chaining.
      */
     public Builder setInsertId(java.lang.String value) {
       if (value == null) {
@@ -3539,6 +3674,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string insert_id = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInsertId() {
 
@@ -3559,6 +3696,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string insert_id = 4;</code>
+     *
+     * @param value The bytes for insertId to set.
+     * @return This builder for chaining.
      */
     public Builder setInsertIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3586,6 +3726,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     *
+     * @return Whether the httpRequest field is set.
      */
     public boolean hasHttpRequest() {
       return httpRequestBuilder_ != null || httpRequest_ != null;
@@ -3599,6 +3741,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     *
+     * @return The httpRequest.
      */
     public com.google.logging.type.HttpRequest getHttpRequest() {
       if (httpRequestBuilder_ == null) {
@@ -3941,6 +4085,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
+     *
+     * @return Whether the metadata field is set.
      */
     @java.lang.Deprecated
     public boolean hasMetadata() {
@@ -3961,6 +4107,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
+     *
+     * @return The metadata.
      */
     @java.lang.Deprecated
     public com.google.api.MonitoredResourceMetadata getMetadata() {
@@ -4187,6 +4335,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     *
+     * @return Whether the operation field is set.
      */
     public boolean hasOperation() {
       return operationBuilder_ != null || operation_ != null;
@@ -4200,6 +4350,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     *
+     * @return The operation.
      */
     public com.google.logging.v2.LogEntryOperation getOperation() {
       if (operationBuilder_ == null) {
@@ -4374,6 +4526,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string trace = 22;</code>
+     *
+     * @return The trace.
      */
     public java.lang.String getTrace() {
       java.lang.Object ref = trace_;
@@ -4397,6 +4551,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string trace = 22;</code>
+     *
+     * @return The bytes for trace.
      */
     public com.google.protobuf.ByteString getTraceBytes() {
       java.lang.Object ref = trace_;
@@ -4420,6 +4576,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string trace = 22;</code>
+     *
+     * @param value The trace to set.
+     * @return This builder for chaining.
      */
     public Builder setTrace(java.lang.String value) {
       if (value == null) {
@@ -4441,6 +4600,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string trace = 22;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrace() {
 
@@ -4459,6 +4620,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string trace = 22;</code>
+     *
+     * @param value The bytes for trace to set.
+     * @return This builder for chaining.
      */
     public Builder setTraceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4483,6 +4647,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_id = 27;</code>
+     *
+     * @return The spanId.
      */
     public java.lang.String getSpanId() {
       java.lang.Object ref = spanId_;
@@ -4506,6 +4672,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_id = 27;</code>
+     *
+     * @return The bytes for spanId.
      */
     public com.google.protobuf.ByteString getSpanIdBytes() {
       java.lang.Object ref = spanId_;
@@ -4529,6 +4697,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_id = 27;</code>
+     *
+     * @param value The spanId to set.
+     * @return This builder for chaining.
      */
     public Builder setSpanId(java.lang.String value) {
       if (value == null) {
@@ -4550,6 +4721,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_id = 27;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpanId() {
 
@@ -4568,6 +4741,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_id = 27;</code>
+     *
+     * @param value The bytes for spanId to set.
+     * @return This builder for chaining.
      */
     public Builder setSpanIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4594,6 +4770,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool trace_sampled = 30;</code>
+     *
+     * @return The traceSampled.
      */
     public boolean getTraceSampled() {
       return traceSampled_;
@@ -4611,6 +4789,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool trace_sampled = 30;</code>
+     *
+     * @param value The traceSampled to set.
+     * @return This builder for chaining.
      */
     public Builder setTraceSampled(boolean value) {
 
@@ -4631,6 +4812,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool trace_sampled = 30;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTraceSampled() {
 
@@ -4654,6 +4837,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     *
+     * @return Whether the sourceLocation field is set.
      */
     public boolean hasSourceLocation() {
       return sourceLocationBuilder_ != null || sourceLocation_ != null;
@@ -4667,6 +4852,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     *
+     * @return The sourceLocation.
      */
     public com.google.logging.v2.LogEntrySourceLocation getSourceLocation() {
       if (sourceLocationBuilder_ == null) {

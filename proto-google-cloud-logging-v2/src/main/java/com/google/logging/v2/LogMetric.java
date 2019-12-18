@@ -51,6 +51,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogMetric();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -126,11 +132,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labelExtractors_ =
                     com.google.protobuf.MapField.newMapField(
                         LabelExtractorsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labelExtractors__ =
                   input.readMessage(
@@ -293,12 +299,20 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ApiVersion valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ApiVersion forNumber(int value) {
       switch (value) {
         case 0:
@@ -354,7 +368,6 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.logging.v2.LogMetric.ApiVersion)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -375,6 +388,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -405,6 +420,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -429,6 +446,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -450,6 +469,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -477,6 +498,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -501,6 +524,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -540,6 +565,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   *
+   * @return Whether the metricDescriptor field is set.
    */
   public boolean hasMetricDescriptor() {
     return metricDescriptor_ != null;
@@ -568,6 +595,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   *
+   * @return The metricDescriptor.
    */
   public com.google.api.MetricDescriptor getMetricDescriptor() {
     return metricDescriptor_ == null
@@ -629,6 +658,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string value_extractor = 6;</code>
+   *
+   * @return The valueExtractor.
    */
   public java.lang.String getValueExtractor() {
     java.lang.Object ref = valueExtractor_;
@@ -665,6 +696,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string value_extractor = 6;</code>
+   *
+   * @return The bytes for valueExtractor.
    */
   public com.google.protobuf.ByteString getValueExtractorBytes() {
     java.lang.Object ref = valueExtractor_;
@@ -830,6 +863,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   *
+   * @return Whether the bucketOptions field is set.
    */
   public boolean hasBucketOptions() {
     return bucketOptions_ != null;
@@ -844,6 +879,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   *
+   * @return The bucketOptions.
    */
   public com.google.api.Distribution.BucketOptions getBucketOptions() {
     return bucketOptions_ == null
@@ -876,6 +913,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -889,6 +928,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -918,6 +959,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -931,6 +974,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -960,6 +1005,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+   *
+   * @return The enum numeric value on the wire for version.
    */
   @java.lang.Deprecated
   public int getVersionValue() {
@@ -974,6 +1021,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+   *
+   * @return The version.
    */
   @java.lang.Deprecated
   public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
@@ -1380,7 +1429,6 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.LogMetric buildPartial() {
       com.google.logging.v2.LogMetric result = new com.google.logging.v2.LogMetric(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.filter_ = filter_;
@@ -1408,7 +1456,6 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.version_ = version_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1540,6 +1587,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1570,6 +1619,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1600,6 +1651,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1628,6 +1682,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1653,6 +1709,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1675,6 +1734,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1696,6 +1757,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1717,6 +1780,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1736,6 +1802,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1752,6 +1820,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1777,6 +1848,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1801,6 +1874,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1825,6 +1900,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1847,6 +1925,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1866,6 +1946,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 3;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1908,6 +1991,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     *
+     * @return Whether the metricDescriptor field is set.
      */
     public boolean hasMetricDescriptor() {
       return metricDescriptorBuilder_ != null || metricDescriptor_ != null;
@@ -1936,6 +2021,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     *
+     * @return The metricDescriptor.
      */
     public com.google.api.MetricDescriptor getMetricDescriptor() {
       if (metricDescriptorBuilder_ == null) {
@@ -2228,6 +2315,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value_extractor = 6;</code>
+     *
+     * @return The valueExtractor.
      */
     public java.lang.String getValueExtractor() {
       java.lang.Object ref = valueExtractor_;
@@ -2264,6 +2353,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value_extractor = 6;</code>
+     *
+     * @return The bytes for valueExtractor.
      */
     public com.google.protobuf.ByteString getValueExtractorBytes() {
       java.lang.Object ref = valueExtractor_;
@@ -2300,6 +2391,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value_extractor = 6;</code>
+     *
+     * @param value The valueExtractor to set.
+     * @return This builder for chaining.
      */
     public Builder setValueExtractor(java.lang.String value) {
       if (value == null) {
@@ -2334,6 +2428,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value_extractor = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValueExtractor() {
 
@@ -2365,6 +2461,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value_extractor = 6;</code>
+     *
+     * @param value The bytes for valueExtractor to set.
+     * @return This builder for chaining.
      */
     public Builder setValueExtractorBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2626,6 +2725,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     *
+     * @return Whether the bucketOptions field is set.
      */
     public boolean hasBucketOptions() {
       return bucketOptionsBuilder_ != null || bucketOptions_ != null;
@@ -2640,6 +2741,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     *
+     * @return The bucketOptions.
      */
     public com.google.api.Distribution.BucketOptions getBucketOptions() {
       if (bucketOptionsBuilder_ == null) {
@@ -2825,6 +2928,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2838,6 +2943,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3013,6 +3120,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -3026,6 +3135,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3196,6 +3307,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+     *
+     * @return The enum numeric value on the wire for version.
      */
     @java.lang.Deprecated
     public int getVersionValue() {
@@ -3210,6 +3323,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+     *
+     * @param value The enum numeric value on the wire for version to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setVersionValue(int value) {
@@ -3226,6 +3342,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+     *
+     * @return The version.
      */
     @java.lang.Deprecated
     public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
@@ -3243,6 +3361,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setVersion(com.google.logging.v2.LogMetric.ApiVersion value) {
@@ -3263,6 +3384,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearVersion() {

@@ -42,6 +42,12 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeleteLogMetricRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string metric_name = 1;</code>
+   *
+   * @return The metricName.
    */
   public java.lang.String getMetricName() {
     java.lang.Object ref = metricName_;
@@ -138,6 +145,8 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string metric_name = 1;</code>
+   *
+   * @return The bytes for metricName.
    */
   public com.google.protobuf.ByteString getMetricNameBytes() {
     java.lang.Object ref = metricName_;
@@ -477,6 +486,8 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string metric_name = 1;</code>
+     *
+     * @return The metricName.
      */
     public java.lang.String getMetricName() {
       java.lang.Object ref = metricName_;
@@ -498,6 +509,8 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string metric_name = 1;</code>
+     *
+     * @return The bytes for metricName.
      */
     public com.google.protobuf.ByteString getMetricNameBytes() {
       java.lang.Object ref = metricName_;
@@ -519,6 +532,9 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string metric_name = 1;</code>
+     *
+     * @param value The metricName to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricName(java.lang.String value) {
       if (value == null) {
@@ -538,6 +554,8 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string metric_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMetricName() {
 
@@ -554,6 +572,9 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string metric_name = 1;</code>
+     *
+     * @param value The bytes for metricName to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

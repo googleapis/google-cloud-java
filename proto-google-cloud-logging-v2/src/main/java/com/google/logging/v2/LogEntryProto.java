@@ -89,27 +89,19 @@ public final class LogEntryProto {
           + "Google.Cloud.Logging.V2\312\002\027Google\\Cloud\\L"
           + "ogging\\V2b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.MonitoredResourceProto.getDescriptor(),
-          com.google.logging.type.HttpRequestProto.getDescriptor(),
-          com.google.logging.type.LogSeverityProto.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.MonitoredResourceProto.getDescriptor(),
+              com.google.logging.type.HttpRequestProto.getDescriptor(),
+              com.google.logging.type.LogSeverityProto.getDescriptor(),
+              com.google.protobuf.AnyProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_logging_v2_LogEntry_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_logging_v2_LogEntry_fieldAccessorTable =

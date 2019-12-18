@@ -50,6 +50,12 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogSink();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,7 +68,6 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -306,12 +311,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static VersionFormat valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static VersionFormat forNumber(int value) {
       switch (value) {
         case 0:
@@ -372,7 +385,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   private int optionsCase_ = 0;
   private java.lang.Object options_;
 
-  public enum OptionsCase implements com.google.protobuf.Internal.EnumLite {
+  public enum OptionsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIGQUERY_OPTIONS(12),
     OPTIONS_NOT_SET(0);
     private final int value;
@@ -380,7 +396,11 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     private OptionsCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static OptionsCase valueOf(int value) {
       return forNumber(value);
@@ -420,6 +440,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -444,6 +466,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -474,6 +498,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string destination = 3;</code>
+   *
+   * @return The destination.
    */
   public java.lang.String getDestination() {
     java.lang.Object ref = destination_;
@@ -501,6 +527,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string destination = 3;</code>
+   *
+   * @return The bytes for destination.
    */
   public com.google.protobuf.ByteString getDestinationBytes() {
     java.lang.Object ref = destination_;
@@ -527,6 +555,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -550,6 +580,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -575,6 +607,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
    * </code>
+   *
+   * @return The enum numeric value on the wire for outputVersionFormat.
    */
   @java.lang.Deprecated
   public int getOutputVersionFormatValue() {
@@ -590,6 +624,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
    * </code>
+   *
+   * @return The outputVersionFormat.
    */
   @java.lang.Deprecated
   public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
@@ -621,6 +657,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string writer_identity = 8;</code>
+   *
+   * @return The writerIdentity.
    */
   public java.lang.String getWriterIdentity() {
     java.lang.Object ref = writerIdentity_;
@@ -653,6 +691,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string writer_identity = 8;</code>
+   *
+   * @return The bytes for writerIdentity.
    */
   public com.google.protobuf.ByteString getWriterIdentityBytes() {
     java.lang.Object ref = writerIdentity_;
@@ -687,6 +727,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool include_children = 9;</code>
+   *
+   * @return The includeChildren.
    */
   public boolean getIncludeChildren() {
     return includeChildren_;
@@ -701,6 +743,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   *
+   * @return Whether the bigqueryOptions field is set.
    */
   public boolean hasBigqueryOptions() {
     return optionsCase_ == 12;
@@ -713,6 +757,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   *
+   * @return The bigqueryOptions.
    */
   public com.google.logging.v2.BigQueryOptions getBigqueryOptions() {
     if (optionsCase_ == 12) {
@@ -747,6 +793,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -760,6 +808,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -789,6 +839,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -802,6 +854,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -830,6 +884,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
+   *
+   * @return Whether the startTime field is set.
    */
   @java.lang.Deprecated
   public boolean hasStartTime() {
@@ -843,6 +899,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
+   *
+   * @return The startTime.
    */
   @java.lang.Deprecated
   public com.google.protobuf.Timestamp getStartTime() {
@@ -872,6 +930,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
+   *
+   * @return Whether the endTime field is set.
    */
   @java.lang.Deprecated
   public boolean hasEndTime() {
@@ -885,6 +945,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
+   *
+   * @return The endTime.
    */
   @java.lang.Deprecated
   public com.google.protobuf.Timestamp getEndTime() {
@@ -1484,6 +1546,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1508,6 +1572,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1532,6 +1598,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1554,6 +1623,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1573,6 +1644,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1601,6 +1675,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination = 3;</code>
+     *
+     * @return The destination.
      */
     public java.lang.String getDestination() {
       java.lang.Object ref = destination_;
@@ -1628,6 +1704,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination = 3;</code>
+     *
+     * @return The bytes for destination.
      */
     public com.google.protobuf.ByteString getDestinationBytes() {
       java.lang.Object ref = destination_;
@@ -1655,6 +1733,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination = 3;</code>
+     *
+     * @param value The destination to set.
+     * @return This builder for chaining.
      */
     public Builder setDestination(java.lang.String value) {
       if (value == null) {
@@ -1680,6 +1761,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDestination() {
 
@@ -1702,6 +1785,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination = 3;</code>
+     *
+     * @param value The bytes for destination to set.
+     * @return This builder for chaining.
      */
     public Builder setDestinationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1726,6 +1812,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1749,6 +1837,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1772,6 +1862,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1793,6 +1886,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1811,6 +1906,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1834,6 +1932,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
      * </code>
+     *
+     * @return The enum numeric value on the wire for outputVersionFormat.
      */
     @java.lang.Deprecated
     public int getOutputVersionFormatValue() {
@@ -1849,6 +1949,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for outputVersionFormat to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setOutputVersionFormatValue(int value) {
@@ -1866,6 +1969,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
      * </code>
+     *
+     * @return The outputVersionFormat.
      */
     @java.lang.Deprecated
     public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
@@ -1884,6 +1989,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
      * </code>
+     *
+     * @param value The outputVersionFormat to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setOutputVersionFormat(com.google.logging.v2.LogSink.VersionFormat value) {
@@ -1905,6 +2013,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearOutputVersionFormat() {
@@ -1935,6 +2045,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string writer_identity = 8;</code>
+     *
+     * @return The writerIdentity.
      */
     public java.lang.String getWriterIdentity() {
       java.lang.Object ref = writerIdentity_;
@@ -1967,6 +2079,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string writer_identity = 8;</code>
+     *
+     * @return The bytes for writerIdentity.
      */
     public com.google.protobuf.ByteString getWriterIdentityBytes() {
       java.lang.Object ref = writerIdentity_;
@@ -1999,6 +2113,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string writer_identity = 8;</code>
+     *
+     * @param value The writerIdentity to set.
+     * @return This builder for chaining.
      */
     public Builder setWriterIdentity(java.lang.String value) {
       if (value == null) {
@@ -2029,6 +2146,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string writer_identity = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWriterIdentity() {
 
@@ -2056,6 +2175,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string writer_identity = 8;</code>
+     *
+     * @param value The bytes for writerIdentity to set.
+     * @return This builder for chaining.
      */
     public Builder setWriterIdentityBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2088,6 +2210,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool include_children = 9;</code>
+     *
+     * @return The includeChildren.
      */
     public boolean getIncludeChildren() {
       return includeChildren_;
@@ -2111,6 +2235,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool include_children = 9;</code>
+     *
+     * @param value The includeChildren to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeChildren(boolean value) {
 
@@ -2137,6 +2264,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool include_children = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludeChildren() {
 
@@ -2158,6 +2287,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     *
+     * @return Whether the bigqueryOptions field is set.
      */
     public boolean hasBigqueryOptions() {
       return optionsCase_ == 12;
@@ -2170,6 +2301,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     *
+     * @return The bigqueryOptions.
      */
     public com.google.logging.v2.BigQueryOptions getBigqueryOptions() {
       if (bigqueryOptionsBuilder_ == null) {
@@ -2362,6 +2495,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2375,6 +2510,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2550,6 +2687,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -2563,6 +2702,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2737,6 +2878,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
+     *
+     * @return Whether the startTime field is set.
      */
     @java.lang.Deprecated
     public boolean hasStartTime() {
@@ -2750,6 +2893,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
+     *
+     * @return The startTime.
      */
     @java.lang.Deprecated
     public com.google.protobuf.Timestamp getStartTime() {
@@ -2920,6 +3065,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
+     *
+     * @return Whether the endTime field is set.
      */
     @java.lang.Deprecated
     public boolean hasEndTime() {
@@ -2933,6 +3080,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
+     *
+     * @return The endTime.
      */
     @java.lang.Deprecated
     public com.google.protobuf.Timestamp getEndTime() {

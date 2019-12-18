@@ -32,6 +32,8 @@ public interface LogEntrySourceLocationOrBuilder
    * </pre>
    *
    * <code>string file = 1;</code>
+   *
+   * @return The file.
    */
   java.lang.String getFile();
   /**
@@ -43,6 +45,8 @@ public interface LogEntrySourceLocationOrBuilder
    * </pre>
    *
    * <code>string file = 1;</code>
+   *
+   * @return The bytes for file.
    */
   com.google.protobuf.ByteString getFileBytes();
 
@@ -55,6 +59,8 @@ public interface LogEntrySourceLocationOrBuilder
    * </pre>
    *
    * <code>int64 line = 2;</code>
+   *
+   * @return The line.
    */
   long getLine();
 
@@ -71,6 +77,8 @@ public interface LogEntrySourceLocationOrBuilder
    * </pre>
    *
    * <code>string function = 3;</code>
+   *
+   * @return The function.
    */
   java.lang.String getFunction();
   /**
@@ -86,6 +94,8 @@ public interface LogEntrySourceLocationOrBuilder
    * </pre>
    *
    * <code>string function = 3;</code>
+   *
+   * @return The bytes for function.
    */
   com.google.protobuf.ByteString getFunctionBytes();
 }

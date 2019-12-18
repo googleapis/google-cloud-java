@@ -37,6 +37,8 @@ public interface DeleteSinkRequestOrBuilder
    * </pre>
    *
    * <code>string sink_name = 1;</code>
+   *
+   * @return The sinkName.
    */
   java.lang.String getSinkName();
   /**
@@ -53,6 +55,8 @@ public interface DeleteSinkRequestOrBuilder
    * </pre>
    *
    * <code>string sink_name = 1;</code>
+   *
+   * @return The bytes for sinkName.
    */
   com.google.protobuf.ByteString getSinkNameBytes();
 }

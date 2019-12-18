@@ -36,6 +36,8 @@ public interface CreateSinkRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateSinkRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -63,6 +67,8 @@ public interface CreateSinkRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2;</code>
+   *
+   * @return Whether the sink field is set.
    */
   boolean hasSink();
   /**
@@ -74,6 +80,8 @@ public interface CreateSinkRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2;</code>
+   *
+   * @return The sink.
    */
   com.google.logging.v2.LogSink getSink();
   /**
@@ -105,6 +113,8 @@ public interface CreateSinkRequestOrBuilder
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
+   *
+   * @return The uniqueWriterIdentity.
    */
   boolean getUniqueWriterIdentity();
 }

@@ -160,28 +160,20 @@ public final class LoggingProto {
           + "ogging.V2\312\002\027Google\\Cloud\\Logging\\V2b\006pro"
           + "to3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.MonitoredResourceProto.getDescriptor(),
-          com.google.logging.v2.LogEntryProto.getDescriptor(),
-          com.google.logging.v2.LoggingConfigProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.MonitoredResourceProto.getDescriptor(),
+              com.google.logging.v2.LogEntryProto.getDescriptor(),
+              com.google.logging.v2.LoggingConfigProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+            });
     internal_static_google_logging_v2_DeleteLogRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_logging_v2_DeleteLogRequest_fieldAccessorTable =

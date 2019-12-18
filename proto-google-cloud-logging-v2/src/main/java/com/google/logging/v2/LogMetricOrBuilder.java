@@ -41,6 +41,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -61,6 +63,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -73,6 +77,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -84,6 +90,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -99,6 +107,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -113,6 +123,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -140,6 +152,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   *
+   * @return Whether the metricDescriptor field is set.
    */
   boolean hasMetricDescriptor();
   /**
@@ -166,6 +180,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   *
+   * @return The metricDescriptor.
    */
   com.google.api.MetricDescriptor getMetricDescriptor();
   /**
@@ -219,6 +235,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string value_extractor = 6;</code>
+   *
+   * @return The valueExtractor.
    */
   java.lang.String getValueExtractor();
   /**
@@ -245,6 +263,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>string value_extractor = 6;</code>
+   *
+   * @return The bytes for valueExtractor.
    */
   com.google.protobuf.ByteString getValueExtractorBytes();
 
@@ -367,6 +387,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   *
+   * @return Whether the bucketOptions field is set.
    */
   boolean hasBucketOptions();
   /**
@@ -379,6 +401,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   *
+   * @return The bucketOptions.
    */
   com.google.api.Distribution.BucketOptions getBucketOptions();
   /**
@@ -403,6 +427,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -414,6 +440,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -437,6 +465,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -448,6 +478,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -471,6 +503,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+   *
+   * @return The enum numeric value on the wire for version.
    */
   @java.lang.Deprecated
   int getVersionValue();
@@ -483,6 +517,8 @@ public interface LogMetricOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+   *
+   * @return The version.
    */
   @java.lang.Deprecated
   com.google.logging.v2.LogMetric.ApiVersion getVersion();

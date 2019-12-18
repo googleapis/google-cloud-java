@@ -42,6 +42,12 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeleteLogRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The logName.
    */
   public java.lang.String getLogName() {
     java.lang.Object ref = logName_;
@@ -154,6 +161,8 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The bytes for logName.
    */
   public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
@@ -500,6 +509,8 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @return The logName.
      */
     public java.lang.String getLogName() {
       java.lang.Object ref = logName_;
@@ -529,6 +540,8 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @return The bytes for logName.
      */
     public com.google.protobuf.ByteString getLogNameBytes() {
       java.lang.Object ref = logName_;
@@ -558,6 +571,9 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @param value The logName to set.
+     * @return This builder for chaining.
      */
     public Builder setLogName(java.lang.String value) {
       if (value == null) {
@@ -585,6 +601,8 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogName() {
 
@@ -609,6 +627,9 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @param value The bytes for logName to set.
+     * @return This builder for chaining.
      */
     public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

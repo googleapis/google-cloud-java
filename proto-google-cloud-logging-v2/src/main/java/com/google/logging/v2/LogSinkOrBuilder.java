@@ -35,6 +35,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -67,6 +71,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string destination = 3;</code>
+   *
+   * @return The destination.
    */
   java.lang.String getDestination();
   /**
@@ -84,6 +90,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string destination = 3;</code>
+   *
+   * @return The bytes for destination.
    */
   com.google.protobuf.ByteString getDestinationBytes();
 
@@ -98,6 +106,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -111,6 +121,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -124,6 +136,8 @@ public interface LogSinkOrBuilder
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
    * </code>
+   *
+   * @return The enum numeric value on the wire for outputVersionFormat.
    */
   @java.lang.Deprecated
   int getOutputVersionFormatValue();
@@ -137,6 +151,8 @@ public interface LogSinkOrBuilder
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
    * </code>
+   *
+   * @return The outputVersionFormat.
    */
   @java.lang.Deprecated
   com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat();
@@ -161,6 +177,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string writer_identity = 8;</code>
+   *
+   * @return The writerIdentity.
    */
   java.lang.String getWriterIdentity();
   /**
@@ -183,6 +201,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>string writer_identity = 8;</code>
+   *
+   * @return The bytes for writerIdentity.
    */
   com.google.protobuf.ByteString getWriterIdentityBytes();
 
@@ -205,6 +225,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>bool include_children = 9;</code>
+   *
+   * @return The includeChildren.
    */
   boolean getIncludeChildren();
 
@@ -216,6 +238,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   *
+   * @return Whether the bigqueryOptions field is set.
    */
   boolean hasBigqueryOptions();
   /**
@@ -226,6 +250,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   *
+   * @return The bigqueryOptions.
    */
   com.google.logging.v2.BigQueryOptions getBigqueryOptions();
   /**
@@ -248,6 +274,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -259,6 +287,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -282,6 +312,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -293,6 +325,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -315,6 +349,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
+   *
+   * @return Whether the startTime field is set.
    */
   @java.lang.Deprecated
   boolean hasStartTime();
@@ -326,6 +362,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
+   *
+   * @return The startTime.
    */
   @java.lang.Deprecated
   com.google.protobuf.Timestamp getStartTime();
@@ -349,6 +387,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
+   *
+   * @return Whether the endTime field is set.
    */
   @java.lang.Deprecated
   boolean hasEndTime();
@@ -360,6 +400,8 @@ public interface LogSinkOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
+   *
+   * @return The endTime.
    */
   @java.lang.Deprecated
   com.google.protobuf.Timestamp getEndTime();

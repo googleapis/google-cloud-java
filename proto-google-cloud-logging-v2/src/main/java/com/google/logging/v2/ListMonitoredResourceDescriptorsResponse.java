@@ -45,6 +45,12 @@ public final class ListMonitoredResourceDescriptorsResponse
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListMonitoredResourceDescriptorsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,7 +130,6 @@ public final class ListMonitoredResourceDescriptorsResponse
             com.google.logging.v2.ListMonitoredResourceDescriptorsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESOURCE_DESCRIPTORS_FIELD_NUMBER = 1;
   private java.util.List<com.google.api.MonitoredResourceDescriptor> resourceDescriptors_;
   /**
@@ -202,6 +207,8 @@ public final class ListMonitoredResourceDescriptorsResponse
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -224,6 +231,8 @@ public final class ListMonitoredResourceDescriptorsResponse
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -493,7 +502,6 @@ public final class ListMonitoredResourceDescriptorsResponse
       com.google.logging.v2.ListMonitoredResourceDescriptorsResponse result =
           new com.google.logging.v2.ListMonitoredResourceDescriptorsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (resourceDescriptorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           resourceDescriptors_ = java.util.Collections.unmodifiableList(resourceDescriptors_);
@@ -504,7 +512,6 @@ public final class ListMonitoredResourceDescriptorsResponse
         result.resourceDescriptors_ = resourceDescriptorsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -991,6 +998,8 @@ public final class ListMonitoredResourceDescriptorsResponse
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1013,6 +1022,8 @@ public final class ListMonitoredResourceDescriptorsResponse
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1035,6 +1046,9 @@ public final class ListMonitoredResourceDescriptorsResponse
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1055,6 +1069,8 @@ public final class ListMonitoredResourceDescriptorsResponse
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1072,6 +1088,9 @@ public final class ListMonitoredResourceDescriptorsResponse
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

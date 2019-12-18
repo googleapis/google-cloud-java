@@ -43,6 +43,12 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListLogEntriesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -120,7 +126,6 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
             com.google.logging.v2.ListLogEntriesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ENTRIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.logging.v2.LogEntry> entries_;
   /**
@@ -213,6 +218,8 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -241,6 +248,8 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -507,7 +516,6 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       com.google.logging.v2.ListLogEntriesResponse result =
           new com.google.logging.v2.ListLogEntriesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -518,7 +526,6 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         result.entries_ = entriesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1029,6 +1036,8 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1057,6 +1066,8 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1085,6 +1096,9 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1111,6 +1125,8 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1134,6 +1150,9 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

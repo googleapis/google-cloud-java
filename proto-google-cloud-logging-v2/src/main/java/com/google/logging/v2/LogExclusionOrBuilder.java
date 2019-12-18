@@ -33,6 +33,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -66,6 +72,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -83,6 +91,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -99,6 +109,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>string filter = 3;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -113,6 +125,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>bool disabled = 4;</code>
+   *
+   * @return The disabled.
    */
   boolean getDisabled();
 
@@ -125,6 +139,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -136,6 +152,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -159,6 +177,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -170,6 +190,8 @@ public interface LogExclusionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**

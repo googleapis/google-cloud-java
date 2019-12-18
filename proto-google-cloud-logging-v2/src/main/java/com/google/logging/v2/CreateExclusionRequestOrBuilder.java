@@ -36,6 +36,8 @@ public interface CreateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -63,6 +67,8 @@ public interface CreateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   *
+   * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
   /**
@@ -74,6 +80,8 @@ public interface CreateExclusionRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   *
+   * @return The exclusion.
    */
   com.google.logging.v2.LogExclusion getExclusion();
   /**

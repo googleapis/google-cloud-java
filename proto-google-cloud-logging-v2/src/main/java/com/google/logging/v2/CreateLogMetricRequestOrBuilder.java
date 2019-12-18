@@ -33,6 +33,8 @@ public interface CreateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface CreateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -57,6 +61,8 @@ public interface CreateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   *
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
@@ -68,6 +74,8 @@ public interface CreateLogMetricRequestOrBuilder
    * </pre>
    *
    * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   *
+   * @return The metric.
    */
   com.google.logging.v2.LogMetric getMetric();
   /**

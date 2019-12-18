@@ -43,6 +43,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The logName.
    */
   java.lang.String getLogName();
   /**
@@ -65,6 +67,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The bytes for logName.
    */
   com.google.protobuf.ByteString getLogNameBytes();
 
@@ -81,6 +85,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return Whether the resource field is set.
    */
   boolean hasResource();
   /**
@@ -96,6 +102,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return The resource.
    */
   com.google.api.MonitoredResource getResource();
   /**
@@ -341,6 +349,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * </pre>
    *
    * <code>bool partial_success = 5;</code>
+   *
+   * @return The partialSuccess.
    */
   boolean getPartialSuccess();
 
@@ -354,6 +364,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * </pre>
    *
    * <code>bool dry_run = 6;</code>
+   *
+   * @return The dryRun.
    */
   boolean getDryRun();
 }

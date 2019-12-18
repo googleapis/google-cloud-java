@@ -43,6 +43,12 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WriteLogEntriesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -90,10 +96,10 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -103,9 +109,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 entries_ = new java.util.ArrayList<com.google.logging.v2.LogEntry>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               entries_.add(
                   input.readMessage(com.google.logging.v2.LogEntry.parser(), extensionRegistry));
@@ -135,7 +141,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         entries_ = java.util.Collections.unmodifiableList(entries_);
       }
       this.unknownFields = unknownFields.build();
@@ -169,7 +175,6 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
             com.google.logging.v2.WriteLogEntriesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LOG_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object logName_;
   /**
@@ -192,6 +197,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The logName.
    */
   public java.lang.String getLogName() {
     java.lang.Object ref = logName_;
@@ -224,6 +231,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string log_name = 1;</code>
+   *
+   * @return The bytes for logName.
    */
   public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
@@ -252,6 +261,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return Whether the resource field is set.
    */
   public boolean hasResource() {
     return resource_ != null;
@@ -269,6 +280,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return The resource.
    */
   public com.google.api.MonitoredResource getResource() {
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
@@ -569,6 +582,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>bool partial_success = 5;</code>
+   *
+   * @return The partialSuccess.
    */
   public boolean getPartialSuccess() {
     return partialSuccess_;
@@ -586,6 +601,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>bool dry_run = 6;</code>
+   *
+   * @return The dryRun.
    */
   public boolean getDryRun() {
     return dryRun_;
@@ -888,7 +905,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       internalGetMutableLabels().clear();
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         entriesBuilder_.clear();
       }
@@ -924,7 +941,6 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       com.google.logging.v2.WriteLogEntriesRequest result =
           new com.google.logging.v2.WriteLogEntriesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.logName_ = logName_;
       if (resourceBuilder_ == null) {
         result.resource_ = resource_;
@@ -934,9 +950,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entries_ = entries_;
       } else {
@@ -944,7 +960,6 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       result.partialSuccess_ = partialSuccess_;
       result.dryRun_ = dryRun_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1006,7 +1021,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -1019,7 +1034,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
             entriesBuilder_.dispose();
             entriesBuilder_ = null;
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             entriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntriesFieldBuilder()
@@ -1087,6 +1102,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @return The logName.
      */
     public java.lang.String getLogName() {
       java.lang.Object ref = logName_;
@@ -1119,6 +1136,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @return The bytes for logName.
      */
     public com.google.protobuf.ByteString getLogNameBytes() {
       java.lang.Object ref = logName_;
@@ -1151,6 +1170,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @param value The logName to set.
+     * @return This builder for chaining.
      */
     public Builder setLogName(java.lang.String value) {
       if (value == null) {
@@ -1181,6 +1203,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogName() {
 
@@ -1208,6 +1232,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string log_name = 1;</code>
+     *
+     * @param value The bytes for logName to set.
+     * @return This builder for chaining.
      */
     public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1239,6 +1266,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
+     *
+     * @return Whether the resource field is set.
      */
     public boolean hasResource() {
       return resourceBuilder_ != null || resource_ != null;
@@ -1256,6 +1285,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
+     *
+     * @return The resource.
      */
     public com.google.api.MonitoredResource getResource() {
       if (resourceBuilder_ == null) {
@@ -1623,9 +1654,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entries_ = new java.util.ArrayList<com.google.logging.v2.LogEntry>(entries_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2047,7 +2078,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         entriesBuilder_.clear();
@@ -2301,7 +2332,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
                 com.google.logging.v2.LogEntry,
                 com.google.logging.v2.LogEntry.Builder,
                 com.google.logging.v2.LogEntryOrBuilder>(
-                entries_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                entries_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         entries_ = null;
       }
       return entriesBuilder_;
@@ -2320,6 +2351,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool partial_success = 5;</code>
+     *
+     * @return The partialSuccess.
      */
     public boolean getPartialSuccess() {
       return partialSuccess_;
@@ -2336,6 +2369,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool partial_success = 5;</code>
+     *
+     * @param value The partialSuccess to set.
+     * @return This builder for chaining.
      */
     public Builder setPartialSuccess(boolean value) {
 
@@ -2355,6 +2391,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool partial_success = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPartialSuccess() {
 
@@ -2374,6 +2412,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool dry_run = 6;</code>
+     *
+     * @return The dryRun.
      */
     public boolean getDryRun() {
       return dryRun_;
@@ -2388,6 +2428,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool dry_run = 6;</code>
+     *
+     * @param value The dryRun to set.
+     * @return This builder for chaining.
      */
     public Builder setDryRun(boolean value) {
 
@@ -2405,6 +2448,8 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool dry_run = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDryRun() {
 

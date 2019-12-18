@@ -44,6 +44,12 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogEntrySourceLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string file = 1;</code>
+   *
+   * @return The file.
    */
   public java.lang.String getFile() {
     java.lang.Object ref = file_;
@@ -152,6 +159,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string file = 1;</code>
+   *
+   * @return The bytes for file.
    */
   public com.google.protobuf.ByteString getFileBytes() {
     java.lang.Object ref = file_;
@@ -176,6 +185,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 line = 2;</code>
+   *
+   * @return The line.
    */
   public long getLine() {
     return line_;
@@ -196,6 +207,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string function = 3;</code>
+   *
+   * @return The function.
    */
   public java.lang.String getFunction() {
     java.lang.Object ref = function_;
@@ -221,6 +234,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string function = 3;</code>
+   *
+   * @return The bytes for function.
    */
   public com.google.protobuf.ByteString getFunctionBytes() {
     java.lang.Object ref = function_;
@@ -592,6 +607,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string file = 1;</code>
+     *
+     * @return The file.
      */
     public java.lang.String getFile() {
       java.lang.Object ref = file_;
@@ -613,6 +630,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string file = 1;</code>
+     *
+     * @return The bytes for file.
      */
     public com.google.protobuf.ByteString getFileBytes() {
       java.lang.Object ref = file_;
@@ -634,6 +653,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string file = 1;</code>
+     *
+     * @param value The file to set.
+     * @return This builder for chaining.
      */
     public Builder setFile(java.lang.String value) {
       if (value == null) {
@@ -653,6 +675,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string file = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFile() {
 
@@ -669,6 +693,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string file = 1;</code>
+     *
+     * @param value The bytes for file to set.
+     * @return This builder for chaining.
      */
     public Builder setFileBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -691,6 +718,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 line = 2;</code>
+     *
+     * @return The line.
      */
     public long getLine() {
       return line_;
@@ -704,6 +733,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 line = 2;</code>
+     *
+     * @param value The line to set.
+     * @return This builder for chaining.
      */
     public Builder setLine(long value) {
 
@@ -720,6 +752,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 line = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLine() {
 
@@ -742,6 +776,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string function = 3;</code>
+     *
+     * @return The function.
      */
     public java.lang.String getFunction() {
       java.lang.Object ref = function_;
@@ -767,6 +803,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string function = 3;</code>
+     *
+     * @return The bytes for function.
      */
     public com.google.protobuf.ByteString getFunctionBytes() {
       java.lang.Object ref = function_;
@@ -792,6 +830,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string function = 3;</code>
+     *
+     * @param value The function to set.
+     * @return This builder for chaining.
      */
     public Builder setFunction(java.lang.String value) {
       if (value == null) {
@@ -815,6 +856,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string function = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFunction() {
 
@@ -835,6 +878,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string function = 3;</code>
+     *
+     * @param value The bytes for function to set.
+     * @return This builder for chaining.
      */
     public Builder setFunctionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

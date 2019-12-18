@@ -18,7 +18,7 @@ package com.google.logging.type;
 
 import com.google.api.resourcenames.ResourceName;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public abstract class LogName implements ResourceName {
   protected LogName() {}

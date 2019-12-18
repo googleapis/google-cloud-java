@@ -42,6 +42,12 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateSinkRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -156,6 +161,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string sink_name = 1;</code>
+   *
+   * @return The sinkName.
    */
   public java.lang.String getSinkName() {
     java.lang.Object ref = sinkName_;
@@ -182,6 +189,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string sink_name = 1;</code>
+   *
+   * @return The bytes for sinkName.
    */
   public com.google.protobuf.ByteString getSinkNameBytes() {
     java.lang.Object ref = sinkName_;
@@ -206,6 +215,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2;</code>
+   *
+   * @return Whether the sink field is set.
    */
   public boolean hasSink() {
     return sink_ != null;
@@ -219,6 +230,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2;</code>
+   *
+   * @return The sink.
    */
   public com.google.logging.v2.LogSink getSink() {
     return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
@@ -256,6 +269,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
+   *
+   * @return The uniqueWriterIdentity.
    */
   public boolean getUniqueWriterIdentity() {
     return uniqueWriterIdentity_;
@@ -281,6 +296,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -303,6 +320,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -731,6 +750,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sink_name = 1;</code>
+     *
+     * @return The sinkName.
      */
     public java.lang.String getSinkName() {
       java.lang.Object ref = sinkName_;
@@ -757,6 +778,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sink_name = 1;</code>
+     *
+     * @return The bytes for sinkName.
      */
     public com.google.protobuf.ByteString getSinkNameBytes() {
       java.lang.Object ref = sinkName_;
@@ -783,6 +806,9 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sink_name = 1;</code>
+     *
+     * @param value The sinkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSinkName(java.lang.String value) {
       if (value == null) {
@@ -807,6 +833,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sink_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSinkName() {
 
@@ -828,6 +856,9 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string sink_name = 1;</code>
+     *
+     * @param value The bytes for sinkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSinkNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -855,6 +886,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2;</code>
+     *
+     * @return Whether the sink field is set.
      */
     public boolean hasSink() {
       return sinkBuilder_ != null || sink_ != null;
@@ -868,6 +901,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2;</code>
+     *
+     * @return The sink.
      */
     public com.google.logging.v2.LogSink getSink() {
       if (sinkBuilder_ == null) {
@@ -1041,6 +1076,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     *
+     * @return The uniqueWriterIdentity.
      */
     public boolean getUniqueWriterIdentity() {
       return uniqueWriterIdentity_;
@@ -1062,6 +1099,9 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     *
+     * @param value The uniqueWriterIdentity to set.
+     * @return This builder for chaining.
      */
     public Builder setUniqueWriterIdentity(boolean value) {
 
@@ -1086,6 +1126,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUniqueWriterIdentity() {
 
@@ -1118,6 +1160,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1140,6 +1184,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

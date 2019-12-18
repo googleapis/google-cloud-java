@@ -33,6 +33,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 1;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -47,6 +49,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -60,6 +64,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

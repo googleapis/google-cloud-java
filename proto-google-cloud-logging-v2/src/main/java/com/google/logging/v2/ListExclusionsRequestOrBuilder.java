@@ -35,6 +35,8 @@ public interface ListExclusionsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface ListExclusionsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -63,6 +67,8 @@ public interface ListExclusionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -76,6 +82,8 @@ public interface ListExclusionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -89,6 +97,8 @@ public interface ListExclusionsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 }
