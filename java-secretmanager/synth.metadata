@@ -1,0 +1,31 @@
+{
+  "updateTime": "2019-12-10T17:59:32.592497Z",
+  "sources": [
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "6cc9499e225a4f6a5e34fe07e390f67055d7991c",
+        "internalRef": "284643689"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2019.10.17"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "secretmanager",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
