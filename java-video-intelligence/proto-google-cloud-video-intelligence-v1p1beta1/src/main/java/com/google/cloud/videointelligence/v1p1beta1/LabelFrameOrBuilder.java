@@ -32,6 +32,8 @@ public interface LabelFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -43,6 +45,8 @@ public interface LabelFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**
@@ -65,6 +69,8 @@ public interface LabelFrameOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

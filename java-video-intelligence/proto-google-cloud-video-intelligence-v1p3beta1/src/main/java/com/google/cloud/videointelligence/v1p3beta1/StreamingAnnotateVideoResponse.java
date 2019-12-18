@@ -45,6 +45,12 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingAnnotateVideoResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,6 +159,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return Whether the error field is set.
    */
   public boolean hasError() {
     return error_ != null;
@@ -167,6 +174,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return The error.
    */
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
@@ -198,6 +207,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
    * </code>
+   *
+   * @return Whether the annotationResults field is set.
    */
   public boolean hasAnnotationResults() {
     return annotationResults_ != null;
@@ -212,6 +223,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
    * </code>
+   *
+   * @return The annotationResults.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
       getAnnotationResults() {
@@ -249,6 +262,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string annotation_results_uri = 3;</code>
+   *
+   * @return The annotationResultsUri.
    */
   public java.lang.String getAnnotationResultsUri() {
     java.lang.Object ref = annotationResultsUri_;
@@ -272,6 +287,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string annotation_results_uri = 3;</code>
+   *
+   * @return The bytes for annotationResultsUri.
    */
   public com.google.protobuf.ByteString getAnnotationResultsUriBytes() {
     java.lang.Object ref = annotationResultsUri_;
@@ -694,6 +711,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
+     *
+     * @return Whether the error field is set.
      */
     public boolean hasError() {
       return errorBuilder_ != null || error_ != null;
@@ -707,6 +726,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
+     *
+     * @return The error.
      */
     public com.google.rpc.Status getError() {
       if (errorBuilder_ == null) {
@@ -876,6 +897,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
      * </code>
+     *
+     * @return Whether the annotationResults field is set.
      */
     public boolean hasAnnotationResults() {
       return annotationResultsBuilder_ != null || annotationResults_ != null;
@@ -890,6 +913,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
      * </code>
+     *
+     * @return The annotationResults.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
         getAnnotationResults() {
@@ -1083,6 +1108,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
+     *
+     * @return The annotationResultsUri.
      */
     public java.lang.String getAnnotationResultsUri() {
       java.lang.Object ref = annotationResultsUri_;
@@ -1106,6 +1133,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
+     *
+     * @return The bytes for annotationResultsUri.
      */
     public com.google.protobuf.ByteString getAnnotationResultsUriBytes() {
       java.lang.Object ref = annotationResultsUri_;
@@ -1129,6 +1158,9 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
+     *
+     * @param value The annotationResultsUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationResultsUri(java.lang.String value) {
       if (value == null) {
@@ -1150,6 +1182,8 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationResultsUri() {
 
@@ -1168,6 +1202,9 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
+     *
+     * @param value The bytes for annotationResultsUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationResultsUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

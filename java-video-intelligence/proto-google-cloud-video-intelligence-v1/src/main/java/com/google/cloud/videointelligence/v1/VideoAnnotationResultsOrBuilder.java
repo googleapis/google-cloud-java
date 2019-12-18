@@ -32,6 +32,8 @@ public interface VideoAnnotationResultsOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   java.lang.String getInputUri();
   /**
@@ -43,6 +45,8 @@ public interface VideoAnnotationResultsOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   com.google.protobuf.ByteString getInputUriBytes();
 
@@ -54,6 +58,8 @@ public interface VideoAnnotationResultsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 10;</code>
+   *
+   * @return Whether the segment field is set.
    */
   boolean hasSegment();
   /**
@@ -64,6 +70,8 @@ public interface VideoAnnotationResultsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 10;</code>
+   *
+   * @return The segment.
    */
   com.google.cloud.videointelligence.v1.VideoSegment getSegment();
   /**
@@ -563,6 +571,8 @@ public interface VideoAnnotationResultsOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.ExplicitContentAnnotation explicit_annotation = 7;
    * </code>
+   *
+   * @return Whether the explicitAnnotation field is set.
    */
   boolean hasExplicitAnnotation();
   /**
@@ -574,6 +584,8 @@ public interface VideoAnnotationResultsOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.ExplicitContentAnnotation explicit_annotation = 7;
    * </code>
+   *
+   * @return The explicitAnnotation.
    */
   com.google.cloud.videointelligence.v1.ExplicitContentAnnotation getExplicitAnnotation();
   /**
@@ -789,6 +801,8 @@ public interface VideoAnnotationResultsOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
+   *
+   * @return Whether the error field is set.
    */
   boolean hasError();
   /**
@@ -800,6 +814,8 @@ public interface VideoAnnotationResultsOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
+   *
+   * @return The error.
    */
   com.google.rpc.Status getError();
   /**

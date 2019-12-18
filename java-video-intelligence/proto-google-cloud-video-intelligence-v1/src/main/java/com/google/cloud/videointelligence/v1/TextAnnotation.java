@@ -45,6 +45,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,10 +83,10 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 segments_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextSegment>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               segments_.add(
                   input.readMessage(
@@ -102,7 +108,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         segments_ = java.util.Collections.unmodifiableList(segments_);
       }
       this.unknownFields = unknownFields.build();
@@ -125,7 +131,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.TextAnnotation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TEXT_FIELD_NUMBER = 1;
   private volatile java.lang.Object text_;
   /**
@@ -136,6 +141,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The text.
    */
   public java.lang.String getText() {
     java.lang.Object ref = text_;
@@ -156,6 +163,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The bytes for text.
    */
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
@@ -457,7 +466,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         segmentsBuilder_.clear();
       }
@@ -489,18 +498,16 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1.TextAnnotation result =
           new com.google.cloud.videointelligence.v1.TextAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.text_ = text_;
       if (segmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.segments_ = segments_;
       } else {
         result.segments_ = segmentsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -559,7 +566,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSegmentsIsMutable();
             segments_.addAll(other.segments_);
@@ -572,7 +579,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             segmentsBuilder_.dispose();
             segmentsBuilder_ = null;
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             segmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSegmentsFieldBuilder()
@@ -623,6 +630,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return The text.
      */
     public java.lang.String getText() {
       java.lang.Object ref = text_;
@@ -643,6 +652,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return The bytes for text.
      */
     public com.google.protobuf.ByteString getTextBytes() {
       java.lang.Object ref = text_;
@@ -663,6 +674,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
      */
     public Builder setText(java.lang.String value) {
       if (value == null) {
@@ -681,6 +695,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearText() {
 
@@ -696,6 +712,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
      */
     public Builder setTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -712,10 +731,10 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSegmentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         segments_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextSegment>(segments_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -931,7 +950,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSegments() {
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         segmentsBuilder_.clear();
@@ -1055,7 +1074,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1.TextSegment,
                 com.google.cloud.videointelligence.v1.TextSegment.Builder,
                 com.google.cloud.videointelligence.v1.TextSegmentOrBuilder>(
-                segments_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                segments_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         segments_ = null;
       }
       return segmentsBuilder_;

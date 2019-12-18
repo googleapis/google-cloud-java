@@ -41,6 +41,12 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   private ObjectTrackingFrame() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ObjectTrackingFrame();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -141,6 +146,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.videointelligence.v1.NormalizedBoundingBox normalized_bounding_box = 1;
    * </code>
+   *
+   * @return Whether the normalizedBoundingBox field is set.
    */
   public boolean hasNormalizedBoundingBox() {
     return normalizedBoundingBox_ != null;
@@ -154,6 +161,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.videointelligence.v1.NormalizedBoundingBox normalized_bounding_box = 1;
    * </code>
+   *
+   * @return The normalizedBoundingBox.
    */
   public com.google.cloud.videointelligence.v1.NormalizedBoundingBox getNormalizedBoundingBox() {
     return normalizedBoundingBox_ == null
@@ -185,6 +194,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
@@ -197,6 +208,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
@@ -590,6 +603,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.videointelligence.v1.NormalizedBoundingBox normalized_bounding_box = 1;
      * </code>
+     *
+     * @return Whether the normalizedBoundingBox field is set.
      */
     public boolean hasNormalizedBoundingBox() {
       return normalizedBoundingBoxBuilder_ != null || normalizedBoundingBox_ != null;
@@ -603,6 +618,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.videointelligence.v1.NormalizedBoundingBox normalized_bounding_box = 1;
      * </code>
+     *
+     * @return The normalizedBoundingBox.
      */
     public com.google.cloud.videointelligence.v1.NormalizedBoundingBox getNormalizedBoundingBox() {
       if (normalizedBoundingBoxBuilder_ == null) {
@@ -785,6 +802,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
+     *
+     * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
       return timeOffsetBuilder_ != null || timeOffset_ != null;
@@ -797,6 +816,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
+     *
+     * @return The timeOffset.
      */
     public com.google.protobuf.Duration getTimeOffset() {
       if (timeOffsetBuilder_ == null) {

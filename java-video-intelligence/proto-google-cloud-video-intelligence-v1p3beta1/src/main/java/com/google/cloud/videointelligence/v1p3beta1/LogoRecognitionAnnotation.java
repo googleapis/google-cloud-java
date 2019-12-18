@@ -43,6 +43,12 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogoRecognitionAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,10 +91,10 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tracks_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.Track>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               tracks_.add(
                   input.readMessage(
@@ -98,11 +104,11 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 segments_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.VideoSegment>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               segments_.add(
                   input.readMessage(
@@ -124,10 +130,10 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         tracks_ = java.util.Collections.unmodifiableList(tracks_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         segments_ = java.util.Collections.unmodifiableList(segments_);
       }
       this.unknownFields = unknownFields.build();
@@ -150,7 +156,6 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p3beta1.Entity entity_;
   /**
@@ -162,6 +167,8 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+   *
+   * @return Whether the entity field is set.
    */
   public boolean hasEntity() {
     return entity_ != null;
@@ -175,6 +182,8 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+   *
+   * @return The entity.
    */
   public com.google.cloud.videointelligence.v1p3beta1.Entity getEntity() {
     return entity_ == null
@@ -581,13 +590,13 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       }
       if (tracksBuilder_ == null) {
         tracks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         tracksBuilder_.clear();
       }
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         segmentsBuilder_.clear();
       }
@@ -622,31 +631,29 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
       com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation result =
           new com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entityBuilder_ == null) {
         result.entity_ = entity_;
       } else {
         result.entity_ = entityBuilder_.build();
       }
       if (tracksBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           tracks_ = java.util.Collections.unmodifiableList(tracks_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tracks_ = tracks_;
       } else {
         result.tracks_ = tracksBuilder_.build();
       }
       if (segmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.segments_ = segments_;
       } else {
         result.segments_ = segmentsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -707,7 +714,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         if (!other.tracks_.isEmpty()) {
           if (tracks_.isEmpty()) {
             tracks_ = other.tracks_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTracksIsMutable();
             tracks_.addAll(other.tracks_);
@@ -720,7 +727,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             tracksBuilder_.dispose();
             tracksBuilder_ = null;
             tracks_ = other.tracks_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             tracksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTracksFieldBuilder()
@@ -734,7 +741,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSegmentsIsMutable();
             segments_.addAll(other.segments_);
@@ -747,7 +754,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
             segmentsBuilder_.dispose();
             segmentsBuilder_ = null;
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             segmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSegmentsFieldBuilder()
@@ -805,6 +812,8 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+     *
+     * @return Whether the entity field is set.
      */
     public boolean hasEntity() {
       return entityBuilder_ != null || entity_ != null;
@@ -818,6 +827,8 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+     *
+     * @return The entity.
      */
     public com.google.cloud.videointelligence.v1p3beta1.Entity getEntity() {
       if (entityBuilder_ == null) {
@@ -985,10 +996,10 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureTracksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         tracks_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.Track>(tracks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1215,7 +1226,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     public Builder clearTracks() {
       if (tracksBuilder_ == null) {
         tracks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         tracksBuilder_.clear();
@@ -1346,7 +1357,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
                 com.google.cloud.videointelligence.v1p3beta1.Track,
                 com.google.cloud.videointelligence.v1p3beta1.Track.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder>(
-                tracks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                tracks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         tracks_ = null;
       }
       return tracksBuilder_;
@@ -1356,11 +1367,11 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureSegmentsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         segments_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.VideoSegment>(
                 segments_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1593,7 +1604,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     public Builder clearSegments() {
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         segmentsBuilder_.clear();
@@ -1729,7 +1740,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
                 com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
                 com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>(
-                segments_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                segments_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         segments_ = null;
       }
       return segmentsBuilder_;

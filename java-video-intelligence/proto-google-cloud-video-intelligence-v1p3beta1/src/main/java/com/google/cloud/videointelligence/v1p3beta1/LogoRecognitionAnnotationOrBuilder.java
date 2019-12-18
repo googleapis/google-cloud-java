@@ -32,6 +32,8 @@ public interface LogoRecognitionAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+   *
+   * @return Whether the entity field is set.
    */
   boolean hasEntity();
   /**
@@ -43,6 +45,8 @@ public interface LogoRecognitionAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+   *
+   * @return The entity.
    */
   com.google.cloud.videointelligence.v1p3beta1.Entity getEntity();
   /**

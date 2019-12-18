@@ -32,6 +32,8 @@ public interface DetectedAttributeOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface DetectedAttributeOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface DetectedAttributeOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 
@@ -66,6 +72,8 @@ public interface DetectedAttributeOrBuilder
    * </pre>
    *
    * <code>string value = 3;</code>
+   *
+   * @return The value.
    */
   java.lang.String getValue();
   /**
@@ -77,6 +85,8 @@ public interface DetectedAttributeOrBuilder
    * </pre>
    *
    * <code>string value = 3;</code>
+   *
+   * @return The bytes for value.
    */
   com.google.protobuf.ByteString getValueBytes();
 }

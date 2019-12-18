@@ -41,6 +41,12 @@ public final class StreamingShotChangeDetectionConfig extends com.google.protobu
   private StreamingShotChangeDetectionConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingShotChangeDetectionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

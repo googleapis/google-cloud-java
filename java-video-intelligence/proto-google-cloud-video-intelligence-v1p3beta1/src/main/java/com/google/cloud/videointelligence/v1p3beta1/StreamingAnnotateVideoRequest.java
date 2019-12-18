@@ -43,6 +43,12 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   private StreamingAnnotateVideoRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingAnnotateVideoRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,7 +138,10 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   private int streamingRequestCase_ = 0;
   private java.lang.Object streamingRequest_;
 
-  public enum StreamingRequestCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StreamingRequestCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VIDEO_CONFIG(1),
     INPUT_CONTENT(2),
     STREAMINGREQUEST_NOT_SET(0);
@@ -142,7 +150,11 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     private StreamingRequestCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StreamingRequestCase valueOf(int value) {
       return forNumber(value);
@@ -181,6 +193,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
+   *
+   * @return Whether the videoConfig field is set.
    */
   public boolean hasVideoConfig() {
     return streamingRequestCase_ == 1;
@@ -195,6 +209,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
+   *
+   * @return The videoConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig getVideoConfig() {
     if (streamingRequestCase_ == 1) {
@@ -236,6 +252,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>bytes input_content = 2;</code>
+   *
+   * @return The inputContent.
    */
   public com.google.protobuf.ByteString getInputContent() {
     if (streamingRequestCase_ == 2) {
@@ -669,6 +687,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
+     *
+     * @return Whether the videoConfig field is set.
      */
     public boolean hasVideoConfig() {
       return streamingRequestCase_ == 1;
@@ -683,6 +703,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
+     *
+     * @return The videoConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig getVideoConfig() {
       if (videoConfigBuilder_ == null) {
@@ -903,6 +925,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes input_content = 2;</code>
+     *
+     * @return The inputContent.
      */
     public com.google.protobuf.ByteString getInputContent() {
       if (streamingRequestCase_ == 2) {
@@ -924,6 +948,9 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes input_content = 2;</code>
+     *
+     * @param value The inputContent to set.
+     * @return This builder for chaining.
      */
     public Builder setInputContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -948,6 +975,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bytes input_content = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputContent() {
       if (streamingRequestCase_ == 2) {

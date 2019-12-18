@@ -42,6 +42,12 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExplicitContentFrame();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
@@ -145,6 +152,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return The timeOffset.
    */
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
@@ -173,6 +182,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+   *
+   * @return The enum numeric value on the wire for pornographyLikelihood.
    */
   public int getPornographyLikelihoodValue() {
     return pornographyLikelihood_;
@@ -185,6 +196,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+   *
+   * @return The pornographyLikelihood.
    */
   public com.google.cloud.videointelligence.v1.Likelihood getPornographyLikelihood() {
     @SuppressWarnings("deprecation")
@@ -556,6 +569,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 1;</code>
+     *
+     * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
       return timeOffsetBuilder_ != null || timeOffset_ != null;
@@ -569,6 +584,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 1;</code>
+     *
+     * @return The timeOffset.
      */
     public com.google.protobuf.Duration getTimeOffset() {
       if (timeOffsetBuilder_ == null) {
@@ -738,6 +755,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+     *
+     * @return The enum numeric value on the wire for pornographyLikelihood.
      */
     public int getPornographyLikelihoodValue() {
       return pornographyLikelihood_;
@@ -750,6 +769,9 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for pornographyLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setPornographyLikelihoodValue(int value) {
       pornographyLikelihood_ = value;
@@ -764,6 +786,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+     *
+     * @return The pornographyLikelihood.
      */
     public com.google.cloud.videointelligence.v1.Likelihood getPornographyLikelihood() {
       @SuppressWarnings("deprecation")
@@ -781,6 +805,9 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+     *
+     * @param value The pornographyLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setPornographyLikelihood(
         com.google.cloud.videointelligence.v1.Likelihood value) {
@@ -800,6 +827,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPornographyLikelihood() {
 

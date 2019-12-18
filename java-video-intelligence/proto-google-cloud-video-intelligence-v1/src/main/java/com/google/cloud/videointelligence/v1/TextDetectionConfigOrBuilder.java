@@ -34,6 +34,8 @@ public interface TextDetectionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @return A list containing the languageHints.
    */
   java.util.List<java.lang.String> getLanguageHintsList();
   /**
@@ -47,6 +49,8 @@ public interface TextDetectionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @return The count of languageHints.
    */
   int getLanguageHintsCount();
   /**
@@ -60,6 +64,9 @@ public interface TextDetectionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageHints at the given index.
    */
   java.lang.String getLanguageHints(int index);
   /**
@@ -73,6 +80,9 @@ public interface TextDetectionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageHints at the given index.
    */
   com.google.protobuf.ByteString getLanguageHintsBytes(int index);
 
@@ -86,6 +96,8 @@ public interface TextDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -98,6 +110,8 @@ public interface TextDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 }

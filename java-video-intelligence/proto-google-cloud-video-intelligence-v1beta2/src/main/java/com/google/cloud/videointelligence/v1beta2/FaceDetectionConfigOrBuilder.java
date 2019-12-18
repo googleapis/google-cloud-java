@@ -33,6 +33,8 @@ public interface FaceDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 1;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -45,6 +47,8 @@ public interface FaceDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 1;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -56,6 +60,8 @@ public interface FaceDetectionConfigOrBuilder
    * </pre>
    *
    * <code>bool include_bounding_boxes = 2;</code>
+   *
+   * @return The includeBoundingBoxes.
    */
   boolean getIncludeBoundingBoxes();
 }

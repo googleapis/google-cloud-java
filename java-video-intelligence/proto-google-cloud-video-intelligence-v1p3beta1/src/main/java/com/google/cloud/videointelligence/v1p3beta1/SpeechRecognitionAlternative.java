@@ -43,6 +43,12 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeechRecognitionAlternative();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,11 +86,11 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 words_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.WordInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               words_.add(
                   input.readMessage(
@@ -106,7 +112,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         words_ = java.util.Collections.unmodifiableList(words_);
       }
       this.unknownFields = unknownFields.build();
@@ -130,7 +136,6 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
                 .class);
   }
 
-  private int bitField0_;
   public static final int TRANSCRIPT_FIELD_NUMBER = 1;
   private volatile java.lang.Object transcript_;
   /**
@@ -141,6 +146,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string transcript = 1;</code>
+   *
+   * @return The transcript.
    */
   public java.lang.String getTranscript() {
     java.lang.Object ref = transcript_;
@@ -161,6 +168,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string transcript = 1;</code>
+   *
+   * @return The bytes for transcript.
    */
   public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
@@ -189,6 +198,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -517,7 +528,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
 
       if (wordsBuilder_ == null) {
         words_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         wordsBuilder_.clear();
       }
@@ -553,19 +564,17 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
       com.google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative result =
           new com.google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.transcript_ = transcript_;
       result.confidence_ = confidence_;
       if (wordsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           words_ = java.util.Collections.unmodifiableList(words_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.words_ = words_;
       } else {
         result.words_ = wordsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -631,7 +640,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         if (!other.words_.isEmpty()) {
           if (words_.isEmpty()) {
             words_ = other.words_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureWordsIsMutable();
             words_.addAll(other.words_);
@@ -644,7 +653,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
             wordsBuilder_.dispose();
             wordsBuilder_ = null;
             words_ = other.words_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             wordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWordsFieldBuilder()
@@ -697,6 +706,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string transcript = 1;</code>
+     *
+     * @return The transcript.
      */
     public java.lang.String getTranscript() {
       java.lang.Object ref = transcript_;
@@ -717,6 +728,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string transcript = 1;</code>
+     *
+     * @return The bytes for transcript.
      */
     public com.google.protobuf.ByteString getTranscriptBytes() {
       java.lang.Object ref = transcript_;
@@ -737,6 +750,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string transcript = 1;</code>
+     *
+     * @param value The transcript to set.
+     * @return This builder for chaining.
      */
     public Builder setTranscript(java.lang.String value) {
       if (value == null) {
@@ -755,6 +771,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string transcript = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTranscript() {
 
@@ -770,6 +788,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string transcript = 1;</code>
+     *
+     * @param value The bytes for transcript to set.
+     * @return This builder for chaining.
      */
     public Builder setTranscriptBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -796,6 +817,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -813,6 +836,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -833,6 +859,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 
@@ -845,10 +873,10 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
         java.util.Collections.emptyList();
 
     private void ensureWordsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         words_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.WordInfo>(words_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1111,7 +1139,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
     public Builder clearWords() {
       if (wordsBuilder_ == null) {
         words_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         wordsBuilder_.clear();
@@ -1265,7 +1293,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
                 com.google.cloud.videointelligence.v1p3beta1.WordInfo,
                 com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder>(
-                words_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                words_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         words_ = null;
       }
       return wordsBuilder_;

@@ -42,6 +42,12 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingStorageConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +126,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>bool enable_storage_annotation_result = 1;</code>
+   *
+   * @return The enableStorageAnnotationResult.
    */
   public boolean getEnableStorageAnnotationResult() {
     return enableStorageAnnotationResult_;
@@ -145,6 +152,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string annotation_result_storage_directory = 3;</code>
+   *
+   * @return The annotationResultStorageDirectory.
    */
   public java.lang.String getAnnotationResultStorageDirectory() {
     java.lang.Object ref = annotationResultStorageDirectory_;
@@ -174,6 +183,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string annotation_result_storage_directory = 3;</code>
+   *
+   * @return The bytes for annotationResultStorageDirectory.
    */
   public com.google.protobuf.ByteString getAnnotationResultStorageDirectoryBytes() {
     java.lang.Object ref = annotationResultStorageDirectory_;
@@ -545,6 +556,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool enable_storage_annotation_result = 1;</code>
+     *
+     * @return The enableStorageAnnotationResult.
      */
     public boolean getEnableStorageAnnotationResult() {
       return enableStorageAnnotationResult_;
@@ -557,6 +570,9 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool enable_storage_annotation_result = 1;</code>
+     *
+     * @param value The enableStorageAnnotationResult to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableStorageAnnotationResult(boolean value) {
 
@@ -572,6 +588,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>bool enable_storage_annotation_result = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableStorageAnnotationResult() {
 
@@ -598,6 +616,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string annotation_result_storage_directory = 3;</code>
+     *
+     * @return The annotationResultStorageDirectory.
      */
     public java.lang.String getAnnotationResultStorageDirectory() {
       java.lang.Object ref = annotationResultStorageDirectory_;
@@ -627,6 +647,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string annotation_result_storage_directory = 3;</code>
+     *
+     * @return The bytes for annotationResultStorageDirectory.
      */
     public com.google.protobuf.ByteString getAnnotationResultStorageDirectoryBytes() {
       java.lang.Object ref = annotationResultStorageDirectory_;
@@ -656,6 +678,9 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string annotation_result_storage_directory = 3;</code>
+     *
+     * @param value The annotationResultStorageDirectory to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationResultStorageDirectory(java.lang.String value) {
       if (value == null) {
@@ -683,6 +708,8 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string annotation_result_storage_directory = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnnotationResultStorageDirectory() {
 
@@ -708,6 +735,9 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string annotation_result_storage_directory = 3;</code>
+     *
+     * @param value The bytes for annotationResultStorageDirectory to set.
+     * @return This builder for chaining.
      */
     public Builder setAnnotationResultStorageDirectoryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -33,6 +33,8 @@ public interface ExplicitContentDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 1;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -45,6 +47,8 @@ public interface ExplicitContentDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 1;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 }

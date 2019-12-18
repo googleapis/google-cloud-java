@@ -42,6 +42,12 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
   private NormalizedBoundingBox() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NormalizedBoundingBox();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>float left = 1;</code>
+   *
+   * @return The left.
    */
   public float getLeft() {
     return left_;
@@ -144,6 +151,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>float top = 2;</code>
+   *
+   * @return The top.
    */
   public float getTop() {
     return top_;
@@ -159,6 +168,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>float right = 3;</code>
+   *
+   * @return The right.
    */
   public float getRight() {
     return right_;
@@ -174,6 +185,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>float bottom = 4;</code>
+   *
+   * @return The bottom.
    */
   public float getBottom() {
     return bottom_;
@@ -565,6 +578,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float left = 1;</code>
+     *
+     * @return The left.
      */
     public float getLeft() {
       return left_;
@@ -577,6 +592,9 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float left = 1;</code>
+     *
+     * @param value The left to set.
+     * @return This builder for chaining.
      */
     public Builder setLeft(float value) {
 
@@ -592,6 +610,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float left = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLeft() {
 
@@ -609,6 +629,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float top = 2;</code>
+     *
+     * @return The top.
      */
     public float getTop() {
       return top_;
@@ -621,6 +643,9 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float top = 2;</code>
+     *
+     * @param value The top to set.
+     * @return This builder for chaining.
      */
     public Builder setTop(float value) {
 
@@ -636,6 +661,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float top = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTop() {
 
@@ -653,6 +680,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float right = 3;</code>
+     *
+     * @return The right.
      */
     public float getRight() {
       return right_;
@@ -665,6 +694,9 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float right = 3;</code>
+     *
+     * @param value The right to set.
+     * @return This builder for chaining.
      */
     public Builder setRight(float value) {
 
@@ -680,6 +712,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float right = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRight() {
 
@@ -697,6 +731,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float bottom = 4;</code>
+     *
+     * @return The bottom.
      */
     public float getBottom() {
       return bottom_;
@@ -709,6 +745,9 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float bottom = 4;</code>
+     *
+     * @param value The bottom to set.
+     * @return This builder for chaining.
      */
     public Builder setBottom(float value) {
 
@@ -724,6 +763,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>float bottom = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBottom() {
 

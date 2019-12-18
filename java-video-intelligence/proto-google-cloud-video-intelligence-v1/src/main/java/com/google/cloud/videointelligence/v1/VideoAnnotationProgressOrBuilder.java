@@ -32,6 +32,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   java.lang.String getInputUri();
   /**
@@ -43,6 +45,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   com.google.protobuf.ByteString getInputUriBytes();
 
@@ -55,6 +59,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>int32 progress_percent = 2;</code>
+   *
+   * @return The progressPercent.
    */
   int getProgressPercent();
 
@@ -66,6 +72,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -76,6 +84,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -97,6 +107,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -107,6 +119,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -129,6 +143,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
   /**
@@ -140,6 +156,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
+   *
+   * @return The feature.
    */
   com.google.cloud.videointelligence.v1.Feature getFeature();
 
@@ -152,6 +170,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
+   *
+   * @return Whether the segment field is set.
    */
   boolean hasSegment();
   /**
@@ -163,6 +183,8 @@ public interface VideoAnnotationProgressOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
+   *
+   * @return The segment.
    */
   com.google.cloud.videointelligence.v1.VideoSegment getSegment();
   /**

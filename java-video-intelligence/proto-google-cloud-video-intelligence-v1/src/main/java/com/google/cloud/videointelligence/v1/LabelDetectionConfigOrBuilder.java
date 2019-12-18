@@ -33,6 +33,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.LabelDetectionMode label_detection_mode = 1;</code>
+   *
+   * @return The enum numeric value on the wire for labelDetectionMode.
    */
   int getLabelDetectionModeValue();
   /**
@@ -45,6 +47,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.LabelDetectionMode label_detection_mode = 1;</code>
+   *
+   * @return The labelDetectionMode.
    */
   com.google.cloud.videointelligence.v1.LabelDetectionMode getLabelDetectionMode();
 
@@ -58,6 +62,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>bool stationary_camera = 2;</code>
+   *
+   * @return The stationaryCamera.
    */
   boolean getStationaryCamera();
 
@@ -71,6 +77,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 3;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -83,6 +91,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 3;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -99,6 +109,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>float frame_confidence_threshold = 4;</code>
+   *
+   * @return The frameConfidenceThreshold.
    */
   float getFrameConfidenceThreshold();
 
@@ -115,6 +127,8 @@ public interface LabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>float video_confidence_threshold = 5;</code>
+   *
+   * @return The videoConfidenceThreshold.
    */
   float getVideoConfidenceThreshold();
 }

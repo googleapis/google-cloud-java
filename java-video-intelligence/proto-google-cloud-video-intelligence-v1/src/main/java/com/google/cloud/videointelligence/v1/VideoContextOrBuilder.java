@@ -94,6 +94,8 @@ public interface VideoContextOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
    * </code>
+   *
+   * @return Whether the labelDetectionConfig field is set.
    */
   boolean hasLabelDetectionConfig();
   /**
@@ -105,6 +107,8 @@ public interface VideoContextOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
    * </code>
+   *
+   * @return The labelDetectionConfig.
    */
   com.google.cloud.videointelligence.v1.LabelDetectionConfig getLabelDetectionConfig();
   /**
@@ -130,6 +134,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
+   *
+   * @return Whether the shotChangeDetectionConfig field is set.
    */
   boolean hasShotChangeDetectionConfig();
   /**
@@ -142,6 +148,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
+   *
+   * @return The shotChangeDetectionConfig.
    */
   com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig getShotChangeDetectionConfig();
   /**
@@ -168,6 +176,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return Whether the explicitContentDetectionConfig field is set.
    */
   boolean hasExplicitContentDetectionConfig();
   /**
@@ -180,6 +190,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return The explicitContentDetectionConfig.
    */
   com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
       getExplicitContentDetectionConfig();
@@ -205,6 +217,8 @@ public interface VideoContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+   *
+   * @return Whether the faceDetectionConfig field is set.
    */
   boolean hasFaceDetectionConfig();
   /**
@@ -215,6 +229,8 @@ public interface VideoContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+   *
+   * @return The faceDetectionConfig.
    */
   com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig();
   /**
@@ -239,6 +255,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
+   *
+   * @return Whether the speechTranscriptionConfig field is set.
    */
   boolean hasSpeechTranscriptionConfig();
   /**
@@ -251,6 +269,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
+   *
+   * @return The speechTranscriptionConfig.
    */
   com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig getSpeechTranscriptionConfig();
   /**
@@ -275,6 +295,8 @@ public interface VideoContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   *
+   * @return Whether the textDetectionConfig field is set.
    */
   boolean hasTextDetectionConfig();
   /**
@@ -285,6 +307,8 @@ public interface VideoContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   *
+   * @return The textDetectionConfig.
    */
   com.google.cloud.videointelligence.v1.TextDetectionConfig getTextDetectionConfig();
   /**
@@ -308,6 +332,8 @@ public interface VideoContextOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
   /**
@@ -319,6 +345,8 @@ public interface VideoContextOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   com.google.cloud.videointelligence.v1.ObjectTrackingConfig getObjectTrackingConfig();
   /**

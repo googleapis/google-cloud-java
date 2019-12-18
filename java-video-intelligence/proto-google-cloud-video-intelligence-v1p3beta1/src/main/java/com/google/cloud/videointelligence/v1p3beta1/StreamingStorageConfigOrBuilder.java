@@ -31,6 +31,8 @@ public interface StreamingStorageConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_storage_annotation_result = 1;</code>
+   *
+   * @return The enableStorageAnnotationResult.
    */
   boolean getEnableStorageAnnotationResult();
 
@@ -51,6 +53,8 @@ public interface StreamingStorageConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_result_storage_directory = 3;</code>
+   *
+   * @return The annotationResultStorageDirectory.
    */
   java.lang.String getAnnotationResultStorageDirectory();
   /**
@@ -70,6 +74,8 @@ public interface StreamingStorageConfigOrBuilder
    * </pre>
    *
    * <code>string annotation_result_storage_directory = 3;</code>
+   *
+   * @return The bytes for annotationResultStorageDirectory.
    */
   com.google.protobuf.ByteString getAnnotationResultStorageDirectoryBytes();
 }

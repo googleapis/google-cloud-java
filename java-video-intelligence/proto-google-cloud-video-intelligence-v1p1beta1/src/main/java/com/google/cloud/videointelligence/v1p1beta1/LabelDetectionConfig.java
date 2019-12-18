@@ -43,6 +43,12 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelDetectionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
    * </code>
+   *
+   * @return The enum numeric value on the wire for labelDetectionMode.
    */
   public int getLabelDetectionModeValue() {
     return labelDetectionMode_;
@@ -147,6 +154,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
    * </code>
+   *
+   * @return The labelDetectionMode.
    */
   public com.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode getLabelDetectionMode() {
     @SuppressWarnings("deprecation")
@@ -170,6 +179,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bool stationary_camera = 2;</code>
+   *
+   * @return The stationaryCamera.
    */
   public boolean getStationaryCamera() {
     return stationaryCamera_;
@@ -187,6 +198,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string model = 3;</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -209,6 +222,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string model = 3;</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -595,6 +610,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for labelDetectionMode.
      */
     public int getLabelDetectionModeValue() {
       return labelDetectionMode_;
@@ -610,6 +627,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for labelDetectionMode to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelDetectionModeValue(int value) {
       labelDetectionMode_ = value;
@@ -627,6 +647,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
      * </code>
+     *
+     * @return The labelDetectionMode.
      */
     public com.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode getLabelDetectionMode() {
       @SuppressWarnings("deprecation")
@@ -648,6 +670,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
      * </code>
+     *
+     * @param value The labelDetectionMode to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelDetectionMode(
         com.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode value) {
@@ -670,6 +695,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode label_detection_mode = 1;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLabelDetectionMode() {
 
@@ -689,6 +716,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool stationary_camera = 2;</code>
+     *
+     * @return The stationaryCamera.
      */
     public boolean getStationaryCamera() {
       return stationaryCamera_;
@@ -703,6 +732,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool stationary_camera = 2;</code>
+     *
+     * @param value The stationaryCamera to set.
+     * @return This builder for chaining.
      */
     public Builder setStationaryCamera(boolean value) {
 
@@ -720,6 +752,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool stationary_camera = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStationaryCamera() {
 
@@ -739,6 +773,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 3;</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -761,6 +797,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 3;</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -783,6 +821,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 3;</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -803,6 +844,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -820,6 +863,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 3;</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

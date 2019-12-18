@@ -40,6 +40,12 @@ public final class FaceSegment extends com.google.protobuf.GeneratedMessageV3
   private FaceSegment() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FaceSegment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class FaceSegment extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class FaceSegment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 1;</code>
+   *
+   * @return Whether the segment field is set.
    */
   public boolean hasSegment() {
     return segment_ != null;
@@ -136,6 +143,8 @@ public final class FaceSegment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 1;</code>
+   *
+   * @return The segment.
    */
   public com.google.cloud.videointelligence.v1.VideoSegment getSegment() {
     return segment_ == null
@@ -499,6 +508,8 @@ public final class FaceSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 1;</code>
+     *
+     * @return Whether the segment field is set.
      */
     public boolean hasSegment() {
       return segmentBuilder_ != null || segment_ != null;
@@ -511,6 +522,8 @@ public final class FaceSegment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 1;</code>
+     *
+     * @return The segment.
      */
     public com.google.cloud.videointelligence.v1.VideoSegment getSegment() {
       if (segmentBuilder_ == null) {

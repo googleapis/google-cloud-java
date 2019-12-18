@@ -43,6 +43,12 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Track();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,11 +91,11 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 timestampedObjects_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.TimestampedObject>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               timestampedObjects_.add(
                   input.readMessage(
@@ -99,11 +105,11 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 attributes_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               attributes_.add(
                   input.readMessage(
@@ -130,10 +136,10 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         timestampedObjects_ = java.util.Collections.unmodifiableList(timestampedObjects_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         attributes_ = java.util.Collections.unmodifiableList(attributes_);
       }
       this.unknownFields = unknownFields.build();
@@ -156,7 +162,6 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1p3beta1.Track.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p3beta1.VideoSegment segment_;
   /**
@@ -167,6 +172,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
+   *
+   * @return Whether the segment field is set.
    */
   public boolean hasSegment() {
     return segment_ != null;
@@ -179,6 +186,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
+   *
+   * @return The segment.
    */
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
     return segment_ == null
@@ -365,6 +374,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -623,13 +634,13 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       if (timestampedObjectsBuilder_ == null) {
         timestampedObjects_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         timestampedObjectsBuilder_.clear();
       }
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         attributesBuilder_.clear();
       }
@@ -663,32 +674,30 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1p3beta1.Track result =
           new com.google.cloud.videointelligence.v1p3beta1.Track(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (segmentBuilder_ == null) {
         result.segment_ = segment_;
       } else {
         result.segment_ = segmentBuilder_.build();
       }
       if (timestampedObjectsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           timestampedObjects_ = java.util.Collections.unmodifiableList(timestampedObjects_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.timestampedObjects_ = timestampedObjects_;
       } else {
         result.timestampedObjects_ = timestampedObjectsBuilder_.build();
       }
       if (attributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           attributes_ = java.util.Collections.unmodifiableList(attributes_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.attributes_ = attributes_;
       } else {
         result.attributes_ = attributesBuilder_.build();
       }
       result.confidence_ = confidence_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -746,7 +755,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         if (!other.timestampedObjects_.isEmpty()) {
           if (timestampedObjects_.isEmpty()) {
             timestampedObjects_ = other.timestampedObjects_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTimestampedObjectsIsMutable();
             timestampedObjects_.addAll(other.timestampedObjects_);
@@ -759,7 +768,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             timestampedObjectsBuilder_.dispose();
             timestampedObjectsBuilder_ = null;
             timestampedObjects_ = other.timestampedObjects_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             timestampedObjectsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTimestampedObjectsFieldBuilder()
@@ -773,7 +782,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         if (!other.attributes_.isEmpty()) {
           if (attributes_.isEmpty()) {
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAttributesIsMutable();
             attributes_.addAll(other.attributes_);
@@ -786,7 +795,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             attributesBuilder_.dispose();
             attributesBuilder_ = null;
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             attributesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttributesFieldBuilder()
@@ -845,6 +854,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
+     *
+     * @return Whether the segment field is set.
      */
     public boolean hasSegment() {
       return segmentBuilder_ != null || segment_ != null;
@@ -857,6 +868,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
+     *
+     * @return The segment.
      */
     public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
       if (segmentBuilder_ == null) {
@@ -1018,11 +1031,11 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         timestampedObjects_ = java.util.Collections.emptyList();
 
     private void ensureTimestampedObjectsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         timestampedObjects_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.TimestampedObject>(
                 timestampedObjects_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1268,7 +1281,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTimestampedObjects() {
       if (timestampedObjectsBuilder_ == null) {
         timestampedObjects_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         timestampedObjectsBuilder_.clear();
@@ -1413,7 +1426,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1p3beta1.TimestampedObject.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.TimestampedObjectOrBuilder>(
                 timestampedObjects_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         timestampedObjects_ = null;
@@ -1425,11 +1438,11 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         attributes_ = java.util.Collections.emptyList();
 
     private void ensureAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         attributes_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>(
                 attributes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1674,7 +1687,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAttributes() {
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         attributesBuilder_.clear();
@@ -1818,7 +1831,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute,
                 com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder>(
-                attributes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                attributes_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         attributes_ = null;
       }
       return attributesBuilder_;
@@ -1833,6 +1846,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1845,6 +1860,9 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1860,6 +1878,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

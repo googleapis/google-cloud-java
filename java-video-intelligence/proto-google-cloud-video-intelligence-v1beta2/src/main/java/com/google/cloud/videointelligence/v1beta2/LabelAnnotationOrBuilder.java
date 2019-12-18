@@ -31,6 +31,8 @@ public interface LabelAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1beta2.Entity entity = 1;</code>
+   *
+   * @return Whether the entity field is set.
    */
   boolean hasEntity();
   /**
@@ -41,6 +43,8 @@ public interface LabelAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1beta2.Entity entity = 1;</code>
+   *
+   * @return The entity.
    */
   com.google.cloud.videointelligence.v1beta2.Entity getEntity();
   /**

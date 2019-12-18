@@ -33,6 +33,8 @@ public interface StreamingLabelDetectionConfigOrBuilder
    * </pre>
    *
    * <code>bool stationary_camera = 1;</code>
+   *
+   * @return The stationaryCamera.
    */
   boolean getStationaryCamera();
 }

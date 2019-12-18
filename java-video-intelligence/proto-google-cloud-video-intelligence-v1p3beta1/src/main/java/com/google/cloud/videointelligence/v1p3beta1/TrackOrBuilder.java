@@ -31,6 +31,8 @@ public interface TrackOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
+   *
+   * @return Whether the segment field is set.
    */
   boolean hasSegment();
   /**
@@ -41,6 +43,8 @@ public interface TrackOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
+   *
+   * @return The segment.
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
   /**
@@ -190,6 +194,8 @@ public interface TrackOrBuilder
    * </pre>
    *
    * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

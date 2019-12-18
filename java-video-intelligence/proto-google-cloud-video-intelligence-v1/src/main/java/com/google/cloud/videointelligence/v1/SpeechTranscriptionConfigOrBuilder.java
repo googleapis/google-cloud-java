@@ -35,6 +35,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -49,6 +51,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -64,6 +68,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_alternatives = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxAlternatives.
    */
   int getMaxAlternatives();
 
@@ -78,6 +84,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>bool filter_profanity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filterProfanity.
    */
   boolean getFilterProfanity();
 
@@ -157,6 +165,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAutomaticPunctuation.
    */
   boolean getEnableAutomaticPunctuation();
 
@@ -169,6 +179,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the audioTracks.
    */
   java.util.List<java.lang.Integer> getAudioTracksList();
   /**
@@ -180,6 +192,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of audioTracks.
    */
   int getAudioTracksCount();
   /**
@@ -191,6 +205,9 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The audioTracks at the given index.
    */
   int getAudioTracks(int index);
 
@@ -208,6 +225,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableSpeakerDiarization.
    */
   boolean getEnableSpeakerDiarization();
 
@@ -221,6 +240,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diarizationSpeakerCount.
    */
   int getDiarizationSpeakerCount();
 
@@ -234,6 +255,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_word_confidence = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWordConfidence.
    */
   boolean getEnableWordConfidence();
 }

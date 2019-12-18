@@ -31,6 +31,8 @@ public interface ObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+   *
+   * @return Whether the entity field is set.
    */
   boolean hasEntity();
   /**
@@ -41,6 +43,8 @@ public interface ObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
+   *
+   * @return The entity.
    */
   com.google.cloud.videointelligence.v1p3beta1.Entity getEntity();
   /**
@@ -62,6 +66,8 @@ public interface ObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 
@@ -143,6 +149,8 @@ public interface ObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   *
+   * @return Whether the segment field is set.
    */
   boolean hasSegment();
   /**
@@ -154,6 +162,8 @@ public interface ObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   *
+   * @return The segment.
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
   /**
@@ -181,6 +191,8 @@ public interface ObjectTrackingAnnotationOrBuilder
    * </pre>
    *
    * <code>int64 track_id = 5;</code>
+   *
+   * @return The trackId.
    */
   long getTrackId();
 

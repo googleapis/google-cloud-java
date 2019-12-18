@@ -31,6 +31,8 @@ public interface StreamingVideoConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
   /**
@@ -41,6 +43,8 @@ public interface StreamingVideoConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The feature.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature();
 
@@ -54,6 +58,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;
    * </code>
+   *
+   * @return Whether the shotChangeDetectionConfig field is set.
    */
   boolean hasShotChangeDetectionConfig();
   /**
@@ -66,6 +72,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;
    * </code>
+   *
+   * @return The shotChangeDetectionConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig
       getShotChangeDetectionConfig();
@@ -93,6 +101,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;
    * </code>
+   *
+   * @return Whether the labelDetectionConfig field is set.
    */
   boolean hasLabelDetectionConfig();
   /**
@@ -105,6 +115,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;
    * </code>
+   *
+   * @return The labelDetectionConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig
       getLabelDetectionConfig();
@@ -132,6 +144,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return Whether the explicitContentDetectionConfig field is set.
    */
   boolean hasExplicitContentDetectionConfig();
   /**
@@ -144,6 +158,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return The explicitContentDetectionConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig
       getExplicitContentDetectionConfig();
@@ -171,6 +187,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
   /**
@@ -183,6 +201,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig
       getObjectTrackingConfig();
@@ -210,6 +230,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
    * </code>
+   *
+   * @return Whether the automlClassificationConfig field is set.
    */
   boolean hasAutomlClassificationConfig();
   /**
@@ -222,6 +244,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
    * </code>
+   *
+   * @return The automlClassificationConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
       getAutomlClassificationConfig();
@@ -249,6 +273,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
    * </code>
+   *
+   * @return Whether the automlObjectTrackingConfig field is set.
    */
   boolean hasAutomlObjectTrackingConfig();
   /**
@@ -261,6 +287,8 @@ public interface StreamingVideoConfigOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
    * </code>
+   *
+   * @return The automlObjectTrackingConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
       getAutomlObjectTrackingConfig();
@@ -287,6 +315,8 @@ public interface StreamingVideoConfigOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;
    * </code>
+   *
+   * @return Whether the storageConfig field is set.
    */
   boolean hasStorageConfig();
   /**
@@ -298,6 +328,8 @@ public interface StreamingVideoConfigOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;
    * </code>
+   *
+   * @return The storageConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig getStorageConfig();
   /**

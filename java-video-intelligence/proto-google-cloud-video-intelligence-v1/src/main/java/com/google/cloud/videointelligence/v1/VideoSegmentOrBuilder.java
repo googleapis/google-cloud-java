@@ -32,6 +32,8 @@ public interface VideoSegmentOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration start_time_offset = 1;</code>
+   *
+   * @return Whether the startTimeOffset field is set.
    */
   boolean hasStartTimeOffset();
   /**
@@ -43,6 +45,8 @@ public interface VideoSegmentOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration start_time_offset = 1;</code>
+   *
+   * @return The startTimeOffset.
    */
   com.google.protobuf.Duration getStartTimeOffset();
   /**
@@ -66,6 +70,8 @@ public interface VideoSegmentOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration end_time_offset = 2;</code>
+   *
+   * @return Whether the endTimeOffset field is set.
    */
   boolean hasEndTimeOffset();
   /**
@@ -77,6 +83,8 @@ public interface VideoSegmentOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration end_time_offset = 2;</code>
+   *
+   * @return The endTimeOffset.
    */
   com.google.protobuf.Duration getEndTimeOffset();
   /**

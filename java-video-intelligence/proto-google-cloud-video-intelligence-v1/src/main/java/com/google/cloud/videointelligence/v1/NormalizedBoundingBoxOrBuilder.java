@@ -31,6 +31,8 @@ public interface NormalizedBoundingBoxOrBuilder
    * </pre>
    *
    * <code>float left = 1;</code>
+   *
+   * @return The left.
    */
   float getLeft();
 
@@ -42,6 +44,8 @@ public interface NormalizedBoundingBoxOrBuilder
    * </pre>
    *
    * <code>float top = 2;</code>
+   *
+   * @return The top.
    */
   float getTop();
 
@@ -53,6 +57,8 @@ public interface NormalizedBoundingBoxOrBuilder
    * </pre>
    *
    * <code>float right = 3;</code>
+   *
+   * @return The right.
    */
   float getRight();
 
@@ -64,6 +70,8 @@ public interface NormalizedBoundingBoxOrBuilder
    * </pre>
    *
    * <code>float bottom = 4;</code>
+   *
+   * @return The bottom.
    */
   float getBottom();
 }

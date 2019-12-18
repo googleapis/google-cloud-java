@@ -44,6 +44,12 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WordInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration start_time = 1;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -166,6 +173,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration start_time = 1;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Duration getStartTime() {
     return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
@@ -199,6 +208,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration end_time = 2;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -214,6 +225,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration end_time = 2;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Duration getEndTime() {
     return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
@@ -244,6 +257,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The word.
    */
   public java.lang.String getWord() {
     java.lang.Object ref = word_;
@@ -264,6 +279,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The bytes for word.
    */
   public com.google.protobuf.ByteString getWordBytes() {
     java.lang.Object ref = word_;
@@ -671,6 +688,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -686,6 +705,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration start_time = 1;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Duration getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -873,6 +894,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -888,6 +911,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration end_time = 2;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Duration getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1067,6 +1092,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @return The word.
      */
     public java.lang.String getWord() {
       java.lang.Object ref = word_;
@@ -1087,6 +1114,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @return The bytes for word.
      */
     public com.google.protobuf.ByteString getWordBytes() {
       java.lang.Object ref = word_;
@@ -1107,6 +1136,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @param value The word to set.
+     * @return This builder for chaining.
      */
     public Builder setWord(java.lang.String value) {
       if (value == null) {
@@ -1125,6 +1157,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWord() {
 
@@ -1140,6 +1174,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string word = 3;</code>
+     *
+     * @param value The bytes for word to set.
+     * @return This builder for chaining.
      */
     public Builder setWordBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

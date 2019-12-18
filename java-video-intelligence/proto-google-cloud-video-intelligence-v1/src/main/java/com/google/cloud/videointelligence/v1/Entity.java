@@ -44,6 +44,12 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Entity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string entity_id = 1;</code>
+   *
+   * @return The entityId.
    */
   public java.lang.String getEntityId() {
     java.lang.Object ref = entityId_;
@@ -156,6 +163,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string entity_id = 1;</code>
+   *
+   * @return The bytes for entityId.
    */
   public com.google.protobuf.ByteString getEntityIdBytes() {
     java.lang.Object ref = entityId_;
@@ -179,6 +188,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -199,6 +210,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -222,6 +235,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -242,6 +257,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -614,6 +631,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_id = 1;</code>
+     *
+     * @return The entityId.
      */
     public java.lang.String getEntityId() {
       java.lang.Object ref = entityId_;
@@ -636,6 +655,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_id = 1;</code>
+     *
+     * @return The bytes for entityId.
      */
     public com.google.protobuf.ByteString getEntityIdBytes() {
       java.lang.Object ref = entityId_;
@@ -658,6 +679,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_id = 1;</code>
+     *
+     * @param value The entityId to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityId(java.lang.String value) {
       if (value == null) {
@@ -678,6 +702,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntityId() {
 
@@ -695,6 +721,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string entity_id = 1;</code>
+     *
+     * @param value The bytes for entityId to set.
+     * @return This builder for chaining.
      */
     public Builder setEntityIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -716,6 +745,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -736,6 +767,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -756,6 +789,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -774,6 +810,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -789,6 +827,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -810,6 +851,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -830,6 +873,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -850,6 +895,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -868,6 +916,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -883,6 +933,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 3;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

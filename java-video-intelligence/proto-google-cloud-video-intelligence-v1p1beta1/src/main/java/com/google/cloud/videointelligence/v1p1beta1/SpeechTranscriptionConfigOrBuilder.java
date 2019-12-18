@@ -35,6 +35,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -49,6 +51,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -64,6 +68,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_alternatives = 2;</code>
+   *
+   * @return The maxAlternatives.
    */
   int getMaxAlternatives();
 
@@ -78,6 +84,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>bool filter_profanity = 3;</code>
+   *
+   * @return The filterProfanity.
    */
   boolean getFilterProfanity();
 
@@ -153,6 +161,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 5;</code>
+   *
+   * @return The enableAutomaticPunctuation.
    */
   boolean getEnableAutomaticPunctuation();
 
@@ -165,6 +175,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>repeated int32 audio_tracks = 6;</code>
+   *
+   * @return A list containing the audioTracks.
    */
   java.util.List<java.lang.Integer> getAudioTracksList();
   /**
@@ -176,6 +188,8 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>repeated int32 audio_tracks = 6;</code>
+   *
+   * @return The count of audioTracks.
    */
   int getAudioTracksCount();
   /**
@@ -187,6 +201,9 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </pre>
    *
    * <code>repeated int32 audio_tracks = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The audioTracks at the given index.
    */
   int getAudioTracks(int index);
 }

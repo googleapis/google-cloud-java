@@ -43,6 +43,12 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextDetectionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -120,7 +126,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList languageHints_;
   /**
@@ -134,6 +139,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @return A list containing the languageHints.
    */
   public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
     return languageHints_;
@@ -149,6 +156,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @return The count of languageHints.
    */
   public int getLanguageHintsCount() {
     return languageHints_.size();
@@ -164,6 +173,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageHints at the given index.
    */
   public java.lang.String getLanguageHints(int index) {
     return languageHints_.get(index);
@@ -179,6 +191,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string language_hints = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageHints at the given index.
    */
   public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
     return languageHints_.getByteString(index);
@@ -196,6 +211,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -218,6 +235,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -484,14 +503,12 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       com.google.cloud.videointelligence.v1.TextDetectionConfig result =
           new com.google.cloud.videointelligence.v1.TextDetectionConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
       result.model_ = model_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -608,6 +625,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @return A list containing the languageHints.
      */
     public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
       return languageHints_.getUnmodifiableView();
@@ -623,6 +642,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @return The count of languageHints.
      */
     public int getLanguageHintsCount() {
       return languageHints_.size();
@@ -638,6 +659,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageHints at the given index.
      */
     public java.lang.String getLanguageHints(int index) {
       return languageHints_.get(index);
@@ -653,6 +677,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageHints at the given index.
      */
     public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
       return languageHints_.getByteString(index);
@@ -668,6 +695,10 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageHints to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageHints(int index, java.lang.String value) {
       if (value == null) {
@@ -689,6 +720,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @param value The languageHints to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageHints(java.lang.String value) {
       if (value == null) {
@@ -710,6 +744,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @param values The languageHints to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageHintsIsMutable();
@@ -728,6 +765,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageHints() {
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -746,6 +785,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string language_hints = 1;</code>
+     *
+     * @param value The bytes of the languageHints to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageHintsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -769,6 +811,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -791,6 +835,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -813,6 +859,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -833,6 +882,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -850,6 +901,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

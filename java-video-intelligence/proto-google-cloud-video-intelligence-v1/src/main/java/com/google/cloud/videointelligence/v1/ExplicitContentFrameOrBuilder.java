@@ -32,6 +32,8 @@ public interface ExplicitContentFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -43,6 +45,8 @@ public interface ExplicitContentFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**
@@ -65,6 +69,8 @@ public interface ExplicitContentFrameOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+   *
+   * @return The enum numeric value on the wire for pornographyLikelihood.
    */
   int getPornographyLikelihoodValue();
   /**
@@ -75,6 +81,8 @@ public interface ExplicitContentFrameOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Likelihood pornography_likelihood = 2;</code>
+   *
+   * @return The pornographyLikelihood.
    */
   com.google.cloud.videointelligence.v1.Likelihood getPornographyLikelihood();
 }

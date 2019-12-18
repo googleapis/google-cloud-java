@@ -43,6 +43,12 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeechTranscription();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,7 +130,6 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
             com.google.cloud.videointelligence.v1.SpeechTranscription.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative>
       alternatives_;
@@ -231,6 +236,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -253,6 +260,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -520,7 +529,6 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
       com.google.cloud.videointelligence.v1.SpeechTranscription result =
           new com.google.cloud.videointelligence.v1.SpeechTranscription(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -531,7 +539,6 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         result.alternatives_ = alternativesBuilder_.build();
       }
       result.languageCode_ = languageCode_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1121,6 +1128,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1143,6 +1152,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1165,6 +1176,9 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1185,6 +1199,8 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1202,6 +1218,9 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

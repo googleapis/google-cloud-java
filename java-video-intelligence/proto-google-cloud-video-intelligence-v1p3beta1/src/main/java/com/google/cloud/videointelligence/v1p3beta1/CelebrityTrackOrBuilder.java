@@ -99,6 +99,8 @@ public interface CelebrityTrackOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
+   *
+   * @return Whether the faceTrack field is set.
    */
   boolean hasFaceTrack();
   /**
@@ -109,6 +111,8 @@ public interface CelebrityTrackOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
+   *
+   * @return The faceTrack.
    */
   com.google.cloud.videointelligence.v1p3beta1.Track getFaceTrack();
   /**

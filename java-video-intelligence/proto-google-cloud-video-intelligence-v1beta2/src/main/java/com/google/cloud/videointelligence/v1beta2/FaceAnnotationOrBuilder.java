@@ -31,6 +31,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>bytes thumbnail = 1;</code>
+   *
+   * @return The thumbnail.
    */
   com.google.protobuf.ByteString getThumbnail();
 

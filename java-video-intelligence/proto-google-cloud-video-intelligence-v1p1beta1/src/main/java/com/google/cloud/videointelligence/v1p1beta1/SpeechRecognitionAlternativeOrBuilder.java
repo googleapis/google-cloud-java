@@ -31,6 +31,8 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * </pre>
    *
    * <code>string transcript = 1;</code>
+   *
+   * @return The transcript.
    */
   java.lang.String getTranscript();
   /**
@@ -41,6 +43,8 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * </pre>
    *
    * <code>string transcript = 1;</code>
+   *
+   * @return The bytes for transcript.
    */
   com.google.protobuf.ByteString getTranscriptBytes();
 
@@ -57,6 +61,8 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 

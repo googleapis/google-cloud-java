@@ -32,6 +32,8 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return Whether the error field is set.
    */
   boolean hasError();
   /**
@@ -43,6 +45,8 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return The error.
    */
   com.google.rpc.Status getError();
   /**
@@ -67,6 +71,8 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
    * </code>
+   *
+   * @return Whether the annotationResults field is set.
    */
   boolean hasAnnotationResults();
   /**
@@ -79,6 +85,8 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
    * </code>
+   *
+   * @return The annotationResults.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
       getAnnotationResults();
@@ -107,6 +115,8 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * </pre>
    *
    * <code>string annotation_results_uri = 3;</code>
+   *
+   * @return The annotationResultsUri.
    */
   java.lang.String getAnnotationResultsUri();
   /**
@@ -120,6 +130,8 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * </pre>
    *
    * <code>string annotation_results_uri = 3;</code>
+   *
+   * @return The bytes for annotationResultsUri.
    */
   com.google.protobuf.ByteString getAnnotationResultsUriBytes();
 }

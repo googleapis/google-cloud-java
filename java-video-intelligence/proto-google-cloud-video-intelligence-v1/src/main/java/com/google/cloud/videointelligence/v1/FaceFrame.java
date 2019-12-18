@@ -42,6 +42,12 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FaceFrame();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -131,7 +137,6 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.FaceFrame.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NORMALIZED_BOUNDING_BOXES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.videointelligence.v1.NormalizedBoundingBox>
       normalizedBoundingBoxes_;
@@ -232,6 +237,8 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
@@ -245,6 +252,8 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
@@ -528,7 +537,6 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1.FaceFrame result =
           new com.google.cloud.videointelligence.v1.FaceFrame(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (normalizedBoundingBoxesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           normalizedBoundingBoxes_ =
@@ -544,7 +552,6 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.timeOffset_ = timeOffsetBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1114,6 +1121,8 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
+     *
+     * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
       return timeOffsetBuilder_ != null || timeOffset_ != null;
@@ -1127,6 +1136,8 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
+     *
+     * @return The timeOffset.
      */
     public com.google.protobuf.Duration getTimeOffset() {
       if (timeOffsetBuilder_ == null) {

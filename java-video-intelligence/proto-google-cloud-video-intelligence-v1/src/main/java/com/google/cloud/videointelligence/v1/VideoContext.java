@@ -42,6 +42,12 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -237,7 +243,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.VideoContext.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SEGMENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> segments_;
   /**
@@ -324,6 +329,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
    * </code>
+   *
+   * @return Whether the labelDetectionConfig field is set.
    */
   public boolean hasLabelDetectionConfig() {
     return labelDetectionConfig_ != null;
@@ -337,6 +344,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
    * </code>
+   *
+   * @return The labelDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1.LabelDetectionConfig getLabelDetectionConfig() {
     return labelDetectionConfig_ == null
@@ -371,6 +380,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
+   *
+   * @return Whether the shotChangeDetectionConfig field is set.
    */
   public boolean hasShotChangeDetectionConfig() {
     return shotChangeDetectionConfig_ != null;
@@ -385,6 +396,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
+   *
+   * @return The shotChangeDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
       getShotChangeDetectionConfig() {
@@ -421,6 +434,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return Whether the explicitContentDetectionConfig field is set.
    */
   public boolean hasExplicitContentDetectionConfig() {
     return explicitContentDetectionConfig_ != null;
@@ -435,6 +450,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return The explicitContentDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
       getExplicitContentDetectionConfig() {
@@ -468,6 +485,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+   *
+   * @return Whether the faceDetectionConfig field is set.
    */
   public boolean hasFaceDetectionConfig() {
     return faceDetectionConfig_ != null;
@@ -480,6 +499,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+   *
+   * @return The faceDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig() {
     return faceDetectionConfig_ == null
@@ -513,6 +534,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
+   *
+   * @return Whether the speechTranscriptionConfig field is set.
    */
   public boolean hasSpeechTranscriptionConfig() {
     return speechTranscriptionConfig_ != null;
@@ -527,6 +550,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
+   *
+   * @return The speechTranscriptionConfig.
    */
   public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
       getSpeechTranscriptionConfig() {
@@ -560,6 +585,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   *
+   * @return Whether the textDetectionConfig field is set.
    */
   public boolean hasTextDetectionConfig() {
     return textDetectionConfig_ != null;
@@ -572,6 +599,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   *
+   * @return The textDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1.TextDetectionConfig getTextDetectionConfig() {
     return textDetectionConfig_ == null
@@ -603,6 +632,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   public boolean hasObjectTrackingConfig() {
     return objectTrackingConfig_ != null;
@@ -616,6 +647,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   public com.google.cloud.videointelligence.v1.ObjectTrackingConfig getObjectTrackingConfig() {
     return objectTrackingConfig_ == null
@@ -1031,7 +1064,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1.VideoContext result =
           new com.google.cloud.videointelligence.v1.VideoContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (segmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
@@ -1076,7 +1108,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.objectTrackingConfig_ = objectTrackingConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1615,6 +1646,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
      * </code>
+     *
+     * @return Whether the labelDetectionConfig field is set.
      */
     public boolean hasLabelDetectionConfig() {
       return labelDetectionConfigBuilder_ != null || labelDetectionConfig_ != null;
@@ -1628,6 +1661,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
      * </code>
+     *
+     * @return The labelDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1.LabelDetectionConfig getLabelDetectionConfig() {
       if (labelDetectionConfigBuilder_ == null) {
@@ -1813,6 +1848,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
      * </code>
+     *
+     * @return Whether the shotChangeDetectionConfig field is set.
      */
     public boolean hasShotChangeDetectionConfig() {
       return shotChangeDetectionConfigBuilder_ != null || shotChangeDetectionConfig_ != null;
@@ -1827,6 +1864,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
      * </code>
+     *
+     * @return The shotChangeDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
         getShotChangeDetectionConfig() {
@@ -2020,6 +2059,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
      * </code>
+     *
+     * @return Whether the explicitContentDetectionConfig field is set.
      */
     public boolean hasExplicitContentDetectionConfig() {
       return explicitContentDetectionConfigBuilder_ != null
@@ -2035,6 +2076,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
      * </code>
+     *
+     * @return The explicitContentDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
         getExplicitContentDetectionConfig() {
@@ -2229,6 +2272,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
      * </code>
+     *
+     * @return Whether the faceDetectionConfig field is set.
      */
     public boolean hasFaceDetectionConfig() {
       return faceDetectionConfigBuilder_ != null || faceDetectionConfig_ != null;
@@ -2242,6 +2287,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
      * </code>
+     *
+     * @return The faceDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig() {
       if (faceDetectionConfigBuilder_ == null) {
@@ -2427,6 +2474,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
      * </code>
+     *
+     * @return Whether the speechTranscriptionConfig field is set.
      */
     public boolean hasSpeechTranscriptionConfig() {
       return speechTranscriptionConfigBuilder_ != null || speechTranscriptionConfig_ != null;
@@ -2441,6 +2490,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
      * </code>
+     *
+     * @return The speechTranscriptionConfig.
      */
     public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
         getSpeechTranscriptionConfig() {
@@ -2632,6 +2683,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
      * </code>
+     *
+     * @return Whether the textDetectionConfig field is set.
      */
     public boolean hasTextDetectionConfig() {
       return textDetectionConfigBuilder_ != null || textDetectionConfig_ != null;
@@ -2645,6 +2698,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
      * </code>
+     *
+     * @return The textDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1.TextDetectionConfig getTextDetectionConfig() {
       if (textDetectionConfigBuilder_ == null) {
@@ -2828,6 +2883,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
      * </code>
+     *
+     * @return Whether the objectTrackingConfig field is set.
      */
     public boolean hasObjectTrackingConfig() {
       return objectTrackingConfigBuilder_ != null || objectTrackingConfig_ != null;
@@ -2841,6 +2898,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
      * </code>
+     *
+     * @return The objectTrackingConfig.
      */
     public com.google.cloud.videointelligence.v1.ObjectTrackingConfig getObjectTrackingConfig() {
       if (objectTrackingConfigBuilder_ == null) {

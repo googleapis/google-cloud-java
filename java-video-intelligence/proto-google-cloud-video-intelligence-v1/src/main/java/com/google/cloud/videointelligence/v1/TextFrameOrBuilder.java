@@ -32,6 +32,8 @@ public interface TextFrameOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.NormalizedBoundingPoly rotated_bounding_box = 1;
    * </code>
+   *
+   * @return Whether the rotatedBoundingBox field is set.
    */
   boolean hasRotatedBoundingBox();
   /**
@@ -43,6 +45,8 @@ public interface TextFrameOrBuilder
    *
    * <code>.google.cloud.videointelligence.v1.NormalizedBoundingPoly rotated_bounding_box = 1;
    * </code>
+   *
+   * @return The rotatedBoundingBox.
    */
   com.google.cloud.videointelligence.v1.NormalizedBoundingPoly getRotatedBoundingBox();
   /**
@@ -66,6 +70,8 @@ public interface TextFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -76,6 +82,8 @@ public interface TextFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**

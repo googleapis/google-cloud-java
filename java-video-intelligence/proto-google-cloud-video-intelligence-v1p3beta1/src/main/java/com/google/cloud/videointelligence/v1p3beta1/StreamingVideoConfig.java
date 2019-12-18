@@ -43,6 +43,12 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingVideoConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -284,7 +289,10 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   private int streamingConfigCase_ = 0;
   private java.lang.Object streamingConfig_;
 
-  public enum StreamingConfigCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StreamingConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SHOT_CHANGE_DETECTION_CONFIG(2),
     LABEL_DETECTION_CONFIG(3),
     EXPLICIT_CONTENT_DETECTION_CONFIG(4),
@@ -297,7 +305,11 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     private StreamingConfigCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StreamingConfigCase valueOf(int value) {
       return forNumber(value);
@@ -343,6 +355,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
    */
   public int getFeatureValue() {
     return feature_;
@@ -355,6 +369,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The feature.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
     @SuppressWarnings("deprecation")
@@ -376,6 +392,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;
    * </code>
+   *
+   * @return Whether the shotChangeDetectionConfig field is set.
    */
   public boolean hasShotChangeDetectionConfig() {
     return streamingConfigCase_ == 2;
@@ -390,6 +408,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;
    * </code>
+   *
+   * @return The shotChangeDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig
       getShotChangeDetectionConfig() {
@@ -432,6 +452,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;
    * </code>
+   *
+   * @return Whether the labelDetectionConfig field is set.
    */
   public boolean hasLabelDetectionConfig() {
     return streamingConfigCase_ == 3;
@@ -446,6 +468,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;
    * </code>
+   *
+   * @return The labelDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig
       getLabelDetectionConfig() {
@@ -488,6 +512,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return Whether the explicitContentDetectionConfig field is set.
    */
   public boolean hasExplicitContentDetectionConfig() {
     return streamingConfigCase_ == 4;
@@ -502,6 +528,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return The explicitContentDetectionConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig
       getExplicitContentDetectionConfig() {
@@ -545,6 +573,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;
    * </code>
+   *
+   * @return Whether the objectTrackingConfig field is set.
    */
   public boolean hasObjectTrackingConfig() {
     return streamingConfigCase_ == 5;
@@ -559,6 +589,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;
    * </code>
+   *
+   * @return The objectTrackingConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig
       getObjectTrackingConfig() {
@@ -601,6 +633,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
    * </code>
+   *
+   * @return Whether the automlClassificationConfig field is set.
    */
   public boolean hasAutomlClassificationConfig() {
     return streamingConfigCase_ == 21;
@@ -615,6 +649,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
    * </code>
+   *
+   * @return The automlClassificationConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
       getAutomlClassificationConfig() {
@@ -657,6 +693,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
    * </code>
+   *
+   * @return Whether the automlObjectTrackingConfig field is set.
    */
   public boolean hasAutomlObjectTrackingConfig() {
     return streamingConfigCase_ == 22;
@@ -671,6 +709,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
    * </code>
+   *
+   * @return The automlObjectTrackingConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
       getAutomlObjectTrackingConfig() {
@@ -713,6 +753,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;
    * </code>
+   *
+   * @return Whether the storageConfig field is set.
    */
   public boolean hasStorageConfig() {
     return storageConfig_ != null;
@@ -726,6 +768,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;
    * </code>
+   *
+   * @return The storageConfig.
    */
   public com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig getStorageConfig() {
     return storageConfig_ == null
@@ -1343,6 +1387,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @return The enum numeric value on the wire for feature.
      */
     public int getFeatureValue() {
       return feature_;
@@ -1355,6 +1401,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
       feature_ = value;
@@ -1369,6 +1418,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @return The feature.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
       @SuppressWarnings("deprecation")
@@ -1386,6 +1437,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @param value The feature to set.
+     * @return This builder for chaining.
      */
     public Builder setFeature(com.google.cloud.videointelligence.v1p3beta1.StreamingFeature value) {
       if (value == null) {
@@ -1404,6 +1458,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFeature() {
 
@@ -1428,6 +1484,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;
      * </code>
+     *
+     * @return Whether the shotChangeDetectionConfig field is set.
      */
     public boolean hasShotChangeDetectionConfig() {
       return streamingConfigCase_ == 2;
@@ -1442,6 +1500,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;
      * </code>
+     *
+     * @return The shotChangeDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig
         getShotChangeDetectionConfig() {
@@ -1670,6 +1730,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;
      * </code>
+     *
+     * @return Whether the labelDetectionConfig field is set.
      */
     public boolean hasLabelDetectionConfig() {
       return streamingConfigCase_ == 3;
@@ -1684,6 +1746,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;
      * </code>
+     *
+     * @return The labelDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig
         getLabelDetectionConfig() {
@@ -1910,6 +1974,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;
      * </code>
+     *
+     * @return Whether the explicitContentDetectionConfig field is set.
      */
     public boolean hasExplicitContentDetectionConfig() {
       return streamingConfigCase_ == 4;
@@ -1924,6 +1990,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;
      * </code>
+     *
+     * @return The explicitContentDetectionConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig
         getExplicitContentDetectionConfig() {
@@ -2161,6 +2229,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;
      * </code>
+     *
+     * @return Whether the objectTrackingConfig field is set.
      */
     public boolean hasObjectTrackingConfig() {
       return streamingConfigCase_ == 5;
@@ -2175,6 +2245,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;
      * </code>
+     *
+     * @return The objectTrackingConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig
         getObjectTrackingConfig() {
@@ -2401,6 +2473,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
      * </code>
+     *
+     * @return Whether the automlClassificationConfig field is set.
      */
     public boolean hasAutomlClassificationConfig() {
       return streamingConfigCase_ == 21;
@@ -2415,6 +2489,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;
      * </code>
+     *
+     * @return The automlClassificationConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
         getAutomlClassificationConfig() {
@@ -2646,6 +2722,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
      * </code>
+     *
+     * @return Whether the automlObjectTrackingConfig field is set.
      */
     public boolean hasAutomlObjectTrackingConfig() {
       return streamingConfigCase_ == 22;
@@ -2660,6 +2738,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;
      * </code>
+     *
+     * @return The automlObjectTrackingConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
         getAutomlObjectTrackingConfig() {
@@ -2889,6 +2969,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;
      * </code>
+     *
+     * @return Whether the storageConfig field is set.
      */
     public boolean hasStorageConfig() {
       return storageConfigBuilder_ != null || storageConfig_ != null;
@@ -2902,6 +2984,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;
      * </code>
+     *
+     * @return The storageConfig.
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig getStorageConfig() {
       if (storageConfigBuilder_ == null) {

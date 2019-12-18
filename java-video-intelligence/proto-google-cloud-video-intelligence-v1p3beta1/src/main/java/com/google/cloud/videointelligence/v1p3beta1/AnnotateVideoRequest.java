@@ -46,6 +46,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotateVideoRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,9 +85,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 features_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               features_.add(rawValue);
               break;
@@ -92,9 +98,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   features_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 features_.add(rawValue);
               }
@@ -151,7 +157,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
       }
       this.unknownFields = unknownFields.build();
@@ -174,7 +180,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INPUT_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object inputUri_;
   /**
@@ -194,6 +199,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
@@ -223,6 +230,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
@@ -248,6 +257,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bytes input_content = 6;</code>
+   *
+   * @return The inputContent.
    */
   public com.google.protobuf.ByteString getInputContent() {
     return inputContent_;
@@ -280,6 +291,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the features.
    */
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Feature> getFeaturesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -296,6 +309,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param value The features to add.
    */
   public int getFeaturesCount() {
     return features_.size();
@@ -310,6 +325,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The features at the given index.
    */
   public com.google.cloud.videointelligence.v1p3beta1.Feature getFeatures(int index) {
     return features_converter_.convert(features_.get(index));
@@ -324,6 +342,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for features.
    */
   public java.util.List<java.lang.Integer> getFeaturesValueList() {
     return features_;
@@ -338,6 +358,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of features at the given index.
    */
   public int getFeaturesValue(int index) {
     return features_.get(index);
@@ -355,6 +378,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoContext video_context = 3;</code>
+   *
+   * @return Whether the videoContext field is set.
    */
   public boolean hasVideoContext() {
     return videoContext_ != null;
@@ -367,6 +392,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoContext video_context = 3;</code>
+   *
+   * @return The videoContext.
    */
   public com.google.cloud.videointelligence.v1p3beta1.VideoContext getVideoContext() {
     return videoContext_ == null
@@ -402,6 +429,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputUri.
    */
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
@@ -427,6 +456,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for outputUri.
    */
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
@@ -452,6 +483,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -474,6 +507,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -765,7 +800,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       inputContent_ = com.google.protobuf.ByteString.EMPTY;
 
       features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (videoContextBuilder_ == null) {
         videoContext_ = null;
       } else {
@@ -805,12 +840,11 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest result =
           new com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.inputUri_ = inputUri_;
       result.inputContent_ = inputContent_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.features_ = features_;
       if (videoContextBuilder_ == null) {
@@ -820,7 +854,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       }
       result.outputUri_ = outputUri_;
       result.locationId_ = locationId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -883,7 +916,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (!other.features_.isEmpty()) {
         if (features_.isEmpty()) {
           features_ = other.features_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFeaturesIsMutable();
           features_.addAll(other.features_);
@@ -952,6 +985,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @return The inputUri.
      */
     public java.lang.String getInputUri() {
       java.lang.Object ref = inputUri_;
@@ -981,6 +1016,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @return The bytes for inputUri.
      */
     public com.google.protobuf.ByteString getInputUriBytes() {
       java.lang.Object ref = inputUri_;
@@ -1010,6 +1047,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @param value The inputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setInputUri(java.lang.String value) {
       if (value == null) {
@@ -1037,6 +1077,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputUri() {
 
@@ -1061,6 +1103,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string input_uri = 1;</code>
+     *
+     * @param value The bytes for inputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setInputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1084,6 +1129,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bytes input_content = 6;</code>
+     *
+     * @return The inputContent.
      */
     public com.google.protobuf.ByteString getInputContent() {
       return inputContent_;
@@ -1098,6 +1145,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bytes input_content = 6;</code>
+     *
+     * @param value The inputContent to set.
+     * @return This builder for chaining.
      */
     public Builder setInputContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1118,6 +1168,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bytes input_content = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInputContent() {
 
@@ -1129,9 +1181,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     private java.util.List<java.lang.Integer> features_ = java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         features_ = new java.util.ArrayList<java.lang.Integer>(features_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1144,6 +1196,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the features.
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Feature> getFeaturesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1160,6 +1214,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The count of features.
      */
     public int getFeaturesCount() {
       return features_.size();
@@ -1174,6 +1230,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The features at the given index.
      */
     public com.google.cloud.videointelligence.v1p3beta1.Feature getFeatures(int index) {
       return features_converter_.convert(features_.get(index));
@@ -1188,6 +1247,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The features to set.
+     * @return This builder for chaining.
      */
     public Builder setFeatures(
         int index, com.google.cloud.videointelligence.v1p3beta1.Feature value) {
@@ -1209,6 +1272,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The features to add.
+     * @return This builder for chaining.
      */
     public Builder addFeatures(com.google.cloud.videointelligence.v1p3beta1.Feature value) {
       if (value == null) {
@@ -1229,6 +1295,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The features to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFeatures(
         java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p3beta1.Feature> values) {
@@ -1249,10 +1318,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFeatures() {
       features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1266,6 +1337,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for features.
      */
     public java.util.List<java.lang.Integer> getFeaturesValueList() {
       return java.util.Collections.unmodifiableList(features_);
@@ -1280,6 +1353,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of features at the given index.
      */
     public int getFeaturesValue(int index) {
       return features_.get(index);
@@ -1294,6 +1370,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of features at the given index.
+     * @return This builder for chaining.
      */
     public Builder setFeaturesValue(int index, int value) {
       ensureFeaturesIsMutable();
@@ -1311,6 +1391,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for features to add.
+     * @return This builder for chaining.
      */
     public Builder addFeaturesValue(int value) {
       ensureFeaturesIsMutable();
@@ -1328,6 +1411,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for features to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFeaturesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureFeaturesIsMutable();
@@ -1352,6 +1438,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.VideoContext video_context = 3;</code>
+     *
+     * @return Whether the videoContext field is set.
      */
     public boolean hasVideoContext() {
       return videoContextBuilder_ != null || videoContext_ != null;
@@ -1364,6 +1452,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.VideoContext video_context = 3;</code>
+     *
+     * @return The videoContext.
      */
     public com.google.cloud.videointelligence.v1p3beta1.VideoContext getVideoContext() {
       if (videoContextBuilder_ == null) {
@@ -1538,6 +1628,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The outputUri.
      */
     public java.lang.String getOutputUri() {
       java.lang.Object ref = outputUri_;
@@ -1563,6 +1655,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for outputUri.
      */
     public com.google.protobuf.ByteString getOutputUriBytes() {
       java.lang.Object ref = outputUri_;
@@ -1588,6 +1682,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The outputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputUri(java.lang.String value) {
       if (value == null) {
@@ -1611,6 +1708,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutputUri() {
 
@@ -1631,6 +1730,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for outputUri to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1654,6 +1756,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1676,6 +1780,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -1698,6 +1804,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -1718,6 +1827,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
 
@@ -1735,6 +1846,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

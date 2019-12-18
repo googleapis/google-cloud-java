@@ -151,6 +151,8 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation explicit_annotation = 3;
    * </code>
+   *
+   * @return Whether the explicitAnnotation field is set.
    */
   boolean hasExplicitAnnotation();
   /**
@@ -163,6 +165,8 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation explicit_annotation = 3;
    * </code>
+   *
+   * @return The explicitAnnotation.
    */
   com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation getExplicitAnnotation();
   /**

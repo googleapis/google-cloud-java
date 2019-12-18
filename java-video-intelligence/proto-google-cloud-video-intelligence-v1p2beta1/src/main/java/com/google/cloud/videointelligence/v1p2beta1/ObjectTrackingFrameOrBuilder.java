@@ -33,6 +33,8 @@ public interface ObjectTrackingFrameOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
    * </code>
+   *
+   * @return Whether the normalizedBoundingBox field is set.
    */
   boolean hasNormalizedBoundingBox();
   /**
@@ -45,6 +47,8 @@ public interface ObjectTrackingFrameOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
    * </code>
+   *
+   * @return The normalizedBoundingBox.
    */
   com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox getNormalizedBoundingBox();
   /**
@@ -69,6 +73,8 @@ public interface ObjectTrackingFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
   /**
@@ -79,6 +85,8 @@ public interface ObjectTrackingFrameOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
+   *
+   * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
   /**

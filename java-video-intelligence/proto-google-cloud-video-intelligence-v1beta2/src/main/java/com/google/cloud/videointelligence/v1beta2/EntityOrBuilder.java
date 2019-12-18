@@ -33,6 +33,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string entity_id = 1;</code>
+   *
+   * @return The entityId.
    */
   java.lang.String getEntityId();
   /**
@@ -45,6 +47,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string entity_id = 1;</code>
+   *
+   * @return The bytes for entityId.
    */
   com.google.protobuf.ByteString getEntityIdBytes();
 
@@ -56,6 +60,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -66,6 +72,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -77,6 +85,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -87,6 +97,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string language_code = 3;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

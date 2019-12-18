@@ -33,6 +33,8 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
+   *
+   * @return Whether the videoConfig field is set.
    */
   boolean hasVideoConfig();
   /**
@@ -45,6 +47,8 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
+   *
+   * @return The videoConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig getVideoConfig();
   /**
@@ -75,6 +79,8 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>bytes input_content = 2;</code>
+   *
+   * @return The inputContent.
    */
   com.google.protobuf.ByteString getInputContent();
 

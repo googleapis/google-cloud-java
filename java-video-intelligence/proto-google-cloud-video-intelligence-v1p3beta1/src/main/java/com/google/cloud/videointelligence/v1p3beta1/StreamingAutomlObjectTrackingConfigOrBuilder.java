@@ -32,6 +32,8 @@ public interface StreamingAutomlObjectTrackingConfigOrBuilder
    * </pre>
    *
    * <code>string model_name = 1;</code>
+   *
+   * @return The modelName.
    */
   java.lang.String getModelName();
   /**
@@ -43,6 +45,8 @@ public interface StreamingAutomlObjectTrackingConfigOrBuilder
    * </pre>
    *
    * <code>string model_name = 1;</code>
+   *
+   * @return The bytes for modelName.
    */
   com.google.protobuf.ByteString getModelNameBytes();
 }

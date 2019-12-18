@@ -40,6 +40,12 @@ public final class StreamingObjectTrackingConfig extends com.google.protobuf.Gen
   private StreamingObjectTrackingConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingObjectTrackingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

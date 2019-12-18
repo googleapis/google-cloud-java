@@ -31,6 +31,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
+   *
+   * @return Whether the segment field is set.
    */
   boolean hasSegment();
   /**
@@ -41,6 +43,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
+   *
+   * @return The segment.
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegment();
   /**
@@ -63,6 +67,8 @@ public interface TextSegmentOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 

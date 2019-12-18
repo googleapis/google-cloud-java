@@ -31,6 +31,8 @@ public interface FaceSegmentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1beta2.VideoSegment segment = 1;</code>
+   *
+   * @return Whether the segment field is set.
    */
   boolean hasSegment();
   /**
@@ -41,6 +43,8 @@ public interface FaceSegmentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1beta2.VideoSegment segment = 1;</code>
+   *
+   * @return The segment.
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getSegment();
   /**

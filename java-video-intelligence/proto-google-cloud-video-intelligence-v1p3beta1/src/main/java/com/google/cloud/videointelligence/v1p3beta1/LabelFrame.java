@@ -40,6 +40,12 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
   private LabelFrame() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelFrame();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,6 +133,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return Whether the timeOffset field is set.
    */
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
@@ -141,6 +148,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration time_offset = 1;</code>
+   *
+   * @return The timeOffset.
    */
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
@@ -169,6 +178,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -536,6 +547,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 1;</code>
+     *
+     * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
       return timeOffsetBuilder_ != null || timeOffset_ != null;
@@ -549,6 +562,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 1;</code>
+     *
+     * @return The timeOffset.
      */
     public com.google.protobuf.Duration getTimeOffset() {
       if (timeOffsetBuilder_ == null) {
@@ -718,6 +733,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -730,6 +747,9 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -745,6 +765,8 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

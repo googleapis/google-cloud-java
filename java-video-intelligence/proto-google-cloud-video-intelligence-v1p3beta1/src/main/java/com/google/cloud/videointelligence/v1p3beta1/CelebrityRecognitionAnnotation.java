@@ -43,6 +43,12 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CelebrityRecognitionAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

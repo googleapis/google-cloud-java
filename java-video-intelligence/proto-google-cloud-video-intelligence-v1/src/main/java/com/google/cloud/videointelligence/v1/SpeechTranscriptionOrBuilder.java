@@ -113,6 +113,8 @@ public interface SpeechTranscriptionOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -125,6 +127,8 @@ public interface SpeechTranscriptionOrBuilder
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

@@ -42,6 +42,12 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ObjectTrackingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string model = 1;</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -140,6 +147,8 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string model = 1;</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -483,6 +492,8 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 1;</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -505,6 +516,8 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 1;</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -527,6 +540,9 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 1;</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -547,6 +563,8 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -564,6 +582,9 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 1;</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

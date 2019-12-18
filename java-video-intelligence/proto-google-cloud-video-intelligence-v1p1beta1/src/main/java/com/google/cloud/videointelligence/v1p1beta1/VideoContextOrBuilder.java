@@ -96,6 +96,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig label_detection_config = 2;
    * </code>
+   *
+   * @return Whether the labelDetectionConfig field is set.
    */
   boolean hasLabelDetectionConfig();
   /**
@@ -108,6 +110,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig label_detection_config = 2;
    * </code>
+   *
+   * @return The labelDetectionConfig.
    */
   com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig getLabelDetectionConfig();
   /**
@@ -134,6 +138,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
+   *
+   * @return Whether the shotChangeDetectionConfig field is set.
    */
   boolean hasShotChangeDetectionConfig();
   /**
@@ -146,6 +152,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
+   *
+   * @return The shotChangeDetectionConfig.
    */
   com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig
       getShotChangeDetectionConfig();
@@ -173,6 +181,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return Whether the explicitContentDetectionConfig field is set.
    */
   boolean hasExplicitContentDetectionConfig();
   /**
@@ -185,6 +195,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
+   *
+   * @return The explicitContentDetectionConfig.
    */
   com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig
       getExplicitContentDetectionConfig();
@@ -212,6 +224,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
+   *
+   * @return Whether the speechTranscriptionConfig field is set.
    */
   boolean hasSpeechTranscriptionConfig();
   /**
@@ -224,6 +238,8 @@ public interface VideoContextOrBuilder
    * <code>
    * .google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
+   *
+   * @return The speechTranscriptionConfig.
    */
   com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
       getSpeechTranscriptionConfig();

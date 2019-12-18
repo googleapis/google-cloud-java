@@ -40,6 +40,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The inputUri.
    */
   java.lang.String getInputUri();
   /**
@@ -59,6 +61,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>string input_uri = 1;</code>
+   *
+   * @return The bytes for inputUri.
    */
   com.google.protobuf.ByteString getInputUriBytes();
 
@@ -72,6 +76,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>bytes input_content = 6;</code>
+   *
+   * @return The inputContent.
    */
   com.google.protobuf.ByteString getInputContent();
 
@@ -85,6 +91,8 @@ public interface AnnotateVideoRequestOrBuilder
    * <code>
    * repeated .google.cloud.videointelligence.v1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the features.
    */
   java.util.List<com.google.cloud.videointelligence.v1.Feature> getFeaturesList();
   /**
@@ -97,6 +105,8 @@ public interface AnnotateVideoRequestOrBuilder
    * <code>
    * repeated .google.cloud.videointelligence.v1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The count of features.
    */
   int getFeaturesCount();
   /**
@@ -109,6 +119,9 @@ public interface AnnotateVideoRequestOrBuilder
    * <code>
    * repeated .google.cloud.videointelligence.v1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The features at the given index.
    */
   com.google.cloud.videointelligence.v1.Feature getFeatures(int index);
   /**
@@ -121,6 +134,8 @@ public interface AnnotateVideoRequestOrBuilder
    * <code>
    * repeated .google.cloud.videointelligence.v1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for features.
    */
   java.util.List<java.lang.Integer> getFeaturesValueList();
   /**
@@ -133,6 +148,9 @@ public interface AnnotateVideoRequestOrBuilder
    * <code>
    * repeated .google.cloud.videointelligence.v1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of features at the given index.
    */
   int getFeaturesValue(int index);
 
@@ -144,6 +162,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoContext video_context = 3;</code>
+   *
+   * @return Whether the videoContext field is set.
    */
   boolean hasVideoContext();
   /**
@@ -154,6 +174,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoContext video_context = 3;</code>
+   *
+   * @return The videoContext.
    */
   com.google.cloud.videointelligence.v1.VideoContext getVideoContext();
   /**
@@ -180,6 +202,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputUri.
    */
   java.lang.String getOutputUri();
   /**
@@ -195,6 +219,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for outputUri.
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 
@@ -208,6 +234,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -220,6 +248,8 @@ public interface AnnotateVideoRequestOrBuilder
    * </pre>
    *
    * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

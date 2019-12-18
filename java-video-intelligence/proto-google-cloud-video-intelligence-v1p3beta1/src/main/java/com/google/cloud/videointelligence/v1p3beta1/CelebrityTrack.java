@@ -43,6 +43,12 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CelebrityTrack();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -149,6 +155,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
+     *
+     * @return Whether the celebrity field is set.
      */
     boolean hasCelebrity();
     /**
@@ -159,6 +167,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
+     *
+     * @return The celebrity.
      */
     com.google.cloud.videointelligence.v1p3beta1.Celebrity getCelebrity();
     /**
@@ -180,6 +190,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return The confidence.
      */
     float getConfidence();
   }
@@ -206,6 +218,12 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     private RecognizedCelebrity() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RecognizedCelebrity();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -218,7 +236,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -296,6 +313,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
+     *
+     * @return Whether the celebrity field is set.
      */
     public boolean hasCelebrity() {
       return celebrity_ != null;
@@ -308,6 +327,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
+     *
+     * @return The celebrity.
      */
     public com.google.cloud.videointelligence.v1p3beta1.Celebrity getCelebrity() {
       return celebrity_ == null
@@ -337,6 +358,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -733,6 +756,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
+       *
+       * @return Whether the celebrity field is set.
        */
       public boolean hasCelebrity() {
         return celebrityBuilder_ != null || celebrity_ != null;
@@ -745,6 +770,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
+       *
+       * @return The celebrity.
        */
       public com.google.cloud.videointelligence.v1p3beta1.Celebrity getCelebrity() {
         if (celebrityBuilder_ == null) {
@@ -911,6 +938,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence = 2;</code>
+       *
+       * @return The confidence.
        */
       public float getConfidence() {
         return confidence_;
@@ -923,6 +952,9 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence = 2;</code>
+       *
+       * @param value The confidence to set.
+       * @return This builder for chaining.
        */
       public Builder setConfidence(float value) {
 
@@ -938,6 +970,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearConfidence() {
 
@@ -1003,7 +1037,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int CELEBRITIES_FIELD_NUMBER = 1;
   private java.util.List<
           com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity>
@@ -1097,6 +1130,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
+   *
+   * @return Whether the faceTrack field is set.
    */
   public boolean hasFaceTrack() {
     return faceTrack_ != null;
@@ -1109,6 +1144,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
+   *
+   * @return The faceTrack.
    */
   public com.google.cloud.videointelligence.v1p3beta1.Track getFaceTrack() {
     return faceTrack_ == null
@@ -1392,7 +1429,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack result =
           new com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (celebritiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           celebrities_ = java.util.Collections.unmodifiableList(celebrities_);
@@ -1407,7 +1443,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.faceTrack_ = faceTrackBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1957,6 +1992,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
+     *
+     * @return Whether the faceTrack field is set.
      */
     public boolean hasFaceTrack() {
       return faceTrackBuilder_ != null || faceTrack_ != null;
@@ -1969,6 +2006,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
+     *
+     * @return The faceTrack.
      */
     public com.google.cloud.videointelligence.v1p3beta1.Track getFaceTrack() {
       if (faceTrackBuilder_ == null) {
