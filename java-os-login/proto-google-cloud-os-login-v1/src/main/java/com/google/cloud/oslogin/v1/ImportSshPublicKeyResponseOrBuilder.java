@@ -31,6 +31,8 @@ public interface ImportSshPublicKeyResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
+   *
+   * @return Whether the loginProfile field is set.
    */
   boolean hasLoginProfile();
   /**
@@ -41,6 +43,8 @@ public interface ImportSshPublicKeyResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
+   *
+   * @return The loginProfile.
    */
   com.google.cloud.oslogin.v1.LoginProfile getLoginProfile();
   /**

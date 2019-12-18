@@ -33,6 +33,8 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * <code>
    * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the sshPublicKey field is set.
    */
   boolean hasSshPublicKey();
   /**
@@ -70,6 +76,8 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * <code>
    * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The sshPublicKey.
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
   /**
@@ -93,6 +101,8 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 3;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -103,6 +113,8 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 3;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 }

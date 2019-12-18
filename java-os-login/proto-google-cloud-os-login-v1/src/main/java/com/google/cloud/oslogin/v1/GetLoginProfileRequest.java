@@ -44,6 +44,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetLoginProfileRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -156,6 +163,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -179,6 +188,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -199,6 +210,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -222,6 +235,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string system_id = 3;</code>
+   *
+   * @return The systemId.
    */
   public java.lang.String getSystemId() {
     java.lang.Object ref = systemId_;
@@ -242,6 +257,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string system_id = 3;</code>
+   *
+   * @return The bytes for systemId.
    */
   public com.google.protobuf.ByteString getSystemIdBytes() {
     java.lang.Object ref = systemId_;
@@ -616,6 +633,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -638,6 +657,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -660,6 +681,9 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -680,6 +704,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -697,6 +723,9 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -718,6 +747,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -738,6 +769,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -758,6 +791,9 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -776,6 +812,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -791,6 +829,9 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -812,6 +853,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string system_id = 3;</code>
+     *
+     * @return The systemId.
      */
     public java.lang.String getSystemId() {
       java.lang.Object ref = systemId_;
@@ -832,6 +875,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string system_id = 3;</code>
+     *
+     * @return The bytes for systemId.
      */
     public com.google.protobuf.ByteString getSystemIdBytes() {
       java.lang.Object ref = systemId_;
@@ -852,6 +897,9 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string system_id = 3;</code>
+     *
+     * @param value The systemId to set.
+     * @return This builder for chaining.
      */
     public Builder setSystemId(java.lang.String value) {
       if (value == null) {
@@ -870,6 +918,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string system_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSystemId() {
 
@@ -885,6 +935,9 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string system_id = 3;</code>
+     *
+     * @param value The bytes for systemId to set.
+     * @return This builder for chaining.
      */
     public Builder setSystemIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

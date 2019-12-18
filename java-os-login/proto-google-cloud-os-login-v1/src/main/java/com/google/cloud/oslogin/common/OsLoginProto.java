@@ -110,12 +110,20 @@ public final class OsLoginProto {
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static OperatingSystemType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static OperatingSystemType forNumber(int value) {
       switch (value) {
         case 0:
@@ -189,6 +197,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>bool primary = 1;</code>
+     *
+     * @return The primary.
      */
     boolean getPrimary();
 
@@ -200,6 +210,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string username = 2;</code>
+     *
+     * @return The username.
      */
     java.lang.String getUsername();
     /**
@@ -210,6 +222,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string username = 2;</code>
+     *
+     * @return The bytes for username.
      */
     com.google.protobuf.ByteString getUsernameBytes();
 
@@ -221,6 +235,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>int64 uid = 3;</code>
+     *
+     * @return The uid.
      */
     long getUid();
 
@@ -232,6 +248,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>int64 gid = 4;</code>
+     *
+     * @return The gid.
      */
     long getGid();
 
@@ -243,6 +261,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string home_directory = 5;</code>
+     *
+     * @return The homeDirectory.
      */
     java.lang.String getHomeDirectory();
     /**
@@ -253,6 +273,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string home_directory = 5;</code>
+     *
+     * @return The bytes for homeDirectory.
      */
     com.google.protobuf.ByteString getHomeDirectoryBytes();
 
@@ -264,6 +286,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string shell = 6;</code>
+     *
+     * @return The shell.
      */
     java.lang.String getShell();
     /**
@@ -274,6 +298,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string shell = 6;</code>
+     *
+     * @return The bytes for shell.
      */
     com.google.protobuf.ByteString getShellBytes();
 
@@ -285,6 +311,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string gecos = 7;</code>
+     *
+     * @return The gecos.
      */
     java.lang.String getGecos();
     /**
@@ -295,6 +323,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string gecos = 7;</code>
+     *
+     * @return The bytes for gecos.
      */
     com.google.protobuf.ByteString getGecosBytes();
 
@@ -307,6 +337,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string system_id = 8;</code>
+     *
+     * @return The systemId.
      */
     java.lang.String getSystemId();
     /**
@@ -318,6 +350,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string system_id = 8;</code>
+     *
+     * @return The bytes for systemId.
      */
     com.google.protobuf.ByteString getSystemIdBytes();
 
@@ -329,6 +363,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The accountId.
      */
     java.lang.String getAccountId();
     /**
@@ -339,6 +375,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for accountId.
      */
     com.google.protobuf.ByteString getAccountIdBytes();
 
@@ -350,6 +388,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     *
+     * @return The enum numeric value on the wire for operatingSystemType.
      */
     int getOperatingSystemTypeValue();
     /**
@@ -360,6 +400,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     *
+     * @return The operatingSystemType.
      */
     com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType getOperatingSystemType();
 
@@ -371,6 +413,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -381,6 +425,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
   }
@@ -415,6 +461,12 @@ public final class OsLoginProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PosixAccount();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -427,7 +479,6 @@ public final class OsLoginProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -553,6 +604,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>bool primary = 1;</code>
+     *
+     * @return The primary.
      */
     public boolean getPrimary() {
       return primary_;
@@ -568,6 +621,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string username = 2;</code>
+     *
+     * @return The username.
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -588,6 +643,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string username = 2;</code>
+     *
+     * @return The bytes for username.
      */
     public com.google.protobuf.ByteString getUsernameBytes() {
       java.lang.Object ref = username_;
@@ -611,6 +668,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>int64 uid = 3;</code>
+     *
+     * @return The uid.
      */
     public long getUid() {
       return uid_;
@@ -626,6 +685,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>int64 gid = 4;</code>
+     *
+     * @return The gid.
      */
     public long getGid() {
       return gid_;
@@ -641,6 +702,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string home_directory = 5;</code>
+     *
+     * @return The homeDirectory.
      */
     public java.lang.String getHomeDirectory() {
       java.lang.Object ref = homeDirectory_;
@@ -661,6 +724,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string home_directory = 5;</code>
+     *
+     * @return The bytes for homeDirectory.
      */
     public com.google.protobuf.ByteString getHomeDirectoryBytes() {
       java.lang.Object ref = homeDirectory_;
@@ -684,6 +749,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string shell = 6;</code>
+     *
+     * @return The shell.
      */
     public java.lang.String getShell() {
       java.lang.Object ref = shell_;
@@ -704,6 +771,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string shell = 6;</code>
+     *
+     * @return The bytes for shell.
      */
     public com.google.protobuf.ByteString getShellBytes() {
       java.lang.Object ref = shell_;
@@ -727,6 +796,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string gecos = 7;</code>
+     *
+     * @return The gecos.
      */
     public java.lang.String getGecos() {
       java.lang.Object ref = gecos_;
@@ -747,6 +818,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string gecos = 7;</code>
+     *
+     * @return The bytes for gecos.
      */
     public com.google.protobuf.ByteString getGecosBytes() {
       java.lang.Object ref = gecos_;
@@ -771,6 +844,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string system_id = 8;</code>
+     *
+     * @return The systemId.
      */
     public java.lang.String getSystemId() {
       java.lang.Object ref = systemId_;
@@ -792,6 +867,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string system_id = 8;</code>
+     *
+     * @return The bytes for systemId.
      */
     public com.google.protobuf.ByteString getSystemIdBytes() {
       java.lang.Object ref = systemId_;
@@ -815,6 +892,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The accountId.
      */
     public java.lang.String getAccountId() {
       java.lang.Object ref = accountId_;
@@ -835,6 +914,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for accountId.
      */
     public com.google.protobuf.ByteString getAccountIdBytes() {
       java.lang.Object ref = accountId_;
@@ -858,6 +939,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     *
+     * @return The enum numeric value on the wire for operatingSystemType.
      */
     public int getOperatingSystemTypeValue() {
       return operatingSystemType_;
@@ -870,6 +953,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     *
+     * @return The operatingSystemType.
      */
     public com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
         getOperatingSystemType() {
@@ -892,6 +977,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -912,6 +999,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1419,6 +1508,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>bool primary = 1;</code>
+       *
+       * @return The primary.
        */
       public boolean getPrimary() {
         return primary_;
@@ -1431,6 +1522,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>bool primary = 1;</code>
+       *
+       * @param value The primary to set.
+       * @return This builder for chaining.
        */
       public Builder setPrimary(boolean value) {
 
@@ -1446,6 +1540,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>bool primary = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrimary() {
 
@@ -1463,6 +1559,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string username = 2;</code>
+       *
+       * @return The username.
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -1483,6 +1581,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string username = 2;</code>
+       *
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -1503,6 +1603,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string username = 2;</code>
+       *
+       * @param value The username to set.
+       * @return This builder for chaining.
        */
       public Builder setUsername(java.lang.String value) {
         if (value == null) {
@@ -1521,6 +1624,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string username = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearUsername() {
 
@@ -1536,6 +1641,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string username = 2;</code>
+       *
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
        */
       public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1557,6 +1665,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 uid = 3;</code>
+       *
+       * @return The uid.
        */
       public long getUid() {
         return uid_;
@@ -1569,6 +1679,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 uid = 3;</code>
+       *
+       * @param value The uid to set.
+       * @return This builder for chaining.
        */
       public Builder setUid(long value) {
 
@@ -1584,6 +1697,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 uid = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearUid() {
 
@@ -1601,6 +1716,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 gid = 4;</code>
+       *
+       * @return The gid.
        */
       public long getGid() {
         return gid_;
@@ -1613,6 +1730,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 gid = 4;</code>
+       *
+       * @param value The gid to set.
+       * @return This builder for chaining.
        */
       public Builder setGid(long value) {
 
@@ -1628,6 +1748,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 gid = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGid() {
 
@@ -1645,6 +1767,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string home_directory = 5;</code>
+       *
+       * @return The homeDirectory.
        */
       public java.lang.String getHomeDirectory() {
         java.lang.Object ref = homeDirectory_;
@@ -1665,6 +1789,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string home_directory = 5;</code>
+       *
+       * @return The bytes for homeDirectory.
        */
       public com.google.protobuf.ByteString getHomeDirectoryBytes() {
         java.lang.Object ref = homeDirectory_;
@@ -1685,6 +1811,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string home_directory = 5;</code>
+       *
+       * @param value The homeDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setHomeDirectory(java.lang.String value) {
         if (value == null) {
@@ -1703,6 +1832,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string home_directory = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearHomeDirectory() {
 
@@ -1718,6 +1849,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string home_directory = 5;</code>
+       *
+       * @param value The bytes for homeDirectory to set.
+       * @return This builder for chaining.
        */
       public Builder setHomeDirectoryBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1739,6 +1873,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string shell = 6;</code>
+       *
+       * @return The shell.
        */
       public java.lang.String getShell() {
         java.lang.Object ref = shell_;
@@ -1759,6 +1895,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string shell = 6;</code>
+       *
+       * @return The bytes for shell.
        */
       public com.google.protobuf.ByteString getShellBytes() {
         java.lang.Object ref = shell_;
@@ -1779,6 +1917,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string shell = 6;</code>
+       *
+       * @param value The shell to set.
+       * @return This builder for chaining.
        */
       public Builder setShell(java.lang.String value) {
         if (value == null) {
@@ -1797,6 +1938,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string shell = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearShell() {
 
@@ -1812,6 +1955,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string shell = 6;</code>
+       *
+       * @param value The bytes for shell to set.
+       * @return This builder for chaining.
        */
       public Builder setShellBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1833,6 +1979,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string gecos = 7;</code>
+       *
+       * @return The gecos.
        */
       public java.lang.String getGecos() {
         java.lang.Object ref = gecos_;
@@ -1853,6 +2001,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string gecos = 7;</code>
+       *
+       * @return The bytes for gecos.
        */
       public com.google.protobuf.ByteString getGecosBytes() {
         java.lang.Object ref = gecos_;
@@ -1873,6 +2023,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string gecos = 7;</code>
+       *
+       * @param value The gecos to set.
+       * @return This builder for chaining.
        */
       public Builder setGecos(java.lang.String value) {
         if (value == null) {
@@ -1891,6 +2044,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string gecos = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGecos() {
 
@@ -1906,6 +2061,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string gecos = 7;</code>
+       *
+       * @param value The bytes for gecos to set.
+       * @return This builder for chaining.
        */
       public Builder setGecosBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1928,6 +2086,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string system_id = 8;</code>
+       *
+       * @return The systemId.
        */
       public java.lang.String getSystemId() {
         java.lang.Object ref = systemId_;
@@ -1949,6 +2109,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string system_id = 8;</code>
+       *
+       * @return The bytes for systemId.
        */
       public com.google.protobuf.ByteString getSystemIdBytes() {
         java.lang.Object ref = systemId_;
@@ -1970,6 +2132,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string system_id = 8;</code>
+       *
+       * @param value The systemId to set.
+       * @return This builder for chaining.
        */
       public Builder setSystemId(java.lang.String value) {
         if (value == null) {
@@ -1989,6 +2154,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string system_id = 8;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSystemId() {
 
@@ -2005,6 +2172,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string system_id = 8;</code>
+       *
+       * @param value The bytes for systemId to set.
+       * @return This builder for chaining.
        */
       public Builder setSystemIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2026,6 +2196,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The accountId.
        */
       public java.lang.String getAccountId() {
         java.lang.Object ref = accountId_;
@@ -2046,6 +2218,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for accountId.
        */
       public com.google.protobuf.ByteString getAccountIdBytes() {
         java.lang.Object ref = accountId_;
@@ -2066,6 +2240,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The accountId to set.
+       * @return This builder for chaining.
        */
       public Builder setAccountId(java.lang.String value) {
         if (value == null) {
@@ -2084,6 +2261,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAccountId() {
 
@@ -2099,6 +2278,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for accountId to set.
+       * @return This builder for chaining.
        */
       public Builder setAccountIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2120,6 +2302,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       *
+       * @return The enum numeric value on the wire for operatingSystemType.
        */
       public int getOperatingSystemTypeValue() {
         return operatingSystemType_;
@@ -2132,6 +2316,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       *
+       * @param value The enum numeric value on the wire for operatingSystemType to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingSystemTypeValue(int value) {
         operatingSystemType_ = value;
@@ -2146,6 +2333,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       *
+       * @return The operatingSystemType.
        */
       public com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
           getOperatingSystemType() {
@@ -2165,6 +2354,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       *
+       * @param value The operatingSystemType to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingSystemType(
           com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType value) {
@@ -2184,6 +2376,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearOperatingSystemType() {
 
@@ -2201,6 +2395,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2221,6 +2417,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -2241,6 +2439,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -2259,6 +2460,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -2274,6 +2477,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2353,6 +2559,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The key.
      */
     java.lang.String getKey();
     /**
@@ -2365,6 +2573,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString getKeyBytes();
 
@@ -2376,6 +2586,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>int64 expiration_time_usec = 2;</code>
+     *
+     * @return The expirationTimeUsec.
      */
     long getExpirationTimeUsec();
 
@@ -2387,6 +2599,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The fingerprint.
      */
     java.lang.String getFingerprint();
     /**
@@ -2397,6 +2611,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for fingerprint.
      */
     com.google.protobuf.ByteString getFingerprintBytes();
 
@@ -2408,6 +2624,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -2418,6 +2636,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
   }
@@ -2447,6 +2667,12 @@ public final class OsLoginProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SshPublicKey();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2459,7 +2685,6 @@ public final class OsLoginProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2542,6 +2767,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The key.
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -2564,6 +2791,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The bytes for key.
      */
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
@@ -2587,6 +2816,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>int64 expiration_time_usec = 2;</code>
+     *
+     * @return The expirationTimeUsec.
      */
     public long getExpirationTimeUsec() {
       return expirationTimeUsec_;
@@ -2602,6 +2833,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The fingerprint.
      */
     public java.lang.String getFingerprint() {
       java.lang.Object ref = fingerprint_;
@@ -2622,6 +2855,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for fingerprint.
      */
     public com.google.protobuf.ByteString getFingerprintBytes() {
       java.lang.Object ref = fingerprint_;
@@ -2645,6 +2880,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2665,6 +2902,8 @@ public final class OsLoginProto {
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -3059,6 +3298,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -3081,6 +3322,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
@@ -3103,6 +3346,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(java.lang.String value) {
         if (value == null) {
@@ -3123,6 +3369,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
 
@@ -3140,6 +3388,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3161,6 +3412,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 expiration_time_usec = 2;</code>
+       *
+       * @return The expirationTimeUsec.
        */
       public long getExpirationTimeUsec() {
         return expirationTimeUsec_;
@@ -3173,6 +3426,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 expiration_time_usec = 2;</code>
+       *
+       * @param value The expirationTimeUsec to set.
+       * @return This builder for chaining.
        */
       public Builder setExpirationTimeUsec(long value) {
 
@@ -3188,6 +3444,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>int64 expiration_time_usec = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearExpirationTimeUsec() {
 
@@ -3205,6 +3463,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The fingerprint.
        */
       public java.lang.String getFingerprint() {
         java.lang.Object ref = fingerprint_;
@@ -3225,6 +3485,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for fingerprint.
        */
       public com.google.protobuf.ByteString getFingerprintBytes() {
         java.lang.Object ref = fingerprint_;
@@ -3245,6 +3507,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The fingerprint to set.
+       * @return This builder for chaining.
        */
       public Builder setFingerprint(java.lang.String value) {
         if (value == null) {
@@ -3263,6 +3528,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFingerprint() {
 
@@ -3278,6 +3545,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for fingerprint to set.
+       * @return This builder for chaining.
        */
       public Builder setFingerprintBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3299,6 +3569,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3319,6 +3591,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -3339,6 +3613,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -3357,6 +3634,8 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -3372,6 +3651,9 @@ public final class OsLoginProto {
        * </pre>
        *
        * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3479,21 +3761,13 @@ public final class OsLoginProto {
           + "OsLogin\\Common\352A+\n\033oslogin.googleapis.co"
           + "m/User\022\014users/{user}b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.FieldBehaviorProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+            });
     internal_static_google_cloud_oslogin_common_PosixAccount_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable =

@@ -43,6 +43,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImportSshPublicKeyRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +148,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -165,6 +172,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -190,6 +199,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * <code>
    * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the sshPublicKey field is set.
    */
   public boolean hasSshPublicKey() {
     return sshPublicKey_ != null;
@@ -204,6 +215,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * <code>
    * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The sshPublicKey.
    */
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey() {
     return sshPublicKey_ == null
@@ -236,6 +249,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string project_id = 3;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -256,6 +271,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string project_id = 3;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -643,6 +660,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -665,6 +684,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -687,6 +708,9 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -707,6 +731,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -724,6 +750,9 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -752,6 +781,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the sshPublicKey field is set.
      */
     public boolean hasSshPublicKey() {
       return sshPublicKeyBuilder_ != null || sshPublicKey_ != null;
@@ -766,6 +797,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * <code>
      * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The sshPublicKey.
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey() {
       if (sshPublicKeyBuilder_ == null) {
@@ -949,6 +982,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string project_id = 3;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -969,6 +1004,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string project_id = 3;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -989,6 +1026,9 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string project_id = 3;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1007,6 +1047,8 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string project_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1022,6 +1064,9 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string project_id = 3;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

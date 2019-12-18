@@ -33,6 +33,8 @@ public interface GetLoginProfileRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface GetLoginProfileRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface GetLoginProfileRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -66,6 +72,8 @@ public interface GetLoginProfileRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -77,6 +85,8 @@ public interface GetLoginProfileRequestOrBuilder
    * </pre>
    *
    * <code>string system_id = 3;</code>
+   *
+   * @return The systemId.
    */
   java.lang.String getSystemId();
   /**
@@ -87,6 +97,8 @@ public interface GetLoginProfileRequestOrBuilder
    * </pre>
    *
    * <code>string system_id = 3;</code>
+   *
+   * @return The bytes for systemId.
    */
   com.google.protobuf.ByteString getSystemIdBytes();
 }

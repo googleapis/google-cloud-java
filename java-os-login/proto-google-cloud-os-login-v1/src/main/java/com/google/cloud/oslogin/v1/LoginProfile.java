@@ -44,6 +44,12 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LoginProfile();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,11 +82,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 posixAccounts_ =
                     new java.util.ArrayList<
                         com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               posixAccounts_.add(
                   input.readMessage(
@@ -90,11 +96,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 sshPublicKeys_ =
                     com.google.protobuf.MapField.newMapField(
                         SshPublicKeysDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
@@ -121,7 +127,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         posixAccounts_ = java.util.Collections.unmodifiableList(posixAccounts_);
       }
       this.unknownFields = unknownFields.build();
@@ -155,7 +161,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.oslogin.v1.LoginProfile.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -166,6 +171,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -186,6 +193,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -637,7 +646,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
 
       if (posixAccountsBuilder_ == null) {
         posixAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         posixAccountsBuilder_.clear();
       }
@@ -670,12 +679,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.oslogin.v1.LoginProfile result =
           new com.google.cloud.oslogin.v1.LoginProfile(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (posixAccountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           posixAccounts_ = java.util.Collections.unmodifiableList(posixAccounts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.posixAccounts_ = posixAccounts_;
       } else {
@@ -683,7 +691,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       result.sshPublicKeys_ = internalGetSshPublicKeys();
       result.sshPublicKeys_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -741,7 +748,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         if (!other.posixAccounts_.isEmpty()) {
           if (posixAccounts_.isEmpty()) {
             posixAccounts_ = other.posixAccounts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePosixAccountsIsMutable();
             posixAccounts_.addAll(other.posixAccounts_);
@@ -754,7 +761,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             posixAccountsBuilder_.dispose();
             posixAccountsBuilder_ = null;
             posixAccounts_ = other.posixAccounts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             posixAccountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPosixAccountsFieldBuilder()
@@ -805,6 +812,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -825,6 +834,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -845,6 +856,9 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -863,6 +877,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -878,6 +894,9 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -894,11 +913,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         posixAccounts_ = java.util.Collections.emptyList();
 
     private void ensurePosixAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         posixAccounts_ =
             new java.util.ArrayList<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>(
                 posixAccounts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1121,7 +1140,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPosixAccounts() {
       if (posixAccountsBuilder_ == null) {
         posixAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         posixAccountsBuilder_.clear();
@@ -1252,7 +1271,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder,
                 com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>(
                 posixAccounts_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         posixAccounts_ = null;

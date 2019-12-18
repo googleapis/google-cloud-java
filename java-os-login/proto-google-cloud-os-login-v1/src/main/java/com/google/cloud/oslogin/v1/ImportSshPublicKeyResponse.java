@@ -40,6 +40,12 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
   private ImportSshPublicKeyResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImportSshPublicKeyResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
+   *
+   * @return Whether the loginProfile field is set.
    */
   public boolean hasLoginProfile() {
     return loginProfile_ != null;
@@ -135,6 +142,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
+   *
+   * @return The loginProfile.
    */
   public com.google.cloud.oslogin.v1.LoginProfile getLoginProfile() {
     return loginProfile_ == null
@@ -499,6 +508,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
+     *
+     * @return Whether the loginProfile field is set.
      */
     public boolean hasLoginProfile() {
       return loginProfileBuilder_ != null || loginProfile_ != null;
@@ -511,6 +522,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
+     *
+     * @return The loginProfile.
      */
     public com.google.cloud.oslogin.v1.LoginProfile getLoginProfile() {
       if (loginProfileBuilder_ == null) {
