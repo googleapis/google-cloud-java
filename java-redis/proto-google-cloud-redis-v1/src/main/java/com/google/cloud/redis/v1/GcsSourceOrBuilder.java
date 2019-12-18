@@ -31,6 +31,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -41,6 +43,8 @@ public interface GcsSourceOrBuilder
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 }

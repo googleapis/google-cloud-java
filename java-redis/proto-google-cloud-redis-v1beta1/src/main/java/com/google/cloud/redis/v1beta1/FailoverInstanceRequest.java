@@ -43,6 +43,12 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FailoverInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -196,12 +201,20 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DataProtectionMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DataProtectionMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -278,6 +291,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -302,6 +317,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -328,6 +345,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for dataProtectionMode.
    */
   public int getDataProtectionModeValue() {
     return dataProtectionMode_;
@@ -343,6 +362,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The dataProtectionMode.
    */
   public com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode
       getDataProtectionMode() {
@@ -708,6 +729,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -732,6 +755,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -756,6 +781,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -778,6 +806,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -797,6 +827,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -821,6 +854,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for dataProtectionMode.
      */
     public int getDataProtectionModeValue() {
       return dataProtectionMode_;
@@ -836,6 +871,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for dataProtectionMode to set.
+     * @return This builder for chaining.
      */
     public Builder setDataProtectionModeValue(int value) {
       dataProtectionMode_ = value;
@@ -853,6 +891,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The dataProtectionMode.
      */
     public com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode
         getDataProtectionMode() {
@@ -875,6 +915,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The dataProtectionMode to set.
+     * @return This builder for chaining.
      */
     public Builder setDataProtectionMode(
         com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode value) {
@@ -897,6 +940,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataProtectionMode() {
 

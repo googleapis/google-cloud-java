@@ -38,6 +38,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -55,6 +57,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -66,6 +70,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -76,6 +82,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -145,6 +153,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -159,6 +169,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 
@@ -172,6 +184,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The alternativeLocationId.
    */
   java.lang.String getAlternativeLocationId();
   /**
@@ -184,6 +198,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for alternativeLocationId.
    */
   com.google.protobuf.ByteString getAlternativeLocationIdBytes();
 
@@ -200,6 +216,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The redisVersion.
    */
   java.lang.String getRedisVersion();
   /**
@@ -215,6 +233,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for redisVersion.
    */
   com.google.protobuf.ByteString getRedisVersionBytes();
 
@@ -229,6 +249,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
   /**
@@ -242,6 +264,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for reservedIpRange.
    */
   com.google.protobuf.ByteString getReservedIpRangeBytes();
 
@@ -254,6 +278,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The host.
    */
   java.lang.String getHost();
   /**
@@ -265,6 +291,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for host.
    */
   com.google.protobuf.ByteString getHostBytes();
 
@@ -276,6 +304,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>int32 port = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The port.
    */
   int getPort();
 
@@ -291,6 +321,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The currentLocationId.
    */
   java.lang.String getCurrentLocationId();
   /**
@@ -305,6 +337,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for currentLocationId.
    */
   com.google.protobuf.ByteString getCurrentLocationIdBytes();
 
@@ -317,6 +351,8 @@ public interface InstanceOrBuilder
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -328,6 +364,8 @@ public interface InstanceOrBuilder
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -352,6 +390,8 @@ public interface InstanceOrBuilder
    * <code>
    * .google.cloud.redis.v1beta1.Instance.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -364,6 +404,8 @@ public interface InstanceOrBuilder
    * <code>
    * .google.cloud.redis.v1beta1.Instance.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   com.google.cloud.redis.v1beta1.Instance.State getState();
 
@@ -376,6 +418,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string status_message = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
   /**
@@ -387,6 +431,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string status_message = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
 
@@ -504,6 +550,8 @@ public interface InstanceOrBuilder
    * <code>
    * .google.cloud.redis.v1beta1.Instance.Tier tier = 17 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
   /**
@@ -516,6 +564,8 @@ public interface InstanceOrBuilder
    * <code>
    * .google.cloud.redis.v1beta1.Instance.Tier tier = 17 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tier.
    */
   com.google.cloud.redis.v1beta1.Instance.Tier getTier();
 
@@ -527,6 +577,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>int32 memory_size_gb = 18 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The memorySizeGb.
    */
   int getMemorySizeGb();
 
@@ -541,6 +593,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string authorized_network = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The authorizedNetwork.
    */
   java.lang.String getAuthorizedNetwork();
   /**
@@ -554,6 +608,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string authorized_network = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for authorizedNetwork.
    */
   com.google.protobuf.ByteString getAuthorizedNetworkBytes();
 
@@ -569,6 +625,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string persistence_iam_identity = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The persistenceIamIdentity.
    */
   java.lang.String getPersistenceIamIdentity();
   /**
@@ -583,6 +641,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string persistence_iam_identity = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for persistenceIamIdentity.
    */
   com.google.protobuf.ByteString getPersistenceIamIdentityBytes();
 }

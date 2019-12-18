@@ -123,6 +123,8 @@ public interface ListInstancesResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -134,6 +136,8 @@ public interface ListInstancesResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 
@@ -145,6 +149,8 @@ public interface ListInstancesResponseOrBuilder
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
   /**
@@ -155,6 +161,8 @@ public interface ListInstancesResponseOrBuilder
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @return The count of unreachable.
    */
   int getUnreachableCount();
   /**
@@ -165,6 +173,9 @@ public interface ListInstancesResponseOrBuilder
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
   /**
@@ -175,6 +186,9 @@ public interface ListInstancesResponseOrBuilder
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
    */
   com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

@@ -44,6 +44,12 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListInstancesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -88,9 +94,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unreachable_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               unreachable_.add(s);
               break;
@@ -112,7 +118,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instances_ = java.util.Collections.unmodifiableList(instances_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         unreachable_ = unreachable_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -135,7 +141,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.redis.v1.ListInstancesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INSTANCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.redis.v1.Instance> instances_;
   /**
@@ -251,6 +256,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -272,6 +279,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -295,6 +304,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @return A list containing the unreachable.
    */
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
@@ -307,6 +318,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @return The count of unreachable.
    */
   public int getUnreachableCount() {
     return unreachable_.size();
@@ -319,6 +332,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
    */
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
@@ -331,6 +347,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
    */
   public com.google.protobuf.ByteString getUnreachableBytes(int index) {
     return unreachable_.getByteString(index);
@@ -578,7 +597,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       nextPageToken_ = "";
 
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -607,7 +626,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.redis.v1.ListInstancesResponse result =
           new com.google.cloud.redis.v1.ListInstancesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (instancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -618,12 +636,11 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         result.instances_ = instancesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.unreachable_ = unreachable_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -708,7 +725,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -1248,6 +1265,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1269,6 +1288,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1290,6 +1311,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1309,6 +1333,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1325,6 +1351,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1341,9 +1370,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1354,6 +1383,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
       return unreachable_.getUnmodifiableView();
@@ -1366,6 +1397,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @return The count of unreachable.
      */
     public int getUnreachableCount() {
       return unreachable_.size();
@@ -1378,6 +1411,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unreachable at the given index.
      */
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
@@ -1390,6 +1426,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
      */
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
@@ -1402,6 +1441,10 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The unreachable to set.
+     * @return This builder for chaining.
      */
     public Builder setUnreachable(int index, java.lang.String value) {
       if (value == null) {
@@ -1420,6 +1463,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The unreachable to add.
+     * @return This builder for chaining.
      */
     public Builder addUnreachable(java.lang.String value) {
       if (value == null) {
@@ -1438,6 +1484,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @param values The unreachable to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
@@ -1453,10 +1502,12 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1468,6 +1519,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The bytes of the unreachable to add.
+     * @return This builder for chaining.
      */
     public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -35,6 +35,8 @@ public interface FailoverInstanceRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface FailoverInstanceRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface FailoverInstanceRequestOrBuilder
    * <code>
    * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for dataProtectionMode.
    */
   int getDataProtectionModeValue();
   /**
@@ -76,6 +82,8 @@ public interface FailoverInstanceRequestOrBuilder
    * <code>
    * .google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The dataProtectionMode.
    */
   com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode getDataProtectionMode();
 }

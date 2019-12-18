@@ -38,6 +38,8 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -55,6 +57,8 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -85,6 +89,8 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <code>.google.cloud.redis.v1.Instance instance = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the instance field is set.
    */
   boolean hasInstance();
   /**
@@ -97,6 +103,8 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <code>.google.cloud.redis.v1.Instance instance = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The instance.
    */
   com.google.cloud.redis.v1.Instance getInstance();
   /**

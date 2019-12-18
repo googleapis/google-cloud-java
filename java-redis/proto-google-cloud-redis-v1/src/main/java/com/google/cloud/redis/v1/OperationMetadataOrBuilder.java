@@ -31,6 +31,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -41,6 +43,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -62,6 +66,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -72,6 +78,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -93,6 +101,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string target = 3;</code>
+   *
+   * @return The target.
    */
   java.lang.String getTarget();
   /**
@@ -103,6 +113,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string target = 3;</code>
+   *
+   * @return The bytes for target.
    */
   com.google.protobuf.ByteString getTargetBytes();
 
@@ -114,6 +126,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string verb = 4;</code>
+   *
+   * @return The verb.
    */
   java.lang.String getVerb();
   /**
@@ -124,6 +138,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string verb = 4;</code>
+   *
+   * @return The bytes for verb.
    */
   com.google.protobuf.ByteString getVerbBytes();
 
@@ -135,6 +151,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string status_detail = 5;</code>
+   *
+   * @return The statusDetail.
    */
   java.lang.String getStatusDetail();
   /**
@@ -145,6 +163,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string status_detail = 5;</code>
+   *
+   * @return The bytes for statusDetail.
    */
   com.google.protobuf.ByteString getStatusDetailBytes();
 
@@ -156,6 +176,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>bool cancel_requested = 6;</code>
+   *
+   * @return The cancelRequested.
    */
   boolean getCancelRequested();
 
@@ -167,6 +189,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string api_version = 7;</code>
+   *
+   * @return The apiVersion.
    */
   java.lang.String getApiVersion();
   /**
@@ -177,6 +201,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>string api_version = 7;</code>
+   *
+   * @return The bytes for apiVersion.
    */
   com.google.protobuf.ByteString getApiVersionBytes();
 }

@@ -33,6 +33,8 @@ public interface ImportInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ImportInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface ImportInstanceRequestOrBuilder
    * <code>
    * .google.cloud.redis.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -70,6 +76,8 @@ public interface ImportInstanceRequestOrBuilder
    * <code>
    * .google.cloud.redis.v1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.redis.v1.InputConfig getInputConfig();
   /**

@@ -45,6 +45,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -175,6 +180,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -187,6 +194,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -214,6 +223,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -226,6 +237,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -253,6 +266,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string target = 3;</code>
+   *
+   * @return The target.
    */
   public java.lang.String getTarget() {
     java.lang.Object ref = target_;
@@ -273,6 +288,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string target = 3;</code>
+   *
+   * @return The bytes for target.
    */
   public com.google.protobuf.ByteString getTargetBytes() {
     java.lang.Object ref = target_;
@@ -296,6 +313,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string verb = 4;</code>
+   *
+   * @return The verb.
    */
   public java.lang.String getVerb() {
     java.lang.Object ref = verb_;
@@ -316,6 +335,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string verb = 4;</code>
+   *
+   * @return The bytes for verb.
    */
   public com.google.protobuf.ByteString getVerbBytes() {
     java.lang.Object ref = verb_;
@@ -339,6 +360,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string status_detail = 5;</code>
+   *
+   * @return The statusDetail.
    */
   public java.lang.String getStatusDetail() {
     java.lang.Object ref = statusDetail_;
@@ -359,6 +382,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string status_detail = 5;</code>
+   *
+   * @return The bytes for statusDetail.
    */
   public com.google.protobuf.ByteString getStatusDetailBytes() {
     java.lang.Object ref = statusDetail_;
@@ -382,6 +407,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool cancel_requested = 6;</code>
+   *
+   * @return The cancelRequested.
    */
   public boolean getCancelRequested() {
     return cancelRequested_;
@@ -397,6 +424,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string api_version = 7;</code>
+   *
+   * @return The apiVersion.
    */
   public java.lang.String getApiVersion() {
     java.lang.Object ref = apiVersion_;
@@ -417,6 +446,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string api_version = 7;</code>
+   *
+   * @return The bytes for apiVersion.
    */
   public com.google.protobuf.ByteString getApiVersionBytes() {
     java.lang.Object ref = apiVersion_;
@@ -879,6 +910,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -891,6 +924,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1058,6 +1093,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1070,6 +1107,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1228,6 +1267,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string target = 3;</code>
+     *
+     * @return The target.
      */
     public java.lang.String getTarget() {
       java.lang.Object ref = target_;
@@ -1248,6 +1289,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string target = 3;</code>
+     *
+     * @return The bytes for target.
      */
     public com.google.protobuf.ByteString getTargetBytes() {
       java.lang.Object ref = target_;
@@ -1268,6 +1311,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string target = 3;</code>
+     *
+     * @param value The target to set.
+     * @return This builder for chaining.
      */
     public Builder setTarget(java.lang.String value) {
       if (value == null) {
@@ -1286,6 +1332,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string target = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTarget() {
 
@@ -1301,6 +1349,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string target = 3;</code>
+     *
+     * @param value The bytes for target to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1322,6 +1373,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string verb = 4;</code>
+     *
+     * @return The verb.
      */
     public java.lang.String getVerb() {
       java.lang.Object ref = verb_;
@@ -1342,6 +1395,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string verb = 4;</code>
+     *
+     * @return The bytes for verb.
      */
     public com.google.protobuf.ByteString getVerbBytes() {
       java.lang.Object ref = verb_;
@@ -1362,6 +1417,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string verb = 4;</code>
+     *
+     * @param value The verb to set.
+     * @return This builder for chaining.
      */
     public Builder setVerb(java.lang.String value) {
       if (value == null) {
@@ -1380,6 +1438,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string verb = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVerb() {
 
@@ -1395,6 +1455,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string verb = 4;</code>
+     *
+     * @param value The bytes for verb to set.
+     * @return This builder for chaining.
      */
     public Builder setVerbBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1416,6 +1479,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string status_detail = 5;</code>
+     *
+     * @return The statusDetail.
      */
     public java.lang.String getStatusDetail() {
       java.lang.Object ref = statusDetail_;
@@ -1436,6 +1501,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string status_detail = 5;</code>
+     *
+     * @return The bytes for statusDetail.
      */
     public com.google.protobuf.ByteString getStatusDetailBytes() {
       java.lang.Object ref = statusDetail_;
@@ -1456,6 +1523,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string status_detail = 5;</code>
+     *
+     * @param value The statusDetail to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusDetail(java.lang.String value) {
       if (value == null) {
@@ -1474,6 +1544,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string status_detail = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatusDetail() {
 
@@ -1489,6 +1561,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string status_detail = 5;</code>
+     *
+     * @param value The bytes for statusDetail to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1510,6 +1585,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
+     *
+     * @return The cancelRequested.
      */
     public boolean getCancelRequested() {
       return cancelRequested_;
@@ -1522,6 +1599,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
+     *
+     * @param value The cancelRequested to set.
+     * @return This builder for chaining.
      */
     public Builder setCancelRequested(boolean value) {
 
@@ -1537,6 +1617,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCancelRequested() {
 
@@ -1554,6 +1636,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string api_version = 7;</code>
+     *
+     * @return The apiVersion.
      */
     public java.lang.String getApiVersion() {
       java.lang.Object ref = apiVersion_;
@@ -1574,6 +1658,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string api_version = 7;</code>
+     *
+     * @return The bytes for apiVersion.
      */
     public com.google.protobuf.ByteString getApiVersionBytes() {
       java.lang.Object ref = apiVersion_;
@@ -1594,6 +1680,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string api_version = 7;</code>
+     *
+     * @param value The apiVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setApiVersion(java.lang.String value) {
       if (value == null) {
@@ -1612,6 +1701,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string api_version = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
 
@@ -1627,6 +1718,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string api_version = 7;</code>
+     *
+     * @param value The bytes for apiVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setApiVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

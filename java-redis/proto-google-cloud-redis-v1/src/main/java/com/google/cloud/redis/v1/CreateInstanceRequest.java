@@ -43,6 +43,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +148,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -167,6 +174,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -196,6 +205,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The instanceId.
    */
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
@@ -222,6 +233,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for instanceId.
    */
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
@@ -246,6 +259,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.redis.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the instance field is set.
    */
   public boolean hasInstance() {
     return instance_ != null;
@@ -259,6 +274,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.redis.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The instance.
    */
   public com.google.cloud.redis.v1.Instance getInstance() {
     return instance_ == null ? com.google.cloud.redis.v1.Instance.getDefaultInstance() : instance_;
@@ -651,6 +668,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -675,6 +694,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -699,6 +720,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -721,6 +745,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -740,6 +766,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -767,6 +796,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The instanceId.
      */
     public java.lang.String getInstanceId() {
       java.lang.Object ref = instanceId_;
@@ -793,6 +824,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for instanceId.
      */
     public com.google.protobuf.ByteString getInstanceIdBytes() {
       java.lang.Object ref = instanceId_;
@@ -819,6 +852,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceId(java.lang.String value) {
       if (value == null) {
@@ -843,6 +879,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
 
@@ -864,6 +902,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -891,6 +932,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.cloud.redis.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the instance field is set.
      */
     public boolean hasInstance() {
       return instanceBuilder_ != null || instance_ != null;
@@ -904,6 +947,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.cloud.redis.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The instance.
      */
     public com.google.cloud.redis.v1.Instance getInstance() {
       if (instanceBuilder_ == null) {

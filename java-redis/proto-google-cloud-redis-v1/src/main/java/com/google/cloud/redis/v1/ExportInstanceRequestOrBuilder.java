@@ -33,6 +33,8 @@ public interface ExportInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ExportInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface ExportInstanceRequestOrBuilder
    * <code>
    * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -70,6 +76,8 @@ public interface ExportInstanceRequestOrBuilder
    * <code>
    * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.redis.v1.OutputConfig getOutputConfig();
   /**
