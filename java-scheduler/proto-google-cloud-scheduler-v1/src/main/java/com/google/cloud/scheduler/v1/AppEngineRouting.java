@@ -54,6 +54,12 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AppEngineRouting();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -66,7 +72,6 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string service = 1;</code>
+   *
+   * @return The service.
    */
   public java.lang.String getService() {
     java.lang.Object ref = service_;
@@ -173,6 +180,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string service = 1;</code>
+   *
+   * @return The bytes for service.
    */
   public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
@@ -198,6 +207,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The version.
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -220,6 +231,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
    */
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
@@ -253,6 +266,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string instance = 3;</code>
+   *
+   * @return The instance.
    */
   public java.lang.String getInstance() {
     java.lang.Object ref = instance_;
@@ -283,6 +298,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string instance = 3;</code>
+   *
+   * @return The bytes for instance.
    */
   public com.google.protobuf.ByteString getInstanceBytes() {
     java.lang.Object ref = instance_;
@@ -346,6 +363,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string host = 4;</code>
+   *
+   * @return The host.
    */
   public java.lang.String getHost() {
     java.lang.Object ref = host_;
@@ -406,6 +425,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string host = 4;</code>
+   *
+   * @return The bytes for host.
    */
   public com.google.protobuf.ByteString getHostBytes() {
     java.lang.Object ref = host_;
@@ -803,6 +824,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return The service.
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -825,6 +848,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return The bytes for service.
      */
     public com.google.protobuf.ByteString getServiceBytes() {
       java.lang.Object ref = service_;
@@ -847,6 +872,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @param value The service to set.
+     * @return This builder for chaining.
      */
     public Builder setService(java.lang.String value) {
       if (value == null) {
@@ -867,6 +895,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearService() {
 
@@ -884,6 +914,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @param value The bytes for service to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -907,6 +940,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return The version.
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -929,6 +964,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return The bytes for version.
      */
     public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
@@ -951,6 +988,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(java.lang.String value) {
       if (value == null) {
@@ -971,6 +1011,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -988,6 +1030,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1019,6 +1064,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string instance = 3;</code>
+     *
+     * @return The instance.
      */
     public java.lang.String getInstance() {
       java.lang.Object ref = instance_;
@@ -1049,6 +1096,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string instance = 3;</code>
+     *
+     * @return The bytes for instance.
      */
     public com.google.protobuf.ByteString getInstanceBytes() {
       java.lang.Object ref = instance_;
@@ -1079,6 +1128,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string instance = 3;</code>
+     *
+     * @param value The instance to set.
+     * @return This builder for chaining.
      */
     public Builder setInstance(java.lang.String value) {
       if (value == null) {
@@ -1107,6 +1159,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string instance = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstance() {
 
@@ -1132,6 +1186,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string instance = 3;</code>
+     *
+     * @param value The bytes for instance to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1193,6 +1250,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string host = 4;</code>
+     *
+     * @return The host.
      */
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
@@ -1253,6 +1312,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string host = 4;</code>
+     *
+     * @return The bytes for host.
      */
     public com.google.protobuf.ByteString getHostBytes() {
       java.lang.Object ref = host_;
@@ -1313,6 +1374,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string host = 4;</code>
+     *
+     * @param value The host to set.
+     * @return This builder for chaining.
      */
     public Builder setHost(java.lang.String value) {
       if (value == null) {
@@ -1371,6 +1435,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string host = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHost() {
 
@@ -1426,6 +1492,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string host = 4;</code>
+     *
+     * @param value The bytes for host to set.
+     * @return This builder for chaining.
      */
     public Builder setHostBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

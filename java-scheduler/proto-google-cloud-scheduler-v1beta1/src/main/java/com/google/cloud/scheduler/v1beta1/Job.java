@@ -47,6 +47,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Job();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -413,12 +418,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -483,7 +496,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   private int targetCase_ = 0;
   private java.lang.Object target_;
 
-  public enum TargetCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TargetCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PUBSUB_TARGET(4),
     APP_ENGINE_HTTP_TARGET(5),
     HTTP_TARGET(6),
@@ -493,7 +509,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     private TargetCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TargetCase valueOf(int value) {
       return forNumber(value);
@@ -547,6 +567,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -581,6 +603,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -607,6 +631,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -630,6 +656,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -652,6 +680,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
+   *
+   * @return Whether the pubsubTarget field is set.
    */
   public boolean hasPubsubTarget() {
     return targetCase_ == 4;
@@ -664,6 +694,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
+   *
+   * @return The pubsubTarget.
    */
   public com.google.cloud.scheduler.v1beta1.PubsubTarget getPubsubTarget() {
     if (targetCase_ == 4) {
@@ -696,6 +728,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
+   *
+   * @return Whether the appEngineHttpTarget field is set.
    */
   public boolean hasAppEngineHttpTarget() {
     return targetCase_ == 5;
@@ -708,6 +742,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
+   *
+   * @return The appEngineHttpTarget.
    */
   public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget getAppEngineHttpTarget() {
     if (targetCase_ == 5) {
@@ -741,6 +777,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
+   *
+   * @return Whether the httpTarget field is set.
    */
   public boolean hasHttpTarget() {
     return targetCase_ == 6;
@@ -753,6 +791,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
+   *
+   * @return The httpTarget.
    */
   public com.google.cloud.scheduler.v1beta1.HttpTarget getHttpTarget() {
     if (targetCase_ == 6) {
@@ -803,6 +843,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schedule = 20;</code>
+   *
+   * @return The schedule.
    */
   public java.lang.String getSchedule() {
     java.lang.Object ref = schedule_;
@@ -840,6 +882,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schedule = 20;</code>
+   *
+   * @return The bytes for schedule.
    */
   public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
@@ -870,6 +914,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_zone = 21;</code>
+   *
+   * @return The timeZone.
    */
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
@@ -897,6 +943,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string time_zone = 21;</code>
+   *
+   * @return The bytes for timeZone.
    */
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
@@ -920,6 +968,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
+   *
+   * @return Whether the userUpdateTime field is set.
    */
   public boolean hasUserUpdateTime() {
     return userUpdateTime_ != null;
@@ -932,6 +982,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
+   *
+   * @return The userUpdateTime.
    */
   public com.google.protobuf.Timestamp getUserUpdateTime() {
     return userUpdateTime_ == null
@@ -961,6 +1013,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -973,6 +1027,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.scheduler.v1beta1.Job.State getState() {
     @SuppressWarnings("deprecation")
@@ -991,6 +1047,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status status = 11;</code>
+   *
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -1003,6 +1061,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status status = 11;</code>
+   *
+   * @return The status.
    */
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -1032,6 +1092,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
@@ -1046,6 +1108,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
+   *
+   * @return The scheduleTime.
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
@@ -1077,6 +1141,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
+   *
+   * @return Whether the lastAttemptTime field is set.
    */
   public boolean hasLastAttemptTime() {
     return lastAttemptTime_ != null;
@@ -1089,6 +1155,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
+   *
+   * @return The lastAttemptTime.
    */
   public com.google.protobuf.Timestamp getLastAttemptTime() {
     return lastAttemptTime_ == null
@@ -1118,6 +1186,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
+   *
+   * @return Whether the retryConfig field is set.
    */
   public boolean hasRetryConfig() {
     return retryConfig_ != null;
@@ -1130,6 +1200,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
+   *
+   * @return The retryConfig.
    */
   public com.google.cloud.scheduler.v1beta1.RetryConfig getRetryConfig() {
     return retryConfig_ == null
@@ -1168,6 +1240,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   *
+   * @return Whether the attemptDeadline field is set.
    */
   public boolean hasAttemptDeadline() {
     return attemptDeadline_ != null;
@@ -1189,6 +1263,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   *
+   * @return The attemptDeadline.
    */
   public com.google.protobuf.Duration getAttemptDeadline() {
     return attemptDeadline_ == null
@@ -1900,6 +1976,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1934,6 +2012,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1968,6 +2048,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2000,6 +2083,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2029,6 +2114,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2053,6 +2141,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2076,6 +2166,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2099,6 +2191,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2120,6 +2215,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2138,6 +2235,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2163,6 +2263,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
+     *
+     * @return Whether the pubsubTarget field is set.
      */
     public boolean hasPubsubTarget() {
       return targetCase_ == 4;
@@ -2175,6 +2277,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
+     *
+     * @return The pubsubTarget.
      */
     public com.google.cloud.scheduler.v1beta1.PubsubTarget getPubsubTarget() {
       if (pubsubTargetBuilder_ == null) {
@@ -2365,6 +2469,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
+     *
+     * @return Whether the appEngineHttpTarget field is set.
      */
     public boolean hasAppEngineHttpTarget() {
       return targetCase_ == 5;
@@ -2377,6 +2483,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
+     *
+     * @return The appEngineHttpTarget.
      */
     public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget getAppEngineHttpTarget() {
       if (appEngineHttpTargetBuilder_ == null) {
@@ -2572,6 +2680,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
+     *
+     * @return Whether the httpTarget field is set.
      */
     public boolean hasHttpTarget() {
       return targetCase_ == 6;
@@ -2584,6 +2694,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
+     *
+     * @return The httpTarget.
      */
     public com.google.cloud.scheduler.v1beta1.HttpTarget getHttpTarget() {
       if (httpTargetBuilder_ == null) {
@@ -2787,6 +2899,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 20;</code>
+     *
+     * @return The schedule.
      */
     public java.lang.String getSchedule() {
       java.lang.Object ref = schedule_;
@@ -2824,6 +2938,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 20;</code>
+     *
+     * @return The bytes for schedule.
      */
     public com.google.protobuf.ByteString getScheduleBytes() {
       java.lang.Object ref = schedule_;
@@ -2861,6 +2977,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 20;</code>
+     *
+     * @param value The schedule to set.
+     * @return This builder for chaining.
      */
     public Builder setSchedule(java.lang.String value) {
       if (value == null) {
@@ -2896,6 +3015,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 20;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSchedule() {
 
@@ -2928,6 +3049,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 20;</code>
+     *
+     * @param value The bytes for schedule to set.
+     * @return This builder for chaining.
      */
     public Builder setScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2956,6 +3080,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 21;</code>
+     *
+     * @return The timeZone.
      */
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
@@ -2983,6 +3109,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 21;</code>
+     *
+     * @return The bytes for timeZone.
      */
     public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
@@ -3010,6 +3138,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 21;</code>
+     *
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
@@ -3035,6 +3166,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 21;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
 
@@ -3057,6 +3190,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string time_zone = 21;</code>
+     *
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3083,6 +3219,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
+     *
+     * @return Whether the userUpdateTime field is set.
      */
     public boolean hasUserUpdateTime() {
       return userUpdateTimeBuilder_ != null || userUpdateTime_ != null;
@@ -3095,6 +3233,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
+     *
+     * @return The userUpdateTime.
      */
     public com.google.protobuf.Timestamp getUserUpdateTime() {
       if (userUpdateTimeBuilder_ == null) {
@@ -3259,6 +3399,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -3271,6 +3413,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -3285,6 +3430,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.scheduler.v1beta1.Job.State getState() {
       @SuppressWarnings("deprecation")
@@ -3300,6 +3447,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.scheduler.v1beta1.Job.State value) {
       if (value == null) {
@@ -3318,6 +3468,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -3338,6 +3490,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status status = 11;</code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -3350,6 +3504,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status status = 11;</code>
+     *
+     * @return The status.
      */
     public com.google.rpc.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -3511,6 +3667,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
+     *
+     * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
@@ -3525,6 +3683,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
+     *
+     * @return The scheduleTime.
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
@@ -3708,6 +3868,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
+     *
+     * @return Whether the lastAttemptTime field is set.
      */
     public boolean hasLastAttemptTime() {
       return lastAttemptTimeBuilder_ != null || lastAttemptTime_ != null;
@@ -3720,6 +3882,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
+     *
+     * @return The lastAttemptTime.
      */
     public com.google.protobuf.Timestamp getLastAttemptTime() {
       if (lastAttemptTimeBuilder_ == null) {
@@ -3889,6 +4053,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
+     *
+     * @return Whether the retryConfig field is set.
      */
     public boolean hasRetryConfig() {
       return retryConfigBuilder_ != null || retryConfig_ != null;
@@ -3901,6 +4067,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
+     *
+     * @return The retryConfig.
      */
     public com.google.cloud.scheduler.v1beta1.RetryConfig getRetryConfig() {
       if (retryConfigBuilder_ == null) {
@@ -4080,6 +4248,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     *
+     * @return Whether the attemptDeadline field is set.
      */
     public boolean hasAttemptDeadline() {
       return attemptDeadlineBuilder_ != null || attemptDeadline_ != null;
@@ -4101,6 +4271,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     *
+     * @return The attemptDeadline.
      */
     public com.google.protobuf.Duration getAttemptDeadline() {
       if (attemptDeadlineBuilder_ == null) {

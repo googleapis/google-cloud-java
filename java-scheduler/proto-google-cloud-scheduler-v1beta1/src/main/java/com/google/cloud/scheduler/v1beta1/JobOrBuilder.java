@@ -45,6 +45,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -69,6 +71,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -83,6 +87,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -96,6 +102,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -107,6 +115,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
+   *
+   * @return Whether the pubsubTarget field is set.
    */
   boolean hasPubsubTarget();
   /**
@@ -117,6 +127,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
+   *
+   * @return The pubsubTarget.
    */
   com.google.cloud.scheduler.v1beta1.PubsubTarget getPubsubTarget();
   /**
@@ -138,6 +150,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
+   *
+   * @return Whether the appEngineHttpTarget field is set.
    */
   boolean hasAppEngineHttpTarget();
   /**
@@ -148,6 +162,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
+   *
+   * @return The appEngineHttpTarget.
    */
   com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget getAppEngineHttpTarget();
   /**
@@ -169,6 +185,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
+   *
+   * @return Whether the httpTarget field is set.
    */
   boolean hasHttpTarget();
   /**
@@ -179,6 +197,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
+   *
+   * @return The httpTarget.
    */
   com.google.cloud.scheduler.v1beta1.HttpTarget getHttpTarget();
   /**
@@ -217,6 +237,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string schedule = 20;</code>
+   *
+   * @return The schedule.
    */
   java.lang.String getSchedule();
   /**
@@ -244,6 +266,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string schedule = 20;</code>
+   *
+   * @return The bytes for schedule.
    */
   com.google.protobuf.ByteString getScheduleBytes();
 
@@ -262,6 +286,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string time_zone = 21;</code>
+   *
+   * @return The timeZone.
    */
   java.lang.String getTimeZone();
   /**
@@ -279,6 +305,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string time_zone = 21;</code>
+   *
+   * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
 
@@ -290,6 +318,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
+   *
+   * @return Whether the userUpdateTime field is set.
    */
   boolean hasUserUpdateTime();
   /**
@@ -300,6 +330,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
+   *
+   * @return The userUpdateTime.
    */
   com.google.protobuf.Timestamp getUserUpdateTime();
   /**
@@ -321,6 +353,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -331,6 +365,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.scheduler.v1beta1.Job.State getState();
 
@@ -342,6 +378,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 11;</code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -352,6 +390,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 11;</code>
+   *
+   * @return The status.
    */
   com.google.rpc.Status getStatus();
   /**
@@ -375,6 +415,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
   /**
@@ -387,6 +429,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
+   *
+   * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
@@ -410,6 +454,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
+   *
+   * @return Whether the lastAttemptTime field is set.
    */
   boolean hasLastAttemptTime();
   /**
@@ -420,6 +466,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
+   *
+   * @return The lastAttemptTime.
    */
   com.google.protobuf.Timestamp getLastAttemptTime();
   /**
@@ -441,6 +489,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
+   *
+   * @return Whether the retryConfig field is set.
    */
   boolean hasRetryConfig();
   /**
@@ -451,6 +501,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
+   *
+   * @return The retryConfig.
    */
   com.google.cloud.scheduler.v1beta1.RetryConfig getRetryConfig();
   /**
@@ -481,6 +533,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   *
+   * @return Whether the attemptDeadline field is set.
    */
   boolean hasAttemptDeadline();
   /**
@@ -500,6 +554,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   *
+   * @return The attemptDeadline.
    */
   com.google.protobuf.Duration getAttemptDeadline();
   /**

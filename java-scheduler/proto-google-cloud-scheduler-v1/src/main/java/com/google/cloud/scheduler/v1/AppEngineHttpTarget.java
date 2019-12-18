@@ -52,6 +52,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AppEngineHttpTarget();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,11 +113,11 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -169,7 +175,6 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
             com.google.cloud.scheduler.v1.AppEngineHttpTarget.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private int httpMethod_;
   /**
@@ -181,6 +186,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   public int getHttpMethodValue() {
     return httpMethod_;
@@ -194,6 +201,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+   *
+   * @return The httpMethod.
    */
   public com.google.cloud.scheduler.v1.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
@@ -212,6 +221,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return Whether the appEngineRouting field is set.
    */
   public boolean hasAppEngineRouting() {
     return appEngineRouting_ != null;
@@ -224,6 +235,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return The appEngineRouting.
    */
   public com.google.cloud.scheduler.v1.AppEngineRouting getAppEngineRouting() {
     return appEngineRouting_ == null
@@ -257,6 +270,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string relative_uri = 3;</code>
+   *
+   * @return The relativeUri.
    */
   public java.lang.String getRelativeUri() {
     java.lang.Object ref = relativeUri_;
@@ -281,6 +296,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string relative_uri = 3;</code>
+   *
+   * @return The bytes for relativeUri.
    */
   public com.google.protobuf.ByteString getRelativeUriBytes() {
     java.lang.Object ref = relativeUri_;
@@ -492,6 +509,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes body = 5;</code>
+   *
+   * @return The body.
    */
   public com.google.protobuf.ByteString getBody() {
     return body_;
@@ -821,7 +840,6 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
       com.google.cloud.scheduler.v1.AppEngineHttpTarget result =
           new com.google.cloud.scheduler.v1.AppEngineHttpTarget(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.httpMethod_ = httpMethod_;
       if (appEngineRoutingBuilder_ == null) {
         result.appEngineRouting_ = appEngineRouting_;
@@ -832,7 +850,6 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
       result.headers_ = internalGetHeaders();
       result.headers_.makeImmutable();
       result.body_ = body_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -939,6 +956,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+     *
+     * @return The enum numeric value on the wire for httpMethod.
      */
     public int getHttpMethodValue() {
       return httpMethod_;
@@ -952,6 +971,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
       httpMethod_ = value;
@@ -967,6 +989,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+     *
+     * @return The httpMethod.
      */
     public com.google.cloud.scheduler.v1.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
@@ -983,6 +1007,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+     *
+     * @param value The httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethod(com.google.cloud.scheduler.v1.HttpMethod value) {
       if (value == null) {
@@ -1002,6 +1029,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
 
@@ -1024,6 +1053,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.AppEngineRouting app_engine_routing = 2;</code>
+     *
+     * @return Whether the appEngineRouting field is set.
      */
     public boolean hasAppEngineRouting() {
       return appEngineRoutingBuilder_ != null || appEngineRouting_ != null;
@@ -1036,6 +1067,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1.AppEngineRouting app_engine_routing = 2;</code>
+     *
+     * @return The appEngineRouting.
      */
     public com.google.cloud.scheduler.v1.AppEngineRouting getAppEngineRouting() {
       if (appEngineRoutingBuilder_ == null) {
@@ -1205,6 +1238,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_uri = 3;</code>
+     *
+     * @return The relativeUri.
      */
     public java.lang.String getRelativeUri() {
       java.lang.Object ref = relativeUri_;
@@ -1229,6 +1264,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_uri = 3;</code>
+     *
+     * @return The bytes for relativeUri.
      */
     public com.google.protobuf.ByteString getRelativeUriBytes() {
       java.lang.Object ref = relativeUri_;
@@ -1253,6 +1290,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_uri = 3;</code>
+     *
+     * @param value The relativeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeUri(java.lang.String value) {
       if (value == null) {
@@ -1275,6 +1315,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_uri = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRelativeUri() {
 
@@ -1294,6 +1336,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_uri = 3;</code>
+     *
+     * @param value The bytes for relativeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1631,6 +1676,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes body = 5;</code>
+     *
+     * @return The body.
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
@@ -1646,6 +1693,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes body = 5;</code>
+     *
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1667,6 +1717,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes body = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
 

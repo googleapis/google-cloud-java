@@ -36,6 +36,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -51,6 +53,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 
@@ -62,6 +66,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
   /**
@@ -72,6 +78,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.HttpMethod http_method = 2;</code>
+   *
+   * @return The httpMethod.
    */
   com.google.cloud.scheduler.v1.HttpMethod getHttpMethod();
 
@@ -204,6 +212,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>bytes body = 4;</code>
+   *
+   * @return The body.
    */
   com.google.protobuf.ByteString getBody();
 
@@ -220,6 +230,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
+   *
+   * @return Whether the oauthToken field is set.
    */
   boolean hasOauthToken();
   /**
@@ -235,6 +247,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
+   *
+   * @return The oauthToken.
    */
   com.google.cloud.scheduler.v1.OAuthToken getOauthToken();
   /**
@@ -267,6 +281,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
+   *
+   * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
   /**
@@ -283,6 +299,8 @@ public interface HttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
+   *
+   * @return The oidcToken.
    */
   com.google.cloud.scheduler.v1.OidcToken getOidcToken();
   /**

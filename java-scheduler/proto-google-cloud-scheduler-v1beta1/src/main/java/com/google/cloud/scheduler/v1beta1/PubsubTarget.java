@@ -44,6 +44,12 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PubsubTarget();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,11 +87,11 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
                   input.readMessage(
@@ -139,7 +145,6 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TOPIC_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object topicName_;
   /**
@@ -155,6 +160,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The topicName.
    */
   public java.lang.String getTopicName() {
     java.lang.Object ref = topicName_;
@@ -180,6 +187,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for topicName.
    */
   public com.google.protobuf.ByteString getTopicNameBytes() {
     java.lang.Object ref = topicName_;
@@ -205,6 +214,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes data = 3;</code>
+   *
+   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
@@ -596,12 +607,10 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.scheduler.v1beta1.PubsubTarget result =
           new com.google.cloud.scheduler.v1beta1.PubsubTarget(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.topicName_ = topicName_;
       result.data_ = data_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -705,6 +714,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The topicName.
      */
     public java.lang.String getTopicName() {
       java.lang.Object ref = topicName_;
@@ -730,6 +741,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for topicName.
      */
     public com.google.protobuf.ByteString getTopicNameBytes() {
       java.lang.Object ref = topicName_;
@@ -755,6 +768,9 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The topicName to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicName(java.lang.String value) {
       if (value == null) {
@@ -778,6 +794,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTopicName() {
 
@@ -798,6 +816,9 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for topicName to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -821,6 +842,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes data = 3;</code>
+     *
+     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -835,6 +858,9 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes data = 3;</code>
+     *
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -855,6 +881,8 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes data = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearData() {
 

@@ -34,6 +34,8 @@ public interface OidcTokenOrBuilder
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
   /**
@@ -47,6 +49,8 @@ public interface OidcTokenOrBuilder
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The bytes for serviceAccountEmail.
    */
   com.google.protobuf.ByteString getServiceAccountEmailBytes();
 
@@ -59,6 +63,8 @@ public interface OidcTokenOrBuilder
    * </pre>
    *
    * <code>string audience = 2;</code>
+   *
+   * @return The audience.
    */
   java.lang.String getAudience();
   /**
@@ -70,6 +76,8 @@ public interface OidcTokenOrBuilder
    * </pre>
    *
    * <code>string audience = 2;</code>
+   *
+   * @return The bytes for audience.
    */
   com.google.protobuf.ByteString getAudienceBytes();
 }

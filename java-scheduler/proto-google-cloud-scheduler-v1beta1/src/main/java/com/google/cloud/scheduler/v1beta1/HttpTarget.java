@@ -49,6 +49,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HttpTarget();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -88,11 +94,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -188,11 +194,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.scheduler.v1beta1.HttpTarget.Builder.class);
   }
 
-  private int bitField0_;
   private int authorizationHeaderCase_ = 0;
   private java.lang.Object authorizationHeader_;
 
-  public enum AuthorizationHeaderCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AuthorizationHeaderCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     OAUTH_TOKEN(5),
     OIDC_TOKEN(6),
     AUTHORIZATIONHEADER_NOT_SET(0);
@@ -201,7 +209,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     private AuthorizationHeaderCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AuthorizationHeaderCase valueOf(int value) {
       return forNumber(value);
@@ -244,6 +256,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -269,6 +283,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -292,6 +308,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   public int getHttpMethodValue() {
     return httpMethod_;
@@ -304,6 +322,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+   *
+   * @return The httpMethod.
    */
   public com.google.cloud.scheduler.v1beta1.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
@@ -469,6 +489,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes body = 4;</code>
+   *
+   * @return The body.
    */
   public com.google.protobuf.ByteString getBody() {
     return body_;
@@ -488,6 +510,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.OAuthToken oauth_token = 5;</code>
+   *
+   * @return Whether the oauthToken field is set.
    */
   public boolean hasOauthToken() {
     return authorizationHeaderCase_ == 5;
@@ -505,6 +529,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.OAuthToken oauth_token = 5;</code>
+   *
+   * @return The oauthToken.
    */
   public com.google.cloud.scheduler.v1beta1.OAuthToken getOauthToken() {
     if (authorizationHeaderCase_ == 5) {
@@ -548,6 +574,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.OidcToken oidc_token = 6;</code>
+   *
+   * @return Whether the oidcToken field is set.
    */
   public boolean hasOidcToken() {
     return authorizationHeaderCase_ == 6;
@@ -566,6 +594,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.OidcToken oidc_token = 6;</code>
+   *
+   * @return The oidcToken.
    */
   public com.google.cloud.scheduler.v1beta1.OidcToken getOidcToken() {
     if (authorizationHeaderCase_ == 6) {
@@ -937,7 +967,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.scheduler.v1beta1.HttpTarget result =
           new com.google.cloud.scheduler.v1beta1.HttpTarget(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.uri_ = uri_;
       result.httpMethod_ = httpMethod_;
       result.headers_ = internalGetHeaders();
@@ -957,7 +986,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           result.authorizationHeader_ = oidcTokenBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.authorizationHeaderCase_ = authorizationHeaderCase_;
       onBuilt();
       return result;
@@ -1094,6 +1122,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -1119,6 +1149,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -1144,6 +1176,9 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -1167,6 +1202,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
 
@@ -1187,6 +1224,9 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1208,6 +1248,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+     *
+     * @return The enum numeric value on the wire for httpMethod.
      */
     public int getHttpMethodValue() {
       return httpMethod_;
@@ -1220,6 +1262,9 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
       httpMethod_ = value;
@@ -1234,6 +1279,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+     *
+     * @return The httpMethod.
      */
     public com.google.cloud.scheduler.v1beta1.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
@@ -1249,6 +1296,9 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+     *
+     * @param value The httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethod(com.google.cloud.scheduler.v1beta1.HttpMethod value) {
       if (value == null) {
@@ -1267,6 +1317,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
 
@@ -1529,6 +1581,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes body = 4;</code>
+     *
+     * @return The body.
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
@@ -1543,6 +1597,9 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes body = 4;</code>
+     *
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1563,6 +1620,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes body = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
 
@@ -1589,6 +1648,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.OAuthToken oauth_token = 5;</code>
+     *
+     * @return Whether the oauthToken field is set.
      */
     public boolean hasOauthToken() {
       return authorizationHeaderCase_ == 5;
@@ -1606,6 +1667,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.OAuthToken oauth_token = 5;</code>
+     *
+     * @return The oauthToken.
      */
     public com.google.cloud.scheduler.v1beta1.OAuthToken getOauthToken() {
       if (oauthTokenBuilder_ == null) {
@@ -1838,6 +1901,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.OidcToken oidc_token = 6;</code>
+     *
+     * @return Whether the oidcToken field is set.
      */
     public boolean hasOidcToken() {
       return authorizationHeaderCase_ == 6;
@@ -1856,6 +1921,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.OidcToken oidc_token = 6;</code>
+     *
+     * @return The oidcToken.
      */
     public com.google.cloud.scheduler.v1beta1.OidcToken getOidcToken() {
       if (oidcTokenBuilder_ == null) {

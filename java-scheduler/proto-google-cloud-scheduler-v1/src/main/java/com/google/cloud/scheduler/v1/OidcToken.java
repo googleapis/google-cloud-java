@@ -48,6 +48,12 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OidcToken();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The serviceAccountEmail.
    */
   public java.lang.String getServiceAccountEmail() {
     java.lang.Object ref = serviceAccountEmail_;
@@ -155,6 +162,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The bytes for serviceAccountEmail.
    */
   public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
     java.lang.Object ref = serviceAccountEmail_;
@@ -179,6 +188,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string audience = 2;</code>
+   *
+   * @return The audience.
    */
   public java.lang.String getAudience() {
     java.lang.Object ref = audience_;
@@ -200,6 +211,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string audience = 2;</code>
+   *
+   * @return The bytes for audience.
    */
   public com.google.protobuf.ByteString getAudienceBytes() {
     java.lang.Object ref = audience_;
@@ -561,6 +574,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The serviceAccountEmail.
      */
     public java.lang.String getServiceAccountEmail() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -584,6 +599,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The bytes for serviceAccountEmail.
      */
     public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -607,6 +624,9 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @param value The serviceAccountEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountEmail(java.lang.String value) {
       if (value == null) {
@@ -628,6 +648,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
 
@@ -646,6 +668,9 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @param value The bytes for serviceAccountEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -668,6 +693,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return The audience.
      */
     public java.lang.String getAudience() {
       java.lang.Object ref = audience_;
@@ -689,6 +716,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return The bytes for audience.
      */
     public com.google.protobuf.ByteString getAudienceBytes() {
       java.lang.Object ref = audience_;
@@ -710,6 +739,9 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @param value The audience to set.
+     * @return This builder for chaining.
      */
     public Builder setAudience(java.lang.String value) {
       if (value == null) {
@@ -729,6 +761,8 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudience() {
 
@@ -745,6 +779,9 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @param value The bytes for audience to set.
+     * @return This builder for chaining.
      */
     public Builder setAudienceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

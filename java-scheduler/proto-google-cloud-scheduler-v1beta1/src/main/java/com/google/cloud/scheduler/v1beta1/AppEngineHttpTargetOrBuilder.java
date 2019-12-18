@@ -32,6 +32,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 1;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
   /**
@@ -43,6 +45,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 1;</code>
+   *
+   * @return The httpMethod.
    */
   com.google.cloud.scheduler.v1beta1.HttpMethod getHttpMethod();
 
@@ -54,6 +58,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return Whether the appEngineRouting field is set.
    */
   boolean hasAppEngineRouting();
   /**
@@ -64,6 +70,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return The appEngineRouting.
    */
   com.google.cloud.scheduler.v1beta1.AppEngineRouting getAppEngineRouting();
   /**
@@ -89,6 +97,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>string relative_uri = 3;</code>
+   *
+   * @return The relativeUri.
    */
   java.lang.String getRelativeUri();
   /**
@@ -103,6 +113,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>string relative_uri = 3;</code>
+   *
+   * @return The bytes for relativeUri.
    */
   com.google.protobuf.ByteString getRelativeUriBytes();
 
@@ -286,6 +298,8 @@ public interface AppEngineHttpTargetOrBuilder
    * </pre>
    *
    * <code>bytes body = 5;</code>
+   *
+   * @return The body.
    */
   com.google.protobuf.ByteString getBody();
 }

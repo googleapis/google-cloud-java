@@ -36,6 +36,8 @@ public interface PubsubTargetOrBuilder
    * </pre>
    *
    * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The topicName.
    */
   java.lang.String getTopicName();
   /**
@@ -51,6 +53,8 @@ public interface PubsubTargetOrBuilder
    * </pre>
    *
    * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for topicName.
    */
   com.google.protobuf.ByteString getTopicNameBytes();
 
@@ -64,6 +68,8 @@ public interface PubsubTargetOrBuilder
    * </pre>
    *
    * <code>bytes data = 3;</code>
+   *
+   * @return The data.
    */
   com.google.protobuf.ByteString getData();
 
