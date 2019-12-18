@@ -37,6 +37,8 @@ public interface LookupEntryRequestOrBuilder
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
+   *
+   * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
   /**
@@ -53,6 +55,8 @@ public interface LookupEntryRequestOrBuilder
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
+   *
+   * @return The bytes for linkedResource.
    */
   com.google.protobuf.ByteString getLinkedResourceBytes();
 
@@ -72,6 +76,8 @@ public interface LookupEntryRequestOrBuilder
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
+   *
+   * @return The sqlResource.
    */
   java.lang.String getSqlResource();
   /**
@@ -90,6 +96,8 @@ public interface LookupEntryRequestOrBuilder
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
+   *
+   * @return The bytes for sqlResource.
    */
   com.google.protobuf.ByteString getSqlResourceBytes();
 

@@ -31,6 +31,8 @@ public interface ViewSpecOrBuilder
    * </pre>
    *
    * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The viewQuery.
    */
   java.lang.String getViewQuery();
   /**
@@ -41,6 +43,8 @@ public interface ViewSpecOrBuilder
    * </pre>
    *
    * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for viewQuery.
    */
   com.google.protobuf.ByteString getViewQueryBytes();
 }

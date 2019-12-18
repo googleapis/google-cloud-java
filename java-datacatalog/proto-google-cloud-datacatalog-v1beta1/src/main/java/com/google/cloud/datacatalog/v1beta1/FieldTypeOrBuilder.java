@@ -31,6 +31,8 @@ public interface FieldTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for primitiveType.
    */
   int getPrimitiveTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface FieldTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+   *
+   * @return The primitiveType.
    */
   com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType getPrimitiveType();
 
@@ -52,6 +56,8 @@ public interface FieldTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
+   *
+   * @return Whether the enumType field is set.
    */
   boolean hasEnumType();
   /**
@@ -62,6 +68,8 @@ public interface FieldTypeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
+   *
+   * @return The enumType.
    */
   com.google.cloud.datacatalog.v1beta1.FieldType.EnumType getEnumType();
   /**

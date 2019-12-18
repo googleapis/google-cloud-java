@@ -34,6 +34,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The template.
    */
   java.lang.String getTemplate();
   /**
@@ -72,6 +78,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for template.
    */
   com.google.protobuf.ByteString getTemplateBytes();
 
@@ -83,6 +91,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The templateDisplayName.
    */
   java.lang.String getTemplateDisplayName();
   /**
@@ -93,6 +103,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for templateDisplayName.
    */
   com.google.protobuf.ByteString getTemplateDisplayNameBytes();
 
@@ -108,6 +120,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string column = 4;</code>
+   *
+   * @return The column.
    */
   java.lang.String getColumn();
   /**
@@ -122,6 +136,8 @@ public interface TagOrBuilder
    * </pre>
    *
    * <code>string column = 4;</code>
+   *
+   * @return The bytes for column.
    */
   com.google.protobuf.ByteString getColumnBytes();
 

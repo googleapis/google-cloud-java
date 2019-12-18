@@ -44,6 +44,12 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportTaxonomiesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 taxonomies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               taxonomies_.add(s);
               break;
@@ -104,7 +110,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         taxonomies_ = taxonomies_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -127,11 +133,13 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
             com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest.Builder.class);
   }
 
-  private int bitField0_;
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
 
-  public enum DestinationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DestinationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SERIALIZED_TAXONOMIES(3),
     DESTINATION_NOT_SET(0);
     private final int value;
@@ -139,7 +147,11 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DestinationCase valueOf(int value) {
       return forNumber(value);
@@ -178,6 +190,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -201,6 +215,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -226,6 +242,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return A list containing the taxonomies.
    */
   public com.google.protobuf.ProtocolStringList getTaxonomiesList() {
     return taxonomies_;
@@ -240,6 +258,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The count of taxonomies.
    */
   public int getTaxonomiesCount() {
     return taxonomies_.size();
@@ -254,6 +274,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The taxonomies at the given index.
    */
   public java.lang.String getTaxonomies(int index) {
     return taxonomies_.get(index);
@@ -268,6 +291,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the taxonomies at the given index.
    */
   public com.google.protobuf.ByteString getTaxonomiesBytes(int index) {
     return taxonomies_.getByteString(index);
@@ -282,6 +308,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
+   *
+   * @return The serializedTaxonomies.
    */
   public boolean getSerializedTaxonomies() {
     if (destinationCase_ == 3) {
@@ -539,7 +567,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       parent_ = "";
 
       taxonomies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -571,17 +599,15 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest result =
           new com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         taxonomies_ = taxonomies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.taxonomies_ = taxonomies_;
       if (destinationCase_ == 3) {
         result.destination_ = destination_;
       }
-      result.bitField0_ = to_bitField0_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -641,7 +667,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       if (!other.taxonomies_.isEmpty()) {
         if (taxonomies_.isEmpty()) {
           taxonomies_ = other.taxonomies_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureTaxonomiesIsMutable();
           taxonomies_.addAll(other.taxonomies_);
@@ -717,6 +743,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -740,6 +768,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -763,6 +793,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -784,6 +817,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -802,6 +837,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -818,9 +856,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTaxonomiesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         taxonomies_ = new com.google.protobuf.LazyStringArrayList(taxonomies_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -833,6 +871,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return A list containing the taxonomies.
      */
     public com.google.protobuf.ProtocolStringList getTaxonomiesList() {
       return taxonomies_.getUnmodifiableView();
@@ -847,6 +887,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The count of taxonomies.
      */
     public int getTaxonomiesCount() {
       return taxonomies_.size();
@@ -861,6 +903,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The taxonomies at the given index.
      */
     public java.lang.String getTaxonomies(int index) {
       return taxonomies_.get(index);
@@ -875,6 +920,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the taxonomies at the given index.
      */
     public com.google.protobuf.ByteString getTaxonomiesBytes(int index) {
       return taxonomies_.getByteString(index);
@@ -889,6 +937,10 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The taxonomies to set.
+     * @return This builder for chaining.
      */
     public Builder setTaxonomies(int index, java.lang.String value) {
       if (value == null) {
@@ -909,6 +961,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The taxonomies to add.
+     * @return This builder for chaining.
      */
     public Builder addTaxonomies(java.lang.String value) {
       if (value == null) {
@@ -929,6 +984,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param values The taxonomies to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTaxonomies(java.lang.Iterable<java.lang.String> values) {
       ensureTaxonomiesIsMutable();
@@ -946,10 +1004,12 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTaxonomies() {
       taxonomies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -963,6 +1023,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * <code>
      * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes of the taxonomies to add.
+     * @return This builder for chaining.
      */
     public Builder addTaxonomiesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -983,6 +1046,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
+     *
+     * @return The serializedTaxonomies.
      */
     public boolean getSerializedTaxonomies() {
       if (destinationCase_ == 3) {
@@ -998,6 +1063,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
+     *
+     * @param value The serializedTaxonomies to set.
+     * @return This builder for chaining.
      */
     public Builder setSerializedTaxonomies(boolean value) {
       destinationCase_ = 3;
@@ -1013,6 +1081,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSerializedTaxonomies() {
       if (destinationCase_ == 3) {

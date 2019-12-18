@@ -41,6 +41,12 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   private UpdateTaxonomyRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateTaxonomyRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
+   *
+   * @return Whether the taxonomy field is set.
    */
   public boolean hasTaxonomy() {
     return taxonomy_ != null;
@@ -153,6 +160,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
+   *
+   * @return The taxonomy.
    */
   public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomy() {
     return taxonomy_ == null
@@ -186,6 +195,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -201,6 +212,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -596,6 +609,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
+     *
+     * @return Whether the taxonomy field is set.
      */
     public boolean hasTaxonomy() {
       return taxonomyBuilder_ != null || taxonomy_ != null;
@@ -609,6 +624,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
+     *
+     * @return The taxonomy.
      */
     public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomy() {
       if (taxonomyBuilder_ == null) {
@@ -789,6 +806,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -804,6 +823,8 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

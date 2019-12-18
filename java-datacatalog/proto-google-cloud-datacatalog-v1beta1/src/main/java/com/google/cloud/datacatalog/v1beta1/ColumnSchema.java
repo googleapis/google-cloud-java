@@ -47,6 +47,12 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ColumnSchema();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -100,10 +106,10 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 subcolumns_ =
                     new java.util.ArrayList<com.google.cloud.datacatalog.v1beta1.ColumnSchema>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               subcolumns_.add(
                   input.readMessage(
@@ -125,7 +131,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         subcolumns_ = java.util.Collections.unmodifiableList(subcolumns_);
       }
       this.unknownFields = unknownFields.build();
@@ -148,7 +154,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1beta1.ColumnSchema.Builder.class);
   }
 
-  private int bitField0_;
   public static final int COLUMN_FIELD_NUMBER = 6;
   private volatile java.lang.Object column_;
   /**
@@ -159,6 +164,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The column.
    */
   public java.lang.String getColumn() {
     java.lang.Object ref = column_;
@@ -179,6 +186,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for column.
    */
   public com.google.protobuf.ByteString getColumnBytes() {
     java.lang.Object ref = column_;
@@ -202,6 +211,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -222,6 +233,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
@@ -245,6 +258,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -265,6 +280,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -290,6 +307,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mode.
    */
   public java.lang.String getMode() {
     java.lang.Object ref = mode_;
@@ -312,6 +331,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mode.
    */
   public com.google.protobuf.ByteString getModeBytes() {
     java.lang.Object ref = mode_;
@@ -655,7 +676,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
       if (subcolumnsBuilder_ == null) {
         subcolumns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         subcolumnsBuilder_.clear();
       }
@@ -687,21 +708,19 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datacatalog.v1beta1.ColumnSchema result =
           new com.google.cloud.datacatalog.v1beta1.ColumnSchema(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.column_ = column_;
       result.type_ = type_;
       result.description_ = description_;
       result.mode_ = mode_;
       if (subcolumnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           subcolumns_ = java.util.Collections.unmodifiableList(subcolumns_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.subcolumns_ = subcolumns_;
       } else {
         result.subcolumns_ = subcolumnsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -772,7 +791,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         if (!other.subcolumns_.isEmpty()) {
           if (subcolumns_.isEmpty()) {
             subcolumns_ = other.subcolumns_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSubcolumnsIsMutable();
             subcolumns_.addAll(other.subcolumns_);
@@ -785,7 +804,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             subcolumnsBuilder_.dispose();
             subcolumnsBuilder_ = null;
             subcolumns_ = other.subcolumns_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             subcolumnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubcolumnsFieldBuilder()
@@ -836,6 +855,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The column.
      */
     public java.lang.String getColumn() {
       java.lang.Object ref = column_;
@@ -856,6 +877,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for column.
      */
     public com.google.protobuf.ByteString getColumnBytes() {
       java.lang.Object ref = column_;
@@ -876,6 +899,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The column to set.
+     * @return This builder for chaining.
      */
     public Builder setColumn(java.lang.String value) {
       if (value == null) {
@@ -894,6 +920,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumn() {
 
@@ -909,6 +937,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for column to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -930,6 +961,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -950,6 +983,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
@@ -970,6 +1005,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(java.lang.String value) {
       if (value == null) {
@@ -988,6 +1026,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1003,6 +1043,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1024,6 +1067,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1044,6 +1089,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1064,6 +1111,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1082,6 +1132,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1097,6 +1149,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1120,6 +1175,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mode.
      */
     public java.lang.String getMode() {
       java.lang.Object ref = mode_;
@@ -1142,6 +1199,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mode.
      */
     public com.google.protobuf.ByteString getModeBytes() {
       java.lang.Object ref = mode_;
@@ -1164,6 +1223,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
      */
     public Builder setMode(java.lang.String value) {
       if (value == null) {
@@ -1184,6 +1246,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMode() {
 
@@ -1201,6 +1265,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for mode to set.
+     * @return This builder for chaining.
      */
     public Builder setModeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1217,10 +1284,10 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSubcolumnsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         subcolumns_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1beta1.ColumnSchema>(subcolumns_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1460,7 +1527,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSubcolumns() {
       if (subcolumnsBuilder_ == null) {
         subcolumns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         subcolumnsBuilder_.clear();
@@ -1600,7 +1667,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datacatalog.v1beta1.ColumnSchema,
                 com.google.cloud.datacatalog.v1beta1.ColumnSchema.Builder,
                 com.google.cloud.datacatalog.v1beta1.ColumnSchemaOrBuilder>(
-                subcolumns_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                subcolumns_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         subcolumns_ = null;
       }
       return subcolumnsBuilder_;

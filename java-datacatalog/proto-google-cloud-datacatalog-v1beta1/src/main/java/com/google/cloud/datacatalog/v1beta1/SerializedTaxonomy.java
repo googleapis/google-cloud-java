@@ -45,6 +45,12 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SerializedTaxonomy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,11 +90,11 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 policyTags_ =
                     new java.util.ArrayList<
                         com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               policyTags_.add(
                   input.readMessage(
@@ -110,7 +116,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         policyTags_ = java.util.Collections.unmodifiableList(policyTags_);
       }
       this.unknownFields = unknownFields.build();
@@ -133,7 +139,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object displayName_;
   /**
@@ -144,6 +149,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -164,6 +171,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -189,6 +198,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -211,6 +222,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -524,7 +537,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
 
       if (policyTagsBuilder_ == null) {
         policyTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         policyTagsBuilder_.clear();
       }
@@ -556,19 +569,17 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy result =
           new com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (policyTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           policyTags_ = java.util.Collections.unmodifiableList(policyTags_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.policyTags_ = policyTags_;
       } else {
         result.policyTags_ = policyTagsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -631,7 +642,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         if (!other.policyTags_.isEmpty()) {
           if (policyTags_.isEmpty()) {
             policyTags_ = other.policyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePolicyTagsIsMutable();
             policyTags_.addAll(other.policyTags_);
@@ -644,7 +655,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
             policyTagsBuilder_.dispose();
             policyTagsBuilder_ = null;
             policyTags_ = other.policyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             policyTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPolicyTagsFieldBuilder()
@@ -695,6 +706,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -715,6 +728,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -735,6 +750,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -753,6 +771,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -768,6 +788,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -791,6 +814,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -813,6 +838,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -835,6 +862,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -855,6 +885,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -872,6 +904,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -888,11 +923,11 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensurePolicyTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         policyTags_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>(
                 policyTags_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1114,7 +1149,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public Builder clearPolicyTags() {
       if (policyTagsBuilder_ == null) {
         policyTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         policyTagsBuilder_.clear();
@@ -1242,7 +1277,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag,
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.Builder,
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>(
-                policyTags_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                policyTags_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         policyTags_ = null;
       }
       return policyTagsBuilder_;

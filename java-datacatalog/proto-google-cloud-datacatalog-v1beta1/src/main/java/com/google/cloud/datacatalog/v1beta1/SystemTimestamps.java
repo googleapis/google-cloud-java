@@ -40,6 +40,12 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   private SystemTimestamps() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SystemTimestamps();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,6 +157,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -164,6 +171,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -191,6 +200,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -203,6 +214,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -232,6 +245,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the expireTime field is set.
    */
   public boolean hasExpireTime() {
     return expireTime_ != null;
@@ -246,6 +261,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The expireTime.
    */
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
@@ -666,6 +683,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -678,6 +697,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -845,6 +866,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -857,6 +880,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1027,6 +1052,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
       return expireTimeBuilder_ != null || expireTime_ != null;
@@ -1042,6 +1069,8 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The expireTime.
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       if (expireTimeBuilder_ == null) {

@@ -32,6 +32,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
+   *
+   * @return Whether the taxonomy field is set.
    */
   boolean hasTaxonomy();
   /**
@@ -43,6 +45,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
+   *
+   * @return The taxonomy.
    */
   com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomy();
   /**
@@ -68,6 +72,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -81,6 +87,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -33,6 +33,8 @@ public interface UpdateEntryRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the entry field is set.
    */
   boolean hasEntry();
   /**
@@ -45,6 +47,8 @@ public interface UpdateEntryRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The entry.
    */
   com.google.cloud.datacatalog.v1beta1.Entry getEntry();
   /**
@@ -78,6 +82,8 @@ public interface UpdateEntryRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -98,6 +104,8 @@ public interface UpdateEntryRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

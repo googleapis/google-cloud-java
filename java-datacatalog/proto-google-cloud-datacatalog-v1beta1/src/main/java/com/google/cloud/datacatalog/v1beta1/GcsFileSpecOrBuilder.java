@@ -31,6 +31,8 @@ public interface GcsFileSpecOrBuilder
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The filePath.
    */
   java.lang.String getFilePath();
   /**
@@ -41,6 +43,8 @@ public interface GcsFileSpecOrBuilder
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for filePath.
    */
   com.google.protobuf.ByteString getFilePathBytes();
 
@@ -54,6 +58,8 @@ public interface GcsFileSpecOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the gcsTimestamps field is set.
    */
   boolean hasGcsTimestamps();
   /**
@@ -66,6 +72,8 @@ public interface GcsFileSpecOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The gcsTimestamps.
    */
   com.google.cloud.datacatalog.v1beta1.SystemTimestamps getGcsTimestamps();
   /**
@@ -89,6 +97,8 @@ public interface GcsFileSpecOrBuilder
    * </pre>
    *
    * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sizeBytes.
    */
   long getSizeBytes();
 }

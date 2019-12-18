@@ -35,6 +35,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    * <code>
    * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The dataset.
    */
   java.lang.String getDataset();
   /**
@@ -49,6 +51,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    * <code>
    * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for dataset.
    */
   com.google.protobuf.ByteString getDatasetBytes();
 
@@ -62,6 +66,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    * </pre>
    *
    * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tablePrefix.
    */
   java.lang.String getTablePrefix();
   /**
@@ -74,6 +80,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    * </pre>
    *
    * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tablePrefix.
    */
   com.google.protobuf.ByteString getTablePrefixBytes();
 
@@ -85,6 +93,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    * </pre>
    *
    * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The shardCount.
    */
   long getShardCount();
 }

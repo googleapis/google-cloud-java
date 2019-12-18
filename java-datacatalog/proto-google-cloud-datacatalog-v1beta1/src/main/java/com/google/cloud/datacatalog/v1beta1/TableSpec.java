@@ -42,6 +42,12 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TableSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The groupedEntry.
    */
   public java.lang.String getGroupedEntry() {
     java.lang.Object ref = groupedEntry_;
@@ -148,6 +155,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for groupedEntry.
    */
   public com.google.protobuf.ByteString getGroupedEntryBytes() {
     java.lang.Object ref = groupedEntry_;
@@ -492,6 +501,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The groupedEntry.
      */
     public java.lang.String getGroupedEntry() {
       java.lang.Object ref = groupedEntry_;
@@ -518,6 +529,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for groupedEntry.
      */
     public com.google.protobuf.ByteString getGroupedEntryBytes() {
       java.lang.Object ref = groupedEntry_;
@@ -544,6 +557,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The groupedEntry to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupedEntry(java.lang.String value) {
       if (value == null) {
@@ -568,6 +584,8 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGroupedEntry() {
 
@@ -589,6 +607,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for groupedEntry to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupedEntryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

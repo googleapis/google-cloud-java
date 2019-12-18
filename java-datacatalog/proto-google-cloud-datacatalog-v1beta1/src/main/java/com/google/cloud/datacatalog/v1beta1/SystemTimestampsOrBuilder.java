@@ -31,6 +31,8 @@ public interface SystemTimestampsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -41,6 +43,8 @@ public interface SystemTimestampsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -62,6 +66,8 @@ public interface SystemTimestampsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -72,6 +78,8 @@ public interface SystemTimestampsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -95,6 +103,8 @@ public interface SystemTimestampsOrBuilder
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
   /**
@@ -107,6 +117,8 @@ public interface SystemTimestampsOrBuilder
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**

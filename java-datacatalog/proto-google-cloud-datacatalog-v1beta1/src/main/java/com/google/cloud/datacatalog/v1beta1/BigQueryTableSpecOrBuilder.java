@@ -33,6 +33,8 @@ public interface BigQueryTableSpecOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for tableSourceType.
    */
   int getTableSourceTypeValue();
   /**
@@ -45,6 +47,8 @@ public interface BigQueryTableSpecOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The tableSourceType.
    */
   com.google.cloud.datacatalog.v1beta1.TableSourceType getTableSourceType();
 
@@ -57,6 +61,8 @@ public interface BigQueryTableSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
+   *
+   * @return Whether the viewSpec field is set.
    */
   boolean hasViewSpec();
   /**
@@ -68,6 +74,8 @@ public interface BigQueryTableSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
+   *
+   * @return The viewSpec.
    */
   com.google.cloud.datacatalog.v1beta1.ViewSpec getViewSpec();
   /**
@@ -91,6 +99,8 @@ public interface BigQueryTableSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   *
+   * @return Whether the tableSpec field is set.
    */
   boolean hasTableSpec();
   /**
@@ -102,6 +112,8 @@ public interface BigQueryTableSpecOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   *
+   * @return The tableSpec.
    */
   com.google.cloud.datacatalog.v1beta1.TableSpec getTableSpec();
   /**

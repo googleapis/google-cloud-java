@@ -31,6 +31,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -41,6 +43,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -52,6 +56,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>double double_value = 2;</code>
+   *
+   * @return The doubleValue.
    */
   double getDoubleValue();
 
@@ -63,6 +69,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>string string_value = 3;</code>
+   *
+   * @return The stringValue.
    */
   java.lang.String getStringValue();
   /**
@@ -73,6 +81,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>string string_value = 3;</code>
+   *
+   * @return The bytes for stringValue.
    */
   com.google.protobuf.ByteString getStringValueBytes();
 
@@ -84,6 +94,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
+   *
+   * @return The boolValue.
    */
   boolean getBoolValue();
 
@@ -95,6 +107,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   *
+   * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
   /**
@@ -105,6 +119,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   *
+   * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
   /**
@@ -127,6 +143,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
+   *
+   * @return Whether the enumValue field is set.
    */
   boolean hasEnumValue();
   /**
@@ -138,6 +156,8 @@ public interface TagFieldOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
+   *
+   * @return The enumValue.
    */
   com.google.cloud.datacatalog.v1beta1.TagField.EnumValue getEnumValue();
   /**

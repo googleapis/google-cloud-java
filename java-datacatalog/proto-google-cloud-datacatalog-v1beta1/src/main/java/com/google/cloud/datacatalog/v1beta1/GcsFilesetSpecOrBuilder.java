@@ -43,6 +43,8 @@ public interface GcsFilesetSpecOrBuilder
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the filePatterns.
    */
   java.util.List<java.lang.String> getFilePatternsList();
   /**
@@ -65,6 +67,8 @@ public interface GcsFilesetSpecOrBuilder
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of filePatterns.
    */
   int getFilePatternsCount();
   /**
@@ -87,6 +91,9 @@ public interface GcsFilesetSpecOrBuilder
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The filePatterns at the given index.
    */
   java.lang.String getFilePatterns(int index);
   /**
@@ -109,6 +116,9 @@ public interface GcsFilesetSpecOrBuilder
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the filePatterns at the given index.
    */
   com.google.protobuf.ByteString getFilePatternsBytes(int index);
 

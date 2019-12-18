@@ -32,6 +32,8 @@ public interface TaxonomyOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface TaxonomyOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface TaxonomyOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -68,6 +74,8 @@ public interface TaxonomyOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -81,6 +89,8 @@ public interface TaxonomyOrBuilder
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -93,6 +103,8 @@ public interface TaxonomyOrBuilder
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -107,6 +119,8 @@ public interface TaxonomyOrBuilder
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the activatedPolicyTypes.
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
       getActivatedPolicyTypesList();
@@ -121,6 +135,8 @@ public interface TaxonomyOrBuilder
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The count of activatedPolicyTypes.
    */
   int getActivatedPolicyTypesCount();
   /**
@@ -134,6 +150,9 @@ public interface TaxonomyOrBuilder
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The activatedPolicyTypes at the given index.
    */
   com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(int index);
   /**
@@ -147,6 +166,8 @@ public interface TaxonomyOrBuilder
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
    */
   java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList();
   /**
@@ -160,6 +181,9 @@ public interface TaxonomyOrBuilder
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
    */
   int getActivatedPolicyTypesValue(int index);
 }

@@ -34,6 +34,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
   /**
@@ -78,6 +84,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for linkedResource.
    */
   com.google.protobuf.ByteString getLinkedResourceBytes();
 
@@ -89,6 +97,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -99,6 +109,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.datacatalog.v1beta1.EntryType getType();
 
@@ -111,6 +123,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   *
+   * @return Whether the gcsFilesetSpec field is set.
    */
   boolean hasGcsFilesetSpec();
   /**
@@ -122,6 +136,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   *
+   * @return The gcsFilesetSpec.
    */
   com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec getGcsFilesetSpec();
   /**
@@ -145,6 +161,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   *
+   * @return Whether the bigqueryTableSpec field is set.
    */
   boolean hasBigqueryTableSpec();
   /**
@@ -156,6 +174,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   *
+   * @return The bigqueryTableSpec.
    */
   com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec getBigqueryTableSpec();
   /**
@@ -182,6 +202,8 @@ public interface EntryOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
    * </code>
+   *
+   * @return Whether the bigqueryDateShardedSpec field is set.
    */
   boolean hasBigqueryDateShardedSpec();
   /**
@@ -196,6 +218,8 @@ public interface EntryOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
    * </code>
+   *
+   * @return The bigqueryDateShardedSpec.
    */
   com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec getBigqueryDateShardedSpec();
   /**
@@ -224,6 +248,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -236,6 +262,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -248,6 +276,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -259,6 +289,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -270,6 +302,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
+   *
+   * @return Whether the schema field is set.
    */
   boolean hasSchema();
   /**
@@ -280,6 +314,8 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
+   *
+   * @return The schema.
    */
   com.google.cloud.datacatalog.v1beta1.Schema getSchema();
   /**
@@ -304,6 +340,8 @@ public interface EntryOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the sourceSystemTimestamps field is set.
    */
   boolean hasSourceSystemTimestamps();
   /**
@@ -317,6 +355,8 @@ public interface EntryOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The sourceSystemTimestamps.
    */
   com.google.cloud.datacatalog.v1beta1.SystemTimestamps getSourceSystemTimestamps();
   /**

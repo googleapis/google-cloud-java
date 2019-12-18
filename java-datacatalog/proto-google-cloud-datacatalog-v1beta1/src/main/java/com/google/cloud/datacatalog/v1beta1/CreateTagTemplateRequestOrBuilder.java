@@ -37,6 +37,8 @@ public interface CreateTagTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -53,6 +55,8 @@ public interface CreateTagTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -64,6 +68,8 @@ public interface CreateTagTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The tagTemplateId.
    */
   java.lang.String getTagTemplateId();
   /**
@@ -74,6 +80,8 @@ public interface CreateTagTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for tagTemplateId.
    */
   com.google.protobuf.ByteString getTagTemplateIdBytes();
 
@@ -87,6 +95,8 @@ public interface CreateTagTemplateRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tagTemplate field is set.
    */
   boolean hasTagTemplate();
   /**
@@ -99,6 +109,8 @@ public interface CreateTagTemplateRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tagTemplate.
    */
   com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate();
   /**

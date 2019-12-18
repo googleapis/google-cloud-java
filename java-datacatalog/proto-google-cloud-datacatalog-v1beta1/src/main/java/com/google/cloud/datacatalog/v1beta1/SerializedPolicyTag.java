@@ -44,6 +44,12 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SerializedPolicyTag();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,11 +89,11 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 childPolicyTags_ =
                     new java.util.ArrayList<
                         com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               childPolicyTags_.add(
                   input.readMessage(
@@ -109,7 +115,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         childPolicyTags_ = java.util.Collections.unmodifiableList(childPolicyTags_);
       }
       this.unknownFields = unknownFields.build();
@@ -132,7 +138,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
             com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
@@ -143,6 +148,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -163,6 +170,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -188,6 +197,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -210,6 +221,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -527,7 +540,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
       if (childPolicyTagsBuilder_ == null) {
         childPolicyTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         childPolicyTagsBuilder_.clear();
       }
@@ -559,19 +572,17 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag result =
           new com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (childPolicyTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           childPolicyTags_ = java.util.Collections.unmodifiableList(childPolicyTags_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.childPolicyTags_ = childPolicyTags_;
       } else {
         result.childPolicyTags_ = childPolicyTagsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -634,7 +645,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         if (!other.childPolicyTags_.isEmpty()) {
           if (childPolicyTags_.isEmpty()) {
             childPolicyTags_ = other.childPolicyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureChildPolicyTagsIsMutable();
             childPolicyTags_.addAll(other.childPolicyTags_);
@@ -647,7 +658,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
             childPolicyTagsBuilder_.dispose();
             childPolicyTagsBuilder_ = null;
             childPolicyTags_ = other.childPolicyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             childPolicyTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChildPolicyTagsFieldBuilder()
@@ -698,6 +709,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -718,6 +731,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -738,6 +753,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -756,6 +774,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -771,6 +791,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -794,6 +817,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -816,6 +841,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -838,6 +865,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -858,6 +888,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -875,6 +907,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -891,11 +926,11 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         childPolicyTags_ = java.util.Collections.emptyList();
 
     private void ensureChildPolicyTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         childPolicyTags_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>(
                 childPolicyTags_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1129,7 +1164,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     public Builder clearChildPolicyTags() {
       if (childPolicyTagsBuilder_ == null) {
         childPolicyTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         childPolicyTagsBuilder_.clear();
@@ -1266,7 +1301,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.Builder,
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>(
                 childPolicyTags_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         childPolicyTags_ = null;

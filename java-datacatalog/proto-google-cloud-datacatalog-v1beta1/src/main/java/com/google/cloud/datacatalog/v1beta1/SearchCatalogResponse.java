@@ -44,6 +44,12 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchCatalogResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -125,7 +131,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.datacatalog.v1beta1.SearchCatalogResult> results_;
   /**
@@ -201,6 +206,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -221,6 +228,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -489,7 +498,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse result =
           new com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -500,7 +508,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         result.results_ = resultsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -987,6 +994,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1007,6 +1016,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1027,6 +1038,9 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1045,6 +1059,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1060,6 +1076,9 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

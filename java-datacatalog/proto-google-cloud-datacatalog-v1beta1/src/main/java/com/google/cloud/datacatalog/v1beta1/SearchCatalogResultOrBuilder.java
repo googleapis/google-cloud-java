@@ -32,6 +32,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for searchResultType.
    */
   int getSearchResultTypeValue();
   /**
@@ -43,6 +45,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+   *
+   * @return The searchResultType.
    */
   com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType();
 
@@ -57,6 +61,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>string search_result_subtype = 2;</code>
+   *
+   * @return The searchResultSubtype.
    */
   java.lang.String getSearchResultSubtype();
   /**
@@ -70,6 +76,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>string search_result_subtype = 2;</code>
+   *
+   * @return The bytes for searchResultSubtype.
    */
   com.google.protobuf.ByteString getSearchResultSubtypeBytes();
 
@@ -84,6 +92,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>string relative_resource_name = 3;</code>
+   *
+   * @return The relativeResourceName.
    */
   java.lang.String getRelativeResourceName();
   /**
@@ -97,6 +107,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>string relative_resource_name = 3;</code>
+   *
+   * @return The bytes for relativeResourceName.
    */
   com.google.protobuf.ByteString getRelativeResourceNameBytes();
 
@@ -111,6 +123,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>string linked_resource = 4;</code>
+   *
+   * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
   /**
@@ -124,6 +138,8 @@ public interface SearchCatalogResultOrBuilder
    * </pre>
    *
    * <code>string linked_resource = 4;</code>
+   *
+   * @return The bytes for linkedResource.
    */
   com.google.protobuf.ByteString getLinkedResourceBytes();
 }

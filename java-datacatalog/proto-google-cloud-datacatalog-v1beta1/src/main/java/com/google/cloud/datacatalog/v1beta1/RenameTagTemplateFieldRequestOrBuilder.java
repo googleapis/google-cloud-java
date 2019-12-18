@@ -34,6 +34,8 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The newTagTemplateFieldId.
    */
   java.lang.String getNewTagTemplateFieldId();
   /**
@@ -68,6 +74,8 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for newTagTemplateFieldId.
    */
   com.google.protobuf.ByteString getNewTagTemplateFieldIdBytes();
 }

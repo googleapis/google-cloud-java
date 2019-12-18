@@ -31,6 +31,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The column.
    */
   java.lang.String getColumn();
   /**
@@ -41,6 +43,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for column.
    */
   com.google.protobuf.ByteString getColumnBytes();
 
@@ -52,6 +56,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The type.
    */
   java.lang.String getType();
   /**
@@ -62,6 +68,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString getTypeBytes();
 
@@ -73,6 +81,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -83,6 +93,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -96,6 +108,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mode.
    */
   java.lang.String getMode();
   /**
@@ -108,6 +122,8 @@ public interface ColumnSchemaOrBuilder
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mode.
    */
   com.google.protobuf.ByteString getModeBytes();
 

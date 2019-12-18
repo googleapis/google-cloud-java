@@ -45,6 +45,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchCatalogRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -166,6 +171,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @return A list containing the includeOrgIds.
      */
     java.util.List<java.lang.String> getIncludeOrgIdsList();
     /**
@@ -183,6 +190,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @return The count of includeOrgIds.
      */
     int getIncludeOrgIdsCount();
     /**
@@ -200,6 +209,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeOrgIds at the given index.
      */
     java.lang.String getIncludeOrgIds(int index);
     /**
@@ -217,6 +229,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeOrgIds at the given index.
      */
     com.google.protobuf.ByteString getIncludeOrgIdsBytes(int index);
 
@@ -230,6 +245,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @return A list containing the includeProjectIds.
      */
     java.util.List<java.lang.String> getIncludeProjectIdsList();
     /**
@@ -242,6 +259,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @return The count of includeProjectIds.
      */
     int getIncludeProjectIdsCount();
     /**
@@ -254,6 +273,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeProjectIds at the given index.
      */
     java.lang.String getIncludeProjectIds(int index);
     /**
@@ -266,6 +288,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeProjectIds at the given index.
      */
     com.google.protobuf.ByteString getIncludeProjectIdsBytes(int index);
 
@@ -280,6 +305,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool include_gcp_public_datasets = 7;</code>
+     *
+     * @return The includeGcpPublicDatasets.
      */
     boolean getIncludeGcpPublicDatasets();
   }
@@ -297,6 +324,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     private Scope() {
       includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Scope();
     }
 
     @java.lang.Override
@@ -388,7 +421,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
               com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.Builder.class);
     }
 
-    private int bitField0_;
     public static final int INCLUDE_ORG_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList includeOrgIds_;
     /**
@@ -406,6 +438,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @return A list containing the includeOrgIds.
      */
     public com.google.protobuf.ProtocolStringList getIncludeOrgIdsList() {
       return includeOrgIds_;
@@ -425,6 +459,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @return The count of includeOrgIds.
      */
     public int getIncludeOrgIdsCount() {
       return includeOrgIds_.size();
@@ -444,6 +480,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeOrgIds at the given index.
      */
     public java.lang.String getIncludeOrgIds(int index) {
       return includeOrgIds_.get(index);
@@ -463,6 +502,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeOrgIds at the given index.
      */
     public com.google.protobuf.ByteString getIncludeOrgIdsBytes(int index) {
       return includeOrgIds_.getByteString(index);
@@ -480,6 +522,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @return A list containing the includeProjectIds.
      */
     public com.google.protobuf.ProtocolStringList getIncludeProjectIdsList() {
       return includeProjectIds_;
@@ -494,6 +538,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @return The count of includeProjectIds.
      */
     public int getIncludeProjectIdsCount() {
       return includeProjectIds_.size();
@@ -508,6 +554,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeProjectIds at the given index.
      */
     public java.lang.String getIncludeProjectIds(int index) {
       return includeProjectIds_.get(index);
@@ -522,6 +571,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeProjectIds at the given index.
      */
     public com.google.protobuf.ByteString getIncludeProjectIdsBytes(int index) {
       return includeProjectIds_.getByteString(index);
@@ -540,6 +592,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool include_gcp_public_datasets = 7;</code>
+     *
+     * @return The includeGcpPublicDatasets.
      */
     public boolean getIncludeGcpPublicDatasets() {
       return includeGcpPublicDatasets_;
@@ -813,7 +867,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result =
             new com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           includeOrgIds_ = includeOrgIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -825,7 +878,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         result.includeProjectIds_ = includeProjectIds_;
         result.includeGcpPublicDatasets_ = includeGcpPublicDatasets_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -960,6 +1012,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @return A list containing the includeOrgIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeOrgIdsList() {
         return includeOrgIds_.getUnmodifiableView();
@@ -979,6 +1033,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @return The count of includeOrgIds.
        */
       public int getIncludeOrgIdsCount() {
         return includeOrgIds_.size();
@@ -998,6 +1054,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The includeOrgIds at the given index.
        */
       public java.lang.String getIncludeOrgIds(int index) {
         return includeOrgIds_.get(index);
@@ -1017,6 +1076,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the includeOrgIds at the given index.
        */
       public com.google.protobuf.ByteString getIncludeOrgIdsBytes(int index) {
         return includeOrgIds_.getByteString(index);
@@ -1036,6 +1098,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The includeOrgIds to set.
+       * @return This builder for chaining.
        */
       public Builder setIncludeOrgIds(int index, java.lang.String value) {
         if (value == null) {
@@ -1061,6 +1127,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @param value The includeOrgIds to add.
+       * @return This builder for chaining.
        */
       public Builder addIncludeOrgIds(java.lang.String value) {
         if (value == null) {
@@ -1086,6 +1155,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @param values The includeOrgIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllIncludeOrgIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeOrgIdsIsMutable();
@@ -1108,6 +1180,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIncludeOrgIds() {
         includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1130,6 +1204,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
+       *
+       * @param value The bytes of the includeOrgIds to add.
+       * @return This builder for chaining.
        */
       public Builder addIncludeOrgIdsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1161,6 +1238,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @return A list containing the includeProjectIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeProjectIdsList() {
         return includeProjectIds_.getUnmodifiableView();
@@ -1175,6 +1254,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @return The count of includeProjectIds.
        */
       public int getIncludeProjectIdsCount() {
         return includeProjectIds_.size();
@@ -1189,6 +1270,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The includeProjectIds at the given index.
        */
       public java.lang.String getIncludeProjectIds(int index) {
         return includeProjectIds_.get(index);
@@ -1203,6 +1287,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the includeProjectIds at the given index.
        */
       public com.google.protobuf.ByteString getIncludeProjectIdsBytes(int index) {
         return includeProjectIds_.getByteString(index);
@@ -1217,6 +1304,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The includeProjectIds to set.
+       * @return This builder for chaining.
        */
       public Builder setIncludeProjectIds(int index, java.lang.String value) {
         if (value == null) {
@@ -1237,6 +1328,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @param value The includeProjectIds to add.
+       * @return This builder for chaining.
        */
       public Builder addIncludeProjectIds(java.lang.String value) {
         if (value == null) {
@@ -1257,6 +1351,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @param values The includeProjectIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllIncludeProjectIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeProjectIdsIsMutable();
@@ -1274,6 +1371,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIncludeProjectIds() {
         includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1291,6 +1390,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
+       *
+       * @param value The bytes of the includeProjectIds to add.
+       * @return This builder for chaining.
        */
       public Builder addIncludeProjectIdsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1315,6 +1417,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
+       *
+       * @return The includeGcpPublicDatasets.
        */
       public boolean getIncludeGcpPublicDatasets() {
         return includeGcpPublicDatasets_;
@@ -1330,6 +1434,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
+       *
+       * @param value The includeGcpPublicDatasets to set.
+       * @return This builder for chaining.
        */
       public Builder setIncludeGcpPublicDatasets(boolean value) {
 
@@ -1348,6 +1455,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIncludeGcpPublicDatasets() {
 
@@ -1423,6 +1532,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scope field is set.
    */
   public boolean hasScope() {
     return scope_ != null;
@@ -1437,6 +1548,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scope.
    */
   public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope getScope() {
     return scope_ == null
@@ -1476,6 +1589,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The query.
    */
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
@@ -1503,6 +1618,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for query.
    */
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
@@ -1527,6 +1644,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -1547,6 +1666,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -1572,6 +1693,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -1602,6 +1725,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string order_by = 5;</code>
+   *
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -1629,6 +1754,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string order_by = 5;</code>
+   *
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
@@ -2053,6 +2180,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the scope field is set.
      */
     public boolean hasScope() {
       return scopeBuilder_ != null || scope_ != null;
@@ -2067,6 +2196,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The scope.
      */
     public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope getScope() {
       if (scopeBuilder_ == null) {
@@ -2256,6 +2387,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The query.
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -2283,6 +2416,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for query.
      */
     public com.google.protobuf.ByteString getQueryBytes() {
       java.lang.Object ref = query_;
@@ -2310,6 +2445,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The query to set.
+     * @return This builder for chaining.
      */
     public Builder setQuery(java.lang.String value) {
       if (value == null) {
@@ -2335,6 +2473,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQuery() {
 
@@ -2357,6 +2497,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2379,6 +2522,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -2392,6 +2537,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -2408,6 +2556,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -2430,6 +2580,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -2455,6 +2607,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -2480,6 +2634,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -2503,6 +2660,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -2523,6 +2682,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2551,6 +2713,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string order_by = 5;</code>
+     *
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -2578,6 +2742,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string order_by = 5;</code>
+     *
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
@@ -2605,6 +2771,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string order_by = 5;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
@@ -2630,6 +2799,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string order_by = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
 
@@ -2652,6 +2823,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string order_by = 5;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

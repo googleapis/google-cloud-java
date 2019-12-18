@@ -32,6 +32,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   private FieldType() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FieldType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -44,7 +50,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -230,12 +235,20 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PrimitiveType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static PrimitiveType forNumber(int value) {
       switch (value) {
         case 0:
@@ -408,6 +421,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EnumType();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -495,6 +514,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The displayName.
        */
       java.lang.String getDisplayName();
       /**
@@ -505,6 +526,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for displayName.
        */
       com.google.protobuf.ByteString getDisplayNameBytes();
     }
@@ -524,6 +547,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new EnumValue();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -536,7 +565,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -599,6 +627,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The displayName.
        */
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
@@ -619,6 +649,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for displayName.
        */
       public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
@@ -965,6 +997,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The displayName.
          */
         public java.lang.String getDisplayName() {
           java.lang.Object ref = displayName_;
@@ -985,6 +1019,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for displayName.
          */
         public com.google.protobuf.ByteString getDisplayNameBytes() {
           java.lang.Object ref = displayName_;
@@ -1005,6 +1041,9 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The displayName to set.
+         * @return This builder for chaining.
          */
         public Builder setDisplayName(java.lang.String value) {
           if (value == null) {
@@ -1023,6 +1062,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearDisplayName() {
 
@@ -1038,6 +1079,9 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for displayName to set.
+         * @return This builder for chaining.
          */
         public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2126,7 +2170,10 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   private int typeDeclCase_ = 0;
   private java.lang.Object typeDecl_;
 
-  public enum TypeDeclCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeDeclCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PRIMITIVE_TYPE(1),
     ENUM_TYPE(2),
     TYPEDECL_NOT_SET(0);
@@ -2135,7 +2182,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     private TypeDeclCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeDeclCase valueOf(int value) {
       return forNumber(value);
@@ -2172,6 +2223,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for primitiveType.
    */
   public int getPrimitiveTypeValue() {
     if (typeDeclCase_ == 1) {
@@ -2187,6 +2240,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+   *
+   * @return The primitiveType.
    */
   public com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType getPrimitiveType() {
     if (typeDeclCase_ == 1) {
@@ -2210,6 +2265,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
+   *
+   * @return Whether the enumType field is set.
    */
   public boolean hasEnumType() {
     return typeDeclCase_ == 2;
@@ -2222,6 +2279,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
+   *
+   * @return The enumType.
    */
   public com.google.cloud.datacatalog.v1beta1.FieldType.EnumType getEnumType() {
     if (typeDeclCase_ == 2) {
@@ -2626,6 +2685,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for primitiveType.
      */
     public int getPrimitiveTypeValue() {
       if (typeDeclCase_ == 1) {
@@ -2641,6 +2702,9 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for primitiveType to set.
+     * @return This builder for chaining.
      */
     public Builder setPrimitiveTypeValue(int value) {
       typeDeclCase_ = 1;
@@ -2656,6 +2720,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+     *
+     * @return The primitiveType.
      */
     public com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType getPrimitiveType() {
       if (typeDeclCase_ == 1) {
@@ -2678,6 +2744,9 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+     *
+     * @param value The primitiveType to set.
+     * @return This builder for chaining.
      */
     public Builder setPrimitiveType(
         com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType value) {
@@ -2697,6 +2766,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType primitive_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPrimitiveType() {
       if (typeDeclCase_ == 1) {
@@ -2720,6 +2791,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
+     *
+     * @return Whether the enumType field is set.
      */
     public boolean hasEnumType() {
       return typeDeclCase_ == 2;
@@ -2732,6 +2805,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
+     *
+     * @return The enumType.
      */
     public com.google.cloud.datacatalog.v1beta1.FieldType.EnumType getEnumType() {
       if (enumTypeBuilder_ == null) {

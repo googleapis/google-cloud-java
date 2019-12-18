@@ -32,6 +32,8 @@ public interface UpdateTagRequestOrBuilder
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tag field is set.
    */
   boolean hasTag();
   /**
@@ -43,6 +45,8 @@ public interface UpdateTagRequestOrBuilder
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tag.
    */
   com.google.cloud.datacatalog.v1beta1.Tag getTag();
   /**
@@ -66,6 +70,8 @@ public interface UpdateTagRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -77,6 +83,8 @@ public interface UpdateTagRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

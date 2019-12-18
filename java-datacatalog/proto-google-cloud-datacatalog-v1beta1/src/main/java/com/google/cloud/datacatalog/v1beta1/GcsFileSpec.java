@@ -42,6 +42,12 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcsFileSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The filePath.
    */
   public java.lang.String getFilePath() {
     java.lang.Object ref = filePath_;
@@ -158,6 +165,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for filePath.
    */
   public com.google.protobuf.ByteString getFilePathBytes() {
     java.lang.Object ref = filePath_;
@@ -183,6 +192,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the gcsTimestamps field is set.
    */
   public boolean hasGcsTimestamps() {
     return gcsTimestamps_ != null;
@@ -197,6 +208,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The gcsTimestamps.
    */
   public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getGcsTimestamps() {
     return gcsTimestamps_ == null
@@ -229,6 +242,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sizeBytes.
    */
   public long getSizeBytes() {
     return sizeBytes_;
@@ -603,6 +618,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The filePath.
      */
     public java.lang.String getFilePath() {
       java.lang.Object ref = filePath_;
@@ -623,6 +640,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for filePath.
      */
     public com.google.protobuf.ByteString getFilePathBytes() {
       java.lang.Object ref = filePath_;
@@ -643,6 +662,9 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The filePath to set.
+     * @return This builder for chaining.
      */
     public Builder setFilePath(java.lang.String value) {
       if (value == null) {
@@ -661,6 +683,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilePath() {
 
@@ -676,6 +700,9 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for filePath to set.
+     * @return This builder for chaining.
      */
     public Builder setFilePathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -704,6 +731,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the gcsTimestamps field is set.
      */
     public boolean hasGcsTimestamps() {
       return gcsTimestampsBuilder_ != null || gcsTimestamps_ != null;
@@ -718,6 +747,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The gcsTimestamps.
      */
     public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getGcsTimestamps() {
       if (gcsTimestampsBuilder_ == null) {
@@ -898,6 +929,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sizeBytes.
      */
     public long getSizeBytes() {
       return sizeBytes_;
@@ -910,6 +943,9 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The sizeBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setSizeBytes(long value) {
 
@@ -925,6 +961,8 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSizeBytes() {
 

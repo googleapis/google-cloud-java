@@ -41,6 +41,12 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   private LookupEntryRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LookupEntryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +120,10 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   private int targetNameCase_ = 0;
   private java.lang.Object targetName_;
 
-  public enum TargetNameCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TargetNameCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LINKED_RESOURCE(1),
     SQL_RESOURCE(3),
     TARGETNAME_NOT_SET(0);
@@ -124,7 +132,11 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     private TargetNameCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TargetNameCase valueOf(int value) {
       return forNumber(value);
@@ -167,6 +179,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
+   *
+   * @return The linkedResource.
    */
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = "";
@@ -198,6 +212,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
+   *
+   * @return The bytes for linkedResource.
    */
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = "";
@@ -233,6 +249,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
+   *
+   * @return The sqlResource.
    */
   public java.lang.String getSqlResource() {
     java.lang.Object ref = "";
@@ -266,6 +284,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
+   *
+   * @return The bytes for sqlResource.
    */
   public com.google.protobuf.ByteString getSqlResourceBytes() {
     java.lang.Object ref = "";
@@ -680,6 +700,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
+     *
+     * @return The linkedResource.
      */
     public java.lang.String getLinkedResource() {
       java.lang.Object ref = "";
@@ -711,6 +733,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
+     *
+     * @return The bytes for linkedResource.
      */
     public com.google.protobuf.ByteString getLinkedResourceBytes() {
       java.lang.Object ref = "";
@@ -742,6 +766,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
+     *
+     * @param value The linkedResource to set.
+     * @return This builder for chaining.
      */
     public Builder setLinkedResource(java.lang.String value) {
       if (value == null) {
@@ -766,6 +793,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLinkedResource() {
       if (targetNameCase_ == 1) {
@@ -789,6 +818,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
+     *
+     * @param value The bytes for linkedResource to set.
+     * @return This builder for chaining.
      */
     public Builder setLinkedResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -817,6 +849,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
+     *
+     * @return The sqlResource.
      */
     public java.lang.String getSqlResource() {
       java.lang.Object ref = "";
@@ -850,6 +884,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
+     *
+     * @return The bytes for sqlResource.
      */
     public com.google.protobuf.ByteString getSqlResourceBytes() {
       java.lang.Object ref = "";
@@ -883,6 +919,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
+     *
+     * @param value The sqlResource to set.
+     * @return This builder for chaining.
      */
     public Builder setSqlResource(java.lang.String value) {
       if (value == null) {
@@ -909,6 +948,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSqlResource() {
       if (targetNameCase_ == 3) {
@@ -934,6 +975,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
+     *
+     * @param value The bytes for sqlResource to set.
+     * @return This builder for chaining.
      */
     public Builder setSqlResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

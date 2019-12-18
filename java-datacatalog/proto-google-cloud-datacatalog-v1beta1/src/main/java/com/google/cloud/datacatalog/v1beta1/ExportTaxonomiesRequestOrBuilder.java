@@ -34,6 +34,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return A list containing the taxonomies.
    */
   java.util.List<java.lang.String> getTaxonomiesList();
   /**
@@ -72,6 +78,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The count of taxonomies.
    */
   int getTaxonomiesCount();
   /**
@@ -84,6 +92,9 @@ public interface ExportTaxonomiesRequestOrBuilder
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The taxonomies at the given index.
    */
   java.lang.String getTaxonomies(int index);
   /**
@@ -96,6 +107,9 @@ public interface ExportTaxonomiesRequestOrBuilder
    * <code>
    * repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the taxonomies at the given index.
    */
   com.google.protobuf.ByteString getTaxonomiesBytes(int index);
 
@@ -107,6 +121,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
+   *
+   * @return The serializedTaxonomies.
    */
   boolean getSerializedTaxonomies();
 

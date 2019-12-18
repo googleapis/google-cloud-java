@@ -46,6 +46,12 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchCatalogResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for searchResultType.
    */
   public int getSearchResultTypeValue() {
     return searchResultType_;
@@ -155,6 +162,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+   *
+   * @return The searchResultType.
    */
   public com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType() {
     @SuppressWarnings("deprecation")
@@ -178,6 +187,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string search_result_subtype = 2;</code>
+   *
+   * @return The searchResultSubtype.
    */
   public java.lang.String getSearchResultSubtype() {
     java.lang.Object ref = searchResultSubtype_;
@@ -201,6 +212,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string search_result_subtype = 2;</code>
+   *
+   * @return The bytes for searchResultSubtype.
    */
   public com.google.protobuf.ByteString getSearchResultSubtypeBytes() {
     java.lang.Object ref = searchResultSubtype_;
@@ -227,6 +240,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string relative_resource_name = 3;</code>
+   *
+   * @return The relativeResourceName.
    */
   public java.lang.String getRelativeResourceName() {
     java.lang.Object ref = relativeResourceName_;
@@ -250,6 +265,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string relative_resource_name = 3;</code>
+   *
+   * @return The bytes for relativeResourceName.
    */
   public com.google.protobuf.ByteString getRelativeResourceNameBytes() {
     java.lang.Object ref = relativeResourceName_;
@@ -276,6 +293,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string linked_resource = 4;</code>
+   *
+   * @return The linkedResource.
    */
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = linkedResource_;
@@ -299,6 +318,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string linked_resource = 4;</code>
+   *
+   * @return The bytes for linkedResource.
    */
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = linkedResource_;
@@ -693,6 +714,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for searchResultType.
      */
     public int getSearchResultTypeValue() {
       return searchResultType_;
@@ -706,6 +729,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for searchResultType to set.
+     * @return This builder for chaining.
      */
     public Builder setSearchResultTypeValue(int value) {
       searchResultType_ = value;
@@ -721,6 +747,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+     *
+     * @return The searchResultType.
      */
     public com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType() {
       @SuppressWarnings("deprecation")
@@ -739,6 +767,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+     *
+     * @param value The searchResultType to set.
+     * @return This builder for chaining.
      */
     public Builder setSearchResultType(
         com.google.cloud.datacatalog.v1beta1.SearchResultType value) {
@@ -759,6 +790,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.SearchResultType search_result_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSearchResultType() {
 
@@ -779,6 +812,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string search_result_subtype = 2;</code>
+     *
+     * @return The searchResultSubtype.
      */
     public java.lang.String getSearchResultSubtype() {
       java.lang.Object ref = searchResultSubtype_;
@@ -802,6 +837,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string search_result_subtype = 2;</code>
+     *
+     * @return The bytes for searchResultSubtype.
      */
     public com.google.protobuf.ByteString getSearchResultSubtypeBytes() {
       java.lang.Object ref = searchResultSubtype_;
@@ -825,6 +862,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string search_result_subtype = 2;</code>
+     *
+     * @param value The searchResultSubtype to set.
+     * @return This builder for chaining.
      */
     public Builder setSearchResultSubtype(java.lang.String value) {
       if (value == null) {
@@ -846,6 +886,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string search_result_subtype = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSearchResultSubtype() {
 
@@ -864,6 +906,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string search_result_subtype = 2;</code>
+     *
+     * @param value The bytes for searchResultSubtype to set.
+     * @return This builder for chaining.
      */
     public Builder setSearchResultSubtypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -888,6 +933,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_resource_name = 3;</code>
+     *
+     * @return The relativeResourceName.
      */
     public java.lang.String getRelativeResourceName() {
       java.lang.Object ref = relativeResourceName_;
@@ -911,6 +958,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_resource_name = 3;</code>
+     *
+     * @return The bytes for relativeResourceName.
      */
     public com.google.protobuf.ByteString getRelativeResourceNameBytes() {
       java.lang.Object ref = relativeResourceName_;
@@ -934,6 +983,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_resource_name = 3;</code>
+     *
+     * @param value The relativeResourceName to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeResourceName(java.lang.String value) {
       if (value == null) {
@@ -955,6 +1007,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_resource_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRelativeResourceName() {
 
@@ -973,6 +1027,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string relative_resource_name = 3;</code>
+     *
+     * @param value The bytes for relativeResourceName to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeResourceNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -997,6 +1054,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string linked_resource = 4;</code>
+     *
+     * @return The linkedResource.
      */
     public java.lang.String getLinkedResource() {
       java.lang.Object ref = linkedResource_;
@@ -1020,6 +1079,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string linked_resource = 4;</code>
+     *
+     * @return The bytes for linkedResource.
      */
     public com.google.protobuf.ByteString getLinkedResourceBytes() {
       java.lang.Object ref = linkedResource_;
@@ -1043,6 +1104,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string linked_resource = 4;</code>
+     *
+     * @param value The linkedResource to set.
+     * @return This builder for chaining.
      */
     public Builder setLinkedResource(java.lang.String value) {
       if (value == null) {
@@ -1064,6 +1128,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string linked_resource = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLinkedResource() {
 
@@ -1082,6 +1148,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string linked_resource = 4;</code>
+     *
+     * @param value The bytes for linkedResource to set.
+     * @return This builder for chaining.
      */
     public Builder setLinkedResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

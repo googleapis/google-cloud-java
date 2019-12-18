@@ -37,6 +37,8 @@ public interface TableSpecOrBuilder
    * <code>
    * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The groupedEntry.
    */
   java.lang.String getGroupedEntry();
   /**
@@ -53,6 +55,8 @@ public interface TableSpecOrBuilder
    * <code>
    * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for groupedEntry.
    */
   com.google.protobuf.ByteString getGroupedEntryBytes();
 }

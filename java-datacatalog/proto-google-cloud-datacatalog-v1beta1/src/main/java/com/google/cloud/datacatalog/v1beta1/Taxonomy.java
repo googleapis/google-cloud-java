@@ -49,6 +49,12 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Taxonomy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,9 +102,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
           case 48:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 activatedPolicyTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               activatedPolicyTypes_.add(rawValue);
               break;
@@ -109,9 +115,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   activatedPolicyTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 activatedPolicyTypes_.add(rawValue);
               }
@@ -132,7 +138,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         activatedPolicyTypes_ = java.util.Collections.unmodifiableList(activatedPolicyTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -219,12 +225,20 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PolicyType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static PolicyType forNumber(int value) {
       switch (value) {
         case 0:
@@ -280,7 +294,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -292,6 +305,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -313,6 +328,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -338,6 +355,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -360,6 +379,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -385,6 +406,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -407,6 +430,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -448,6 +473,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the activatedPolicyTypes.
    */
   public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
       getActivatedPolicyTypesList() {
@@ -466,6 +493,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param value The activatedPolicyTypes to add.
    */
   public int getActivatedPolicyTypesCount() {
     return activatedPolicyTypes_.size();
@@ -481,6 +510,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The activatedPolicyTypes at the given index.
    */
   public com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(
       int index) {
@@ -497,6 +529,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
    */
   public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
     return activatedPolicyTypes_;
@@ -512,6 +546,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
    */
   public int getActivatedPolicyTypesValue(int index) {
     return activatedPolicyTypes_.get(index);
@@ -779,7 +816,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       description_ = "";
 
       activatedPolicyTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -808,16 +845,14 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datacatalog.v1beta1.Taxonomy result =
           new com.google.cloud.datacatalog.v1beta1.Taxonomy(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         activatedPolicyTypes_ = java.util.Collections.unmodifiableList(activatedPolicyTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.activatedPolicyTypes_ = activatedPolicyTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -882,7 +917,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       if (!other.activatedPolicyTypes_.isEmpty()) {
         if (activatedPolicyTypes_.isEmpty()) {
           activatedPolicyTypes_ = other.activatedPolicyTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureActivatedPolicyTypesIsMutable();
           activatedPolicyTypes_.addAll(other.activatedPolicyTypes_);
@@ -930,6 +965,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -951,6 +988,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -972,6 +1011,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -991,6 +1033,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1007,6 +1051,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1030,6 +1077,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1052,6 +1101,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1074,6 +1125,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1094,6 +1148,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1111,6 +1167,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1134,6 +1193,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1156,6 +1217,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1178,6 +1241,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1198,6 +1264,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1215,6 +1283,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1231,9 +1302,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureActivatedPolicyTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         activatedPolicyTypes_ = new java.util.ArrayList<java.lang.Integer>(activatedPolicyTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1247,6 +1318,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the activatedPolicyTypes.
      */
     public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
         getActivatedPolicyTypesList() {
@@ -1265,6 +1338,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The count of activatedPolicyTypes.
      */
     public int getActivatedPolicyTypesCount() {
       return activatedPolicyTypes_.size();
@@ -1280,6 +1355,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The activatedPolicyTypes at the given index.
      */
     public com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(
         int index) {
@@ -1296,6 +1374,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The activatedPolicyTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setActivatedPolicyTypes(
         int index, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType value) {
@@ -1318,6 +1400,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The activatedPolicyTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addActivatedPolicyTypes(
         com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType value) {
@@ -1340,6 +1425,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The activatedPolicyTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllActivatedPolicyTypes(
         java.lang.Iterable<? extends com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
@@ -1362,10 +1450,12 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearActivatedPolicyTypes() {
       activatedPolicyTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1380,6 +1470,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
      */
     public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
       return java.util.Collections.unmodifiableList(activatedPolicyTypes_);
@@ -1395,6 +1487,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
      */
     public int getActivatedPolicyTypesValue(int index) {
       return activatedPolicyTypes_.get(index);
@@ -1410,6 +1505,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setActivatedPolicyTypesValue(int index, int value) {
       ensureActivatedPolicyTypesIsMutable();
@@ -1428,6 +1527,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for activatedPolicyTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addActivatedPolicyTypesValue(int value) {
       ensureActivatedPolicyTypesIsMutable();
@@ -1446,6 +1548,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for activatedPolicyTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllActivatedPolicyTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureActivatedPolicyTypesIsMutable();

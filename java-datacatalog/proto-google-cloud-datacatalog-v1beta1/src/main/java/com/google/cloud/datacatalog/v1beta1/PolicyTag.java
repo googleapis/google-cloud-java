@@ -54,6 +54,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PolicyTag();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -108,9 +114,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 childPolicyTags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               childPolicyTags_.add(s);
               break;
@@ -129,7 +135,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         childPolicyTags_ = childPolicyTags_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -152,7 +158,6 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1beta1.PolicyTag.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -164,6 +169,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -185,6 +192,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -211,6 +220,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -234,6 +245,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -260,6 +273,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -283,6 +298,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -311,6 +328,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent_policy_tag = 4;</code>
+   *
+   * @return The parentPolicyTag.
    */
   public java.lang.String getParentPolicyTag() {
     java.lang.Object ref = parentPolicyTag_;
@@ -336,6 +355,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent_policy_tag = 4;</code>
+   *
+   * @return The bytes for parentPolicyTag.
    */
   public com.google.protobuf.ByteString getParentPolicyTagBytes() {
     java.lang.Object ref = parentPolicyTag_;
@@ -360,6 +381,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the childPolicyTags.
    */
   public com.google.protobuf.ProtocolStringList getChildPolicyTagsList() {
     return childPolicyTags_;
@@ -373,6 +396,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The count of childPolicyTags.
    */
   public int getChildPolicyTagsCount() {
     return childPolicyTags_.size();
@@ -386,6 +411,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The childPolicyTags at the given index.
    */
   public java.lang.String getChildPolicyTags(int index) {
     return childPolicyTags_.get(index);
@@ -399,6 +427,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the childPolicyTags at the given index.
    */
   public com.google.protobuf.ByteString getChildPolicyTagsBytes(int index) {
     return childPolicyTags_.getByteString(index);
@@ -668,7 +699,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       parentPolicyTag_ = "";
 
       childPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -697,17 +728,15 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datacatalog.v1beta1.PolicyTag result =
           new com.google.cloud.datacatalog.v1beta1.PolicyTag(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.parentPolicyTag_ = parentPolicyTag_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         childPolicyTags_ = childPolicyTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.childPolicyTags_ = childPolicyTags_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -776,7 +805,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       if (!other.childPolicyTags_.isEmpty()) {
         if (childPolicyTags_.isEmpty()) {
           childPolicyTags_ = other.childPolicyTags_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureChildPolicyTagsIsMutable();
           childPolicyTags_.addAll(other.childPolicyTags_);
@@ -824,6 +853,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -845,6 +876,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -866,6 +899,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -885,6 +921,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -901,6 +939,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -925,6 +966,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -948,6 +991,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -971,6 +1016,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -992,6 +1040,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1010,6 +1060,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1034,6 +1087,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1057,6 +1112,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1080,6 +1137,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1101,6 +1161,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1119,6 +1181,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1145,6 +1210,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
+     *
+     * @return The parentPolicyTag.
      */
     public java.lang.String getParentPolicyTag() {
       java.lang.Object ref = parentPolicyTag_;
@@ -1170,6 +1237,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
+     *
+     * @return The bytes for parentPolicyTag.
      */
     public com.google.protobuf.ByteString getParentPolicyTagBytes() {
       java.lang.Object ref = parentPolicyTag_;
@@ -1195,6 +1264,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
+     *
+     * @param value The parentPolicyTag to set.
+     * @return This builder for chaining.
      */
     public Builder setParentPolicyTag(java.lang.String value) {
       if (value == null) {
@@ -1218,6 +1290,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParentPolicyTag() {
 
@@ -1238,6 +1312,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
+     *
+     * @param value The bytes for parentPolicyTag to set.
+     * @return This builder for chaining.
      */
     public Builder setParentPolicyTagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1254,9 +1331,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureChildPolicyTagsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         childPolicyTags_ = new com.google.protobuf.LazyStringArrayList(childPolicyTags_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1268,6 +1345,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return A list containing the childPolicyTags.
      */
     public com.google.protobuf.ProtocolStringList getChildPolicyTagsList() {
       return childPolicyTags_.getUnmodifiableView();
@@ -1281,6 +1360,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The count of childPolicyTags.
      */
     public int getChildPolicyTagsCount() {
       return childPolicyTags_.size();
@@ -1294,6 +1375,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The childPolicyTags at the given index.
      */
     public java.lang.String getChildPolicyTags(int index) {
       return childPolicyTags_.get(index);
@@ -1307,6 +1391,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the childPolicyTags at the given index.
      */
     public com.google.protobuf.ByteString getChildPolicyTagsBytes(int index) {
       return childPolicyTags_.getByteString(index);
@@ -1320,6 +1407,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The childPolicyTags to set.
+     * @return This builder for chaining.
      */
     public Builder setChildPolicyTags(int index, java.lang.String value) {
       if (value == null) {
@@ -1339,6 +1430,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The childPolicyTags to add.
+     * @return This builder for chaining.
      */
     public Builder addChildPolicyTags(java.lang.String value) {
       if (value == null) {
@@ -1358,6 +1452,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param values The childPolicyTags to add.
+     * @return This builder for chaining.
      */
     public Builder addAllChildPolicyTags(java.lang.Iterable<java.lang.String> values) {
       ensureChildPolicyTagsIsMutable();
@@ -1374,10 +1471,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearChildPolicyTags() {
       childPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1390,6 +1489,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes of the childPolicyTags to add.
+     * @return This builder for chaining.
      */
     public Builder addChildPolicyTagsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

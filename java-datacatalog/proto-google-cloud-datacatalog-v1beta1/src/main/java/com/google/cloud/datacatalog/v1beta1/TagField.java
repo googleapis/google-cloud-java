@@ -43,6 +43,12 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TagField();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -172,6 +177,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
      */
     java.lang.String getDisplayName();
     /**
@@ -182,6 +189,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
@@ -209,6 +218,12 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EnumValue();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -221,7 +236,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -283,6 +297,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -303,6 +319,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -648,6 +666,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1;</code>
+       *
+       * @return The displayName.
        */
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
@@ -668,6 +688,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1;</code>
+       *
+       * @return The bytes for displayName.
        */
       public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
@@ -688,6 +710,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayName(java.lang.String value) {
         if (value == null) {
@@ -706,6 +731,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
 
@@ -721,6 +748,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 1;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -788,7 +818,10 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   private int kindCase_ = 0;
   private java.lang.Object kind_;
 
-  public enum KindCase implements com.google.protobuf.Internal.EnumLite {
+  public enum KindCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DOUBLE_VALUE(2),
     STRING_VALUE(3),
     BOOL_VALUE(4),
@@ -800,7 +833,11 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static KindCase valueOf(int value) {
       return forNumber(value);
@@ -844,6 +881,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -864,6 +903,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -886,6 +927,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double double_value = 2;</code>
+   *
+   * @return The doubleValue.
    */
   public double getDoubleValue() {
     if (kindCase_ == 2) {
@@ -903,6 +946,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string string_value = 3;</code>
+   *
+   * @return The stringValue.
    */
   public java.lang.String getStringValue() {
     java.lang.Object ref = "";
@@ -928,6 +973,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string string_value = 3;</code>
+   *
+   * @return The bytes for stringValue.
    */
   public com.google.protobuf.ByteString getStringValueBytes() {
     java.lang.Object ref = "";
@@ -955,6 +1002,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
+   *
+   * @return The boolValue.
    */
   public boolean getBoolValue() {
     if (kindCase_ == 4) {
@@ -972,6 +1021,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   *
+   * @return Whether the timestampValue field is set.
    */
   public boolean hasTimestampValue() {
     return kindCase_ == 5;
@@ -984,6 +1035,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   *
+   * @return The timestampValue.
    */
   public com.google.protobuf.Timestamp getTimestampValue() {
     if (kindCase_ == 5) {
@@ -1017,6 +1070,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
+   *
+   * @return Whether the enumValue field is set.
    */
   public boolean hasEnumValue() {
     return kindCase_ == 6;
@@ -1030,6 +1085,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
+   *
+   * @return The enumValue.
    */
   public com.google.cloud.datacatalog.v1beta1.TagField.EnumValue getEnumValue() {
     if (kindCase_ == 6) {
@@ -1539,6 +1596,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1559,6 +1618,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1579,6 +1640,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1597,6 +1661,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1612,6 +1678,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1632,6 +1701,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double double_value = 2;</code>
+     *
+     * @return The doubleValue.
      */
     public double getDoubleValue() {
       if (kindCase_ == 2) {
@@ -1647,6 +1718,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double double_value = 2;</code>
+     *
+     * @param value The doubleValue to set.
+     * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
       kindCase_ = 2;
@@ -1662,6 +1736,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double double_value = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDoubleValue() {
       if (kindCase_ == 2) {
@@ -1680,6 +1756,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 3;</code>
+     *
+     * @return The stringValue.
      */
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
@@ -1705,6 +1783,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 3;</code>
+     *
+     * @return The bytes for stringValue.
      */
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
@@ -1730,6 +1810,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 3;</code>
+     *
+     * @param value The stringValue to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValue(java.lang.String value) {
       if (value == null) {
@@ -1748,6 +1831,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStringValue() {
       if (kindCase_ == 3) {
@@ -1765,6 +1850,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 3;</code>
+     *
+     * @param value The bytes for stringValue to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValueBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1785,6 +1873,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
+     *
+     * @return The boolValue.
      */
     public boolean getBoolValue() {
       if (kindCase_ == 4) {
@@ -1800,6 +1890,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
+     *
+     * @param value The boolValue to set.
+     * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
       kindCase_ = 4;
@@ -1815,6 +1908,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBoolValue() {
       if (kindCase_ == 4) {
@@ -1838,6 +1933,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+     *
+     * @return Whether the timestampValue field is set.
      */
     public boolean hasTimestampValue() {
       return kindCase_ == 5;
@@ -1850,6 +1947,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+     *
+     * @return The timestampValue.
      */
     public com.google.protobuf.Timestamp getTimestampValue() {
       if (timestampValueBuilder_ == null) {
@@ -2036,6 +2135,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
+     *
+     * @return Whether the enumValue field is set.
      */
     public boolean hasEnumValue() {
       return kindCase_ == 6;
@@ -2049,6 +2150,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
+     *
+     * @return The enumValue.
      */
     public com.google.cloud.datacatalog.v1beta1.TagField.EnumValue getEnumValue() {
       if (enumValueBuilder_ == null) {

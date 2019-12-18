@@ -36,6 +36,8 @@ public interface CreateEntryGroupRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateEntryGroupRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -64,6 +68,8 @@ public interface CreateEntryGroupRequestOrBuilder
    * </pre>
    *
    * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The entryGroupId.
    */
   java.lang.String getEntryGroupId();
   /**
@@ -76,6 +82,8 @@ public interface CreateEntryGroupRequestOrBuilder
    * </pre>
    *
    * <code>string entry_group_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for entryGroupId.
    */
   com.google.protobuf.ByteString getEntryGroupIdBytes();
 
@@ -87,6 +95,8 @@ public interface CreateEntryGroupRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
+   *
+   * @return Whether the entryGroup field is set.
    */
   boolean hasEntryGroup();
   /**
@@ -97,6 +107,8 @@ public interface CreateEntryGroupRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
+   *
+   * @return The entryGroup.
    */
   com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup();
   /**

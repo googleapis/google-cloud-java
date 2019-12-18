@@ -32,6 +32,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -84,6 +92,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -97,6 +107,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -113,6 +125,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string parent_policy_tag = 4;</code>
+   *
+   * @return The parentPolicyTag.
    */
   java.lang.String getParentPolicyTag();
   /**
@@ -128,6 +142,8 @@ public interface PolicyTagOrBuilder
    * </pre>
    *
    * <code>string parent_policy_tag = 4;</code>
+   *
+   * @return The bytes for parentPolicyTag.
    */
   com.google.protobuf.ByteString getParentPolicyTagBytes();
 
@@ -140,6 +156,8 @@ public interface PolicyTagOrBuilder
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the childPolicyTags.
    */
   java.util.List<java.lang.String> getChildPolicyTagsList();
   /**
@@ -151,6 +169,8 @@ public interface PolicyTagOrBuilder
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The count of childPolicyTags.
    */
   int getChildPolicyTagsCount();
   /**
@@ -162,6 +182,9 @@ public interface PolicyTagOrBuilder
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The childPolicyTags at the given index.
    */
   java.lang.String getChildPolicyTags(int index);
   /**
@@ -173,6 +196,9 @@ public interface PolicyTagOrBuilder
    *
    * <code>repeated string child_policy_tags = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the childPolicyTags at the given index.
    */
   com.google.protobuf.ByteString getChildPolicyTagsBytes(int index);
 }

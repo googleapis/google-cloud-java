@@ -36,6 +36,8 @@ public interface CreateEntryRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateEntryRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface CreateEntryRequestOrBuilder
    * </pre>
    *
    * <code>string entry_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The entryId.
    */
   java.lang.String getEntryId();
   /**
@@ -72,6 +78,8 @@ public interface CreateEntryRequestOrBuilder
    * </pre>
    *
    * <code>string entry_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for entryId.
    */
   com.google.protobuf.ByteString getEntryIdBytes();
 
@@ -85,6 +93,8 @@ public interface CreateEntryRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.Entry entry = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the entry field is set.
    */
   boolean hasEntry();
   /**
@@ -97,6 +107,8 @@ public interface CreateEntryRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.Entry entry = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The entry.
    */
   com.google.cloud.datacatalog.v1beta1.Entry getEntry();
   /**

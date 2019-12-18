@@ -43,6 +43,12 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcsFilesetSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -151,6 +157,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the filePatterns.
    */
   public com.google.protobuf.ProtocolStringList getFilePatternsList() {
     return filePatterns_;
@@ -175,6 +183,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of filePatterns.
    */
   public int getFilePatternsCount() {
     return filePatterns_.size();
@@ -199,6 +209,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The filePatterns at the given index.
    */
   public java.lang.String getFilePatterns(int index) {
     return filePatterns_.get(index);
@@ -223,6 +236,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the filePatterns at the given index.
    */
   public com.google.protobuf.ByteString getFilePatternsBytes(int index) {
     return filePatterns_.getByteString(index);
@@ -732,6 +748,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the filePatterns.
      */
     public com.google.protobuf.ProtocolStringList getFilePatternsList() {
       return filePatterns_.getUnmodifiableView();
@@ -756,6 +774,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of filePatterns.
      */
     public int getFilePatternsCount() {
       return filePatterns_.size();
@@ -780,6 +800,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The filePatterns at the given index.
      */
     public java.lang.String getFilePatterns(int index) {
       return filePatterns_.get(index);
@@ -804,6 +827,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the filePatterns at the given index.
      */
     public com.google.protobuf.ByteString getFilePatternsBytes(int index) {
       return filePatterns_.getByteString(index);
@@ -828,6 +854,10 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The filePatterns to set.
+     * @return This builder for chaining.
      */
     public Builder setFilePatterns(int index, java.lang.String value) {
       if (value == null) {
@@ -858,6 +888,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The filePatterns to add.
+     * @return This builder for chaining.
      */
     public Builder addFilePatterns(java.lang.String value) {
       if (value == null) {
@@ -888,6 +921,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The filePatterns to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFilePatterns(java.lang.Iterable<java.lang.String> values) {
       ensureFilePatternsIsMutable();
@@ -915,6 +951,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilePatterns() {
       filePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -942,6 +980,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_patterns = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the filePatterns to add.
+     * @return This builder for chaining.
      */
     public Builder addFilePatternsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

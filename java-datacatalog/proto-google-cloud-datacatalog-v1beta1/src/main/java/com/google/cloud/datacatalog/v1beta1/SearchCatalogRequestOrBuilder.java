@@ -33,6 +33,8 @@ public interface SearchCatalogRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scope field is set.
    */
   boolean hasScope();
   /**
@@ -45,6 +47,8 @@ public interface SearchCatalogRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scope.
    */
   com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope getScope();
   /**
@@ -75,6 +79,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The query.
    */
   java.lang.String getQuery();
   /**
@@ -92,6 +98,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString getQueryBytes();
 
@@ -104,6 +112,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -120,6 +130,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -135,6 +147,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -153,6 +167,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 5;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -170,6 +186,8 @@ public interface SearchCatalogRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 5;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 }

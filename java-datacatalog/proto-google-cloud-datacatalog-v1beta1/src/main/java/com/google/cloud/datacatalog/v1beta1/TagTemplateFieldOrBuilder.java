@@ -34,6 +34,8 @@ public interface TagTemplateFieldOrBuilder
    * </pre>
    *
    * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface TagTemplateFieldOrBuilder
    * </pre>
    *
    * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface TagTemplateFieldOrBuilder
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -68,6 +74,8 @@ public interface TagTemplateFieldOrBuilder
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -81,6 +89,8 @@ public interface TagTemplateFieldOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the type field is set.
    */
   boolean hasType();
   /**
@@ -93,6 +103,8 @@ public interface TagTemplateFieldOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The type.
    */
   com.google.cloud.datacatalog.v1beta1.FieldType getType();
   /**

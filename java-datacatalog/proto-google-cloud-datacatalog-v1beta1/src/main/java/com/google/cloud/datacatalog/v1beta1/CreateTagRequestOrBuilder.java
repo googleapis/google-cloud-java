@@ -37,6 +37,8 @@ public interface CreateTagRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -53,6 +55,8 @@ public interface CreateTagRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -65,6 +69,8 @@ public interface CreateTagRequestOrBuilder
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tag field is set.
    */
   boolean hasTag();
   /**
@@ -76,6 +82,8 @@ public interface CreateTagRequestOrBuilder
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tag.
    */
   com.google.cloud.datacatalog.v1beta1.Tag getTag();
   /**

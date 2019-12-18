@@ -34,6 +34,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tagTemplateField field is set.
    */
   boolean hasTagTemplateField();
   /**
@@ -72,6 +78,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <code>
    * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tagTemplateField.
    */
   com.google.cloud.datacatalog.v1beta1.TagTemplateField getTagTemplateField();
   /**
@@ -103,6 +111,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -121,6 +131,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

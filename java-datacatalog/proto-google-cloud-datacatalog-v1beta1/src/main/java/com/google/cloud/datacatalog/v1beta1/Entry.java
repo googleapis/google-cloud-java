@@ -52,6 +52,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Entry();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,7 +70,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -240,7 +245,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   private int entryTypeCase_ = 0;
   private java.lang.Object entryType_;
 
-  public enum EntryTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EntryTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TYPE(2),
     ENTRYTYPE_NOT_SET(0);
     private final int value;
@@ -248,7 +256,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     private EntryTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EntryTypeCase valueOf(int value) {
       return forNumber(value);
@@ -277,7 +289,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   private int typeSpecCase_ = 0;
   private java.lang.Object typeSpec_;
 
-  public enum TypeSpecCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeSpecCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_FILESET_SPEC(6),
     BIGQUERY_TABLE_SPEC(12),
     BIGQUERY_DATE_SHARDED_SPEC(15),
@@ -287,7 +302,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     private TypeSpecCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeSpecCase valueOf(int value) {
       return forNumber(value);
@@ -330,6 +349,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -353,6 +374,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -381,6 +404,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The linkedResource.
    */
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = linkedResource_;
@@ -406,6 +431,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for linkedResource.
    */
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = linkedResource_;
@@ -428,6 +455,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     if (entryTypeCase_ == 2) {
@@ -443,6 +472,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+   *
+   * @return The type.
    */
   public com.google.cloud.datacatalog.v1beta1.EntryType getType() {
     if (entryTypeCase_ == 2) {
@@ -464,6 +495,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   *
+   * @return Whether the gcsFilesetSpec field is set.
    */
   public boolean hasGcsFilesetSpec() {
     return typeSpecCase_ == 6;
@@ -477,6 +510,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   *
+   * @return The gcsFilesetSpec.
    */
   public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec getGcsFilesetSpec() {
     if (typeSpecCase_ == 6) {
@@ -511,6 +546,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   *
+   * @return Whether the bigqueryTableSpec field is set.
    */
   public boolean hasBigqueryTableSpec() {
     return typeSpecCase_ == 12;
@@ -524,6 +561,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   *
+   * @return The bigqueryTableSpec.
    */
   public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec getBigqueryTableSpec() {
     if (typeSpecCase_ == 12) {
@@ -562,6 +601,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
    * </code>
+   *
+   * @return Whether the bigqueryDateShardedSpec field is set.
    */
   public boolean hasBigqueryDateShardedSpec() {
     return typeSpecCase_ == 15;
@@ -578,6 +619,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
    * </code>
+   *
+   * @return The bigqueryDateShardedSpec.
    */
   public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec getBigqueryDateShardedSpec() {
     if (typeSpecCase_ == 15) {
@@ -618,6 +661,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -640,6 +685,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -664,6 +711,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -685,6 +734,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -708,6 +759,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
+   *
+   * @return Whether the schema field is set.
    */
   public boolean hasSchema() {
     return schema_ != null;
@@ -720,6 +773,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
+   *
+   * @return The schema.
    */
   public com.google.cloud.datacatalog.v1beta1.Schema getSchema() {
     return schema_ == null
@@ -752,6 +807,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the sourceSystemTimestamps field is set.
    */
   public boolean hasSourceSystemTimestamps() {
     return sourceSystemTimestamps_ != null;
@@ -767,6 +824,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The sourceSystemTimestamps.
    */
   public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getSourceSystemTimestamps() {
     return sourceSystemTimestamps_ == null
@@ -1399,6 +1458,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1422,6 +1483,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1445,6 +1508,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1466,6 +1532,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1484,6 +1552,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1510,6 +1581,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The linkedResource.
      */
     public java.lang.String getLinkedResource() {
       java.lang.Object ref = linkedResource_;
@@ -1535,6 +1608,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for linkedResource.
      */
     public com.google.protobuf.ByteString getLinkedResourceBytes() {
       java.lang.Object ref = linkedResource_;
@@ -1560,6 +1635,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The linkedResource to set.
+     * @return This builder for chaining.
      */
     public Builder setLinkedResource(java.lang.String value) {
       if (value == null) {
@@ -1583,6 +1661,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLinkedResource() {
 
@@ -1603,6 +1683,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for linkedResource to set.
+     * @return This builder for chaining.
      */
     public Builder setLinkedResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1623,6 +1706,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       if (entryTypeCase_ == 2) {
@@ -1638,6 +1723,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       entryTypeCase_ = 2;
@@ -1653,6 +1741,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.datacatalog.v1beta1.EntryType getType() {
       if (entryTypeCase_ == 2) {
@@ -1673,6 +1763,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.datacatalog.v1beta1.EntryType value) {
       if (value == null) {
@@ -1691,6 +1784,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       if (entryTypeCase_ == 2) {
@@ -1715,6 +1810,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+     *
+     * @return Whether the gcsFilesetSpec field is set.
      */
     public boolean hasGcsFilesetSpec() {
       return typeSpecCase_ == 6;
@@ -1728,6 +1825,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+     *
+     * @return The gcsFilesetSpec.
      */
     public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec getGcsFilesetSpec() {
       if (gcsFilesetSpecBuilder_ == null) {
@@ -1928,6 +2027,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     *
+     * @return Whether the bigqueryTableSpec field is set.
      */
     public boolean hasBigqueryTableSpec() {
       return typeSpecCase_ == 12;
@@ -1941,6 +2042,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     *
+     * @return The bigqueryTableSpec.
      */
     public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec getBigqueryTableSpec() {
       if (bigqueryTableSpecBuilder_ == null) {
@@ -2147,6 +2250,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
      * </code>
+     *
+     * @return Whether the bigqueryDateShardedSpec field is set.
      */
     public boolean hasBigqueryDateShardedSpec() {
       return typeSpecCase_ == 15;
@@ -2163,6 +2268,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
      * </code>
+     *
+     * @return The bigqueryDateShardedSpec.
      */
     public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec
         getBigqueryDateShardedSpec() {
@@ -2387,6 +2494,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2409,6 +2518,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -2431,6 +2542,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -2451,6 +2565,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -2468,6 +2584,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2490,6 +2609,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2511,6 +2632,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2532,6 +2655,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2551,6 +2677,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2567,6 +2695,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2593,6 +2724,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
+     *
+     * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
       return schemaBuilder_ != null || schema_ != null;
@@ -2605,6 +2738,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
+     *
+     * @return The schema.
      */
     public com.google.cloud.datacatalog.v1beta1.Schema getSchema() {
       if (schemaBuilder_ == null) {
@@ -2777,6 +2912,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the sourceSystemTimestamps field is set.
      */
     public boolean hasSourceSystemTimestamps() {
       return sourceSystemTimestampsBuilder_ != null || sourceSystemTimestamps_ != null;
@@ -2792,6 +2929,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The sourceSystemTimestamps.
      */
     public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getSourceSystemTimestamps() {
       if (sourceSystemTimestampsBuilder_ == null) {

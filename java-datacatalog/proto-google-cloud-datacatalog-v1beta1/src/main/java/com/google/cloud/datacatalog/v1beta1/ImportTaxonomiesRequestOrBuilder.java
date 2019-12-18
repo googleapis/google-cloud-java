@@ -34,6 +34,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
+   *
+   * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
   /**
@@ -68,6 +74,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
+   *
+   * @return The inlineSource.
    */
   com.google.cloud.datacatalog.v1beta1.InlineSource getInlineSource();
   /**

@@ -41,6 +41,12 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
   private UpdateTagRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateTagRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tag field is set.
    */
   public boolean hasTag() {
     return tag_ != null;
@@ -153,6 +160,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tag.
    */
   public com.google.cloud.datacatalog.v1beta1.Tag getTag() {
     return tag_ == null ? com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance() : tag_;
@@ -182,6 +191,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -195,6 +206,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -589,6 +602,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the tag field is set.
      */
     public boolean hasTag() {
       return tagBuilder_ != null || tag_ != null;
@@ -603,6 +618,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The tag.
      */
     public com.google.cloud.datacatalog.v1beta1.Tag getTag() {
       if (tagBuilder_ == null) {
@@ -783,6 +800,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -796,6 +815,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

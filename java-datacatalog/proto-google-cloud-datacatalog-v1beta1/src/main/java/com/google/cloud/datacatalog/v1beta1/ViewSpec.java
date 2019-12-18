@@ -42,6 +42,12 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ViewSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,6 +121,8 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The viewQuery.
    */
   public java.lang.String getViewQuery() {
     java.lang.Object ref = viewQuery_;
@@ -136,6 +143,8 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for viewQuery.
    */
   public com.google.protobuf.ByteString getViewQueryBytes() {
     java.lang.Object ref = viewQuery_;
@@ -474,6 +483,8 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The viewQuery.
      */
     public java.lang.String getViewQuery() {
       java.lang.Object ref = viewQuery_;
@@ -494,6 +505,8 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for viewQuery.
      */
     public com.google.protobuf.ByteString getViewQueryBytes() {
       java.lang.Object ref = viewQuery_;
@@ -514,6 +527,9 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The viewQuery to set.
+     * @return This builder for chaining.
      */
     public Builder setViewQuery(java.lang.String value) {
       if (value == null) {
@@ -532,6 +548,8 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearViewQuery() {
 
@@ -547,6 +565,9 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string view_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for viewQuery to set.
+     * @return This builder for chaining.
      */
     public Builder setViewQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

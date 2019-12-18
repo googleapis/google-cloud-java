@@ -44,6 +44,12 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateTagTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -147,6 +152,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -173,6 +180,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -196,6 +205,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The tagTemplateId.
    */
   public java.lang.String getTagTemplateId() {
     java.lang.Object ref = tagTemplateId_;
@@ -216,6 +227,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for tagTemplateId.
    */
   public com.google.protobuf.ByteString getTagTemplateIdBytes() {
     java.lang.Object ref = tagTemplateId_;
@@ -241,6 +254,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tagTemplate field is set.
    */
   public boolean hasTagTemplate() {
     return tagTemplate_ != null;
@@ -255,6 +270,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tagTemplate.
    */
   public com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate() {
     return tagTemplate_ == null
@@ -658,6 +675,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -684,6 +703,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -710,6 +731,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -734,6 +758,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -755,6 +781,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -776,6 +805,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The tagTemplateId.
      */
     public java.lang.String getTagTemplateId() {
       java.lang.Object ref = tagTemplateId_;
@@ -796,6 +827,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for tagTemplateId.
      */
     public com.google.protobuf.ByteString getTagTemplateIdBytes() {
       java.lang.Object ref = tagTemplateId_;
@@ -816,6 +849,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The tagTemplateId to set.
+     * @return This builder for chaining.
      */
     public Builder setTagTemplateId(java.lang.String value) {
       if (value == null) {
@@ -834,6 +870,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTagTemplateId() {
 
@@ -849,6 +887,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for tagTemplateId to set.
+     * @return This builder for chaining.
      */
     public Builder setTagTemplateIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -877,6 +918,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the tagTemplate field is set.
      */
     public boolean hasTagTemplate() {
       return tagTemplateBuilder_ != null || tagTemplate_ != null;
@@ -891,6 +934,8 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The tagTemplate.
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate() {
       if (tagTemplateBuilder_ == null) {

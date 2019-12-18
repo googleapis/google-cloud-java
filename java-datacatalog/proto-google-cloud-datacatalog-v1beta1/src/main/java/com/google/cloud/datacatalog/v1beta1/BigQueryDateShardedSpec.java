@@ -45,6 +45,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BigQueryDateShardedSpec();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +140,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * <code>
    * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The dataset.
    */
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
@@ -159,6 +166,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * <code>
    * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for dataset.
    */
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
@@ -184,6 +193,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tablePrefix.
    */
   public java.lang.String getTablePrefix() {
     java.lang.Object ref = tablePrefix_;
@@ -206,6 +217,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tablePrefix.
    */
   public com.google.protobuf.ByteString getTablePrefixBytes() {
     java.lang.Object ref = tablePrefix_;
@@ -229,6 +242,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The shardCount.
    */
   public long getShardCount() {
     return shardCount_;
@@ -601,6 +616,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <code>
      * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The dataset.
      */
     public java.lang.String getDataset() {
       java.lang.Object ref = dataset_;
@@ -625,6 +642,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <code>
      * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for dataset.
      */
     public com.google.protobuf.ByteString getDatasetBytes() {
       java.lang.Object ref = dataset_;
@@ -649,6 +668,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <code>
      * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The dataset to set.
+     * @return This builder for chaining.
      */
     public Builder setDataset(java.lang.String value) {
       if (value == null) {
@@ -671,6 +693,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <code>
      * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataset() {
 
@@ -690,6 +714,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <code>
      * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for dataset to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -713,6 +740,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The tablePrefix.
      */
     public java.lang.String getTablePrefix() {
       java.lang.Object ref = tablePrefix_;
@@ -735,6 +764,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for tablePrefix.
      */
     public com.google.protobuf.ByteString getTablePrefixBytes() {
       java.lang.Object ref = tablePrefix_;
@@ -757,6 +788,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The tablePrefix to set.
+     * @return This builder for chaining.
      */
     public Builder setTablePrefix(java.lang.String value) {
       if (value == null) {
@@ -777,6 +811,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTablePrefix() {
 
@@ -794,6 +830,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for tablePrefix to set.
+     * @return This builder for chaining.
      */
     public Builder setTablePrefixBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -815,6 +854,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The shardCount.
      */
     public long getShardCount() {
       return shardCount_;
@@ -827,6 +868,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The shardCount to set.
+     * @return This builder for chaining.
      */
     public Builder setShardCount(long value) {
 
@@ -842,6 +886,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearShardCount() {
 

@@ -47,6 +47,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Tag();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -86,10 +92,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fields_ =
                     com.google.protobuf.MapField.newMapField(FieldsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField>
@@ -159,11 +165,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1beta1.Tag.Builder.class);
   }
 
-  private int bitField0_;
   private int scopeCase_ = 0;
   private java.lang.Object scope_;
 
-  public enum ScopeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ScopeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COLUMN(4),
     SCOPE_NOT_SET(0);
     private final int value;
@@ -171,7 +179,11 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     private ScopeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ScopeCase valueOf(int value) {
       return forNumber(value);
@@ -210,6 +222,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -233,6 +247,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -258,6 +274,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The template.
    */
   public java.lang.String getTemplate() {
     java.lang.Object ref = template_;
@@ -280,6 +298,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for template.
    */
   public com.google.protobuf.ByteString getTemplateBytes() {
     java.lang.Object ref = template_;
@@ -303,6 +323,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The templateDisplayName.
    */
   public java.lang.String getTemplateDisplayName() {
     java.lang.Object ref = templateDisplayName_;
@@ -323,6 +345,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for templateDisplayName.
    */
   public com.google.protobuf.ByteString getTemplateDisplayNameBytes() {
     java.lang.Object ref = templateDisplayName_;
@@ -349,6 +373,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string column = 4;</code>
+   *
+   * @return The column.
    */
   public java.lang.String getColumn() {
     java.lang.Object ref = "";
@@ -378,6 +404,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string column = 4;</code>
+   *
+   * @return The bytes for column.
    */
   public com.google.protobuf.ByteString getColumnBytes() {
     java.lang.Object ref = "";
@@ -839,7 +867,6 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datacatalog.v1beta1.Tag result =
           new com.google.cloud.datacatalog.v1beta1.Tag(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.template_ = template_;
       result.templateDisplayName_ = templateDisplayName_;
@@ -848,7 +875,6 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       }
       result.fields_ = internalGetFields();
       result.fields_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.scopeCase_ = scopeCase_;
       onBuilt();
       return result;
@@ -982,6 +1008,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1005,6 +1033,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1028,6 +1058,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1049,6 +1082,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1067,6 +1102,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1090,6 +1128,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The template.
      */
     public java.lang.String getTemplate() {
       java.lang.Object ref = template_;
@@ -1112,6 +1152,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for template.
      */
     public com.google.protobuf.ByteString getTemplateBytes() {
       java.lang.Object ref = template_;
@@ -1134,6 +1176,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The template to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplate(java.lang.String value) {
       if (value == null) {
@@ -1154,6 +1199,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTemplate() {
 
@@ -1171,6 +1218,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for template to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1192,6 +1242,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The templateDisplayName.
      */
     public java.lang.String getTemplateDisplayName() {
       java.lang.Object ref = templateDisplayName_;
@@ -1212,6 +1264,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for templateDisplayName.
      */
     public com.google.protobuf.ByteString getTemplateDisplayNameBytes() {
       java.lang.Object ref = templateDisplayName_;
@@ -1232,6 +1286,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The templateDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1250,6 +1307,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTemplateDisplayName() {
 
@@ -1265,6 +1324,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for templateDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1289,6 +1351,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 4;</code>
+     *
+     * @return The column.
      */
     public java.lang.String getColumn() {
       java.lang.Object ref = "";
@@ -1318,6 +1382,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 4;</code>
+     *
+     * @return The bytes for column.
      */
     public com.google.protobuf.ByteString getColumnBytes() {
       java.lang.Object ref = "";
@@ -1347,6 +1413,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 4;</code>
+     *
+     * @param value The column to set.
+     * @return This builder for chaining.
      */
     public Builder setColumn(java.lang.String value) {
       if (value == null) {
@@ -1369,6 +1438,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumn() {
       if (scopeCase_ == 4) {
@@ -1390,6 +1461,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string column = 4;</code>
+     *
+     * @param value The bytes for column to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

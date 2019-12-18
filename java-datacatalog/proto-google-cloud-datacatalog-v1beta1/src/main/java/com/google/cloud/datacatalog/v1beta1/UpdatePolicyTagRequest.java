@@ -41,6 +41,12 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
   private UpdatePolicyTagRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdatePolicyTagRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 1;</code>
+   *
+   * @return Whether the policyTag field is set.
    */
   public boolean hasPolicyTag() {
     return policyTag_ != null;
@@ -153,6 +160,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 1;</code>
+   *
+   * @return The policyTag.
    */
   public com.google.cloud.datacatalog.v1beta1.PolicyTag getPolicyTag() {
     return policyTag_ == null
@@ -189,6 +198,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -207,6 +218,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -605,6 +618,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 1;</code>
+     *
+     * @return Whether the policyTag field is set.
      */
     public boolean hasPolicyTag() {
       return policyTagBuilder_ != null || policyTag_ != null;
@@ -618,6 +633,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 1;</code>
+     *
+     * @return The policyTag.
      */
     public com.google.cloud.datacatalog.v1beta1.PolicyTag getPolicyTag() {
       if (policyTagBuilder_ == null) {
@@ -801,6 +818,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -819,6 +838,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

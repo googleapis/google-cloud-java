@@ -33,6 +33,8 @@ public interface CreatePolicyTagRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface CreatePolicyTagRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface CreatePolicyTagRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 2;</code>
+   *
+   * @return Whether the policyTag field is set.
    */
   boolean hasPolicyTag();
   /**
@@ -66,6 +72,8 @@ public interface CreatePolicyTagRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 2;</code>
+   *
+   * @return The policyTag.
    */
   com.google.cloud.datacatalog.v1beta1.PolicyTag getPolicyTag();
   /**
