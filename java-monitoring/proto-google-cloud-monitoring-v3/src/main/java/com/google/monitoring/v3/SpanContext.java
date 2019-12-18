@@ -45,6 +45,12 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpanContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string span_name = 1;</code>
+   *
+   * @return The spanName.
    */
   public java.lang.String getSpanName() {
     java.lang.Object ref = spanName_;
@@ -149,6 +156,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string span_name = 1;</code>
+   *
+   * @return The bytes for spanName.
    */
   public com.google.protobuf.ByteString getSpanNameBytes() {
     java.lang.Object ref = spanName_;
@@ -492,6 +501,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_name = 1;</code>
+     *
+     * @return The spanName.
      */
     public java.lang.String getSpanName() {
       java.lang.Object ref = spanName_;
@@ -517,6 +528,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_name = 1;</code>
+     *
+     * @return The bytes for spanName.
      */
     public com.google.protobuf.ByteString getSpanNameBytes() {
       java.lang.Object ref = spanName_;
@@ -542,6 +555,9 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_name = 1;</code>
+     *
+     * @param value The spanName to set.
+     * @return This builder for chaining.
      */
     public Builder setSpanName(java.lang.String value) {
       if (value == null) {
@@ -565,6 +581,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpanName() {
 
@@ -585,6 +603,9 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string span_name = 1;</code>
+     *
+     * @param value The bytes for spanName to set.
+     * @return This builder for chaining.
      */
     public Builder setSpanNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

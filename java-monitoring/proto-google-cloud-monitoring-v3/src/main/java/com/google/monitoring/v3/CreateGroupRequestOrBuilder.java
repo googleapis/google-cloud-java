@@ -32,6 +32,8 @@ public interface CreateGroupRequestOrBuilder
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface CreateGroupRequestOrBuilder
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface CreateGroupRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return Whether the group field is set.
    */
   boolean hasGroup();
   /**
@@ -66,6 +72,8 @@ public interface CreateGroupRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return The group.
    */
   com.google.monitoring.v3.Group getGroup();
   /**
@@ -88,6 +96,8 @@ public interface CreateGroupRequestOrBuilder
    * </pre>
    *
    * <code>bool validate_only = 3;</code>
+   *
+   * @return The validateOnly.
    */
   boolean getValidateOnly();
 }

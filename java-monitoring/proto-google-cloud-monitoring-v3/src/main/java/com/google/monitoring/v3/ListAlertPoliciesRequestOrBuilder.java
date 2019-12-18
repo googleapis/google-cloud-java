@@ -37,6 +37,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -53,6 +55,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -67,6 +71,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -80,6 +86,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -95,6 +103,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -109,6 +119,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 
@@ -120,6 +132,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -133,6 +147,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -145,6 +161,8 @@ public interface ListAlertPoliciesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

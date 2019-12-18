@@ -41,6 +41,12 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
   private UpdateNotificationChannelRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateNotificationChannelRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -151,6 +158,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -181,6 +190,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+   *
+   * @return Whether the notificationChannel field is set.
    */
   public boolean hasNotificationChannel() {
     return notificationChannel_ != null;
@@ -196,6 +207,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+   *
+   * @return The notificationChannel.
    */
   public com.google.monitoring.v3.NotificationChannel getNotificationChannel() {
     return notificationChannel_ == null
@@ -591,6 +604,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -603,6 +618,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -773,6 +790,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+     *
+     * @return Whether the notificationChannel field is set.
      */
     public boolean hasNotificationChannel() {
       return notificationChannelBuilder_ != null || notificationChannel_ != null;
@@ -788,6 +807,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+     *
+     * @return The notificationChannel.
      */
     public com.google.monitoring.v3.NotificationChannel getNotificationChannel() {
       if (notificationChannelBuilder_ == null) {

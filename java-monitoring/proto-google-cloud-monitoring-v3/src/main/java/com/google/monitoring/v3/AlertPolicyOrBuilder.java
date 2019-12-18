@@ -38,6 +38,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -55,6 +57,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -69,6 +73,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -82,6 +88,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -97,6 +105,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.Documentation documentation = 13;</code>
+   *
+   * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
   /**
@@ -111,6 +121,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.Documentation documentation = 13;</code>
+   *
+   * @return The documentation.
    */
   com.google.monitoring.v3.AlertPolicy.Documentation getDocumentation();
   /**
@@ -278,22 +290,26 @@ public interface AlertPolicyOrBuilder
    *
    *
    * <pre>
-   * How to combine the results of multiple conditions
-   * to determine if an incident should be opened.
+   * How to combine the results of multiple conditions to determine if an
+   * incident should be opened.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+   *
+   * @return The enum numeric value on the wire for combiner.
    */
   int getCombinerValue();
   /**
    *
    *
    * <pre>
-   * How to combine the results of multiple conditions
-   * to determine if an incident should be opened.
+   * How to combine the results of multiple conditions to determine if an
+   * incident should be opened.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+   *
+   * @return The combiner.
    */
   com.google.monitoring.v3.AlertPolicy.ConditionCombinerType getCombiner();
 
@@ -309,6 +325,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 17;</code>
+   *
+   * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
   /**
@@ -323,6 +341,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 17;</code>
+   *
+   * @return The enabled.
    */
   com.google.protobuf.BoolValue getEnabled();
   /**
@@ -349,6 +369,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
+   *
+   * @return Whether the validity field is set.
    */
   boolean hasValidity();
   /**
@@ -360,6 +382,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
+   *
+   * @return The validity.
    */
   com.google.rpc.Status getValidity();
   /**
@@ -390,6 +414,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @return A list containing the notificationChannels.
    */
   java.util.List<java.lang.String> getNotificationChannelsList();
   /**
@@ -408,6 +434,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @return The count of notificationChannels.
    */
   int getNotificationChannelsCount();
   /**
@@ -426,6 +454,9 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The notificationChannels at the given index.
    */
   java.lang.String getNotificationChannels(int index);
   /**
@@ -444,6 +475,9 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the notificationChannels at the given index.
    */
   com.google.protobuf.ByteString getNotificationChannelsBytes(int index);
 
@@ -456,6 +490,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord creation_record = 10;</code>
+   *
+   * @return Whether the creationRecord field is set.
    */
   boolean hasCreationRecord();
   /**
@@ -467,6 +503,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord creation_record = 10;</code>
+   *
+   * @return The creationRecord.
    */
   com.google.monitoring.v3.MutationRecord getCreationRecord();
   /**
@@ -490,6 +528,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
+   *
+   * @return Whether the mutationRecord field is set.
    */
   boolean hasMutationRecord();
   /**
@@ -501,6 +541,8 @@ public interface AlertPolicyOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
+   *
+   * @return The mutationRecord.
    */
   com.google.monitoring.v3.MutationRecord getMutationRecord();
   /**

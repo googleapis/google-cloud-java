@@ -42,6 +42,12 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateTimeSeriesSummary();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,11 +83,11 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 errors_ =
                     new java.util.ArrayList<
                         com.google.monitoring.v3.CreateTimeSeriesSummary.Error>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               errors_.add(
                   input.readMessage(
@@ -103,7 +109,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -139,6 +145,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
+     *
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
@@ -149,6 +157,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
+     *
+     * @return The status.
      */
     com.google.rpc.Status getStatus();
     /**
@@ -170,6 +180,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 point_count = 2;</code>
+     *
+     * @return The pointCount.
      */
     int getPointCount();
   }
@@ -195,6 +207,12 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     private Error() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Error();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -207,7 +225,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -281,6 +298,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return status_ != null;
@@ -293,6 +312,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
+     *
+     * @return The status.
      */
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -320,6 +341,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 point_count = 2;</code>
+     *
+     * @return The pointCount.
      */
     public int getPointCount() {
       return pointCount_;
@@ -687,6 +710,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>.google.rpc.Status status = 1;</code>
+       *
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
@@ -699,6 +724,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>.google.rpc.Status status = 1;</code>
+       *
+       * @return The status.
        */
       public com.google.rpc.Status getStatus() {
         if (statusBuilder_ == null) {
@@ -853,6 +880,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>int32 point_count = 2;</code>
+       *
+       * @return The pointCount.
        */
       public int getPointCount() {
         return pointCount_;
@@ -865,6 +894,9 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>int32 point_count = 2;</code>
+       *
+       * @param value The pointCount to set.
+       * @return This builder for chaining.
        */
       public Builder setPointCount(int value) {
 
@@ -880,6 +912,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
        * </pre>
        *
        * <code>int32 point_count = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPointCount() {
 
@@ -940,7 +974,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     }
   }
 
-  private int bitField0_;
   public static final int TOTAL_POINT_COUNT_FIELD_NUMBER = 1;
   private int totalPointCount_;
   /**
@@ -951,6 +984,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int32 total_point_count = 1;</code>
+   *
+   * @return The totalPointCount.
    */
   public int getTotalPointCount() {
     return totalPointCount_;
@@ -966,6 +1001,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int32 success_point_count = 2;</code>
+   *
+   * @return The successPointCount.
    */
   public int getSuccessPointCount() {
     return successPointCount_;
@@ -1268,7 +1305,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
 
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         errorsBuilder_.clear();
       }
@@ -1300,19 +1337,17 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       com.google.monitoring.v3.CreateTimeSeriesSummary result =
           new com.google.monitoring.v3.CreateTimeSeriesSummary(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.totalPointCount_ = totalPointCount_;
       result.successPointCount_ = successPointCount_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1373,7 +1408,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1386,7 +1421,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -1436,6 +1471,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 total_point_count = 1;</code>
+     *
+     * @return The totalPointCount.
      */
     public int getTotalPointCount() {
       return totalPointCount_;
@@ -1448,6 +1485,9 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 total_point_count = 1;</code>
+     *
+     * @param value The totalPointCount to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalPointCount(int value) {
 
@@ -1463,6 +1503,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 total_point_count = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalPointCount() {
 
@@ -1480,6 +1522,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 success_point_count = 2;</code>
+     *
+     * @return The successPointCount.
      */
     public int getSuccessPointCount() {
       return successPointCount_;
@@ -1492,6 +1536,9 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 success_point_count = 2;</code>
+     *
+     * @param value The successPointCount to set.
+     * @return This builder for chaining.
      */
     public Builder setSuccessPointCount(int value) {
 
@@ -1507,6 +1554,8 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 success_point_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSuccessPointCount() {
 
@@ -1519,11 +1568,11 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         errors_ =
             new java.util.ArrayList<com.google.monitoring.v3.CreateTimeSeriesSummary.Error>(
                 errors_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1742,7 +1791,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -1868,7 +1917,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
                 com.google.monitoring.v3.CreateTimeSeriesSummary.Error,
                 com.google.monitoring.v3.CreateTimeSeriesSummary.Error.Builder,
                 com.google.monitoring.v3.CreateTimeSeriesSummary.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

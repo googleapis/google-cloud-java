@@ -32,6 +32,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -64,6 +70,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -75,6 +83,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
+   *
+   * @return Whether the custom field is set.
    */
   boolean hasCustom();
   /**
@@ -85,6 +95,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
+   *
+   * @return The custom.
    */
   com.google.monitoring.v3.Service.Custom getCustom();
   /**
@@ -106,6 +118,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
+   *
+   * @return Whether the appEngine field is set.
    */
   boolean hasAppEngine();
   /**
@@ -116,6 +130,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
+   *
+   * @return The appEngine.
    */
   com.google.monitoring.v3.Service.AppEngine getAppEngine();
   /**
@@ -137,6 +153,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
+   *
+   * @return Whether the cloudEndpoints field is set.
    */
   boolean hasCloudEndpoints();
   /**
@@ -147,6 +165,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
+   *
+   * @return The cloudEndpoints.
    */
   com.google.monitoring.v3.Service.CloudEndpoints getCloudEndpoints();
   /**
@@ -168,6 +188,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   *
+   * @return Whether the clusterIstio field is set.
    */
   boolean hasClusterIstio();
   /**
@@ -178,6 +200,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   *
+   * @return The clusterIstio.
    */
   com.google.monitoring.v3.Service.ClusterIstio getClusterIstio();
   /**
@@ -199,6 +223,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
+   *
+   * @return Whether the telemetry field is set.
    */
   boolean hasTelemetry();
   /**
@@ -209,6 +235,8 @@ public interface ServiceOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
+   *
+   * @return The telemetry.
    */
   com.google.monitoring.v3.Service.Telemetry getTelemetry();
   /**

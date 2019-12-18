@@ -117,24 +117,16 @@ public final class AlertProto {
           + "g\252\002\032Google.Cloud.Monitoring.V3\312\002\032Google\\"
           + "Cloud\\Monitoring\\V3b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.monitoring.v3.CommonProto.getDescriptor(),
-          com.google.monitoring.v3.MutationRecordProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.WrappersProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.monitoring.v3.CommonProto.getDescriptor(),
+              com.google.monitoring.v3.MutationRecordProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.WrappersProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+            });
     internal_static_google_monitoring_v3_AlertPolicy_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_monitoring_v3_AlertPolicy_fieldAccessorTable =

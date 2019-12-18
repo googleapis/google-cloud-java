@@ -50,6 +50,12 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NotificationChannel();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,10 +102,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -116,11 +122,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 userLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         UserLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
                   input.readMessage(
@@ -299,12 +305,20 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static VerificationStatus valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static VerificationStatus forNumber(int value) {
       switch (value) {
         case 0:
@@ -365,7 +379,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.monitoring.v3.NotificationChannel.VerificationStatus)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
@@ -377,6 +390,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -398,6 +413,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
@@ -423,6 +440,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -445,6 +464,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -471,6 +492,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -494,6 +517,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -519,6 +544,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -541,6 +568,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -807,6 +836,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
    * </code>
+   *
+   * @return The enum numeric value on the wire for verificationStatus.
    */
   public int getVerificationStatusValue() {
     return verificationStatus_;
@@ -835,6 +866,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
    * </code>
+   *
+   * @return The verificationStatus.
    */
   public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
     @SuppressWarnings("deprecation")
@@ -861,6 +894,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 11;</code>
+   *
+   * @return Whether the enabled field is set.
    */
   public boolean hasEnabled() {
     return enabled_ != null;
@@ -878,6 +913,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 11;</code>
+   *
+   * @return The enabled.
    */
   public com.google.protobuf.BoolValue getEnabled() {
     return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
@@ -1268,7 +1305,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       com.google.monitoring.v3.NotificationChannel result =
           new com.google.monitoring.v3.NotificationChannel(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
       result.name_ = name_;
       result.displayName_ = displayName_;
@@ -1283,7 +1319,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       } else {
         result.enabled_ = enabledBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1398,6 +1433,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -1419,6 +1456,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
@@ -1440,6 +1479,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(java.lang.String value) {
       if (value == null) {
@@ -1459,6 +1501,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1475,6 +1519,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1498,6 +1545,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1520,6 +1569,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1542,6 +1593,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1562,6 +1616,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1579,6 +1635,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1603,6 +1662,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1626,6 +1687,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1649,6 +1712,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1670,6 +1736,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1688,6 +1756,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1711,6 +1782,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1733,6 +1806,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1755,6 +1830,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1775,6 +1853,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1792,6 +1872,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2206,6 +2289,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
      * </code>
+     *
+     * @return The enum numeric value on the wire for verificationStatus.
      */
     public int getVerificationStatusValue() {
       return verificationStatus_;
@@ -2234,6 +2319,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for verificationStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setVerificationStatusValue(int value) {
       verificationStatus_ = value;
@@ -2264,6 +2352,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
      * </code>
+     *
+     * @return The verificationStatus.
      */
     public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
       @SuppressWarnings("deprecation")
@@ -2298,6 +2388,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
      * </code>
+     *
+     * @param value The verificationStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setVerificationStatus(
         com.google.monitoring.v3.NotificationChannel.VerificationStatus value) {
@@ -2333,6 +2426,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVerificationStatus() {
 
@@ -2360,6 +2455,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
+     *
+     * @return Whether the enabled field is set.
      */
     public boolean hasEnabled() {
       return enabledBuilder_ != null || enabled_ != null;
@@ -2377,6 +2474,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
+     *
+     * @return The enabled.
      */
     public com.google.protobuf.BoolValue getEnabled() {
       if (enabledBuilder_ == null) {

@@ -49,6 +49,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Aggregation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -104,9 +110,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 groupByFields_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               groupByFields_.add(s);
               break;
@@ -125,7 +131,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         groupByFields_ = groupByFields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -729,12 +735,20 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Aligner valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Aligner forNumber(int value) {
       switch (value) {
         case 0:
@@ -1211,12 +1225,20 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Reducer valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Reducer forNumber(int value) {
       switch (value) {
         case 0:
@@ -1296,7 +1318,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.monitoring.v3.Aggregation.Reducer)
   }
 
-  private int bitField0_;
   public static final int ALIGNMENT_PERIOD_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration alignmentPeriod_;
   /**
@@ -1314,6 +1335,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
+   *
+   * @return Whether the alignmentPeriod field is set.
    */
   public boolean hasAlignmentPeriod() {
     return alignmentPeriod_ != null;
@@ -1333,6 +1356,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
+   *
+   * @return The alignmentPeriod.
    */
   public com.google.protobuf.Duration getAlignmentPeriod() {
     return alignmentPeriod_ == null
@@ -1378,6 +1403,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+   *
+   * @return The enum numeric value on the wire for perSeriesAligner.
    */
   public int getPerSeriesAlignerValue() {
     return perSeriesAligner_;
@@ -1399,6 +1426,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+   *
+   * @return The perSeriesAligner.
    */
   public com.google.monitoring.v3.Aggregation.Aligner getPerSeriesAligner() {
     @SuppressWarnings("deprecation")
@@ -1426,6 +1455,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+   *
+   * @return The enum numeric value on the wire for crossSeriesReducer.
    */
   public int getCrossSeriesReducerValue() {
     return crossSeriesReducer_;
@@ -1447,6 +1478,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+   *
+   * @return The crossSeriesReducer.
    */
   public com.google.monitoring.v3.Aggregation.Reducer getCrossSeriesReducer() {
     @SuppressWarnings("deprecation")
@@ -1478,6 +1511,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @return A list containing the groupByFields.
    */
   public com.google.protobuf.ProtocolStringList getGroupByFieldsList() {
     return groupByFields_;
@@ -1503,6 +1538,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @return The count of groupByFields.
    */
   public int getGroupByFieldsCount() {
     return groupByFields_.size();
@@ -1528,6 +1565,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The groupByFields at the given index.
    */
   public java.lang.String getGroupByFields(int index) {
     return groupByFields_.get(index);
@@ -1553,6 +1593,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the groupByFields at the given index.
    */
   public com.google.protobuf.ByteString getGroupByFieldsBytes(int index) {
     return groupByFields_.getByteString(index);
@@ -1817,7 +1860,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       crossSeriesReducer_ = 0;
 
       groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -1845,7 +1888,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.Aggregation buildPartial() {
       com.google.monitoring.v3.Aggregation result = new com.google.monitoring.v3.Aggregation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (alignmentPeriodBuilder_ == null) {
         result.alignmentPeriod_ = alignmentPeriod_;
       } else {
@@ -1853,12 +1895,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       result.perSeriesAligner_ = perSeriesAligner_;
       result.crossSeriesReducer_ = crossSeriesReducer_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         groupByFields_ = groupByFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.groupByFields_ = groupByFields_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1920,7 +1961,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       if (!other.groupByFields_.isEmpty()) {
         if (groupByFields_.isEmpty()) {
           groupByFields_ = other.groupByFields_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureGroupByFieldsIsMutable();
           groupByFields_.addAll(other.groupByFields_);
@@ -1979,6 +2020,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
+     *
+     * @return Whether the alignmentPeriod field is set.
      */
     public boolean hasAlignmentPeriod() {
       return alignmentPeriodBuilder_ != null || alignmentPeriod_ != null;
@@ -1998,6 +2041,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
+     *
+     * @return The alignmentPeriod.
      */
     public com.google.protobuf.Duration getAlignmentPeriod() {
       if (alignmentPeriodBuilder_ == null) {
@@ -2220,6 +2265,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+     *
+     * @return The enum numeric value on the wire for perSeriesAligner.
      */
     public int getPerSeriesAlignerValue() {
       return perSeriesAligner_;
@@ -2241,6 +2288,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for perSeriesAligner to set.
+     * @return This builder for chaining.
      */
     public Builder setPerSeriesAlignerValue(int value) {
       perSeriesAligner_ = value;
@@ -2264,6 +2314,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+     *
+     * @return The perSeriesAligner.
      */
     public com.google.monitoring.v3.Aggregation.Aligner getPerSeriesAligner() {
       @SuppressWarnings("deprecation")
@@ -2288,6 +2340,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+     *
+     * @param value The perSeriesAligner to set.
+     * @return This builder for chaining.
      */
     public Builder setPerSeriesAligner(com.google.monitoring.v3.Aggregation.Aligner value) {
       if (value == null) {
@@ -2315,6 +2370,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPerSeriesAligner() {
 
@@ -2341,6 +2398,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+     *
+     * @return The enum numeric value on the wire for crossSeriesReducer.
      */
     public int getCrossSeriesReducerValue() {
       return crossSeriesReducer_;
@@ -2362,6 +2421,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for crossSeriesReducer to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossSeriesReducerValue(int value) {
       crossSeriesReducer_ = value;
@@ -2385,6 +2447,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+     *
+     * @return The crossSeriesReducer.
      */
     public com.google.monitoring.v3.Aggregation.Reducer getCrossSeriesReducer() {
       @SuppressWarnings("deprecation")
@@ -2409,6 +2473,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+     *
+     * @param value The crossSeriesReducer to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossSeriesReducer(com.google.monitoring.v3.Aggregation.Reducer value) {
       if (value == null) {
@@ -2436,6 +2503,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCrossSeriesReducer() {
 
@@ -2448,9 +2517,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupByFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         groupByFields_ = new com.google.protobuf.LazyStringArrayList(groupByFields_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2474,6 +2543,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @return A list containing the groupByFields.
      */
     public com.google.protobuf.ProtocolStringList getGroupByFieldsList() {
       return groupByFields_.getUnmodifiableView();
@@ -2499,6 +2570,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @return The count of groupByFields.
      */
     public int getGroupByFieldsCount() {
       return groupByFields_.size();
@@ -2524,6 +2597,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The groupByFields at the given index.
      */
     public java.lang.String getGroupByFields(int index) {
       return groupByFields_.get(index);
@@ -2549,6 +2625,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the groupByFields at the given index.
      */
     public com.google.protobuf.ByteString getGroupByFieldsBytes(int index) {
       return groupByFields_.getByteString(index);
@@ -2574,6 +2653,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The groupByFields to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupByFields(int index, java.lang.String value) {
       if (value == null) {
@@ -2605,6 +2688,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @param value The groupByFields to add.
+     * @return This builder for chaining.
      */
     public Builder addGroupByFields(java.lang.String value) {
       if (value == null) {
@@ -2636,6 +2722,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @param values The groupByFields to add.
+     * @return This builder for chaining.
      */
     public Builder addAllGroupByFields(java.lang.Iterable<java.lang.String> values) {
       ensureGroupByFieldsIsMutable();
@@ -2664,10 +2753,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGroupByFields() {
       groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2692,6 +2783,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string group_by_fields = 5;</code>
+     *
+     * @param value The bytes of the groupByFields to add.
+     * @return This builder for chaining.
      */
     public Builder addGroupByFieldsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

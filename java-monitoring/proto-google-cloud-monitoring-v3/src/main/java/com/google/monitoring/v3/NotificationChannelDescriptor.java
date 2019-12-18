@@ -49,6 +49,12 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NotificationChannelDescriptor();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -95,9 +101,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               labels_.add(
                   input.readMessage(com.google.api.LabelDescriptor.parser(), extensionRegistry));
@@ -106,9 +112,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
           case 40:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 supportedTiers_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               supportedTiers_.add(rawValue);
               break;
@@ -119,9 +125,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   supportedTiers_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000020;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 supportedTiers_.add(rawValue);
               }
@@ -149,10 +155,10 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         labels_ = java.util.Collections.unmodifiableList(labels_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         supportedTiers_ = java.util.Collections.unmodifiableList(supportedTiers_);
       }
       this.unknownFields = unknownFields.build();
@@ -175,7 +181,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
             com.google.monitoring.v3.NotificationChannelDescriptor.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 6;
   private volatile java.lang.Object name_;
   /**
@@ -188,6 +193,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -210,6 +217,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -234,6 +243,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -255,6 +266,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
@@ -279,6 +292,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -300,6 +315,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -325,6 +342,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -347,6 +366,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -458,6 +479,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @return A list containing the supportedTiers.
    */
   @java.lang.Deprecated
   public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
@@ -475,6 +498,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @param value The supportedTiers to add.
    */
   @java.lang.Deprecated
   public int getSupportedTiersCount() {
@@ -490,6 +515,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedTiers at the given index.
    */
   @java.lang.Deprecated
   public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
@@ -505,6 +533,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedTiers.
    */
   @java.lang.Deprecated
   public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
@@ -520,6 +550,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedTiers at the given index.
    */
   @java.lang.Deprecated
   public int getSupportedTiersValue(int index) {
@@ -811,12 +844,12 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         labelsBuilder_.clear();
       }
       supportedTiers_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -845,26 +878,24 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       com.google.monitoring.v3.NotificationChannelDescriptor result =
           new com.google.monitoring.v3.NotificationChannelDescriptor(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.type_ = type_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (labelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           labels_ = java.util.Collections.unmodifiableList(labels_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.labels_ = labels_;
       } else {
         result.labels_ = labelsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         supportedTiers_ = java.util.Collections.unmodifiableList(supportedTiers_);
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.supportedTiers_ = supportedTiers_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -935,7 +966,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         if (!other.labels_.isEmpty()) {
           if (labels_.isEmpty()) {
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLabelsIsMutable();
             labels_.addAll(other.labels_);
@@ -948,7 +979,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
             labelsBuilder_.dispose();
             labelsBuilder_ = null;
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             labelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLabelsFieldBuilder()
@@ -961,7 +992,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (!other.supportedTiers_.isEmpty()) {
         if (supportedTiers_.isEmpty()) {
           supportedTiers_ = other.supportedTiers_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureSupportedTiersIsMutable();
           supportedTiers_.addAll(other.supportedTiers_);
@@ -1011,6 +1042,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1033,6 +1066,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1055,6 +1090,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1075,6 +1113,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1092,6 +1132,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1114,6 +1157,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -1135,6 +1180,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
@@ -1156,6 +1203,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(java.lang.String value) {
       if (value == null) {
@@ -1175,6 +1225,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1191,6 +1243,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1213,6 +1268,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1234,6 +1291,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1255,6 +1314,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1274,6 +1336,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1290,6 +1354,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1313,6 +1380,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1335,6 +1404,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1357,6 +1428,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1377,6 +1451,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1394,6 +1470,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1410,9 +1489,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>(labels_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1647,7 +1726,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public Builder clearLabels() {
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         labelsBuilder_.clear();
@@ -1782,7 +1861,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
                 com.google.api.LabelDescriptor,
                 com.google.api.LabelDescriptor.Builder,
                 com.google.api.LabelDescriptorOrBuilder>(
-                labels_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                labels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         labels_ = null;
       }
       return labelsBuilder_;
@@ -1791,9 +1870,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     private java.util.List<java.lang.Integer> supportedTiers_ = java.util.Collections.emptyList();
 
     private void ensureSupportedTiersIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         supportedTiers_ = new java.util.ArrayList<java.lang.Integer>(supportedTiers_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1806,6 +1885,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @return A list containing the supportedTiers.
      */
     @java.lang.Deprecated
     public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
@@ -1823,6 +1904,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @return The count of supportedTiers.
      */
     @java.lang.Deprecated
     public int getSupportedTiersCount() {
@@ -1838,6 +1921,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedTiers at the given index.
      */
     @java.lang.Deprecated
     public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
@@ -1853,6 +1939,10 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The supportedTiers to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setSupportedTiers(int index, com.google.monitoring.v3.ServiceTier value) {
@@ -1874,6 +1964,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param value The supportedTiers to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addSupportedTiers(com.google.monitoring.v3.ServiceTier value) {
@@ -1895,6 +1988,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param values The supportedTiers to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addAllSupportedTiers(
@@ -1916,11 +2012,13 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearSupportedTiers() {
       supportedTiers_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1934,6 +2032,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for supportedTiers.
      */
     @java.lang.Deprecated
     public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
@@ -1949,6 +2049,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedTiers at the given index.
      */
     @java.lang.Deprecated
     public int getSupportedTiersValue(int index) {
@@ -1964,6 +2067,10 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedTiers at the given index.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setSupportedTiersValue(int index, int value) {
@@ -1982,6 +2089,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for supportedTiers to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addSupportedTiersValue(int value) {
@@ -2000,6 +2110,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for supportedTiers to add.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder addAllSupportedTiersValue(java.lang.Iterable<java.lang.Integer> values) {

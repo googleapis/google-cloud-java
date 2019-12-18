@@ -32,6 +32,8 @@ public interface DeleteNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface DeleteNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface DeleteNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>bool force = 5;</code>
+   *
+   * @return The force.
    */
   boolean getForce();
 }

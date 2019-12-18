@@ -33,6 +33,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>string display_name = 11;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -66,6 +72,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>string display_name = 11;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -79,6 +87,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
+   *
+   * @return Whether the serviceLevelIndicator field is set.
    */
   boolean hasServiceLevelIndicator();
   /**
@@ -91,6 +101,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
+   *
+   * @return The serviceLevelIndicator.
    */
   com.google.monitoring.v3.ServiceLevelIndicator getServiceLevelIndicator();
   /**
@@ -111,10 +123,12 @@ public interface ServiceLevelObjectiveOrBuilder
    *
    * <pre>
    * The fraction of service that must be good in order for this objective to be
-   * met. `0 &lt; goal &lt;= 1`.
+   * met. `0 &lt; goal &lt;= 0.999`.
    * </pre>
    *
    * <code>double goal = 4;</code>
+   *
+   * @return The goal.
    */
   double getGoal();
 
@@ -127,6 +141,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration rolling_period = 5;</code>
+   *
+   * @return Whether the rollingPeriod field is set.
    */
   boolean hasRollingPeriod();
   /**
@@ -138,6 +154,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration rolling_period = 5;</code>
+   *
+   * @return The rollingPeriod.
    */
   com.google.protobuf.Duration getRollingPeriod();
   /**
@@ -162,6 +180,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+   *
+   * @return The enum numeric value on the wire for calendarPeriod.
    */
   int getCalendarPeriodValue();
   /**
@@ -174,6 +194,8 @@ public interface ServiceLevelObjectiveOrBuilder
    * </pre>
    *
    * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+   *
+   * @return The calendarPeriod.
    */
   com.google.type.CalendarPeriod getCalendarPeriod();
 

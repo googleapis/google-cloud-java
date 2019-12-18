@@ -31,6 +31,8 @@ public interface CreateTimeSeriesSummaryOrBuilder
    * </pre>
    *
    * <code>int32 total_point_count = 1;</code>
+   *
+   * @return The totalPointCount.
    */
   int getTotalPointCount();
 
@@ -42,6 +44,8 @@ public interface CreateTimeSeriesSummaryOrBuilder
    * </pre>
    *
    * <code>int32 success_point_count = 2;</code>
+   *
+   * @return The successPointCount.
    */
   int getSuccessPointCount();
 

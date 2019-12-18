@@ -32,6 +32,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -74,6 +80,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -85,6 +93,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -98,6 +108,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -110,6 +122,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

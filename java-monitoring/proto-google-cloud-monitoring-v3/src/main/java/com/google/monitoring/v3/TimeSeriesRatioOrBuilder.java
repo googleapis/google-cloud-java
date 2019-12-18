@@ -34,6 +34,8 @@ public interface TimeSeriesRatioOrBuilder
    * </pre>
    *
    * <code>string good_service_filter = 4;</code>
+   *
+   * @return The goodServiceFilter.
    */
   java.lang.String getGoodServiceFilter();
   /**
@@ -47,6 +49,8 @@ public interface TimeSeriesRatioOrBuilder
    * </pre>
    *
    * <code>string good_service_filter = 4;</code>
+   *
+   * @return The bytes for goodServiceFilter.
    */
   com.google.protobuf.ByteString getGoodServiceFilterBytes();
 
@@ -62,6 +66,8 @@ public interface TimeSeriesRatioOrBuilder
    * </pre>
    *
    * <code>string bad_service_filter = 5;</code>
+   *
+   * @return The badServiceFilter.
    */
   java.lang.String getBadServiceFilter();
   /**
@@ -76,6 +82,8 @@ public interface TimeSeriesRatioOrBuilder
    * </pre>
    *
    * <code>string bad_service_filter = 5;</code>
+   *
+   * @return The bytes for badServiceFilter.
    */
   com.google.protobuf.ByteString getBadServiceFilterBytes();
 
@@ -90,6 +98,8 @@ public interface TimeSeriesRatioOrBuilder
    * </pre>
    *
    * <code>string total_service_filter = 6;</code>
+   *
+   * @return The totalServiceFilter.
    */
   java.lang.String getTotalServiceFilter();
   /**
@@ -103,6 +113,8 @@ public interface TimeSeriesRatioOrBuilder
    * </pre>
    *
    * <code>string total_service_filter = 6;</code>
+   *
+   * @return The bytes for totalServiceFilter.
    */
   com.google.protobuf.ByteString getTotalServiceFilterBytes();
 }

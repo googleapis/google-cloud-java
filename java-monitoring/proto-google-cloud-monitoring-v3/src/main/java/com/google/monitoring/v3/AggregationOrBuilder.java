@@ -38,6 +38,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
+   *
+   * @return Whether the alignmentPeriod field is set.
    */
   boolean hasAlignmentPeriod();
   /**
@@ -55,6 +57,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
+   *
+   * @return The alignmentPeriod.
    */
   com.google.protobuf.Duration getAlignmentPeriod();
   /**
@@ -92,6 +96,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+   *
+   * @return The enum numeric value on the wire for perSeriesAligner.
    */
   int getPerSeriesAlignerValue();
   /**
@@ -111,6 +117,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
+   *
+   * @return The perSeriesAligner.
    */
   com.google.monitoring.v3.Aggregation.Aligner getPerSeriesAligner();
 
@@ -131,6 +139,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+   *
+   * @return The enum numeric value on the wire for crossSeriesReducer.
    */
   int getCrossSeriesReducerValue();
   /**
@@ -150,6 +160,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
+   *
+   * @return The crossSeriesReducer.
    */
   com.google.monitoring.v3.Aggregation.Reducer getCrossSeriesReducer();
 
@@ -174,6 +186,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @return A list containing the groupByFields.
    */
   java.util.List<java.lang.String> getGroupByFieldsList();
   /**
@@ -197,6 +211,8 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @return The count of groupByFields.
    */
   int getGroupByFieldsCount();
   /**
@@ -220,6 +236,9 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The groupByFields at the given index.
    */
   java.lang.String getGroupByFields(int index);
   /**
@@ -243,6 +262,9 @@ public interface AggregationOrBuilder
    * </pre>
    *
    * <code>repeated string group_by_fields = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the groupByFields at the given index.
    */
   com.google.protobuf.ByteString getGroupByFieldsBytes(int index);
 }

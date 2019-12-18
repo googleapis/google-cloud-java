@@ -44,6 +44,12 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListMetricDescriptorsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -159,6 +166,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -188,6 +197,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -214,6 +225,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -237,6 +250,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -254,6 +269,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -276,6 +293,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -665,6 +684,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -686,6 +707,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -707,6 +730,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -726,6 +752,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -742,6 +770,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -769,6 +800,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -795,6 +828,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -821,6 +856,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -845,6 +883,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -866,6 +906,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -887,6 +930,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -899,6 +944,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -914,6 +962,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -933,6 +983,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -955,6 +1007,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -977,6 +1031,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -997,6 +1054,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1014,6 +1073,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

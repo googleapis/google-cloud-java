@@ -33,6 +33,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The type.
    */
   java.lang.String getType();
   /**
@@ -68,6 +74,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString getTypeBytes();
 
@@ -80,6 +88,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -91,6 +101,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -104,6 +116,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -116,6 +130,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -190,6 +206,8 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @return A list containing the supportedTiers.
    */
   @java.lang.Deprecated
   java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList();
@@ -203,6 +221,8 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @return The count of supportedTiers.
    */
   @java.lang.Deprecated
   int getSupportedTiersCount();
@@ -216,6 +236,9 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedTiers at the given index.
    */
   @java.lang.Deprecated
   com.google.monitoring.v3.ServiceTier getSupportedTiers(int index);
@@ -229,6 +252,8 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedTiers.
    */
   @java.lang.Deprecated
   java.util.List<java.lang.Integer> getSupportedTiersValueList();
@@ -242,6 +267,9 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedTiers at the given index.
    */
   @java.lang.Deprecated
   int getSupportedTiersValue(int index);

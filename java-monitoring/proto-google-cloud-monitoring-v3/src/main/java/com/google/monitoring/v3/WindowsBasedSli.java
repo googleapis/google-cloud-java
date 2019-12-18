@@ -42,6 +42,12 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
   private WindowsBasedSli() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WindowsBasedSli();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -197,6 +202,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.RequestBasedSli performance = 1;</code>
+     *
+     * @return Whether the performance field is set.
      */
     boolean hasPerformance();
     /**
@@ -207,6 +214,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.RequestBasedSli performance = 1;</code>
+     *
+     * @return The performance.
      */
     com.google.monitoring.v3.RequestBasedSli getPerformance();
     /**
@@ -228,6 +237,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli_performance = 3;</code>
+     *
+     * @return Whether the basicSliPerformance field is set.
      */
     boolean hasBasicSliPerformance();
     /**
@@ -238,6 +249,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli_performance = 3;</code>
+     *
+     * @return The basicSliPerformance.
      */
     com.google.monitoring.v3.BasicSli getBasicSliPerformance();
     /**
@@ -259,6 +272,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>double threshold = 2;</code>
+     *
+     * @return The threshold.
      */
     double getThreshold();
 
@@ -287,6 +302,12 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     private PerformanceThreshold() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PerformanceThreshold();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -299,7 +320,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -384,7 +404,10 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     private int typeCase_ = 0;
     private java.lang.Object type_;
 
-    public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+    public enum TypeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PERFORMANCE(1),
       BASIC_SLI_PERFORMANCE(3),
       TYPE_NOT_SET(0);
@@ -393,7 +416,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       private TypeCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static TypeCase valueOf(int value) {
         return forNumber(value);
@@ -430,6 +457,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.RequestBasedSli performance = 1;</code>
+     *
+     * @return Whether the performance field is set.
      */
     public boolean hasPerformance() {
       return typeCase_ == 1;
@@ -442,6 +471,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.RequestBasedSli performance = 1;</code>
+     *
+     * @return The performance.
      */
     public com.google.monitoring.v3.RequestBasedSli getPerformance() {
       if (typeCase_ == 1) {
@@ -474,6 +505,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli_performance = 3;</code>
+     *
+     * @return Whether the basicSliPerformance field is set.
      */
     public boolean hasBasicSliPerformance() {
       return typeCase_ == 3;
@@ -486,6 +519,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli_performance = 3;</code>
+     *
+     * @return The basicSliPerformance.
      */
     public com.google.monitoring.v3.BasicSli getBasicSliPerformance() {
       if (typeCase_ == 3) {
@@ -519,6 +554,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>double threshold = 2;</code>
+     *
+     * @return The threshold.
      */
     public double getThreshold() {
       return threshold_;
@@ -954,6 +991,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.monitoring.v3.RequestBasedSli performance = 1;</code>
+       *
+       * @return Whether the performance field is set.
        */
       public boolean hasPerformance() {
         return typeCase_ == 1;
@@ -966,6 +1005,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.monitoring.v3.RequestBasedSli performance = 1;</code>
+       *
+       * @return The performance.
        */
       public com.google.monitoring.v3.RequestBasedSli getPerformance() {
         if (performanceBuilder_ == null) {
@@ -1156,6 +1197,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.monitoring.v3.BasicSli basic_sli_performance = 3;</code>
+       *
+       * @return Whether the basicSliPerformance field is set.
        */
       public boolean hasBasicSliPerformance() {
         return typeCase_ == 3;
@@ -1168,6 +1211,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.monitoring.v3.BasicSli basic_sli_performance = 3;</code>
+       *
+       * @return The basicSliPerformance.
        */
       public com.google.monitoring.v3.BasicSli getBasicSliPerformance() {
         if (basicSliPerformanceBuilder_ == null) {
@@ -1351,6 +1396,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>double threshold = 2;</code>
+       *
+       * @return The threshold.
        */
       public double getThreshold() {
         return threshold_;
@@ -1363,6 +1410,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>double threshold = 2;</code>
+       *
+       * @param value The threshold to set.
+       * @return This builder for chaining.
        */
       public Builder setThreshold(double value) {
 
@@ -1378,6 +1428,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>double threshold = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearThreshold() {
 
@@ -1455,6 +1507,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_series = 1;</code>
+     *
+     * @return The timeSeries.
      */
     java.lang.String getTimeSeries();
     /**
@@ -1466,6 +1520,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_series = 1;</code>
+     *
+     * @return The bytes for timeSeries.
      */
     com.google.protobuf.ByteString getTimeSeriesBytes();
 
@@ -1478,6 +1534,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.Range range = 4;</code>
+     *
+     * @return Whether the range field is set.
      */
     boolean hasRange();
     /**
@@ -1489,6 +1547,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.Range range = 4;</code>
+     *
+     * @return The range.
      */
     com.google.monitoring.v3.Range getRange();
     /**
@@ -1530,6 +1590,12 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MetricRange();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1542,7 +1608,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1620,6 +1685,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_series = 1;</code>
+     *
+     * @return The timeSeries.
      */
     public java.lang.String getTimeSeries() {
       java.lang.Object ref = timeSeries_;
@@ -1641,6 +1708,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string time_series = 1;</code>
+     *
+     * @return The bytes for timeSeries.
      */
     public com.google.protobuf.ByteString getTimeSeriesBytes() {
       java.lang.Object ref = timeSeries_;
@@ -1665,6 +1734,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.Range range = 4;</code>
+     *
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return range_ != null;
@@ -1678,6 +1749,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.Range range = 4;</code>
+     *
+     * @return The range.
      */
     public com.google.monitoring.v3.Range getRange() {
       return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
@@ -2060,6 +2133,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>string time_series = 1;</code>
+       *
+       * @return The timeSeries.
        */
       public java.lang.String getTimeSeries() {
         java.lang.Object ref = timeSeries_;
@@ -2081,6 +2156,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>string time_series = 1;</code>
+       *
+       * @return The bytes for timeSeries.
        */
       public com.google.protobuf.ByteString getTimeSeriesBytes() {
         java.lang.Object ref = timeSeries_;
@@ -2102,6 +2179,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>string time_series = 1;</code>
+       *
+       * @param value The timeSeries to set.
+       * @return This builder for chaining.
        */
       public Builder setTimeSeries(java.lang.String value) {
         if (value == null) {
@@ -2121,6 +2201,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>string time_series = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearTimeSeries() {
 
@@ -2137,6 +2219,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>string time_series = 1;</code>
+       *
+       * @param value The bytes for timeSeries to set.
+       * @return This builder for chaining.
        */
       public Builder setTimeSeriesBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2164,6 +2249,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.monitoring.v3.Range range = 4;</code>
+       *
+       * @return Whether the range field is set.
        */
       public boolean hasRange() {
         return rangeBuilder_ != null || range_ != null;
@@ -2177,6 +2264,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * </pre>
        *
        * <code>.google.monitoring.v3.Range range = 4;</code>
+       *
+       * @return The range.
        */
       public com.google.monitoring.v3.Range getRange() {
         if (rangeBuilder_ == null) {
@@ -2388,7 +2477,10 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
   private int windowCriterionCase_ = 0;
   private java.lang.Object windowCriterion_;
 
-  public enum WindowCriterionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum WindowCriterionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GOOD_BAD_METRIC_FILTER(5),
     GOOD_TOTAL_RATIO_THRESHOLD(2),
     METRIC_MEAN_IN_RANGE(6),
@@ -2399,7 +2491,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     private WindowCriterionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static WindowCriterionCase valueOf(int value) {
       return forNumber(value);
@@ -2442,6 +2538,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string good_bad_metric_filter = 5;</code>
+   *
+   * @return The goodBadMetricFilter.
    */
   public java.lang.String getGoodBadMetricFilter() {
     java.lang.Object ref = "";
@@ -2469,6 +2567,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string good_bad_metric_filter = 5;</code>
+   *
+   * @return The bytes for goodBadMetricFilter.
    */
   public com.google.protobuf.ByteString getGoodBadMetricFilterBytes() {
     java.lang.Object ref = "";
@@ -2498,6 +2598,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.monitoring.v3.WindowsBasedSli.PerformanceThreshold good_total_ratio_threshold = 2;
    * </code>
+   *
+   * @return Whether the goodTotalRatioThreshold field is set.
    */
   public boolean hasGoodTotalRatioThreshold() {
     return windowCriterionCase_ == 2;
@@ -2512,6 +2614,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.monitoring.v3.WindowsBasedSli.PerformanceThreshold good_total_ratio_threshold = 2;
    * </code>
+   *
+   * @return The goodTotalRatioThreshold.
    */
   public com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold
       getGoodTotalRatioThreshold() {
@@ -2549,6 +2653,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_mean_in_range = 6;</code>
+   *
+   * @return Whether the metricMeanInRange field is set.
    */
   public boolean hasMetricMeanInRange() {
     return windowCriterionCase_ == 6;
@@ -2562,6 +2668,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_mean_in_range = 6;</code>
+   *
+   * @return The metricMeanInRange.
    */
   public com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricMeanInRange() {
     if (windowCriterionCase_ == 6) {
@@ -2597,6 +2705,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_sum_in_range = 7;</code>
+   *
+   * @return Whether the metricSumInRange field is set.
    */
   public boolean hasMetricSumInRange() {
     return windowCriterionCase_ == 7;
@@ -2610,6 +2720,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_sum_in_range = 7;</code>
+   *
+   * @return The metricSumInRange.
    */
   public com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricSumInRange() {
     if (windowCriterionCase_ == 7) {
@@ -2646,6 +2758,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Duration window_period = 4;</code>
+   *
+   * @return Whether the windowPeriod field is set.
    */
   public boolean hasWindowPeriod() {
     return windowPeriod_ != null;
@@ -2659,6 +2773,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Duration window_period = 4;</code>
+   *
+   * @return The windowPeriod.
    */
   public com.google.protobuf.Duration getWindowPeriod() {
     return windowPeriod_ == null
@@ -3157,6 +3273,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_bad_metric_filter = 5;</code>
+     *
+     * @return The goodBadMetricFilter.
      */
     public java.lang.String getGoodBadMetricFilter() {
       java.lang.Object ref = "";
@@ -3184,6 +3302,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_bad_metric_filter = 5;</code>
+     *
+     * @return The bytes for goodBadMetricFilter.
      */
     public com.google.protobuf.ByteString getGoodBadMetricFilterBytes() {
       java.lang.Object ref = "";
@@ -3211,6 +3331,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_bad_metric_filter = 5;</code>
+     *
+     * @param value The goodBadMetricFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setGoodBadMetricFilter(java.lang.String value) {
       if (value == null) {
@@ -3231,6 +3354,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_bad_metric_filter = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGoodBadMetricFilter() {
       if (windowCriterionCase_ == 5) {
@@ -3250,6 +3375,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_bad_metric_filter = 5;</code>
+     *
+     * @param value The bytes for goodBadMetricFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setGoodBadMetricFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3277,6 +3405,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.monitoring.v3.WindowsBasedSli.PerformanceThreshold good_total_ratio_threshold = 2;
      * </code>
+     *
+     * @return Whether the goodTotalRatioThreshold field is set.
      */
     public boolean hasGoodTotalRatioThreshold() {
       return windowCriterionCase_ == 2;
@@ -3291,6 +3421,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.monitoring.v3.WindowsBasedSli.PerformanceThreshold good_total_ratio_threshold = 2;
      * </code>
+     *
+     * @return The goodTotalRatioThreshold.
      */
     public com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold
         getGoodTotalRatioThreshold() {
@@ -3505,6 +3637,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_mean_in_range = 6;</code>
+     *
+     * @return Whether the metricMeanInRange field is set.
      */
     public boolean hasMetricMeanInRange() {
       return windowCriterionCase_ == 6;
@@ -3518,6 +3652,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_mean_in_range = 6;</code>
+     *
+     * @return The metricMeanInRange.
      */
     public com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricMeanInRange() {
       if (metricMeanInRangeBuilder_ == null) {
@@ -3722,6 +3858,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_sum_in_range = 7;</code>
+     *
+     * @return Whether the metricSumInRange field is set.
      */
     public boolean hasMetricSumInRange() {
       return windowCriterionCase_ == 7;
@@ -3735,6 +3873,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_sum_in_range = 7;</code>
+     *
+     * @return The metricSumInRange.
      */
     public com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricSumInRange() {
       if (metricSumInRangeBuilder_ == null) {
@@ -3939,6 +4079,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Duration window_period = 4;</code>
+     *
+     * @return Whether the windowPeriod field is set.
      */
     public boolean hasWindowPeriod() {
       return windowPeriodBuilder_ != null || windowPeriod_ != null;
@@ -3952,6 +4094,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Duration window_period = 4;</code>
+     *
+     * @return The windowPeriod.
      */
     public com.google.protobuf.Duration getWindowPeriod() {
       if (windowPeriodBuilder_ == null) {

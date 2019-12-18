@@ -49,6 +49,12 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BasicSli();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -208,6 +214,12 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     }
 
     private AvailabilityCriteria() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AvailabilityCriteria();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -639,6 +651,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration threshold = 3;</code>
+     *
+     * @return Whether the threshold field is set.
      */
     boolean hasThreshold();
     /**
@@ -650,6 +664,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration threshold = 3;</code>
+     *
+     * @return The threshold.
      */
     com.google.protobuf.Duration getThreshold();
     /**
@@ -686,6 +702,12 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     private LatencyCriteria() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LatencyCriteria();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -698,7 +720,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -769,6 +790,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration threshold = 3;</code>
+     *
+     * @return Whether the threshold field is set.
      */
     public boolean hasThreshold() {
       return threshold_ != null;
@@ -782,6 +805,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration threshold = 3;</code>
+     *
+     * @return The threshold.
      */
     public com.google.protobuf.Duration getThreshold() {
       return threshold_ == null ? com.google.protobuf.Duration.getDefaultInstance() : threshold_;
@@ -1149,6 +1174,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration threshold = 3;</code>
+       *
+       * @return Whether the threshold field is set.
        */
       public boolean hasThreshold() {
         return thresholdBuilder_ != null || threshold_ != null;
@@ -1162,6 +1189,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration threshold = 3;</code>
+       *
+       * @return The threshold.
        */
       public com.google.protobuf.Duration getThreshold() {
         if (thresholdBuilder_ == null) {
@@ -1374,11 +1403,13 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   private int sliCriteriaCase_ = 0;
   private java.lang.Object sliCriteria_;
 
-  public enum SliCriteriaCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SliCriteriaCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AVAILABILITY(2),
     LATENCY(3),
     SLICRITERIA_NOT_SET(0);
@@ -1387,7 +1418,11 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     private SliCriteriaCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SliCriteriaCase valueOf(int value) {
       return forNumber(value);
@@ -1429,6 +1464,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @return A list containing the method.
    */
   public com.google.protobuf.ProtocolStringList getMethodList() {
     return method_;
@@ -1445,6 +1482,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @return The count of method.
    */
   public int getMethodCount() {
     return method_.size();
@@ -1461,6 +1500,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The method at the given index.
    */
   public java.lang.String getMethod(int index) {
     return method_.get(index);
@@ -1477,6 +1519,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the method at the given index.
    */
   public com.google.protobuf.ByteString getMethodBytes(int index) {
     return method_.getByteString(index);
@@ -1496,6 +1541,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @return A list containing the location.
    */
   public com.google.protobuf.ProtocolStringList getLocationList() {
     return location_;
@@ -1512,6 +1559,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @return The count of location.
    */
   public int getLocationCount() {
     return location_.size();
@@ -1528,6 +1577,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The location at the given index.
    */
   public java.lang.String getLocation(int index) {
     return location_.get(index);
@@ -1544,6 +1596,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the location at the given index.
    */
   public com.google.protobuf.ByteString getLocationBytes(int index) {
     return location_.getByteString(index);
@@ -1563,6 +1618,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @return A list containing the version.
    */
   public com.google.protobuf.ProtocolStringList getVersionList() {
     return version_;
@@ -1579,6 +1636,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @return The count of version.
    */
   public int getVersionCount() {
     return version_.size();
@@ -1595,6 +1654,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The version at the given index.
    */
   public java.lang.String getVersion(int index) {
     return version_.get(index);
@@ -1611,6 +1673,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the version at the given index.
    */
   public com.google.protobuf.ByteString getVersionBytes(int index) {
     return version_.getByteString(index);
@@ -1626,6 +1691,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
+   *
+   * @return Whether the availability field is set.
    */
   public boolean hasAvailability() {
     return sliCriteriaCase_ == 2;
@@ -1639,6 +1706,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
+   *
+   * @return The availability.
    */
   public com.google.monitoring.v3.BasicSli.AvailabilityCriteria getAvailability() {
     if (sliCriteriaCase_ == 2) {
@@ -1674,6 +1743,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
+   *
+   * @return Whether the latency field is set.
    */
   public boolean hasLatency() {
     return sliCriteriaCase_ == 3;
@@ -1687,6 +1758,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
+   *
+   * @return The latency.
    */
   public com.google.monitoring.v3.BasicSli.LatencyCriteria getLatency() {
     if (sliCriteriaCase_ == 3) {
@@ -2031,7 +2104,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.BasicSli buildPartial() {
       com.google.monitoring.v3.BasicSli result = new com.google.monitoring.v3.BasicSli(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         method_ = method_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2061,7 +2133,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
           result.sliCriteria_ = latencyBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.sliCriteriaCase_ = sliCriteriaCase_;
       onBuilt();
       return result;
@@ -2224,6 +2295,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @return A list containing the method.
      */
     public com.google.protobuf.ProtocolStringList getMethodList() {
       return method_.getUnmodifiableView();
@@ -2240,6 +2313,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @return The count of method.
      */
     public int getMethodCount() {
       return method_.size();
@@ -2256,6 +2331,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The method at the given index.
      */
     public java.lang.String getMethod(int index) {
       return method_.get(index);
@@ -2272,6 +2350,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the method at the given index.
      */
     public com.google.protobuf.ByteString getMethodBytes(int index) {
       return method_.getByteString(index);
@@ -2288,6 +2369,10 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The method to set.
+     * @return This builder for chaining.
      */
     public Builder setMethod(int index, java.lang.String value) {
       if (value == null) {
@@ -2310,6 +2395,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @param value The method to add.
+     * @return This builder for chaining.
      */
     public Builder addMethod(java.lang.String value) {
       if (value == null) {
@@ -2332,6 +2420,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @param values The method to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMethod(java.lang.Iterable<java.lang.String> values) {
       ensureMethodIsMutable();
@@ -2351,6 +2442,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMethod() {
       method_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2370,6 +2463,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string method = 7;</code>
+     *
+     * @param value The bytes of the method to add.
+     * @return This builder for chaining.
      */
     public Builder addMethodBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2403,6 +2499,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @return A list containing the location.
      */
     public com.google.protobuf.ProtocolStringList getLocationList() {
       return location_.getUnmodifiableView();
@@ -2419,6 +2517,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @return The count of location.
      */
     public int getLocationCount() {
       return location_.size();
@@ -2435,6 +2535,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The location at the given index.
      */
     public java.lang.String getLocation(int index) {
       return location_.get(index);
@@ -2451,6 +2554,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the location at the given index.
      */
     public com.google.protobuf.ByteString getLocationBytes(int index) {
       return location_.getByteString(index);
@@ -2467,6 +2573,10 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocation(int index, java.lang.String value) {
       if (value == null) {
@@ -2489,6 +2599,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @param value The location to add.
+     * @return This builder for chaining.
      */
     public Builder addLocation(java.lang.String value) {
       if (value == null) {
@@ -2511,6 +2624,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @param values The location to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLocation(java.lang.Iterable<java.lang.String> values) {
       ensureLocationIsMutable();
@@ -2530,6 +2646,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocation() {
       location_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2549,6 +2667,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string location = 8;</code>
+     *
+     * @param value The bytes of the location to add.
+     * @return This builder for chaining.
      */
     public Builder addLocationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2582,6 +2703,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @return A list containing the version.
      */
     public com.google.protobuf.ProtocolStringList getVersionList() {
       return version_.getUnmodifiableView();
@@ -2598,6 +2721,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @return The count of version.
      */
     public int getVersionCount() {
       return version_.size();
@@ -2614,6 +2739,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The version at the given index.
      */
     public java.lang.String getVersion(int index) {
       return version_.get(index);
@@ -2630,6 +2758,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the version at the given index.
      */
     public com.google.protobuf.ByteString getVersionBytes(int index) {
       return version_.getByteString(index);
@@ -2646,6 +2777,10 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(int index, java.lang.String value) {
       if (value == null) {
@@ -2668,6 +2803,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @param value The version to add.
+     * @return This builder for chaining.
      */
     public Builder addVersion(java.lang.String value) {
       if (value == null) {
@@ -2690,6 +2828,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @param values The version to add.
+     * @return This builder for chaining.
      */
     public Builder addAllVersion(java.lang.Iterable<java.lang.String> values) {
       ensureVersionIsMutable();
@@ -2709,6 +2850,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
       version_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2728,6 +2871,9 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string version = 9;</code>
+     *
+     * @param value The bytes of the version to add.
+     * @return This builder for chaining.
      */
     public Builder addVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2754,6 +2900,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
+     *
+     * @return Whether the availability field is set.
      */
     public boolean hasAvailability() {
       return sliCriteriaCase_ == 2;
@@ -2767,6 +2915,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
+     *
+     * @return The availability.
      */
     public com.google.monitoring.v3.BasicSli.AvailabilityCriteria getAvailability() {
       if (availabilityBuilder_ == null) {
@@ -2968,6 +3118,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
+     *
+     * @return Whether the latency field is set.
      */
     public boolean hasLatency() {
       return sliCriteriaCase_ == 3;
@@ -2981,6 +3133,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
+     *
+     * @return The latency.
      */
     public com.google.monitoring.v3.BasicSli.LatencyCriteria getLatency() {
       if (latencyBuilder_ == null) {

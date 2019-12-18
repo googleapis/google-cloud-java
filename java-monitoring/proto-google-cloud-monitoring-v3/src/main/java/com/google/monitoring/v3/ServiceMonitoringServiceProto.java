@@ -177,25 +177,17 @@ public final class ServiceMonitoringServiceProto {
           + "loud.Monitoring.V3\312\002\032Google\\Cloud\\Monito"
           + "ring\\V3b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.MonitoredResourceProto.getDescriptor(),
-          com.google.monitoring.v3.ServiceMonitoringProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.MonitoredResourceProto.getDescriptor(),
+              com.google.monitoring.v3.ServiceMonitoringProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+            });
     internal_static_google_monitoring_v3_CreateServiceRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_monitoring_v3_CreateServiceRequest_fieldAccessorTable =

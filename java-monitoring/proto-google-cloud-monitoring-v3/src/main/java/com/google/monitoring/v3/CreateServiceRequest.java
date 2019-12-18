@@ -43,6 +43,12 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateServiceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -161,6 +168,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -185,6 +194,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string service_id = 3;</code>
+   *
+   * @return The serviceId.
    */
   public java.lang.String getServiceId() {
     java.lang.Object ref = serviceId_;
@@ -206,6 +217,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string service_id = 3;</code>
+   *
+   * @return The bytes for serviceId.
    */
   public com.google.protobuf.ByteString getServiceIdBytes() {
     java.lang.Object ref = serviceId_;
@@ -229,6 +242,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 2;</code>
+   *
+   * @return Whether the service field is set.
    */
   public boolean hasService() {
     return service_ != null;
@@ -241,6 +256,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 2;</code>
+   *
+   * @return The service.
    */
   public com.google.monitoring.v3.Service getService() {
     return service_ == null ? com.google.monitoring.v3.Service.getDefaultInstance() : service_;
@@ -628,6 +645,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -649,6 +668,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -670,6 +691,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -689,6 +713,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -705,6 +731,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -727,6 +756,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string service_id = 3;</code>
+     *
+     * @return The serviceId.
      */
     public java.lang.String getServiceId() {
       java.lang.Object ref = serviceId_;
@@ -748,6 +779,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string service_id = 3;</code>
+     *
+     * @return The bytes for serviceId.
      */
     public com.google.protobuf.ByteString getServiceIdBytes() {
       java.lang.Object ref = serviceId_;
@@ -769,6 +802,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string service_id = 3;</code>
+     *
+     * @param value The serviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceId(java.lang.String value) {
       if (value == null) {
@@ -788,6 +824,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string service_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceId() {
 
@@ -804,6 +842,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string service_id = 3;</code>
+     *
+     * @param value The bytes for serviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -830,6 +871,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.monitoring.v3.Service service = 2;</code>
+     *
+     * @return Whether the service field is set.
      */
     public boolean hasService() {
       return serviceBuilder_ != null || service_ != null;
@@ -842,6 +885,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.monitoring.v3.Service service = 2;</code>
+     *
+     * @return The service.
      */
     public com.google.monitoring.v3.Service getService() {
       if (serviceBuilder_ == null) {

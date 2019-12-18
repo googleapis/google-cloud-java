@@ -32,6 +32,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.Metric metric = 1;</code>
+   *
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
@@ -43,6 +45,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.Metric metric = 1;</code>
+   *
+   * @return The metric.
    */
   com.google.api.Metric getMetric();
   /**
@@ -66,6 +70,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return Whether the resource field is set.
    */
   boolean hasResource();
   /**
@@ -77,6 +83,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return The resource.
    */
   com.google.api.MonitoredResource getResource();
   /**
@@ -101,6 +109,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -113,6 +123,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   *
+   * @return The metadata.
    */
   com.google.api.MonitoredResourceMetadata getMetadata();
   /**
@@ -143,6 +155,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+   *
+   * @return The enum numeric value on the wire for metricKind.
    */
   int getMetricKindValue();
   /**
@@ -160,6 +174,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+   *
+   * @return The metricKind.
    */
   com.google.api.MetricDescriptor.MetricKind getMetricKind();
 
@@ -175,6 +191,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
   /**
@@ -189,6 +207,8 @@ public interface TimeSeriesOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+   *
+   * @return The valueType.
    */
   com.google.api.MetricDescriptor.ValueType getValueType();
 

@@ -32,6 +32,8 @@ public interface RequestBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
+   *
+   * @return Whether the goodTotalRatio field is set.
    */
   boolean hasGoodTotalRatio();
   /**
@@ -43,6 +45,8 @@ public interface RequestBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
+   *
+   * @return The goodTotalRatio.
    */
   com.google.monitoring.v3.TimeSeriesRatio getGoodTotalRatio();
   /**
@@ -68,6 +72,8 @@ public interface RequestBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
+   *
+   * @return Whether the distributionCut field is set.
    */
   boolean hasDistributionCut();
   /**
@@ -81,6 +87,8 @@ public interface RequestBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
+   *
+   * @return The distributionCut.
    */
   com.google.monitoring.v3.DistributionCut getDistributionCut();
   /**

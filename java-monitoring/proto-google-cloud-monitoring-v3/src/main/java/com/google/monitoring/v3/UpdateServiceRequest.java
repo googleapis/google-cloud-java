@@ -40,6 +40,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
   private UpdateServiceRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateServiceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 1;</code>
+   *
+   * @return Whether the service field is set.
    */
   public boolean hasService() {
     return service_ != null;
@@ -151,6 +158,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 1;</code>
+   *
+   * @return The service.
    */
   public com.google.monitoring.v3.Service getService() {
     return service_ == null ? com.google.monitoring.v3.Service.getDefaultInstance() : service_;
@@ -179,6 +188,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -191,6 +202,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -579,6 +592,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.monitoring.v3.Service service = 1;</code>
+     *
+     * @return Whether the service field is set.
      */
     public boolean hasService() {
       return serviceBuilder_ != null || service_ != null;
@@ -592,6 +607,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.monitoring.v3.Service service = 1;</code>
+     *
+     * @return The service.
      */
     public com.google.monitoring.v3.Service getService() {
       if (serviceBuilder_ == null) {
@@ -762,6 +779,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -774,6 +793,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

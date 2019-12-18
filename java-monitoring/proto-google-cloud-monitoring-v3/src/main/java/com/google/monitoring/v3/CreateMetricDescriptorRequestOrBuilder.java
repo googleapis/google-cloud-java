@@ -32,6 +32,8 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   *
+   * @return Whether the metricDescriptor field is set.
    */
   boolean hasMetricDescriptor();
   /**
@@ -66,6 +72,8 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * </pre>
    *
    * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   *
+   * @return The metricDescriptor.
    */
   com.google.api.MetricDescriptor getMetricDescriptor();
   /**

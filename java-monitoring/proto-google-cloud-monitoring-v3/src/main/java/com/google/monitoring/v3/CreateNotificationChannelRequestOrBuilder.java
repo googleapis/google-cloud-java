@@ -36,6 +36,8 @@ public interface CreateNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -51,6 +53,8 @@ public interface CreateNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -62,6 +66,8 @@ public interface CreateNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.NotificationChannel notification_channel = 2;</code>
+   *
+   * @return Whether the notificationChannel field is set.
    */
   boolean hasNotificationChannel();
   /**
@@ -72,6 +78,8 @@ public interface CreateNotificationChannelRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.NotificationChannel notification_channel = 2;</code>
+   *
+   * @return The notificationChannel.
    */
   com.google.monitoring.v3.NotificationChannel getNotificationChannel();
   /**

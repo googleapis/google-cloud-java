@@ -39,6 +39,8 @@ public interface PointOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
+   *
+   * @return Whether the interval field is set.
    */
   boolean hasInterval();
   /**
@@ -57,6 +59,8 @@ public interface PointOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
+   *
+   * @return The interval.
    */
   com.google.monitoring.v3.TimeInterval getInterval();
   /**
@@ -86,6 +90,8 @@ public interface PointOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TypedValue value = 2;</code>
+   *
+   * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
@@ -96,6 +102,8 @@ public interface PointOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TypedValue value = 2;</code>
+   *
+   * @return The value.
    */
   com.google.monitoring.v3.TypedValue getValue();
   /**

@@ -33,6 +33,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>string good_bad_metric_filter = 5;</code>
+   *
+   * @return The goodBadMetricFilter.
    */
   java.lang.String getGoodBadMetricFilter();
   /**
@@ -45,6 +47,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>string good_bad_metric_filter = 5;</code>
+   *
+   * @return The bytes for goodBadMetricFilter.
    */
   com.google.protobuf.ByteString getGoodBadMetricFilterBytes();
 
@@ -58,6 +62,8 @@ public interface WindowsBasedSliOrBuilder
    * <code>
    * .google.monitoring.v3.WindowsBasedSli.PerformanceThreshold good_total_ratio_threshold = 2;
    * </code>
+   *
+   * @return Whether the goodTotalRatioThreshold field is set.
    */
   boolean hasGoodTotalRatioThreshold();
   /**
@@ -70,6 +76,8 @@ public interface WindowsBasedSliOrBuilder
    * <code>
    * .google.monitoring.v3.WindowsBasedSli.PerformanceThreshold good_total_ratio_threshold = 2;
    * </code>
+   *
+   * @return The goodTotalRatioThreshold.
    */
   com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold getGoodTotalRatioThreshold();
   /**
@@ -95,6 +103,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_mean_in_range = 6;</code>
+   *
+   * @return Whether the metricMeanInRange field is set.
    */
   boolean hasMetricMeanInRange();
   /**
@@ -106,6 +116,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_mean_in_range = 6;</code>
+   *
+   * @return The metricMeanInRange.
    */
   com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricMeanInRange();
   /**
@@ -129,6 +141,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_sum_in_range = 7;</code>
+   *
+   * @return Whether the metricSumInRange field is set.
    */
   boolean hasMetricSumInRange();
   /**
@@ -140,6 +154,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli.MetricRange metric_sum_in_range = 7;</code>
+   *
+   * @return The metricSumInRange.
    */
   com.google.monitoring.v3.WindowsBasedSli.MetricRange getMetricSumInRange();
   /**
@@ -163,6 +179,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration window_period = 4;</code>
+   *
+   * @return Whether the windowPeriod field is set.
    */
   boolean hasWindowPeriod();
   /**
@@ -174,6 +192,8 @@ public interface WindowsBasedSliOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration window_period = 4;</code>
+   *
+   * @return The windowPeriod.
    */
   com.google.protobuf.Duration getWindowPeriod();
   /**

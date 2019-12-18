@@ -67,6 +67,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Group();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,7 +85,6 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -170,6 +175,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -194,6 +201,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -217,6 +226,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -237,6 +248,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -262,6 +275,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent_name = 3;</code>
+   *
+   * @return The parentName.
    */
   public java.lang.String getParentName() {
     java.lang.Object ref = parentName_;
@@ -284,6 +299,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string parent_name = 3;</code>
+   *
+   * @return The bytes for parentName.
    */
   public com.google.protobuf.ByteString getParentNameBytes() {
     java.lang.Object ref = parentName_;
@@ -308,6 +325,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -329,6 +348,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -353,6 +374,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool is_cluster = 6;</code>
+   *
+   * @return The isCluster.
    */
   public boolean getIsCluster() {
     return isCluster_;
@@ -768,6 +791,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -792,6 +817,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -816,6 +843,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -838,6 +868,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -857,6 +889,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -878,6 +913,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -898,6 +935,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -918,6 +957,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -936,6 +978,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -951,6 +995,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -974,6 +1021,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_name = 3;</code>
+     *
+     * @return The parentName.
      */
     public java.lang.String getParentName() {
       java.lang.Object ref = parentName_;
@@ -996,6 +1045,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_name = 3;</code>
+     *
+     * @return The bytes for parentName.
      */
     public com.google.protobuf.ByteString getParentNameBytes() {
       java.lang.Object ref = parentName_;
@@ -1018,6 +1069,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_name = 3;</code>
+     *
+     * @param value The parentName to set.
+     * @return This builder for chaining.
      */
     public Builder setParentName(java.lang.String value) {
       if (value == null) {
@@ -1038,6 +1092,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParentName() {
 
@@ -1055,6 +1111,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string parent_name = 3;</code>
+     *
+     * @param value The bytes for parentName to set.
+     * @return This builder for chaining.
      */
     public Builder setParentNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1077,6 +1136,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1098,6 +1159,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1119,6 +1182,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1138,6 +1204,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1154,6 +1222,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1176,6 +1247,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_cluster = 6;</code>
+     *
+     * @return The isCluster.
      */
     public boolean getIsCluster() {
       return isCluster_;
@@ -1189,6 +1262,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_cluster = 6;</code>
+     *
+     * @param value The isCluster to set.
+     * @return This builder for chaining.
      */
     public Builder setIsCluster(boolean value) {
 
@@ -1205,6 +1281,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_cluster = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsCluster() {
 

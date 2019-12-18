@@ -31,6 +31,8 @@ public interface MutationRecordOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
+   *
+   * @return Whether the mutateTime field is set.
    */
   boolean hasMutateTime();
   /**
@@ -41,6 +43,8 @@ public interface MutationRecordOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
+   *
+   * @return The mutateTime.
    */
   com.google.protobuf.Timestamp getMutateTime();
   /**
@@ -62,6 +66,8 @@ public interface MutationRecordOrBuilder
    * </pre>
    *
    * <code>string mutated_by = 2;</code>
+   *
+   * @return The mutatedBy.
    */
   java.lang.String getMutatedBy();
   /**
@@ -72,6 +78,8 @@ public interface MutationRecordOrBuilder
    * </pre>
    *
    * <code>string mutated_by = 2;</code>
+   *
+   * @return The bytes for mutatedBy.
    */
   com.google.protobuf.ByteString getMutatedByBytes();
 }

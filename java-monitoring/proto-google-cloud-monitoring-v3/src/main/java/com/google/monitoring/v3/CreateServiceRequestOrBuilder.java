@@ -32,6 +32,8 @@ public interface CreateServiceRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateServiceRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface CreateServiceRequestOrBuilder
    * </pre>
    *
    * <code>string service_id = 3;</code>
+   *
+   * @return The serviceId.
    */
   java.lang.String getServiceId();
   /**
@@ -66,6 +72,8 @@ public interface CreateServiceRequestOrBuilder
    * </pre>
    *
    * <code>string service_id = 3;</code>
+   *
+   * @return The bytes for serviceId.
    */
   com.google.protobuf.ByteString getServiceIdBytes();
 
@@ -77,6 +85,8 @@ public interface CreateServiceRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 2;</code>
+   *
+   * @return Whether the service field is set.
    */
   boolean hasService();
   /**
@@ -87,6 +97,8 @@ public interface CreateServiceRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 2;</code>
+   *
+   * @return The service.
    */
   com.google.monitoring.v3.Service getService();
   /**

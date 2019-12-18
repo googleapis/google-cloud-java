@@ -47,6 +47,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UptimeCheckConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -190,11 +196,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 contentMatchers_ =
                     new java.util.ArrayList<
                         com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000001;
               }
               contentMatchers_.add(
                   input.readMessage(
@@ -205,9 +211,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           case 80:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 selectedRegions_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000002;
               }
               selectedRegions_.add(rawValue);
               break;
@@ -218,9 +224,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   selectedRegions_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000200;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 selectedRegions_.add(rawValue);
               }
@@ -229,10 +235,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 internalCheckers_ =
                     new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000004;
               }
               internalCheckers_.add(
                   input.readMessage(
@@ -258,13 +264,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         contentMatchers_ = java.util.Collections.unmodifiableList(contentMatchers_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
       }
       this.unknownFields = unknownFields.build();
@@ -301,6 +307,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string group_id = 1;</code>
+     *
+     * @return The groupId.
      */
     java.lang.String getGroupId();
     /**
@@ -312,6 +320,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string group_id = 1;</code>
+     *
+     * @return The bytes for groupId.
      */
     com.google.protobuf.ByteString getGroupIdBytes();
 
@@ -323,6 +333,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for resourceType.
      */
     int getResourceTypeValue();
     /**
@@ -333,6 +345,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+     *
+     * @return The resourceType.
      */
     com.google.monitoring.v3.GroupResourceType getResourceType();
   }
@@ -362,6 +376,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ResourceGroup();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -374,7 +394,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -444,6 +463,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string group_id = 1;</code>
+     *
+     * @return The groupId.
      */
     public java.lang.String getGroupId() {
       java.lang.Object ref = groupId_;
@@ -465,6 +486,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string group_id = 1;</code>
+     *
+     * @return The bytes for groupId.
      */
     public com.google.protobuf.ByteString getGroupIdBytes() {
       java.lang.Object ref = groupId_;
@@ -488,6 +511,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for resourceType.
      */
     public int getResourceTypeValue() {
       return resourceType_;
@@ -500,6 +525,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+     *
+     * @return The resourceType.
      */
     public com.google.monitoring.v3.GroupResourceType getResourceType() {
       @SuppressWarnings("deprecation")
@@ -859,6 +886,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string group_id = 1;</code>
+       *
+       * @return The groupId.
        */
       public java.lang.String getGroupId() {
         java.lang.Object ref = groupId_;
@@ -880,6 +909,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string group_id = 1;</code>
+       *
+       * @return The bytes for groupId.
        */
       public com.google.protobuf.ByteString getGroupIdBytes() {
         java.lang.Object ref = groupId_;
@@ -901,6 +932,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string group_id = 1;</code>
+       *
+       * @param value The groupId to set.
+       * @return This builder for chaining.
        */
       public Builder setGroupId(java.lang.String value) {
         if (value == null) {
@@ -920,6 +954,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string group_id = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGroupId() {
 
@@ -936,6 +972,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string group_id = 1;</code>
+       *
+       * @param value The bytes for groupId to set.
+       * @return This builder for chaining.
        */
       public Builder setGroupIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -957,6 +996,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+       *
+       * @return The enum numeric value on the wire for resourceType.
        */
       public int getResourceTypeValue() {
         return resourceType_;
@@ -969,6 +1010,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for resourceType to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceTypeValue(int value) {
         resourceType_ = value;
@@ -983,6 +1027,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+       *
+       * @return The resourceType.
        */
       public com.google.monitoring.v3.GroupResourceType getResourceType() {
         @SuppressWarnings("deprecation")
@@ -998,6 +1044,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+       *
+       * @param value The resourceType to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceType(com.google.monitoring.v3.GroupResourceType value) {
         if (value == null) {
@@ -1016,6 +1065,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceType() {
 
@@ -1089,6 +1140,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool use_ssl = 1;</code>
+     *
+     * @return The useSsl.
      */
     boolean getUseSsl();
 
@@ -1104,6 +1157,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string path = 2;</code>
+     *
+     * @return The path.
      */
     java.lang.String getPath();
     /**
@@ -1118,6 +1173,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string path = 2;</code>
+     *
+     * @return The bytes for path.
      */
     com.google.protobuf.ByteString getPathBytes();
 
@@ -1132,6 +1189,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 port = 3;</code>
+     *
+     * @return The port.
      */
     int getPort();
 
@@ -1145,6 +1204,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
      * </code>
+     *
+     * @return Whether the authInfo field is set.
      */
     boolean hasAuthInfo();
     /**
@@ -1157,6 +1218,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
      * </code>
+     *
+     * @return The authInfo.
      */
     com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getAuthInfo();
     /**
@@ -1186,6 +1249,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool mask_headers = 5;</code>
+     *
+     * @return The maskHeaders.
      */
     boolean getMaskHeaders();
 
@@ -1289,6 +1354,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool validate_ssl = 7;</code>
+     *
+     * @return The validateSsl.
      */
     boolean getValidateSsl();
   }
@@ -1313,6 +1380,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
     private HttpCheck() {
       path_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HttpCheck();
     }
 
     @java.lang.Override
@@ -1382,11 +1455,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               }
             case 50:
               {
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   headers_ =
                       com.google.protobuf.MapField.newMapField(
                           HeadersDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000020;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                     input.readMessage(
@@ -1458,6 +1531,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string username = 1;</code>
+       *
+       * @return The username.
        */
       java.lang.String getUsername();
       /**
@@ -1468,6 +1543,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string username = 1;</code>
+       *
+       * @return The bytes for username.
        */
       com.google.protobuf.ByteString getUsernameBytes();
 
@@ -1479,6 +1556,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string password = 2;</code>
+       *
+       * @return The password.
        */
       java.lang.String getPassword();
       /**
@@ -1489,6 +1568,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string password = 2;</code>
+       *
+       * @return The bytes for password.
        */
       com.google.protobuf.ByteString getPasswordBytes();
     }
@@ -1520,6 +1601,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BasicAuthentication();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1532,7 +1619,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -1603,6 +1689,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string username = 1;</code>
+       *
+       * @return The username.
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -1623,6 +1711,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string username = 1;</code>
+       *
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -1646,6 +1736,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string password = 2;</code>
+       *
+       * @return The password.
        */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
@@ -1666,6 +1758,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string password = 2;</code>
+       *
+       * @return The bytes for password.
        */
       public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
@@ -2051,6 +2145,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string username = 1;</code>
+         *
+         * @return The username.
          */
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
@@ -2071,6 +2167,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string username = 1;</code>
+         *
+         * @return The bytes for username.
          */
         public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
@@ -2091,6 +2189,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string username = 1;</code>
+         *
+         * @param value The username to set.
+         * @return This builder for chaining.
          */
         public Builder setUsername(java.lang.String value) {
           if (value == null) {
@@ -2109,6 +2210,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string username = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearUsername() {
 
@@ -2124,6 +2227,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string username = 1;</code>
+         *
+         * @param value The bytes for username to set.
+         * @return This builder for chaining.
          */
         public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2145,6 +2251,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string password = 2;</code>
+         *
+         * @return The password.
          */
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
@@ -2165,6 +2273,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string password = 2;</code>
+         *
+         * @return The bytes for password.
          */
         public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
@@ -2185,6 +2295,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string password = 2;</code>
+         *
+         * @param value The password to set.
+         * @return This builder for chaining.
          */
         public Builder setPassword(java.lang.String value) {
           if (value == null) {
@@ -2203,6 +2316,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string password = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPassword() {
 
@@ -2218,6 +2333,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * </pre>
          *
          * <code>string password = 2;</code>
+         *
+         * @param value The bytes for password to set.
+         * @return This builder for chaining.
          */
         public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2286,7 +2404,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
-    private int bitField0_;
     public static final int USE_SSL_FIELD_NUMBER = 1;
     private boolean useSsl_;
     /**
@@ -2297,6 +2414,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool use_ssl = 1;</code>
+     *
+     * @return The useSsl.
      */
     public boolean getUseSsl() {
       return useSsl_;
@@ -2316,6 +2435,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string path = 2;</code>
+     *
+     * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -2340,6 +2461,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string path = 2;</code>
+     *
+     * @return The bytes for path.
      */
     public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
@@ -2366,6 +2489,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 port = 3;</code>
+     *
+     * @return The port.
      */
     public int getPort() {
       return port_;
@@ -2383,6 +2508,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
      * </code>
+     *
+     * @return Whether the authInfo field is set.
      */
     public boolean hasAuthInfo() {
       return authInfo_ != null;
@@ -2397,6 +2524,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
      * </code>
+     *
+     * @return The authInfo.
      */
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getAuthInfo() {
       return authInfo_ == null
@@ -2435,6 +2564,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool mask_headers = 5;</code>
+     *
+     * @return The maskHeaders.
      */
     public boolean getMaskHeaders() {
       return maskHeaders_;
@@ -2575,6 +2706,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool validate_ssl = 7;</code>
+     *
+     * @return The validateSsl.
      */
     public boolean getValidateSsl() {
       return validateSsl_;
@@ -2919,7 +3052,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result =
             new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.useSsl_ = useSsl_;
         result.path_ = path_;
         result.port_ = port_;
@@ -2932,7 +3064,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         result.headers_ = internalGetHeaders();
         result.headers_.makeImmutable();
         result.validateSsl_ = validateSsl_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3046,6 +3177,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool use_ssl = 1;</code>
+       *
+       * @return The useSsl.
        */
       public boolean getUseSsl() {
         return useSsl_;
@@ -3058,6 +3191,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool use_ssl = 1;</code>
+       *
+       * @param value The useSsl to set.
+       * @return This builder for chaining.
        */
       public Builder setUseSsl(boolean value) {
 
@@ -3073,6 +3209,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool use_ssl = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearUseSsl() {
 
@@ -3094,6 +3232,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string path = 2;</code>
+       *
+       * @return The path.
        */
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
@@ -3118,6 +3258,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string path = 2;</code>
+       *
+       * @return The bytes for path.
        */
       public com.google.protobuf.ByteString getPathBytes() {
         java.lang.Object ref = path_;
@@ -3142,6 +3284,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string path = 2;</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
        */
       public Builder setPath(java.lang.String value) {
         if (value == null) {
@@ -3164,6 +3309,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string path = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPath() {
 
@@ -3183,6 +3330,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string path = 2;</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
        */
       public Builder setPathBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3207,6 +3357,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>int32 port = 3;</code>
+       *
+       * @return The port.
        */
       public int getPort() {
         return port_;
@@ -3222,6 +3374,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>int32 port = 3;</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
        */
       public Builder setPort(int value) {
 
@@ -3240,6 +3395,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>int32 port = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPort() {
 
@@ -3264,6 +3421,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
        * </code>
+       *
+       * @return Whether the authInfo field is set.
        */
       public boolean hasAuthInfo() {
         return authInfoBuilder_ != null || authInfo_ != null;
@@ -3278,6 +3437,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
        * </code>
+       *
+       * @return The authInfo.
        */
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
           getAuthInfo() {
@@ -3472,6 +3633,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool mask_headers = 5;</code>
+       *
+       * @return The maskHeaders.
        */
       public boolean getMaskHeaders() {
         return maskHeaders_;
@@ -3489,6 +3652,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool mask_headers = 5;</code>
+       *
+       * @param value The maskHeaders to set.
+       * @return This builder for chaining.
        */
       public Builder setMaskHeaders(boolean value) {
 
@@ -3509,6 +3675,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool mask_headers = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMaskHeaders() {
 
@@ -3732,6 +3900,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool validate_ssl = 7;</code>
+       *
+       * @return The validateSsl.
        */
       public boolean getValidateSsl() {
         return validateSsl_;
@@ -3747,6 +3917,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool validate_ssl = 7;</code>
+       *
+       * @param value The validateSsl to set.
+       * @return This builder for chaining.
        */
       public Builder setValidateSsl(boolean value) {
 
@@ -3765,6 +3938,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bool validate_ssl = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearValidateSsl() {
 
@@ -3840,6 +4015,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 port = 1;</code>
+     *
+     * @return The port.
      */
     int getPort();
   }
@@ -3865,6 +4042,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     private TcpCheck() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TcpCheck();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3877,7 +4060,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3939,6 +4121,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 port = 1;</code>
+     *
+     * @return The port.
      */
     public int getPort() {
       return port_;
@@ -4277,6 +4461,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>int32 port = 1;</code>
+       *
+       * @return The port.
        */
       public int getPort() {
         return port_;
@@ -4291,6 +4477,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>int32 port = 1;</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
        */
       public Builder setPort(int value) {
 
@@ -4308,6 +4497,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>int32 port = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPort() {
 
@@ -4382,6 +4573,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The content.
      */
     java.lang.String getContent();
     /**
@@ -4393,6 +4586,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The bytes for content.
      */
     com.google.protobuf.ByteString getContentBytes();
 
@@ -4407,6 +4602,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for matcher.
      */
     int getMatcherValue();
     /**
@@ -4420,6 +4617,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
      * </code>
+     *
+     * @return The matcher.
      */
     com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption getMatcher();
   }
@@ -4452,6 +4651,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ContentMatcher();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -4464,7 +4669,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4664,12 +4868,20 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static ContentMatcherOption valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static ContentMatcherOption forNumber(int value) {
         switch (value) {
           case 0:
@@ -4747,6 +4959,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The content.
      */
     public java.lang.String getContent() {
       java.lang.Object ref = content_;
@@ -4768,6 +4982,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The bytes for content.
      */
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = content_;
@@ -4794,6 +5010,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for matcher.
      */
     public int getMatcherValue() {
       return matcher_;
@@ -4809,6 +5027,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
      * </code>
+     *
+     * @return The matcher.
      */
     public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
         getMatcher() {
@@ -5180,6 +5400,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @return The content.
        */
       public java.lang.String getContent() {
         java.lang.Object ref = content_;
@@ -5201,6 +5423,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @return The bytes for content.
        */
       public com.google.protobuf.ByteString getContentBytes() {
         java.lang.Object ref = content_;
@@ -5222,6 +5446,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @param value The content to set.
+       * @return This builder for chaining.
        */
       public Builder setContent(java.lang.String value) {
         if (value == null) {
@@ -5241,6 +5468,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearContent() {
 
@@ -5257,6 +5486,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
        */
       public Builder setContentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5281,6 +5513,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
        * </code>
+       *
+       * @return The enum numeric value on the wire for matcher.
        */
       public int getMatcherValue() {
         return matcher_;
@@ -5296,6 +5530,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
        * </code>
+       *
+       * @param value The enum numeric value on the wire for matcher to set.
+       * @return This builder for chaining.
        */
       public Builder setMatcherValue(int value) {
         matcher_ = value;
@@ -5313,6 +5550,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
        * </code>
+       *
+       * @return The matcher.
        */
       public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
           getMatcher() {
@@ -5336,6 +5575,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
        * </code>
+       *
+       * @param value The matcher to set.
+       * @return This builder for chaining.
        */
       public Builder setMatcher(
           com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption value) {
@@ -5358,6 +5600,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption matcher = 2;
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMatcher() {
 
@@ -5418,11 +5662,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  private int bitField0_;
   private int resourceCase_ = 0;
   private java.lang.Object resource_;
 
-  public enum ResourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ResourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MONITORED_RESOURCE(3),
     RESOURCE_GROUP(4),
     RESOURCE_NOT_SET(0);
@@ -5431,7 +5677,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     private ResourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ResourceCase valueOf(int value) {
       return forNumber(value);
@@ -5462,7 +5712,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   private int checkRequestTypeCase_ = 0;
   private java.lang.Object checkRequestType_;
 
-  public enum CheckRequestTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum CheckRequestTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HTTP_CHECK(5),
     TCP_CHECK(6),
     CHECKREQUESTTYPE_NOT_SET(0);
@@ -5471,7 +5724,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     private CheckRequestTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CheckRequestTypeCase valueOf(int value) {
       return forNumber(value);
@@ -5513,6 +5770,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -5537,6 +5796,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -5562,6 +5823,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -5584,6 +5847,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -5614,6 +5879,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
+   *
+   * @return Whether the monitoredResource field is set.
    */
   public boolean hasMonitoredResource() {
     return resourceCase_ == 3;
@@ -5634,6 +5901,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
+   *
+   * @return The monitoredResource.
    */
   public com.google.api.MonitoredResource getMonitoredResource() {
     if (resourceCase_ == 3) {
@@ -5674,6 +5943,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
+   *
+   * @return Whether the resourceGroup field is set.
    */
   public boolean hasResourceGroup() {
     return resourceCase_ == 4;
@@ -5686,6 +5957,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
+   *
+   * @return The resourceGroup.
    */
   public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getResourceGroup() {
     if (resourceCase_ == 4) {
@@ -5719,6 +5992,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
+   *
+   * @return Whether the httpCheck field is set.
    */
   public boolean hasHttpCheck() {
     return checkRequestTypeCase_ == 5;
@@ -5731,6 +6006,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
+   *
+   * @return The httpCheck.
    */
   public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getHttpCheck() {
     if (checkRequestTypeCase_ == 5) {
@@ -5763,6 +6040,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
+   *
+   * @return Whether the tcpCheck field is set.
    */
   public boolean hasTcpCheck() {
     return checkRequestTypeCase_ == 6;
@@ -5775,6 +6054,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
+   *
+   * @return The tcpCheck.
    */
   public com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getTcpCheck() {
     if (checkRequestTypeCase_ == 6) {
@@ -5811,6 +6092,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
+   *
+   * @return Whether the period field is set.
    */
   public boolean hasPeriod() {
     return period_ != null;
@@ -5826,6 +6109,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
+   *
+   * @return The period.
    */
   public com.google.protobuf.Duration getPeriod() {
     return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
@@ -5857,6 +6142,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return Whether the timeout field is set.
    */
   public boolean hasTimeout() {
     return timeout_ != null;
@@ -5870,6 +6157,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return The timeout.
    */
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
@@ -6009,6 +6298,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @return A list containing the selectedRegions.
    */
   public java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -6027,6 +6318,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @param value The selectedRegions to add.
    */
   public int getSelectedRegionsCount() {
     return selectedRegions_.size();
@@ -6043,6 +6336,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The selectedRegions at the given index.
    */
   public com.google.monitoring.v3.UptimeCheckRegion getSelectedRegions(int index) {
     return selectedRegions_converter_.convert(selectedRegions_.get(index));
@@ -6059,6 +6355,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for selectedRegions.
    */
   public java.util.List<java.lang.Integer> getSelectedRegionsValueList() {
     return selectedRegions_;
@@ -6075,6 +6373,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of selectedRegions at the given index.
    */
   public int getSelectedRegionsValue(int index) {
     return selectedRegions_.get(index);
@@ -6095,6 +6396,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool is_internal = 15 [deprecated = true];</code>
+   *
+   * @return The isInternal.
    */
   @java.lang.Deprecated
   public boolean getIsInternal() {
@@ -6596,17 +6899,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       if (contentMatchersBuilder_ == null) {
         contentMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         contentMatchersBuilder_.clear();
       }
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000002);
       isInternal_ = false;
 
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         internalCheckersBuilder_.clear();
       }
@@ -6642,7 +6945,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       com.google.monitoring.v3.UptimeCheckConfig result =
           new com.google.monitoring.v3.UptimeCheckConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (resourceCase_ == 3) {
@@ -6684,30 +6986,29 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         result.timeout_ = timeoutBuilder_.build();
       }
       if (contentMatchersBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           contentMatchers_ = java.util.Collections.unmodifiableList(contentMatchers_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.contentMatchers_ = contentMatchers_;
       } else {
         result.contentMatchers_ = contentMatchersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.selectedRegions_ = selectedRegions_;
       result.isInternal_ = isInternal_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
         result.internalCheckers_ = internalCheckersBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.resourceCase_ = resourceCase_;
       result.checkRequestTypeCase_ = checkRequestTypeCase_;
       onBuilt();
@@ -6777,7 +7078,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.contentMatchers_.isEmpty()) {
           if (contentMatchers_.isEmpty()) {
             contentMatchers_ = other.contentMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureContentMatchersIsMutable();
             contentMatchers_.addAll(other.contentMatchers_);
@@ -6790,7 +7091,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             contentMatchersBuilder_.dispose();
             contentMatchersBuilder_ = null;
             contentMatchers_ = other.contentMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
             contentMatchersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContentMatchersFieldBuilder()
@@ -6803,7 +7104,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!other.selectedRegions_.isEmpty()) {
         if (selectedRegions_.isEmpty()) {
           selectedRegions_ = other.selectedRegions_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureSelectedRegionsIsMutable();
           selectedRegions_.addAll(other.selectedRegions_);
@@ -6817,7 +7118,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -6830,7 +7131,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000004);
             internalCheckersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInternalCheckersFieldBuilder()
@@ -6944,6 +7245,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -6968,6 +7271,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -6992,6 +7297,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -7014,6 +7322,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -7033,6 +7343,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7056,6 +7369,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -7078,6 +7393,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -7100,6 +7417,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -7120,6 +7440,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -7137,6 +7459,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7170,6 +7495,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
+     *
+     * @return Whether the monitoredResource field is set.
      */
     public boolean hasMonitoredResource() {
       return resourceCase_ == 3;
@@ -7190,6 +7517,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
+     *
+     * @return The monitoredResource.
      */
     public com.google.api.MonitoredResource getMonitoredResource() {
       if (monitoredResourceBuilder_ == null) {
@@ -7433,6 +7762,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
+     *
+     * @return Whether the resourceGroup field is set.
      */
     public boolean hasResourceGroup() {
       return resourceCase_ == 4;
@@ -7445,6 +7776,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
+     *
+     * @return The resourceGroup.
      */
     public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getResourceGroup() {
       if (resourceGroupBuilder_ == null) {
@@ -7640,6 +7973,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
+     *
+     * @return Whether the httpCheck field is set.
      */
     public boolean hasHttpCheck() {
       return checkRequestTypeCase_ == 5;
@@ -7652,6 +7987,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
+     *
+     * @return The httpCheck.
      */
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getHttpCheck() {
       if (httpCheckBuilder_ == null) {
@@ -7844,6 +8181,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
+     *
+     * @return Whether the tcpCheck field is set.
      */
     public boolean hasTcpCheck() {
       return checkRequestTypeCase_ == 6;
@@ -7856,6 +8195,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
+     *
+     * @return The tcpCheck.
      */
     public com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getTcpCheck() {
       if (tcpCheckBuilder_ == null) {
@@ -8052,6 +8393,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
+     *
+     * @return Whether the period field is set.
      */
     public boolean hasPeriod() {
       return periodBuilder_ != null || period_ != null;
@@ -8067,6 +8410,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
+     *
+     * @return The period.
      */
     public com.google.protobuf.Duration getPeriod() {
       if (periodBuilder_ == null) {
@@ -8252,6 +8597,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 8;</code>
+     *
+     * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
       return timeoutBuilder_ != null || timeout_ != null;
@@ -8265,6 +8612,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 8;</code>
+     *
+     * @return The timeout.
      */
     public com.google.protobuf.Duration getTimeout() {
       if (timeoutBuilder_ == null) {
@@ -8425,11 +8774,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         contentMatchers_ = java.util.Collections.emptyList();
 
     private void ensureContentMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         contentMatchers_ =
             new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>(
                 contentMatchers_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -8707,7 +9056,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearContentMatchers() {
       if (contentMatchersBuilder_ == null) {
         contentMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         contentMatchersBuilder_.clear();
@@ -8873,7 +9222,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder,
                 com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>(
                 contentMatchers_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         contentMatchers_ = null;
@@ -8884,9 +9233,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> selectedRegions_ = java.util.Collections.emptyList();
 
     private void ensureSelectedRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         selectedRegions_ = new java.util.ArrayList<java.lang.Integer>(selectedRegions_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -8901,6 +9250,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @return A list containing the selectedRegions.
      */
     public java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -8919,6 +9270,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @return The count of selectedRegions.
      */
     public int getSelectedRegionsCount() {
       return selectedRegions_.size();
@@ -8935,6 +9288,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The selectedRegions at the given index.
      */
     public com.google.monitoring.v3.UptimeCheckRegion getSelectedRegions(int index) {
       return selectedRegions_converter_.convert(selectedRegions_.get(index));
@@ -8951,6 +9307,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The selectedRegions to set.
+     * @return This builder for chaining.
      */
     public Builder setSelectedRegions(int index, com.google.monitoring.v3.UptimeCheckRegion value) {
       if (value == null) {
@@ -8973,6 +9333,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param value The selectedRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addSelectedRegions(com.google.monitoring.v3.UptimeCheckRegion value) {
       if (value == null) {
@@ -8995,6 +9358,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param values The selectedRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSelectedRegions(
         java.lang.Iterable<? extends com.google.monitoring.v3.UptimeCheckRegion> values) {
@@ -9017,10 +9383,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSelectedRegions() {
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -9036,6 +9404,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for selectedRegions.
      */
     public java.util.List<java.lang.Integer> getSelectedRegionsValueList() {
       return java.util.Collections.unmodifiableList(selectedRegions_);
@@ -9052,6 +9422,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of selectedRegions at the given index.
      */
     public int getSelectedRegionsValue(int index) {
       return selectedRegions_.get(index);
@@ -9068,6 +9441,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of selectedRegions at the given index.
+     * @return This builder for chaining.
      */
     public Builder setSelectedRegionsValue(int index, int value) {
       ensureSelectedRegionsIsMutable();
@@ -9087,6 +9464,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for selectedRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addSelectedRegionsValue(int value) {
       ensureSelectedRegionsIsMutable();
@@ -9106,6 +9486,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+     *
+     * @param values The enum numeric values on the wire for selectedRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSelectedRegionsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureSelectedRegionsIsMutable();
@@ -9128,6 +9511,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool is_internal = 15 [deprecated = true];</code>
+     *
+     * @return The isInternal.
      */
     @java.lang.Deprecated
     public boolean getIsInternal() {
@@ -9144,6 +9529,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool is_internal = 15 [deprecated = true];</code>
+     *
+     * @param value The isInternal to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setIsInternal(boolean value) {
@@ -9163,6 +9551,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool is_internal = 15 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearIsInternal() {
@@ -9176,10 +9566,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         internalCheckers_ =
             new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -9461,7 +9851,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -9627,7 +10017,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.InternalChecker.Builder,
                 com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;

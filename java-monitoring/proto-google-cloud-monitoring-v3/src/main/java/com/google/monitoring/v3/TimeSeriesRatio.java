@@ -49,6 +49,12 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TimeSeriesRatio();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,7 +67,6 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string good_service_filter = 4;</code>
+   *
+   * @return The goodServiceFilter.
    */
   public java.lang.String getGoodServiceFilter() {
     java.lang.Object ref = goodServiceFilter_;
@@ -163,6 +170,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string good_service_filter = 4;</code>
+   *
+   * @return The bytes for goodServiceFilter.
    */
   public com.google.protobuf.ByteString getGoodServiceFilterBytes() {
     java.lang.Object ref = goodServiceFilter_;
@@ -190,6 +199,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string bad_service_filter = 5;</code>
+   *
+   * @return The badServiceFilter.
    */
   public java.lang.String getBadServiceFilter() {
     java.lang.Object ref = badServiceFilter_;
@@ -214,6 +225,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string bad_service_filter = 5;</code>
+   *
+   * @return The bytes for badServiceFilter.
    */
   public com.google.protobuf.ByteString getBadServiceFilterBytes() {
     java.lang.Object ref = badServiceFilter_;
@@ -240,6 +253,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string total_service_filter = 6;</code>
+   *
+   * @return The totalServiceFilter.
    */
   public java.lang.String getTotalServiceFilter() {
     java.lang.Object ref = totalServiceFilter_;
@@ -263,6 +278,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string total_service_filter = 6;</code>
+   *
+   * @return The bytes for totalServiceFilter.
    */
   public com.google.protobuf.ByteString getTotalServiceFilterBytes() {
     java.lang.Object ref = totalServiceFilter_;
@@ -640,6 +657,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_service_filter = 4;</code>
+     *
+     * @return The goodServiceFilter.
      */
     public java.lang.String getGoodServiceFilter() {
       java.lang.Object ref = goodServiceFilter_;
@@ -663,6 +682,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_service_filter = 4;</code>
+     *
+     * @return The bytes for goodServiceFilter.
      */
     public com.google.protobuf.ByteString getGoodServiceFilterBytes() {
       java.lang.Object ref = goodServiceFilter_;
@@ -686,6 +707,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_service_filter = 4;</code>
+     *
+     * @param value The goodServiceFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setGoodServiceFilter(java.lang.String value) {
       if (value == null) {
@@ -707,6 +731,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_service_filter = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGoodServiceFilter() {
 
@@ -725,6 +751,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string good_service_filter = 4;</code>
+     *
+     * @param value The bytes for goodServiceFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setGoodServiceFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -750,6 +779,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string bad_service_filter = 5;</code>
+     *
+     * @return The badServiceFilter.
      */
     public java.lang.String getBadServiceFilter() {
       java.lang.Object ref = badServiceFilter_;
@@ -774,6 +805,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string bad_service_filter = 5;</code>
+     *
+     * @return The bytes for badServiceFilter.
      */
     public com.google.protobuf.ByteString getBadServiceFilterBytes() {
       java.lang.Object ref = badServiceFilter_;
@@ -798,6 +831,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string bad_service_filter = 5;</code>
+     *
+     * @param value The badServiceFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setBadServiceFilter(java.lang.String value) {
       if (value == null) {
@@ -820,6 +856,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string bad_service_filter = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBadServiceFilter() {
 
@@ -839,6 +877,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string bad_service_filter = 5;</code>
+     *
+     * @param value The bytes for badServiceFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setBadServiceFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -863,6 +904,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string total_service_filter = 6;</code>
+     *
+     * @return The totalServiceFilter.
      */
     public java.lang.String getTotalServiceFilter() {
       java.lang.Object ref = totalServiceFilter_;
@@ -886,6 +929,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string total_service_filter = 6;</code>
+     *
+     * @return The bytes for totalServiceFilter.
      */
     public com.google.protobuf.ByteString getTotalServiceFilterBytes() {
       java.lang.Object ref = totalServiceFilter_;
@@ -909,6 +954,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string total_service_filter = 6;</code>
+     *
+     * @param value The totalServiceFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalServiceFilter(java.lang.String value) {
       if (value == null) {
@@ -930,6 +978,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string total_service_filter = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalServiceFilter() {
 
@@ -948,6 +998,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string total_service_filter = 6;</code>
+     *
+     * @param value The bytes for totalServiceFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalServiceFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

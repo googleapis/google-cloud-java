@@ -32,6 +32,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string children_of_group = 2;</code>
+   *
+   * @return The childrenOfGroup.
    */
   java.lang.String getChildrenOfGroup();
   /**
@@ -68,6 +74,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string children_of_group = 2;</code>
+   *
+   * @return The bytes for childrenOfGroup.
    */
   com.google.protobuf.ByteString getChildrenOfGroupBytes();
 
@@ -83,6 +91,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string ancestors_of_group = 3;</code>
+   *
+   * @return The ancestorsOfGroup.
    */
   java.lang.String getAncestorsOfGroup();
   /**
@@ -97,6 +107,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string ancestors_of_group = 3;</code>
+   *
+   * @return The bytes for ancestorsOfGroup.
    */
   com.google.protobuf.ByteString getAncestorsOfGroupBytes();
 
@@ -111,6 +123,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string descendants_of_group = 4;</code>
+   *
+   * @return The descendantsOfGroup.
    */
   java.lang.String getDescendantsOfGroup();
   /**
@@ -124,6 +138,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string descendants_of_group = 4;</code>
+   *
+   * @return The bytes for descendantsOfGroup.
    */
   com.google.protobuf.ByteString getDescendantsOfGroupBytes();
 
@@ -135,6 +151,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 5;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -148,6 +166,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -160,6 +180,8 @@ public interface ListGroupsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 

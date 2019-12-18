@@ -48,6 +48,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ServiceLevelObjective();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -255,12 +260,20 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static View valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static View forNumber(int value) {
       switch (value) {
         case 0:
@@ -321,7 +334,10 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   private int periodCase_ = 0;
   private java.lang.Object period_;
 
-  public enum PeriodCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PeriodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ROLLING_PERIOD(5),
     CALENDAR_PERIOD(6),
     PERIOD_NOT_SET(0);
@@ -330,7 +346,11 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     private PeriodCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PeriodCase valueOf(int value) {
       return forNumber(value);
@@ -370,6 +390,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -392,6 +414,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -415,6 +439,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string display_name = 11;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -435,6 +461,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string display_name = 11;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -460,6 +488,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
+   *
+   * @return Whether the serviceLevelIndicator field is set.
    */
   public boolean hasServiceLevelIndicator() {
     return serviceLevelIndicator_ != null;
@@ -474,6 +504,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
+   *
+   * @return The serviceLevelIndicator.
    */
   public com.google.monitoring.v3.ServiceLevelIndicator getServiceLevelIndicator() {
     return serviceLevelIndicator_ == null
@@ -503,10 +535,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The fraction of service that must be good in order for this objective to be
-   * met. `0 &lt; goal &lt;= 1`.
+   * met. `0 &lt; goal &lt;= 0.999`.
    * </pre>
    *
    * <code>double goal = 4;</code>
+   *
+   * @return The goal.
    */
   public double getGoal() {
     return goal_;
@@ -522,6 +556,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Duration rolling_period = 5;</code>
+   *
+   * @return Whether the rollingPeriod field is set.
    */
   public boolean hasRollingPeriod() {
     return periodCase_ == 5;
@@ -535,6 +571,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Duration rolling_period = 5;</code>
+   *
+   * @return The rollingPeriod.
    */
   public com.google.protobuf.Duration getRollingPeriod() {
     if (periodCase_ == 5) {
@@ -570,6 +608,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+   *
+   * @return The enum numeric value on the wire for calendarPeriod.
    */
   public int getCalendarPeriodValue() {
     if (periodCase_ == 6) {
@@ -587,6 +627,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+   *
+   * @return The calendarPeriod.
    */
   public com.google.type.CalendarPeriod getCalendarPeriod() {
     if (periodCase_ == 6) {
@@ -1074,6 +1116,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1096,6 +1140,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1118,6 +1164,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1138,6 +1187,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1155,6 +1206,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1176,6 +1230,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string display_name = 11;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1196,6 +1252,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string display_name = 11;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1216,6 +1274,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string display_name = 11;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1234,6 +1295,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string display_name = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1249,6 +1312,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string display_name = 11;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1277,6 +1343,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
+     *
+     * @return Whether the serviceLevelIndicator field is set.
      */
     public boolean hasServiceLevelIndicator() {
       return serviceLevelIndicatorBuilder_ != null || serviceLevelIndicator_ != null;
@@ -1291,6 +1359,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
+     *
+     * @return The serviceLevelIndicator.
      */
     public com.google.monitoring.v3.ServiceLevelIndicator getServiceLevelIndicator() {
       if (serviceLevelIndicatorBuilder_ == null) {
@@ -1470,10 +1540,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The fraction of service that must be good in order for this objective to be
-     * met. `0 &lt; goal &lt;= 1`.
+     * met. `0 &lt; goal &lt;= 0.999`.
      * </pre>
      *
      * <code>double goal = 4;</code>
+     *
+     * @return The goal.
      */
     public double getGoal() {
       return goal_;
@@ -1483,10 +1555,13 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The fraction of service that must be good in order for this objective to be
-     * met. `0 &lt; goal &lt;= 1`.
+     * met. `0 &lt; goal &lt;= 0.999`.
      * </pre>
      *
      * <code>double goal = 4;</code>
+     *
+     * @param value The goal to set.
+     * @return This builder for chaining.
      */
     public Builder setGoal(double value) {
 
@@ -1499,10 +1574,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The fraction of service that must be good in order for this objective to be
-     * met. `0 &lt; goal &lt;= 1`.
+     * met. `0 &lt; goal &lt;= 0.999`.
      * </pre>
      *
      * <code>double goal = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGoal() {
 
@@ -1525,6 +1602,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Duration rolling_period = 5;</code>
+     *
+     * @return Whether the rollingPeriod field is set.
      */
     public boolean hasRollingPeriod() {
       return periodCase_ == 5;
@@ -1538,6 +1617,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Duration rolling_period = 5;</code>
+     *
+     * @return The rollingPeriod.
      */
     public com.google.protobuf.Duration getRollingPeriod() {
       if (rollingPeriodBuilder_ == null) {
@@ -1727,6 +1808,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+     *
+     * @return The enum numeric value on the wire for calendarPeriod.
      */
     public int getCalendarPeriodValue() {
       if (periodCase_ == 6) {
@@ -1744,6 +1827,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for calendarPeriod to set.
+     * @return This builder for chaining.
      */
     public Builder setCalendarPeriodValue(int value) {
       periodCase_ = 6;
@@ -1761,6 +1847,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+     *
+     * @return The calendarPeriod.
      */
     public com.google.type.CalendarPeriod getCalendarPeriod() {
       if (periodCase_ == 6) {
@@ -1781,6 +1869,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+     *
+     * @param value The calendarPeriod to set.
+     * @return This builder for chaining.
      */
     public Builder setCalendarPeriod(com.google.type.CalendarPeriod value) {
       if (value == null) {
@@ -1801,6 +1892,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCalendarPeriod() {
       if (periodCase_ == 6) {

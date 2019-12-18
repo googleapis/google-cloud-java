@@ -43,6 +43,12 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListGroupsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,7 +148,10 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   private int filterCase_ = 0;
   private java.lang.Object filter_;
 
-  public enum FilterCase implements com.google.protobuf.Internal.EnumLite {
+  public enum FilterCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CHILDREN_OF_GROUP(2),
     ANCESTORS_OF_GROUP(3),
     DESCENDANTS_OF_GROUP(4),
@@ -153,7 +161,11 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     private FilterCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static FilterCase valueOf(int value) {
       return forNumber(value);
@@ -194,6 +206,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -215,6 +229,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -239,6 +255,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string children_of_group = 2;</code>
+   *
+   * @return The childrenOfGroup.
    */
   public java.lang.String getChildrenOfGroup() {
     java.lang.Object ref = "";
@@ -266,6 +284,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string children_of_group = 2;</code>
+   *
+   * @return The bytes for childrenOfGroup.
    */
   public com.google.protobuf.ByteString getChildrenOfGroupBytes() {
     java.lang.Object ref = "";
@@ -297,6 +317,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string ancestors_of_group = 3;</code>
+   *
+   * @return The ancestorsOfGroup.
    */
   public java.lang.String getAncestorsOfGroup() {
     java.lang.Object ref = "";
@@ -326,6 +348,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string ancestors_of_group = 3;</code>
+   *
+   * @return The bytes for ancestorsOfGroup.
    */
   public com.google.protobuf.ByteString getAncestorsOfGroupBytes() {
     java.lang.Object ref = "";
@@ -356,6 +380,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string descendants_of_group = 4;</code>
+   *
+   * @return The descendantsOfGroup.
    */
   public java.lang.String getDescendantsOfGroup() {
     java.lang.Object ref = "";
@@ -384,6 +410,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string descendants_of_group = 4;</code>
+   *
+   * @return The bytes for descendantsOfGroup.
    */
   public com.google.protobuf.ByteString getDescendantsOfGroupBytes() {
     java.lang.Object ref = "";
@@ -412,6 +440,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 page_size = 5;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -429,6 +459,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -451,6 +483,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -922,6 +956,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -943,6 +979,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -964,6 +1002,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -983,6 +1024,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -999,6 +1042,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1021,6 +1067,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string children_of_group = 2;</code>
+     *
+     * @return The childrenOfGroup.
      */
     public java.lang.String getChildrenOfGroup() {
       java.lang.Object ref = "";
@@ -1048,6 +1096,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string children_of_group = 2;</code>
+     *
+     * @return The bytes for childrenOfGroup.
      */
     public com.google.protobuf.ByteString getChildrenOfGroupBytes() {
       java.lang.Object ref = "";
@@ -1075,6 +1125,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string children_of_group = 2;</code>
+     *
+     * @param value The childrenOfGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setChildrenOfGroup(java.lang.String value) {
       if (value == null) {
@@ -1095,6 +1148,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string children_of_group = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearChildrenOfGroup() {
       if (filterCase_ == 2) {
@@ -1114,6 +1169,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string children_of_group = 2;</code>
+     *
+     * @param value The bytes for childrenOfGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setChildrenOfGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1138,6 +1196,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ancestors_of_group = 3;</code>
+     *
+     * @return The ancestorsOfGroup.
      */
     public java.lang.String getAncestorsOfGroup() {
       java.lang.Object ref = "";
@@ -1167,6 +1227,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ancestors_of_group = 3;</code>
+     *
+     * @return The bytes for ancestorsOfGroup.
      */
     public com.google.protobuf.ByteString getAncestorsOfGroupBytes() {
       java.lang.Object ref = "";
@@ -1196,6 +1258,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ancestors_of_group = 3;</code>
+     *
+     * @param value The ancestorsOfGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setAncestorsOfGroup(java.lang.String value) {
       if (value == null) {
@@ -1218,6 +1283,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ancestors_of_group = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAncestorsOfGroup() {
       if (filterCase_ == 3) {
@@ -1239,6 +1306,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ancestors_of_group = 3;</code>
+     *
+     * @param value The bytes for ancestorsOfGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setAncestorsOfGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1262,6 +1332,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string descendants_of_group = 4;</code>
+     *
+     * @return The descendantsOfGroup.
      */
     public java.lang.String getDescendantsOfGroup() {
       java.lang.Object ref = "";
@@ -1290,6 +1362,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string descendants_of_group = 4;</code>
+     *
+     * @return The bytes for descendantsOfGroup.
      */
     public com.google.protobuf.ByteString getDescendantsOfGroupBytes() {
       java.lang.Object ref = "";
@@ -1318,6 +1392,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string descendants_of_group = 4;</code>
+     *
+     * @param value The descendantsOfGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setDescendantsOfGroup(java.lang.String value) {
       if (value == null) {
@@ -1339,6 +1416,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string descendants_of_group = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescendantsOfGroup() {
       if (filterCase_ == 4) {
@@ -1359,6 +1438,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string descendants_of_group = 4;</code>
+     *
+     * @param value The bytes for descendantsOfGroup to set.
+     * @return This builder for chaining.
      */
     public Builder setDescendantsOfGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1380,6 +1462,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 page_size = 5;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1392,6 +1476,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 page_size = 5;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1407,6 +1494,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 page_size = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1426,6 +1515,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 6;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1448,6 +1539,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 6;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1470,6 +1563,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 6;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1490,6 +1586,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1507,6 +1605,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 6;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

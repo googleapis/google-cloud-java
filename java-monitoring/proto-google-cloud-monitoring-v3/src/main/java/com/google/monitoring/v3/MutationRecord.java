@@ -42,6 +42,12 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MutationRecord();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
+   *
+   * @return Whether the mutateTime field is set.
    */
   public boolean hasMutateTime() {
     return mutateTime_ != null;
@@ -143,6 +150,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
+   *
+   * @return The mutateTime.
    */
   public com.google.protobuf.Timestamp getMutateTime() {
     return mutateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : mutateTime_;
@@ -170,6 +179,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mutated_by = 2;</code>
+   *
+   * @return The mutatedBy.
    */
   public java.lang.String getMutatedBy() {
     java.lang.Object ref = mutatedBy_;
@@ -190,6 +201,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mutated_by = 2;</code>
+   *
+   * @return The bytes for mutatedBy.
    */
   public com.google.protobuf.ByteString getMutatedByBytes() {
     java.lang.Object ref = mutatedBy_;
@@ -560,6 +573,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
+     *
+     * @return Whether the mutateTime field is set.
      */
     public boolean hasMutateTime() {
       return mutateTimeBuilder_ != null || mutateTime_ != null;
@@ -572,6 +587,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
+     *
+     * @return The mutateTime.
      */
     public com.google.protobuf.Timestamp getMutateTime() {
       if (mutateTimeBuilder_ == null) {
@@ -734,6 +751,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mutated_by = 2;</code>
+     *
+     * @return The mutatedBy.
      */
     public java.lang.String getMutatedBy() {
       java.lang.Object ref = mutatedBy_;
@@ -754,6 +773,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mutated_by = 2;</code>
+     *
+     * @return The bytes for mutatedBy.
      */
     public com.google.protobuf.ByteString getMutatedByBytes() {
       java.lang.Object ref = mutatedBy_;
@@ -774,6 +795,9 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mutated_by = 2;</code>
+     *
+     * @param value The mutatedBy to set.
+     * @return This builder for chaining.
      */
     public Builder setMutatedBy(java.lang.String value) {
       if (value == null) {
@@ -792,6 +816,8 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mutated_by = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMutatedBy() {
 
@@ -807,6 +833,9 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mutated_by = 2;</code>
+     *
+     * @param value The bytes for mutatedBy to set.
+     * @return This builder for chaining.
      */
     public Builder setMutatedByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -32,6 +32,8 @@ public interface UpdateServiceRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 1;</code>
+   *
+   * @return Whether the service field is set.
    */
   boolean hasService();
   /**
@@ -43,6 +45,8 @@ public interface UpdateServiceRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Service service = 1;</code>
+   *
+   * @return The service.
    */
   com.google.monitoring.v3.Service getService();
   /**
@@ -65,6 +69,8 @@ public interface UpdateServiceRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -75,6 +81,8 @@ public interface UpdateServiceRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

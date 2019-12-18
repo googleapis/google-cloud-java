@@ -40,6 +40,12 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   private TypedValue() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TypedValue();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,7 +144,10 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   private int valueCase_ = 0;
   private java.lang.Object value_;
 
-  public enum ValueCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ValueCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BOOL_VALUE(1),
     INT64_VALUE(2),
     DOUBLE_VALUE(3),
@@ -151,7 +159,11 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ValueCase valueOf(int value) {
       return forNumber(value);
@@ -194,6 +206,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool bool_value = 1;</code>
+   *
+   * @return The boolValue.
    */
   public boolean getBoolValue() {
     if (valueCase_ == 1) {
@@ -211,6 +225,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 int64_value = 2;</code>
+   *
+   * @return The int64Value.
    */
   public long getInt64Value() {
     if (valueCase_ == 2) {
@@ -230,6 +246,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double double_value = 3;</code>
+   *
+   * @return The doubleValue.
    */
   public double getDoubleValue() {
     if (valueCase_ == 3) {
@@ -247,6 +265,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string string_value = 4;</code>
+   *
+   * @return The stringValue.
    */
   public java.lang.String getStringValue() {
     java.lang.Object ref = "";
@@ -272,6 +292,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string string_value = 4;</code>
+   *
+   * @return The bytes for stringValue.
    */
   public com.google.protobuf.ByteString getStringValueBytes() {
     java.lang.Object ref = "";
@@ -299,6 +321,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.Distribution distribution_value = 5;</code>
+   *
+   * @return Whether the distributionValue field is set.
    */
   public boolean hasDistributionValue() {
     return valueCase_ == 5;
@@ -311,6 +335,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.Distribution distribution_value = 5;</code>
+   *
+   * @return The distributionValue.
    */
   public com.google.api.Distribution getDistributionValue() {
     if (valueCase_ == 5) {
@@ -794,6 +820,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 1;</code>
+     *
+     * @return The boolValue.
      */
     public boolean getBoolValue() {
       if (valueCase_ == 1) {
@@ -809,6 +837,9 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 1;</code>
+     *
+     * @param value The boolValue to set.
+     * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
       valueCase_ = 1;
@@ -824,6 +855,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBoolValue() {
       if (valueCase_ == 1) {
@@ -842,6 +875,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 int64_value = 2;</code>
+     *
+     * @return The int64Value.
      */
     public long getInt64Value() {
       if (valueCase_ == 2) {
@@ -857,6 +892,9 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 int64_value = 2;</code>
+     *
+     * @param value The int64Value to set.
+     * @return This builder for chaining.
      */
     public Builder setInt64Value(long value) {
       valueCase_ = 2;
@@ -872,6 +910,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 int64_value = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInt64Value() {
       if (valueCase_ == 2) {
@@ -892,6 +932,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double double_value = 3;</code>
+     *
+     * @return The doubleValue.
      */
     public double getDoubleValue() {
       if (valueCase_ == 3) {
@@ -909,6 +951,9 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double double_value = 3;</code>
+     *
+     * @param value The doubleValue to set.
+     * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
       valueCase_ = 3;
@@ -926,6 +971,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double double_value = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDoubleValue() {
       if (valueCase_ == 3) {
@@ -944,6 +991,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 4;</code>
+     *
+     * @return The stringValue.
      */
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
@@ -969,6 +1018,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 4;</code>
+     *
+     * @return The bytes for stringValue.
      */
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
@@ -994,6 +1045,9 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 4;</code>
+     *
+     * @param value The stringValue to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValue(java.lang.String value) {
       if (value == null) {
@@ -1012,6 +1066,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStringValue() {
       if (valueCase_ == 4) {
@@ -1029,6 +1085,9 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string string_value = 4;</code>
+     *
+     * @param value The bytes for stringValue to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValueBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1054,6 +1113,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.Distribution distribution_value = 5;</code>
+     *
+     * @return Whether the distributionValue field is set.
      */
     public boolean hasDistributionValue() {
       return valueCase_ == 5;
@@ -1066,6 +1127,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.Distribution distribution_value = 5;</code>
+     *
+     * @return The distributionValue.
      */
     public com.google.api.Distribution getDistributionValue() {
       if (distributionValueBuilder_ == null) {

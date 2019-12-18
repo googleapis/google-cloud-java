@@ -40,6 +40,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
   private UpdateGroupRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateGroupRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,6 +133,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return Whether the group field is set.
    */
   public boolean hasGroup() {
     return group_ != null;
@@ -141,6 +148,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return The group.
    */
   public com.google.monitoring.v3.Group getGroup() {
     return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
@@ -169,6 +178,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool validate_only = 3;</code>
+   *
+   * @return The validateOnly.
    */
   public boolean getValidateOnly() {
     return validateOnly_;
@@ -532,6 +543,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.monitoring.v3.Group group = 2;</code>
+     *
+     * @return Whether the group field is set.
      */
     public boolean hasGroup() {
       return groupBuilder_ != null || group_ != null;
@@ -545,6 +558,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.monitoring.v3.Group group = 2;</code>
+     *
+     * @return The group.
      */
     public com.google.monitoring.v3.Group getGroup() {
       if (groupBuilder_ == null) {
@@ -710,6 +725,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool validate_only = 3;</code>
+     *
+     * @return The validateOnly.
      */
     public boolean getValidateOnly() {
       return validateOnly_;
@@ -722,6 +739,9 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool validate_only = 3;</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
      */
     public Builder setValidateOnly(boolean value) {
 
@@ -737,6 +757,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool validate_only = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
 

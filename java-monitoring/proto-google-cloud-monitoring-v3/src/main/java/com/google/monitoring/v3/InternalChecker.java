@@ -49,6 +49,12 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InternalChecker();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,7 +67,6 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -250,12 +255,20 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -326,6 +339,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -349,6 +364,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -374,6 +391,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -396,6 +415,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -420,6 +441,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string network = 3;</code>
+   *
+   * @return The network.
    */
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
@@ -441,6 +464,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string network = 3;</code>
+   *
+   * @return The bytes for network.
    */
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
@@ -465,6 +490,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
+   *
+   * @return The gcpZone.
    */
   public java.lang.String getGcpZone() {
     java.lang.Object ref = gcpZone_;
@@ -486,6 +513,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
+   *
+   * @return The bytes for gcpZone.
    */
   public com.google.protobuf.ByteString getGcpZoneBytes() {
     java.lang.Object ref = gcpZone_;
@@ -510,6 +539,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
+   *
+   * @return The peerProjectId.
    */
   public java.lang.String getPeerProjectId() {
     java.lang.Object ref = peerProjectId_;
@@ -531,6 +562,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
+   *
+   * @return The bytes for peerProjectId.
    */
   public com.google.protobuf.ByteString getPeerProjectIdBytes() {
     java.lang.Object ref = peerProjectId_;
@@ -554,6 +587,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -566,6 +601,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   *
+   * @return The state.
    */
   public com.google.monitoring.v3.InternalChecker.State getState() {
     @SuppressWarnings("deprecation")
@@ -981,6 +1018,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1004,6 +1043,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1027,6 +1068,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1048,6 +1092,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1066,6 +1112,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1089,6 +1138,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1111,6 +1162,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1133,6 +1186,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1153,6 +1209,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1170,6 +1228,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1192,6 +1253,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string network = 3;</code>
+     *
+     * @return The network.
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -1213,6 +1276,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string network = 3;</code>
+     *
+     * @return The bytes for network.
      */
     public com.google.protobuf.ByteString getNetworkBytes() {
       java.lang.Object ref = network_;
@@ -1234,6 +1299,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string network = 3;</code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
      */
     public Builder setNetwork(java.lang.String value) {
       if (value == null) {
@@ -1253,6 +1321,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string network = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNetwork() {
 
@@ -1269,6 +1339,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string network = 3;</code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1291,6 +1364,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
+     *
+     * @return The gcpZone.
      */
     public java.lang.String getGcpZone() {
       java.lang.Object ref = gcpZone_;
@@ -1312,6 +1387,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
+     *
+     * @return The bytes for gcpZone.
      */
     public com.google.protobuf.ByteString getGcpZoneBytes() {
       java.lang.Object ref = gcpZone_;
@@ -1333,6 +1410,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
+     *
+     * @param value The gcpZone to set.
+     * @return This builder for chaining.
      */
     public Builder setGcpZone(java.lang.String value) {
       if (value == null) {
@@ -1352,6 +1432,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGcpZone() {
 
@@ -1368,6 +1450,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
+     *
+     * @param value The bytes for gcpZone to set.
+     * @return This builder for chaining.
      */
     public Builder setGcpZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1390,6 +1475,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
+     *
+     * @return The peerProjectId.
      */
     public java.lang.String getPeerProjectId() {
       java.lang.Object ref = peerProjectId_;
@@ -1411,6 +1498,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
+     *
+     * @return The bytes for peerProjectId.
      */
     public com.google.protobuf.ByteString getPeerProjectIdBytes() {
       java.lang.Object ref = peerProjectId_;
@@ -1432,6 +1521,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
+     *
+     * @param value The peerProjectId to set.
+     * @return This builder for chaining.
      */
     public Builder setPeerProjectId(java.lang.String value) {
       if (value == null) {
@@ -1451,6 +1543,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPeerProjectId() {
 
@@ -1467,6 +1561,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
+     *
+     * @param value The bytes for peerProjectId to set.
+     * @return This builder for chaining.
      */
     public Builder setPeerProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1488,6 +1585,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1500,6 +1599,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1514,6 +1616,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     *
+     * @return The state.
      */
     public com.google.monitoring.v3.InternalChecker.State getState() {
       @SuppressWarnings("deprecation")
@@ -1529,6 +1633,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.monitoring.v3.InternalChecker.State value) {
       if (value == null) {
@@ -1547,6 +1654,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 

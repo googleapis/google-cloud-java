@@ -36,6 +36,8 @@ public interface SpanContextOrBuilder
    * </pre>
    *
    * <code>string span_name = 1;</code>
+   *
+   * @return The spanName.
    */
   java.lang.String getSpanName();
   /**
@@ -51,6 +53,8 @@ public interface SpanContextOrBuilder
    * </pre>
    *
    * <code>string span_name = 1;</code>
+   *
+   * @return The bytes for spanName.
    */
   com.google.protobuf.ByteString getSpanNameBytes();
 }

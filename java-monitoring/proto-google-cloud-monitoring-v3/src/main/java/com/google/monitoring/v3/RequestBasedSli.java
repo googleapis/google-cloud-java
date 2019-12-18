@@ -41,6 +41,12 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   private RequestBasedSli() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RequestBasedSli();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,7 +138,10 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   private int methodCase_ = 0;
   private java.lang.Object method_;
 
-  public enum MethodCase implements com.google.protobuf.Internal.EnumLite {
+  public enum MethodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GOOD_TOTAL_RATIO(1),
     DISTRIBUTION_CUT(3),
     METHOD_NOT_SET(0);
@@ -142,7 +150,11 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     private MethodCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MethodCase valueOf(int value) {
       return forNumber(value);
@@ -180,6 +192,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
+   *
+   * @return Whether the goodTotalRatio field is set.
    */
   public boolean hasGoodTotalRatio() {
     return methodCase_ == 1;
@@ -193,6 +207,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
+   *
+   * @return The goodTotalRatio.
    */
   public com.google.monitoring.v3.TimeSeriesRatio getGoodTotalRatio() {
     if (methodCase_ == 1) {
@@ -229,6 +245,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
+   *
+   * @return Whether the distributionCut field is set.
    */
   public boolean hasDistributionCut() {
     return methodCase_ == 3;
@@ -244,6 +262,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
+   *
+   * @return The distributionCut.
    */
   public com.google.monitoring.v3.DistributionCut getDistributionCut() {
     if (methodCase_ == 3) {
@@ -670,6 +690,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
+     *
+     * @return Whether the goodTotalRatio field is set.
      */
     public boolean hasGoodTotalRatio() {
       return methodCase_ == 1;
@@ -683,6 +705,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
+     *
+     * @return The goodTotalRatio.
      */
     public com.google.monitoring.v3.TimeSeriesRatio getGoodTotalRatio() {
       if (goodTotalRatioBuilder_ == null) {
@@ -883,6 +907,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
+     *
+     * @return Whether the distributionCut field is set.
      */
     public boolean hasDistributionCut() {
       return methodCase_ == 3;
@@ -898,6 +924,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
+     *
+     * @return The distributionCut.
      */
     public com.google.monitoring.v3.DistributionCut getDistributionCut() {
       if (distributionCutBuilder_ == null) {

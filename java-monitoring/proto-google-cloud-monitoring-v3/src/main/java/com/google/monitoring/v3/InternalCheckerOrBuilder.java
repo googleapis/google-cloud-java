@@ -35,6 +35,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -48,6 +50,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -61,6 +65,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -73,6 +79,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -85,6 +93,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string network = 3;</code>
+   *
+   * @return The network.
    */
   java.lang.String getNetwork();
   /**
@@ -96,6 +106,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string network = 3;</code>
+   *
+   * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
 
@@ -108,6 +120,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
+   *
+   * @return The gcpZone.
    */
   java.lang.String getGcpZone();
   /**
@@ -119,6 +133,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
+   *
+   * @return The bytes for gcpZone.
    */
   com.google.protobuf.ByteString getGcpZoneBytes();
 
@@ -131,6 +147,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
+   *
+   * @return The peerProjectId.
    */
   java.lang.String getPeerProjectId();
   /**
@@ -142,6 +160,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
+   *
+   * @return The bytes for peerProjectId.
    */
   com.google.protobuf.ByteString getPeerProjectIdBytes();
 
@@ -153,6 +173,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -163,6 +185,8 @@ public interface InternalCheckerOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   *
+   * @return The state.
    */
   com.google.monitoring.v3.InternalChecker.State getState();
 }

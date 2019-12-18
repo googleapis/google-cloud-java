@@ -31,6 +31,8 @@ public interface RangeOrBuilder
    * </pre>
    *
    * <code>double min = 1;</code>
+   *
+   * @return The min.
    */
   double getMin();
 
@@ -42,6 +44,8 @@ public interface RangeOrBuilder
    * </pre>
    *
    * <code>double max = 2;</code>
+   *
+   * @return The max.
    */
   double getMax();
 }

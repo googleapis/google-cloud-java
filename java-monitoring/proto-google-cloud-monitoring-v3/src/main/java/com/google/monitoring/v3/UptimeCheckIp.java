@@ -45,6 +45,12 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UptimeCheckIp();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +138,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+   *
+   * @return The enum numeric value on the wire for region.
    */
   public int getRegionValue() {
     return region_;
@@ -145,6 +152,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+   *
+   * @return The region.
    */
   public com.google.monitoring.v3.UptimeCheckRegion getRegion() {
     @SuppressWarnings("deprecation")
@@ -165,6 +174,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The location.
    */
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
@@ -187,6 +198,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The bytes for location.
    */
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
@@ -214,6 +227,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string ip_address = 3;</code>
+   *
+   * @return The ipAddress.
    */
   public java.lang.String getIpAddress() {
     java.lang.Object ref = ipAddress_;
@@ -238,6 +253,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string ip_address = 3;</code>
+   *
+   * @return The bytes for ipAddress.
    */
   public com.google.protobuf.ByteString getIpAddressBytes() {
     java.lang.Object ref = ipAddress_;
@@ -607,6 +624,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+     *
+     * @return The enum numeric value on the wire for region.
      */
     public int getRegionValue() {
       return region_;
@@ -619,6 +638,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionValue(int value) {
       region_ = value;
@@ -633,6 +655,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+     *
+     * @return The region.
      */
     public com.google.monitoring.v3.UptimeCheckRegion getRegion() {
       @SuppressWarnings("deprecation")
@@ -648,6 +672,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(com.google.monitoring.v3.UptimeCheckRegion value) {
       if (value == null) {
@@ -666,6 +693,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
 
@@ -685,6 +714,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -707,6 +738,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -729,6 +762,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocation(java.lang.String value) {
       if (value == null) {
@@ -749,6 +785,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocation() {
 
@@ -766,6 +804,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -791,6 +832,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ip_address = 3;</code>
+     *
+     * @return The ipAddress.
      */
     public java.lang.String getIpAddress() {
       java.lang.Object ref = ipAddress_;
@@ -815,6 +858,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ip_address = 3;</code>
+     *
+     * @return The bytes for ipAddress.
      */
     public com.google.protobuf.ByteString getIpAddressBytes() {
       java.lang.Object ref = ipAddress_;
@@ -839,6 +884,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ip_address = 3;</code>
+     *
+     * @param value The ipAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setIpAddress(java.lang.String value) {
       if (value == null) {
@@ -861,6 +909,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ip_address = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
 
@@ -880,6 +930,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ip_address = 3;</code>
+     *
+     * @param value The bytes for ipAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setIpAddressBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -44,6 +44,12 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateServiceLevelObjectiveRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -163,6 +170,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -188,6 +197,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
+   *
+   * @return The serviceLevelObjectiveId.
    */
   public java.lang.String getServiceLevelObjectiveId() {
     java.lang.Object ref = serviceLevelObjectiveId_;
@@ -210,6 +221,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
+   *
+   * @return The bytes for serviceLevelObjectiveId.
    */
   public com.google.protobuf.ByteString getServiceLevelObjectiveIdBytes() {
     java.lang.Object ref = serviceLevelObjectiveId_;
@@ -235,6 +248,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   *
+   * @return Whether the serviceLevelObjective field is set.
    */
   public boolean hasServiceLevelObjective() {
     return serviceLevelObjective_ != null;
@@ -249,6 +264,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   *
+   * @return The serviceLevelObjective.
    */
   public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective() {
     return serviceLevelObjective_ == null
@@ -645,6 +662,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -666,6 +685,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -687,6 +708,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -706,6 +730,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -722,6 +748,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -745,6 +774,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
+     *
+     * @return The serviceLevelObjectiveId.
      */
     public java.lang.String getServiceLevelObjectiveId() {
       java.lang.Object ref = serviceLevelObjectiveId_;
@@ -767,6 +798,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
+     *
+     * @return The bytes for serviceLevelObjectiveId.
      */
     public com.google.protobuf.ByteString getServiceLevelObjectiveIdBytes() {
       java.lang.Object ref = serviceLevelObjectiveId_;
@@ -789,6 +822,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
+     *
+     * @param value The serviceLevelObjectiveId to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceLevelObjectiveId(java.lang.String value) {
       if (value == null) {
@@ -809,6 +845,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceLevelObjectiveId() {
 
@@ -826,6 +864,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>string service_level_objective_id = 3;</code>
+     *
+     * @param value The bytes for serviceLevelObjectiveId to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceLevelObjectiveIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -854,6 +895,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+     *
+     * @return Whether the serviceLevelObjective field is set.
      */
     public boolean hasServiceLevelObjective() {
       return serviceLevelObjectiveBuilder_ != null || serviceLevelObjective_ != null;
@@ -868,6 +911,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+     *
+     * @return The serviceLevelObjective.
      */
     public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective() {
       if (serviceLevelObjectiveBuilder_ == null) {

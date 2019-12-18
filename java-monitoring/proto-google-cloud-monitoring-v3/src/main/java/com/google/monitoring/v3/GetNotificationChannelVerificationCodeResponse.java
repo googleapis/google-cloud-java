@@ -44,6 +44,12 @@ public final class GetNotificationChannelVerificationCodeResponse
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetNotificationChannelVerificationCodeResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class GetNotificationChannelVerificationCodeResponse
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +141,8 @@ public final class GetNotificationChannelVerificationCodeResponse
    * </pre>
    *
    * <code>string code = 1;</code>
+   *
+   * @return The code.
    */
   public java.lang.String getCode() {
     java.lang.Object ref = code_;
@@ -159,6 +166,8 @@ public final class GetNotificationChannelVerificationCodeResponse
    * </pre>
    *
    * <code>string code = 1;</code>
+   *
+   * @return The bytes for code.
    */
   public com.google.protobuf.ByteString getCodeBytes() {
     java.lang.Object ref = code_;
@@ -184,6 +193,8 @@ public final class GetNotificationChannelVerificationCodeResponse
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+   *
+   * @return Whether the expireTime field is set.
    */
   public boolean hasExpireTime() {
     return expireTime_ != null;
@@ -198,6 +209,8 @@ public final class GetNotificationChannelVerificationCodeResponse
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+   *
+   * @return The expireTime.
    */
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
@@ -587,6 +600,8 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>string code = 1;</code>
+     *
+     * @return The code.
      */
     public java.lang.String getCode() {
       java.lang.Object ref = code_;
@@ -610,6 +625,8 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>string code = 1;</code>
+     *
+     * @return The bytes for code.
      */
     public com.google.protobuf.ByteString getCodeBytes() {
       java.lang.Object ref = code_;
@@ -633,6 +650,9 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>string code = 1;</code>
+     *
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(java.lang.String value) {
       if (value == null) {
@@ -654,6 +674,8 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>string code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
 
@@ -672,6 +694,9 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>string code = 1;</code>
+     *
+     * @param value The bytes for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -700,6 +725,8 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+     *
+     * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
       return expireTimeBuilder_ != null || expireTime_ != null;
@@ -714,6 +741,8 @@ public final class GetNotificationChannelVerificationCodeResponse
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+     *
+     * @return The expireTime.
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       if (expireTimeBuilder_ == null) {

@@ -41,6 +41,12 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
   private UpdateUptimeCheckConfigRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateUptimeCheckConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -157,6 +164,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -196,6 +205,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   *
+   * @return Whether the uptimeCheckConfig field is set.
    */
   public boolean hasUptimeCheckConfig() {
     return uptimeCheckConfig_ != null;
@@ -217,6 +228,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   *
+   * @return The uptimeCheckConfig.
    */
   public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig() {
     return uptimeCheckConfig_ == null
@@ -621,6 +634,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -636,6 +651,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -833,6 +850,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     *
+     * @return Whether the uptimeCheckConfig field is set.
      */
     public boolean hasUptimeCheckConfig() {
       return uptimeCheckConfigBuilder_ != null || uptimeCheckConfig_ != null;
@@ -854,6 +873,8 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     *
+     * @return The uptimeCheckConfig.
      */
     public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig() {
       if (uptimeCheckConfigBuilder_ == null) {

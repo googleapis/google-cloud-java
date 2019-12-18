@@ -31,6 +31,8 @@ public interface ServiceLevelIndicatorOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
+   *
+   * @return Whether the basicSli field is set.
    */
   boolean hasBasicSli();
   /**
@@ -41,6 +43,8 @@ public interface ServiceLevelIndicatorOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
+   *
+   * @return The basicSli.
    */
   com.google.monitoring.v3.BasicSli getBasicSli();
   /**
@@ -62,6 +66,8 @@ public interface ServiceLevelIndicatorOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
+   *
+   * @return Whether the requestBased field is set.
    */
   boolean hasRequestBased();
   /**
@@ -72,6 +78,8 @@ public interface ServiceLevelIndicatorOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
+   *
+   * @return The requestBased.
    */
   com.google.monitoring.v3.RequestBasedSli getRequestBased();
   /**
@@ -93,6 +101,8 @@ public interface ServiceLevelIndicatorOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
+   *
+   * @return Whether the windowsBased field is set.
    */
   boolean hasWindowsBased();
   /**
@@ -103,6 +113,8 @@ public interface ServiceLevelIndicatorOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
+   *
+   * @return The windowsBased.
    */
   com.google.monitoring.v3.WindowsBasedSli getWindowsBased();
   /**

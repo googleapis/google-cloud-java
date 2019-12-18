@@ -35,6 +35,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @return A list containing the method.
    */
   java.util.List<java.lang.String> getMethodList();
   /**
@@ -49,6 +51,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @return The count of method.
    */
   int getMethodCount();
   /**
@@ -63,6 +67,9 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The method at the given index.
    */
   java.lang.String getMethod(int index);
   /**
@@ -77,6 +84,9 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string method = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the method at the given index.
    */
   com.google.protobuf.ByteString getMethodBytes(int index);
 
@@ -92,6 +102,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @return A list containing the location.
    */
   java.util.List<java.lang.String> getLocationList();
   /**
@@ -106,6 +118,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @return The count of location.
    */
   int getLocationCount();
   /**
@@ -120,6 +134,9 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The location at the given index.
    */
   java.lang.String getLocation(int index);
   /**
@@ -134,6 +151,9 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string location = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the location at the given index.
    */
   com.google.protobuf.ByteString getLocationBytes(int index);
 
@@ -149,6 +169,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @return A list containing the version.
    */
   java.util.List<java.lang.String> getVersionList();
   /**
@@ -163,6 +185,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @return The count of version.
    */
   int getVersionCount();
   /**
@@ -177,6 +201,9 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The version at the given index.
    */
   java.lang.String getVersion(int index);
   /**
@@ -191,6 +218,9 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>repeated string version = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the version at the given index.
    */
   com.google.protobuf.ByteString getVersionBytes(int index);
 
@@ -203,6 +233,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
+   *
+   * @return Whether the availability field is set.
    */
   boolean hasAvailability();
   /**
@@ -214,6 +246,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
+   *
+   * @return The availability.
    */
   com.google.monitoring.v3.BasicSli.AvailabilityCriteria getAvailability();
   /**
@@ -237,6 +271,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
+   *
+   * @return Whether the latency field is set.
    */
   boolean hasLatency();
   /**
@@ -248,6 +284,8 @@ public interface BasicSliOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
+   *
+   * @return The latency.
    */
   com.google.monitoring.v3.BasicSli.LatencyCriteria getLatency();
   /**

@@ -44,6 +44,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VerifyNotificationChannelRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -145,6 +152,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -174,6 +183,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>string code = 2;</code>
+   *
+   * @return The code.
    */
   public java.lang.String getCode() {
     java.lang.Object ref = code_;
@@ -200,6 +211,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>string code = 2;</code>
+   *
+   * @return The bytes for code.
    */
   public com.google.protobuf.ByteString getCodeBytes() {
     java.lang.Object ref = code_;
@@ -557,6 +570,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -577,6 +592,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -597,6 +614,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -615,6 +635,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -630,6 +652,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -657,6 +682,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string code = 2;</code>
+     *
+     * @return The code.
      */
     public java.lang.String getCode() {
       java.lang.Object ref = code_;
@@ -683,6 +710,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string code = 2;</code>
+     *
+     * @return The bytes for code.
      */
     public com.google.protobuf.ByteString getCodeBytes() {
       java.lang.Object ref = code_;
@@ -709,6 +738,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string code = 2;</code>
+     *
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(java.lang.String value) {
       if (value == null) {
@@ -733,6 +765,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string code = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
 
@@ -754,6 +788,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string code = 2;</code>
+     *
+     * @param value The bytes for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

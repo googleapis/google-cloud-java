@@ -34,6 +34,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder
    * </pre>
    *
    * <code>string code = 1;</code>
+   *
+   * @return The code.
    */
   java.lang.String getCode();
   /**
@@ -47,6 +49,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder
    * </pre>
    *
    * <code>string code = 1;</code>
+   *
+   * @return The bytes for code.
    */
   com.google.protobuf.ByteString getCodeBytes();
 
@@ -60,6 +64,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+   *
+   * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
   /**
@@ -72,6 +78,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+   *
+   * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**

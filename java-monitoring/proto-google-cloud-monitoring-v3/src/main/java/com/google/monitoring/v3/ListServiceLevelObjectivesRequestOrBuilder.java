@@ -32,6 +32,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -64,6 +70,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -76,6 +84,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -89,6 +99,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -101,6 +113,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -115,6 +129,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 5;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -128,6 +144,8 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 5;</code>
+   *
+   * @return The view.
    */
   com.google.monitoring.v3.ServiceLevelObjective.View getView();
 }

@@ -32,6 +32,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
+   *
+   * @return Whether the uptimeCheckConfig field is set.
    */
   boolean hasUptimeCheckConfig();
   /**
@@ -64,6 +70,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
+   *
+   * @return The uptimeCheckConfig.
    */
   com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig();
   /**

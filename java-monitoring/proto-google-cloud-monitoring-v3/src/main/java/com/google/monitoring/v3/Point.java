@@ -40,6 +40,12 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
   private Point() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Point();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -146,6 +151,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
+   *
+   * @return Whether the interval field is set.
    */
   public boolean hasInterval() {
     return interval_ != null;
@@ -166,6 +173,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
+   *
+   * @return The interval.
    */
   public com.google.monitoring.v3.TimeInterval getInterval() {
     return interval_ == null
@@ -203,6 +212,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.TypedValue value = 2;</code>
+   *
+   * @return Whether the value field is set.
    */
   public boolean hasValue() {
     return value_ != null;
@@ -215,6 +226,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.TypedValue value = 2;</code>
+   *
+   * @return The value.
    */
   public com.google.monitoring.v3.TypedValue getValue() {
     return value_ == null ? com.google.monitoring.v3.TypedValue.getDefaultInstance() : value_;
@@ -606,6 +619,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
+     *
+     * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
       return intervalBuilder_ != null || interval_ != null;
@@ -626,6 +641,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
+     *
+     * @return The interval.
      */
     public com.google.monitoring.v3.TimeInterval getInterval() {
       if (intervalBuilder_ == null) {
@@ -851,6 +868,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.TypedValue value = 2;</code>
+     *
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return valueBuilder_ != null || value_ != null;
@@ -863,6 +882,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.TypedValue value = 2;</code>
+     *
+     * @return The value.
      */
     public com.google.monitoring.v3.TypedValue getValue() {
       if (valueBuilder_ == null) {

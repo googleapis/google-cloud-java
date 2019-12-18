@@ -47,6 +47,12 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TimeSeries();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -115,9 +121,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 points_ = new java.util.ArrayList<com.google.monitoring.v3.Point>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               points_.add(
                   input.readMessage(com.google.monitoring.v3.Point.parser(), extensionRegistry));
@@ -153,7 +159,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         points_ = java.util.Collections.unmodifiableList(points_);
       }
       this.unknownFields = unknownFields.build();
@@ -176,7 +182,6 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.TimeSeries.Builder.class);
   }
 
-  private int bitField0_;
   public static final int METRIC_FIELD_NUMBER = 1;
   private com.google.api.Metric metric_;
   /**
@@ -188,6 +193,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.Metric metric = 1;</code>
+   *
+   * @return Whether the metric field is set.
    */
   public boolean hasMetric() {
     return metric_ != null;
@@ -201,6 +208,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.Metric metric = 1;</code>
+   *
+   * @return The metric.
    */
   public com.google.api.Metric getMetric() {
     return metric_ == null ? com.google.api.Metric.getDefaultInstance() : metric_;
@@ -230,6 +239,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return Whether the resource field is set.
    */
   public boolean hasResource() {
     return resource_ != null;
@@ -243,6 +254,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   *
+   * @return The resource.
    */
   public com.google.api.MonitoredResource getResource() {
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
@@ -273,6 +286,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -287,6 +302,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   *
+   * @return The metadata.
    */
   public com.google.api.MonitoredResourceMetadata getMetadata() {
     return metadata_ == null
@@ -325,6 +342,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+   *
+   * @return The enum numeric value on the wire for metricKind.
    */
   public int getMetricKindValue() {
     return metricKind_;
@@ -344,6 +363,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+   *
+   * @return The metricKind.
    */
   public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
     @SuppressWarnings("deprecation")
@@ -366,6 +387,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for valueType.
    */
   public int getValueTypeValue() {
     return valueType_;
@@ -382,6 +405,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+   *
+   * @return The valueType.
    */
   public com.google.api.MetricDescriptor.ValueType getValueType() {
     @SuppressWarnings("deprecation")
@@ -781,7 +806,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
 
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         pointsBuilder_.clear();
       }
@@ -812,7 +837,6 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.TimeSeries buildPartial() {
       com.google.monitoring.v3.TimeSeries result = new com.google.monitoring.v3.TimeSeries(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (metricBuilder_ == null) {
         result.metric_ = metric_;
       } else {
@@ -831,15 +855,14 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       result.metricKind_ = metricKind_;
       result.valueType_ = valueType_;
       if (pointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           points_ = java.util.Collections.unmodifiableList(points_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.points_ = points_;
       } else {
         result.points_ = pointsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -908,7 +931,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         if (!other.points_.isEmpty()) {
           if (points_.isEmpty()) {
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePointsIsMutable();
             points_.addAll(other.points_);
@@ -921,7 +944,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             pointsBuilder_.dispose();
             pointsBuilder_ = null;
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
             pointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPointsFieldBuilder()
@@ -975,6 +998,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.Metric metric = 1;</code>
+     *
+     * @return Whether the metric field is set.
      */
     public boolean hasMetric() {
       return metricBuilder_ != null || metric_ != null;
@@ -988,6 +1013,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.Metric metric = 1;</code>
+     *
+     * @return The metric.
      */
     public com.google.api.Metric getMetric() {
       if (metricBuilder_ == null) {
@@ -1155,6 +1182,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
+     *
+     * @return Whether the resource field is set.
      */
     public boolean hasResource() {
       return resourceBuilder_ != null || resource_ != null;
@@ -1168,6 +1197,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
+     *
+     * @return The resource.
      */
     public com.google.api.MonitoredResource getResource() {
       if (resourceBuilder_ == null) {
@@ -1346,6 +1377,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     *
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -1360,6 +1393,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     *
+     * @return The metadata.
      */
     public com.google.api.MonitoredResourceMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -1545,6 +1580,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+     *
+     * @return The enum numeric value on the wire for metricKind.
      */
     public int getMetricKindValue() {
       return metricKind_;
@@ -1564,6 +1601,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for metricKind to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricKindValue(int value) {
       metricKind_ = value;
@@ -1585,6 +1625,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+     *
+     * @return The metricKind.
      */
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
       @SuppressWarnings("deprecation")
@@ -1607,6 +1649,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+     *
+     * @param value The metricKind to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricKind(com.google.api.MetricDescriptor.MetricKind value) {
       if (value == null) {
@@ -1632,6 +1677,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMetricKind() {
 
@@ -1653,6 +1700,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for valueType.
      */
     public int getValueTypeValue() {
       return valueType_;
@@ -1669,6 +1718,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for valueType to set.
+     * @return This builder for chaining.
      */
     public Builder setValueTypeValue(int value) {
       valueType_ = value;
@@ -1687,6 +1739,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+     *
+     * @return The valueType.
      */
     public com.google.api.MetricDescriptor.ValueType getValueType() {
       @SuppressWarnings("deprecation")
@@ -1706,6 +1760,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+     *
+     * @param value The valueType to set.
+     * @return This builder for chaining.
      */
     public Builder setValueType(com.google.api.MetricDescriptor.ValueType value) {
       if (value == null) {
@@ -1728,6 +1785,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValueType() {
 
@@ -1740,9 +1799,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePointsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         points_ = new java.util.ArrayList<com.google.monitoring.v3.Point>(points_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2021,7 +2080,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPoints() {
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         pointsBuilder_.clear();
@@ -2184,7 +2243,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.Point,
                 com.google.monitoring.v3.Point.Builder,
                 com.google.monitoring.v3.PointOrBuilder>(
-                points_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                points_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         points_ = null;
       }
       return pointsBuilder_;

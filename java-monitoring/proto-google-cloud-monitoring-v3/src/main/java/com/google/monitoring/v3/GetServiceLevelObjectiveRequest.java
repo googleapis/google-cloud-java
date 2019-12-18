@@ -44,6 +44,12 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetServiceLevelObjectiveRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -149,6 +156,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -175,6 +184,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   public int getViewValue() {
     return view_;
@@ -190,6 +201,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+   *
+   * @return The view.
    */
   public com.google.monitoring.v3.ServiceLevelObjective.View getView() {
     @SuppressWarnings("deprecation")
@@ -545,6 +558,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -567,6 +582,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -589,6 +606,9 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -609,6 +629,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -626,6 +648,9 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -650,6 +675,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+     *
+     * @return The enum numeric value on the wire for view.
      */
     public int getViewValue() {
       return view_;
@@ -665,6 +692,9 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
       view_ = value;
@@ -682,6 +712,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+     *
+     * @return The view.
      */
     public com.google.monitoring.v3.ServiceLevelObjective.View getView() {
       @SuppressWarnings("deprecation")
@@ -702,6 +734,9 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
      */
     public Builder setView(com.google.monitoring.v3.ServiceLevelObjective.View value) {
       if (value == null) {
@@ -723,6 +758,8 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearView() {
 

@@ -31,6 +31,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>bool bool_value = 1;</code>
+   *
+   * @return The boolValue.
    */
   boolean getBoolValue();
 
@@ -42,6 +44,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>int64 int64_value = 2;</code>
+   *
+   * @return The int64Value.
    */
   long getInt64Value();
 
@@ -55,6 +59,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>double double_value = 3;</code>
+   *
+   * @return The doubleValue.
    */
   double getDoubleValue();
 
@@ -66,6 +72,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>string string_value = 4;</code>
+   *
+   * @return The stringValue.
    */
   java.lang.String getStringValue();
   /**
@@ -76,6 +84,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>string string_value = 4;</code>
+   *
+   * @return The bytes for stringValue.
    */
   com.google.protobuf.ByteString getStringValueBytes();
 
@@ -87,6 +97,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>.google.api.Distribution distribution_value = 5;</code>
+   *
+   * @return Whether the distributionValue field is set.
    */
   boolean hasDistributionValue();
   /**
@@ -97,6 +109,8 @@ public interface TypedValueOrBuilder
    * </pre>
    *
    * <code>.google.api.Distribution distribution_value = 5;</code>
+   *
+   * @return The distributionValue.
    */
   com.google.api.Distribution getDistributionValue();
   /**

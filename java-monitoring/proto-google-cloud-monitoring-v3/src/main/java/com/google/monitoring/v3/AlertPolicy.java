@@ -49,6 +49,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AlertPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -127,10 +133,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 conditions_ =
                     new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Condition>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               conditions_.add(
                   input.readMessage(
@@ -157,20 +163,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case 114:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 notificationChannels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000004;
               }
               notificationChannels_.add(s);
               break;
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 userLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         UserLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
                   input.readMessage(
@@ -222,10 +228,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -373,12 +379,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ConditionCombinerType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ConditionCombinerType forNumber(int value) {
       switch (value) {
         case 0:
@@ -457,6 +471,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The content.
      */
     java.lang.String getContent();
     /**
@@ -470,6 +486,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The bytes for content.
      */
     com.google.protobuf.ByteString getContentBytes();
 
@@ -483,6 +501,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The mimeType.
      */
     java.lang.String getMimeType();
     /**
@@ -495,6 +515,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The bytes for mimeType.
      */
     com.google.protobuf.ByteString getMimeTypeBytes();
   }
@@ -524,6 +546,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Documentation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -536,7 +564,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -608,6 +635,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The content.
      */
     public java.lang.String getContent() {
       java.lang.Object ref = content_;
@@ -631,6 +660,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The bytes for content.
      */
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = content_;
@@ -656,6 +687,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -678,6 +711,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 2;</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -1042,6 +1077,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @return The content.
        */
       public java.lang.String getContent() {
         java.lang.Object ref = content_;
@@ -1065,6 +1102,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @return The bytes for content.
        */
       public com.google.protobuf.ByteString getContentBytes() {
         java.lang.Object ref = content_;
@@ -1088,6 +1127,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @param value The content to set.
+       * @return This builder for chaining.
        */
       public Builder setContent(java.lang.String value) {
         if (value == null) {
@@ -1109,6 +1151,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearContent() {
 
@@ -1127,6 +1171,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string content = 1;</code>
+       *
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
        */
       public Builder setContentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1150,6 +1197,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string mime_type = 2;</code>
+       *
+       * @return The mimeType.
        */
       public java.lang.String getMimeType() {
         java.lang.Object ref = mimeType_;
@@ -1172,6 +1221,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string mime_type = 2;</code>
+       *
+       * @return The bytes for mimeType.
        */
       public com.google.protobuf.ByteString getMimeTypeBytes() {
         java.lang.Object ref = mimeType_;
@@ -1194,6 +1245,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string mime_type = 2;</code>
+       *
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
        */
       public Builder setMimeType(java.lang.String value) {
         if (value == null) {
@@ -1214,6 +1268,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string mime_type = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMimeType() {
 
@@ -1231,6 +1287,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string mime_type = 2;</code>
+       *
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
        */
       public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1327,6 +1386,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 12;</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -1356,6 +1417,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 12;</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
 
@@ -1369,6 +1432,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 6;</code>
+     *
+     * @return The displayName.
      */
     java.lang.String getDisplayName();
     /**
@@ -1381,6 +1446,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 6;</code>
+     *
+     * @return The bytes for displayName.
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -1393,6 +1460,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold condition_threshold = 1;
      * </code>
+     *
+     * @return Whether the conditionThreshold field is set.
      */
     boolean hasConditionThreshold();
     /**
@@ -1404,6 +1473,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold condition_threshold = 1;
      * </code>
+     *
+     * @return The conditionThreshold.
      */
     com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold getConditionThreshold();
     /**
@@ -1428,6 +1499,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence condition_absent = 2;</code>
+     *
+     * @return Whether the conditionAbsent field is set.
      */
     boolean hasConditionAbsent();
     /**
@@ -1439,6 +1512,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence condition_absent = 2;</code>
+     *
+     * @return The conditionAbsent.
      */
     com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence getConditionAbsent();
     /**
@@ -1483,6 +1558,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Condition();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1495,7 +1576,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1610,6 +1690,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 count = 1;</code>
+       *
+       * @return The count.
        */
       int getCount();
 
@@ -1622,6 +1704,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>double percent = 2;</code>
+       *
+       * @return The percent.
        */
       double getPercent();
 
@@ -1650,6 +1734,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       private Trigger() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Trigger();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1662,7 +1752,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -1723,7 +1812,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       private int typeCase_ = 0;
       private java.lang.Object type_;
 
-      public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+      public enum TypeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         COUNT(1),
         PERCENT(2),
         TYPE_NOT_SET(0);
@@ -1732,7 +1824,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         private TypeCase(int value) {
           this.value = value;
         }
-        /** @deprecated Use {@link #forNumber(int)} instead. */
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
         @java.lang.Deprecated
         public static TypeCase valueOf(int value) {
           return forNumber(value);
@@ -1770,6 +1866,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 count = 1;</code>
+       *
+       * @return The count.
        */
       public int getCount() {
         if (typeCase_ == 1) {
@@ -1788,6 +1886,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>double percent = 2;</code>
+       *
+       * @return The percent.
        */
       public double getPercent() {
         if (typeCase_ == 2) {
@@ -2195,6 +2295,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 count = 1;</code>
+         *
+         * @return The count.
          */
         public int getCount() {
           if (typeCase_ == 1) {
@@ -2211,6 +2313,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 count = 1;</code>
+         *
+         * @param value The count to set.
+         * @return This builder for chaining.
          */
         public Builder setCount(int value) {
           typeCase_ = 1;
@@ -2227,6 +2332,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>int32 count = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearCount() {
           if (typeCase_ == 1) {
@@ -2246,6 +2353,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>double percent = 2;</code>
+         *
+         * @return The percent.
          */
         public double getPercent() {
           if (typeCase_ == 2) {
@@ -2262,6 +2371,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>double percent = 2;</code>
+         *
+         * @param value The percent to set.
+         * @return This builder for chaining.
          */
         public Builder setPercent(double value) {
           typeCase_ = 2;
@@ -2278,6 +2390,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>double percent = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPercent() {
           if (typeCase_ == 2) {
@@ -2361,6 +2475,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 2;</code>
+       *
+       * @return The filter.
        */
       java.lang.String getFilter();
       /**
@@ -2379,6 +2495,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 2;</code>
+       *
+       * @return The bytes for filter.
        */
       com.google.protobuf.ByteString getFilterBytes();
 
@@ -2494,6 +2612,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string denominator_filter = 9;</code>
+       *
+       * @return The denominatorFilter.
        */
       java.lang.String getDenominatorFilter();
       /**
@@ -2511,6 +2631,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string denominator_filter = 9;</code>
+       *
+       * @return The bytes for denominatorFilter.
        */
       com.google.protobuf.ByteString getDenominatorFilterBytes();
 
@@ -2618,6 +2740,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+       *
+       * @return The enum numeric value on the wire for comparison.
        */
       int getComparisonValue();
       /**
@@ -2632,6 +2756,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+       *
+       * @return The comparison.
        */
       com.google.monitoring.v3.ComparisonType getComparison();
 
@@ -2643,6 +2769,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>double threshold_value = 5;</code>
+       *
+       * @return The thresholdValue.
        */
       double getThresholdValue();
 
@@ -2663,6 +2791,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
+       *
+       * @return Whether the duration field is set.
        */
       boolean hasDuration();
       /**
@@ -2682,6 +2812,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
+       *
+       * @return The duration.
        */
       com.google.protobuf.Duration getDuration();
       /**
@@ -2717,6 +2849,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
+       *
+       * @return Whether the trigger field is set.
        */
       boolean hasTrigger();
       /**
@@ -2732,6 +2866,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
+       *
+       * @return The trigger.
        */
       com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger();
       /**
@@ -2776,6 +2912,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         denominatorFilter_ = "";
         denominatorAggregations_ = java.util.Collections.emptyList();
         comparison_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MetricThreshold();
       }
 
       @java.lang.Override
@@ -2855,9 +2997,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 66:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     aggregations_ = new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   aggregations_.add(
                       input.readMessage(
@@ -2873,10 +3015,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 82:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     denominatorAggregations_ =
                         new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000002;
                   }
                   denominatorAggregations_.add(
                       input.readMessage(
@@ -2898,10 +3040,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
           }
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             denominatorAggregations_ =
                 java.util.Collections.unmodifiableList(denominatorAggregations_);
           }
@@ -2925,7 +3067,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold.Builder.class);
       }
 
-      private int bitField0_;
       public static final int FILTER_FIELD_NUMBER = 2;
       private volatile java.lang.Object filter_;
       /**
@@ -2944,6 +3085,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 2;</code>
+       *
+       * @return The filter.
        */
       public java.lang.String getFilter() {
         java.lang.Object ref = filter_;
@@ -2972,6 +3115,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 2;</code>
+       *
+       * @return The bytes for filter.
        */
       public com.google.protobuf.ByteString getFilterBytes() {
         java.lang.Object ref = filter_;
@@ -3111,6 +3256,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string denominator_filter = 9;</code>
+       *
+       * @return The denominatorFilter.
        */
       public java.lang.String getDenominatorFilter() {
         java.lang.Object ref = denominatorFilter_;
@@ -3138,6 +3285,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string denominator_filter = 9;</code>
+       *
+       * @return The bytes for denominatorFilter.
        */
       public com.google.protobuf.ByteString getDenominatorFilterBytes() {
         java.lang.Object ref = denominatorFilter_;
@@ -3270,6 +3419,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+       *
+       * @return The enum numeric value on the wire for comparison.
        */
       public int getComparisonValue() {
         return comparison_;
@@ -3286,6 +3437,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+       *
+       * @return The comparison.
        */
       public com.google.monitoring.v3.ComparisonType getComparison() {
         @SuppressWarnings("deprecation")
@@ -3304,6 +3457,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>double threshold_value = 5;</code>
+       *
+       * @return The thresholdValue.
        */
       public double getThresholdValue() {
         return thresholdValue_;
@@ -3328,6 +3483,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
+       *
+       * @return Whether the duration field is set.
        */
       public boolean hasDuration() {
         return duration_ != null;
@@ -3349,6 +3506,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
+       *
+       * @return The duration.
        */
       public com.google.protobuf.Duration getDuration() {
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
@@ -3390,6 +3549,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
+       *
+       * @return Whether the trigger field is set.
        */
       public boolean hasTrigger() {
         return trigger_ != null;
@@ -3407,6 +3568,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
+       *
+       * @return The trigger.
        */
       public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger() {
         return trigger_ == null
@@ -3735,7 +3898,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             aggregationsBuilder_.clear();
           }
@@ -3743,7 +3906,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
           if (denominatorAggregationsBuilder_ == null) {
             denominatorAggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             denominatorAggregationsBuilder_.clear();
           }
@@ -3793,12 +3956,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold result =
               new com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.filter_ = filter_;
           if (aggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.aggregations_ = aggregations_;
           } else {
@@ -3806,10 +3968,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           result.denominatorFilter_ = denominatorFilter_;
           if (denominatorAggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               denominatorAggregations_ =
                   java.util.Collections.unmodifiableList(denominatorAggregations_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.denominatorAggregations_ = denominatorAggregations_;
           } else {
@@ -3827,7 +3989,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.trigger_ = triggerBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -3891,7 +4052,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.aggregations_.isEmpty()) {
               if (aggregations_.isEmpty()) {
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureAggregationsIsMutable();
                 aggregations_.addAll(other.aggregations_);
@@ -3904,7 +4065,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 aggregationsBuilder_.dispose();
                 aggregationsBuilder_ = null;
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 aggregationsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getAggregationsFieldBuilder()
@@ -3922,7 +4083,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.denominatorAggregations_.isEmpty()) {
               if (denominatorAggregations_.isEmpty()) {
                 denominatorAggregations_ = other.denominatorAggregations_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureDenominatorAggregationsIsMutable();
                 denominatorAggregations_.addAll(other.denominatorAggregations_);
@@ -3935,7 +4096,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 denominatorAggregationsBuilder_.dispose();
                 denominatorAggregationsBuilder_ = null;
                 denominatorAggregations_ = other.denominatorAggregations_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 denominatorAggregationsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getDenominatorAggregationsFieldBuilder()
@@ -4007,6 +4168,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 2;</code>
+         *
+         * @return The filter.
          */
         public java.lang.String getFilter() {
           java.lang.Object ref = filter_;
@@ -4035,6 +4198,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 2;</code>
+         *
+         * @return The bytes for filter.
          */
         public com.google.protobuf.ByteString getFilterBytes() {
           java.lang.Object ref = filter_;
@@ -4063,6 +4228,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 2;</code>
+         *
+         * @param value The filter to set.
+         * @return This builder for chaining.
          */
         public Builder setFilter(java.lang.String value) {
           if (value == null) {
@@ -4089,6 +4257,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 2;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFilter() {
 
@@ -4112,6 +4282,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 2;</code>
+         *
+         * @param value The bytes for filter to set.
+         * @return This builder for chaining.
          */
         public Builder setFilterBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -4128,10 +4301,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             aggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(aggregations_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -4446,7 +4619,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder clearAggregations() {
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             aggregationsBuilder_.clear();
@@ -4632,7 +4805,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     aggregations_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             aggregations_ = null;
@@ -4656,6 +4829,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string denominator_filter = 9;</code>
+         *
+         * @return The denominatorFilter.
          */
         public java.lang.String getDenominatorFilter() {
           java.lang.Object ref = denominatorFilter_;
@@ -4683,6 +4858,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string denominator_filter = 9;</code>
+         *
+         * @return The bytes for denominatorFilter.
          */
         public com.google.protobuf.ByteString getDenominatorFilterBytes() {
           java.lang.Object ref = denominatorFilter_;
@@ -4710,6 +4887,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string denominator_filter = 9;</code>
+         *
+         * @param value The denominatorFilter to set.
+         * @return This builder for chaining.
          */
         public Builder setDenominatorFilter(java.lang.String value) {
           if (value == null) {
@@ -4735,6 +4915,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string denominator_filter = 9;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearDenominatorFilter() {
 
@@ -4757,6 +4939,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string denominator_filter = 9;</code>
+         *
+         * @param value The bytes for denominatorFilter to set.
+         * @return This builder for chaining.
          */
         public Builder setDenominatorFilterBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -4773,11 +4958,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureDenominatorAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             denominatorAggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(
                     denominatorAggregations_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -5085,7 +5270,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder clearDenominatorAggregations() {
           if (denominatorAggregationsBuilder_ == null) {
             denominatorAggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             denominatorAggregationsBuilder_.clear();
@@ -5267,7 +5452,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     denominatorAggregations_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             denominatorAggregations_ = null;
@@ -5288,6 +5473,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+         *
+         * @return The enum numeric value on the wire for comparison.
          */
         public int getComparisonValue() {
           return comparison_;
@@ -5304,6 +5491,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+         *
+         * @param value The enum numeric value on the wire for comparison to set.
+         * @return This builder for chaining.
          */
         public Builder setComparisonValue(int value) {
           comparison_ = value;
@@ -5322,6 +5512,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+         *
+         * @return The comparison.
          */
         public com.google.monitoring.v3.ComparisonType getComparison() {
           @SuppressWarnings("deprecation")
@@ -5341,6 +5533,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+         *
+         * @param value The comparison to set.
+         * @return This builder for chaining.
          */
         public Builder setComparison(com.google.monitoring.v3.ComparisonType value) {
           if (value == null) {
@@ -5363,6 +5558,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearComparison() {
 
@@ -5380,6 +5577,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>double threshold_value = 5;</code>
+         *
+         * @return The thresholdValue.
          */
         public double getThresholdValue() {
           return thresholdValue_;
@@ -5392,6 +5591,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>double threshold_value = 5;</code>
+         *
+         * @param value The thresholdValue to set.
+         * @return This builder for chaining.
          */
         public Builder setThresholdValue(double value) {
 
@@ -5407,6 +5609,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>double threshold_value = 5;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearThresholdValue() {
 
@@ -5438,6 +5642,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
+         *
+         * @return Whether the duration field is set.
          */
         public boolean hasDuration() {
           return durationBuilder_ != null || duration_ != null;
@@ -5459,6 +5665,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
+         *
+         * @return The duration.
          */
         public com.google.protobuf.Duration getDuration() {
           if (durationBuilder_ == null) {
@@ -5696,6 +5904,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
+         *
+         * @return Whether the trigger field is set.
          */
         public boolean hasTrigger() {
           return triggerBuilder_ != null || trigger_ != null;
@@ -5713,6 +5923,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
+         *
+         * @return The trigger.
          */
         public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger() {
           if (triggerBuilder_ == null) {
@@ -5981,6 +6193,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 1;</code>
+       *
+       * @return The filter.
        */
       java.lang.String getFilter();
       /**
@@ -5999,6 +6213,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 1;</code>
+       *
+       * @return The bytes for filter.
        */
       com.google.protobuf.ByteString getFilterBytes();
 
@@ -6112,6 +6328,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
        */
       boolean hasDuration();
       /**
@@ -6127,6 +6345,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return The duration.
        */
       com.google.protobuf.Duration getDuration();
       /**
@@ -6156,6 +6376,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return Whether the trigger field is set.
        */
       boolean hasTrigger();
       /**
@@ -6169,6 +6391,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return The trigger.
        */
       com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger();
       /**
@@ -6211,6 +6435,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       private MetricAbsence() {
         filter_ = "";
         aggregations_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MetricAbsence();
       }
 
       @java.lang.Override
@@ -6278,9 +6508,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 42:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     aggregations_ = new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   aggregations_.add(
                       input.readMessage(
@@ -6302,7 +6532,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
           }
           this.unknownFields = unknownFields.build();
@@ -6325,7 +6555,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence.Builder.class);
       }
 
-      private int bitField0_;
       public static final int FILTER_FIELD_NUMBER = 1;
       private volatile java.lang.Object filter_;
       /**
@@ -6344,6 +6573,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 1;</code>
+       *
+       * @return The filter.
        */
       public java.lang.String getFilter() {
         java.lang.Object ref = filter_;
@@ -6372,6 +6603,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string filter = 1;</code>
+       *
+       * @return The bytes for filter.
        */
       public com.google.protobuf.ByteString getFilterBytes() {
         java.lang.Object ref = filter_;
@@ -6509,6 +6742,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
        */
       public boolean hasDuration() {
         return duration_ != null;
@@ -6526,6 +6761,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return The duration.
        */
       public com.google.protobuf.Duration getDuration() {
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
@@ -6561,6 +6798,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return Whether the trigger field is set.
        */
       public boolean hasTrigger() {
         return trigger_ != null;
@@ -6576,6 +6815,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return The trigger.
        */
       public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger() {
         return trigger_ == null
@@ -6854,7 +7095,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             aggregationsBuilder_.clear();
           }
@@ -6899,12 +7140,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence result =
               new com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.filter_ = filter_;
           if (aggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.aggregations_ = aggregations_;
           } else {
@@ -6920,7 +7160,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.trigger_ = triggerBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -6983,7 +7222,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.aggregations_.isEmpty()) {
               if (aggregations_.isEmpty()) {
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureAggregationsIsMutable();
                 aggregations_.addAll(other.aggregations_);
@@ -6996,7 +7235,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 aggregationsBuilder_.dispose();
                 aggregationsBuilder_ = null;
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 aggregationsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getAggregationsFieldBuilder()
@@ -7062,6 +7301,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 1;</code>
+         *
+         * @return The filter.
          */
         public java.lang.String getFilter() {
           java.lang.Object ref = filter_;
@@ -7090,6 +7331,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 1;</code>
+         *
+         * @return The bytes for filter.
          */
         public com.google.protobuf.ByteString getFilterBytes() {
           java.lang.Object ref = filter_;
@@ -7118,6 +7361,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 1;</code>
+         *
+         * @param value The filter to set.
+         * @return This builder for chaining.
          */
         public Builder setFilter(java.lang.String value) {
           if (value == null) {
@@ -7144,6 +7390,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 1;</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearFilter() {
 
@@ -7167,6 +7415,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string filter = 1;</code>
+         *
+         * @param value The bytes for filter to set.
+         * @return This builder for chaining.
          */
         public Builder setFilterBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -7183,10 +7434,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             aggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(aggregations_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -7501,7 +7752,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder clearAggregations() {
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             aggregationsBuilder_.clear();
@@ -7687,7 +7938,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     aggregations_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             aggregations_ = null;
@@ -7714,6 +7965,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 2;</code>
+         *
+         * @return Whether the duration field is set.
          */
         public boolean hasDuration() {
           return durationBuilder_ != null || duration_ != null;
@@ -7731,6 +7984,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 2;</code>
+         *
+         * @return The duration.
          */
         public com.google.protobuf.Duration getDuration() {
           if (durationBuilder_ == null) {
@@ -7938,6 +8193,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         *
+         * @return Whether the trigger field is set.
          */
         public boolean hasTrigger() {
           return triggerBuilder_ != null || trigger_ != null;
@@ -7953,6 +8210,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         *
+         * @return The trigger.
          */
         public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger() {
           if (triggerBuilder_ == null) {
@@ -8189,7 +8448,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     private int conditionCase_ = 0;
     private java.lang.Object condition_;
 
-    public enum ConditionCase implements com.google.protobuf.Internal.EnumLite {
+    public enum ConditionCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONDITION_THRESHOLD(1),
       CONDITION_ABSENT(2),
       CONDITION_NOT_SET(0);
@@ -8198,7 +8460,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       private ConditionCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static ConditionCase valueOf(int value) {
         return forNumber(value);
@@ -8255,6 +8521,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 12;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -8294,6 +8562,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 12;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -8319,6 +8589,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 6;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -8341,6 +8613,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 6;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -8364,6 +8638,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold condition_threshold = 1;
      * </code>
+     *
+     * @return Whether the conditionThreshold field is set.
      */
     public boolean hasConditionThreshold() {
       return conditionCase_ == 1;
@@ -8377,6 +8653,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold condition_threshold = 1;
      * </code>
+     *
+     * @return The conditionThreshold.
      */
     public com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold getConditionThreshold() {
       if (conditionCase_ == 1) {
@@ -8412,6 +8690,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence condition_absent = 2;</code>
+     *
+     * @return Whether the conditionAbsent field is set.
      */
     public boolean hasConditionAbsent() {
       return conditionCase_ == 2;
@@ -8425,6 +8705,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence condition_absent = 2;</code>
+     *
+     * @return The conditionAbsent.
      */
     public com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence getConditionAbsent() {
       if (conditionCase_ == 2) {
@@ -8905,6 +9187,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 12;</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -8944,6 +9228,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 12;</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -8983,6 +9269,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 12;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -9020,6 +9309,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 12;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -9054,6 +9345,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string name = 12;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -9077,6 +9371,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 6;</code>
+       *
+       * @return The displayName.
        */
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
@@ -9099,6 +9395,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 6;</code>
+       *
+       * @return The bytes for displayName.
        */
       public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
@@ -9121,6 +9419,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 6;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayName(java.lang.String value) {
         if (value == null) {
@@ -9141,6 +9442,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
 
@@ -9158,6 +9461,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string display_name = 6;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
        */
       public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -9184,6 +9490,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold condition_threshold = 1;
        * </code>
+       *
+       * @return Whether the conditionThreshold field is set.
        */
       public boolean hasConditionThreshold() {
         return conditionCase_ == 1;
@@ -9197,6 +9505,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold condition_threshold = 1;
        * </code>
+       *
+       * @return The conditionThreshold.
        */
       public com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold
           getConditionThreshold() {
@@ -9407,6 +9717,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence condition_absent = 2;
        * </code>
+       *
+       * @return Whether the conditionAbsent field is set.
        */
       public boolean hasConditionAbsent() {
         return conditionCase_ == 2;
@@ -9421,6 +9733,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence condition_absent = 2;
        * </code>
+       *
+       * @return The conditionAbsent.
        */
       public com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence getConditionAbsent() {
         if (conditionAbsentBuilder_ == null) {
@@ -9671,7 +9985,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -9689,6 +10002,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -9716,6 +10031,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -9742,6 +10059,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -9765,6 +10084,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -9792,6 +10113,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.Documentation documentation = 13;</code>
+   *
+   * @return Whether the documentation field is set.
    */
   public boolean hasDocumentation() {
     return documentation_ != null;
@@ -9808,6 +10131,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.Documentation documentation = 13;</code>
+   *
+   * @return The documentation.
    */
   public com.google.monitoring.v3.AlertPolicy.Documentation getDocumentation() {
     return documentation_ == null
@@ -10030,11 +10355,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * How to combine the results of multiple conditions
-   * to determine if an incident should be opened.
+   * How to combine the results of multiple conditions to determine if an
+   * incident should be opened.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+   *
+   * @return The enum numeric value on the wire for combiner.
    */
   public int getCombinerValue() {
     return combiner_;
@@ -10043,11 +10370,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * How to combine the results of multiple conditions
-   * to determine if an incident should be opened.
+   * How to combine the results of multiple conditions to determine if an
+   * incident should be opened.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+   *
+   * @return The combiner.
    */
   public com.google.monitoring.v3.AlertPolicy.ConditionCombinerType getCombiner() {
     @SuppressWarnings("deprecation")
@@ -10072,6 +10401,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 17;</code>
+   *
+   * @return Whether the enabled field is set.
    */
   public boolean hasEnabled() {
     return enabled_ != null;
@@ -10088,6 +10419,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 17;</code>
+   *
+   * @return The enabled.
    */
   public com.google.protobuf.BoolValue getEnabled() {
     return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
@@ -10120,6 +10453,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
+   *
+   * @return Whether the validity field is set.
    */
   public boolean hasValidity() {
     return validity_ != null;
@@ -10133,6 +10468,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
+   *
+   * @return The validity.
    */
   public com.google.rpc.Status getValidity() {
     return validity_ == null ? com.google.rpc.Status.getDefaultInstance() : validity_;
@@ -10169,6 +10506,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @return A list containing the notificationChannels.
    */
   public com.google.protobuf.ProtocolStringList getNotificationChannelsList() {
     return notificationChannels_;
@@ -10189,6 +10528,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @return The count of notificationChannels.
    */
   public int getNotificationChannelsCount() {
     return notificationChannels_.size();
@@ -10209,6 +10550,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The notificationChannels at the given index.
    */
   public java.lang.String getNotificationChannels(int index) {
     return notificationChannels_.get(index);
@@ -10229,6 +10573,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the notificationChannels at the given index.
    */
   public com.google.protobuf.ByteString getNotificationChannelsBytes(int index) {
     return notificationChannels_.getByteString(index);
@@ -10245,6 +10592,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord creation_record = 10;</code>
+   *
+   * @return Whether the creationRecord field is set.
    */
   public boolean hasCreationRecord() {
     return creationRecord_ != null;
@@ -10258,6 +10607,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord creation_record = 10;</code>
+   *
+   * @return The creationRecord.
    */
   public com.google.monitoring.v3.MutationRecord getCreationRecord() {
     return creationRecord_ == null
@@ -10289,6 +10640,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
+   *
+   * @return Whether the mutationRecord field is set.
    */
   public boolean hasMutationRecord() {
     return mutationRecord_ != null;
@@ -10302,6 +10655,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
+   *
+   * @return The mutationRecord.
    */
   public com.google.monitoring.v3.MutationRecord getMutationRecord() {
     return mutationRecord_ == null
@@ -10699,7 +11054,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserLabels().clear();
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         conditionsBuilder_.clear();
       }
@@ -10718,7 +11073,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         validityBuilder_ = null;
       }
       notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (creationRecordBuilder_ == null) {
         creationRecord_ = null;
       } else {
@@ -10758,7 +11113,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.AlertPolicy buildPartial() {
       com.google.monitoring.v3.AlertPolicy result = new com.google.monitoring.v3.AlertPolicy(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (documentationBuilder_ == null) {
@@ -10769,9 +11123,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       result.userLabels_ = internalGetUserLabels();
       result.userLabels_.makeImmutable();
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.conditions_ = conditions_;
       } else {
@@ -10788,9 +11142,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.validity_ = validityBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.notificationChannels_ = notificationChannels_;
       if (creationRecordBuilder_ == null) {
@@ -10803,7 +11157,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mutationRecord_ = mutationRecordBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -10869,7 +11222,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -10882,7 +11235,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -10904,7 +11257,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.notificationChannels_.isEmpty()) {
         if (notificationChannels_.isEmpty()) {
           notificationChannels_ = other.notificationChannels_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureNotificationChannelsIsMutable();
           notificationChannels_.addAll(other.notificationChannels_);
@@ -10964,6 +11317,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -10991,6 +11346,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -11018,6 +11375,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -11043,6 +11403,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -11065,6 +11427,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -11089,6 +11454,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -11112,6 +11479,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -11135,6 +11504,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -11156,6 +11528,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -11174,6 +11548,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -11204,6 +11581,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.Documentation documentation = 13;</code>
+     *
+     * @return Whether the documentation field is set.
      */
     public boolean hasDocumentation() {
       return documentationBuilder_ != null || documentation_ != null;
@@ -11220,6 +11599,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.Documentation documentation = 13;</code>
+     *
+     * @return The documentation.
      */
     public com.google.monitoring.v3.AlertPolicy.Documentation getDocumentation() {
       if (documentationBuilder_ == null) {
@@ -11598,10 +11979,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         conditions_ =
             new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Condition>(conditions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -11850,7 +12231,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -11994,7 +12375,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition,
                 com.google.monitoring.v3.AlertPolicy.Condition.Builder,
                 com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -12005,11 +12386,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How to combine the results of multiple conditions
-     * to determine if an incident should be opened.
+     * How to combine the results of multiple conditions to determine if an
+     * incident should be opened.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+     *
+     * @return The enum numeric value on the wire for combiner.
      */
     public int getCombinerValue() {
       return combiner_;
@@ -12018,11 +12401,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How to combine the results of multiple conditions
-     * to determine if an incident should be opened.
+     * How to combine the results of multiple conditions to determine if an
+     * incident should be opened.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for combiner to set.
+     * @return This builder for chaining.
      */
     public Builder setCombinerValue(int value) {
       combiner_ = value;
@@ -12033,11 +12419,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How to combine the results of multiple conditions
-     * to determine if an incident should be opened.
+     * How to combine the results of multiple conditions to determine if an
+     * incident should be opened.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+     *
+     * @return The combiner.
      */
     public com.google.monitoring.v3.AlertPolicy.ConditionCombinerType getCombiner() {
       @SuppressWarnings("deprecation")
@@ -12051,11 +12439,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How to combine the results of multiple conditions
-     * to determine if an incident should be opened.
+     * How to combine the results of multiple conditions to determine if an
+     * incident should be opened.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+     *
+     * @param value The combiner to set.
+     * @return This builder for chaining.
      */
     public Builder setCombiner(com.google.monitoring.v3.AlertPolicy.ConditionCombinerType value) {
       if (value == null) {
@@ -12070,11 +12461,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How to combine the results of multiple conditions
-     * to determine if an incident should be opened.
+     * How to combine the results of multiple conditions to determine if an
+     * incident should be opened.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCombiner() {
 
@@ -12101,6 +12494,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.BoolValue enabled = 17;</code>
+     *
+     * @return Whether the enabled field is set.
      */
     public boolean hasEnabled() {
       return enabledBuilder_ != null || enabled_ != null;
@@ -12117,6 +12512,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.BoolValue enabled = 17;</code>
+     *
+     * @return The enabled.
      */
     public com.google.protobuf.BoolValue getEnabled() {
       if (enabledBuilder_ == null) {
@@ -12307,6 +12704,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
+     *
+     * @return Whether the validity field is set.
      */
     public boolean hasValidity() {
       return validityBuilder_ != null || validity_ != null;
@@ -12320,6 +12719,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
+     *
+     * @return The validity.
      */
     public com.google.rpc.Status getValidity() {
       if (validityBuilder_ == null) {
@@ -12476,9 +12877,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotificationChannelsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         notificationChannels_ = new com.google.protobuf.LazyStringArrayList(notificationChannels_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -12497,6 +12898,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @return A list containing the notificationChannels.
      */
     public com.google.protobuf.ProtocolStringList getNotificationChannelsList() {
       return notificationChannels_.getUnmodifiableView();
@@ -12517,6 +12920,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @return The count of notificationChannels.
      */
     public int getNotificationChannelsCount() {
       return notificationChannels_.size();
@@ -12537,6 +12942,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The notificationChannels at the given index.
      */
     public java.lang.String getNotificationChannels(int index) {
       return notificationChannels_.get(index);
@@ -12557,6 +12965,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the notificationChannels at the given index.
      */
     public com.google.protobuf.ByteString getNotificationChannelsBytes(int index) {
       return notificationChannels_.getByteString(index);
@@ -12577,6 +12988,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The notificationChannels to set.
+     * @return This builder for chaining.
      */
     public Builder setNotificationChannels(int index, java.lang.String value) {
       if (value == null) {
@@ -12603,6 +13018,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @param value The notificationChannels to add.
+     * @return This builder for chaining.
      */
     public Builder addNotificationChannels(java.lang.String value) {
       if (value == null) {
@@ -12629,6 +13047,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @param values The notificationChannels to add.
+     * @return This builder for chaining.
      */
     public Builder addAllNotificationChannels(java.lang.Iterable<java.lang.String> values) {
       ensureNotificationChannelsIsMutable();
@@ -12652,10 +13073,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNotificationChannels() {
       notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -12675,6 +13098,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
+     *
+     * @param value The bytes of the notificationChannels to add.
+     * @return This builder for chaining.
      */
     public Builder addNotificationChannelsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -12702,6 +13128,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.MutationRecord creation_record = 10;</code>
+     *
+     * @return Whether the creationRecord field is set.
      */
     public boolean hasCreationRecord() {
       return creationRecordBuilder_ != null || creationRecord_ != null;
@@ -12715,6 +13143,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.MutationRecord creation_record = 10;</code>
+     *
+     * @return The creationRecord.
      */
     public com.google.monitoring.v3.MutationRecord getCreationRecord() {
       if (creationRecordBuilder_ == null) {
@@ -12893,6 +13323,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
+     *
+     * @return Whether the mutationRecord field is set.
      */
     public boolean hasMutationRecord() {
       return mutationRecordBuilder_ != null || mutationRecord_ != null;
@@ -12906,6 +13338,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
+     *
+     * @return The mutationRecord.
      */
     public com.google.monitoring.v3.MutationRecord getMutationRecord() {
       if (mutationRecordBuilder_ == null) {

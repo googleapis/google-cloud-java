@@ -31,6 +31,8 @@ public interface UptimeCheckIpOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+   *
+   * @return The enum numeric value on the wire for region.
    */
   int getRegionValue();
   /**
@@ -41,6 +43,8 @@ public interface UptimeCheckIpOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckRegion region = 1;</code>
+   *
+   * @return The region.
    */
   com.google.monitoring.v3.UptimeCheckRegion getRegion();
 
@@ -54,6 +58,8 @@ public interface UptimeCheckIpOrBuilder
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The location.
    */
   java.lang.String getLocation();
   /**
@@ -66,6 +72,8 @@ public interface UptimeCheckIpOrBuilder
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
 
@@ -81,6 +89,8 @@ public interface UptimeCheckIpOrBuilder
    * </pre>
    *
    * <code>string ip_address = 3;</code>
+   *
+   * @return The ipAddress.
    */
   java.lang.String getIpAddress();
   /**
@@ -95,6 +105,8 @@ public interface UptimeCheckIpOrBuilder
    * </pre>
    *
    * <code>string ip_address = 3;</code>
+   *
+   * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
 }

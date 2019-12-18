@@ -48,6 +48,8 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -75,6 +77,8 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -116,6 +120,8 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   *
+   * @return Whether the alertPolicy field is set.
    */
   boolean hasAlertPolicy();
   /**
@@ -129,6 +135,8 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   *
+   * @return The alertPolicy.
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicy();
   /**

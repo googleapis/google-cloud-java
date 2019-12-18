@@ -42,6 +42,12 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateGroupRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,6 +142,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -158,6 +165,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -182,6 +191,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return Whether the group field is set.
    */
   public boolean hasGroup() {
     return group_ != null;
@@ -195,6 +206,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return The group.
    */
   public com.google.monitoring.v3.Group getGroup() {
     return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
@@ -223,6 +236,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool validate_only = 3;</code>
+   *
+   * @return The validateOnly.
    */
   public boolean getValidateOnly() {
     return validateOnly_;
@@ -597,6 +612,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 4;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -618,6 +635,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 4;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -639,6 +658,9 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 4;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -658,6 +680,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -674,6 +698,9 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string name = 4;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -701,6 +728,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.monitoring.v3.Group group = 2;</code>
+     *
+     * @return Whether the group field is set.
      */
     public boolean hasGroup() {
       return groupBuilder_ != null || group_ != null;
@@ -714,6 +743,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.monitoring.v3.Group group = 2;</code>
+     *
+     * @return The group.
      */
     public com.google.monitoring.v3.Group getGroup() {
       if (groupBuilder_ == null) {
@@ -879,6 +910,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool validate_only = 3;</code>
+     *
+     * @return The validateOnly.
      */
     public boolean getValidateOnly() {
       return validateOnly_;
@@ -891,6 +924,9 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool validate_only = 3;</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
      */
     public Builder setValidateOnly(boolean value) {
 
@@ -906,6 +942,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool validate_only = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
 

@@ -47,6 +47,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Service();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -224,6 +229,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Custom() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Custom();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -653,6 +664,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string module_id = 1;</code>
+     *
+     * @return The moduleId.
      */
     java.lang.String getModuleId();
     /**
@@ -665,6 +678,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string module_id = 1;</code>
+     *
+     * @return The bytes for moduleId.
      */
     com.google.protobuf.ByteString getModuleIdBytes();
   }
@@ -692,6 +707,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AppEngine();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -704,7 +725,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -768,6 +788,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string module_id = 1;</code>
+     *
+     * @return The moduleId.
      */
     public java.lang.String getModuleId() {
       java.lang.Object ref = moduleId_;
@@ -790,6 +812,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string module_id = 1;</code>
+     *
+     * @return The bytes for moduleId.
      */
     public com.google.protobuf.ByteString getModuleIdBytes() {
       java.lang.Object ref = moduleId_;
@@ -1134,6 +1158,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string module_id = 1;</code>
+       *
+       * @return The moduleId.
        */
       public java.lang.String getModuleId() {
         java.lang.Object ref = moduleId_;
@@ -1156,6 +1182,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string module_id = 1;</code>
+       *
+       * @return The bytes for moduleId.
        */
       public com.google.protobuf.ByteString getModuleIdBytes() {
         java.lang.Object ref = moduleId_;
@@ -1178,6 +1206,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string module_id = 1;</code>
+       *
+       * @param value The moduleId to set.
+       * @return This builder for chaining.
        */
       public Builder setModuleId(java.lang.String value) {
         if (value == null) {
@@ -1198,6 +1229,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string module_id = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearModuleId() {
 
@@ -1215,6 +1248,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string module_id = 1;</code>
+       *
+       * @param value The bytes for moduleId to set.
+       * @return This builder for chaining.
        */
       public Builder setModuleIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1294,6 +1330,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return The service.
      */
     java.lang.String getService();
     /**
@@ -1306,6 +1344,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return The bytes for service.
      */
     com.google.protobuf.ByteString getServiceBytes();
   }
@@ -1333,6 +1373,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CloudEndpoints();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1345,7 +1391,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1409,6 +1454,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return The service.
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -1431,6 +1478,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 1;</code>
+     *
+     * @return The bytes for service.
      */
     public com.google.protobuf.ByteString getServiceBytes() {
       java.lang.Object ref = service_;
@@ -1777,6 +1826,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service = 1;</code>
+       *
+       * @return The service.
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -1799,6 +1850,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service = 1;</code>
+       *
+       * @return The bytes for service.
        */
       public com.google.protobuf.ByteString getServiceBytes() {
         java.lang.Object ref = service_;
@@ -1821,6 +1874,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service = 1;</code>
+       *
+       * @param value The service to set.
+       * @return This builder for chaining.
        */
       public Builder setService(java.lang.String value) {
         if (value == null) {
@@ -1841,6 +1897,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearService() {
 
@@ -1858,6 +1916,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service = 1;</code>
+       *
+       * @param value The bytes for service to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1937,6 +1998,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The location.
      */
     java.lang.String getLocation();
     /**
@@ -1949,6 +2012,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The bytes for location.
      */
     com.google.protobuf.ByteString getLocationBytes();
 
@@ -1962,6 +2027,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return The clusterName.
      */
     java.lang.String getClusterName();
     /**
@@ -1974,6 +2041,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return The bytes for clusterName.
      */
     com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -1986,6 +2055,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_namespace = 3;</code>
+     *
+     * @return The serviceNamespace.
      */
     java.lang.String getServiceNamespace();
     /**
@@ -1997,6 +2068,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_namespace = 3;</code>
+     *
+     * @return The bytes for serviceNamespace.
      */
     com.google.protobuf.ByteString getServiceNamespaceBytes();
 
@@ -2009,6 +2082,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     *
+     * @return The serviceName.
      */
     java.lang.String getServiceName();
     /**
@@ -2020,6 +2095,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     *
+     * @return The bytes for serviceName.
      */
     com.google.protobuf.ByteString getServiceNameBytes();
   }
@@ -2050,6 +2127,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClusterIstio();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2062,7 +2145,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2147,6 +2229,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -2169,6 +2253,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 1;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -2194,6 +2280,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -2216,6 +2304,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -2240,6 +2330,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_namespace = 3;</code>
+     *
+     * @return The serviceNamespace.
      */
     public java.lang.String getServiceNamespace() {
       java.lang.Object ref = serviceNamespace_;
@@ -2261,6 +2353,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_namespace = 3;</code>
+     *
+     * @return The bytes for serviceNamespace.
      */
     public com.google.protobuf.ByteString getServiceNamespaceBytes() {
       java.lang.Object ref = serviceNamespace_;
@@ -2285,6 +2379,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     *
+     * @return The serviceName.
      */
     public java.lang.String getServiceName() {
       java.lang.Object ref = serviceName_;
@@ -2306,6 +2402,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     *
+     * @return The bytes for serviceName.
      */
     public com.google.protobuf.ByteString getServiceNameBytes() {
       java.lang.Object ref = serviceName_;
@@ -2699,6 +2797,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @return The location.
        */
       public java.lang.String getLocation() {
         java.lang.Object ref = location_;
@@ -2721,6 +2821,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @return The bytes for location.
        */
       public com.google.protobuf.ByteString getLocationBytes() {
         java.lang.Object ref = location_;
@@ -2743,6 +2845,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
        */
       public Builder setLocation(java.lang.String value) {
         if (value == null) {
@@ -2763,6 +2868,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLocation() {
 
@@ -2780,6 +2887,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string location = 1;</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
        */
       public Builder setLocationBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2803,6 +2913,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_name = 2;</code>
+       *
+       * @return The clusterName.
        */
       public java.lang.String getClusterName() {
         java.lang.Object ref = clusterName_;
@@ -2825,6 +2937,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_name = 2;</code>
+       *
+       * @return The bytes for clusterName.
        */
       public com.google.protobuf.ByteString getClusterNameBytes() {
         java.lang.Object ref = clusterName_;
@@ -2847,6 +2961,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_name = 2;</code>
+       *
+       * @param value The clusterName to set.
+       * @return This builder for chaining.
        */
       public Builder setClusterName(java.lang.String value) {
         if (value == null) {
@@ -2867,6 +2984,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_name = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearClusterName() {
 
@@ -2884,6 +3003,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_name = 2;</code>
+       *
+       * @param value The bytes for clusterName to set.
+       * @return This builder for chaining.
        */
       public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2906,6 +3028,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_namespace = 3;</code>
+       *
+       * @return The serviceNamespace.
        */
       public java.lang.String getServiceNamespace() {
         java.lang.Object ref = serviceNamespace_;
@@ -2927,6 +3051,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_namespace = 3;</code>
+       *
+       * @return The bytes for serviceNamespace.
        */
       public com.google.protobuf.ByteString getServiceNamespaceBytes() {
         java.lang.Object ref = serviceNamespace_;
@@ -2948,6 +3074,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_namespace = 3;</code>
+       *
+       * @param value The serviceNamespace to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceNamespace(java.lang.String value) {
         if (value == null) {
@@ -2967,6 +3096,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_namespace = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearServiceNamespace() {
 
@@ -2983,6 +3114,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_namespace = 3;</code>
+       *
+       * @param value The bytes for serviceNamespace to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceNamespaceBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3005,6 +3139,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_name = 4;</code>
+       *
+       * @return The serviceName.
        */
       public java.lang.String getServiceName() {
         java.lang.Object ref = serviceName_;
@@ -3026,6 +3162,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_name = 4;</code>
+       *
+       * @return The bytes for serviceName.
        */
       public com.google.protobuf.ByteString getServiceNameBytes() {
         java.lang.Object ref = serviceName_;
@@ -3047,6 +3185,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_name = 4;</code>
+       *
+       * @param value The serviceName to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceName(java.lang.String value) {
         if (value == null) {
@@ -3066,6 +3207,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_name = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearServiceName() {
 
@@ -3082,6 +3225,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_name = 4;</code>
+       *
+       * @param value The bytes for serviceName to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3160,6 +3306,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     *
+     * @return The resourceName.
      */
     java.lang.String getResourceName();
     /**
@@ -3171,6 +3319,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     *
+     * @return The bytes for resourceName.
      */
     com.google.protobuf.ByteString getResourceNameBytes();
   }
@@ -3198,6 +3348,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Telemetry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3210,7 +3366,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3273,6 +3428,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     *
+     * @return The resourceName.
      */
     public java.lang.String getResourceName() {
       java.lang.Object ref = resourceName_;
@@ -3294,6 +3451,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     *
+     * @return The bytes for resourceName.
      */
     public com.google.protobuf.ByteString getResourceNameBytes() {
       java.lang.Object ref = resourceName_;
@@ -3637,6 +3796,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       *
+       * @return The resourceName.
        */
       public java.lang.String getResourceName() {
         java.lang.Object ref = resourceName_;
@@ -3658,6 +3819,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       *
+       * @return The bytes for resourceName.
        */
       public com.google.protobuf.ByteString getResourceNameBytes() {
         java.lang.Object ref = resourceName_;
@@ -3679,6 +3842,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       *
+       * @param value The resourceName to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceName(java.lang.String value) {
         if (value == null) {
@@ -3698,6 +3864,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceName() {
 
@@ -3714,6 +3882,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       *
+       * @param value The bytes for resourceName to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3781,7 +3952,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   private int identifierCase_ = 0;
   private java.lang.Object identifier_;
 
-  public enum IdentifierCase implements com.google.protobuf.Internal.EnumLite {
+  public enum IdentifierCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CUSTOM(6),
     APP_ENGINE(7),
     CLOUD_ENDPOINTS(8),
@@ -3792,7 +3966,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     private IdentifierCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static IdentifierCase valueOf(int value) {
       return forNumber(value);
@@ -3835,6 +4013,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -3856,6 +4036,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -3879,6 +4061,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -3899,6 +4083,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -3921,6 +4107,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
+   *
+   * @return Whether the custom field is set.
    */
   public boolean hasCustom() {
     return identifierCase_ == 6;
@@ -3933,6 +4121,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
+   *
+   * @return The custom.
    */
   public com.google.monitoring.v3.Service.Custom getCustom() {
     if (identifierCase_ == 6) {
@@ -3965,6 +4155,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
+   *
+   * @return Whether the appEngine field is set.
    */
   public boolean hasAppEngine() {
     return identifierCase_ == 7;
@@ -3977,6 +4169,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
+   *
+   * @return The appEngine.
    */
   public com.google.monitoring.v3.Service.AppEngine getAppEngine() {
     if (identifierCase_ == 7) {
@@ -4009,6 +4203,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
+   *
+   * @return Whether the cloudEndpoints field is set.
    */
   public boolean hasCloudEndpoints() {
     return identifierCase_ == 8;
@@ -4021,6 +4217,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
+   *
+   * @return The cloudEndpoints.
    */
   public com.google.monitoring.v3.Service.CloudEndpoints getCloudEndpoints() {
     if (identifierCase_ == 8) {
@@ -4053,6 +4251,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   *
+   * @return Whether the clusterIstio field is set.
    */
   public boolean hasClusterIstio() {
     return identifierCase_ == 9;
@@ -4065,6 +4265,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+   *
+   * @return The clusterIstio.
    */
   public com.google.monitoring.v3.Service.ClusterIstio getClusterIstio() {
     if (identifierCase_ == 9) {
@@ -4098,6 +4300,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
+   *
+   * @return Whether the telemetry field is set.
    */
   public boolean hasTelemetry() {
     return telemetry_ != null;
@@ -4110,6 +4314,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
+   *
+   * @return The telemetry.
    */
   public com.google.monitoring.v3.Service.Telemetry getTelemetry() {
     return telemetry_ == null
@@ -4640,6 +4846,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -4661,6 +4869,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -4682,6 +4892,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -4701,6 +4914,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -4717,6 +4932,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4738,6 +4956,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -4758,6 +4978,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -4778,6 +5000,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -4796,6 +5021,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -4811,6 +5038,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4836,6 +5066,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
+     *
+     * @return Whether the custom field is set.
      */
     public boolean hasCustom() {
       return identifierCase_ == 6;
@@ -4848,6 +5080,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
+     *
+     * @return The custom.
      */
     public com.google.monitoring.v3.Service.Custom getCustom() {
       if (customBuilder_ == null) {
@@ -5037,6 +5271,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
+     *
+     * @return Whether the appEngine field is set.
      */
     public boolean hasAppEngine() {
       return identifierCase_ == 7;
@@ -5049,6 +5285,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
+     *
+     * @return The appEngine.
      */
     public com.google.monitoring.v3.Service.AppEngine getAppEngine() {
       if (appEngineBuilder_ == null) {
@@ -5239,6 +5477,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
+     *
+     * @return Whether the cloudEndpoints field is set.
      */
     public boolean hasCloudEndpoints() {
       return identifierCase_ == 8;
@@ -5251,6 +5491,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
+     *
+     * @return The cloudEndpoints.
      */
     public com.google.monitoring.v3.Service.CloudEndpoints getCloudEndpoints() {
       if (cloudEndpointsBuilder_ == null) {
@@ -5442,6 +5684,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+     *
+     * @return Whether the clusterIstio field is set.
      */
     public boolean hasClusterIstio() {
       return identifierCase_ == 9;
@@ -5454,6 +5698,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
+     *
+     * @return The clusterIstio.
      */
     public com.google.monitoring.v3.Service.ClusterIstio getClusterIstio() {
       if (clusterIstioBuilder_ == null) {
@@ -5645,6 +5891,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
+     *
+     * @return Whether the telemetry field is set.
      */
     public boolean hasTelemetry() {
       return telemetryBuilder_ != null || telemetry_ != null;
@@ -5657,6 +5905,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
+     *
+     * @return The telemetry.
      */
     public com.google.monitoring.v3.Service.Telemetry getTelemetry() {
       if (telemetryBuilder_ == null) {

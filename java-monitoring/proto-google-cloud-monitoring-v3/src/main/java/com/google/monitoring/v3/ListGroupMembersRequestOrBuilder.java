@@ -32,6 +32,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -67,6 +73,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -79,6 +87,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -95,6 +105,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -110,6 +122,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -124,6 +138,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 6;</code>
+   *
+   * @return Whether the interval field is set.
    */
   boolean hasInterval();
   /**
@@ -137,6 +153,8 @@ public interface ListGroupMembersRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 6;</code>
+   *
+   * @return The interval.
    */
   com.google.monitoring.v3.TimeInterval getInterval();
   /**

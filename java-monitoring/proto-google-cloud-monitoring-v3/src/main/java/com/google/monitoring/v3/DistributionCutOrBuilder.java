@@ -33,6 +33,8 @@ public interface DistributionCutOrBuilder
    * </pre>
    *
    * <code>string distribution_filter = 4;</code>
+   *
+   * @return The distributionFilter.
    */
   java.lang.String getDistributionFilter();
   /**
@@ -45,6 +47,8 @@ public interface DistributionCutOrBuilder
    * </pre>
    *
    * <code>string distribution_filter = 4;</code>
+   *
+   * @return The bytes for distributionFilter.
    */
   com.google.protobuf.ByteString getDistributionFilterBytes();
 
@@ -57,6 +61,8 @@ public interface DistributionCutOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Range range = 5;</code>
+   *
+   * @return Whether the range field is set.
    */
   boolean hasRange();
   /**
@@ -68,6 +74,8 @@ public interface DistributionCutOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Range range = 5;</code>
+   *
+   * @return The range.
    */
   com.google.monitoring.v3.Range getRange();
   /**

@@ -37,6 +37,8 @@ public interface CreateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -53,6 +55,8 @@ public interface CreateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -66,6 +70,8 @@ public interface CreateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy alert_policy = 2;</code>
+   *
+   * @return Whether the alertPolicy field is set.
    */
   boolean hasAlertPolicy();
   /**
@@ -78,6 +84,8 @@ public interface CreateAlertPolicyRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy alert_policy = 2;</code>
+   *
+   * @return The alertPolicy.
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicy();
   /**

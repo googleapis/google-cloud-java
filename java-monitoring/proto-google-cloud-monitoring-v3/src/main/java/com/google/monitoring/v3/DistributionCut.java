@@ -46,6 +46,12 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DistributionCut();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,6 +142,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string distribution_filter = 4;</code>
+   *
+   * @return The distributionFilter.
    */
   public java.lang.String getDistributionFilter() {
     java.lang.Object ref = distributionFilter_;
@@ -159,6 +166,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string distribution_filter = 4;</code>
+   *
+   * @return The bytes for distributionFilter.
    */
   public com.google.protobuf.ByteString getDistributionFilterBytes() {
     java.lang.Object ref = distributionFilter_;
@@ -183,6 +192,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.Range range = 5;</code>
+   *
+   * @return Whether the range field is set.
    */
   public boolean hasRange() {
     return range_ != null;
@@ -196,6 +207,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.monitoring.v3.Range range = 5;</code>
+   *
+   * @return The range.
    */
   public com.google.monitoring.v3.Range getRange() {
     return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
@@ -572,6 +585,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string distribution_filter = 4;</code>
+     *
+     * @return The distributionFilter.
      */
     public java.lang.String getDistributionFilter() {
       java.lang.Object ref = distributionFilter_;
@@ -594,6 +609,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string distribution_filter = 4;</code>
+     *
+     * @return The bytes for distributionFilter.
      */
     public com.google.protobuf.ByteString getDistributionFilterBytes() {
       java.lang.Object ref = distributionFilter_;
@@ -616,6 +633,9 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string distribution_filter = 4;</code>
+     *
+     * @param value The distributionFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setDistributionFilter(java.lang.String value) {
       if (value == null) {
@@ -636,6 +656,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string distribution_filter = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDistributionFilter() {
 
@@ -653,6 +675,9 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string distribution_filter = 4;</code>
+     *
+     * @param value The bytes for distributionFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setDistributionFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -680,6 +705,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.Range range = 5;</code>
+     *
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return rangeBuilder_ != null || range_ != null;
@@ -693,6 +720,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.monitoring.v3.Range range = 5;</code>
+     *
+     * @return The range.
      */
     public com.google.monitoring.v3.Range getRange() {
       if (rangeBuilder_ == null) {

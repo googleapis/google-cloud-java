@@ -32,6 +32,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string name = 10;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string name = 10;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -74,6 +80,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -87,6 +95,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   *
+   * @return Whether the interval field is set.
    */
   boolean hasInterval();
   /**
@@ -99,6 +109,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   *
+   * @return The interval.
    */
   com.google.monitoring.v3.TimeInterval getInterval();
   /**
@@ -125,6 +137,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
+   *
+   * @return Whether the aggregation field is set.
    */
   boolean hasAggregation();
   /**
@@ -138,6 +152,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
+   *
+   * @return The aggregation.
    */
   com.google.monitoring.v3.Aggregation getAggregation();
   /**
@@ -163,6 +179,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -174,6 +192,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 
@@ -185,6 +205,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -195,6 +217,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   *
+   * @return The view.
    */
   com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView();
 
@@ -210,6 +234,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -223,6 +249,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 9;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -235,6 +263,8 @@ public interface ListTimeSeriesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 9;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

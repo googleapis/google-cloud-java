@@ -32,6 +32,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The type.
    */
   java.lang.String getType();
   /**
@@ -43,6 +45,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString getTypeBytes();
 
@@ -56,6 +60,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -68,6 +74,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -82,6 +90,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -95,6 +105,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -108,6 +120,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -120,6 +134,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -305,6 +321,8 @@ public interface NotificationChannelOrBuilder
    *
    * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
    * </code>
+   *
+   * @return The enum numeric value on the wire for verificationStatus.
    */
   int getVerificationStatusValue();
   /**
@@ -331,6 +349,8 @@ public interface NotificationChannelOrBuilder
    *
    * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
    * </code>
+   *
+   * @return The verificationStatus.
    */
   com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus();
 
@@ -347,6 +367,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 11;</code>
+   *
+   * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
   /**
@@ -362,6 +384,8 @@ public interface NotificationChannelOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue enabled = 11;</code>
+   *
+   * @return The enabled.
    */
   com.google.protobuf.BoolValue getEnabled();
   /**

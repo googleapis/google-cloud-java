@@ -32,6 +32,8 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
+   *
+   * @return The serviceLevelObjectiveId.
    */
   java.lang.String getServiceLevelObjectiveId();
   /**
@@ -68,6 +74,8 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
+   *
+   * @return The bytes for serviceLevelObjectiveId.
    */
   com.google.protobuf.ByteString getServiceLevelObjectiveIdBytes();
 
@@ -81,6 +89,8 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   *
+   * @return Whether the serviceLevelObjective field is set.
    */
   boolean hasServiceLevelObjective();
   /**
@@ -93,6 +103,8 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   *
+   * @return The serviceLevelObjective.
    */
   com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective();
   /**

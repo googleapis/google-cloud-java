@@ -32,6 +32,8 @@ public interface DeleteGroupRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface DeleteGroupRequestOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface DeleteGroupRequestOrBuilder
    * </pre>
    *
    * <code>bool recursive = 4;</code>
+   *
+   * @return The recursive.
    */
   boolean getRecursive();
 }

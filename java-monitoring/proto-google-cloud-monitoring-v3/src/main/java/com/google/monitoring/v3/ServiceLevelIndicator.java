@@ -52,6 +52,12 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   private ServiceLevelIndicator() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ServiceLevelIndicator();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,7 +70,6 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -159,7 +164,10 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
-  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BASIC_SLI(4),
     REQUEST_BASED(1),
     WINDOWS_BASED(2),
@@ -169,7 +177,11 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     private TypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -208,6 +220,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
+   *
+   * @return Whether the basicSli field is set.
    */
   public boolean hasBasicSli() {
     return typeCase_ == 4;
@@ -220,6 +234,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
+   *
+   * @return The basicSli.
    */
   public com.google.monitoring.v3.BasicSli getBasicSli() {
     if (typeCase_ == 4) {
@@ -252,6 +268,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
+   *
+   * @return Whether the requestBased field is set.
    */
   public boolean hasRequestBased() {
     return typeCase_ == 1;
@@ -264,6 +282,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
+   *
+   * @return The requestBased.
    */
   public com.google.monitoring.v3.RequestBasedSli getRequestBased() {
     if (typeCase_ == 1) {
@@ -296,6 +316,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
+   *
+   * @return Whether the windowsBased field is set.
    */
   public boolean hasWindowsBased() {
     return typeCase_ == 2;
@@ -308,6 +330,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
+   *
+   * @return The windowsBased.
    */
   public com.google.monitoring.v3.WindowsBasedSli getWindowsBased() {
     if (typeCase_ == 2) {
@@ -769,6 +793,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
+     *
+     * @return Whether the basicSli field is set.
      */
     public boolean hasBasicSli() {
       return typeCase_ == 4;
@@ -781,6 +807,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
+     *
+     * @return The basicSli.
      */
     public com.google.monitoring.v3.BasicSli getBasicSli() {
       if (basicSliBuilder_ == null) {
@@ -967,6 +995,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
+     *
+     * @return Whether the requestBased field is set.
      */
     public boolean hasRequestBased() {
       return typeCase_ == 1;
@@ -979,6 +1009,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
+     *
+     * @return The requestBased.
      */
     public com.google.monitoring.v3.RequestBasedSli getRequestBased() {
       if (requestBasedBuilder_ == null) {
@@ -1169,6 +1201,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
+     *
+     * @return Whether the windowsBased field is set.
      */
     public boolean hasWindowsBased() {
       return typeCase_ == 2;
@@ -1181,6 +1215,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
+     *
+     * @return The windowsBased.
      */
     public com.google.monitoring.v3.WindowsBasedSli getWindowsBased() {
       if (windowsBasedBuilder_ == null) {

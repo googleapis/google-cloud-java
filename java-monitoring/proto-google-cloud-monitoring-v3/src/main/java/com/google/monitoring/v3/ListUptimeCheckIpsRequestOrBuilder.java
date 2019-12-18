@@ -35,6 +35,8 @@ public interface ListUptimeCheckIpsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -49,6 +51,8 @@ public interface ListUptimeCheckIpsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -62,6 +66,8 @@ public interface ListUptimeCheckIpsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

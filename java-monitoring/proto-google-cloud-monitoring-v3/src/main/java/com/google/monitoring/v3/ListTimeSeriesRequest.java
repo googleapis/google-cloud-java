@@ -46,6 +46,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTimeSeriesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -241,12 +246,20 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TimeSeriesView valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TimeSeriesView forNumber(int value) {
       switch (value) {
         case 0:
@@ -313,6 +326,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 10;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -334,6 +349,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 10;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -362,6 +379,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -387,6 +406,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -412,6 +433,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   *
+   * @return Whether the interval field is set.
    */
   public boolean hasInterval() {
     return interval_ != null;
@@ -426,6 +449,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   *
+   * @return The interval.
    */
   public com.google.monitoring.v3.TimeInterval getInterval() {
     return interval_ == null
@@ -460,6 +485,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
+   *
+   * @return Whether the aggregation field is set.
    */
   public boolean hasAggregation() {
     return aggregation_ != null;
@@ -475,6 +502,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
+   *
+   * @return The aggregation.
    */
   public com.google.monitoring.v3.Aggregation getAggregation() {
     return aggregation_ == null
@@ -508,6 +537,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -529,6 +560,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
@@ -552,6 +585,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   public int getViewValue() {
     return view_;
@@ -564,6 +599,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   *
+   * @return The view.
    */
   public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
     @SuppressWarnings("deprecation")
@@ -588,6 +625,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -605,6 +644,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string page_token = 9;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -627,6 +668,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string page_token = 9;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -1100,6 +1143,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 10;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1121,6 +1166,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 10;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1142,6 +1189,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 10;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1161,6 +1211,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1177,6 +1229,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 10;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1203,6 +1258,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1228,6 +1285,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1253,6 +1312,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1276,6 +1338,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1296,6 +1360,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1324,6 +1391,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     *
+     * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
       return intervalBuilder_ != null || interval_ != null;
@@ -1338,6 +1407,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     *
+     * @return The interval.
      */
     public com.google.monitoring.v3.TimeInterval getInterval() {
       if (intervalBuilder_ == null) {
@@ -1524,6 +1595,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
+     *
+     * @return Whether the aggregation field is set.
      */
     public boolean hasAggregation() {
       return aggregationBuilder_ != null || aggregation_ != null;
@@ -1539,6 +1612,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
+     *
+     * @return The aggregation.
      */
     public com.google.monitoring.v3.Aggregation getAggregation() {
       if (aggregationBuilder_ == null) {
@@ -1725,6 +1800,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 6;</code>
+     *
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -1746,6 +1823,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 6;</code>
+     *
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
@@ -1767,6 +1846,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 6;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
@@ -1786,6 +1868,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
 
@@ -1802,6 +1886,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 6;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1823,6 +1910,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     *
+     * @return The enum numeric value on the wire for view.
      */
     public int getViewValue() {
       return view_;
@@ -1835,6 +1924,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
       view_ = value;
@@ -1849,6 +1941,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     *
+     * @return The view.
      */
     public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
       @SuppressWarnings("deprecation")
@@ -1866,6 +1960,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
      */
     public Builder setView(com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView value) {
       if (value == null) {
@@ -1884,6 +1981,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearView() {
 
@@ -1905,6 +2004,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1921,6 +2022,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1940,6 +2044,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1959,6 +2065,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 9;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1981,6 +2089,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 9;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -2003,6 +2113,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 9;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -2023,6 +2136,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -2040,6 +2155,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 9;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

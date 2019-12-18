@@ -35,6 +35,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -62,6 +66,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -74,6 +80,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -93,6 +101,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
+   *
+   * @return Whether the monitoredResource field is set.
    */
   boolean hasMonitoredResource();
   /**
@@ -111,6 +121,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
+   *
+   * @return The monitoredResource.
    */
   com.google.api.MonitoredResource getMonitoredResource();
   /**
@@ -140,6 +152,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
+   *
+   * @return Whether the resourceGroup field is set.
    */
   boolean hasResourceGroup();
   /**
@@ -150,6 +164,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
+   *
+   * @return The resourceGroup.
    */
   com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getResourceGroup();
   /**
@@ -171,6 +187,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
+   *
+   * @return Whether the httpCheck field is set.
    */
   boolean hasHttpCheck();
   /**
@@ -181,6 +199,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
+   *
+   * @return The httpCheck.
    */
   com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getHttpCheck();
   /**
@@ -202,6 +222,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
+   *
+   * @return Whether the tcpCheck field is set.
    */
   boolean hasTcpCheck();
   /**
@@ -212,6 +234,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
+   *
+   * @return The tcpCheck.
    */
   com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getTcpCheck();
   /**
@@ -236,6 +260,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
+   *
+   * @return Whether the period field is set.
    */
   boolean hasPeriod();
   /**
@@ -249,6 +275,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
+   *
+   * @return The period.
    */
   com.google.protobuf.Duration getPeriod();
   /**
@@ -274,6 +302,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
   /**
@@ -285,6 +315,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
   /**
@@ -390,6 +422,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @return A list containing the selectedRegions.
    */
   java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList();
   /**
@@ -404,6 +438,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @return The count of selectedRegions.
    */
   int getSelectedRegionsCount();
   /**
@@ -418,6 +454,9 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The selectedRegions at the given index.
    */
   com.google.monitoring.v3.UptimeCheckRegion getSelectedRegions(int index);
   /**
@@ -432,6 +471,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for selectedRegions.
    */
   java.util.List<java.lang.Integer> getSelectedRegionsValueList();
   /**
@@ -446,6 +487,9 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of selectedRegions at the given index.
    */
   int getSelectedRegionsValue(int index);
 
@@ -460,6 +504,8 @@ public interface UptimeCheckConfigOrBuilder
    * </pre>
    *
    * <code>bool is_internal = 15 [deprecated = true];</code>
+   *
+   * @return The isInternal.
    */
   @java.lang.Deprecated
   boolean getIsInternal();

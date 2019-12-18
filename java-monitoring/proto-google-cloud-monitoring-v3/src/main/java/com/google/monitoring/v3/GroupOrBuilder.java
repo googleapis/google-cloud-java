@@ -35,6 +35,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -83,6 +91,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string parent_name = 3;</code>
+   *
+   * @return The parentName.
    */
   java.lang.String getParentName();
   /**
@@ -95,6 +105,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string parent_name = 3;</code>
+   *
+   * @return The bytes for parentName.
    */
   com.google.protobuf.ByteString getParentNameBytes();
 
@@ -107,6 +119,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -118,6 +132,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -130,6 +146,8 @@ public interface GroupOrBuilder
    * </pre>
    *
    * <code>bool is_cluster = 6;</code>
+   *
+   * @return The isCluster.
    */
   boolean getIsCluster();
 }

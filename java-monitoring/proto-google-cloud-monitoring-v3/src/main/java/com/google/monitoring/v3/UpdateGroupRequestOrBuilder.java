@@ -32,6 +32,8 @@ public interface UpdateGroupRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return Whether the group field is set.
    */
   boolean hasGroup();
   /**
@@ -43,6 +45,8 @@ public interface UpdateGroupRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.Group group = 2;</code>
+   *
+   * @return The group.
    */
   com.google.monitoring.v3.Group getGroup();
   /**
@@ -65,6 +69,8 @@ public interface UpdateGroupRequestOrBuilder
    * </pre>
    *
    * <code>bool validate_only = 3;</code>
+   *
+   * @return The validateOnly.
    */
   boolean getValidateOnly();
 }

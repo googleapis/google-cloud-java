@@ -33,6 +33,8 @@ public interface GetServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface GetServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface GetServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -72,6 +78,8 @@ public interface GetServiceLevelObjectiveRequestOrBuilder
    * </pre>
    *
    * <code>.google.monitoring.v3.ServiceLevelObjective.View view = 2;</code>
+   *
+   * @return The view.
    */
   com.google.monitoring.v3.ServiceLevelObjective.View getView();
 }
