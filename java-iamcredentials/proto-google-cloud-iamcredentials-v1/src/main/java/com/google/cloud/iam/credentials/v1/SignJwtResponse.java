@@ -35,6 +35,12 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SignJwtResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -47,7 +53,6 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,6 +121,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The keyId.
    */
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
@@ -136,6 +143,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The bytes for keyId.
    */
   public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
@@ -159,6 +168,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string signed_jwt = 2;</code>
+   *
+   * @return The signedJwt.
    */
   public java.lang.String getSignedJwt() {
     java.lang.Object ref = signedJwt_;
@@ -179,6 +190,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string signed_jwt = 2;</code>
+   *
+   * @return The bytes for signedJwt.
    */
   public com.google.protobuf.ByteString getSignedJwtBytes() {
     java.lang.Object ref = signedJwt_;
@@ -527,6 +540,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @return The keyId.
      */
     public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
@@ -547,6 +562,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @return The bytes for keyId.
      */
     public com.google.protobuf.ByteString getKeyIdBytes() {
       java.lang.Object ref = keyId_;
@@ -567,6 +584,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @param value The keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyId(java.lang.String value) {
       if (value == null) {
@@ -585,6 +605,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKeyId() {
 
@@ -600,6 +622,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @param value The bytes for keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -621,6 +646,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string signed_jwt = 2;</code>
+     *
+     * @return The signedJwt.
      */
     public java.lang.String getSignedJwt() {
       java.lang.Object ref = signedJwt_;
@@ -641,6 +668,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string signed_jwt = 2;</code>
+     *
+     * @return The bytes for signedJwt.
      */
     public com.google.protobuf.ByteString getSignedJwtBytes() {
       java.lang.Object ref = signedJwt_;
@@ -661,6 +690,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string signed_jwt = 2;</code>
+     *
+     * @param value The signedJwt to set.
+     * @return This builder for chaining.
      */
     public Builder setSignedJwt(java.lang.String value) {
       if (value == null) {
@@ -679,6 +711,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string signed_jwt = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignedJwt() {
 
@@ -694,6 +728,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string signed_jwt = 2;</code>
+     *
+     * @param value The bytes for signedJwt to set.
+     * @return This builder for chaining.
      */
     public Builder setSignedJwtBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

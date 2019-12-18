@@ -31,6 +31,8 @@ public interface GenerateAccessTokenResponseOrBuilder
    * </pre>
    *
    * <code>string access_token = 1;</code>
+   *
+   * @return The accessToken.
    */
   java.lang.String getAccessToken();
   /**
@@ -41,6 +43,8 @@ public interface GenerateAccessTokenResponseOrBuilder
    * </pre>
    *
    * <code>string access_token = 1;</code>
+   *
+   * @return The bytes for accessToken.
    */
   com.google.protobuf.ByteString getAccessTokenBytes();
 
@@ -53,6 +57,8 @@ public interface GenerateAccessTokenResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   *
+   * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
   /**
@@ -64,6 +70,8 @@ public interface GenerateAccessTokenResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   *
+   * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**

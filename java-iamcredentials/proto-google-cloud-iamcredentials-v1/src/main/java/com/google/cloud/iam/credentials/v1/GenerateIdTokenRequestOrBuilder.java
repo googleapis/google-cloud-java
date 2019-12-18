@@ -33,6 +33,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @return A list containing the delegates.
    */
   java.util.List<java.lang.String> getDelegatesList();
   /**
@@ -80,6 +86,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @return The count of delegates.
    */
   int getDelegatesCount();
   /**
@@ -97,6 +105,9 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The delegates at the given index.
    */
   java.lang.String getDelegates(int index);
   /**
@@ -114,6 +125,9 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the delegates at the given index.
    */
   com.google.protobuf.ByteString getDelegatesBytes(int index);
 
@@ -126,6 +140,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>string audience = 3;</code>
+   *
+   * @return The audience.
    */
   java.lang.String getAudience();
   /**
@@ -137,6 +153,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>string audience = 3;</code>
+   *
+   * @return The bytes for audience.
    */
   com.google.protobuf.ByteString getAudienceBytes();
 
@@ -149,6 +167,8 @@ public interface GenerateIdTokenRequestOrBuilder
    * </pre>
    *
    * <code>bool include_email = 4;</code>
+   *
+   * @return The includeEmail.
    */
   boolean getIncludeEmail();
 }

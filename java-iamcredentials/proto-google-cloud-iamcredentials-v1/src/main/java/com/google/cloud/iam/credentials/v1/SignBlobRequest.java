@@ -36,6 +36,12 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SignBlobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 delegates_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               delegates_.add(s);
               break;
@@ -95,7 +101,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         delegates_ = delegates_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -118,7 +124,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.iam.credentials.v1.SignBlobRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -131,6 +136,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -153,6 +160,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -183,6 +192,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @return A list containing the delegates.
    */
   public com.google.protobuf.ProtocolStringList getDelegatesList() {
     return delegates_;
@@ -202,6 +213,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @return The count of delegates.
    */
   public int getDelegatesCount() {
     return delegates_.size();
@@ -221,6 +234,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The delegates at the given index.
    */
   public java.lang.String getDelegates(int index) {
     return delegates_.get(index);
@@ -240,6 +256,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the delegates at the given index.
    */
   public com.google.protobuf.ByteString getDelegatesBytes(int index) {
     return delegates_.getByteString(index);
@@ -255,6 +274,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bytes payload = 5;</code>
+   *
+   * @return The payload.
    */
   public com.google.protobuf.ByteString getPayload() {
     return payload_;
@@ -484,7 +505,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       name_ = "";
 
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       payload_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -515,15 +536,13 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.iam.credentials.v1.SignBlobRequest result =
           new com.google.cloud.iam.credentials.v1.SignBlobRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.delegates_ = delegates_;
       result.payload_ = payload_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -581,7 +600,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -634,6 +653,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -656,6 +677,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -678,6 +701,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -698,6 +724,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -715,6 +743,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -731,9 +762,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -751,6 +782,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @return A list containing the delegates.
      */
     public com.google.protobuf.ProtocolStringList getDelegatesList() {
       return delegates_.getUnmodifiableView();
@@ -770,6 +803,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @return The count of delegates.
      */
     public int getDelegatesCount() {
       return delegates_.size();
@@ -789,6 +824,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The delegates at the given index.
      */
     public java.lang.String getDelegates(int index) {
       return delegates_.get(index);
@@ -808,6 +846,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the delegates at the given index.
      */
     public com.google.protobuf.ByteString getDelegatesBytes(int index) {
       return delegates_.getByteString(index);
@@ -827,6 +868,10 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The delegates to set.
+     * @return This builder for chaining.
      */
     public Builder setDelegates(int index, java.lang.String value) {
       if (value == null) {
@@ -852,6 +897,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @param value The delegates to add.
+     * @return This builder for chaining.
      */
     public Builder addDelegates(java.lang.String value) {
       if (value == null) {
@@ -877,6 +925,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @param values The delegates to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDelegates(java.lang.Iterable<java.lang.String> values) {
       ensureDelegatesIsMutable();
@@ -899,10 +950,12 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDelegates() {
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -921,6 +974,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string delegates = 3;</code>
+     *
+     * @param value The bytes of the delegates to add.
+     * @return This builder for chaining.
      */
     public Builder addDelegatesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -942,6 +998,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes payload = 5;</code>
+     *
+     * @return The payload.
      */
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
@@ -954,6 +1012,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes payload = 5;</code>
+     *
+     * @param value The payload to set.
+     * @return This builder for chaining.
      */
     public Builder setPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -972,6 +1033,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bytes payload = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPayload() {
 

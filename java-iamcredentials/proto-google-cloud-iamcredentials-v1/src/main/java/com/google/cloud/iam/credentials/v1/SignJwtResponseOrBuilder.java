@@ -31,6 +31,8 @@ public interface SignJwtResponseOrBuilder
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The keyId.
    */
   java.lang.String getKeyId();
   /**
@@ -41,6 +43,8 @@ public interface SignJwtResponseOrBuilder
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The bytes for keyId.
    */
   com.google.protobuf.ByteString getKeyIdBytes();
 
@@ -52,6 +56,8 @@ public interface SignJwtResponseOrBuilder
    * </pre>
    *
    * <code>string signed_jwt = 2;</code>
+   *
+   * @return The signedJwt.
    */
   java.lang.String getSignedJwt();
   /**
@@ -62,6 +68,8 @@ public interface SignJwtResponseOrBuilder
    * </pre>
    *
    * <code>string signed_jwt = 2;</code>
+   *
+   * @return The bytes for signedJwt.
    */
   com.google.protobuf.ByteString getSignedJwtBytes();
 }

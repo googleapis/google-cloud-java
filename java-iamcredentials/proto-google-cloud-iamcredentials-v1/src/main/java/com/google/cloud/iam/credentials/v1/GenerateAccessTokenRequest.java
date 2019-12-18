@@ -36,6 +36,12 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GenerateAccessTokenRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 delegates_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               delegates_.add(s);
               break;
@@ -79,9 +85,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 scope_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               scope_.add(s);
               break;
@@ -115,10 +121,10 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         delegates_ = delegates_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         scope_ = scope_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -141,7 +147,6 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -154,6 +159,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -176,6 +183,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -206,6 +215,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @return A list containing the delegates.
    */
   public com.google.protobuf.ProtocolStringList getDelegatesList() {
     return delegates_;
@@ -225,6 +236,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @return The count of delegates.
    */
   public int getDelegatesCount() {
     return delegates_.size();
@@ -244,6 +257,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The delegates at the given index.
    */
   public java.lang.String getDelegates(int index) {
     return delegates_.get(index);
@@ -263,6 +279,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the delegates at the given index.
    */
   public com.google.protobuf.ByteString getDelegatesBytes(int index) {
     return delegates_.getByteString(index);
@@ -281,6 +300,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @return A list containing the scope.
    */
   public com.google.protobuf.ProtocolStringList getScopeList() {
     return scope_;
@@ -296,6 +317,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @return The count of scope.
    */
   public int getScopeCount() {
     return scope_.size();
@@ -311,6 +334,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scope at the given index.
    */
   public java.lang.String getScope(int index) {
     return scope_.get(index);
@@ -326,6 +352,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scope at the given index.
    */
   public com.google.protobuf.ByteString getScopeBytes(int index) {
     return scope_.getByteString(index);
@@ -344,6 +373,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.Duration lifetime = 7;</code>
+   *
+   * @return Whether the lifetime field is set.
    */
   public boolean hasLifetime() {
     return lifetime_ != null;
@@ -359,6 +390,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.Duration lifetime = 7;</code>
+   *
+   * @return The lifetime.
    */
   public com.google.protobuf.Duration getLifetime() {
     return lifetime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : lifetime_;
@@ -625,9 +658,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       name_ = "";
 
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (lifetimeBuilder_ == null) {
         lifetime_ = null;
       } else {
@@ -663,16 +696,15 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result =
           new com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.delegates_ = delegates_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         scope_ = scope_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.scope_ = scope_;
       if (lifetimeBuilder_ == null) {
@@ -680,7 +712,6 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       } else {
         result.lifetime_ = lifetimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -739,7 +770,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -749,7 +780,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (!other.scope_.isEmpty()) {
         if (scope_.isEmpty()) {
           scope_ = other.scope_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureScopeIsMutable();
           scope_.addAll(other.scope_);
@@ -803,6 +834,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -825,6 +858,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -847,6 +882,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -867,6 +905,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -884,6 +924,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -900,9 +943,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -920,6 +963,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @return A list containing the delegates.
      */
     public com.google.protobuf.ProtocolStringList getDelegatesList() {
       return delegates_.getUnmodifiableView();
@@ -939,6 +984,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @return The count of delegates.
      */
     public int getDelegatesCount() {
       return delegates_.size();
@@ -958,6 +1005,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The delegates at the given index.
      */
     public java.lang.String getDelegates(int index) {
       return delegates_.get(index);
@@ -977,6 +1027,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the delegates at the given index.
      */
     public com.google.protobuf.ByteString getDelegatesBytes(int index) {
       return delegates_.getByteString(index);
@@ -996,6 +1049,10 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The delegates to set.
+     * @return This builder for chaining.
      */
     public Builder setDelegates(int index, java.lang.String value) {
       if (value == null) {
@@ -1021,6 +1078,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @param value The delegates to add.
+     * @return This builder for chaining.
      */
     public Builder addDelegates(java.lang.String value) {
       if (value == null) {
@@ -1046,6 +1106,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @param values The delegates to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDelegates(java.lang.Iterable<java.lang.String> values) {
       ensureDelegatesIsMutable();
@@ -1068,10 +1131,12 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDelegates() {
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1090,6 +1155,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
+     *
+     * @param value The bytes of the delegates to add.
+     * @return This builder for chaining.
      */
     public Builder addDelegatesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1106,9 +1174,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureScopeIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         scope_ = new com.google.protobuf.LazyStringArrayList(scope_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1122,6 +1190,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @return A list containing the scope.
      */
     public com.google.protobuf.ProtocolStringList getScopeList() {
       return scope_.getUnmodifiableView();
@@ -1137,6 +1207,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @return The count of scope.
      */
     public int getScopeCount() {
       return scope_.size();
@@ -1152,6 +1224,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The scope at the given index.
      */
     public java.lang.String getScope(int index) {
       return scope_.get(index);
@@ -1167,6 +1242,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the scope at the given index.
      */
     public com.google.protobuf.ByteString getScopeBytes(int index) {
       return scope_.getByteString(index);
@@ -1182,6 +1260,10 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScope(int index, java.lang.String value) {
       if (value == null) {
@@ -1203,6 +1285,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @param value The scope to add.
+     * @return This builder for chaining.
      */
     public Builder addScope(java.lang.String value) {
       if (value == null) {
@@ -1224,6 +1309,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @param values The scope to add.
+     * @return This builder for chaining.
      */
     public Builder addAllScope(java.lang.Iterable<java.lang.String> values) {
       ensureScopeIsMutable();
@@ -1242,10 +1330,12 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScope() {
       scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1260,6 +1350,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string scope = 4;</code>
+     *
+     * @param value The bytes of the scope to add.
+     * @return This builder for chaining.
      */
     public Builder addScopeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1289,6 +1382,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 7;</code>
+     *
+     * @return Whether the lifetime field is set.
      */
     public boolean hasLifetime() {
       return lifetimeBuilder_ != null || lifetime_ != null;
@@ -1304,6 +1399,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 7;</code>
+     *
+     * @return The lifetime.
      */
     public com.google.protobuf.Duration getLifetime() {
       if (lifetimeBuilder_ == null) {

@@ -31,6 +31,8 @@ public interface SignBlobResponseOrBuilder
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The keyId.
    */
   java.lang.String getKeyId();
   /**
@@ -41,6 +43,8 @@ public interface SignBlobResponseOrBuilder
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The bytes for keyId.
    */
   com.google.protobuf.ByteString getKeyIdBytes();
 
@@ -52,6 +56,8 @@ public interface SignBlobResponseOrBuilder
    * </pre>
    *
    * <code>bytes signed_blob = 4;</code>
+   *
+   * @return The signedBlob.
    */
   com.google.protobuf.ByteString getSignedBlob();
 }

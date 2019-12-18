@@ -34,6 +34,12 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GenerateIdTokenResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -46,7 +52,6 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +113,8 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string token = 1;</code>
+   *
+   * @return The token.
    */
   public java.lang.String getToken() {
     java.lang.Object ref = token_;
@@ -128,6 +135,8 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string token = 1;</code>
+   *
+   * @return The bytes for token.
    */
   public com.google.protobuf.ByteString getTokenBytes() {
     java.lang.Object ref = token_;
@@ -461,6 +470,8 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string token = 1;</code>
+     *
+     * @return The token.
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -481,6 +492,8 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string token = 1;</code>
+     *
+     * @return The bytes for token.
      */
     public com.google.protobuf.ByteString getTokenBytes() {
       java.lang.Object ref = token_;
@@ -501,6 +514,9 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string token = 1;</code>
+     *
+     * @param value The token to set.
+     * @return This builder for chaining.
      */
     public Builder setToken(java.lang.String value) {
       if (value == null) {
@@ -519,6 +535,8 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string token = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearToken() {
 
@@ -534,6 +552,9 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string token = 1;</code>
+     *
+     * @param value The bytes for token to set.
+     * @return This builder for chaining.
      */
     public Builder setTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

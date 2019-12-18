@@ -33,6 +33,8 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @return A list containing the delegates.
    */
   java.util.List<java.lang.String> getDelegatesList();
   /**
@@ -80,6 +86,8 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @return The count of delegates.
    */
   int getDelegatesCount();
   /**
@@ -97,6 +105,9 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The delegates at the given index.
    */
   java.lang.String getDelegates(int index);
   /**
@@ -114,6 +125,9 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the delegates at the given index.
    */
   com.google.protobuf.ByteString getDelegatesBytes(int index);
 
@@ -125,6 +139,8 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>string payload = 5;</code>
+   *
+   * @return The payload.
    */
   java.lang.String getPayload();
   /**
@@ -135,6 +151,8 @@ public interface SignJwtRequestOrBuilder
    * </pre>
    *
    * <code>string payload = 5;</code>
+   *
+   * @return The bytes for payload.
    */
   com.google.protobuf.ByteString getPayloadBytes();
 }

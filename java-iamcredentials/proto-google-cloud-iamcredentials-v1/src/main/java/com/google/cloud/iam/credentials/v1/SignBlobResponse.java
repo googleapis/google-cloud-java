@@ -35,6 +35,12 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SignBlobResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -47,7 +53,6 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The keyId.
    */
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
@@ -134,6 +141,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string key_id = 1;</code>
+   *
+   * @return The bytes for keyId.
    */
   public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
@@ -157,6 +166,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>bytes signed_blob = 4;</code>
+   *
+   * @return The signedBlob.
    */
   public com.google.protobuf.ByteString getSignedBlob() {
     return signedBlob_;
@@ -496,6 +507,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @return The keyId.
      */
     public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
@@ -516,6 +529,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @return The bytes for keyId.
      */
     public com.google.protobuf.ByteString getKeyIdBytes() {
       java.lang.Object ref = keyId_;
@@ -536,6 +551,9 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @param value The keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyId(java.lang.String value) {
       if (value == null) {
@@ -554,6 +572,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKeyId() {
 
@@ -569,6 +589,9 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string key_id = 1;</code>
+     *
+     * @param value The bytes for keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -590,6 +613,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bytes signed_blob = 4;</code>
+     *
+     * @return The signedBlob.
      */
     public com.google.protobuf.ByteString getSignedBlob() {
       return signedBlob_;
@@ -602,6 +627,9 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bytes signed_blob = 4;</code>
+     *
+     * @param value The signedBlob to set.
+     * @return This builder for chaining.
      */
     public Builder setSignedBlob(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -620,6 +648,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bytes signed_blob = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignedBlob() {
 

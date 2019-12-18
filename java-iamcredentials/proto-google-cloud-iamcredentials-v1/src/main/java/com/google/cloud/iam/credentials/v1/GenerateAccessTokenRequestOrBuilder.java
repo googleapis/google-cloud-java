@@ -33,6 +33,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @return A list containing the delegates.
    */
   java.util.List<java.lang.String> getDelegatesList();
   /**
@@ -80,6 +86,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @return The count of delegates.
    */
   int getDelegatesCount();
   /**
@@ -97,6 +105,9 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The delegates at the given index.
    */
   java.lang.String getDelegates(int index);
   /**
@@ -114,6 +125,9 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the delegates at the given index.
    */
   com.google.protobuf.ByteString getDelegatesBytes(int index);
 
@@ -128,6 +142,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @return A list containing the scope.
    */
   java.util.List<java.lang.String> getScopeList();
   /**
@@ -141,6 +157,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @return The count of scope.
    */
   int getScopeCount();
   /**
@@ -154,6 +172,9 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scope at the given index.
    */
   java.lang.String getScope(int index);
   /**
@@ -167,6 +188,9 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>repeated string scope = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scope at the given index.
    */
   com.google.protobuf.ByteString getScopeBytes(int index);
 
@@ -181,6 +205,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration lifetime = 7;</code>
+   *
+   * @return Whether the lifetime field is set.
    */
   boolean hasLifetime();
   /**
@@ -194,6 +220,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration lifetime = 7;</code>
+   *
+   * @return The lifetime.
    */
   com.google.protobuf.Duration getLifetime();
   /**
