@@ -31,6 +31,8 @@ public interface RecommendationStateInfoOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface RecommendationStateInfoOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.recommender.v1beta1.RecommendationStateInfo.State getState();
 

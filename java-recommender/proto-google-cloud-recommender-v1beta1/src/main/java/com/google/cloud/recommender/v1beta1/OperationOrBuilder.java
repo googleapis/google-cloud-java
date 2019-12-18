@@ -33,6 +33,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string action = 1;</code>
+   *
+   * @return The action.
    */
   java.lang.String getAction();
   /**
@@ -45,6 +47,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string action = 1;</code>
+   *
+   * @return The bytes for action.
    */
   com.google.protobuf.ByteString getActionBytes();
 
@@ -58,6 +62,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string resource_type = 2;</code>
+   *
+   * @return The resourceType.
    */
   java.lang.String getResourceType();
   /**
@@ -70,6 +76,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string resource_type = 2;</code>
+   *
+   * @return The bytes for resourceType.
    */
   com.google.protobuf.ByteString getResourceTypeBytes();
 
@@ -82,6 +90,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string resource = 3;</code>
+   *
+   * @return The resource.
    */
   java.lang.String getResource();
   /**
@@ -93,6 +103,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string resource = 3;</code>
+   *
+   * @return The bytes for resource.
    */
   com.google.protobuf.ByteString getResourceBytes();
 
@@ -105,6 +117,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string path = 4;</code>
+   *
+   * @return The path.
    */
   java.lang.String getPath();
   /**
@@ -116,6 +130,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string path = 4;</code>
+   *
+   * @return The bytes for path.
    */
   com.google.protobuf.ByteString getPathBytes();
 
@@ -131,6 +147,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string source_resource = 5;</code>
+   *
+   * @return The sourceResource.
    */
   java.lang.String getSourceResource();
   /**
@@ -145,6 +163,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string source_resource = 5;</code>
+   *
+   * @return The bytes for sourceResource.
    */
   com.google.protobuf.ByteString getSourceResourceBytes();
 
@@ -157,6 +177,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string source_path = 6;</code>
+   *
+   * @return The sourcePath.
    */
   java.lang.String getSourcePath();
   /**
@@ -168,6 +190,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string source_path = 6;</code>
+   *
+   * @return The bytes for sourcePath.
    */
   com.google.protobuf.ByteString getSourcePathBytes();
 
@@ -181,6 +205,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
+   *
+   * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
@@ -193,6 +219,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
+   *
+   * @return The value.
    */
   com.google.protobuf.Value getValue();
   /**
@@ -217,6 +245,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   *
+   * @return Whether the valueMatcher field is set.
    */
   boolean hasValueMatcher();
   /**
@@ -228,6 +258,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   *
+   * @return The valueMatcher.
    */
   com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher();
   /**

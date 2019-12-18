@@ -33,6 +33,8 @@ public interface CostProjectionOrBuilder
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>
+   *
+   * @return Whether the cost field is set.
    */
   boolean hasCost();
   /**
@@ -45,6 +47,8 @@ public interface CostProjectionOrBuilder
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>
+   *
+   * @return The cost.
    */
   com.google.type.Money getCost();
   /**
@@ -68,6 +72,8 @@ public interface CostProjectionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   *
+   * @return Whether the duration field is set.
    */
   boolean hasDuration();
   /**
@@ -78,6 +84,8 @@ public interface CostProjectionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   *
+   * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
   /**

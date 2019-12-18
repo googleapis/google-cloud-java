@@ -54,6 +54,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Operation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -135,11 +141,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 pathFilters_ =
                     com.google.protobuf.MapField.newMapField(
                         PathFiltersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
                   pathFilters__ =
@@ -170,11 +176,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 pathValueMatchers_ =
                     com.google.protobuf.MapField.newMapField(
                         PathValueMatchersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
@@ -234,11 +240,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1beta1.Operation.Builder.class);
   }
 
-  private int bitField0_;
   private int pathValueCase_ = 0;
   private java.lang.Object pathValue_;
 
-  public enum PathValueCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PathValueCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VALUE(7),
     VALUE_MATCHER(10),
     PATHVALUE_NOT_SET(0);
@@ -247,7 +255,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     private PathValueCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PathValueCase valueOf(int value) {
       return forNumber(value);
@@ -287,6 +299,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action = 1;</code>
+   *
+   * @return The action.
    */
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
@@ -309,6 +323,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action = 1;</code>
+   *
+   * @return The bytes for action.
    */
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
@@ -334,6 +350,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_type = 2;</code>
+   *
+   * @return The resourceType.
    */
   public java.lang.String getResourceType() {
     java.lang.Object ref = resourceType_;
@@ -356,6 +374,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_type = 2;</code>
+   *
+   * @return The bytes for resourceType.
    */
   public com.google.protobuf.ByteString getResourceTypeBytes() {
     java.lang.Object ref = resourceType_;
@@ -380,6 +400,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource = 3;</code>
+   *
+   * @return The resource.
    */
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
@@ -401,6 +423,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource = 3;</code>
+   *
+   * @return The bytes for resource.
    */
   public com.google.protobuf.ByteString getResourceBytes() {
     java.lang.Object ref = resource_;
@@ -425,6 +449,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string path = 4;</code>
+   *
+   * @return The path.
    */
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
@@ -446,6 +472,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string path = 4;</code>
+   *
+   * @return The bytes for path.
    */
   public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
@@ -473,6 +501,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string source_resource = 5;</code>
+   *
+   * @return The sourceResource.
    */
   public java.lang.String getSourceResource() {
     java.lang.Object ref = sourceResource_;
@@ -497,6 +527,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string source_resource = 5;</code>
+   *
+   * @return The bytes for sourceResource.
    */
   public com.google.protobuf.ByteString getSourceResourceBytes() {
     java.lang.Object ref = sourceResource_;
@@ -521,6 +553,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string source_path = 6;</code>
+   *
+   * @return The sourcePath.
    */
   public java.lang.String getSourcePath() {
     java.lang.Object ref = sourcePath_;
@@ -542,6 +576,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string source_path = 6;</code>
+   *
+   * @return The bytes for sourcePath.
    */
   public com.google.protobuf.ByteString getSourcePathBytes() {
     java.lang.Object ref = sourcePath_;
@@ -566,6 +602,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
+   *
+   * @return Whether the value field is set.
    */
   public boolean hasValue() {
     return pathValueCase_ == 7;
@@ -580,6 +618,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
+   *
+   * @return The value.
    */
   public com.google.protobuf.Value getValue() {
     if (pathValueCase_ == 7) {
@@ -615,6 +655,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   *
+   * @return Whether the valueMatcher field is set.
    */
   public boolean hasValueMatcher() {
     return pathValueCase_ == 10;
@@ -628,6 +670,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   *
+   * @return The valueMatcher.
    */
   public com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher() {
     if (pathValueCase_ == 10) {
@@ -1357,7 +1401,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.recommender.v1beta1.Operation result =
           new com.google.cloud.recommender.v1beta1.Operation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.action_ = action_;
       result.resourceType_ = resourceType_;
       result.resource_ = resource_;
@@ -1382,7 +1425,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       result.pathFilters_.makeImmutable();
       result.pathValueMatchers_ = internalGetPathValueMatchers();
       result.pathValueMatchers_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.pathValueCase_ = pathValueCase_;
       onBuilt();
       return result;
@@ -1531,6 +1573,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 1;</code>
+     *
+     * @return The action.
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -1553,6 +1597,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 1;</code>
+     *
+     * @return The bytes for action.
      */
     public com.google.protobuf.ByteString getActionBytes() {
       java.lang.Object ref = action_;
@@ -1575,6 +1621,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 1;</code>
+     *
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
     public Builder setAction(java.lang.String value) {
       if (value == null) {
@@ -1595,6 +1644,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAction() {
 
@@ -1612,6 +1663,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action = 1;</code>
+     *
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
      */
     public Builder setActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1635,6 +1689,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return The resourceType.
      */
     public java.lang.String getResourceType() {
       java.lang.Object ref = resourceType_;
@@ -1657,6 +1713,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return The bytes for resourceType.
      */
     public com.google.protobuf.ByteString getResourceTypeBytes() {
       java.lang.Object ref = resourceType_;
@@ -1679,6 +1737,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceType(java.lang.String value) {
       if (value == null) {
@@ -1699,6 +1760,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResourceType() {
 
@@ -1716,6 +1779,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @param value The bytes for resourceType to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1738,6 +1804,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource = 3;</code>
+     *
+     * @return The resource.
      */
     public java.lang.String getResource() {
       java.lang.Object ref = resource_;
@@ -1759,6 +1827,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource = 3;</code>
+     *
+     * @return The bytes for resource.
      */
     public com.google.protobuf.ByteString getResourceBytes() {
       java.lang.Object ref = resource_;
@@ -1780,6 +1850,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource = 3;</code>
+     *
+     * @param value The resource to set.
+     * @return This builder for chaining.
      */
     public Builder setResource(java.lang.String value) {
       if (value == null) {
@@ -1799,6 +1872,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResource() {
 
@@ -1815,6 +1890,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource = 3;</code>
+     *
+     * @param value The bytes for resource to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1837,6 +1915,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 4;</code>
+     *
+     * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -1858,6 +1938,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 4;</code>
+     *
+     * @return The bytes for path.
      */
     public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
@@ -1879,6 +1961,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 4;</code>
+     *
+     * @param value The path to set.
+     * @return This builder for chaining.
      */
     public Builder setPath(java.lang.String value) {
       if (value == null) {
@@ -1898,6 +1983,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPath() {
 
@@ -1914,6 +2001,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 4;</code>
+     *
+     * @param value The bytes for path to set.
+     * @return This builder for chaining.
      */
     public Builder setPathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1939,6 +2029,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_resource = 5;</code>
+     *
+     * @return The sourceResource.
      */
     public java.lang.String getSourceResource() {
       java.lang.Object ref = sourceResource_;
@@ -1963,6 +2055,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_resource = 5;</code>
+     *
+     * @return The bytes for sourceResource.
      */
     public com.google.protobuf.ByteString getSourceResourceBytes() {
       java.lang.Object ref = sourceResource_;
@@ -1987,6 +2081,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_resource = 5;</code>
+     *
+     * @param value The sourceResource to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceResource(java.lang.String value) {
       if (value == null) {
@@ -2009,6 +2106,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_resource = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourceResource() {
 
@@ -2028,6 +2127,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_resource = 5;</code>
+     *
+     * @param value The bytes for sourceResource to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2050,6 +2152,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_path = 6;</code>
+     *
+     * @return The sourcePath.
      */
     public java.lang.String getSourcePath() {
       java.lang.Object ref = sourcePath_;
@@ -2071,6 +2175,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_path = 6;</code>
+     *
+     * @return The bytes for sourcePath.
      */
     public com.google.protobuf.ByteString getSourcePathBytes() {
       java.lang.Object ref = sourcePath_;
@@ -2092,6 +2198,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_path = 6;</code>
+     *
+     * @param value The sourcePath to set.
+     * @return This builder for chaining.
      */
     public Builder setSourcePath(java.lang.String value) {
       if (value == null) {
@@ -2111,6 +2220,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_path = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourcePath() {
 
@@ -2127,6 +2238,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_path = 6;</code>
+     *
+     * @param value The bytes for sourcePath to set.
+     * @return This builder for chaining.
      */
     public Builder setSourcePathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2154,6 +2268,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
+     *
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return pathValueCase_ == 7;
@@ -2168,6 +2284,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
+     *
+     * @return The value.
      */
     public com.google.protobuf.Value getValue() {
       if (valueBuilder_ == null) {
@@ -2368,6 +2486,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     *
+     * @return Whether the valueMatcher field is set.
      */
     public boolean hasValueMatcher() {
       return pathValueCase_ == 10;
@@ -2381,6 +2501,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     *
+     * @return The valueMatcher.
      */
     public com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher() {
       if (valueMatcherBuilder_ == null) {

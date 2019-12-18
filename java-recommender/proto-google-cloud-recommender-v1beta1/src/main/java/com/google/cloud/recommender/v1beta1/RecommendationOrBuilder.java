@@ -33,6 +33,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -68,6 +74,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -86,6 +94,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string recommender_subtype = 12;</code>
+   *
+   * @return The recommenderSubtype.
    */
   java.lang.String getRecommenderSubtype();
   /**
@@ -103,6 +113,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string recommender_subtype = 12;</code>
+   *
+   * @return The bytes for recommenderSubtype.
    */
   com.google.protobuf.ByteString getRecommenderSubtypeBytes();
 
@@ -115,6 +127,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
+   *
+   * @return Whether the lastRefreshTime field is set.
    */
   boolean hasLastRefreshTime();
   /**
@@ -126,6 +140,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
+   *
+   * @return The lastRefreshTime.
    */
   com.google.protobuf.Timestamp getLastRefreshTime();
   /**
@@ -149,6 +165,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
+   *
+   * @return Whether the primaryImpact field is set.
    */
   boolean hasPrimaryImpact();
   /**
@@ -160,6 +178,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
+   *
+   * @return The primaryImpact.
    */
   com.google.cloud.recommender.v1beta1.Impact getPrimaryImpact();
   /**
@@ -244,6 +264,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
+   *
+   * @return Whether the content field is set.
    */
   boolean hasContent();
   /**
@@ -254,6 +276,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
+   *
+   * @return The content.
    */
   com.google.cloud.recommender.v1beta1.RecommendationContent getContent();
   /**
@@ -275,6 +299,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
+   *
+   * @return Whether the stateInfo field is set.
    */
   boolean hasStateInfo();
   /**
@@ -285,6 +311,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
+   *
+   * @return The stateInfo.
    */
   com.google.cloud.recommender.v1beta1.RecommendationStateInfo getStateInfo();
   /**
@@ -307,6 +335,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string etag = 11;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -318,6 +348,8 @@ public interface RecommendationOrBuilder
    * </pre>
    *
    * <code>string etag = 11;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 }

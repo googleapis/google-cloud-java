@@ -31,6 +31,8 @@ public interface ImpactOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+   *
+   * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
   /**
@@ -41,6 +43,8 @@ public interface ImpactOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+   *
+   * @return The category.
    */
   com.google.cloud.recommender.v1beta1.Impact.Category getCategory();
 
@@ -52,6 +56,8 @@ public interface ImpactOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
+   *
+   * @return Whether the costProjection field is set.
    */
   boolean hasCostProjection();
   /**
@@ -62,6 +68,8 @@ public interface ImpactOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
+   *
+   * @return The costProjection.
    */
   com.google.cloud.recommender.v1beta1.CostProjection getCostProjection();
   /**

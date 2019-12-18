@@ -31,6 +31,8 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -111,6 +115,8 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * </pre>
    *
    * <code>string etag = 3;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -121,6 +127,8 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * </pre>
    *
    * <code>string etag = 3;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 }

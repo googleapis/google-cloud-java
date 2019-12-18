@@ -44,6 +44,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MarkRecommendationSucceededRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,11 +82,11 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stateMetadata_ =
                     com.google.protobuf.MapField.newMapField(
                         StateMetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> stateMetadata__ =
                   input.readMessage(
@@ -143,7 +149,6 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
             com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -154,6 +159,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -174,6 +181,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -297,6 +306,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * </pre>
    *
    * <code>string etag = 3;</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -317,6 +328,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * </pre>
    *
    * <code>string etag = 3;</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -620,12 +633,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
       com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest result =
           new com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.stateMetadata_ = internalGetStateMetadata();
       result.stateMetadata_.makeImmutable();
       result.etag_ = etag_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -731,6 +742,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -751,6 +764,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -771,6 +786,9 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -789,6 +807,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -804,6 +824,9 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -987,6 +1010,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string etag = 3;</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -1007,6 +1032,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string etag = 3;</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -1027,6 +1054,9 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string etag = 3;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -1045,6 +1075,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string etag = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -1060,6 +1092,9 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * </pre>
      *
      * <code>string etag = 3;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

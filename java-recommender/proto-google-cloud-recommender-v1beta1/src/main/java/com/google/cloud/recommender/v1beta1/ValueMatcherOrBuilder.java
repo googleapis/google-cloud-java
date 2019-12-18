@@ -33,6 +33,8 @@ public interface ValueMatcherOrBuilder
    * </pre>
    *
    * <code>string matches_pattern = 1;</code>
+   *
+   * @return The matchesPattern.
    */
   java.lang.String getMatchesPattern();
   /**
@@ -45,6 +47,8 @@ public interface ValueMatcherOrBuilder
    * </pre>
    *
    * <code>string matches_pattern = 1;</code>
+   *
+   * @return The bytes for matchesPattern.
    */
   com.google.protobuf.ByteString getMatchesPatternBytes();
 

@@ -40,6 +40,12 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
   private CostProjection() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CostProjection();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>
+   *
+   * @return Whether the cost field is set.
    */
   public boolean hasCost() {
     return cost_ != null;
@@ -152,6 +159,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>
+   *
+   * @return The cost.
    */
   public com.google.type.Money getCost() {
     return cost_ == null ? com.google.type.Money.getDefaultInstance() : cost_;
@@ -181,6 +190,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   *
+   * @return Whether the duration field is set.
    */
   public boolean hasDuration() {
     return duration_ != null;
@@ -193,6 +204,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   *
+   * @return The duration.
    */
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
@@ -582,6 +595,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Money cost = 1;</code>
+     *
+     * @return Whether the cost field is set.
      */
     public boolean hasCost() {
       return costBuilder_ != null || cost_ != null;
@@ -596,6 +611,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Money cost = 1;</code>
+     *
+     * @return The cost.
      */
     public com.google.type.Money getCost() {
       if (costBuilder_ == null) {
@@ -769,6 +786,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
       return durationBuilder_ != null || duration_ != null;
@@ -781,6 +800,8 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 2;</code>
+     *
+     * @return The duration.
      */
     public com.google.protobuf.Duration getDuration() {
       if (durationBuilder_ == null) {

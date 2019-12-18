@@ -40,6 +40,12 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
   private ValueMatcher() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ValueMatcher();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,7 +112,10 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
   private int matchVariantCase_ = 0;
   private java.lang.Object matchVariant_;
 
-  public enum MatchVariantCase implements com.google.protobuf.Internal.EnumLite {
+  public enum MatchVariantCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MATCHES_PATTERN(1),
     MATCHVARIANT_NOT_SET(0);
     private final int value;
@@ -115,7 +123,11 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
     private MatchVariantCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MatchVariantCase valueOf(int value) {
       return forNumber(value);
@@ -152,6 +164,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string matches_pattern = 1;</code>
+   *
+   * @return The matchesPattern.
    */
   public java.lang.String getMatchesPattern() {
     java.lang.Object ref = "";
@@ -179,6 +193,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string matches_pattern = 1;</code>
+   *
+   * @return The bytes for matchesPattern.
    */
   public com.google.protobuf.ByteString getMatchesPatternBytes() {
     java.lang.Object ref = "";
@@ -564,6 +580,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string matches_pattern = 1;</code>
+     *
+     * @return The matchesPattern.
      */
     public java.lang.String getMatchesPattern() {
       java.lang.Object ref = "";
@@ -591,6 +609,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string matches_pattern = 1;</code>
+     *
+     * @return The bytes for matchesPattern.
      */
     public com.google.protobuf.ByteString getMatchesPatternBytes() {
       java.lang.Object ref = "";
@@ -618,6 +638,9 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string matches_pattern = 1;</code>
+     *
+     * @param value The matchesPattern to set.
+     * @return This builder for chaining.
      */
     public Builder setMatchesPattern(java.lang.String value) {
       if (value == null) {
@@ -638,6 +661,8 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string matches_pattern = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMatchesPattern() {
       if (matchVariantCase_ == 1) {
@@ -657,6 +682,9 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string matches_pattern = 1;</code>
+     *
+     * @param value The bytes for matchesPattern to set.
+     * @return This builder for chaining.
      */
     public Builder setMatchesPatternBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

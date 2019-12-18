@@ -47,6 +47,12 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Recommendation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -117,10 +123,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 additionalImpact_ =
                     new java.util.ArrayList<com.google.cloud.recommender.v1beta1.Impact>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               additionalImpact_.add(
                   input.readMessage(
@@ -190,7 +196,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         additionalImpact_ = java.util.Collections.unmodifiableList(additionalImpact_);
       }
       this.unknownFields = unknownFields.build();
@@ -213,7 +219,6 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1beta1.Recommendation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -226,6 +231,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -248,6 +255,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -272,6 +281,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -293,6 +304,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -323,6 +336,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string recommender_subtype = 12;</code>
+   *
+   * @return The recommenderSubtype.
    */
   public java.lang.String getRecommenderSubtype() {
     java.lang.Object ref = recommenderSubtype_;
@@ -350,6 +365,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string recommender_subtype = 12;</code>
+   *
+   * @return The bytes for recommenderSubtype.
    */
   public com.google.protobuf.ByteString getRecommenderSubtypeBytes() {
     java.lang.Object ref = recommenderSubtype_;
@@ -374,6 +391,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
+   *
+   * @return Whether the lastRefreshTime field is set.
    */
   public boolean hasLastRefreshTime() {
     return lastRefreshTime_ != null;
@@ -387,6 +406,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
+   *
+   * @return The lastRefreshTime.
    */
   public com.google.protobuf.Timestamp getLastRefreshTime() {
     return lastRefreshTime_ == null
@@ -418,6 +439,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
+   *
+   * @return Whether the primaryImpact field is set.
    */
   public boolean hasPrimaryImpact() {
     return primaryImpact_ != null;
@@ -431,6 +454,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
+   *
+   * @return The primaryImpact.
    */
   public com.google.cloud.recommender.v1beta1.Impact getPrimaryImpact() {
     return primaryImpact_ == null
@@ -536,6 +561,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
+   *
+   * @return Whether the content field is set.
    */
   public boolean hasContent() {
     return content_ != null;
@@ -548,6 +575,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
+   *
+   * @return The content.
    */
   public com.google.cloud.recommender.v1beta1.RecommendationContent getContent() {
     return content_ == null
@@ -577,6 +606,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
+   *
+   * @return Whether the stateInfo field is set.
    */
   public boolean hasStateInfo() {
     return stateInfo_ != null;
@@ -589,6 +620,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
+   *
+   * @return The stateInfo.
    */
   public com.google.cloud.recommender.v1beta1.RecommendationStateInfo getStateInfo() {
     return stateInfo_ == null
@@ -620,6 +653,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 11;</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -641,6 +676,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 11;</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -975,7 +1012,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       }
       if (additionalImpactBuilder_ == null) {
         additionalImpact_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         additionalImpactBuilder_.clear();
       }
@@ -1021,7 +1058,6 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.recommender.v1beta1.Recommendation result =
           new com.google.cloud.recommender.v1beta1.Recommendation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.recommenderSubtype_ = recommenderSubtype_;
@@ -1036,9 +1072,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
         result.primaryImpact_ = primaryImpactBuilder_.build();
       }
       if (additionalImpactBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           additionalImpact_ = java.util.Collections.unmodifiableList(additionalImpact_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.additionalImpact_ = additionalImpact_;
       } else {
@@ -1055,7 +1091,6 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
         result.stateInfo_ = stateInfoBuilder_.build();
       }
       result.etag_ = etag_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1128,7 +1163,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
         if (!other.additionalImpact_.isEmpty()) {
           if (additionalImpact_.isEmpty()) {
             additionalImpact_ = other.additionalImpact_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAdditionalImpactIsMutable();
             additionalImpact_.addAll(other.additionalImpact_);
@@ -1141,7 +1176,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
             additionalImpactBuilder_.dispose();
             additionalImpactBuilder_ = null;
             additionalImpact_ = other.additionalImpact_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
             additionalImpactBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalImpactFieldBuilder()
@@ -1204,6 +1239,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1226,6 +1263,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1248,6 +1287,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1268,6 +1310,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1285,6 +1329,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1307,6 +1354,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1328,6 +1377,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1349,6 +1400,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1368,6 +1422,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1384,6 +1440,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1412,6 +1471,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string recommender_subtype = 12;</code>
+     *
+     * @return The recommenderSubtype.
      */
     public java.lang.String getRecommenderSubtype() {
       java.lang.Object ref = recommenderSubtype_;
@@ -1439,6 +1500,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string recommender_subtype = 12;</code>
+     *
+     * @return The bytes for recommenderSubtype.
      */
     public com.google.protobuf.ByteString getRecommenderSubtypeBytes() {
       java.lang.Object ref = recommenderSubtype_;
@@ -1466,6 +1529,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string recommender_subtype = 12;</code>
+     *
+     * @param value The recommenderSubtype to set.
+     * @return This builder for chaining.
      */
     public Builder setRecommenderSubtype(java.lang.String value) {
       if (value == null) {
@@ -1491,6 +1557,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string recommender_subtype = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRecommenderSubtype() {
 
@@ -1513,6 +1581,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string recommender_subtype = 12;</code>
+     *
+     * @param value The bytes for recommenderSubtype to set.
+     * @return This builder for chaining.
      */
     public Builder setRecommenderSubtypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1540,6 +1611,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
+     *
+     * @return Whether the lastRefreshTime field is set.
      */
     public boolean hasLastRefreshTime() {
       return lastRefreshTimeBuilder_ != null || lastRefreshTime_ != null;
@@ -1553,6 +1626,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
+     *
+     * @return The lastRefreshTime.
      */
     public com.google.protobuf.Timestamp getLastRefreshTime() {
       if (lastRefreshTimeBuilder_ == null) {
@@ -1730,6 +1805,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
+     *
+     * @return Whether the primaryImpact field is set.
      */
     public boolean hasPrimaryImpact() {
       return primaryImpactBuilder_ != null || primaryImpact_ != null;
@@ -1743,6 +1820,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
+     *
+     * @return The primaryImpact.
      */
     public com.google.cloud.recommender.v1beta1.Impact getPrimaryImpact() {
       if (primaryImpactBuilder_ == null) {
@@ -1910,10 +1989,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAdditionalImpactIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         additionalImpact_ =
             new java.util.ArrayList<com.google.cloud.recommender.v1beta1.Impact>(additionalImpact_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2153,7 +2232,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdditionalImpact() {
       if (additionalImpactBuilder_ == null) {
         additionalImpact_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         additionalImpactBuilder_.clear();
@@ -2293,7 +2372,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.recommender.v1beta1.Impact.Builder,
                 com.google.cloud.recommender.v1beta1.ImpactOrBuilder>(
                 additionalImpact_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         additionalImpact_ = null;
@@ -2315,6 +2394,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
+     *
+     * @return Whether the content field is set.
      */
     public boolean hasContent() {
       return contentBuilder_ != null || content_ != null;
@@ -2327,6 +2408,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
+     *
+     * @return The content.
      */
     public com.google.cloud.recommender.v1beta1.RecommendationContent getContent() {
       if (contentBuilder_ == null) {
@@ -2498,6 +2581,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
+     *
+     * @return Whether the stateInfo field is set.
      */
     public boolean hasStateInfo() {
       return stateInfoBuilder_ != null || stateInfo_ != null;
@@ -2510,6 +2595,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
+     *
+     * @return The stateInfo.
      */
     public com.google.cloud.recommender.v1beta1.RecommendationStateInfo getStateInfo() {
       if (stateInfoBuilder_ == null) {
@@ -2680,6 +2767,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 11;</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -2701,6 +2790,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 11;</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -2722,6 +2813,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 11;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -2741,6 +2835,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -2757,6 +2853,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 11;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -42,6 +42,12 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Impact();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -247,12 +252,20 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Category valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Category forNumber(int value) {
       switch (value) {
         case 0:
@@ -317,7 +330,10 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
   private int projectionCase_ = 0;
   private java.lang.Object projection_;
 
-  public enum ProjectionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ProjectionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COST_PROJECTION(100),
     PROJECTION_NOT_SET(0);
     private final int value;
@@ -325,7 +341,11 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     private ProjectionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ProjectionCase valueOf(int value) {
       return forNumber(value);
@@ -361,6 +381,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+   *
+   * @return The enum numeric value on the wire for category.
    */
   public int getCategoryValue() {
     return category_;
@@ -373,6 +395,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+   *
+   * @return The category.
    */
   public com.google.cloud.recommender.v1beta1.Impact.Category getCategory() {
     @SuppressWarnings("deprecation")
@@ -392,6 +416,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
+   *
+   * @return Whether the costProjection field is set.
    */
   public boolean hasCostProjection() {
     return projectionCase_ == 100;
@@ -404,6 +430,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
+   *
+   * @return The costProjection.
    */
   public com.google.cloud.recommender.v1beta1.CostProjection getCostProjection() {
     if (projectionCase_ == 100) {
@@ -812,6 +840,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+     *
+     * @return The enum numeric value on the wire for category.
      */
     public int getCategoryValue() {
       return category_;
@@ -824,6 +854,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for category to set.
+     * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
       category_ = value;
@@ -838,6 +871,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+     *
+     * @return The category.
      */
     public com.google.cloud.recommender.v1beta1.Impact.Category getCategory() {
       @SuppressWarnings("deprecation")
@@ -855,6 +890,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+     *
+     * @param value The category to set.
+     * @return This builder for chaining.
      */
     public Builder setCategory(com.google.cloud.recommender.v1beta1.Impact.Category value) {
       if (value == null) {
@@ -873,6 +911,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.Impact.Category category = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCategory() {
 
@@ -894,6 +934,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
+     *
+     * @return Whether the costProjection field is set.
      */
     public boolean hasCostProjection() {
       return projectionCase_ == 100;
@@ -906,6 +948,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
+     *
+     * @return The costProjection.
      */
     public com.google.cloud.recommender.v1beta1.CostProjection getCostProjection() {
       if (costProjectionBuilder_ == null) {

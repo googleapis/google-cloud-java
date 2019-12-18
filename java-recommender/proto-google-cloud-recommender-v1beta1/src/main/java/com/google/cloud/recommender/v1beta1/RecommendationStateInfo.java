@@ -42,6 +42,12 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecommendationStateInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,11 +80,11 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stateMetadata_ =
                     com.google.protobuf.MapField.newMapField(
                         StateMetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> stateMetadata__ =
                   input.readMessage(
@@ -296,12 +302,20 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -367,7 +381,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.recommender.v1beta1.RecommendationStateInfo.State)
   }
 
-  private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_;
   /**
@@ -378,6 +391,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -390,6 +405,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.recommender.v1beta1.RecommendationStateInfo.State getState() {
     @SuppressWarnings("deprecation")
@@ -774,11 +791,9 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       com.google.cloud.recommender.v1beta1.RecommendationStateInfo result =
           new com.google.cloud.recommender.v1beta1.RecommendationStateInfo(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.state_ = state_;
       result.stateMetadata_ = internalGetStateMetadata();
       result.stateMetadata_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -875,6 +890,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -887,6 +904,9 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -901,6 +921,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.recommender.v1beta1.RecommendationStateInfo.State getState() {
       @SuppressWarnings("deprecation")
@@ -918,6 +940,9 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(
         com.google.cloud.recommender.v1beta1.RecommendationStateInfo.State value) {
@@ -937,6 +962,8 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo.State state = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
