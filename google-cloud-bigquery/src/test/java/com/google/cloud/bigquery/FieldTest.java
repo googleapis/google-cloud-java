@@ -126,7 +126,8 @@ public class FieldTest {
   public void testToBuilderIncompleteStandardWithStandardSQLTypeName() {
     Field field = Field.of(FIELD_NAME1, FIELD_TYPE1_STANDARD);
     compareFieldSchemas(field, field.toBuilder().build());
-    field = Field.of(FIELD_NAME2, FIELD_TYPE3_STANDARD, STANDARD_FIELD_SCHEMA1, STANDARD_FIELD_SCHEMA2);
+    field =
+        Field.of(FIELD_NAME2, FIELD_TYPE3_STANDARD, STANDARD_FIELD_SCHEMA1, STANDARD_FIELD_SCHEMA2);
     compareFieldSchemas(field, field.toBuilder().build());
   }
 
