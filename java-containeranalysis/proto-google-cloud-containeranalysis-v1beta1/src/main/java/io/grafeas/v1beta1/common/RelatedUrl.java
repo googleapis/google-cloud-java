@@ -43,6 +43,12 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RelatedUrl();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -143,6 +150,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
@@ -166,6 +175,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string label = 2;</code>
+   *
+   * @return The label.
    */
   public java.lang.String getLabel() {
     java.lang.Object ref = label_;
@@ -186,6 +197,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string label = 2;</code>
+   *
+   * @return The bytes for label.
    */
   public com.google.protobuf.ByteString getLabelBytes() {
     java.lang.Object ref = label_;
@@ -535,6 +548,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -555,6 +570,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
@@ -575,6 +592,9 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(java.lang.String value) {
       if (value == null) {
@@ -593,6 +613,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
 
@@ -608,6 +630,9 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -629,6 +654,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string label = 2;</code>
+     *
+     * @return The label.
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -649,6 +676,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string label = 2;</code>
+     *
+     * @return The bytes for label.
      */
     public com.google.protobuf.ByteString getLabelBytes() {
       java.lang.Object ref = label_;
@@ -669,6 +698,9 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string label = 2;</code>
+     *
+     * @param value The label to set.
+     * @return This builder for chaining.
      */
     public Builder setLabel(java.lang.String value) {
       if (value == null) {
@@ -687,6 +719,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string label = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLabel() {
 
@@ -702,6 +736,9 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string label = 2;</code>
+     *
+     * @param value The bytes for label to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

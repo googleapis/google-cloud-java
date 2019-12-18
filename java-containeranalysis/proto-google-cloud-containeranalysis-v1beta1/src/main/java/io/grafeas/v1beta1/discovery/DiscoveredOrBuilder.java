@@ -31,6 +31,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+   *
+   * @return The enum numeric value on the wire for continuousAnalysis.
    */
   int getContinuousAnalysisValue();
   /**
@@ -41,6 +43,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+   *
+   * @return The continuousAnalysis.
    */
   io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis();
 
@@ -52,6 +56,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
+   *
+   * @return Whether the lastAnalysisTime field is set.
    */
   boolean hasLastAnalysisTime();
   /**
@@ -62,6 +68,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
+   *
+   * @return The lastAnalysisTime.
    */
   com.google.protobuf.Timestamp getLastAnalysisTime();
   /**
@@ -83,6 +91,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+   *
+   * @return The enum numeric value on the wire for analysisStatus.
    */
   int getAnalysisStatusValue();
   /**
@@ -93,6 +103,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+   *
+   * @return The analysisStatus.
    */
   io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus();
 
@@ -106,6 +118,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status analysis_status_error = 4;</code>
+   *
+   * @return Whether the analysisStatusError field is set.
    */
   boolean hasAnalysisStatusError();
   /**
@@ -118,6 +132,8 @@ public interface DiscoveredOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status analysis_status_error = 4;</code>
+   *
+   * @return The analysisStatusError.
    */
   com.google.rpc.Status getAnalysisStatusError();
   /**

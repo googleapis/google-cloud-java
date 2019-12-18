@@ -43,6 +43,12 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Layer();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -494,12 +499,20 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Directive valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Directive forNumber(int value) {
       switch (value) {
         case 0:
@@ -597,6 +610,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   *
+   * @return The enum numeric value on the wire for directive.
    */
   public int getDirectiveValue() {
     return directive_;
@@ -609,6 +624,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   *
+   * @return The directive.
    */
   public io.grafeas.v1beta1.image.Layer.Directive getDirective() {
     @SuppressWarnings("deprecation")
@@ -627,6 +644,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   *
+   * @return The arguments.
    */
   public java.lang.String getArguments() {
     java.lang.Object ref = arguments_;
@@ -647,6 +666,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   *
+   * @return The bytes for arguments.
    */
   public com.google.protobuf.ByteString getArgumentsBytes() {
     java.lang.Object ref = arguments_;
@@ -994,6 +1015,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     *
+     * @return The enum numeric value on the wire for directive.
      */
     public int getDirectiveValue() {
       return directive_;
@@ -1006,6 +1029,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for directive to set.
+     * @return This builder for chaining.
      */
     public Builder setDirectiveValue(int value) {
       directive_ = value;
@@ -1020,6 +1046,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     *
+     * @return The directive.
      */
     public io.grafeas.v1beta1.image.Layer.Directive getDirective() {
       @SuppressWarnings("deprecation")
@@ -1035,6 +1063,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     *
+     * @param value The directive to set.
+     * @return This builder for chaining.
      */
     public Builder setDirective(io.grafeas.v1beta1.image.Layer.Directive value) {
       if (value == null) {
@@ -1053,6 +1084,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDirective() {
 
@@ -1070,6 +1103,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @return The arguments.
      */
     public java.lang.String getArguments() {
       java.lang.Object ref = arguments_;
@@ -1090,6 +1125,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @return The bytes for arguments.
      */
     public com.google.protobuf.ByteString getArgumentsBytes() {
       java.lang.Object ref = arguments_;
@@ -1110,6 +1147,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @param value The arguments to set.
+     * @return This builder for chaining.
      */
     public Builder setArguments(java.lang.String value) {
       if (value == null) {
@@ -1128,6 +1168,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArguments() {
 
@@ -1143,6 +1185,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @param value The bytes for arguments to set.
+     * @return This builder for chaining.
      */
     public Builder setArgumentsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

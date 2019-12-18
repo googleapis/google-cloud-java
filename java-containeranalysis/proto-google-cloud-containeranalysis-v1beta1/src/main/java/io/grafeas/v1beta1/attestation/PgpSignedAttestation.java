@@ -45,6 +45,12 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PgpSignedAttestation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -191,12 +196,20 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ContentType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ContentType forNumber(int value) {
       switch (value) {
         case 0:
@@ -257,7 +270,10 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
   private int keyIdCase_ = 0;
   private java.lang.Object keyId_;
 
-  public enum KeyIdCase implements com.google.protobuf.Internal.EnumLite {
+  public enum KeyIdCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PGP_KEY_ID(2),
     KEYID_NOT_SET(0);
     private final int value;
@@ -265,7 +281,11 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     private KeyIdCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static KeyIdCase valueOf(int value) {
       return forNumber(value);
@@ -309,6 +329,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string signature = 1;</code>
+   *
+   * @return The signature.
    */
   public java.lang.String getSignature() {
     java.lang.Object ref = signature_;
@@ -337,6 +359,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string signature = 1;</code>
+   *
+   * @return The bytes for signature.
    */
   public com.google.protobuf.ByteString getSignatureBytes() {
     java.lang.Object ref = signature_;
@@ -363,6 +387,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   public int getContentTypeValue() {
     return contentType_;
@@ -378,6 +404,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   *
+   * @return The contentType.
    */
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType() {
     @SuppressWarnings("deprecation")
@@ -412,6 +440,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   *
+   * @return The pgpKeyId.
    */
   public java.lang.String getPgpKeyId() {
     java.lang.Object ref = "";
@@ -452,6 +482,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   *
+   * @return The bytes for pgpKeyId.
    */
   public com.google.protobuf.ByteString getPgpKeyIdBytes() {
     java.lang.Object ref = "";
@@ -881,6 +913,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string signature = 1;</code>
+     *
+     * @return The signature.
      */
     public java.lang.String getSignature() {
       java.lang.Object ref = signature_;
@@ -909,6 +943,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string signature = 1;</code>
+     *
+     * @return The bytes for signature.
      */
     public com.google.protobuf.ByteString getSignatureBytes() {
       java.lang.Object ref = signature_;
@@ -937,6 +973,9 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string signature = 1;</code>
+     *
+     * @param value The signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignature(java.lang.String value) {
       if (value == null) {
@@ -963,6 +1002,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string signature = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignature() {
 
@@ -986,6 +1027,9 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string signature = 1;</code>
+     *
+     * @param value The bytes for signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignatureBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1010,6 +1054,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for contentType.
      */
     public int getContentTypeValue() {
       return contentType_;
@@ -1025,6 +1071,9 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
       contentType_ = value;
@@ -1042,6 +1091,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     *
+     * @return The contentType.
      */
     public io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType() {
       @SuppressWarnings("deprecation")
@@ -1062,6 +1113,9 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     *
+     * @param value The contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentType(
         io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType value) {
@@ -1084,6 +1138,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContentType() {
 
@@ -1115,6 +1171,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     *
+     * @return The pgpKeyId.
      */
     public java.lang.String getPgpKeyId() {
       java.lang.Object ref = "";
@@ -1155,6 +1213,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     *
+     * @return The bytes for pgpKeyId.
      */
     public com.google.protobuf.ByteString getPgpKeyIdBytes() {
       java.lang.Object ref = "";
@@ -1195,6 +1255,9 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     *
+     * @param value The pgpKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setPgpKeyId(java.lang.String value) {
       if (value == null) {
@@ -1228,6 +1291,8 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPgpKeyId() {
       if (keyIdCase_ == 2) {
@@ -1260,6 +1325,9 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     *
+     * @param value The bytes for pgpKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setPgpKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

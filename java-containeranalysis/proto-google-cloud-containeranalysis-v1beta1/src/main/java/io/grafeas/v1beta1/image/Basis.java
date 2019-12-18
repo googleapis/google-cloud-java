@@ -46,6 +46,12 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Basis();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +140,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
+   * @return The resourceUrl.
    */
   public java.lang.String getResourceUrl() {
     java.lang.Object ref = resourceUrl_;
@@ -156,6 +163,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
+   * @return The bytes for resourceUrl.
    */
   public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
@@ -179,6 +188,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+   *
+   * @return Whether the fingerprint field is set.
    */
   public boolean hasFingerprint() {
     return fingerprint_ != null;
@@ -191,6 +202,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+   *
+   * @return The fingerprint.
    */
   public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
     return fingerprint_ == null
@@ -562,6 +575,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
+     * @return The resourceUrl.
      */
     public java.lang.String getResourceUrl() {
       java.lang.Object ref = resourceUrl_;
@@ -583,6 +598,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
+     * @return The bytes for resourceUrl.
      */
     public com.google.protobuf.ByteString getResourceUrlBytes() {
       java.lang.Object ref = resourceUrl_;
@@ -604,6 +621,9 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
+     * @param value The resourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUrl(java.lang.String value) {
       if (value == null) {
@@ -623,6 +643,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
 
@@ -639,6 +661,9 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
+     * @param value The bytes for resourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -665,6 +690,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+     *
+     * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
       return fingerprintBuilder_ != null || fingerprint_ != null;
@@ -677,6 +704,8 @@ public final class Basis extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+     *
+     * @return The fingerprint.
      */
     public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
       if (fingerprintBuilder_ == null) {

@@ -45,6 +45,12 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Occurrence();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -284,7 +289,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   private int detailsCase_ = 0;
   private java.lang.Object details_;
 
-  public enum DetailsCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DetailsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VULNERABILITY(8),
     BUILD(9),
     DERIVED_IMAGE(10),
@@ -298,7 +306,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DetailsCase valueOf(int value) {
       return forNumber(value);
@@ -347,6 +359,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -368,6 +382,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -391,6 +407,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.Resource resource = 2;</code>
+   *
+   * @return Whether the resource field is set.
    */
   public boolean hasResource() {
     return resource_ != null;
@@ -403,6 +421,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.Resource resource = 2;</code>
+   *
+   * @return The resource.
    */
   public io.grafeas.v1beta1.Resource getResource() {
     return resource_ == null ? io.grafeas.v1beta1.Resource.getDefaultInstance() : resource_;
@@ -432,6 +452,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string note_name = 3;</code>
+   *
+   * @return The noteName.
    */
   public java.lang.String getNoteName() {
     java.lang.Object ref = noteName_;
@@ -454,6 +476,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string note_name = 3;</code>
+   *
+   * @return The bytes for noteName.
    */
   public com.google.protobuf.ByteString getNoteNameBytes() {
     java.lang.Object ref = noteName_;
@@ -478,6 +502,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
@@ -491,6 +517,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+   *
+   * @return The kind.
    */
   public io.grafeas.v1beta1.common.NoteKind getKind() {
     @SuppressWarnings("deprecation")
@@ -508,6 +536,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
+   * @return The remediation.
    */
   public java.lang.String getRemediation() {
     java.lang.Object ref = remediation_;
@@ -528,6 +558,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
+   * @return The bytes for remediation.
    */
   public com.google.protobuf.ByteString getRemediationBytes() {
     java.lang.Object ref = remediation_;
@@ -551,6 +583,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -563,6 +597,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -590,6 +626,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -602,6 +640,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -628,6 +668,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.vulnerability.Details vulnerability = 8;</code>
+   *
+   * @return Whether the vulnerability field is set.
    */
   public boolean hasVulnerability() {
     return detailsCase_ == 8;
@@ -640,6 +682,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.vulnerability.Details vulnerability = 8;</code>
+   *
+   * @return The vulnerability.
    */
   public io.grafeas.v1beta1.vulnerability.Details getVulnerability() {
     if (detailsCase_ == 8) {
@@ -672,6 +716,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.Details build = 9;</code>
+   *
+   * @return Whether the build field is set.
    */
   public boolean hasBuild() {
     return detailsCase_ == 9;
@@ -684,6 +730,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.Details build = 9;</code>
+   *
+   * @return The build.
    */
   public io.grafeas.v1beta1.build.Details getBuild() {
     if (detailsCase_ == 9) {
@@ -717,6 +765,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Details derived_image = 10;</code>
+   *
+   * @return Whether the derivedImage field is set.
    */
   public boolean hasDerivedImage() {
     return detailsCase_ == 10;
@@ -730,6 +780,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Details derived_image = 10;</code>
+   *
+   * @return The derivedImage.
    */
   public io.grafeas.v1beta1.image.Details getDerivedImage() {
     if (detailsCase_ == 10) {
@@ -763,6 +815,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Details installation = 11;</code>
+   *
+   * @return Whether the installation field is set.
    */
   public boolean hasInstallation() {
     return detailsCase_ == 11;
@@ -775,6 +829,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Details installation = 11;</code>
+   *
+   * @return The installation.
    */
   public io.grafeas.v1beta1.pkg.Details getInstallation() {
     if (detailsCase_ == 11) {
@@ -807,6 +863,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Details deployment = 12;</code>
+   *
+   * @return Whether the deployment field is set.
    */
   public boolean hasDeployment() {
     return detailsCase_ == 12;
@@ -819,6 +877,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Details deployment = 12;</code>
+   *
+   * @return The deployment.
    */
   public io.grafeas.v1beta1.deployment.Details getDeployment() {
     if (detailsCase_ == 12) {
@@ -851,6 +911,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Details discovered = 13;</code>
+   *
+   * @return Whether the discovered field is set.
    */
   public boolean hasDiscovered() {
     return detailsCase_ == 13;
@@ -863,6 +925,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Details discovered = 13;</code>
+   *
+   * @return The discovered.
    */
   public io.grafeas.v1beta1.discovery.Details getDiscovered() {
     if (detailsCase_ == 13) {
@@ -895,6 +959,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Details attestation = 14;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   public boolean hasAttestation() {
     return detailsCase_ == 14;
@@ -907,6 +973,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Details attestation = 14;</code>
+   *
+   * @return The attestation.
    */
   public io.grafeas.v1beta1.attestation.Details getAttestation() {
     if (detailsCase_ == 14) {
@@ -1602,6 +1670,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1623,6 +1693,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1644,6 +1716,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1663,6 +1738,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1679,6 +1756,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1705,6 +1785,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.Resource resource = 2;</code>
+     *
+     * @return Whether the resource field is set.
      */
     public boolean hasResource() {
       return resourceBuilder_ != null || resource_ != null;
@@ -1717,6 +1799,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.Resource resource = 2;</code>
+     *
+     * @return The resource.
      */
     public io.grafeas.v1beta1.Resource getResource() {
       if (resourceBuilder_ == null) {
@@ -1877,6 +1961,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string note_name = 3;</code>
+     *
+     * @return The noteName.
      */
     public java.lang.String getNoteName() {
       java.lang.Object ref = noteName_;
@@ -1899,6 +1985,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string note_name = 3;</code>
+     *
+     * @return The bytes for noteName.
      */
     public com.google.protobuf.ByteString getNoteNameBytes() {
       java.lang.Object ref = noteName_;
@@ -1921,6 +2009,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string note_name = 3;</code>
+     *
+     * @param value The noteName to set.
+     * @return This builder for chaining.
      */
     public Builder setNoteName(java.lang.String value) {
       if (value == null) {
@@ -1941,6 +2032,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string note_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNoteName() {
 
@@ -1958,6 +2051,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string note_name = 3;</code>
+     *
+     * @param value The bytes for noteName to set.
+     * @return This builder for chaining.
      */
     public Builder setNoteNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1980,6 +2076,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     *
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
@@ -1993,6 +2091,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -2008,6 +2109,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     *
+     * @return The kind.
      */
     public io.grafeas.v1beta1.common.NoteKind getKind() {
       @SuppressWarnings("deprecation")
@@ -2023,6 +2126,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(io.grafeas.v1beta1.common.NoteKind value) {
       if (value == null) {
@@ -2042,6 +2148,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
 
@@ -2059,6 +2167,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
+     * @return The remediation.
      */
     public java.lang.String getRemediation() {
       java.lang.Object ref = remediation_;
@@ -2079,6 +2189,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
+     * @return The bytes for remediation.
      */
     public com.google.protobuf.ByteString getRemediationBytes() {
       java.lang.Object ref = remediation_;
@@ -2099,6 +2211,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
+     * @param value The remediation to set.
+     * @return This builder for chaining.
      */
     public Builder setRemediation(java.lang.String value) {
       if (value == null) {
@@ -2117,6 +2232,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRemediation() {
 
@@ -2132,6 +2249,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
+     * @param value The bytes for remediation to set.
+     * @return This builder for chaining.
      */
     public Builder setRemediationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2158,6 +2278,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2170,6 +2292,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2337,6 +2461,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -2349,6 +2475,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2515,6 +2643,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.vulnerability.Details vulnerability = 8;</code>
+     *
+     * @return Whether the vulnerability field is set.
      */
     public boolean hasVulnerability() {
       return detailsCase_ == 8;
@@ -2527,6 +2657,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.vulnerability.Details vulnerability = 8;</code>
+     *
+     * @return The vulnerability.
      */
     public io.grafeas.v1beta1.vulnerability.Details getVulnerability() {
       if (vulnerabilityBuilder_ == null) {
@@ -2717,6 +2849,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.Details build = 9;</code>
+     *
+     * @return Whether the build field is set.
      */
     public boolean hasBuild() {
       return detailsCase_ == 9;
@@ -2729,6 +2863,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.Details build = 9;</code>
+     *
+     * @return The build.
      */
     public io.grafeas.v1beta1.build.Details getBuild() {
       if (buildBuilder_ == null) {
@@ -2917,6 +3053,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Details derived_image = 10;</code>
+     *
+     * @return Whether the derivedImage field is set.
      */
     public boolean hasDerivedImage() {
       return detailsCase_ == 10;
@@ -2930,6 +3068,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Details derived_image = 10;</code>
+     *
+     * @return The derivedImage.
      */
     public io.grafeas.v1beta1.image.Details getDerivedImage() {
       if (derivedImageBuilder_ == null) {
@@ -3124,6 +3264,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Details installation = 11;</code>
+     *
+     * @return Whether the installation field is set.
      */
     public boolean hasInstallation() {
       return detailsCase_ == 11;
@@ -3136,6 +3278,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Details installation = 11;</code>
+     *
+     * @return The installation.
      */
     public io.grafeas.v1beta1.pkg.Details getInstallation() {
       if (installationBuilder_ == null) {
@@ -3321,6 +3465,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Details deployment = 12;</code>
+     *
+     * @return Whether the deployment field is set.
      */
     public boolean hasDeployment() {
       return detailsCase_ == 12;
@@ -3333,6 +3479,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Details deployment = 12;</code>
+     *
+     * @return The deployment.
      */
     public io.grafeas.v1beta1.deployment.Details getDeployment() {
       if (deploymentBuilder_ == null) {
@@ -3522,6 +3670,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Details discovered = 13;</code>
+     *
+     * @return Whether the discovered field is set.
      */
     public boolean hasDiscovered() {
       return detailsCase_ == 13;
@@ -3534,6 +3684,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Details discovered = 13;</code>
+     *
+     * @return The discovered.
      */
     public io.grafeas.v1beta1.discovery.Details getDiscovered() {
       if (discoveredBuilder_ == null) {
@@ -3721,6 +3873,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Details attestation = 14;</code>
+     *
+     * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
       return detailsCase_ == 14;
@@ -3733,6 +3887,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Details attestation = 14;</code>
+     *
+     * @return The attestation.
      */
     public io.grafeas.v1beta1.attestation.Details getAttestation() {
       if (attestationBuilder_ == null) {

@@ -31,6 +31,8 @@ public interface HashOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface HashOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   *
+   * @return The type.
    */
   io.grafeas.v1beta1.provenance.Hash.HashType getType();
 
@@ -52,6 +56,8 @@ public interface HashOrBuilder
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
+   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 }

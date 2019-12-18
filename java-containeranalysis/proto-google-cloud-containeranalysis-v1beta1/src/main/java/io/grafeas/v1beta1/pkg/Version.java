@@ -44,6 +44,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Version();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -232,12 +237,20 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static VersionKind valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static VersionKind forNumber(int value) {
       switch (value) {
         case 0:
@@ -307,6 +320,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 epoch = 1;</code>
+   *
+   * @return The epoch.
    */
   public int getEpoch() {
     return epoch_;
@@ -322,6 +337,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -342,6 +359,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -365,6 +384,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string revision = 3;</code>
+   *
+   * @return The revision.
    */
   public java.lang.String getRevision() {
     java.lang.Object ref = revision_;
@@ -385,6 +406,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string revision = 3;</code>
+   *
+   * @return The bytes for revision.
    */
   public com.google.protobuf.ByteString getRevisionBytes() {
     java.lang.Object ref = revision_;
@@ -409,6 +432,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
@@ -422,6 +447,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+   *
+   * @return The kind.
    */
   public io.grafeas.v1beta1.pkg.Version.VersionKind getKind() {
     @SuppressWarnings("deprecation")
@@ -797,6 +824,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
+     *
+     * @return The epoch.
      */
     public int getEpoch() {
       return epoch_;
@@ -809,6 +838,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
+     *
+     * @param value The epoch to set.
+     * @return This builder for chaining.
      */
     public Builder setEpoch(int value) {
 
@@ -824,6 +856,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEpoch() {
 
@@ -841,6 +875,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -861,6 +897,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -881,6 +919,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -899,6 +940,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -914,6 +957,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -935,6 +981,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string revision = 3;</code>
+     *
+     * @return The revision.
      */
     public java.lang.String getRevision() {
       java.lang.Object ref = revision_;
@@ -955,6 +1003,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string revision = 3;</code>
+     *
+     * @return The bytes for revision.
      */
     public com.google.protobuf.ByteString getRevisionBytes() {
       java.lang.Object ref = revision_;
@@ -975,6 +1025,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string revision = 3;</code>
+     *
+     * @param value The revision to set.
+     * @return This builder for chaining.
      */
     public Builder setRevision(java.lang.String value) {
       if (value == null) {
@@ -993,6 +1046,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string revision = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRevision() {
 
@@ -1008,6 +1063,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string revision = 3;</code>
+     *
+     * @param value The bytes for revision to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1030,6 +1088,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     *
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
@@ -1043,6 +1103,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -1058,6 +1121,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     *
+     * @return The kind.
      */
     public io.grafeas.v1beta1.pkg.Version.VersionKind getKind() {
       @SuppressWarnings("deprecation")
@@ -1074,6 +1139,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(io.grafeas.v1beta1.pkg.Version.VersionKind value) {
       if (value == null) {
@@ -1093,6 +1161,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
 

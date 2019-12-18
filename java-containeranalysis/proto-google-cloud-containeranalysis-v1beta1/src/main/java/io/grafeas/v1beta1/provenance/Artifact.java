@@ -44,6 +44,12 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Artifact();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 names_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               names_.add(s);
               break;
@@ -105,7 +111,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         names_ = names_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -128,7 +134,6 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.provenance.Artifact.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CHECKSUM_FIELD_NUMBER = 1;
   private volatile java.lang.Object checksum_;
   /**
@@ -140,6 +145,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string checksum = 1;</code>
+   *
+   * @return The checksum.
    */
   public java.lang.String getChecksum() {
     java.lang.Object ref = checksum_;
@@ -161,6 +168,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string checksum = 1;</code>
+   *
+   * @return The bytes for checksum.
    */
   public com.google.protobuf.ByteString getChecksumBytes() {
     java.lang.Object ref = checksum_;
@@ -185,6 +194,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 2;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -206,6 +217,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 2;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -233,6 +246,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   *
+   * @return A list containing the names.
    */
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
@@ -249,6 +264,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   *
+   * @return The count of names.
    */
   public int getNamesCount() {
     return names_.size();
@@ -265,6 +282,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The names at the given index.
    */
   public java.lang.String getNames(int index) {
     return names_.get(index);
@@ -281,6 +301,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the names at the given index.
    */
   public com.google.protobuf.ByteString getNamesBytes(int index) {
     return names_.getByteString(index);
@@ -519,7 +542,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       id_ = "";
 
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -548,15 +571,13 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1beta1.provenance.Artifact result =
           new io.grafeas.v1beta1.provenance.Artifact(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.checksum_ = checksum_;
       result.id_ = id_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         names_ = names_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.names_ = names_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -617,7 +638,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (!other.names_.isEmpty()) {
         if (names_.isEmpty()) {
           names_ = other.names_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureNamesIsMutable();
           names_.addAll(other.names_);
@@ -665,6 +686,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string checksum = 1;</code>
+     *
+     * @return The checksum.
      */
     public java.lang.String getChecksum() {
       java.lang.Object ref = checksum_;
@@ -686,6 +709,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string checksum = 1;</code>
+     *
+     * @return The bytes for checksum.
      */
     public com.google.protobuf.ByteString getChecksumBytes() {
       java.lang.Object ref = checksum_;
@@ -707,6 +732,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string checksum = 1;</code>
+     *
+     * @param value The checksum to set.
+     * @return This builder for chaining.
      */
     public Builder setChecksum(java.lang.String value) {
       if (value == null) {
@@ -726,6 +754,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string checksum = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearChecksum() {
 
@@ -742,6 +772,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string checksum = 1;</code>
+     *
+     * @param value The bytes for checksum to set.
+     * @return This builder for chaining.
      */
     public Builder setChecksumBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -764,6 +797,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 2;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -785,6 +820,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -806,6 +843,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 2;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -825,6 +865,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -841,6 +883,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 2;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -857,9 +902,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNamesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         names_ = new com.google.protobuf.LazyStringArrayList(names_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -874,6 +919,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @return A list containing the names.
      */
     public com.google.protobuf.ProtocolStringList getNamesList() {
       return names_.getUnmodifiableView();
@@ -890,6 +937,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @return The count of names.
      */
     public int getNamesCount() {
       return names_.size();
@@ -906,6 +955,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The names at the given index.
      */
     public java.lang.String getNames(int index) {
       return names_.get(index);
@@ -922,6 +974,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the names at the given index.
      */
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
@@ -938,6 +993,10 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The names to set.
+     * @return This builder for chaining.
      */
     public Builder setNames(int index, java.lang.String value) {
       if (value == null) {
@@ -960,6 +1019,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @param value The names to add.
+     * @return This builder for chaining.
      */
     public Builder addNames(java.lang.String value) {
       if (value == null) {
@@ -982,6 +1044,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @param values The names to add.
+     * @return This builder for chaining.
      */
     public Builder addAllNames(java.lang.Iterable<java.lang.String> values) {
       ensureNamesIsMutable();
@@ -1001,10 +1066,12 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNames() {
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1020,6 +1087,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string names = 3;</code>
+     *
+     * @param value The bytes of the names to add.
+     * @return This builder for chaining.
      */
     public Builder addNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

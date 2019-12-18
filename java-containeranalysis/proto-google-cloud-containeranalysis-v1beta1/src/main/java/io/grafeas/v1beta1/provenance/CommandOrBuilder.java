@@ -32,6 +32,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @return A list containing the env.
    */
   java.util.List<java.lang.String> getEnvList();
   /**
@@ -64,6 +70,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @return The count of env.
    */
   int getEnvCount();
   /**
@@ -74,6 +82,9 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The env at the given index.
    */
   java.lang.String getEnv(int index);
   /**
@@ -84,6 +95,9 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string env = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the env at the given index.
    */
   com.google.protobuf.ByteString getEnvBytes(int index);
 
@@ -95,6 +109,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
   /**
@@ -105,6 +121,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @return The count of args.
    */
   int getArgsCount();
   /**
@@ -115,6 +133,9 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
   /**
@@ -125,6 +146,9 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string args = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   com.google.protobuf.ByteString getArgsBytes(int index);
 
@@ -137,6 +161,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>string dir = 4;</code>
+   *
+   * @return The dir.
    */
   java.lang.String getDir();
   /**
@@ -148,6 +174,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>string dir = 4;</code>
+   *
+   * @return The bytes for dir.
    */
   com.google.protobuf.ByteString getDirBytes();
 
@@ -160,6 +188,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>string id = 5;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -171,6 +201,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>string id = 5;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -182,6 +214,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @return A list containing the waitFor.
    */
   java.util.List<java.lang.String> getWaitForList();
   /**
@@ -192,6 +226,8 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @return The count of waitFor.
    */
   int getWaitForCount();
   /**
@@ -202,6 +238,9 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The waitFor at the given index.
    */
   java.lang.String getWaitFor(int index);
   /**
@@ -212,6 +251,9 @@ public interface CommandOrBuilder
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the waitFor at the given index.
    */
   com.google.protobuf.ByteString getWaitForBytes(int index);
 }

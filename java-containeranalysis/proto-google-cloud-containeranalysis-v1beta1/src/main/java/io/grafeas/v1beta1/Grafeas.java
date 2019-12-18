@@ -310,32 +310,24 @@ public final class Grafeas {
           + "evtools/containeranalysis/v1beta1/grafea"
           + "s;grafeas\242\002\003GRAb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          io.grafeas.v1beta1.attestation.AttestationOuterClass.getDescriptor(),
-          io.grafeas.v1beta1.build.BuildOuterClass.getDescriptor(),
-          io.grafeas.v1beta1.common.Common.getDescriptor(),
-          io.grafeas.v1beta1.deployment.DeploymentOuterClass.getDescriptor(),
-          io.grafeas.v1beta1.discovery.DiscoveryOuterClass.getDescriptor(),
-          io.grafeas.v1beta1.image.Image.getDescriptor(),
-          io.grafeas.v1beta1.pkg.PackageOuterClass.getDescriptor(),
-          io.grafeas.v1beta1.provenance.Provenance.getDescriptor(),
-          io.grafeas.v1beta1.vulnerability.VulnerabilityOuterClass.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              io.grafeas.v1beta1.attestation.AttestationOuterClass.getDescriptor(),
+              io.grafeas.v1beta1.build.BuildOuterClass.getDescriptor(),
+              io.grafeas.v1beta1.common.Common.getDescriptor(),
+              io.grafeas.v1beta1.deployment.DeploymentOuterClass.getDescriptor(),
+              io.grafeas.v1beta1.discovery.DiscoveryOuterClass.getDescriptor(),
+              io.grafeas.v1beta1.image.Image.getDescriptor(),
+              io.grafeas.v1beta1.pkg.PackageOuterClass.getDescriptor(),
+              io.grafeas.v1beta1.provenance.Provenance.getDescriptor(),
+              io.grafeas.v1beta1.vulnerability.VulnerabilityOuterClass.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_grafeas_v1beta1_Occurrence_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_grafeas_v1beta1_Occurrence_fieldAccessorTable =

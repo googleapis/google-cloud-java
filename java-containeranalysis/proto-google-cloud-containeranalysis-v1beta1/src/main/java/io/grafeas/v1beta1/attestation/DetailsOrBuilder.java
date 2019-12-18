@@ -31,6 +31,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -41,6 +43,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   *
+   * @return The attestation.
    */
   io.grafeas.v1beta1.attestation.Attestation getAttestation();
   /**

@@ -44,6 +44,12 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProjectRepoId();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -145,6 +152,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -168,6 +177,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The repoName.
    */
   public java.lang.String getRepoName() {
     java.lang.Object ref = repoName_;
@@ -188,6 +199,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The bytes for repoName.
    */
   public com.google.protobuf.ByteString getRepoNameBytes() {
     java.lang.Object ref = repoName_;
@@ -542,6 +555,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -562,6 +577,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -582,6 +599,9 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -600,6 +620,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -615,6 +637,9 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -636,6 +661,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @return The repoName.
      */
     public java.lang.String getRepoName() {
       java.lang.Object ref = repoName_;
@@ -656,6 +683,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @return The bytes for repoName.
      */
     public com.google.protobuf.ByteString getRepoNameBytes() {
       java.lang.Object ref = repoName_;
@@ -676,6 +705,9 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @param value The repoName to set.
+     * @return This builder for chaining.
      */
     public Builder setRepoName(java.lang.String value) {
       if (value == null) {
@@ -694,6 +726,8 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRepoName() {
 
@@ -709,6 +743,9 @@ public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
+     * @param value The bytes for repoName to set.
+     * @return This builder for chaining.
      */
     public Builder setRepoNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

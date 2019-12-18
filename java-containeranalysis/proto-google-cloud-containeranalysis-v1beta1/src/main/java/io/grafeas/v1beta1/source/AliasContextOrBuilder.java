@@ -31,6 +31,8 @@ public interface AliasContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext.Kind kind = 1;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
@@ -41,6 +43,8 @@ public interface AliasContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext.Kind kind = 1;</code>
+   *
+   * @return The kind.
    */
   io.grafeas.v1beta1.source.AliasContext.Kind getKind();
 
@@ -52,6 +56,8 @@ public interface AliasContextOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -62,6 +68,8 @@ public interface AliasContextOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 }

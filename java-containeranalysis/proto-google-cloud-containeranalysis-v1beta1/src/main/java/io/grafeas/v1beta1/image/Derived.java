@@ -45,6 +45,12 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Derived();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -91,9 +97,9 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 layerInfo_ = new java.util.ArrayList<io.grafeas.v1beta1.image.Layer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               layerInfo_.add(
                   input.readMessage(io.grafeas.v1beta1.image.Layer.parser(), extensionRegistry));
@@ -120,7 +126,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         layerInfo_ = java.util.Collections.unmodifiableList(layerInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -141,7 +147,6 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.image.Derived.class, io.grafeas.v1beta1.image.Derived.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.image.Fingerprint fingerprint_;
   /**
@@ -152,6 +157,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+   *
+   * @return Whether the fingerprint field is set.
    */
   public boolean hasFingerprint() {
     return fingerprint_ != null;
@@ -164,6 +171,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+   *
+   * @return The fingerprint.
    */
   public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
     return fingerprint_ == null
@@ -194,6 +203,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 distance = 2;</code>
+   *
+   * @return The distance.
    */
   public int getDistance() {
     return distance_;
@@ -284,6 +295,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string base_resource_url = 4;</code>
+   *
+   * @return The baseResourceUrl.
    */
   public java.lang.String getBaseResourceUrl() {
     java.lang.Object ref = baseResourceUrl_;
@@ -305,6 +318,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string base_resource_url = 4;</code>
+   *
+   * @return The bytes for baseResourceUrl.
    */
   public com.google.protobuf.ByteString getBaseResourceUrlBytes() {
     java.lang.Object ref = baseResourceUrl_;
@@ -568,7 +583,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
 
       if (layerInfoBuilder_ == null) {
         layerInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         layerInfoBuilder_.clear();
       }
@@ -601,7 +616,6 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.image.Derived buildPartial() {
       io.grafeas.v1beta1.image.Derived result = new io.grafeas.v1beta1.image.Derived(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fingerprintBuilder_ == null) {
         result.fingerprint_ = fingerprint_;
       } else {
@@ -609,16 +623,15 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
       }
       result.distance_ = distance_;
       if (layerInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           layerInfo_ = java.util.Collections.unmodifiableList(layerInfo_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.layerInfo_ = layerInfo_;
       } else {
         result.layerInfo_ = layerInfoBuilder_.build();
       }
       result.baseResourceUrl_ = baseResourceUrl_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -678,7 +691,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         if (!other.layerInfo_.isEmpty()) {
           if (layerInfo_.isEmpty()) {
             layerInfo_ = other.layerInfo_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLayerInfoIsMutable();
             layerInfo_.addAll(other.layerInfo_);
@@ -691,7 +704,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
             layerInfoBuilder_.dispose();
             layerInfoBuilder_ = null;
             layerInfo_ = other.layerInfo_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             layerInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLayerInfoFieldBuilder()
@@ -750,6 +763,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+     *
+     * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
       return fingerprintBuilder_ != null || fingerprint_ != null;
@@ -762,6 +777,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+     *
+     * @return The fingerprint.
      */
     public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
       if (fingerprintBuilder_ == null) {
@@ -927,6 +944,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 distance = 2;</code>
+     *
+     * @return The distance.
      */
     public int getDistance() {
       return distance_;
@@ -940,6 +959,9 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 distance = 2;</code>
+     *
+     * @param value The distance to set.
+     * @return This builder for chaining.
      */
     public Builder setDistance(int value) {
 
@@ -956,6 +978,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 distance = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDistance() {
 
@@ -968,9 +992,9 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLayerInfoIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         layerInfo_ = new java.util.ArrayList<io.grafeas.v1beta1.image.Layer>(layerInfo_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1205,7 +1229,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLayerInfo() {
       if (layerInfoBuilder_ == null) {
         layerInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         layerInfoBuilder_.clear();
@@ -1340,7 +1364,7 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1beta1.image.Layer,
                 io.grafeas.v1beta1.image.Layer.Builder,
                 io.grafeas.v1beta1.image.LayerOrBuilder>(
-                layerInfo_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                layerInfo_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         layerInfo_ = null;
       }
       return layerInfoBuilder_;
@@ -1356,6 +1380,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     *
+     * @return The baseResourceUrl.
      */
     public java.lang.String getBaseResourceUrl() {
       java.lang.Object ref = baseResourceUrl_;
@@ -1377,6 +1403,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     *
+     * @return The bytes for baseResourceUrl.
      */
     public com.google.protobuf.ByteString getBaseResourceUrlBytes() {
       java.lang.Object ref = baseResourceUrl_;
@@ -1398,6 +1426,9 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     *
+     * @param value The baseResourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseResourceUrl(java.lang.String value) {
       if (value == null) {
@@ -1417,6 +1448,8 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseResourceUrl() {
 
@@ -1433,6 +1466,9 @@ public final class Derived extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     *
+     * @param value The bytes for baseResourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseResourceUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

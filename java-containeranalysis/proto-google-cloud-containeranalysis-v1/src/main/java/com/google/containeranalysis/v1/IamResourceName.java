@@ -18,7 +18,7 @@ package com.google.containeranalysis.v1;
 
 import com.google.api.resourcenames.ResourceName;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public abstract class IamResourceName implements ResourceName {
   protected IamResourceName() {}

@@ -31,6 +31,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+   *
+   * @return Whether the discovered field is set.
    */
   boolean hasDiscovered();
   /**
@@ -41,6 +43,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+   *
+   * @return The discovered.
    */
   io.grafeas.v1beta1.discovery.Discovered getDiscovered();
   /**

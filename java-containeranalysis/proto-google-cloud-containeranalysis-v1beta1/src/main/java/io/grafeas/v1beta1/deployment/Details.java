@@ -40,6 +40,12 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   private Details() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+   *
+   * @return Whether the deployment field is set.
    */
   public boolean hasDeployment() {
     return deployment_ != null;
@@ -135,6 +142,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+   *
+   * @return The deployment.
    */
   public io.grafeas.v1beta1.deployment.Deployment getDeployment() {
     return deployment_ == null
@@ -494,6 +503,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+     *
+     * @return Whether the deployment field is set.
      */
     public boolean hasDeployment() {
       return deploymentBuilder_ != null || deployment_ != null;
@@ -506,6 +517,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+     *
+     * @return The deployment.
      */
     public io.grafeas.v1beta1.deployment.Deployment getDeployment() {
       if (deploymentBuilder_ == null) {

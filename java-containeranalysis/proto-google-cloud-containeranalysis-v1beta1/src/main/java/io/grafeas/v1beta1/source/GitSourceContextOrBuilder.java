@@ -31,6 +31,8 @@ public interface GitSourceContextOrBuilder
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -41,6 +43,8 @@ public interface GitSourceContextOrBuilder
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString getUrlBytes();
 
@@ -52,6 +56,8 @@ public interface GitSourceContextOrBuilder
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
+   * @return The revisionId.
    */
   java.lang.String getRevisionId();
   /**
@@ -62,6 +68,8 @@ public interface GitSourceContextOrBuilder
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
+   * @return The bytes for revisionId.
    */
   com.google.protobuf.ByteString getRevisionIdBytes();
 }

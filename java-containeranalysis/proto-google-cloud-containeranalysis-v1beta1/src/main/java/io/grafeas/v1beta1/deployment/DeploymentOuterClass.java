@@ -67,20 +67,12 @@ public final class DeploymentOuterClass {
           + "/devtools/containeranalysis/v1beta1/depl"
           + "oyment;deployment\242\002\003GRAb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_grafeas_v1beta1_deployment_Deployable_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_grafeas_v1beta1_deployment_Deployable_fieldAccessorTable =

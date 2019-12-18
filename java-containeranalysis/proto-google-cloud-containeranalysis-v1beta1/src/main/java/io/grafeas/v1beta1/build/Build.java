@@ -43,6 +43,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Build();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   *
+   * @return The builderVersion.
    */
   public java.lang.String getBuilderVersion() {
     java.lang.Object ref = builderVersion_;
@@ -152,6 +159,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   *
+   * @return The bytes for builderVersion.
    */
   public com.google.protobuf.ByteString getBuilderVersionBytes() {
     java.lang.Object ref = builderVersion_;
@@ -176,6 +185,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+   *
+   * @return Whether the signature field is set.
    */
   public boolean hasSignature() {
     return signature_ != null;
@@ -189,6 +200,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+   *
+   * @return The signature.
    */
   public io.grafeas.v1beta1.build.BuildSignature getSignature() {
     return signature_ == null
@@ -559,6 +572,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     *
+     * @return The builderVersion.
      */
     public java.lang.String getBuilderVersion() {
       java.lang.Object ref = builderVersion_;
@@ -579,6 +594,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     *
+     * @return The bytes for builderVersion.
      */
     public com.google.protobuf.ByteString getBuilderVersionBytes() {
       java.lang.Object ref = builderVersion_;
@@ -599,6 +616,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     *
+     * @param value The builderVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBuilderVersion(java.lang.String value) {
       if (value == null) {
@@ -617,6 +637,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBuilderVersion() {
 
@@ -632,6 +654,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     *
+     * @param value The bytes for builderVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBuilderVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -659,6 +684,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+     *
+     * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
       return signatureBuilder_ != null || signature_ != null;
@@ -672,6 +699,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+     *
+     * @return The signature.
      */
     public io.grafeas.v1beta1.build.BuildSignature getSignature() {
       if (signatureBuilder_ == null) {

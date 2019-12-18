@@ -41,6 +41,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>string public_key = 1;</code>
+   *
+   * @return The publicKey.
    */
   java.lang.String getPublicKey();
   /**
@@ -61,6 +63,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>string public_key = 1;</code>
+   *
+   * @return The bytes for publicKey.
    */
   com.google.protobuf.ByteString getPublicKeyBytes();
 
@@ -73,6 +77,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>bytes signature = 2;</code>
+   *
+   * @return The signature.
    */
   com.google.protobuf.ByteString getSignature();
 
@@ -87,6 +93,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>string key_id = 3;</code>
+   *
+   * @return The keyId.
    */
   java.lang.String getKeyId();
   /**
@@ -100,6 +108,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>string key_id = 3;</code>
+   *
+   * @return The bytes for keyId.
    */
   com.google.protobuf.ByteString getKeyIdBytes();
 
@@ -112,6 +122,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for keyType.
    */
   int getKeyTypeValue();
   /**
@@ -123,6 +135,8 @@ public interface BuildSignatureOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+   *
+   * @return The keyType.
    */
   io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType();
 }

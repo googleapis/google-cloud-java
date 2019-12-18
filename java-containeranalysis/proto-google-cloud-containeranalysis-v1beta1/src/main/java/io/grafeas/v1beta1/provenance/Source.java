@@ -43,6 +43,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Source();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,11 +81,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fileHashes_ =
                     com.google.protobuf.MapField.newMapField(
                         FileHashesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
@@ -108,10 +114,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 additionalContexts_ =
                     new java.util.ArrayList<io.grafeas.v1beta1.source.SourceContext>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               additionalContexts_.add(
                   input.readMessage(
@@ -132,7 +138,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         additionalContexts_ = java.util.Collections.unmodifiableList(additionalContexts_);
       }
       this.unknownFields = unknownFields.build();
@@ -166,7 +172,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.provenance.Source.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ARTIFACT_STORAGE_SOURCE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object artifactStorageSourceUri_;
   /**
@@ -178,6 +183,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string artifact_storage_source_uri = 1;</code>
+   *
+   * @return The artifactStorageSourceUri.
    */
   public java.lang.String getArtifactStorageSourceUri() {
     java.lang.Object ref = artifactStorageSourceUri_;
@@ -199,6 +206,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string artifact_storage_source_uri = 1;</code>
+   *
+   * @return The bytes for artifactStorageSourceUri.
    */
   public com.google.protobuf.ByteString getArtifactStorageSourceUriBytes() {
     java.lang.Object ref = artifactStorageSourceUri_;
@@ -344,6 +353,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -356,6 +367,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
+   *
+   * @return The context.
    */
   public io.grafeas.v1beta1.source.SourceContext getContext() {
     return context_ == null
@@ -735,7 +748,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       if (additionalContextsBuilder_ == null) {
         additionalContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         additionalContextsBuilder_.clear();
       }
@@ -766,7 +779,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.provenance.Source buildPartial() {
       io.grafeas.v1beta1.provenance.Source result = new io.grafeas.v1beta1.provenance.Source(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.artifactStorageSourceUri_ = artifactStorageSourceUri_;
       result.fileHashes_ = internalGetFileHashes();
       result.fileHashes_.makeImmutable();
@@ -776,15 +788,14 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         result.context_ = contextBuilder_.build();
       }
       if (additionalContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           additionalContexts_ = java.util.Collections.unmodifiableList(additionalContexts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.additionalContexts_ = additionalContexts_;
       } else {
         result.additionalContexts_ = additionalContextsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -846,7 +857,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         if (!other.additionalContexts_.isEmpty()) {
           if (additionalContexts_.isEmpty()) {
             additionalContexts_ = other.additionalContexts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAdditionalContextsIsMutable();
             additionalContexts_.addAll(other.additionalContexts_);
@@ -859,7 +870,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             additionalContextsBuilder_.dispose();
             additionalContextsBuilder_ = null;
             additionalContexts_ = other.additionalContexts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             additionalContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalContextsFieldBuilder()
@@ -910,6 +921,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_storage_source_uri = 1;</code>
+     *
+     * @return The artifactStorageSourceUri.
      */
     public java.lang.String getArtifactStorageSourceUri() {
       java.lang.Object ref = artifactStorageSourceUri_;
@@ -931,6 +944,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_storage_source_uri = 1;</code>
+     *
+     * @return The bytes for artifactStorageSourceUri.
      */
     public com.google.protobuf.ByteString getArtifactStorageSourceUriBytes() {
       java.lang.Object ref = artifactStorageSourceUri_;
@@ -952,6 +967,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_storage_source_uri = 1;</code>
+     *
+     * @param value The artifactStorageSourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setArtifactStorageSourceUri(java.lang.String value) {
       if (value == null) {
@@ -971,6 +989,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_storage_source_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArtifactStorageSourceUri() {
 
@@ -987,6 +1007,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string artifact_storage_source_uri = 1;</code>
+     *
+     * @param value The bytes for artifactStorageSourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setArtifactStorageSourceUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1211,6 +1234,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -1223,6 +1248,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
+     *
+     * @return The context.
      */
     public io.grafeas.v1beta1.source.SourceContext getContext() {
       if (contextBuilder_ == null) {
@@ -1382,10 +1409,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAdditionalContextsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         additionalContexts_ =
             new java.util.ArrayList<io.grafeas.v1beta1.source.SourceContext>(additionalContexts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1634,7 +1661,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdditionalContexts() {
       if (additionalContextsBuilder_ == null) {
         additionalContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         additionalContextsBuilder_.clear();
@@ -1779,7 +1806,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1beta1.source.SourceContext.Builder,
                 io.grafeas.v1beta1.source.SourceContextOrBuilder>(
                 additionalContexts_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         additionalContexts_ = null;

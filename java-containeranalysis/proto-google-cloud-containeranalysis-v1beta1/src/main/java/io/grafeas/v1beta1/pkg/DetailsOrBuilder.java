@@ -31,6 +31,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+   *
+   * @return Whether the installation field is set.
    */
   boolean hasInstallation();
   /**
@@ -41,6 +43,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+   *
+   * @return The installation.
    */
   io.grafeas.v1beta1.pkg.Installation getInstallation();
   /**

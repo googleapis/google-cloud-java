@@ -43,6 +43,12 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateNoteRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -159,6 +166,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -182,6 +191,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string note_id = 2;</code>
+   *
+   * @return The noteId.
    */
   public java.lang.String getNoteId() {
     java.lang.Object ref = noteId_;
@@ -202,6 +213,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string note_id = 2;</code>
+   *
+   * @return The bytes for noteId.
    */
   public com.google.protobuf.ByteString getNoteIdBytes() {
     java.lang.Object ref = noteId_;
@@ -225,6 +238,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
+   *
+   * @return Whether the note field is set.
    */
   public boolean hasNote() {
     return note_ != null;
@@ -237,6 +252,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
+   *
+   * @return The note.
    */
   public io.grafeas.v1beta1.Note getNote() {
     return note_ == null ? io.grafeas.v1beta1.Note.getDefaultInstance() : note_;
@@ -621,6 +638,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -642,6 +661,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -663,6 +684,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -682,6 +706,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -698,6 +724,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -719,6 +748,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     *
+     * @return The noteId.
      */
     public java.lang.String getNoteId() {
       java.lang.Object ref = noteId_;
@@ -739,6 +770,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     *
+     * @return The bytes for noteId.
      */
     public com.google.protobuf.ByteString getNoteIdBytes() {
       java.lang.Object ref = noteId_;
@@ -759,6 +792,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     *
+     * @param value The noteId to set.
+     * @return This builder for chaining.
      */
     public Builder setNoteId(java.lang.String value) {
       if (value == null) {
@@ -777,6 +813,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNoteId() {
 
@@ -792,6 +830,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     *
+     * @param value The bytes for noteId to set.
+     * @return This builder for chaining.
      */
     public Builder setNoteIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -818,6 +859,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.grafeas.v1beta1.Note note = 3;</code>
+     *
+     * @return Whether the note field is set.
      */
     public boolean hasNote() {
       return noteBuilder_ != null || note_ != null;
@@ -830,6 +873,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.grafeas.v1beta1.Note note = 3;</code>
+     *
+     * @return The note.
      */
     public io.grafeas.v1beta1.Note getNote() {
       if (noteBuilder_ == null) {

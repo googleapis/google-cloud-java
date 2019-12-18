@@ -32,6 +32,8 @@ public interface UpdateScanConfigRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface UpdateScanConfigRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface UpdateScanConfigRequestOrBuilder
    * </pre>
    *
    * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   *
+   * @return Whether the scanConfig field is set.
    */
   boolean hasScanConfig();
   /**
@@ -64,6 +70,8 @@ public interface UpdateScanConfigRequestOrBuilder
    * </pre>
    *
    * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   *
+   * @return The scanConfig.
    */
   com.google.containeranalysis.v1beta1.ScanConfig getScanConfig();
   /**

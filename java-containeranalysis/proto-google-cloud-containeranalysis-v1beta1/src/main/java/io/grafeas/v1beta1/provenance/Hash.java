@@ -43,6 +43,12 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Hash();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -174,12 +179,20 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static HashType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static HashType forNumber(int value) {
       switch (value) {
         case 0:
@@ -245,6 +258,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -257,6 +272,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   *
+   * @return The type.
    */
   public io.grafeas.v1beta1.provenance.Hash.HashType getType() {
     @SuppressWarnings("deprecation")
@@ -275,6 +292,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
+   * @return The value.
    */
   public com.google.protobuf.ByteString getValue() {
     return value_;
@@ -616,6 +635,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -628,6 +649,9 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -642,6 +666,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     *
+     * @return The type.
      */
     public io.grafeas.v1beta1.provenance.Hash.HashType getType() {
       @SuppressWarnings("deprecation")
@@ -657,6 +683,9 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(io.grafeas.v1beta1.provenance.Hash.HashType value) {
       if (value == null) {
@@ -675,6 +704,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -692,6 +723,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
+     * @return The value.
      */
     public com.google.protobuf.ByteString getValue() {
       return value_;
@@ -704,6 +737,9 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -722,6 +758,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
 

@@ -45,6 +45,12 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BuildSignature();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -210,12 +215,20 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static KeyType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static KeyType forNumber(int value) {
       switch (value) {
         case 0:
@@ -293,6 +306,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string public_key = 1;</code>
+   *
+   * @return The publicKey.
    */
   public java.lang.String getPublicKey() {
     java.lang.Object ref = publicKey_;
@@ -323,6 +338,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string public_key = 1;</code>
+   *
+   * @return The bytes for publicKey.
    */
   public com.google.protobuf.ByteString getPublicKeyBytes() {
     java.lang.Object ref = publicKey_;
@@ -347,6 +364,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes signature = 2;</code>
+   *
+   * @return The signature.
    */
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
@@ -365,6 +384,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string key_id = 3;</code>
+   *
+   * @return The keyId.
    */
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
@@ -388,6 +409,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string key_id = 3;</code>
+   *
+   * @return The bytes for keyId.
    */
   public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
@@ -412,6 +435,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for keyType.
    */
   public int getKeyTypeValue() {
     return keyType_;
@@ -425,6 +450,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+   *
+   * @return The keyType.
    */
   public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
     @SuppressWarnings("deprecation")
@@ -815,6 +842,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     *
+     * @return The publicKey.
      */
     public java.lang.String getPublicKey() {
       java.lang.Object ref = publicKey_;
@@ -845,6 +874,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     *
+     * @return The bytes for publicKey.
      */
     public com.google.protobuf.ByteString getPublicKeyBytes() {
       java.lang.Object ref = publicKey_;
@@ -875,6 +906,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     *
+     * @param value The publicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKey(java.lang.String value) {
       if (value == null) {
@@ -903,6 +937,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPublicKey() {
 
@@ -928,6 +964,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     *
+     * @param value The bytes for publicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -950,6 +989,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 2;</code>
+     *
+     * @return The signature.
      */
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
@@ -963,6 +1004,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 2;</code>
+     *
+     * @param value The signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -982,6 +1026,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignature() {
 
@@ -1002,6 +1048,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     *
+     * @return The keyId.
      */
     public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
@@ -1025,6 +1073,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     *
+     * @return The bytes for keyId.
      */
     public com.google.protobuf.ByteString getKeyIdBytes() {
       java.lang.Object ref = keyId_;
@@ -1048,6 +1098,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     *
+     * @param value The keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyId(java.lang.String value) {
       if (value == null) {
@@ -1069,6 +1122,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKeyId() {
 
@@ -1087,6 +1142,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     *
+     * @param value The bytes for keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1109,6 +1167,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for keyType.
      */
     public int getKeyTypeValue() {
       return keyType_;
@@ -1122,6 +1182,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for keyType to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyTypeValue(int value) {
       keyType_ = value;
@@ -1137,6 +1200,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     *
+     * @return The keyType.
      */
     public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
       @SuppressWarnings("deprecation")
@@ -1153,6 +1218,9 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     *
+     * @param value The keyType to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyType(io.grafeas.v1beta1.build.BuildSignature.KeyType value) {
       if (value == null) {
@@ -1172,6 +1240,8 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKeyType() {
 

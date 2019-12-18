@@ -42,6 +42,12 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   *
+   * @return Whether the provenance field is set.
    */
   public boolean hasProvenance() {
     return provenance_ != null;
@@ -143,6 +150,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   *
+   * @return The provenance.
    */
   public io.grafeas.v1beta1.provenance.BuildProvenance getProvenance() {
     return provenance_ == null
@@ -181,6 +190,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   *
+   * @return The provenanceBytes.
    */
   public java.lang.String getProvenanceBytes() {
     java.lang.Object ref = provenanceBytes_;
@@ -210,6 +221,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   *
+   * @return The bytes for provenanceBytes.
    */
   public com.google.protobuf.ByteString getProvenanceBytesBytes() {
     java.lang.Object ref = provenanceBytes_;
@@ -578,6 +591,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+     *
+     * @return Whether the provenance field is set.
      */
     public boolean hasProvenance() {
       return provenanceBuilder_ != null || provenance_ != null;
@@ -590,6 +605,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+     *
+     * @return The provenance.
      */
     public io.grafeas.v1beta1.provenance.BuildProvenance getProvenance() {
       if (provenanceBuilder_ == null) {
@@ -764,6 +781,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     *
+     * @return The provenanceBytes.
      */
     public java.lang.String getProvenanceBytes() {
       java.lang.Object ref = provenanceBytes_;
@@ -793,6 +812,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     *
+     * @return The bytes for provenanceBytes.
      */
     public com.google.protobuf.ByteString getProvenanceBytesBytes() {
       java.lang.Object ref = provenanceBytes_;
@@ -822,6 +843,9 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     *
+     * @param value The provenanceBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setProvenanceBytes(java.lang.String value) {
       if (value == null) {
@@ -849,6 +873,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProvenanceBytes() {
 
@@ -873,6 +899,9 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     *
+     * @param value The bytes for provenanceBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setProvenanceBytesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

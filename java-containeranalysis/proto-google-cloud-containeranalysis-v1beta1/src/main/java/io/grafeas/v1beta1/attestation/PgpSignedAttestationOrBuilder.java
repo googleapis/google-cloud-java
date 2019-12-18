@@ -39,6 +39,8 @@ public interface PgpSignedAttestationOrBuilder
    * </pre>
    *
    * <code>string signature = 1;</code>
+   *
+   * @return The signature.
    */
   java.lang.String getSignature();
   /**
@@ -57,6 +59,8 @@ public interface PgpSignedAttestationOrBuilder
    * </pre>
    *
    * <code>string signature = 1;</code>
+   *
+   * @return The bytes for signature.
    */
   com.google.protobuf.ByteString getSignatureBytes();
 
@@ -71,6 +75,8 @@ public interface PgpSignedAttestationOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
   /**
@@ -84,6 +90,8 @@ public interface PgpSignedAttestationOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   *
+   * @return The contentType.
    */
   io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType();
 
@@ -110,6 +118,8 @@ public interface PgpSignedAttestationOrBuilder
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   *
+   * @return The pgpKeyId.
    */
   java.lang.String getPgpKeyId();
   /**
@@ -135,6 +145,8 @@ public interface PgpSignedAttestationOrBuilder
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   *
+   * @return The bytes for pgpKeyId.
    */
   com.google.protobuf.ByteString getPgpKeyIdBytes();
 

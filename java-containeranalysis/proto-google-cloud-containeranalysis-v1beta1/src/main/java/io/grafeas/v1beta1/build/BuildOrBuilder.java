@@ -31,6 +31,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   *
+   * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
   /**
@@ -41,6 +43,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   *
+   * @return The bytes for builderVersion.
    */
   com.google.protobuf.ByteString getBuilderVersionBytes();
 
@@ -53,6 +57,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+   *
+   * @return Whether the signature field is set.
    */
   boolean hasSignature();
   /**
@@ -64,6 +70,8 @@ public interface BuildOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+   *
+   * @return The signature.
    */
   io.grafeas.v1beta1.build.BuildSignature getSignature();
   /**

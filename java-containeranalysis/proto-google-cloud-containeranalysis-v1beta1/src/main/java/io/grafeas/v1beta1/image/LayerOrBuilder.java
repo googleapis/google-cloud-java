@@ -31,6 +31,8 @@ public interface LayerOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   *
+   * @return The enum numeric value on the wire for directive.
    */
   int getDirectiveValue();
   /**
@@ -41,6 +43,8 @@ public interface LayerOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   *
+   * @return The directive.
    */
   io.grafeas.v1beta1.image.Layer.Directive getDirective();
 
@@ -52,6 +56,8 @@ public interface LayerOrBuilder
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   *
+   * @return The arguments.
    */
   java.lang.String getArguments();
   /**
@@ -62,6 +68,8 @@ public interface LayerOrBuilder
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   *
+   * @return The bytes for arguments.
    */
   com.google.protobuf.ByteString getArgumentsBytes();
 }

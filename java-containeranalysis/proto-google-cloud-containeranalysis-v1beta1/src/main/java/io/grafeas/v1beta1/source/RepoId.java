@@ -40,6 +40,12 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   private RepoId() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RepoId();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,7 +127,10 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   private int idCase_ = 0;
   private java.lang.Object id_;
 
-  public enum IdCase implements com.google.protobuf.Internal.EnumLite {
+  public enum IdCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROJECT_REPO_ID(1),
     UID(2),
     ID_NOT_SET(0);
@@ -131,7 +139,11 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     private IdCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static IdCase valueOf(int value) {
       return forNumber(value);
@@ -168,6 +180,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+   *
+   * @return Whether the projectRepoId field is set.
    */
   public boolean hasProjectRepoId() {
     return idCase_ == 1;
@@ -180,6 +194,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+   *
+   * @return The projectRepoId.
    */
   public io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId() {
     if (idCase_ == 1) {
@@ -212,6 +228,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uid = 2;</code>
+   *
+   * @return The uid.
    */
   public java.lang.String getUid() {
     java.lang.Object ref = "";
@@ -237,6 +255,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uid = 2;</code>
+   *
+   * @return The bytes for uid.
    */
   public com.google.protobuf.ByteString getUidBytes() {
     java.lang.Object ref = "";
@@ -647,6 +667,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+     *
+     * @return Whether the projectRepoId field is set.
      */
     public boolean hasProjectRepoId() {
       return idCase_ == 1;
@@ -659,6 +681,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+     *
+     * @return The projectRepoId.
      */
     public io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId() {
       if (projectRepoIdBuilder_ == null) {
@@ -841,6 +865,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uid = 2;</code>
+     *
+     * @return The uid.
      */
     public java.lang.String getUid() {
       java.lang.Object ref = "";
@@ -866,6 +892,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uid = 2;</code>
+     *
+     * @return The bytes for uid.
      */
     public com.google.protobuf.ByteString getUidBytes() {
       java.lang.Object ref = "";
@@ -891,6 +919,9 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uid = 2;</code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
      */
     public Builder setUid(java.lang.String value) {
       if (value == null) {
@@ -909,6 +940,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uid = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUid() {
       if (idCase_ == 2) {
@@ -926,6 +959,9 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uid = 2;</code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
      */
     public Builder setUidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

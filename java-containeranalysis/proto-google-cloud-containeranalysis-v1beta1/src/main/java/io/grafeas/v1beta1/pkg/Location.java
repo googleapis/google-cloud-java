@@ -44,6 +44,12 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
+   * @return The cpeUri.
    */
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
@@ -161,6 +168,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
+   * @return The bytes for cpeUri.
    */
   public com.google.protobuf.ByteString getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
@@ -184,6 +193,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+   *
+   * @return Whether the version field is set.
    */
   public boolean hasVersion() {
     return version_ != null;
@@ -196,6 +207,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+   *
+   * @return The version.
    */
   public io.grafeas.v1beta1.pkg.Version getVersion() {
     return version_ == null ? io.grafeas.v1beta1.pkg.Version.getDefaultInstance() : version_;
@@ -223,6 +236,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string path = 3;</code>
+   *
+   * @return The path.
    */
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
@@ -243,6 +258,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string path = 3;</code>
+   *
+   * @return The bytes for path.
    */
   public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
@@ -623,6 +640,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @return The cpeUri.
      */
     public java.lang.String getCpeUri() {
       java.lang.Object ref = cpeUri_;
@@ -644,6 +663,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @return The bytes for cpeUri.
      */
     public com.google.protobuf.ByteString getCpeUriBytes() {
       java.lang.Object ref = cpeUri_;
@@ -665,6 +686,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @param value The cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUri(java.lang.String value) {
       if (value == null) {
@@ -684,6 +708,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
 
@@ -700,6 +726,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @param value The bytes for cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -726,6 +755,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+     *
+     * @return Whether the version field is set.
      */
     public boolean hasVersion() {
       return versionBuilder_ != null || version_ != null;
@@ -738,6 +769,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+     *
+     * @return The version.
      */
     public io.grafeas.v1beta1.pkg.Version getVersion() {
       if (versionBuilder_ == null) {
@@ -896,6 +929,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 3;</code>
+     *
+     * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -916,6 +951,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 3;</code>
+     *
+     * @return The bytes for path.
      */
     public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
@@ -936,6 +973,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 3;</code>
+     *
+     * @param value The path to set.
+     * @return This builder for chaining.
      */
     public Builder setPath(java.lang.String value) {
       if (value == null) {
@@ -954,6 +994,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPath() {
 
@@ -969,6 +1011,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string path = 3;</code>
+     *
+     * @param value The bytes for path to set.
+     * @return This builder for chaining.
      */
     public Builder setPathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

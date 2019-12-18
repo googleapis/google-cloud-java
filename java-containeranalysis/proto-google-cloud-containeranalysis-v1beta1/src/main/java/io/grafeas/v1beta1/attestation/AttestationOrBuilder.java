@@ -31,6 +31,8 @@ public interface AttestationOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
+   *
+   * @return Whether the pgpSignedAttestation field is set.
    */
   boolean hasPgpSignedAttestation();
   /**
@@ -41,6 +43,8 @@ public interface AttestationOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
+   *
+   * @return The pgpSignedAttestation.
    */
   io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation();
   /**

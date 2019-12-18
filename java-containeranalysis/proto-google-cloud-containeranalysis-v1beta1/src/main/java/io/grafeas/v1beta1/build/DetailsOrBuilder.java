@@ -31,6 +31,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   *
+   * @return Whether the provenance field is set.
    */
   boolean hasProvenance();
   /**
@@ -41,6 +43,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   *
+   * @return The provenance.
    */
   io.grafeas.v1beta1.provenance.BuildProvenance getProvenance();
   /**
@@ -71,6 +75,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   *
+   * @return The provenanceBytes.
    */
   java.lang.String getProvenanceBytes();
   /**
@@ -90,6 +96,8 @@ public interface DetailsOrBuilder
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   *
+   * @return The bytes for provenanceBytes.
    */
   com.google.protobuf.ByteString getProvenanceBytesBytes();
 }

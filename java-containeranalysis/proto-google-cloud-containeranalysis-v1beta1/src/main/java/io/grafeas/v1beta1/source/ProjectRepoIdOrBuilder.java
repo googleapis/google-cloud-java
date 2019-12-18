@@ -31,6 +31,8 @@ public interface ProjectRepoIdOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface ProjectRepoIdOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -52,6 +56,8 @@ public interface ProjectRepoIdOrBuilder
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The repoName.
    */
   java.lang.String getRepoName();
   /**
@@ -62,6 +68,8 @@ public interface ProjectRepoIdOrBuilder
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
+   * @return The bytes for repoName.
    */
   com.google.protobuf.ByteString getRepoNameBytes();
 }

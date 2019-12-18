@@ -31,6 +31,8 @@ public interface DeployableOrBuilder
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @return A list containing the resourceUri.
    */
   java.util.List<java.lang.String> getResourceUriList();
   /**
@@ -41,6 +43,8 @@ public interface DeployableOrBuilder
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @return The count of resourceUri.
    */
   int getResourceUriCount();
   /**
@@ -51,6 +55,9 @@ public interface DeployableOrBuilder
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceUri at the given index.
    */
   java.lang.String getResourceUri(int index);
   /**
@@ -61,6 +68,9 @@ public interface DeployableOrBuilder
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceUri at the given index.
    */
   com.google.protobuf.ByteString getResourceUriBytes(int index);
 }

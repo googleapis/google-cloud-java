@@ -31,6 +31,8 @@ public interface SourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
+   *
+   * @return Whether the cloudRepo field is set.
    */
   boolean hasCloudRepo();
   /**
@@ -41,6 +43,8 @@ public interface SourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
+   *
+   * @return The cloudRepo.
    */
   io.grafeas.v1beta1.source.CloudRepoSourceContext getCloudRepo();
   /**
@@ -62,6 +66,8 @@ public interface SourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
+   *
+   * @return Whether the gerrit field is set.
    */
   boolean hasGerrit();
   /**
@@ -72,6 +78,8 @@ public interface SourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
+   *
+   * @return The gerrit.
    */
   io.grafeas.v1beta1.source.GerritSourceContext getGerrit();
   /**
@@ -93,6 +101,8 @@ public interface SourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
+   *
+   * @return Whether the git field is set.
    */
   boolean hasGit();
   /**
@@ -103,6 +113,8 @@ public interface SourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
+   *
+   * @return The git.
    */
   io.grafeas.v1beta1.source.GitSourceContext getGit();
   /**

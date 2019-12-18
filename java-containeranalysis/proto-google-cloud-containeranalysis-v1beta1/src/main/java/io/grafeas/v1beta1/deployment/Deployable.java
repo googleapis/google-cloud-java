@@ -42,6 +42,12 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Deployable();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -122,6 +128,8 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @return A list containing the resourceUri.
    */
   public com.google.protobuf.ProtocolStringList getResourceUriList() {
     return resourceUri_;
@@ -134,6 +142,8 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @return The count of resourceUri.
    */
   public int getResourceUriCount() {
     return resourceUri_.size();
@@ -146,6 +156,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceUri at the given index.
    */
   public java.lang.String getResourceUri(int index) {
     return resourceUri_.get(index);
@@ -158,6 +171,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceUri at the given index.
    */
   public com.google.protobuf.ByteString getResourceUriBytes(int index) {
     return resourceUri_.getByteString(index);
@@ -515,6 +531,8 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @return A list containing the resourceUri.
      */
     public com.google.protobuf.ProtocolStringList getResourceUriList() {
       return resourceUri_.getUnmodifiableView();
@@ -527,6 +545,8 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @return The count of resourceUri.
      */
     public int getResourceUriCount() {
       return resourceUri_.size();
@@ -539,6 +559,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceUri at the given index.
      */
     public java.lang.String getResourceUri(int index) {
       return resourceUri_.get(index);
@@ -551,6 +574,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceUri at the given index.
      */
     public com.google.protobuf.ByteString getResourceUriBytes(int index) {
       return resourceUri_.getByteString(index);
@@ -563,6 +589,10 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUri(int index, java.lang.String value) {
       if (value == null) {
@@ -581,6 +611,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @param value The resourceUri to add.
+     * @return This builder for chaining.
      */
     public Builder addResourceUri(java.lang.String value) {
       if (value == null) {
@@ -599,6 +632,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @param values The resourceUri to add.
+     * @return This builder for chaining.
      */
     public Builder addAllResourceUri(java.lang.Iterable<java.lang.String> values) {
       ensureResourceUriIsMutable();
@@ -614,6 +650,8 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
       resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -629,6 +667,9 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
+     *
+     * @param value The bytes of the resourceUri to add.
+     * @return This builder for chaining.
      */
     public Builder addResourceUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

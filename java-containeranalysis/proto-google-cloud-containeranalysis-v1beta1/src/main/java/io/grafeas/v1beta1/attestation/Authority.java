@@ -47,6 +47,12 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   private Authority() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Authority();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +138,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     *
+     * @return The humanReadableName.
      */
     java.lang.String getHumanReadableName();
     /**
@@ -143,6 +150,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     *
+     * @return The bytes for humanReadableName.
      */
     com.google.protobuf.ByteString getHumanReadableNameBytes();
   }
@@ -176,6 +185,12 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Hint();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -188,7 +203,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -250,6 +264,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     *
+     * @return The humanReadableName.
      */
     public java.lang.String getHumanReadableName() {
       java.lang.Object ref = humanReadableName_;
@@ -270,6 +286,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     *
+     * @return The bytes for humanReadableName.
      */
     public com.google.protobuf.ByteString getHumanReadableNameBytes() {
       java.lang.Object ref = humanReadableName_;
@@ -619,6 +637,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       *
+       * @return The humanReadableName.
        */
       public java.lang.String getHumanReadableName() {
         java.lang.Object ref = humanReadableName_;
@@ -639,6 +659,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       *
+       * @return The bytes for humanReadableName.
        */
       public com.google.protobuf.ByteString getHumanReadableNameBytes() {
         java.lang.Object ref = humanReadableName_;
@@ -659,6 +681,9 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       *
+       * @param value The humanReadableName to set.
+       * @return This builder for chaining.
        */
       public Builder setHumanReadableName(java.lang.String value) {
         if (value == null) {
@@ -677,6 +702,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearHumanReadableName() {
 
@@ -692,6 +719,9 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       *
+       * @param value The bytes for humanReadableName to set.
+       * @return This builder for chaining.
        */
       public Builder setHumanReadableNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -766,6 +796,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+   *
+   * @return Whether the hint field is set.
    */
   public boolean hasHint() {
     return hint_ != null;
@@ -778,6 +810,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+   *
+   * @return The hint.
    */
   public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
     return hint_ == null
@@ -1145,6 +1179,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+     *
+     * @return Whether the hint field is set.
      */
     public boolean hasHint() {
       return hintBuilder_ != null || hint_ != null;
@@ -1157,6 +1193,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+     *
+     * @return The hint.
      */
     public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
       if (hintBuilder_ == null) {

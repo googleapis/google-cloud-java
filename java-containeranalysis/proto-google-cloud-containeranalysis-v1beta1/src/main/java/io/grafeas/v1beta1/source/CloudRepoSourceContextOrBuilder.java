@@ -31,6 +31,8 @@ public interface CloudRepoSourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
+   *
+   * @return Whether the repoId field is set.
    */
   boolean hasRepoId();
   /**
@@ -41,6 +43,8 @@ public interface CloudRepoSourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
+   *
+   * @return The repoId.
    */
   io.grafeas.v1beta1.source.RepoId getRepoId();
   /**
@@ -62,6 +66,8 @@ public interface CloudRepoSourceContextOrBuilder
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
+   * @return The revisionId.
    */
   java.lang.String getRevisionId();
   /**
@@ -72,6 +78,8 @@ public interface CloudRepoSourceContextOrBuilder
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
+   * @return The bytes for revisionId.
    */
   com.google.protobuf.ByteString getRevisionIdBytes();
 
@@ -83,6 +91,8 @@ public interface CloudRepoSourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext alias_context = 3;</code>
+   *
+   * @return Whether the aliasContext field is set.
    */
   boolean hasAliasContext();
   /**
@@ -93,6 +103,8 @@ public interface CloudRepoSourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext alias_context = 3;</code>
+   *
+   * @return The aliasContext.
    */
   io.grafeas.v1beta1.source.AliasContext getAliasContext();
   /**

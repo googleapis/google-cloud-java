@@ -40,6 +40,12 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   private Details() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   public boolean hasAttestation() {
     return attestation_ != null;
@@ -135,6 +142,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   *
+   * @return The attestation.
    */
   public io.grafeas.v1beta1.attestation.Attestation getAttestation() {
     return attestation_ == null
@@ -495,6 +504,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+     *
+     * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
       return attestationBuilder_ != null || attestation_ != null;
@@ -507,6 +518,8 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+     *
+     * @return The attestation.
      */
     public io.grafeas.v1beta1.attestation.Attestation getAttestation() {
       if (attestationBuilder_ == null) {
