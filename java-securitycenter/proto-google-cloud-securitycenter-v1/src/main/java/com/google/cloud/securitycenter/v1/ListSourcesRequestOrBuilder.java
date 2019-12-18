@@ -27,22 +27,26 @@ public interface ListSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent of sources to list. Its format should be
+   * Required. Resource name of the parent of sources to list. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Resource name of the parent of sources to list. Its format should be
+   * Required. Resource name of the parent of sources to list. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

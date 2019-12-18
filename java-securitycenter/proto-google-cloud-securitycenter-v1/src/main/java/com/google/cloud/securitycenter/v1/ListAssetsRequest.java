@@ -186,11 +186,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of the organization assets should belong to. Its format is
+   * Required. Name of the organization assets should belong to. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -207,11 +209,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of the organization assets should belong to. Its format is
+   * Required. Name of the organization assets should belong to. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -251,25 +255,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following are the allowed field and operator combinations:
-   * name | `=`
-   * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * name: `=`
+   * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "update_time = 1560208038000"
-   * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "create_time = 1560208038000"
-   * iam_policy.policy_blob | '=', ':'
-   * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-   * security_marks | '=', ':'
-   * security_center_properties.resource_name | '=', ':'
-   * security_center_properties.resource_type | '=', ':'
-   * security_center_properties.resource_parent | '=', ':'
-   * security_center_properties.resource_project | '=', ':'
-   * security_center_properties.resource_owners | '=', ':'
+   * * iam_policy.policy_blob: `=`, `:`
+   * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * security_marks.marks: `=`, `:`
+   * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_type: `=`, `:`
+   * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -310,25 +314,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following are the allowed field and operator combinations:
-   * name | `=`
-   * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * name: `=`
+   * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "update_time = 1560208038000"
-   * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "create_time = 1560208038000"
-   * iam_policy.policy_blob | '=', ':'
-   * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-   * security_marks | '=', ':'
-   * security_center_properties.resource_name | '=', ':'
-   * security_center_properties.resource_type | '=', ':'
-   * security_center_properties.resource_parent | '=', ':'
-   * security_center_properties.resource_project | '=', ':'
-   * security_center_properties.resource_owners | '=', ':'
+   * * iam_policy.policy_blob: `=`, `:`
+   * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * security_marks.marks: `=`, `:`
+   * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_type: `=`, `:`
+   * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -364,7 +368,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * name
    * update_time
    * resource_properties
-   * security_marks
+   * security_marks.marks
    * security_center_properties.resource_name
    * security_center_properties.resource_parent
    * security_center_properties.resource_project
@@ -400,7 +404,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * name
    * update_time
    * resource_properties
-   * security_marks
+   * security_marks.marks
    * security_center_properties.resource_name
    * security_center_properties.resource_parent
    * security_center_properties.resource_project
@@ -573,13 +577,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the ListAssetsResult fields to be listed in the
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasFieldMask() {
     return fieldMask_ != null;
@@ -588,13 +592,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the ListAssetsResult fields to be listed in the
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
@@ -603,13 +607,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the ListAssetsResult fields to be listed in the
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
     return getFieldMask();
@@ -1148,11 +1152,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the organization assets should belong to. Its format is
+     * Required. Name of the organization assets should belong to. Its format is
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1169,11 +1175,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the organization assets should belong to. Its format is
+     * Required. Name of the organization assets should belong to. Its format is
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1190,11 +1198,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the organization assets should belong to. Its format is
+     * Required. Name of the organization assets should belong to. Its format is
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1209,11 +1219,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the organization assets should belong to. Its format is
+     * Required. Name of the organization assets should belong to. Its format is
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -1225,11 +1237,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the organization assets should belong to. Its format is
+     * Required. Name of the organization assets should belong to. Its format is
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1267,25 +1281,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
-     * name | `=`
-     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "update_time = 1560208038000"
-     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "create_time = 1560208038000"
-     * iam_policy.policy_blob | '=', ':'
-     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-     * security_marks | '=', ':'
-     * security_center_properties.resource_name | '=', ':'
-     * security_center_properties.resource_type | '=', ':'
-     * security_center_properties.resource_parent | '=', ':'
-     * security_center_properties.resource_project | '=', ':'
-     * security_center_properties.resource_owners | '=', ':'
+     * * iam_policy.policy_blob: `=`, `:`
+     * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * security_marks.marks: `=`, `:`
+     * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_type: `=`, `:`
+     * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1326,25 +1340,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
-     * name | `=`
-     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "update_time = 1560208038000"
-     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "create_time = 1560208038000"
-     * iam_policy.policy_blob | '=', ':'
-     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-     * security_marks | '=', ':'
-     * security_center_properties.resource_name | '=', ':'
-     * security_center_properties.resource_type | '=', ':'
-     * security_center_properties.resource_parent | '=', ':'
-     * security_center_properties.resource_project | '=', ':'
-     * security_center_properties.resource_owners | '=', ':'
+     * * iam_policy.policy_blob: `=`, `:`
+     * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * security_marks.marks: `=`, `:`
+     * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_type: `=`, `:`
+     * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1385,25 +1399,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
-     * name | `=`
-     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "update_time = 1560208038000"
-     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "create_time = 1560208038000"
-     * iam_policy.policy_blob | '=', ':'
-     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-     * security_marks | '=', ':'
-     * security_center_properties.resource_name | '=', ':'
-     * security_center_properties.resource_type | '=', ':'
-     * security_center_properties.resource_parent | '=', ':'
-     * security_center_properties.resource_project | '=', ':'
-     * security_center_properties.resource_owners | '=', ':'
+     * * iam_policy.policy_blob: `=`, `:`
+     * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * security_marks.marks: `=`, `:`
+     * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_type: `=`, `:`
+     * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1442,25 +1456,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
-     * name | `=`
-     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "update_time = 1560208038000"
-     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "create_time = 1560208038000"
-     * iam_policy.policy_blob | '=', ':'
-     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-     * security_marks | '=', ':'
-     * security_center_properties.resource_name | '=', ':'
-     * security_center_properties.resource_type | '=', ':'
-     * security_center_properties.resource_parent | '=', ':'
-     * security_center_properties.resource_project | '=', ':'
-     * security_center_properties.resource_owners | '=', ':'
+     * * iam_policy.policy_blob: `=`, `:`
+     * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * security_marks.marks: `=`, `:`
+     * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_type: `=`, `:`
+     * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1496,25 +1510,25 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following are the allowed field and operator combinations:
-     * name | `=`
-     * update_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "update_time = 1560208038000"
-     * create_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
      *     "create_time = 1560208038000"
-     * iam_policy.policy_blob | '=', ':'
-     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-     * security_marks | '=', ':'
-     * security_center_properties.resource_name | '=', ':'
-     * security_center_properties.resource_type | '=', ':'
-     * security_center_properties.resource_parent | '=', ':'
-     * security_center_properties.resource_project | '=', ':'
-     * security_center_properties.resource_owners | '=', ':'
+     * * iam_policy.policy_blob: `=`, `:`
+     * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * security_marks.marks: `=`, `:`
+     * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_type: `=`, `:`
+     * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1548,7 +1562,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * name
      * update_time
      * resource_properties
-     * security_marks
+     * security_marks.marks
      * security_center_properties.resource_name
      * security_center_properties.resource_parent
      * security_center_properties.resource_project
@@ -1584,7 +1598,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * name
      * update_time
      * resource_properties
-     * security_marks
+     * security_marks.marks
      * security_center_properties.resource_name
      * security_center_properties.resource_parent
      * security_center_properties.resource_project
@@ -1620,7 +1634,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * name
      * update_time
      * resource_properties
-     * security_marks
+     * security_marks.marks
      * security_center_properties.resource_name
      * security_center_properties.resource_parent
      * security_center_properties.resource_project
@@ -1654,7 +1668,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * name
      * update_time
      * resource_properties
-     * security_marks
+     * security_marks.marks
      * security_center_properties.resource_name
      * security_center_properties.resource_parent
      * security_center_properties.resource_project
@@ -1685,7 +1699,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * name
      * update_time
      * resource_properties
-     * security_marks
+     * security_marks.marks
      * security_center_properties.resource_name
      * security_center_properties.resource_parent
      * security_center_properties.resource_project
@@ -2269,13 +2283,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasFieldMask() {
       return fieldMaskBuilder_ != null || fieldMask_ != null;
@@ -2284,13 +2298,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask getFieldMask() {
       if (fieldMaskBuilder_ == null) {
@@ -2303,13 +2317,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFieldMask(com.google.protobuf.FieldMask value) {
       if (fieldMaskBuilder_ == null) {
@@ -2328,13 +2342,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (fieldMaskBuilder_ == null) {
@@ -2350,13 +2364,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
       if (fieldMaskBuilder_ == null) {
@@ -2377,13 +2391,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearFieldMask() {
       if (fieldMaskBuilder_ == null) {
@@ -2400,13 +2414,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
 
@@ -2417,13 +2431,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
       if (fieldMaskBuilder_ != null) {
@@ -2436,13 +2450,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional.
-     * A field mask to specify the ListAssetsResult fields to be listed in the
+     * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
      * An empty field mask will list all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+     * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

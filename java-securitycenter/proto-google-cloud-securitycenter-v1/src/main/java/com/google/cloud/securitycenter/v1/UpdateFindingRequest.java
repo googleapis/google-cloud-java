@@ -134,14 +134,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasFinding() {
     return finding_ != null;
@@ -150,14 +152,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.Finding getFinding() {
     return finding_ == null
@@ -168,14 +172,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
     return getFinding();
@@ -604,14 +610,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasFinding() {
       return findingBuilder_ != null || finding_ != null;
@@ -620,14 +628,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.Finding getFinding() {
       if (findingBuilder_ == null) {
@@ -642,14 +652,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFinding(com.google.cloud.securitycenter.v1.Finding value) {
       if (findingBuilder_ == null) {
@@ -668,14 +680,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFinding(com.google.cloud.securitycenter.v1.Finding.Builder builderForValue) {
       if (findingBuilder_ == null) {
@@ -691,14 +705,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFinding(com.google.cloud.securitycenter.v1.Finding value) {
       if (findingBuilder_ == null) {
@@ -721,14 +737,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFinding() {
       if (findingBuilder_ == null) {
@@ -745,14 +763,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.Finding.Builder getFindingBuilder() {
 
@@ -763,14 +783,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
       if (findingBuilder_ != null) {
@@ -785,14 +807,16 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.Finding,

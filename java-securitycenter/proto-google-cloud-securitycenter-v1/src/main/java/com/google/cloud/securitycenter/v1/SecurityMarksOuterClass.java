@@ -46,17 +46,22 @@ public final class SecurityMarksOuterClass {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/securitycenter/v1/securit"
           + "y_marks.proto\022\036google.cloud.securitycent"
-          + "er.v1\032\034google/api/annotations.proto\"\224\001\n\r"
-          + "SecurityMarks\022\014\n\004name\030\001 \001(\t\022G\n\005marks\030\002 \003"
-          + "(\01328.google.cloud.securitycenter.v1.Secu"
-          + "rityMarks.MarksEntry\032,\n\nMarksEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\332\001\n\"com.googl"
-          + "e.cloud.securitycenter.v1P\001ZLgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/securit"
-          + "ycenter/v1;securitycenter\252\002\036Google.Cloud"
-          + ".SecurityCenter.V1\312\002\036Google\\Cloud\\Securi"
-          + "tyCenter\\V1\352\002!Google::Cloud::SecurityCen"
-          + "ter::V1b\006proto3"
+          + "er.v1\032\034google/api/annotations.proto\032\031goo"
+          + "gle/api/resource.proto\"\323\002\n\rSecurityMarks"
+          + "\022\014\n\004name\030\001 \001(\t\022G\n\005marks\030\002 \003(\01328.google.c"
+          + "loud.securitycenter.v1.SecurityMarks.Mar"
+          + "ksEntry\032,\n\nMarksEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001:\274\001\352A\270\001\n+securitycenter.goo"
+          + "gleapis.com/SecurityMarks\0229organizations"
+          + "/{organization}/assets/{asset}/securityM"
+          + "arks\022Norganizations/{organization}/sourc"
+          + "es/{source}/findings/{finding}/securityM"
+          + "arksB\332\001\n\"com.google.cloud.securitycenter"
+          + ".v1P\001ZLgoogle.golang.org/genproto/google"
+          + "apis/cloud/securitycenter/v1;securitycen"
+          + "ter\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036G"
+          + "oogle\\Cloud\\SecurityCenter\\V1\352\002!Google::"
+          + "Cloud::SecurityCenter::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -70,6 +75,7 @@ public final class SecurityMarksOuterClass {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_securitycenter_v1_SecurityMarks_descriptor =
@@ -90,7 +96,13 @@ public final class SecurityMarksOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -2413,7 +2413,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2436,7 +2436,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -3303,7 +3303,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3326,7 +3326,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3349,7 +3349,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3370,7 +3370,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3388,7 +3388,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>

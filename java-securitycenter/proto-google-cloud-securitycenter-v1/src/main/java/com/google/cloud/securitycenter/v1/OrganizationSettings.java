@@ -1255,7 +1255,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/organizationSettings".
+   * "organizations/{organization_id}/organizationSettings".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1278,7 +1278,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/organizationSettings".
+   * "organizations/{organization_id}/organizationSettings".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1736,7 +1736,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/organizationSettings".
+     * "organizations/{organization_id}/organizationSettings".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1759,7 +1759,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/organizationSettings".
+     * "organizations/{organization_id}/organizationSettings".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1782,7 +1782,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/organizationSettings".
+     * "organizations/{organization_id}/organizationSettings".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1803,7 +1803,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/organizationSettings".
+     * "organizations/{organization_id}/organizationSettings".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1821,7 +1821,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/organizationSettings".
+     * "organizations/{organization_id}/organizationSettings".
      * </pre>
      *
      * <code>string name = 1;</code>

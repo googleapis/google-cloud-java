@@ -30,7 +30,7 @@ public interface OrganizationSettingsOrBuilder
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/organizationSettings".
+   * "organizations/{organization_id}/organizationSettings".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface OrganizationSettingsOrBuilder
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/organizationSettings".
+   * "organizations/{organization_id}/organizationSettings".
    * </pre>
    *
    * <code>string name = 1;</code>

@@ -27,42 +27,48 @@ public interface UpdateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasFinding();
   /**
    *
    *
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.Finding getFinding();
   /**
    *
    *
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder();
 

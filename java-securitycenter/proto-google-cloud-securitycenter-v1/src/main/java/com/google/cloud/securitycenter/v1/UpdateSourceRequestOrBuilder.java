@@ -27,30 +27,36 @@ public interface UpdateSourceRequestOrBuilder
    *
    *
    * <pre>
-   * The source resource to update.
+   * Required. The source resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Source source = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasSource();
   /**
    *
    *
    * <pre>
-   * The source resource to update.
+   * Required. The source resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Source source = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.Source getSource();
   /**
    *
    *
    * <pre>
-   * The source resource to update.
+   * Required. The source resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Source source = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder();
 

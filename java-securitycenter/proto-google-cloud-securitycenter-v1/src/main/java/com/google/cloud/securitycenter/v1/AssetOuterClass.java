@@ -54,34 +54,37 @@ public final class AssetOuterClass {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/securitycenter/v1/asset.p"
           + "roto\022\036google.cloud.securitycenter.v1\032\034go"
-          + "ogle/api/annotations.proto\0323google/cloud"
-          + "/securitycenter/v1/security_marks.proto\032"
-          + "\034google/protobuf/struct.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\317\005\n\005Asset\022\014\n\004name"
-          + "\030\001 \001(\t\022b\n\032security_center_properties\030\002 \001"
-          + "(\0132>.google.cloud.securitycenter.v1.Asse"
-          + "t.SecurityCenterProperties\022Z\n\023resource_p"
-          + "roperties\030\007 \003(\0132=.google.cloud.securityc"
-          + "enter.v1.Asset.ResourcePropertiesEntry\022E"
-          + "\n\016security_marks\030\010 \001(\0132-.google.cloud.se"
-          + "curitycenter.v1.SecurityMarks\022/\n\013create_"
-          + "time\030\t \001(\0132\032.google.protobuf.Timestamp\022/"
-          + "\n\013update_time\030\n \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022C\n\niam_policy\030\013 \001(\0132/.google.clo"
-          + "ud.securitycenter.v1.Asset.IamPolicy\032\224\001\n"
-          + "\030SecurityCenterProperties\022\025\n\rresource_na"
-          + "me\030\001 \001(\t\022\025\n\rresource_type\030\002 \001(\t\022\027\n\017resou"
-          + "rce_parent\030\003 \001(\t\022\030\n\020resource_project\030\004 \001"
-          + "(\t\022\027\n\017resource_owners\030\005 \003(\t\032 \n\tIamPolicy"
-          + "\022\023\n\013policy_blob\030\001 \001(\t\032Q\n\027ResourcePropert"
-          + "iesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.g"
-          + "oogle.protobuf.Value:\0028\001B\332\001\n\"com.google."
-          + "cloud.securitycenter.v1P\001ZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/securityc"
-          + "enter/v1;securitycenter\252\002\036Google.Cloud.S"
-          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
-          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
-          + "r::V1b\006proto3"
+          + "ogle/api/annotations.proto\032\031google/api/r"
+          + "esource.proto\0323google/cloud/securitycent"
+          + "er/v1/security_marks.proto\032\034google/proto"
+          + "buf/struct.proto\032\037google/protobuf/timest"
+          + "amp.proto\"\246\006\n\005Asset\022\014\n\004name\030\001 \001(\t\022b\n\032sec"
+          + "urity_center_properties\030\002 \001(\0132>.google.c"
+          + "loud.securitycenter.v1.Asset.SecurityCen"
+          + "terProperties\022Z\n\023resource_properties\030\007 \003"
+          + "(\0132=.google.cloud.securitycenter.v1.Asse"
+          + "t.ResourcePropertiesEntry\022E\n\016security_ma"
+          + "rks\030\010 \001(\0132-.google.cloud.securitycenter."
+          + "v1.SecurityMarks\022/\n\013create_time\030\t \001(\0132\032."
+          + "google.protobuf.Timestamp\022/\n\013update_time"
+          + "\030\n \001(\0132\032.google.protobuf.Timestamp\022C\n\nia"
+          + "m_policy\030\013 \001(\0132/.google.cloud.securityce"
+          + "nter.v1.Asset.IamPolicy\032\224\001\n\030SecurityCent"
+          + "erProperties\022\025\n\rresource_name\030\001 \001(\t\022\025\n\rr"
+          + "esource_type\030\002 \001(\t\022\027\n\017resource_parent\030\003 "
+          + "\001(\t\022\030\n\020resource_project\030\004 \001(\t\022\027\n\017resourc"
+          + "e_owners\030\005 \003(\t\032 \n\tIamPolicy\022\023\n\013policy_bl"
+          + "ob\030\001 \001(\t\032Q\n\027ResourcePropertiesEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobu"
+          + "f.Value:\0028\001:U\352AR\n#securitycenter.googlea"
+          + "pis.com/Asset\022+organizations/{organizati"
+          + "on}/assets/{asset}B\332\001\n\"com.google.cloud."
+          + "securitycenter.v1P\001ZLgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/securitycenter/"
+          + "v1;securitycenter\252\002\036Google.Cloud.Securit"
+          + "yCenter.V1\312\002\036Google\\Cloud\\SecurityCenter"
+          + "\\V1\352\002!Google::Cloud::SecurityCenter::V1b"
+          + "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -95,6 +98,7 @@ public final class AssetOuterClass {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -138,7 +142,13 @@ public final class AssetOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

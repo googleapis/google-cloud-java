@@ -30,7 +30,7 @@ public interface AssetOrBuilder
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface AssetOrBuilder
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>

@@ -23,10 +23,11 @@ package com.google.cloud.securitycenter.v1;
  *
  * <pre>
  * Cloud Security Command Center (Cloud SCC) finding.
- * A finding is a record of assessment data (security, risk, health or privacy)
- * ingested into Cloud SCC for presentation, notification, analysis,
- * policy testing, and enforcement. For example, an XSS vulnerability in an
- * App Engine application is a finding.
+ * A finding is a record of assessment data like security, risk, health, or
+ * privacy, that is ingested into Cloud SCC for presentation, notification,
+ * analysis, policy testing, and enforcement. For example, a
+ * cross-site scripting (XSS) vulnerability in an App Engine application is a
+ * finding.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Finding}
@@ -382,7 +383,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/findings/789"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -405,7 +406,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/findings/789"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -432,7 +433,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * This field is immutable after creation time.
    * For example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string parent = 2;</code>
@@ -456,7 +457,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * This field is immutable after creation time.
    * For example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string parent = 2;</code>
@@ -479,9 +480,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full resource name of the Google Cloud Platform (GCP) resource this
-   * finding is for. See:
+   * For findings on Google Cloud Platform (GCP) resources, the full resource
+   * name of the GCP resource this finding is for. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   * When the finding is for a non-GCP resource, the resourceName can be a
+   * customer or partner defined string.
    * This field is immutable after creation time.
    * </pre>
    *
@@ -502,9 +505,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full resource name of the Google Cloud Platform (GCP) resource this
-   * finding is for. See:
+   * For findings on Google Cloud Platform (GCP) resources, the full resource
+   * name of the GCP resource this finding is for. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   * When the finding is for a non-GCP resource, the resourceName can be a
+   * customer or partner defined string.
    * This field is immutable after creation time.
    * </pre>
    *
@@ -770,7 +775,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * to the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
@@ -784,7 +791,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * to the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null
@@ -800,7 +809,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * to the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
     return getSecurityMarks();
@@ -813,8 +824,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time at which the event took place. For example, if the finding
-   * represents an open firewall it would capture the time the open firewall was
-   * detected.
+   * represents an open firewall it would capture the time the detector believes
+   * the firewall became open. The accuracy is determined by the detector.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -827,8 +838,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time at which the event took place. For example, if the finding
-   * represents an open firewall it would capture the time the open firewall was
-   * detected.
+   * represents an open firewall it would capture the time the detector believes
+   * the firewall became open. The accuracy is determined by the detector.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -841,8 +852,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time at which the event took place. For example, if the finding
-   * represents an open firewall it would capture the time the open firewall was
-   * detected.
+   * represents an open firewall it would capture the time the detector believes
+   * the firewall became open. The accuracy is determined by the detector.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -1158,10 +1169,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Cloud Security Command Center (Cloud SCC) finding.
-   * A finding is a record of assessment data (security, risk, health or privacy)
-   * ingested into Cloud SCC for presentation, notification, analysis,
-   * policy testing, and enforcement. For example, an XSS vulnerability in an
-   * App Engine application is a finding.
+   * A finding is a record of assessment data like security, risk, health, or
+   * privacy, that is ingested into Cloud SCC for presentation, notification,
+   * analysis, policy testing, and enforcement. For example, a
+   * cross-site scripting (XSS) vulnerability in an App Engine application is a
+   * finding.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Finding}
@@ -1427,7 +1439,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1450,7 +1462,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1473,7 +1485,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1494,7 +1506,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1512,7 +1524,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1537,7 +1549,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -1561,7 +1573,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -1585,7 +1597,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -1607,7 +1619,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -1626,7 +1638,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -1647,9 +1659,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      * </pre>
      *
@@ -1670,9 +1684,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      * </pre>
      *
@@ -1693,9 +1709,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      * </pre>
      *
@@ -1714,9 +1732,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      * </pre>
      *
@@ -1732,9 +1752,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      * </pre>
      *
@@ -2233,7 +2255,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasSecurityMarks() {
       return securityMarksBuilder_ != null || securityMarks_ != null;
@@ -2247,7 +2271,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -2267,7 +2293,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSecurityMarks(com.google.cloud.securitycenter.v1.SecurityMarks value) {
       if (securityMarksBuilder_ == null) {
@@ -2291,7 +2319,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSecurityMarks(
         com.google.cloud.securitycenter.v1.SecurityMarks.Builder builderForValue) {
@@ -2313,7 +2343,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeSecurityMarks(com.google.cloud.securitycenter.v1.SecurityMarks value) {
       if (securityMarksBuilder_ == null) {
@@ -2341,7 +2373,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -2363,7 +2397,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks.Builder getSecurityMarksBuilder() {
 
@@ -2379,7 +2415,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
       if (securityMarksBuilder_ != null) {
@@ -2399,7 +2437,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * to the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.SecurityMarks,
@@ -2429,8 +2469,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2443,8 +2483,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2461,8 +2501,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2485,8 +2525,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2506,8 +2546,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2532,8 +2572,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2554,8 +2594,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2570,8 +2610,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2588,8 +2628,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>

@@ -135,13 +135,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The relative resource name of the finding. See:
+   * Required. The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/finding/789".
+   * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -158,13 +160,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The relative resource name of the finding. See:
+   * Required. The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/finding/789".
+   * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -184,10 +188,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The desired State of the finding.
+   * Required. The desired State of the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getStateValue() {
     return state_;
@@ -196,10 +202,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The desired State of the finding.
+   * Required. The desired State of the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.Finding.State getState() {
     @SuppressWarnings("deprecation")
@@ -214,10 +222,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -226,10 +235,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -238,10 +248,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
@@ -614,13 +625,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -637,13 +650,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -660,13 +675,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -681,13 +698,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -699,13 +718,15 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -723,10 +744,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getStateValue() {
       return state_;
@@ -735,10 +758,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -749,10 +774,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.Finding.State getState() {
       @SuppressWarnings("deprecation")
@@ -766,10 +793,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setState(com.google.cloud.securitycenter.v1.Finding.State value) {
       if (value == null) {
@@ -784,10 +813,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Finding.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearState() {
 
@@ -806,10 +837,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -818,10 +850,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -834,10 +867,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -856,10 +890,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
@@ -875,10 +910,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -899,10 +935,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
@@ -919,10 +956,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
 
@@ -933,10 +971,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
@@ -949,10 +988,11 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

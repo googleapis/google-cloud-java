@@ -27,30 +27,36 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasOrganizationSettings();
   /**
    *
    *
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings();
   /**
    *
    *
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.OrganizationSettingsOrBuilder
       getOrganizationSettingsOrBuilder();

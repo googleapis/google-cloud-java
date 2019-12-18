@@ -27,22 +27,26 @@ public interface RunAssetDiscoveryRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the organization to run asset discovery for. Its format is
+   * Required. Name of the organization to run asset discovery for. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Name of the organization to run asset discovery for. Its format is
+   * Required. Name of the organization to run asset discovery for. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 }

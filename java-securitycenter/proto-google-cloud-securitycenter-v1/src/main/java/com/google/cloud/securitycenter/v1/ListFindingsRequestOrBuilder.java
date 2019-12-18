@@ -27,26 +27,30 @@ public interface ListFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the source the findings belong to. Its format is
+   * Required. Name of the source the findings belong to. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To list across all
    * sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Name of the source the findings belong to. Its format is
+   * Required. Name of the source the findings belong to. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To list across all
    * sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -72,19 +76,19 @@ public interface ListFindingsRequestOrBuilder
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name | `=`
-   * parent | '=', ':'
-   * resource_name | '=', ':'
-   * state | '=', ':'
-   * category | '=', ':'
-   * external_uri | '=', ':'
-   * event_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * name: `=`
+   * parent: `=`, `:`
+   * resource_name: `=`, `:`
+   * state: `=`, `:`
+   * category: `=`, `:`
+   * external_uri: `=`, `:`
+   * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "event_time = 1560208038000"
-   * security_marks | '=', ':'
-   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks.marks: `=`, `:`
+   * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -113,19 +117,19 @@ public interface ListFindingsRequestOrBuilder
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name | `=`
-   * parent | '=', ':'
-   * resource_name | '=', ':'
-   * state | '=', ':'
-   * category | '=', ':'
-   * external_uri | '=', ':'
-   * event_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * name: `=`
+   * parent: `=`, `:`
+   * resource_name: `=`, `:`
+   * state: `=`, `:`
+   * category: `=`, `:`
+   * external_uri: `=`, `:`
+   * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "event_time = 1560208038000"
-   * security_marks | '=', ':'
-   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks.marks: `=`, `:`
+   * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -153,7 +157,7 @@ public interface ListFindingsRequestOrBuilder
    * resource_name
    * event_time
    * source_properties
-   * security_marks
+   * security_marks.marks
    * </pre>
    *
    * <code>string order_by = 3;</code>
@@ -179,7 +183,7 @@ public interface ListFindingsRequestOrBuilder
    * resource_name
    * event_time
    * source_properties
-   * security_marks
+   * security_marks.marks
    * </pre>
    *
    * <code>string order_by = 3;</code>
@@ -318,36 +322,36 @@ public interface ListFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the Finding fields to be listed in the response.
+   * Optional. A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasFieldMask();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the Finding fields to be listed in the response.
+   * Optional. A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the Finding fields to be listed in the response.
+   * Optional. A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 

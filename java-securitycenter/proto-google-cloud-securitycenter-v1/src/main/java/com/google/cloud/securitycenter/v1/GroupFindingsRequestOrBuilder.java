@@ -27,26 +27,30 @@ public interface GroupFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the source to groupBy. Its format is
+   * Required. Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
    * all sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Name of the source to groupBy. Its format is
+   * Required. Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
    * all sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -72,19 +76,19 @@ public interface GroupFindingsRequestOrBuilder
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name | `=`
-   * parent | '=', ':'
-   * resource_name | '=', ':'
-   * state | '=', ':'
-   * category | '=', ':'
-   * external_uri | '=', ':'
-   * event_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * name: `=`
+   * * parent: `=`, `:`
+   * * resource_name: `=`, `:`
+   * * state: `=`, `:`
+   * * category: `=`, `:`
+   * * external_uri: `=`, `:`
+   * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "event_time = 1560208038000"
-   * security_marks | '=', ':'
-   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * security_marks.marks: `=`, `:`
+   * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -113,19 +117,19 @@ public interface GroupFindingsRequestOrBuilder
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name | `=`
-   * parent | '=', ':'
-   * resource_name | '=', ':'
-   * state | '=', ':'
-   * category | '=', ':'
-   * external_uri | '=', ':'
-   * event_time | `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * name: `=`
+   * * parent: `=`, `:`
+   * * resource_name: `=`, `:`
+   * * state: `=`, `:`
+   * * category: `=`, `:`
+   * * external_uri: `=`, `:`
+   * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "event_time = 1560208038000"
-   * security_marks | '=', ':'
-   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * security_marks.marks: `=`, `:`
+   * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -137,7 +141,7 @@ public interface GroupFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Expression that defines what assets fields to use for grouping (including
+   * Required. Expression that defines what assets fields to use for grouping (including
    * `state_change`). The string value should follow SQL syntax: comma separated
    * list of fields. For example: "parent,resource_name".
    * The following fields are supported:
@@ -149,14 +153,14 @@ public interface GroupFindingsRequestOrBuilder
    * * state_change
    * </pre>
    *
-   * <code>string group_by = 3;</code>
+   * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getGroupBy();
   /**
    *
    *
    * <pre>
-   * Expression that defines what assets fields to use for grouping (including
+   * Required. Expression that defines what assets fields to use for grouping (including
    * `state_change`). The string value should follow SQL syntax: comma separated
    * list of fields. For example: "parent,resource_name".
    * The following fields are supported:
@@ -168,7 +172,7 @@ public interface GroupFindingsRequestOrBuilder
    * * state_change
    * </pre>
    *
-   * <code>string group_by = 3;</code>
+   * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getGroupByBytes();
 

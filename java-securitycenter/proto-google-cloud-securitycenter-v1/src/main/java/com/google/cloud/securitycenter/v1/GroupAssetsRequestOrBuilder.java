@@ -27,22 +27,26 @@ public interface GroupAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the organization to groupBy. Its format is
+   * Required. Name of the organization to groupBy. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Name of the organization to groupBy. Its format is
+   * Required. Name of the organization to groupBy. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -70,25 +74,25 @@ public interface GroupAssetsRequestOrBuilder
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name | '='
-   * update_time | '=', '&gt;', '&lt;', '&gt;=', '&lt;='
+   * * name: `=`
+   * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "update_time = 1560208038000"
-   * create_time |  '=', '&gt;', '&lt;', '&gt;=', '&lt;='
+   * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "create_time = 1560208038000"
-   * iam_policy.policy_blob | '=', ':'
-   * resource_properties | '=', ':', '&gt;', '&lt;', '&gt;=', '&lt;='
-   * security_marks | '=', ':'
-   * security_center_properties.resource_name | '=', ':'
-   * security_center_properties.resource_type | '=', ':'
-   * security_center_properties.resource_parent | '=', ':'
-   * security_center_properties.resource_project | '=', ':'
-   * security_center_properties.resource_owners | '=', ':'
+   * * iam_policy.policy_blob: `=`, `:`
+   * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * security_marks.marks: `=`, `:`
+   * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_type: `=`, `:`
+   * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -119,25 +123,25 @@ public interface GroupAssetsRequestOrBuilder
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name | '='
-   * update_time | '=', '&gt;', '&lt;', '&gt;=', '&lt;='
+   * * name: `=`
+   * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "update_time = 1560208038000"
-   * create_time |  '=', '&gt;', '&lt;', '&gt;=', '&lt;='
+   * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
    *     "create_time = 1560208038000"
-   * iam_policy.policy_blob | '=', ':'
-   * resource_properties | '=', ':', '&gt;', '&lt;', '&gt;=', '&lt;='
-   * security_marks | '=', ':'
-   * security_center_properties.resource_name | '=', ':'
-   * security_center_properties.resource_type | '=', ':'
-   * security_center_properties.resource_parent | '=', ':'
-   * security_center_properties.resource_project | '=', ':'
-   * security_center_properties.resource_owners | '=', ':'
+   * * iam_policy.policy_blob: `=`, `:`
+   * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * security_marks.marks: `=`, `:`
+   * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_type: `=`, `:`
+   * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -149,7 +153,7 @@ public interface GroupAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Expression that defines what assets fields to use for grouping. The string
+   * Required. Expression that defines what assets fields to use for grouping. The string
    * value should follow SQL syntax: comma separated list of fields. For
    * example:
    * "security_center_properties.resource_project,security_center_properties.project".
@@ -161,14 +165,14 @@ public interface GroupAssetsRequestOrBuilder
    * * security_center_properties.resource_type
    * </pre>
    *
-   * <code>string group_by = 3;</code>
+   * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getGroupBy();
   /**
    *
    *
    * <pre>
-   * Expression that defines what assets fields to use for grouping. The string
+   * Required. Expression that defines what assets fields to use for grouping. The string
    * value should follow SQL syntax: comma separated list of fields. For
    * example:
    * "security_center_properties.resource_project,security_center_properties.project".
@@ -180,7 +184,7 @@ public interface GroupAssetsRequestOrBuilder
    * * security_center_properties.resource_type
    * </pre>
    *
-   * <code>string group_by = 3;</code>
+   * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getGroupByBytes();
 

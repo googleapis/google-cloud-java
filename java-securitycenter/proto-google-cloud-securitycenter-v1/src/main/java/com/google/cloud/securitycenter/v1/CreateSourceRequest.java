@@ -128,11 +128,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Resource name of the new source's parent. Its format should be
+   * Required. Resource name of the new source's parent. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -149,11 +151,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Resource name of the new source's parent. Its format should be
+   * Required. Resource name of the new source's parent. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -173,11 +177,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Source being created, only the display_name and description will be
+   * Required. The Source being created, only the display_name and description will be
    * used. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasSource() {
     return source_ != null;
@@ -186,11 +192,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Source being created, only the display_name and description will be
+   * Required. The Source being created, only the display_name and description will be
    * used. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.Source getSource() {
     return source_ == null
@@ -201,11 +209,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Source being created, only the display_name and description will be
+   * Required. The Source being created, only the display_name and description will be
    * used. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
     return getSource();
@@ -563,11 +573,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -584,11 +596,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -605,11 +619,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -624,11 +640,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -640,11 +658,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -667,11 +687,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasSource() {
       return sourceBuilder_ != null || source_ != null;
@@ -680,11 +702,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.Source getSource() {
       if (sourceBuilder_ == null) {
@@ -699,11 +723,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSource(com.google.cloud.securitycenter.v1.Source value) {
       if (sourceBuilder_ == null) {
@@ -722,11 +748,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSource(com.google.cloud.securitycenter.v1.Source.Builder builderForValue) {
       if (sourceBuilder_ == null) {
@@ -742,11 +770,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSource(com.google.cloud.securitycenter.v1.Source value) {
       if (sourceBuilder_ == null) {
@@ -769,11 +799,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSource() {
       if (sourceBuilder_ == null) {
@@ -790,11 +822,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.Source.Builder getSourceBuilder() {
 
@@ -805,11 +839,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
       if (sourceBuilder_ != null) {
@@ -824,11 +860,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.Source source = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.Source,

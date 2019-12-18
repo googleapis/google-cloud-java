@@ -27,30 +27,36 @@ public interface UpdateSecurityMarksRequestOrBuilder
    *
    *
    * <pre>
-   * The security marks resource to update.
+   * Required. The security marks resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasSecurityMarks();
   /**
    *
    *
    * <pre>
-   * The security marks resource to update.
+   * Required. The security marks resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks();
   /**
    *
    *
    * <pre>
-   * The security marks resource to update.
+   * Required. The security marks resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder getSecurityMarksOrBuilder();
 

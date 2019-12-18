@@ -149,10 +149,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The security marks resource to update.
+   * Required. The security marks resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
@@ -161,10 +163,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The security marks resource to update.
+   * Required. The security marks resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null
@@ -175,10 +179,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The security marks resource to update.
+   * Required. The security marks resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
     return getSecurityMarks();
@@ -677,10 +683,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasSecurityMarks() {
       return securityMarksBuilder_ != null || securityMarks_ != null;
@@ -689,10 +697,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -707,10 +717,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSecurityMarks(com.google.cloud.securitycenter.v1.SecurityMarks value) {
       if (securityMarksBuilder_ == null) {
@@ -729,10 +741,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSecurityMarks(
         com.google.cloud.securitycenter.v1.SecurityMarks.Builder builderForValue) {
@@ -749,10 +763,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSecurityMarks(com.google.cloud.securitycenter.v1.SecurityMarks value) {
       if (securityMarksBuilder_ == null) {
@@ -775,10 +791,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -795,10 +813,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks.Builder getSecurityMarksBuilder() {
 
@@ -809,10 +829,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
       if (securityMarksBuilder_ != null) {
@@ -827,10 +849,12 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.SecurityMarks,

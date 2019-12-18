@@ -136,10 +136,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasOrganizationSettings() {
     return organizationSettings_ != null;
@@ -148,10 +150,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings() {
     return organizationSettings_ == null
@@ -162,10 +166,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1.OrganizationSettingsOrBuilder
       getOrganizationSettingsOrBuilder() {
@@ -592,10 +598,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasOrganizationSettings() {
       return organizationSettingsBuilder_ != null || organizationSettings_ != null;
@@ -604,10 +612,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings() {
       if (organizationSettingsBuilder_ == null) {
@@ -622,10 +632,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOrganizationSettings(
         com.google.cloud.securitycenter.v1.OrganizationSettings value) {
@@ -645,10 +657,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOrganizationSettings(
         com.google.cloud.securitycenter.v1.OrganizationSettings.Builder builderForValue) {
@@ -665,10 +679,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOrganizationSettings(
         com.google.cloud.securitycenter.v1.OrganizationSettings value) {
@@ -693,10 +709,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOrganizationSettings() {
       if (organizationSettingsBuilder_ == null) {
@@ -713,10 +731,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings.Builder
         getOrganizationSettingsBuilder() {
@@ -728,10 +748,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettingsOrBuilder
         getOrganizationSettingsOrBuilder() {
@@ -747,10 +769,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.OrganizationSettings,
