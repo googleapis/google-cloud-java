@@ -44,6 +44,12 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReservationAffinity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 values_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               values_.add(s);
               break;
@@ -105,7 +111,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         values_ = values_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -216,12 +222,20 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Type valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Type forNumber(int value) {
       switch (value) {
         case 0:
@@ -283,7 +297,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1beta2.ReservationAffinity.Type)
   }
 
-  private int bitField0_;
   public static final int CONSUME_RESERVATION_TYPE_FIELD_NUMBER = 1;
   private int consumeReservationType_;
   /**
@@ -296,6 +309,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for consumeReservationType.
    */
   public int getConsumeReservationTypeValue() {
     return consumeReservationType_;
@@ -310,6 +325,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The consumeReservationType.
    */
   public com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType() {
     @SuppressWarnings("deprecation")
@@ -330,6 +347,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The key.
    */
   public java.lang.String getKey() {
     java.lang.Object ref = key_;
@@ -350,6 +369,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for key.
    */
   public com.google.protobuf.ByteString getKeyBytes() {
     java.lang.Object ref = key_;
@@ -373,6 +394,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the values.
    */
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
@@ -385,6 +408,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of values.
    */
   public int getValuesCount() {
     return values_.size();
@@ -397,6 +422,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The values at the given index.
    */
   public java.lang.String getValues(int index) {
     return values_.get(index);
@@ -409,6 +437,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the values at the given index.
    */
   public com.google.protobuf.ByteString getValuesBytes(int index) {
     return values_.getByteString(index);
@@ -653,7 +684,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       key_ = "";
 
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -682,15 +713,13 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       com.google.cloud.dataproc.v1beta2.ReservationAffinity result =
           new com.google.cloud.dataproc.v1beta2.ReservationAffinity(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.consumeReservationType_ = consumeReservationType_;
       result.key_ = key_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         values_ = values_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -751,7 +780,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
           values_ = other.values_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureValuesIsMutable();
           values_.addAll(other.values_);
@@ -801,6 +830,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for consumeReservationType.
      */
     public int getConsumeReservationTypeValue() {
       return consumeReservationType_;
@@ -815,6 +846,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for consumeReservationType to set.
+     * @return This builder for chaining.
      */
     public Builder setConsumeReservationTypeValue(int value) {
       consumeReservationType_ = value;
@@ -831,6 +865,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The consumeReservationType.
      */
     public com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType() {
       @SuppressWarnings("deprecation")
@@ -851,6 +887,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The consumeReservationType to set.
+     * @return This builder for chaining.
      */
     public Builder setConsumeReservationType(
         com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type value) {
@@ -872,6 +911,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConsumeReservationType() {
 
@@ -889,6 +930,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The key.
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -909,6 +952,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for key.
      */
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
@@ -929,6 +974,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The key to set.
+     * @return This builder for chaining.
      */
     public Builder setKey(java.lang.String value) {
       if (value == null) {
@@ -947,6 +995,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKey() {
 
@@ -962,6 +1012,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for key to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -978,9 +1031,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         values_ = new com.google.protobuf.LazyStringArrayList(values_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -991,6 +1044,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the values.
      */
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_.getUnmodifiableView();
@@ -1003,6 +1058,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of values.
      */
     public int getValuesCount() {
       return values_.size();
@@ -1015,6 +1072,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The values at the given index.
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
@@ -1027,6 +1087,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
      */
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
@@ -1039,6 +1102,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The values to set.
+     * @return This builder for chaining.
      */
     public Builder setValues(int index, java.lang.String value) {
       if (value == null) {
@@ -1057,6 +1124,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The values to add.
+     * @return This builder for chaining.
      */
     public Builder addValues(java.lang.String value) {
       if (value == null) {
@@ -1075,6 +1145,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The values to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
       ensureValuesIsMutable();
@@ -1090,10 +1163,12 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1105,6 +1180,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the values to add.
+     * @return This builder for chaining.
      */
     public Builder addValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

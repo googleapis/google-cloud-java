@@ -36,6 +36,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the reference field is set.
    */
   boolean hasReference();
   /**
@@ -51,6 +53,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The reference.
    */
   com.google.cloud.dataproc.v1.JobReference getReference();
   /**
@@ -80,6 +84,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the placement field is set.
    */
   boolean hasPlacement();
   /**
@@ -93,6 +99,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The placement.
    */
   com.google.cloud.dataproc.v1.JobPlacement getPlacement();
   /**
@@ -117,6 +125,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+   *
+   * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
   /**
@@ -127,6 +137,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+   *
+   * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1.HadoopJob getHadoopJob();
   /**
@@ -148,6 +160,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+   *
+   * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
   /**
@@ -158,6 +172,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+   *
+   * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1.SparkJob getSparkJob();
   /**
@@ -179,6 +195,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+   *
+   * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
   /**
@@ -189,6 +207,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+   *
+   * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1.PySparkJob getPysparkJob();
   /**
@@ -210,6 +230,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+   *
+   * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
   /**
@@ -220,6 +242,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+   *
+   * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1.HiveJob getHiveJob();
   /**
@@ -241,6 +265,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+   *
+   * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
   /**
@@ -251,6 +277,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+   *
+   * @return The pigJob.
    */
   com.google.cloud.dataproc.v1.PigJob getPigJob();
   /**
@@ -272,6 +300,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+   *
+   * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
   /**
@@ -282,6 +312,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+   *
+   * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob();
   /**
@@ -307,6 +339,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -321,6 +355,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The status.
    */
   com.google.cloud.dataproc.v1.JobStatus getStatus();
   /**
@@ -482,6 +518,8 @@ public interface JobOrBuilder
    *
    * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The driverOutputResourceUri.
    */
   java.lang.String getDriverOutputResourceUri();
   /**
@@ -494,6 +532,8 @@ public interface JobOrBuilder
    *
    * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for driverOutputResourceUri.
    */
   com.google.protobuf.ByteString getDriverOutputResourceUriBytes();
 
@@ -507,6 +547,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The driverControlFilesUri.
    */
   java.lang.String getDriverControlFilesUri();
   /**
@@ -519,6 +561,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for driverControlFilesUri.
    */
   com.google.protobuf.ByteString getDriverControlFilesUriBytes();
 
@@ -616,6 +660,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
   /**
@@ -628,6 +674,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The scheduling.
    */
   com.google.cloud.dataproc.v1.JobScheduling getScheduling();
   /**
@@ -653,6 +701,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobUuid.
    */
   java.lang.String getJobUuid();
   /**
@@ -665,6 +715,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobUuid.
    */
   com.google.protobuf.ByteString getJobUuidBytes();
 

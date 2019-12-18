@@ -43,6 +43,8 @@ public interface AcceleratorConfigOrBuilder
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   *
+   * @return The acceleratorTypeUri.
    */
   java.lang.String getAcceleratorTypeUri();
   /**
@@ -65,6 +67,8 @@ public interface AcceleratorConfigOrBuilder
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   *
+   * @return The bytes for acceleratorTypeUri.
    */
   com.google.protobuf.ByteString getAcceleratorTypeUriBytes();
 
@@ -76,6 +80,8 @@ public interface AcceleratorConfigOrBuilder
    * </pre>
    *
    * <code>int32 accelerator_count = 2;</code>
+   *
+   * @return The acceleratorCount.
    */
   int getAcceleratorCount();
 }

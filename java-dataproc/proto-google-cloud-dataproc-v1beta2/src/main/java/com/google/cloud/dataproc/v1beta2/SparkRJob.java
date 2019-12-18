@@ -47,6 +47,12 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SparkRJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,9 +86,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 args_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               args_.add(s);
               break;
@@ -90,9 +96,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               fileUris_.add(s);
               break;
@@ -100,20 +106,20 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 archiveUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               archiveUris_.add(s);
               break;
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -152,13 +158,13 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -192,7 +198,6 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.SparkRJob.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MAIN_R_FILE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object mainRFileUri_;
   /**
@@ -204,6 +209,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The mainRFileUri.
    */
   public java.lang.String getMainRFileUri() {
     java.lang.Object ref = mainRFileUri_;
@@ -225,6 +232,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for mainRFileUri.
    */
   public com.google.protobuf.ByteString getMainRFileUriBytes() {
     java.lang.Object ref = mainRFileUri_;
@@ -250,6 +259,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @return A list containing the args.
    */
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
@@ -264,6 +275,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @return The count of args.
    */
   public int getArgsCount() {
     return args_.size();
@@ -278,6 +291,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   public java.lang.String getArgs(int index) {
     return args_.get(index);
@@ -292,6 +308,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   public com.google.protobuf.ByteString getArgsBytes(int index) {
     return args_.getByteString(index);
@@ -308,6 +327,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 3;</code>
+   *
+   * @return A list containing the fileUris.
    */
   public com.google.protobuf.ProtocolStringList getFileUrisList() {
     return fileUris_;
@@ -321,6 +342,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 3;</code>
+   *
+   * @return The count of fileUris.
    */
   public int getFileUrisCount() {
     return fileUris_.size();
@@ -334,6 +357,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fileUris at the given index.
    */
   public java.lang.String getFileUris(int index) {
     return fileUris_.get(index);
@@ -347,6 +373,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fileUris at the given index.
    */
   public com.google.protobuf.ByteString getFileUrisBytes(int index) {
     return fileUris_.getByteString(index);
@@ -364,6 +393,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 4;</code>
+   *
+   * @return A list containing the archiveUris.
    */
   public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
     return archiveUris_;
@@ -378,6 +409,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 4;</code>
+   *
+   * @return The count of archiveUris.
    */
   public int getArchiveUrisCount() {
     return archiveUris_.size();
@@ -392,6 +425,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The archiveUris at the given index.
    */
   public java.lang.String getArchiveUris(int index) {
     return archiveUris_.get(index);
@@ -406,6 +442,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the archiveUris at the given index.
    */
   public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
     return archiveUris_.getByteString(index);
@@ -527,6 +566,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   *
+   * @return Whether the loggingConfig field is set.
    */
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
@@ -539,6 +580,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   *
+   * @return The loggingConfig.
    */
   public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null
@@ -866,11 +909,11 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       mainRFileUri_ = "";
 
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableProperties().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
@@ -906,21 +949,20 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.SparkRJob result =
           new com.google.cloud.dataproc.v1beta2.SparkRJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.mainRFileUri_ = mainRFileUri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.args_ = args_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.fileUris_ = fileUris_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.archiveUris_ = archiveUris_;
       result.properties_ = internalGetProperties();
@@ -930,7 +972,6 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -987,7 +1028,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -997,7 +1038,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.fileUris_.isEmpty()) {
         if (fileUris_.isEmpty()) {
           fileUris_ = other.fileUris_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureFileUrisIsMutable();
           fileUris_.addAll(other.fileUris_);
@@ -1007,7 +1048,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.archiveUris_.isEmpty()) {
         if (archiveUris_.isEmpty()) {
           archiveUris_ = other.archiveUris_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureArchiveUrisIsMutable();
           archiveUris_.addAll(other.archiveUris_);
@@ -1059,6 +1100,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The mainRFileUri.
      */
     public java.lang.String getMainRFileUri() {
       java.lang.Object ref = mainRFileUri_;
@@ -1080,6 +1123,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for mainRFileUri.
      */
     public com.google.protobuf.ByteString getMainRFileUriBytes() {
       java.lang.Object ref = mainRFileUri_;
@@ -1101,6 +1146,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The mainRFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMainRFileUri(java.lang.String value) {
       if (value == null) {
@@ -1120,6 +1168,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMainRFileUri() {
 
@@ -1136,6 +1186,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for mainRFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMainRFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1152,9 +1205,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1167,6 +1220,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
       return args_.getUnmodifiableView();
@@ -1181,6 +1236,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @return The count of args.
      */
     public int getArgsCount() {
       return args_.size();
@@ -1195,6 +1252,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The args at the given index.
      */
     public java.lang.String getArgs(int index) {
       return args_.get(index);
@@ -1209,6 +1269,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the args at the given index.
      */
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
@@ -1223,6 +1286,10 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The args to set.
+     * @return This builder for chaining.
      */
     public Builder setArgs(int index, java.lang.String value) {
       if (value == null) {
@@ -1243,6 +1310,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param value The args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgs(java.lang.String value) {
       if (value == null) {
@@ -1263,6 +1333,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param values The args to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
@@ -1280,10 +1353,12 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1297,6 +1372,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param value The bytes of the args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1313,9 +1391,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1327,6 +1405,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @return A list containing the fileUris.
      */
     public com.google.protobuf.ProtocolStringList getFileUrisList() {
       return fileUris_.getUnmodifiableView();
@@ -1340,6 +1420,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @return The count of fileUris.
      */
     public int getFileUrisCount() {
       return fileUris_.size();
@@ -1353,6 +1435,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fileUris at the given index.
      */
     public java.lang.String getFileUris(int index) {
       return fileUris_.get(index);
@@ -1366,6 +1451,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fileUris at the given index.
      */
     public com.google.protobuf.ByteString getFileUrisBytes(int index) {
       return fileUris_.getByteString(index);
@@ -1379,6 +1467,10 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The fileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1398,6 +1490,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @param value The fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addFileUris(java.lang.String value) {
       if (value == null) {
@@ -1417,6 +1512,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @param values The fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureFileUrisIsMutable();
@@ -1433,10 +1531,12 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFileUris() {
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1449,6 +1549,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 3;</code>
+     *
+     * @param value The bytes of the fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1465,9 +1568,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArchiveUrisIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1480,6 +1583,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @return A list containing the archiveUris.
      */
     public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
       return archiveUris_.getUnmodifiableView();
@@ -1494,6 +1599,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @return The count of archiveUris.
      */
     public int getArchiveUrisCount() {
       return archiveUris_.size();
@@ -1508,6 +1615,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The archiveUris at the given index.
      */
     public java.lang.String getArchiveUris(int index) {
       return archiveUris_.get(index);
@@ -1522,6 +1632,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the archiveUris at the given index.
      */
     public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
       return archiveUris_.getByteString(index);
@@ -1536,6 +1649,10 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The archiveUris to set.
+     * @return This builder for chaining.
      */
     public Builder setArchiveUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1556,6 +1673,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @param value The archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addArchiveUris(java.lang.String value) {
       if (value == null) {
@@ -1576,6 +1696,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @param values The archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
       ensureArchiveUrisIsMutable();
@@ -1593,10 +1716,12 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArchiveUris() {
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1610,6 +1735,9 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 4;</code>
+     *
+     * @param value The bytes of the archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addArchiveUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1812,6 +1940,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     *
+     * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
@@ -1824,6 +1954,8 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+     *
+     * @return The loggingConfig.
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {

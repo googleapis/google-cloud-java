@@ -37,6 +37,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -53,6 +55,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -99,6 +103,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @return A list containing the fields.
    */
   java.util.List<java.lang.String> getFieldsList();
   /**
@@ -144,6 +150,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @return The count of fields.
    */
   int getFieldsCount();
   /**
@@ -189,6 +197,9 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fields at the given index.
    */
   java.lang.String getFields(int index);
   /**
@@ -234,6 +245,9 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fields at the given index.
    */
   com.google.protobuf.ByteString getFieldsBytes(int index);
 
@@ -246,6 +260,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -257,6 +273,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -268,6 +286,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ParameterValidation validation = 4;</code>
+   *
+   * @return Whether the validation field is set.
    */
   boolean hasValidation();
   /**
@@ -278,6 +298,8 @@ public interface TemplateParameterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ParameterValidation validation = 4;</code>
+   *
+   * @return The validation.
    */
   com.google.cloud.dataproc.v1beta2.ParameterValidation getValidation();
   /**

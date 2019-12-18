@@ -42,6 +42,12 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClusterSelector();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,11 +80,11 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 clusterLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         ClusterLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> clusterLabels__ =
                   input.readMessage(
@@ -134,7 +140,6 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataproc.v1beta2.ClusterSelector.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ZONE_FIELD_NUMBER = 1;
   private volatile java.lang.Object zone_;
   /**
@@ -148,6 +153,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string zone = 1;</code>
+   *
+   * @return The zone.
    */
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -171,6 +178,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string zone = 1;</code>
+   *
+   * @return The bytes for zone.
    */
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -556,11 +565,9 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.dataproc.v1beta2.ClusterSelector result =
           new com.google.cloud.dataproc.v1beta2.ClusterSelector(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.zone_ = zone_;
       result.clusterLabels_ = internalGetClusterLabels();
       result.clusterLabels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -660,6 +667,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string zone = 1;</code>
+     *
+     * @return The zone.
      */
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
@@ -683,6 +692,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string zone = 1;</code>
+     *
+     * @return The bytes for zone.
      */
     public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
@@ -706,6 +717,9 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string zone = 1;</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZone(java.lang.String value) {
       if (value == null) {
@@ -727,6 +741,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string zone = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearZone() {
 
@@ -745,6 +761,9 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string zone = 1;</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

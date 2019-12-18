@@ -47,6 +47,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new YarnApplication();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -333,12 +338,20 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -420,6 +433,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -440,6 +455,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -465,6 +482,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -479,6 +498,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   public com.google.cloud.dataproc.v1beta2.YarnApplication.State getState() {
     @SuppressWarnings("deprecation")
@@ -499,6 +520,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The progress.
    */
   public float getProgress() {
     return progress_;
@@ -517,6 +540,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The trackingUrl.
    */
   public java.lang.String getTrackingUrl() {
     java.lang.Object ref = trackingUrl_;
@@ -540,6 +565,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for trackingUrl.
    */
   public com.google.protobuf.ByteString getTrackingUrlBytes() {
     java.lang.Object ref = trackingUrl_;
@@ -932,6 +959,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -952,6 +981,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -972,6 +1003,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -990,6 +1024,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1005,6 +1041,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1028,6 +1067,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1042,6 +1083,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1058,6 +1102,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The state.
      */
     public com.google.cloud.dataproc.v1beta2.YarnApplication.State getState() {
       @SuppressWarnings("deprecation")
@@ -1077,6 +1123,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.dataproc.v1beta2.YarnApplication.State value) {
       if (value == null) {
@@ -1097,6 +1146,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1114,6 +1165,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The progress.
      */
     public float getProgress() {
       return progress_;
@@ -1126,6 +1179,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The progress to set.
+     * @return This builder for chaining.
      */
     public Builder setProgress(float value) {
 
@@ -1141,6 +1197,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProgress() {
 
@@ -1161,6 +1219,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackingUrl.
      */
     public java.lang.String getTrackingUrl() {
       java.lang.Object ref = trackingUrl_;
@@ -1184,6 +1244,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for trackingUrl.
      */
     public com.google.protobuf.ByteString getTrackingUrlBytes() {
       java.lang.Object ref = trackingUrl_;
@@ -1207,6 +1269,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The trackingUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setTrackingUrl(java.lang.String value) {
       if (value == null) {
@@ -1228,6 +1293,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrackingUrl() {
 
@@ -1246,6 +1313,9 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for trackingUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setTrackingUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

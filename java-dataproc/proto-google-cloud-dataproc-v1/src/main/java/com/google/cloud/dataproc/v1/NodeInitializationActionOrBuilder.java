@@ -31,6 +31,8 @@ public interface NodeInitializationActionOrBuilder
    * </pre>
    *
    * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The executableFile.
    */
   java.lang.String getExecutableFile();
   /**
@@ -41,6 +43,8 @@ public interface NodeInitializationActionOrBuilder
    * </pre>
    *
    * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for executableFile.
    */
   com.google.protobuf.ByteString getExecutableFileBytes();
 
@@ -57,6 +61,8 @@ public interface NodeInitializationActionOrBuilder
    * <code>
    * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the executionTimeout field is set.
    */
   boolean hasExecutionTimeout();
   /**
@@ -72,6 +78,8 @@ public interface NodeInitializationActionOrBuilder
    * <code>
    * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The executionTimeout.
    */
   com.google.protobuf.Duration getExecutionTimeout();
   /**

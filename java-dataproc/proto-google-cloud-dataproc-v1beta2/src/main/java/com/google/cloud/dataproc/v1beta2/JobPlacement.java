@@ -43,6 +43,12 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobPlacement();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -144,6 +151,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -168,6 +177,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_uuid = 2;</code>
+   *
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -189,6 +200,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_uuid = 2;</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
@@ -543,6 +556,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -563,6 +578,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -583,6 +600,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -601,6 +621,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -616,6 +638,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -638,6 +663,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     *
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -659,6 +686,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     *
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString getClusterUuidBytes() {
       java.lang.Object ref = clusterUuid_;
@@ -680,6 +709,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     *
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(java.lang.String value) {
       if (value == null) {
@@ -699,6 +731,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
 
@@ -715,6 +749,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     *
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

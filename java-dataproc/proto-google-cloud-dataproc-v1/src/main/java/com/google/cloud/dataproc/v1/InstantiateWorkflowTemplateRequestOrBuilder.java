@@ -40,6 +40,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -59,6 +61,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -74,6 +78,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The version.
    */
   int getVersion();
 
@@ -91,6 +97,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -107,6 +115,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 

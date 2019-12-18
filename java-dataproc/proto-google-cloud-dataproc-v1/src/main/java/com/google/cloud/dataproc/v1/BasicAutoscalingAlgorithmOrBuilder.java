@@ -33,6 +33,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the yarnConfig field is set.
    */
   boolean hasYarnConfig();
   /**
@@ -45,6 +47,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The yarnConfig.
    */
   com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig getYarnConfig();
   /**
@@ -71,6 +75,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    *
    * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the cooldownPeriod field is set.
    */
   boolean hasCooldownPeriod();
   /**
@@ -84,6 +90,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    *
    * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The cooldownPeriod.
    */
   com.google.protobuf.Duration getCooldownPeriod();
   /**

@@ -31,6 +31,8 @@ public interface JobPlacementOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -41,6 +43,8 @@ public interface JobPlacementOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -53,6 +57,8 @@ public interface JobPlacementOrBuilder
    * </pre>
    *
    * <code>string cluster_uuid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
   /**
@@ -64,6 +70,8 @@ public interface JobPlacementOrBuilder
    * </pre>
    *
    * <code>string cluster_uuid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
 }

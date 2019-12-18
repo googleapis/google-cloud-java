@@ -37,6 +37,8 @@ public interface SoftwareConfigOrBuilder
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imageVersion.
    */
   java.lang.String getImageVersion();
   /**
@@ -53,6 +55,8 @@ public interface SoftwareConfigOrBuilder
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for imageVersion.
    */
   com.google.protobuf.ByteString getImageVersionBytes();
 
@@ -195,6 +199,8 @@ public interface SoftwareConfigOrBuilder
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the optionalComponents.
    */
   java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList();
   /**
@@ -207,6 +213,8 @@ public interface SoftwareConfigOrBuilder
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The count of optionalComponents.
    */
   int getOptionalComponentsCount();
   /**
@@ -219,6 +227,9 @@ public interface SoftwareConfigOrBuilder
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The optionalComponents at the given index.
    */
   com.google.cloud.dataproc.v1.Component getOptionalComponents(int index);
   /**
@@ -231,6 +242,8 @@ public interface SoftwareConfigOrBuilder
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for optionalComponents.
    */
   java.util.List<java.lang.Integer> getOptionalComponentsValueList();
   /**
@@ -243,6 +256,9 @@ public interface SoftwareConfigOrBuilder
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of optionalComponents at the given index.
    */
   int getOptionalComponentsValue(int index);
 }

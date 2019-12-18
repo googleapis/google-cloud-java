@@ -40,6 +40,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -59,6 +61,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -72,6 +76,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * <code>
    * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the template field is set.
    */
   boolean hasTemplate();
   /**
@@ -84,6 +90,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * <code>
    * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The template.
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate();
   /**
@@ -107,6 +115,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string instance_id = 3;</code>
+   *
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
@@ -117,6 +127,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string instance_id = 3;</code>
+   *
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString getInstanceIdBytes();
 
@@ -134,6 +146,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 4;</code>
+   *
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -150,6 +164,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 4;</code>
+   *
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 }

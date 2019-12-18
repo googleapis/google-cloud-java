@@ -31,6 +31,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobStatus.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.dataproc.v1beta2.JobStatus.State getState();
 
@@ -53,6 +57,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>string details = 2;</code>
+   *
+   * @return The details.
    */
   java.lang.String getDetails();
   /**
@@ -64,6 +70,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>string details = 2;</code>
+   *
+   * @return The bytes for details.
    */
   com.google.protobuf.ByteString getDetailsBytes();
 
@@ -75,6 +83,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   *
+   * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
   /**
@@ -85,6 +95,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   *
+   * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
@@ -107,6 +119,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+   *
+   * @return The enum numeric value on the wire for substate.
    */
   int getSubstateValue();
   /**
@@ -118,6 +132,8 @@ public interface JobStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobStatus.Substate substate = 7;</code>
+   *
+   * @return The substate.
    */
   com.google.cloud.dataproc.v1beta2.JobStatus.Substate getSubstate();
 }

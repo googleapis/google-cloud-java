@@ -39,6 +39,8 @@ public interface ClusterConfigOrBuilder
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The configBucket.
    */
   java.lang.String getConfigBucket();
   /**
@@ -57,6 +59,8 @@ public interface ClusterConfigOrBuilder
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for configBucket.
    */
   com.google.protobuf.ByteString getConfigBucketBytes();
 
@@ -71,6 +75,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the gceClusterConfig field is set.
    */
   boolean hasGceClusterConfig();
   /**
@@ -84,6 +90,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The gceClusterConfig.
    */
   com.google.cloud.dataproc.v1.GceClusterConfig getGceClusterConfig();
   /**
@@ -111,6 +119,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the masterConfig field is set.
    */
   boolean hasMasterConfig();
   /**
@@ -124,6 +134,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The masterConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getMasterConfig();
   /**
@@ -151,6 +163,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the workerConfig field is set.
    */
   boolean hasWorkerConfig();
   /**
@@ -164,6 +178,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The workerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getWorkerConfig();
   /**
@@ -191,6 +207,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the secondaryWorkerConfig field is set.
    */
   boolean hasSecondaryWorkerConfig();
   /**
@@ -204,6 +222,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The secondaryWorkerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getSecondaryWorkerConfig();
   /**
@@ -230,6 +250,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the softwareConfig field is set.
    */
   boolean hasSoftwareConfig();
   /**
@@ -242,6 +264,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The softwareConfig.
    */
   com.google.cloud.dataproc.v1.SoftwareConfig getSoftwareConfig();
   /**
@@ -386,6 +410,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
   /**
@@ -398,6 +424,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The encryptionConfig.
    */
   com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig();
   /**
@@ -424,6 +452,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.AutoscalingConfig autoscaling_config = 18 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the autoscalingConfig field is set.
    */
   boolean hasAutoscalingConfig();
   /**
@@ -437,6 +467,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.AutoscalingConfig autoscaling_config = 18 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The autoscalingConfig.
    */
   com.google.cloud.dataproc.v1.AutoscalingConfig getAutoscalingConfig();
   /**
@@ -463,6 +495,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.SecurityConfig security_config = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the securityConfig field is set.
    */
   boolean hasSecurityConfig();
   /**
@@ -475,6 +509,8 @@ public interface ClusterConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.SecurityConfig security_config = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The securityConfig.
    */
   com.google.cloud.dataproc.v1.SecurityConfig getSecurityConfig();
   /**

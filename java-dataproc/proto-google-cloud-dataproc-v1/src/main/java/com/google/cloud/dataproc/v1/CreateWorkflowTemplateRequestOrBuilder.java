@@ -40,6 +40,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -59,6 +61,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -72,6 +76,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the template field is set.
    */
   boolean hasTemplate();
   /**
@@ -84,6 +90,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The template.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate();
   /**

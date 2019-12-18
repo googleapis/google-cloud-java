@@ -43,6 +43,12 @@ public final class InstanceGroupAutoscalingPolicyConfig
   private InstanceGroupAutoscalingPolicyConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InstanceGroupAutoscalingPolicyConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
    * </pre>
    *
    * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minInstances.
    */
   public int getMinInstances() {
     return minInstances_;
@@ -146,6 +153,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
    * </pre>
    *
    * <code>int32 max_instances = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The maxInstances.
    */
   public int getMaxInstances() {
     return maxInstances_;
@@ -176,6 +185,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
    * </pre>
    *
    * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The weight.
    */
   public int getWeight() {
     return weight_;
@@ -547,6 +558,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minInstances.
      */
     public int getMinInstances() {
       return minInstances_;
@@ -561,6 +574,9 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minInstances to set.
+     * @return This builder for chaining.
      */
     public Builder setMinInstances(int value) {
 
@@ -578,6 +594,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMinInstances() {
 
@@ -599,6 +617,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 max_instances = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The maxInstances.
      */
     public int getMaxInstances() {
       return maxInstances_;
@@ -615,6 +635,9 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 max_instances = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The maxInstances to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxInstances(int value) {
 
@@ -634,6 +657,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 max_instances = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxInstances() {
 
@@ -666,6 +691,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The weight.
      */
     public int getWeight() {
       return weight_;
@@ -693,6 +720,9 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The weight to set.
+     * @return This builder for chaining.
      */
     public Builder setWeight(int value) {
 
@@ -723,6 +753,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * </pre>
      *
      * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWeight() {
 

@@ -44,6 +44,12 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DiagnoseClusterRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +138,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -154,6 +161,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -177,6 +186,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -197,6 +208,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -220,6 +233,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -240,6 +255,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -614,6 +631,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -635,6 +654,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -656,6 +677,9 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -675,6 +699,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -691,6 +717,9 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -712,6 +741,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -732,6 +763,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -752,6 +785,9 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -770,6 +806,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
 
@@ -785,6 +823,9 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -806,6 +847,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -826,6 +869,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -846,6 +891,9 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -864,6 +912,8 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -879,6 +929,9 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

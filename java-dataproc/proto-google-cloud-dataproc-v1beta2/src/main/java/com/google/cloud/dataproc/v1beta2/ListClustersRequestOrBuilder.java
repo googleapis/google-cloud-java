@@ -32,6 +32,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -64,6 +70,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -89,6 +97,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -113,6 +123,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -124,6 +136,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -135,6 +149,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -145,6 +161,8 @@ public interface ListClustersRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

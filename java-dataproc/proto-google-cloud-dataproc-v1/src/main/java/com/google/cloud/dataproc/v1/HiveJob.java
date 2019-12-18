@@ -43,6 +43,12 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HiveJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,11 +102,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 scriptVariables_ =
                     com.google.protobuf.MapField.newMapField(
                         ScriptVariablesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
                   input.readMessage(
@@ -113,11 +119,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -129,9 +135,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000004;
               }
               jarFileUris_.add(s);
               break;
@@ -150,7 +156,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -186,11 +192,13 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.HiveJob.Builder.class);
   }
 
-  private int bitField0_;
   private int queriesCase_ = 0;
   private java.lang.Object queries_;
 
-  public enum QueriesCase implements com.google.protobuf.Internal.EnumLite {
+  public enum QueriesCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     QUERY_FILE_URI(1),
     QUERY_LIST(2),
     QUERIES_NOT_SET(0);
@@ -199,7 +207,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     private QueriesCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static QueriesCase valueOf(int value) {
       return forNumber(value);
@@ -236,6 +248,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   *
+   * @return The queryFileUri.
    */
   public java.lang.String getQueryFileUri() {
     java.lang.Object ref = "";
@@ -261,6 +275,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   *
+   * @return The bytes for queryFileUri.
    */
   public com.google.protobuf.ByteString getQueryFileUriBytes() {
     java.lang.Object ref = "";
@@ -288,6 +304,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+   *
+   * @return Whether the queryList field is set.
    */
   public boolean hasQueryList() {
     return queriesCase_ == 2;
@@ -300,6 +318,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+   *
+   * @return The queryList.
    */
   public com.google.cloud.dataproc.v1.QueryList getQueryList() {
     if (queriesCase_ == 2) {
@@ -335,6 +355,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The continueOnFailure.
    */
   public boolean getContinueOnFailure() {
     return continueOnFailure_;
@@ -566,6 +588,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the jarFileUris.
    */
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
@@ -580,6 +604,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of jarFileUris.
    */
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
@@ -594,6 +620,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
@@ -608,6 +637,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
@@ -932,7 +964,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScriptVariables().clear();
       internalGetMutableProperties().clear();
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       queriesCase_ = 0;
       queries_ = null;
       return this;
@@ -962,7 +994,6 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.HiveJob buildPartial() {
       com.google.cloud.dataproc.v1.HiveJob result = new com.google.cloud.dataproc.v1.HiveJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (queriesCase_ == 1) {
         result.queries_ = queries_;
       }
@@ -978,12 +1009,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       result.scriptVariables_.makeImmutable();
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.jarFileUris_ = jarFileUris_;
-      result.bitField0_ = to_bitField0_;
       result.queriesCase_ = queriesCase_;
       onBuilt();
       return result;
@@ -1042,7 +1072,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1120,6 +1150,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     *
+     * @return The queryFileUri.
      */
     public java.lang.String getQueryFileUri() {
       java.lang.Object ref = "";
@@ -1145,6 +1177,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     *
+     * @return The bytes for queryFileUri.
      */
     public com.google.protobuf.ByteString getQueryFileUriBytes() {
       java.lang.Object ref = "";
@@ -1170,6 +1204,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     *
+     * @param value The queryFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryFileUri(java.lang.String value) {
       if (value == null) {
@@ -1188,6 +1225,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQueryFileUri() {
       if (queriesCase_ == 1) {
@@ -1205,6 +1244,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     *
+     * @param value The bytes for queryFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1230,6 +1272,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+     *
+     * @return Whether the queryList field is set.
      */
     public boolean hasQueryList() {
       return queriesCase_ == 2;
@@ -1242,6 +1286,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+     *
+     * @return The queryList.
      */
     public com.google.cloud.dataproc.v1.QueryList getQueryList() {
       if (queryListBuilder_ == null) {
@@ -1429,6 +1475,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The continueOnFailure.
      */
     public boolean getContinueOnFailure() {
       return continueOnFailure_;
@@ -1443,6 +1491,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The continueOnFailure to set.
+     * @return This builder for chaining.
      */
     public Builder setContinueOnFailure(boolean value) {
 
@@ -1460,6 +1511,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContinueOnFailure() {
 
@@ -1832,9 +1885,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1847,6 +1900,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
@@ -1861,6 +1916,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of jarFileUris.
      */
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
@@ -1875,6 +1932,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The jarFileUris at the given index.
      */
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
@@ -1889,6 +1949,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the jarFileUris at the given index.
      */
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
@@ -1903,6 +1966,10 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The jarFileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1923,6 +1990,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
@@ -1943,6 +2013,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
@@ -1960,10 +2033,12 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1977,6 +2052,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

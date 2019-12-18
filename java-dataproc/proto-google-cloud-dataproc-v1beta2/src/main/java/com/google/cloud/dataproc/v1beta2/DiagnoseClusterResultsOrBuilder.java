@@ -33,6 +33,8 @@ public interface DiagnoseClusterResultsOrBuilder
    * </pre>
    *
    * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The outputUri.
    */
   java.lang.String getOutputUri();
   /**
@@ -45,6 +47,8 @@ public interface DiagnoseClusterResultsOrBuilder
    * </pre>
    *
    * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for outputUri.
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 }

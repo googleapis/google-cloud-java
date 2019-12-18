@@ -33,6 +33,8 @@ public interface RegexValidationOrBuilder
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @return A list containing the regexes.
    */
   java.util.List<java.lang.String> getRegexesList();
   /**
@@ -45,6 +47,8 @@ public interface RegexValidationOrBuilder
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @return The count of regexes.
    */
   int getRegexesCount();
   /**
@@ -57,6 +61,9 @@ public interface RegexValidationOrBuilder
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regexes at the given index.
    */
   java.lang.String getRegexes(int index);
   /**
@@ -69,6 +76,9 @@ public interface RegexValidationOrBuilder
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regexes at the given index.
    */
   com.google.protobuf.ByteString getRegexesBytes(int index);
 }

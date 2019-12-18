@@ -42,6 +42,12 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DiskConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,6 +133,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bootDiskType.
    */
   public java.lang.String getBootDiskType() {
     java.lang.Object ref = bootDiskType_;
@@ -150,6 +157,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for bootDiskType.
    */
   public com.google.protobuf.ByteString getBootDiskTypeBytes() {
     java.lang.Object ref = bootDiskType_;
@@ -173,6 +182,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bootDiskSizeGb.
    */
   public int getBootDiskSizeGb() {
     return bootDiskSizeGb_;
@@ -193,6 +204,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 num_local_ssds = 2;</code>
+   *
+   * @return The numLocalSsds.
    */
   public int getNumLocalSsds() {
     return numLocalSsds_;
@@ -555,6 +568,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bootDiskType.
      */
     public java.lang.String getBootDiskType() {
       java.lang.Object ref = bootDiskType_;
@@ -577,6 +592,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for bootDiskType.
      */
     public com.google.protobuf.ByteString getBootDiskTypeBytes() {
       java.lang.Object ref = bootDiskType_;
@@ -599,6 +616,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bootDiskType to set.
+     * @return This builder for chaining.
      */
     public Builder setBootDiskType(java.lang.String value) {
       if (value == null) {
@@ -619,6 +639,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBootDiskType() {
 
@@ -636,6 +658,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for bootDiskType to set.
+     * @return This builder for chaining.
      */
     public Builder setBootDiskTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -657,6 +682,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bootDiskSizeGb.
      */
     public int getBootDiskSizeGb() {
       return bootDiskSizeGb_;
@@ -669,6 +696,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bootDiskSizeGb to set.
+     * @return This builder for chaining.
      */
     public Builder setBootDiskSizeGb(int value) {
 
@@ -684,6 +714,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBootDiskSizeGb() {
 
@@ -706,6 +738,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 num_local_ssds = 2;</code>
+     *
+     * @return The numLocalSsds.
      */
     public int getNumLocalSsds() {
       return numLocalSsds_;
@@ -723,6 +757,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 num_local_ssds = 2;</code>
+     *
+     * @param value The numLocalSsds to set.
+     * @return This builder for chaining.
      */
     public Builder setNumLocalSsds(int value) {
 
@@ -743,6 +780,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 num_local_ssds = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNumLocalSsds() {
 

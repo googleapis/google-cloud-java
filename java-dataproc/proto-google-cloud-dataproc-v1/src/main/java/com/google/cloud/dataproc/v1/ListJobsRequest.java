@@ -47,6 +47,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListJobsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -235,12 +240,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static JobStateMatcher valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static JobStateMatcher forNumber(int value) {
       switch (value) {
         case 0:
@@ -311,6 +324,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -332,6 +347,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -355,6 +372,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -375,6 +394,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -398,6 +419,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -414,6 +437,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -435,6 +460,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -459,6 +486,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -480,6 +509,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -507,6 +538,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for jobStateMatcher.
    */
   public int getJobStateMatcherValue() {
     return jobStateMatcher_;
@@ -523,6 +556,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The jobStateMatcher.
    */
   public com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
     @SuppressWarnings("deprecation")
@@ -552,6 +587,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -581,6 +618,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -1016,6 +1055,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1037,6 +1078,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -1058,6 +1101,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1077,6 +1123,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1093,6 +1141,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1114,6 +1165,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -1134,6 +1187,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -1154,6 +1209,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -1172,6 +1230,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
 
@@ -1187,6 +1247,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1208,6 +1271,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1220,6 +1285,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1235,6 +1303,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1253,6 +1323,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1274,6 +1346,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1295,6 +1369,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1314,6 +1391,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1330,6 +1409,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1352,6 +1434,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1373,6 +1457,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -1394,6 +1480,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -1413,6 +1502,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -1429,6 +1520,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1454,6 +1548,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for jobStateMatcher.
      */
     public int getJobStateMatcherValue() {
       return jobStateMatcher_;
@@ -1470,6 +1566,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for jobStateMatcher to set.
+     * @return This builder for chaining.
      */
     public Builder setJobStateMatcherValue(int value) {
       jobStateMatcher_ = value;
@@ -1488,6 +1587,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The jobStateMatcher.
      */
     public com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
       @SuppressWarnings("deprecation")
@@ -1509,6 +1610,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The jobStateMatcher to set.
+     * @return This builder for chaining.
      */
     public Builder setJobStateMatcher(
         com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher value) {
@@ -1532,6 +1636,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobStateMatcher() {
 
@@ -1558,6 +1664,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1587,6 +1695,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1616,6 +1726,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1643,6 +1756,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1667,6 +1782,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

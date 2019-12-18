@@ -34,6 +34,8 @@ public interface ClusterSelectorOrBuilder
    * </pre>
    *
    * <code>string zone = 1;</code>
+   *
+   * @return The zone.
    */
   java.lang.String getZone();
   /**
@@ -47,6 +49,8 @@ public interface ClusterSelectorOrBuilder
    * </pre>
    *
    * <code>string zone = 1;</code>
+   *
+   * @return The bytes for zone.
    */
   com.google.protobuf.ByteString getZoneBytes();
 

@@ -34,6 +34,8 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return Whether the template field is set.
    */
   boolean hasTemplate();
   /**
@@ -47,6 +49,8 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The template.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate();
   /**

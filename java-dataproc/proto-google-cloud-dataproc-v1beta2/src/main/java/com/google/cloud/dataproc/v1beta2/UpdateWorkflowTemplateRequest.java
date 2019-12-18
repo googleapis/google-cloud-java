@@ -40,6 +40,12 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
   private UpdateWorkflowTemplateRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateWorkflowTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * <code>
    * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return Whether the template field is set.
    */
   public boolean hasTemplate() {
     return template_ != null;
@@ -142,6 +149,8 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * <code>
    * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The template.
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
     return template_ == null
@@ -516,6 +525,8 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <code>
      * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
       return templateBuilder_ != null || template_ != null;
@@ -531,6 +542,8 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <code>
      * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The template.
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
       if (templateBuilder_ == null) {

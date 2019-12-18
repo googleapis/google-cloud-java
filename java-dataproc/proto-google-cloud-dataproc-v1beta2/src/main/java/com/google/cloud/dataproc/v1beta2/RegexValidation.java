@@ -42,6 +42,12 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RegexValidation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,6 +130,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @return A list containing the regexes.
    */
   public com.google.protobuf.ProtocolStringList getRegexesList() {
     return regexes_;
@@ -138,6 +146,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @return The count of regexes.
    */
   public int getRegexesCount() {
     return regexes_.size();
@@ -152,6 +162,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regexes at the given index.
    */
   public java.lang.String getRegexes(int index) {
     return regexes_.get(index);
@@ -166,6 +179,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string regexes = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regexes at the given index.
    */
   public com.google.protobuf.ByteString getRegexesBytes(int index) {
     return regexes_.getByteString(index);
@@ -528,6 +544,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @return A list containing the regexes.
      */
     public com.google.protobuf.ProtocolStringList getRegexesList() {
       return regexes_.getUnmodifiableView();
@@ -542,6 +560,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @return The count of regexes.
      */
     public int getRegexesCount() {
       return regexes_.size();
@@ -556,6 +576,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regexes at the given index.
      */
     public java.lang.String getRegexes(int index) {
       return regexes_.get(index);
@@ -570,6 +593,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the regexes at the given index.
      */
     public com.google.protobuf.ByteString getRegexesBytes(int index) {
       return regexes_.getByteString(index);
@@ -584,6 +610,10 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The regexes to set.
+     * @return This builder for chaining.
      */
     public Builder setRegexes(int index, java.lang.String value) {
       if (value == null) {
@@ -604,6 +634,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @param value The regexes to add.
+     * @return This builder for chaining.
      */
     public Builder addRegexes(java.lang.String value) {
       if (value == null) {
@@ -624,6 +657,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @param values The regexes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRegexes(java.lang.Iterable<java.lang.String> values) {
       ensureRegexesIsMutable();
@@ -641,6 +677,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegexes() {
       regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -658,6 +696,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string regexes = 1;</code>
+     *
+     * @param value The bytes of the regexes to add.
+     * @return This builder for chaining.
      */
     public Builder addRegexesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

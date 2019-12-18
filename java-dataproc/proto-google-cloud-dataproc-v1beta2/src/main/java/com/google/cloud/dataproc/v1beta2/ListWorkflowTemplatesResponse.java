@@ -43,6 +43,12 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListWorkflowTemplatesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,7 +129,6 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
             com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TEMPLATES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.dataproc.v1beta2.WorkflowTemplate> templates_;
   /**
@@ -211,6 +216,8 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -233,6 +240,8 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -501,7 +510,6 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse result =
           new com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (templatesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           templates_ = java.util.Collections.unmodifiableList(templates_);
@@ -512,7 +520,6 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         result.templates_ = templatesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1033,6 +1040,8 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1055,6 +1064,8 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1077,6 +1088,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1097,6 +1111,8 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1114,6 +1130,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

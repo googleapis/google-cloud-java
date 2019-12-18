@@ -50,6 +50,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PySparkJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,9 +89,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 args_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               args_.add(s);
               break;
@@ -93,9 +99,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 pythonFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               pythonFileUris_.add(s);
               break;
@@ -103,9 +109,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               jarFileUris_.add(s);
               break;
@@ -113,9 +119,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 fileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000008;
               }
               fileUris_.add(s);
               break;
@@ -123,20 +129,20 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 archiveUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000010;
               }
               archiveUris_.add(s);
               break;
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000020;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -175,19 +181,19 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         pythonFileUris_ = pythonFileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -221,7 +227,6 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.PySparkJob.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MAIN_PYTHON_FILE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object mainPythonFileUri_;
   /**
@@ -233,6 +238,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The mainPythonFileUri.
    */
   public java.lang.String getMainPythonFileUri() {
     java.lang.Object ref = mainPythonFileUri_;
@@ -254,6 +261,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for mainPythonFileUri.
    */
   public com.google.protobuf.ByteString getMainPythonFileUriBytes() {
     java.lang.Object ref = mainPythonFileUri_;
@@ -279,6 +288,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @return A list containing the args.
    */
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
@@ -293,6 +304,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @return The count of args.
    */
   public int getArgsCount() {
     return args_.size();
@@ -307,6 +320,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   public java.lang.String getArgs(int index) {
     return args_.get(index);
@@ -321,6 +337,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string args = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   public com.google.protobuf.ByteString getArgsBytes(int index) {
     return args_.getByteString(index);
@@ -337,6 +356,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string python_file_uris = 3;</code>
+   *
+   * @return A list containing the pythonFileUris.
    */
   public com.google.protobuf.ProtocolStringList getPythonFileUrisList() {
     return pythonFileUris_;
@@ -350,6 +371,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string python_file_uris = 3;</code>
+   *
+   * @return The count of pythonFileUris.
    */
   public int getPythonFileUrisCount() {
     return pythonFileUris_.size();
@@ -363,6 +386,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string python_file_uris = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The pythonFileUris at the given index.
    */
   public java.lang.String getPythonFileUris(int index) {
     return pythonFileUris_.get(index);
@@ -376,6 +402,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string python_file_uris = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the pythonFileUris at the given index.
    */
   public com.google.protobuf.ByteString getPythonFileUrisBytes(int index) {
     return pythonFileUris_.getByteString(index);
@@ -392,6 +421,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4;</code>
+   *
+   * @return A list containing the jarFileUris.
    */
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
@@ -405,6 +436,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4;</code>
+   *
+   * @return The count of jarFileUris.
    */
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
@@ -418,6 +451,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
@@ -431,6 +467,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
@@ -447,6 +486,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 5;</code>
+   *
+   * @return A list containing the fileUris.
    */
   public com.google.protobuf.ProtocolStringList getFileUrisList() {
     return fileUris_;
@@ -460,6 +501,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 5;</code>
+   *
+   * @return The count of fileUris.
    */
   public int getFileUrisCount() {
     return fileUris_.size();
@@ -473,6 +516,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fileUris at the given index.
    */
   public java.lang.String getFileUris(int index) {
     return fileUris_.get(index);
@@ -486,6 +532,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string file_uris = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fileUris at the given index.
    */
   public com.google.protobuf.ByteString getFileUrisBytes(int index) {
     return fileUris_.getByteString(index);
@@ -502,6 +551,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 6;</code>
+   *
+   * @return A list containing the archiveUris.
    */
   public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
     return archiveUris_;
@@ -515,6 +566,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 6;</code>
+   *
+   * @return The count of archiveUris.
    */
   public int getArchiveUrisCount() {
     return archiveUris_.size();
@@ -528,6 +581,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The archiveUris at the given index.
    */
   public java.lang.String getArchiveUris(int index) {
     return archiveUris_.get(index);
@@ -541,6 +597,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string archive_uris = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the archiveUris at the given index.
    */
   public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
     return archiveUris_.getByteString(index);
@@ -662,6 +721,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   *
+   * @return Whether the loggingConfig field is set.
    */
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
@@ -674,6 +735,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   *
+   * @return The loggingConfig.
    */
   public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null
@@ -1034,15 +1097,15 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       mainPythonFileUri_ = "";
 
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pythonFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableProperties().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
@@ -1078,31 +1141,30 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.PySparkJob result =
           new com.google.cloud.dataproc.v1beta2.PySparkJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.mainPythonFileUri_ = mainPythonFileUri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.args_ = args_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         pythonFileUris_ = pythonFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.pythonFileUris_ = pythonFileUris_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.jarFileUris_ = jarFileUris_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.fileUris_ = fileUris_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.archiveUris_ = archiveUris_;
       result.properties_ = internalGetProperties();
@@ -1112,7 +1174,6 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1169,7 +1230,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1179,7 +1240,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.pythonFileUris_.isEmpty()) {
         if (pythonFileUris_.isEmpty()) {
           pythonFileUris_ = other.pythonFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePythonFileUrisIsMutable();
           pythonFileUris_.addAll(other.pythonFileUris_);
@@ -1189,7 +1250,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1199,7 +1260,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.fileUris_.isEmpty()) {
         if (fileUris_.isEmpty()) {
           fileUris_ = other.fileUris_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureFileUrisIsMutable();
           fileUris_.addAll(other.fileUris_);
@@ -1209,7 +1270,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.archiveUris_.isEmpty()) {
         if (archiveUris_.isEmpty()) {
           archiveUris_ = other.archiveUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureArchiveUrisIsMutable();
           archiveUris_.addAll(other.archiveUris_);
@@ -1261,6 +1322,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The mainPythonFileUri.
      */
     public java.lang.String getMainPythonFileUri() {
       java.lang.Object ref = mainPythonFileUri_;
@@ -1282,6 +1345,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for mainPythonFileUri.
      */
     public com.google.protobuf.ByteString getMainPythonFileUriBytes() {
       java.lang.Object ref = mainPythonFileUri_;
@@ -1303,6 +1368,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The mainPythonFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMainPythonFileUri(java.lang.String value) {
       if (value == null) {
@@ -1322,6 +1390,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMainPythonFileUri() {
 
@@ -1338,6 +1408,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for mainPythonFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMainPythonFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1354,9 +1427,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1369,6 +1442,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
       return args_.getUnmodifiableView();
@@ -1383,6 +1458,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @return The count of args.
      */
     public int getArgsCount() {
       return args_.size();
@@ -1397,6 +1474,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The args at the given index.
      */
     public java.lang.String getArgs(int index) {
       return args_.get(index);
@@ -1411,6 +1491,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the args at the given index.
      */
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
@@ -1425,6 +1508,10 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The args to set.
+     * @return This builder for chaining.
      */
     public Builder setArgs(int index, java.lang.String value) {
       if (value == null) {
@@ -1445,6 +1532,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param value The args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgs(java.lang.String value) {
       if (value == null) {
@@ -1465,6 +1555,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param values The args to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
@@ -1482,10 +1575,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1499,6 +1594,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string args = 2;</code>
+     *
+     * @param value The bytes of the args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1515,9 +1613,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePythonFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         pythonFileUris_ = new com.google.protobuf.LazyStringArrayList(pythonFileUris_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1529,6 +1627,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @return A list containing the pythonFileUris.
      */
     public com.google.protobuf.ProtocolStringList getPythonFileUrisList() {
       return pythonFileUris_.getUnmodifiableView();
@@ -1542,6 +1642,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @return The count of pythonFileUris.
      */
     public int getPythonFileUrisCount() {
       return pythonFileUris_.size();
@@ -1555,6 +1657,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The pythonFileUris at the given index.
      */
     public java.lang.String getPythonFileUris(int index) {
       return pythonFileUris_.get(index);
@@ -1568,6 +1673,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the pythonFileUris at the given index.
      */
     public com.google.protobuf.ByteString getPythonFileUrisBytes(int index) {
       return pythonFileUris_.getByteString(index);
@@ -1581,6 +1689,10 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The pythonFileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setPythonFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1600,6 +1712,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @param value The pythonFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addPythonFileUris(java.lang.String value) {
       if (value == null) {
@@ -1619,6 +1734,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @param values The pythonFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllPythonFileUris(java.lang.Iterable<java.lang.String> values) {
       ensurePythonFileUrisIsMutable();
@@ -1635,10 +1753,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPythonFileUris() {
       pythonFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1651,6 +1771,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string python_file_uris = 3;</code>
+     *
+     * @param value The bytes of the pythonFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addPythonFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1667,9 +1790,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1681,6 +1804,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
@@ -1694,6 +1819,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @return The count of jarFileUris.
      */
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
@@ -1707,6 +1834,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The jarFileUris at the given index.
      */
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
@@ -1720,6 +1850,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the jarFileUris at the given index.
      */
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
@@ -1733,6 +1866,10 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The jarFileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1752,6 +1889,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @param value The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
@@ -1771,6 +1911,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @param values The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
@@ -1787,10 +1930,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1803,6 +1948,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4;</code>
+     *
+     * @param value The bytes of the jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1819,9 +1967,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1833,6 +1981,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @return A list containing the fileUris.
      */
     public com.google.protobuf.ProtocolStringList getFileUrisList() {
       return fileUris_.getUnmodifiableView();
@@ -1846,6 +1996,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @return The count of fileUris.
      */
     public int getFileUrisCount() {
       return fileUris_.size();
@@ -1859,6 +2011,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fileUris at the given index.
      */
     public java.lang.String getFileUris(int index) {
       return fileUris_.get(index);
@@ -1872,6 +2027,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fileUris at the given index.
      */
     public com.google.protobuf.ByteString getFileUrisBytes(int index) {
       return fileUris_.getByteString(index);
@@ -1885,6 +2043,10 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The fileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1904,6 +2066,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @param value The fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addFileUris(java.lang.String value) {
       if (value == null) {
@@ -1923,6 +2088,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @param values The fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureFileUrisIsMutable();
@@ -1939,10 +2107,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFileUris() {
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1955,6 +2125,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string file_uris = 5;</code>
+     *
+     * @param value The bytes of the fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1971,9 +2144,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArchiveUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1985,6 +2158,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @return A list containing the archiveUris.
      */
     public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
       return archiveUris_.getUnmodifiableView();
@@ -1998,6 +2173,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @return The count of archiveUris.
      */
     public int getArchiveUrisCount() {
       return archiveUris_.size();
@@ -2011,6 +2188,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The archiveUris at the given index.
      */
     public java.lang.String getArchiveUris(int index) {
       return archiveUris_.get(index);
@@ -2024,6 +2204,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the archiveUris at the given index.
      */
     public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
       return archiveUris_.getByteString(index);
@@ -2037,6 +2220,10 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The archiveUris to set.
+     * @return This builder for chaining.
      */
     public Builder setArchiveUris(int index, java.lang.String value) {
       if (value == null) {
@@ -2056,6 +2243,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @param value The archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addArchiveUris(java.lang.String value) {
       if (value == null) {
@@ -2075,6 +2265,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @param values The archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
       ensureArchiveUrisIsMutable();
@@ -2091,10 +2284,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArchiveUris() {
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2107,6 +2302,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string archive_uris = 6;</code>
+     *
+     * @param value The bytes of the archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addArchiveUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2309,6 +2507,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     *
+     * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
@@ -2321,6 +2521,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     *
+     * @return The loggingConfig.
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {

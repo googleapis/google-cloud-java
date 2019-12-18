@@ -45,6 +45,12 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkflowMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -144,11 +150,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 parameters_ =
                     com.google.protobuf.MapField.newMapField(
                         ParametersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
                   input.readMessage(
@@ -341,12 +347,20 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -406,7 +420,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1.WorkflowMetadata.State)
   }
 
-  private int bitField0_;
   public static final int TEMPLATE_FIELD_NUMBER = 1;
   private volatile java.lang.Object template_;
   /**
@@ -424,6 +437,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The template.
    */
   public java.lang.String getTemplate() {
     java.lang.Object ref = template_;
@@ -451,6 +466,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for template.
    */
   public com.google.protobuf.ByteString getTemplateBytes() {
     java.lang.Object ref = template_;
@@ -475,6 +492,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The version.
    */
   public int getVersion() {
     return version_;
@@ -492,6 +511,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the createCluster field is set.
    */
   public boolean hasCreateCluster() {
     return createCluster_ != null;
@@ -506,6 +527,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The createCluster.
    */
   public com.google.cloud.dataproc.v1.ClusterOperation getCreateCluster() {
     return createCluster_ == null
@@ -539,6 +562,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the graph field is set.
    */
   public boolean hasGraph() {
     return graph_ != null;
@@ -553,6 +578,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The graph.
    */
   public com.google.cloud.dataproc.v1.WorkflowGraph getGraph() {
     return graph_ == null
@@ -586,6 +613,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the deleteCluster field is set.
    */
   public boolean hasDeleteCluster() {
     return deleteCluster_ != null;
@@ -600,6 +629,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The deleteCluster.
    */
   public com.google.cloud.dataproc.v1.ClusterOperation getDeleteCluster() {
     return deleteCluster_ == null
@@ -633,6 +664,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -647,6 +680,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   public com.google.cloud.dataproc.v1.WorkflowMetadata.State getState() {
     @SuppressWarnings("deprecation")
@@ -667,6 +702,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -687,6 +724,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -805,6 +844,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -818,6 +859,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -847,6 +890,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -860,6 +905,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -888,6 +935,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -908,6 +957,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
@@ -1337,7 +1388,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dataproc.v1.WorkflowMetadata result =
           new com.google.cloud.dataproc.v1.WorkflowMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.template_ = template_;
       result.version_ = version_;
       if (createClusterBuilder_ == null) {
@@ -1370,7 +1420,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         result.endTime_ = endTimeBuilder_.build();
       }
       result.clusterUuid_ = clusterUuid_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1501,6 +1550,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The template.
      */
     public java.lang.String getTemplate() {
       java.lang.Object ref = template_;
@@ -1528,6 +1579,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for template.
      */
     public com.google.protobuf.ByteString getTemplateBytes() {
       java.lang.Object ref = template_;
@@ -1555,6 +1608,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The template to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplate(java.lang.String value) {
       if (value == null) {
@@ -1580,6 +1636,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTemplate() {
 
@@ -1602,6 +1660,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for template to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1624,6 +1685,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The version.
      */
     public int getVersion() {
       return version_;
@@ -1637,6 +1700,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
 
@@ -1653,6 +1719,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -1677,6 +1745,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the createCluster field is set.
      */
     public boolean hasCreateCluster() {
       return createClusterBuilder_ != null || createCluster_ != null;
@@ -1691,6 +1761,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The createCluster.
      */
     public com.google.cloud.dataproc.v1.ClusterOperation getCreateCluster() {
       if (createClusterBuilder_ == null) {
@@ -1877,6 +1949,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the graph field is set.
      */
     public boolean hasGraph() {
       return graphBuilder_ != null || graph_ != null;
@@ -1891,6 +1965,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The graph.
      */
     public com.google.cloud.dataproc.v1.WorkflowGraph getGraph() {
       if (graphBuilder_ == null) {
@@ -2076,6 +2152,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the deleteCluster field is set.
      */
     public boolean hasDeleteCluster() {
       return deleteClusterBuilder_ != null || deleteCluster_ != null;
@@ -2090,6 +2168,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The deleteCluster.
      */
     public com.google.cloud.dataproc.v1.ClusterOperation getDeleteCluster() {
       if (deleteClusterBuilder_ == null) {
@@ -2271,6 +2351,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -2285,6 +2367,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -2301,6 +2386,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The state.
      */
     public com.google.cloud.dataproc.v1.WorkflowMetadata.State getState() {
       @SuppressWarnings("deprecation")
@@ -2320,6 +2407,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.dataproc.v1.WorkflowMetadata.State value) {
       if (value == null) {
@@ -2340,6 +2430,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -2357,6 +2449,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -2377,6 +2471,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -2397,6 +2493,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -2415,6 +2514,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -2430,6 +2531,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2612,6 +2716,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -2625,6 +2731,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -2796,6 +2904,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -2809,6 +2919,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -2974,6 +3086,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -2994,6 +3108,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString getClusterUuidBytes() {
       java.lang.Object ref = clusterUuid_;
@@ -3014,6 +3130,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(java.lang.String value) {
       if (value == null) {
@@ -3032,6 +3151,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
 
@@ -3047,6 +3168,9 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

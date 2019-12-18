@@ -40,6 +40,12 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   private LifecycleConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LifecycleConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,7 +163,10 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   private int ttlCase_ = 0;
   private java.lang.Object ttl_;
 
-  public enum TtlCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TtlCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AUTO_DELETE_TIME(2),
     AUTO_DELETE_TTL(3),
     TTL_NOT_SET(0);
@@ -167,7 +175,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     private TtlCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TtlCase valueOf(int value) {
       return forNumber(value);
@@ -210,6 +222,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the idleDeleteTtl field is set.
    */
   public boolean hasIdleDeleteTtl() {
     return idleDeleteTtl_ != null;
@@ -227,6 +241,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The idleDeleteTtl.
    */
   public com.google.protobuf.Duration getIdleDeleteTtl() {
     return idleDeleteTtl_ == null
@@ -260,6 +276,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   *
+   * @return Whether the autoDeleteTime field is set.
    */
   public boolean hasAutoDeleteTime() {
     return ttlCase_ == 2;
@@ -272,6 +290,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   *
+   * @return The autoDeleteTime.
    */
   public com.google.protobuf.Timestamp getAutoDeleteTime() {
     if (ttlCase_ == 2) {
@@ -306,6 +326,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   *
+   * @return Whether the autoDeleteTtl field is set.
    */
   public boolean hasAutoDeleteTtl() {
     return ttlCase_ == 3;
@@ -320,6 +342,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   *
+   * @return The autoDeleteTtl.
    */
   public com.google.protobuf.Duration getAutoDeleteTtl() {
     if (ttlCase_ == 3) {
@@ -358,6 +382,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the idleStartTime field is set.
    */
   public boolean hasIdleStartTime() {
     return idleStartTime_ != null;
@@ -373,6 +399,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The idleStartTime.
    */
   public com.google.protobuf.Timestamp getIdleStartTime() {
     return idleStartTime_ == null
@@ -859,6 +887,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the idleDeleteTtl field is set.
      */
     public boolean hasIdleDeleteTtl() {
       return idleDeleteTtlBuilder_ != null || idleDeleteTtl_ != null;
@@ -877,6 +907,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The idleDeleteTtl.
      */
     public com.google.protobuf.Duration getIdleDeleteTtl() {
       if (idleDeleteTtlBuilder_ == null) {
@@ -1087,6 +1119,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     *
+     * @return Whether the autoDeleteTime field is set.
      */
     public boolean hasAutoDeleteTime() {
       return ttlCase_ == 2;
@@ -1099,6 +1133,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     *
+     * @return The autoDeleteTime.
      */
     public com.google.protobuf.Timestamp getAutoDeleteTime() {
       if (autoDeleteTimeBuilder_ == null) {
@@ -1286,6 +1322,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     *
+     * @return Whether the autoDeleteTtl field is set.
      */
     public boolean hasAutoDeleteTtl() {
       return ttlCase_ == 3;
@@ -1300,6 +1338,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     *
+     * @return The autoDeleteTtl.
      */
     public com.google.protobuf.Duration getAutoDeleteTtl() {
       if (autoDeleteTtlBuilder_ == null) {
@@ -1503,6 +1543,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the idleStartTime field is set.
      */
     public boolean hasIdleStartTime() {
       return idleStartTimeBuilder_ != null || idleStartTime_ != null;
@@ -1518,6 +1560,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The idleStartTime.
      */
     public com.google.protobuf.Timestamp getIdleStartTime() {
       if (idleStartTimeBuilder_ == null) {

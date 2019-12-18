@@ -43,6 +43,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AutoscalingPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -173,7 +178,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   private int algorithmCase_ = 0;
   private java.lang.Object algorithm_;
 
-  public enum AlgorithmCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AlgorithmCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BASIC_ALGORITHM(3),
     ALGORITHM_NOT_SET(0);
     private final int value;
@@ -181,7 +189,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     private AlgorithmCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AlgorithmCase valueOf(int value) {
       return forNumber(value);
@@ -220,6 +232,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -243,6 +257,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -273,6 +289,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -300,6 +318,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -318,6 +338,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the basicAlgorithm field is set.
    */
   public boolean hasBasicAlgorithm() {
     return algorithmCase_ == 3;
@@ -326,6 +348,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The basicAlgorithm.
    */
   public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm getBasicAlgorithm() {
     if (algorithmCase_ == 3) {
@@ -358,6 +382,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the workerConfig field is set.
    */
   public boolean hasWorkerConfig() {
     return workerConfig_ != null;
@@ -372,6 +398,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The workerConfig.
    */
   public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getWorkerConfig() {
     return workerConfig_ == null
@@ -406,6 +434,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the secondaryWorkerConfig field is set.
    */
   public boolean hasSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ != null;
@@ -420,6 +450,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The secondaryWorkerConfig.
    */
   public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig
       getSecondaryWorkerConfig() {
@@ -903,6 +935,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -926,6 +960,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -949,6 +985,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -970,6 +1009,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -988,6 +1029,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1016,6 +1060,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1043,6 +1089,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1070,6 +1118,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1095,6 +1146,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1117,6 +1170,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1138,6 +1194,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the basicAlgorithm field is set.
      */
     public boolean hasBasicAlgorithm() {
       return algorithmCase_ == 3;
@@ -1146,6 +1204,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The basicAlgorithm.
      */
     public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm getBasicAlgorithm() {
       if (basicAlgorithmBuilder_ == null) {
@@ -1315,6 +1375,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the workerConfig field is set.
      */
     public boolean hasWorkerConfig() {
       return workerConfigBuilder_ != null || workerConfig_ != null;
@@ -1329,6 +1391,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The workerConfig.
      */
     public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getWorkerConfig() {
       if (workerConfigBuilder_ == null) {
@@ -1521,6 +1585,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the secondaryWorkerConfig field is set.
      */
     public boolean hasSecondaryWorkerConfig() {
       return secondaryWorkerConfigBuilder_ != null || secondaryWorkerConfig_ != null;
@@ -1535,6 +1601,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The secondaryWorkerConfig.
      */
     public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig
         getSecondaryWorkerConfig() {

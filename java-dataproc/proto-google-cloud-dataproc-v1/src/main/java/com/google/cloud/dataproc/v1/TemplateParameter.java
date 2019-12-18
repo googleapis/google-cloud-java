@@ -52,6 +52,12 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TemplateParameter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,9 +91,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fields_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               fields_.add(s);
               break;
@@ -129,7 +135,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fields_ = fields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -152,7 +158,6 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.TemplateParameter.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -169,6 +174,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -195,6 +202,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -253,6 +262,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the fields.
    */
   public com.google.protobuf.ProtocolStringList getFieldsList() {
     return fields_;
@@ -300,6 +311,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of fields.
    */
   public int getFieldsCount() {
     return fields_.size();
@@ -347,6 +360,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fields at the given index.
    */
   public java.lang.String getFields(int index) {
     return fields_.get(index);
@@ -394,6 +410,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fields at the given index.
    */
   public com.google.protobuf.ByteString getFieldsBytes(int index) {
     return fields_.getByteString(index);
@@ -410,6 +429,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -431,6 +452,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -456,6 +479,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the validation field is set.
    */
   public boolean hasValidation() {
     return validation_ != null;
@@ -470,6 +495,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The validation.
    */
   public com.google.cloud.dataproc.v1.ParameterValidation getValidation() {
     return validation_ == null
@@ -745,7 +772,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       name_ = "";
 
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
       if (validationBuilder_ == null) {
@@ -782,11 +809,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       com.google.cloud.dataproc.v1.TemplateParameter result =
           new com.google.cloud.dataproc.v1.TemplateParameter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fields_ = fields_;
       result.description_ = description_;
@@ -795,7 +821,6 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       } else {
         result.validation_ = validationBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -852,7 +877,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -912,6 +937,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -938,6 +965,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -964,6 +993,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -988,6 +1020,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1009,6 +1043,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1025,9 +1062,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1073,6 +1110,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the fields.
      */
     public com.google.protobuf.ProtocolStringList getFieldsList() {
       return fields_.getUnmodifiableView();
@@ -1120,6 +1159,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of fields.
      */
     public int getFieldsCount() {
       return fields_.size();
@@ -1167,6 +1208,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fields at the given index.
      */
     public java.lang.String getFields(int index) {
       return fields_.get(index);
@@ -1214,6 +1258,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fields at the given index.
      */
     public com.google.protobuf.ByteString getFieldsBytes(int index) {
       return fields_.getByteString(index);
@@ -1261,6 +1308,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The fields to set.
+     * @return This builder for chaining.
      */
     public Builder setFields(int index, java.lang.String value) {
       if (value == null) {
@@ -1314,6 +1365,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The fields to add.
+     * @return This builder for chaining.
      */
     public Builder addFields(java.lang.String value) {
       if (value == null) {
@@ -1367,6 +1421,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The fields to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFields(java.lang.Iterable<java.lang.String> values) {
       ensureFieldsIsMutable();
@@ -1417,10 +1474,12 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1467,6 +1526,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the fields to add.
+     * @return This builder for chaining.
      */
     public Builder addFieldsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1489,6 +1551,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1510,6 +1574,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1531,6 +1597,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1550,6 +1619,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1566,6 +1637,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1594,6 +1668,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the validation field is set.
      */
     public boolean hasValidation() {
       return validationBuilder_ != null || validation_ != null;
@@ -1608,6 +1684,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The validation.
      */
     public com.google.cloud.dataproc.v1.ParameterValidation getValidation() {
       if (validationBuilder_ == null) {

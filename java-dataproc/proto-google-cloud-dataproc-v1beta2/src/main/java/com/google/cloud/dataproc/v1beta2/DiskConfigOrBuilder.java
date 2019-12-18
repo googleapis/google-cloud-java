@@ -33,6 +33,8 @@ public interface DiskConfigOrBuilder
    * </pre>
    *
    * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bootDiskType.
    */
   java.lang.String getBootDiskType();
   /**
@@ -45,6 +47,8 @@ public interface DiskConfigOrBuilder
    * </pre>
    *
    * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for bootDiskType.
    */
   com.google.protobuf.ByteString getBootDiskTypeBytes();
 
@@ -56,6 +60,8 @@ public interface DiskConfigOrBuilder
    * </pre>
    *
    * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bootDiskSizeGb.
    */
   int getBootDiskSizeGb();
 
@@ -72,6 +78,8 @@ public interface DiskConfigOrBuilder
    * </pre>
    *
    * <code>int32 num_local_ssds = 2;</code>
+   *
+   * @return The numLocalSsds.
    */
   int getNumLocalSsds();
 }

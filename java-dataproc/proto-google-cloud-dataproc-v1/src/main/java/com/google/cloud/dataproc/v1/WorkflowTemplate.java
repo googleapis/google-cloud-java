@@ -45,6 +45,12 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkflowTemplate();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -119,10 +125,10 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -149,9 +155,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.OrderedJob>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000002;
               }
               jobs_.add(
                   input.readMessage(
@@ -160,10 +166,10 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 parameters_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.TemplateParameter>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000004;
               }
               parameters_.add(
                   input.readMessage(
@@ -184,10 +190,10 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
@@ -221,10 +227,13 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.WorkflowTemplate.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object id_;
-  /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+  /**
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The id.
+   */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -236,7 +245,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-  /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+  /**
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for id.
+   */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +279,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -293,6 +308,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -323,6 +340,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The version.
    */
   public int getVersion() {
     return version_;
@@ -339,6 +358,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -352,6 +373,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -381,6 +404,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -394,6 +419,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -549,6 +576,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the placement field is set.
    */
   public boolean hasPlacement() {
     return placement_ != null;
@@ -563,6 +592,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The placement.
    */
   public com.google.cloud.dataproc.v1.WorkflowTemplatePlacement getPlacement() {
     return placement_ == null
@@ -1095,13 +1126,13 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         jobsBuilder_.clear();
       }
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         parametersBuilder_.clear();
       }
@@ -1133,7 +1164,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dataproc.v1.WorkflowTemplate result =
           new com.google.cloud.dataproc.v1.WorkflowTemplate(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.name_ = name_;
       result.version_ = version_;
@@ -1155,24 +1185,23 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         result.placement_ = placementBuilder_.build();
       }
       if (jobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.jobs_ = jobs_;
       } else {
         result.jobs_ = jobsBuilder_.build();
       }
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1247,7 +1276,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         if (!other.jobs_.isEmpty()) {
           if (jobs_.isEmpty()) {
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureJobsIsMutable();
             jobs_.addAll(other.jobs_);
@@ -1260,7 +1289,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             jobsBuilder_.dispose();
             jobsBuilder_ = null;
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
             jobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getJobsFieldBuilder()
@@ -1274,7 +1303,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -1287,7 +1316,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -1329,7 +1358,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-    /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+    /**
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The id.
+     */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
@@ -1341,7 +1374,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-    /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+    /**
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for id.
+     */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
@@ -1353,7 +1390,12 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+    /**
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
     public Builder setId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1363,14 +1405,23 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-    /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+    /**
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearId() {
 
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
-    /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
+    /**
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1398,6 +1449,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1425,6 +1478,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1452,6 +1507,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1477,6 +1535,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1499,6 +1559,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1527,6 +1590,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The version.
      */
     public int getVersion() {
       return version_;
@@ -1546,6 +1611,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
 
@@ -1568,6 +1636,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -1592,6 +1662,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1606,6 +1678,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1789,6 +1863,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1803,6 +1879,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2194,6 +2272,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the placement field is set.
      */
     public boolean hasPlacement() {
       return placementBuilder_ != null || placement_ != null;
@@ -2208,6 +2288,8 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The placement.
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplatePlacement getPlacement() {
       if (placementBuilder_ == null) {
@@ -2382,9 +2464,9 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.OrderedJob>(jobs_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2621,7 +2703,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         jobsBuilder_.clear();
@@ -2756,7 +2838,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dataproc.v1.OrderedJob,
                 com.google.cloud.dataproc.v1.OrderedJob.Builder,
                 com.google.cloud.dataproc.v1.OrderedJobOrBuilder>(
-                jobs_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                jobs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         jobs_ = null;
       }
       return jobsBuilder_;
@@ -2766,10 +2848,10 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.TemplateParameter>(parameters_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3029,7 +3111,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -3180,7 +3262,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dataproc.v1.TemplateParameter,
                 com.google.cloud.dataproc.v1.TemplateParameter.Builder,
                 com.google.cloud.dataproc.v1.TemplateParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;

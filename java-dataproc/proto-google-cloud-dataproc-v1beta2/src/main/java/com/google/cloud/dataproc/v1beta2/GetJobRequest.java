@@ -44,6 +44,12 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +138,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -154,6 +161,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -177,6 +186,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -197,6 +208,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -220,6 +233,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The jobId.
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -240,6 +255,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for jobId.
    */
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
@@ -612,6 +629,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -633,6 +652,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -654,6 +675,9 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -673,6 +697,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -689,6 +715,9 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -710,6 +739,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -730,6 +761,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -750,6 +783,9 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -768,6 +804,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
 
@@ -783,6 +821,9 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -804,6 +845,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The jobId.
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -824,6 +867,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for jobId.
      */
     public com.google.protobuf.ByteString getJobIdBytes() {
       java.lang.Object ref = jobId_;
@@ -844,6 +889,9 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobId(java.lang.String value) {
       if (value == null) {
@@ -862,6 +910,8 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobId() {
 
@@ -877,6 +927,9 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

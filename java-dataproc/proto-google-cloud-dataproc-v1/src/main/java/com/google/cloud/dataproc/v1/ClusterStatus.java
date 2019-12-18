@@ -44,6 +44,12 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClusterStatus();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -279,12 +284,20 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -440,12 +453,20 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Substate valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Substate forNumber(int value) {
       switch (value) {
         case 0:
@@ -515,6 +536,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -529,6 +552,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   public com.google.cloud.dataproc.v1.ClusterStatus.State getState() {
     @SuppressWarnings("deprecation")
@@ -549,6 +574,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The detail.
    */
   public java.lang.String getDetail() {
     java.lang.Object ref = detail_;
@@ -571,6 +598,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The bytes for detail.
    */
   public com.google.protobuf.ByteString getDetailBytes() {
     java.lang.Object ref = detail_;
@@ -596,6 +625,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the stateStartTime field is set.
    */
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
@@ -610,6 +641,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The stateStartTime.
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null
@@ -644,6 +677,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for substate.
    */
   public int getSubstateValue() {
     return substate_;
@@ -659,6 +694,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The substate.
    */
   public com.google.cloud.dataproc.v1.ClusterStatus.Substate getSubstate() {
     @SuppressWarnings("deprecation")
@@ -1054,6 +1091,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1068,6 +1107,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1084,6 +1126,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The state.
      */
     public com.google.cloud.dataproc.v1.ClusterStatus.State getState() {
       @SuppressWarnings("deprecation")
@@ -1103,6 +1147,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.dataproc.v1.ClusterStatus.State value) {
       if (value == null) {
@@ -1123,6 +1170,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1142,6 +1191,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The detail.
      */
     public java.lang.String getDetail() {
       java.lang.Object ref = detail_;
@@ -1164,6 +1215,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The bytes for detail.
      */
     public com.google.protobuf.ByteString getDetailBytes() {
       java.lang.Object ref = detail_;
@@ -1186,6 +1239,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The detail to set.
+     * @return This builder for chaining.
      */
     public Builder setDetail(java.lang.String value) {
       if (value == null) {
@@ -1206,6 +1262,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDetail() {
 
@@ -1223,6 +1281,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The bytes for detail to set.
+     * @return This builder for chaining.
      */
     public Builder setDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1251,6 +1312,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the stateStartTime field is set.
      */
     public boolean hasStateStartTime() {
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
@@ -1265,6 +1328,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The stateStartTime.
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1446,6 +1511,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The enum numeric value on the wire for substate.
      */
     public int getSubstateValue() {
       return substate_;
@@ -1461,6 +1528,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for substate to set.
+     * @return This builder for chaining.
      */
     public Builder setSubstateValue(int value) {
       substate_ = value;
@@ -1478,6 +1548,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The substate.
      */
     public com.google.cloud.dataproc.v1.ClusterStatus.Substate getSubstate() {
       @SuppressWarnings("deprecation")
@@ -1498,6 +1570,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The substate to set.
+     * @return This builder for chaining.
      */
     public Builder setSubstate(com.google.cloud.dataproc.v1.ClusterStatus.Substate value) {
       if (value == null) {
@@ -1519,6 +1594,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubstate() {
 

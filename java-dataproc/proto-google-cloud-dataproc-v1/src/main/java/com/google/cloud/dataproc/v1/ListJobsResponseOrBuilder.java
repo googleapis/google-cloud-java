@@ -94,6 +94,8 @@ public interface ListJobsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -106,6 +108,8 @@ public interface ListJobsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

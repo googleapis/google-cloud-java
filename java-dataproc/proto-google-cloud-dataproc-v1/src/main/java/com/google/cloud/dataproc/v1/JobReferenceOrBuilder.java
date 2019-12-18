@@ -32,6 +32,8 @@ public interface JobReferenceOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface JobReferenceOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -57,6 +61,8 @@ public interface JobReferenceOrBuilder
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jobId.
    */
   java.lang.String getJobId();
   /**
@@ -70,6 +76,8 @@ public interface JobReferenceOrBuilder
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString getJobIdBytes();
 }

@@ -32,6 +32,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -64,6 +70,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -76,6 +84,8 @@ public interface CreateClusterRequestOrBuilder
    *
    * <code>.google.cloud.dataproc.v1.Cluster cluster = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the cluster field is set.
    */
   boolean hasCluster();
   /**
@@ -87,6 +97,8 @@ public interface CreateClusterRequestOrBuilder
    *
    * <code>.google.cloud.dataproc.v1.Cluster cluster = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The cluster.
    */
   com.google.cloud.dataproc.v1.Cluster getCluster();
   /**
@@ -117,6 +129,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -135,6 +149,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 }

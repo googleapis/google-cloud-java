@@ -36,6 +36,8 @@ public interface LifecycleConfigOrBuilder
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the idleDeleteTtl field is set.
    */
   boolean hasIdleDeleteTtl();
   /**
@@ -51,6 +53,8 @@ public interface LifecycleConfigOrBuilder
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The idleDeleteTtl.
    */
   com.google.protobuf.Duration getIdleDeleteTtl();
   /**
@@ -77,6 +81,8 @@ public interface LifecycleConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   *
+   * @return Whether the autoDeleteTime field is set.
    */
   boolean hasAutoDeleteTime();
   /**
@@ -87,6 +93,8 @@ public interface LifecycleConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   *
+   * @return The autoDeleteTime.
    */
   com.google.protobuf.Timestamp getAutoDeleteTime();
   /**
@@ -110,6 +118,8 @@ public interface LifecycleConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   *
+   * @return Whether the autoDeleteTtl field is set.
    */
   boolean hasAutoDeleteTtl();
   /**
@@ -122,6 +132,8 @@ public interface LifecycleConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   *
+   * @return The autoDeleteTtl.
    */
   com.google.protobuf.Duration getAutoDeleteTtl();
   /**
@@ -148,6 +160,8 @@ public interface LifecycleConfigOrBuilder
    * <code>
    * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the idleStartTime field is set.
    */
   boolean hasIdleStartTime();
   /**
@@ -161,6 +175,8 @@ public interface LifecycleConfigOrBuilder
    * <code>
    * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The idleStartTime.
    */
   com.google.protobuf.Timestamp getIdleStartTime();
   /**

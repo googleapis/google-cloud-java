@@ -40,6 +40,12 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
   private BasicYarnAutoscalingConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BasicYarnAutoscalingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -148,6 +153,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * <code>
    * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the gracefulDecommissionTimeout field is set.
    */
   public boolean hasGracefulDecommissionTimeout() {
     return gracefulDecommissionTimeout_ != null;
@@ -166,6 +173,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * <code>
    * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The gracefulDecommissionTimeout.
    */
   public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
     return gracefulDecommissionTimeout_ == null
@@ -206,6 +215,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>double scale_up_factor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The scaleUpFactor.
    */
   public double getScaleUpFactor() {
     return scaleUpFactor_;
@@ -226,6 +237,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>double scale_down_factor = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The scaleDownFactor.
    */
   public double getScaleDownFactor() {
     return scaleDownFactor_;
@@ -246,6 +259,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>double scale_up_min_worker_fraction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The scaleUpMinWorkerFraction.
    */
   public double getScaleUpMinWorkerFraction() {
     return scaleUpMinWorkerFraction_;
@@ -267,6 +282,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * <code>double scale_down_min_worker_fraction = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The scaleDownMinWorkerFraction.
    */
   public double getScaleDownMinWorkerFraction() {
     return scaleDownMinWorkerFraction_;
@@ -705,6 +722,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * <code>
      * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the gracefulDecommissionTimeout field is set.
      */
     public boolean hasGracefulDecommissionTimeout() {
       return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
@@ -723,6 +742,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * <code>
      * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The gracefulDecommissionTimeout.
      */
     public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
@@ -935,6 +956,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>double scale_up_factor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The scaleUpFactor.
      */
     public double getScaleUpFactor() {
       return scaleUpFactor_;
@@ -952,6 +975,9 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>double scale_up_factor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The scaleUpFactor to set.
+     * @return This builder for chaining.
      */
     public Builder setScaleUpFactor(double value) {
 
@@ -972,6 +998,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>double scale_up_factor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScaleUpFactor() {
 
@@ -994,6 +1022,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>double scale_down_factor = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The scaleDownFactor.
      */
     public double getScaleDownFactor() {
       return scaleDownFactor_;
@@ -1011,6 +1041,9 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>double scale_down_factor = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The scaleDownFactor to set.
+     * @return This builder for chaining.
      */
     public Builder setScaleDownFactor(double value) {
 
@@ -1031,6 +1064,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>double scale_down_factor = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScaleDownFactor() {
 
@@ -1054,6 +1089,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * <code>double scale_up_min_worker_fraction = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The scaleUpMinWorkerFraction.
      */
     public double getScaleUpMinWorkerFraction() {
       return scaleUpMinWorkerFraction_;
@@ -1072,6 +1109,9 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * <code>double scale_up_min_worker_fraction = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The scaleUpMinWorkerFraction to set.
+     * @return This builder for chaining.
      */
     public Builder setScaleUpMinWorkerFraction(double value) {
 
@@ -1093,6 +1133,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * <code>double scale_up_min_worker_fraction = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScaleUpMinWorkerFraction() {
 
@@ -1116,6 +1158,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * <code>double scale_down_min_worker_fraction = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The scaleDownMinWorkerFraction.
      */
     public double getScaleDownMinWorkerFraction() {
       return scaleDownMinWorkerFraction_;
@@ -1134,6 +1178,9 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * <code>double scale_down_min_worker_fraction = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The scaleDownMinWorkerFraction to set.
+     * @return This builder for chaining.
      */
     public Builder setScaleDownMinWorkerFraction(double value) {
 
@@ -1155,6 +1202,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * <code>double scale_down_min_worker_fraction = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScaleDownMinWorkerFraction() {
 

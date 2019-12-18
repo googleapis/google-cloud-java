@@ -31,6 +31,8 @@ public interface ClusterOperationOrBuilder
    * </pre>
    *
    * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The operationId.
    */
   java.lang.String getOperationId();
   /**
@@ -41,6 +43,8 @@ public interface ClusterOperationOrBuilder
    * </pre>
    *
    * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for operationId.
    */
   com.google.protobuf.ByteString getOperationIdBytes();
 
@@ -52,6 +56,8 @@ public interface ClusterOperationOrBuilder
    * </pre>
    *
    * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
    */
   java.lang.String getError();
   /**
@@ -62,6 +68,8 @@ public interface ClusterOperationOrBuilder
    * </pre>
    *
    * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for error.
    */
   com.google.protobuf.ByteString getErrorBytes();
 
@@ -73,6 +81,8 @@ public interface ClusterOperationOrBuilder
    * </pre>
    *
    * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The done.
    */
   boolean getDone();
 }

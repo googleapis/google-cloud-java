@@ -47,6 +47,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClusterOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -103,10 +109,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statusHistory_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterOperationStatus>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               statusHistory_.add(
                   input.readMessage(
@@ -130,10 +136,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -144,9 +150,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
           case 114:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 warnings_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000004;
               }
               warnings_.add(s);
               break;
@@ -165,10 +171,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -202,7 +208,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             com.google.cloud.dataproc.v1.ClusterOperationMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object clusterName_;
   /**
@@ -213,6 +218,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -233,6 +240,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -256,6 +265,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -276,6 +287,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
@@ -301,6 +314,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -315,6 +330,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The status.
    */
   public com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus() {
     return status_ == null
@@ -422,6 +439,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The operationType.
    */
   public java.lang.String getOperationType() {
     java.lang.Object ref = operationType_;
@@ -442,6 +461,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for operationType.
    */
   public com.google.protobuf.ByteString getOperationTypeBytes() {
     java.lang.Object ref = operationType_;
@@ -465,6 +486,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -485,6 +508,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -605,6 +630,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the warnings.
    */
   public com.google.protobuf.ProtocolStringList getWarningsList() {
     return warnings_;
@@ -617,6 +644,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of warnings.
    */
   public int getWarningsCount() {
     return warnings_.size();
@@ -629,6 +658,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The warnings at the given index.
    */
   public java.lang.String getWarnings(int index) {
     return warnings_.get(index);
@@ -641,6 +673,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the warnings at the given index.
    */
   public com.google.protobuf.ByteString getWarningsBytes(int index) {
     return warnings_.getByteString(index);
@@ -970,7 +1005,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         statusHistoryBuilder_.clear();
       }
@@ -980,7 +1015,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
       internalGetMutableLabels().clear();
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1009,7 +1044,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       com.google.cloud.dataproc.v1.ClusterOperationMetadata result =
           new com.google.cloud.dataproc.v1.ClusterOperationMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.clusterName_ = clusterName_;
       result.clusterUuid_ = clusterUuid_;
       if (statusBuilder_ == null) {
@@ -1018,9 +1052,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.statusHistory_ = statusHistory_;
       } else {
@@ -1030,12 +1064,11 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       result.description_ = description_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.warnings_ = warnings_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1101,7 +1134,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1114,7 +1147,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -1136,7 +1169,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (!other.warnings_.isEmpty()) {
         if (warnings_.isEmpty()) {
           warnings_ = other.warnings_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureWarningsIsMutable();
           warnings_.addAll(other.warnings_);
@@ -1184,6 +1217,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1204,6 +1239,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -1224,6 +1261,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -1242,6 +1282,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -1257,6 +1299,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1278,6 +1323,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -1298,6 +1345,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString getClusterUuidBytes() {
       java.lang.Object ref = clusterUuid_;
@@ -1318,6 +1367,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(java.lang.String value) {
       if (value == null) {
@@ -1336,6 +1388,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
 
@@ -1351,6 +1405,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1379,6 +1436,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -1393,6 +1452,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * <code>
      * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The status.
      */
     public com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -1567,11 +1628,11 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterOperationStatus>(
                 statusHistory_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1812,7 +1873,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -1953,7 +2014,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
                 com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder,
                 com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -1970,6 +2031,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The operationType.
      */
     public java.lang.String getOperationType() {
       java.lang.Object ref = operationType_;
@@ -1990,6 +2053,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for operationType.
      */
     public com.google.protobuf.ByteString getOperationTypeBytes() {
       java.lang.Object ref = operationType_;
@@ -2010,6 +2075,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The operationType to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationType(java.lang.String value) {
       if (value == null) {
@@ -2028,6 +2096,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOperationType() {
 
@@ -2043,6 +2113,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for operationType to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2064,6 +2137,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2084,6 +2159,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2104,6 +2181,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2122,6 +2202,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2137,6 +2219,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2312,9 +2397,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2325,6 +2410,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the warnings.
      */
     public com.google.protobuf.ProtocolStringList getWarningsList() {
       return warnings_.getUnmodifiableView();
@@ -2337,6 +2424,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of warnings.
      */
     public int getWarningsCount() {
       return warnings_.size();
@@ -2349,6 +2438,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The warnings at the given index.
      */
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
@@ -2361,6 +2453,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the warnings at the given index.
      */
     public com.google.protobuf.ByteString getWarningsBytes(int index) {
       return warnings_.getByteString(index);
@@ -2373,6 +2468,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The warnings to set.
+     * @return This builder for chaining.
      */
     public Builder setWarnings(int index, java.lang.String value) {
       if (value == null) {
@@ -2391,6 +2490,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The warnings to add.
+     * @return This builder for chaining.
      */
     public Builder addWarnings(java.lang.String value) {
       if (value == null) {
@@ -2409,6 +2511,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The warnings to add.
+     * @return This builder for chaining.
      */
     public Builder addAllWarnings(java.lang.Iterable<java.lang.String> values) {
       ensureWarningsIsMutable();
@@ -2424,10 +2529,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWarnings() {
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2439,6 +2546,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the warnings to add.
+     * @return This builder for chaining.
      */
     public Builder addWarningsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

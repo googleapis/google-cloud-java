@@ -42,6 +42,12 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ValueValidation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -122,6 +128,8 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string values = 1;</code>
+   *
+   * @return A list containing the values.
    */
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
@@ -134,6 +142,8 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string values = 1;</code>
+   *
+   * @return The count of values.
    */
   public int getValuesCount() {
     return values_.size();
@@ -146,6 +156,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string values = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The values at the given index.
    */
   public java.lang.String getValues(int index) {
     return values_.get(index);
@@ -158,6 +171,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string values = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the values at the given index.
    */
   public com.google.protobuf.ByteString getValuesBytes(int index) {
     return values_.getByteString(index);
@@ -518,6 +534,8 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @return A list containing the values.
      */
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_.getUnmodifiableView();
@@ -530,6 +548,8 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @return The count of values.
      */
     public int getValuesCount() {
       return values_.size();
@@ -542,6 +562,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The values at the given index.
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
@@ -554,6 +577,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
      */
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
@@ -566,6 +592,10 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The values to set.
+     * @return This builder for chaining.
      */
     public Builder setValues(int index, java.lang.String value) {
       if (value == null) {
@@ -584,6 +614,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @param value The values to add.
+     * @return This builder for chaining.
      */
     public Builder addValues(java.lang.String value) {
       if (value == null) {
@@ -602,6 +635,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @param values The values to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
       ensureValuesIsMutable();
@@ -617,6 +653,8 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -632,6 +670,9 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string values = 1;</code>
+     *
+     * @param value The bytes of the values to add.
+     * @return This builder for chaining.
      */
     public Builder addValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

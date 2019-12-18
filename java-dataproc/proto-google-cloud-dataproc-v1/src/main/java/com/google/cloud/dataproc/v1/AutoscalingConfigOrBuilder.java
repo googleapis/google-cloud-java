@@ -36,6 +36,8 @@ public interface AutoscalingConfigOrBuilder
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The policyUri.
    */
   java.lang.String getPolicyUri();
   /**
@@ -51,6 +53,8 @@ public interface AutoscalingConfigOrBuilder
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for policyUri.
    */
   com.google.protobuf.ByteString getPolicyUriBytes();
 }

@@ -32,6 +32,8 @@ public interface GetClusterRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface GetClusterRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface GetClusterRequestOrBuilder
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -64,6 +70,8 @@ public interface GetClusterRequestOrBuilder
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -75,6 +83,8 @@ public interface GetClusterRequestOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -85,6 +95,8 @@ public interface GetClusterRequestOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 }

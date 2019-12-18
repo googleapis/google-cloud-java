@@ -38,6 +38,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The template.
    */
   java.lang.String getTemplate();
   /**
@@ -55,6 +57,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>string template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for template.
    */
   com.google.protobuf.ByteString getTemplateBytes();
 
@@ -67,6 +71,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>int32 version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The version.
    */
   int getVersion();
 
@@ -80,6 +86,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the createCluster field is set.
    */
   boolean hasCreateCluster();
   /**
@@ -92,6 +100,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The createCluster.
    */
   com.google.cloud.dataproc.v1.ClusterOperation getCreateCluster();
   /**
@@ -117,6 +127,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the graph field is set.
    */
   boolean hasGraph();
   /**
@@ -129,6 +141,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The graph.
    */
   com.google.cloud.dataproc.v1.WorkflowGraph getGraph();
   /**
@@ -154,6 +168,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the deleteCluster field is set.
    */
   boolean hasDeleteCluster();
   /**
@@ -166,6 +182,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The deleteCluster.
    */
   com.google.cloud.dataproc.v1.ClusterOperation getDeleteCluster();
   /**
@@ -191,6 +209,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -203,6 +223,8 @@ public interface WorkflowMetadataOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.WorkflowMetadata.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   com.google.cloud.dataproc.v1.WorkflowMetadata.State getState();
 
@@ -214,6 +236,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -224,6 +248,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -290,6 +316,8 @@ public interface WorkflowMetadataOrBuilder
    *
    * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -301,6 +329,8 @@ public interface WorkflowMetadataOrBuilder
    *
    * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -324,6 +354,8 @@ public interface WorkflowMetadataOrBuilder
    *
    * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -335,6 +367,8 @@ public interface WorkflowMetadataOrBuilder
    *
    * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -357,6 +391,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
   /**
@@ -367,6 +403,8 @@ public interface WorkflowMetadataOrBuilder
    * </pre>
    *
    * <code>string cluster_uuid = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
 }

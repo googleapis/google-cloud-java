@@ -32,6 +32,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -43,6 +45,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -64,6 +70,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -75,6 +83,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the job field is set.
    */
   boolean hasJob();
   /**
@@ -85,6 +95,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The job.
    */
   com.google.cloud.dataproc.v1.Job getJob();
   /**
@@ -114,6 +126,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -132,6 +146,8 @@ public interface SubmitJobRequestOrBuilder
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 }

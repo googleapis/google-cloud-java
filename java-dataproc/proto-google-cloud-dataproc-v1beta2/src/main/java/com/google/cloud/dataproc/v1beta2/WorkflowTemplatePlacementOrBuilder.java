@@ -31,6 +31,8 @@ public interface WorkflowTemplatePlacementOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedCluster managed_cluster = 1;</code>
+   *
+   * @return Whether the managedCluster field is set.
    */
   boolean hasManagedCluster();
   /**
@@ -41,6 +43,8 @@ public interface WorkflowTemplatePlacementOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedCluster managed_cluster = 1;</code>
+   *
+   * @return The managedCluster.
    */
   com.google.cloud.dataproc.v1beta2.ManagedCluster getManagedCluster();
   /**
@@ -64,6 +68,8 @@ public interface WorkflowTemplatePlacementOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterSelector cluster_selector = 2;</code>
+   *
+   * @return Whether the clusterSelector field is set.
    */
   boolean hasClusterSelector();
   /**
@@ -76,6 +82,8 @@ public interface WorkflowTemplatePlacementOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterSelector cluster_selector = 2;</code>
+   *
+   * @return The clusterSelector.
    */
   com.google.cloud.dataproc.v1beta2.ClusterSelector getClusterSelector();
   /**

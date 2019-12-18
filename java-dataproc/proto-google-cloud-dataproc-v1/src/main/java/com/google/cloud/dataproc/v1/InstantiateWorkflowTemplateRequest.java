@@ -44,6 +44,12 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InstantiateWorkflowTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -88,11 +94,11 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 parameters_ =
                     com.google.protobuf.MapField.newMapField(
                         ParametersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
                   input.readMessage(
@@ -146,7 +152,6 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
             com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -166,6 +171,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -195,6 +202,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -222,6 +231,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * </pre>
    *
    * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The version.
    */
   public int getVersion() {
     return version_;
@@ -243,6 +254,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * </pre>
    *
    * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestId.
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -269,6 +282,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * </pre>
    *
    * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestId.
    */
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
@@ -680,13 +695,11 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest result =
           new com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.version_ = version_;
       result.requestId_ = requestId_;
       result.parameters_ = internalGetParameters();
       result.parameters_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -802,6 +815,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -831,6 +846,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -860,6 +877,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -887,6 +907,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -911,6 +933,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -936,6 +961,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The version.
      */
     public int getVersion() {
       return version_;
@@ -952,6 +979,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
 
@@ -971,6 +1001,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -994,6 +1026,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestId.
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -1020,6 +1054,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestId.
      */
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
@@ -1046,6 +1082,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
@@ -1070,6 +1109,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestId() {
 
@@ -1091,6 +1132,9 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * </pre>
      *
      * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

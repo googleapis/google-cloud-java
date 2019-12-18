@@ -31,6 +31,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   *
+   * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
   /**
@@ -41,6 +43,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   *
+   * @return The bytes for queryFileUri.
    */
   com.google.protobuf.ByteString getQueryFileUriBytes();
 
@@ -52,6 +56,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.QueryList query_list = 2;</code>
+   *
+   * @return Whether the queryList field is set.
    */
   boolean hasQueryList();
   /**
@@ -62,6 +68,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.QueryList query_list = 2;</code>
+   *
+   * @return The queryList.
    */
   com.google.cloud.dataproc.v1beta2.QueryList getQueryList();
   /**
@@ -206,6 +214,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
+   *
+   * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
   /**
@@ -216,6 +226,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
+   *
+   * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
   /**
@@ -226,6 +238,9 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
   /**
@@ -236,6 +251,9 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
@@ -247,6 +265,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   *
+   * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
   /**
@@ -257,6 +277,8 @@ public interface SparkSqlJobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   *
+   * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig();
   /**

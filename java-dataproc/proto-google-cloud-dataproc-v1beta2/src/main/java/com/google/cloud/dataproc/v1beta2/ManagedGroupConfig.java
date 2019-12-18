@@ -43,6 +43,12 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ManagedGroupConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The instanceTemplateName.
    */
   public java.lang.String getInstanceTemplateName() {
     java.lang.Object ref = instanceTemplateName_;
@@ -146,6 +153,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for instanceTemplateName.
    */
   public com.google.protobuf.ByteString getInstanceTemplateNameBytes() {
     java.lang.Object ref = instanceTemplateName_;
@@ -170,6 +179,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    *
    * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The instanceGroupManagerName.
    */
   public java.lang.String getInstanceGroupManagerName() {
     java.lang.Object ref = instanceGroupManagerName_;
@@ -191,6 +202,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    *
    * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for instanceGroupManagerName.
    */
   public com.google.protobuf.ByteString getInstanceGroupManagerNameBytes() {
     java.lang.Object ref = instanceGroupManagerName_;
@@ -549,6 +562,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The instanceTemplateName.
      */
     public java.lang.String getInstanceTemplateName() {
       java.lang.Object ref = instanceTemplateName_;
@@ -570,6 +585,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for instanceTemplateName.
      */
     public com.google.protobuf.ByteString getInstanceTemplateNameBytes() {
       java.lang.Object ref = instanceTemplateName_;
@@ -591,6 +608,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The instanceTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceTemplateName(java.lang.String value) {
       if (value == null) {
@@ -610,6 +630,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstanceTemplateName() {
 
@@ -626,6 +648,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for instanceTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceTemplateNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -648,6 +673,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The instanceGroupManagerName.
      */
     public java.lang.String getInstanceGroupManagerName() {
       java.lang.Object ref = instanceGroupManagerName_;
@@ -669,6 +696,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for instanceGroupManagerName.
      */
     public com.google.protobuf.ByteString getInstanceGroupManagerNameBytes() {
       java.lang.Object ref = instanceGroupManagerName_;
@@ -690,6 +719,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The instanceGroupManagerName to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceGroupManagerName(java.lang.String value) {
       if (value == null) {
@@ -709,6 +741,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManagerName() {
 
@@ -725,6 +759,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for instanceGroupManagerName to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceGroupManagerNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

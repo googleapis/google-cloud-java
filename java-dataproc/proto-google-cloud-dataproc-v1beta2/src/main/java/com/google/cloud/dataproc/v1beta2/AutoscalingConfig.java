@@ -42,6 +42,12 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AutoscalingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +126,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The policyUri.
    */
   public java.lang.String getPolicyUri() {
     java.lang.Object ref = policyUri_;
@@ -146,6 +153,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for policyUri.
    */
   public com.google.protobuf.ByteString getPolicyUriBytes() {
     java.lang.Object ref = policyUri_;
@@ -491,6 +500,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The policyUri.
      */
     public java.lang.String getPolicyUri() {
       java.lang.Object ref = policyUri_;
@@ -516,6 +527,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for policyUri.
      */
     public com.google.protobuf.ByteString getPolicyUriBytes() {
       java.lang.Object ref = policyUri_;
@@ -541,6 +554,9 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The policyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setPolicyUri(java.lang.String value) {
       if (value == null) {
@@ -564,6 +580,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPolicyUri() {
 
@@ -584,6 +602,9 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for policyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setPolicyUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -53,6 +57,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
+   *
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -64,6 +70,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
+   *
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -76,6 +84,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -87,6 +97,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   *
+   * @return The config.
    */
   com.google.cloud.dataproc.v1.ClusterConfig getConfig();
   /**
@@ -195,6 +207,8 @@ public interface ClusterOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -207,6 +221,8 @@ public interface ClusterOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The status.
    */
   com.google.cloud.dataproc.v1.ClusterStatus getStatus();
   /**
@@ -293,6 +309,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
   /**
@@ -304,6 +322,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
 
@@ -317,6 +337,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   *
+   * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
   /**
@@ -329,6 +351,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   *
+   * @return The metrics.
    */
   com.google.cloud.dataproc.v1.ClusterMetrics getMetrics();
   /**

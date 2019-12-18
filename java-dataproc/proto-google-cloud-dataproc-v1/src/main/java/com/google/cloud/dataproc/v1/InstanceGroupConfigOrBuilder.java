@@ -32,6 +32,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The numInstances.
    */
   int getNumInstances();
 
@@ -44,6 +46,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the instanceNames.
    */
   java.util.List<java.lang.String> getInstanceNamesList();
   /**
@@ -55,6 +59,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of instanceNames.
    */
   int getInstanceNamesCount();
   /**
@@ -66,6 +72,9 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The instanceNames at the given index.
    */
   java.lang.String getInstanceNames(int index);
   /**
@@ -77,6 +86,9 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instanceNames at the given index.
    */
   com.google.protobuf.ByteString getInstanceNamesBytes(int index);
 
@@ -90,6 +102,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imageUri.
    */
   java.lang.String getImageUri();
   /**
@@ -102,6 +116,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for imageUri.
    */
   com.google.protobuf.ByteString getImageUriBytes();
 
@@ -122,6 +138,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineTypeUri.
    */
   java.lang.String getMachineTypeUri();
   /**
@@ -141,6 +159,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineTypeUri.
    */
   com.google.protobuf.ByteString getMachineTypeUriBytes();
 
@@ -154,6 +174,8 @@ public interface InstanceGroupConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the diskConfig field is set.
    */
   boolean hasDiskConfig();
   /**
@@ -166,6 +188,8 @@ public interface InstanceGroupConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The diskConfig.
    */
   com.google.cloud.dataproc.v1.DiskConfig getDiskConfig();
   /**
@@ -190,6 +214,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isPreemptible.
    */
   boolean getIsPreemptible();
 
@@ -205,6 +231,8 @@ public interface InstanceGroupConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the managedGroupConfig field is set.
    */
   boolean hasManagedGroupConfig();
   /**
@@ -219,6 +247,8 @@ public interface InstanceGroupConfigOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The managedGroupConfig.
    */
   com.google.cloud.dataproc.v1.ManagedGroupConfig getManagedGroupConfig();
   /**
@@ -313,6 +343,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>string min_cpu_platform = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
   /**
@@ -325,6 +357,8 @@ public interface InstanceGroupConfigOrBuilder
    * </pre>
    *
    * <code>string min_cpu_platform = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for minCpuPlatform.
    */
   com.google.protobuf.ByteString getMinCpuPlatformBytes();
 }

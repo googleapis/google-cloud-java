@@ -42,6 +42,12 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ManagedCluster();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -90,10 +96,10 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -146,7 +152,6 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.ManagedCluster.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object clusterName_;
   /**
@@ -161,6 +166,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -185,6 +192,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -210,6 +219,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -224,6 +235,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The config.
    */
   public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
     return config_ == null
@@ -654,7 +667,6 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1.ManagedCluster result =
           new com.google.cloud.dataproc.v1.ManagedCluster(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.clusterName_ = clusterName_;
       if (configBuilder_ == null) {
         result.config_ = config_;
@@ -663,7 +675,6 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -765,6 +776,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -789,6 +802,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -813,6 +828,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -835,6 +853,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -854,6 +874,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -882,6 +905,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -896,6 +921,8 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The config.
      */
     public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
       if (configBuilder_ == null) {

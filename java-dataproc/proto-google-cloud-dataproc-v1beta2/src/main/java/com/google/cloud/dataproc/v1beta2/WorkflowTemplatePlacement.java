@@ -41,6 +41,12 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   private WorkflowTemplatePlacement() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkflowTemplatePlacement();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,7 +142,10 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   private int placementCase_ = 0;
   private java.lang.Object placement_;
 
-  public enum PlacementCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PlacementCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MANAGED_CLUSTER(1),
     CLUSTER_SELECTOR(2),
     PLACEMENT_NOT_SET(0);
@@ -146,7 +154,11 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     private PlacementCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PlacementCase valueOf(int value) {
       return forNumber(value);
@@ -183,6 +195,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedCluster managed_cluster = 1;</code>
+   *
+   * @return Whether the managedCluster field is set.
    */
   public boolean hasManagedCluster() {
     return placementCase_ == 1;
@@ -195,6 +209,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedCluster managed_cluster = 1;</code>
+   *
+   * @return The managedCluster.
    */
   public com.google.cloud.dataproc.v1beta2.ManagedCluster getManagedCluster() {
     if (placementCase_ == 1) {
@@ -229,6 +245,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterSelector cluster_selector = 2;</code>
+   *
+   * @return Whether the clusterSelector field is set.
    */
   public boolean hasClusterSelector() {
     return placementCase_ == 2;
@@ -243,6 +261,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterSelector cluster_selector = 2;</code>
+   *
+   * @return The clusterSelector.
    */
   public com.google.cloud.dataproc.v1beta2.ClusterSelector getClusterSelector() {
     if (placementCase_ == 2) {
@@ -671,6 +691,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedCluster managed_cluster = 1;</code>
+     *
+     * @return Whether the managedCluster field is set.
      */
     public boolean hasManagedCluster() {
       return placementCase_ == 1;
@@ -683,6 +705,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedCluster managed_cluster = 1;</code>
+     *
+     * @return The managedCluster.
      */
     public com.google.cloud.dataproc.v1beta2.ManagedCluster getManagedCluster() {
       if (managedClusterBuilder_ == null) {
@@ -876,6 +900,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterSelector cluster_selector = 2;</code>
+     *
+     * @return Whether the clusterSelector field is set.
      */
     public boolean hasClusterSelector() {
       return placementCase_ == 2;
@@ -890,6 +916,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterSelector cluster_selector = 2;</code>
+     *
+     * @return The clusterSelector.
      */
     public com.google.cloud.dataproc.v1beta2.ClusterSelector getClusterSelector() {
       if (clusterSelectorBuilder_ == null) {

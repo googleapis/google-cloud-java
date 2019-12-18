@@ -42,6 +42,12 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EncryptionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The gcePdKmsKeyName.
    */
   public java.lang.String getGcePdKmsKeyName() {
     java.lang.Object ref = gcePdKmsKeyName_;
@@ -138,6 +145,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for gcePdKmsKeyName.
    */
   public com.google.protobuf.ByteString getGcePdKmsKeyNameBytes() {
     java.lang.Object ref = gcePdKmsKeyName_;
@@ -477,6 +486,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The gcePdKmsKeyName.
      */
     public java.lang.String getGcePdKmsKeyName() {
       java.lang.Object ref = gcePdKmsKeyName_;
@@ -498,6 +509,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for gcePdKmsKeyName.
      */
     public com.google.protobuf.ByteString getGcePdKmsKeyNameBytes() {
       java.lang.Object ref = gcePdKmsKeyName_;
@@ -519,6 +532,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The gcePdKmsKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setGcePdKmsKeyName(java.lang.String value) {
       if (value == null) {
@@ -538,6 +554,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGcePdKmsKeyName() {
 
@@ -554,6 +572,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for gcePdKmsKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setGcePdKmsKeyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

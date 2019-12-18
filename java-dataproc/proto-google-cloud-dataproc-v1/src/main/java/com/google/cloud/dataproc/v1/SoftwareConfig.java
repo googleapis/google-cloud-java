@@ -43,6 +43,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SoftwareConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,11 +81,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -91,9 +97,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
           case 24:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 optionalComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               optionalComponents_.add(rawValue);
               break;
@@ -104,9 +110,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   optionalComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 optionalComponents_.add(rawValue);
               }
@@ -127,7 +133,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
       }
       this.unknownFields = unknownFields.build();
@@ -161,7 +167,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.SoftwareConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int IMAGE_VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object imageVersion_;
   /**
@@ -178,6 +183,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imageVersion.
    */
   public java.lang.String getImageVersion() {
     java.lang.Object ref = imageVersion_;
@@ -204,6 +211,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for imageVersion.
    */
   public com.google.protobuf.ByteString getImageVersionBytes() {
     java.lang.Object ref = imageVersion_;
@@ -395,6 +404,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the optionalComponents.
    */
   public java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -411,6 +422,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param value The optionalComponents to add.
    */
   public int getOptionalComponentsCount() {
     return optionalComponents_.size();
@@ -425,6 +438,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The optionalComponents at the given index.
    */
   public com.google.cloud.dataproc.v1.Component getOptionalComponents(int index) {
     return optionalComponents_converter_.convert(optionalComponents_.get(index));
@@ -439,6 +455,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for optionalComponents.
    */
   public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
     return optionalComponents_;
@@ -453,6 +471,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of optionalComponents at the given index.
    */
   public int getOptionalComponentsValue(int index) {
     return optionalComponents_.get(index);
@@ -731,7 +752,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableProperties().clear();
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -760,16 +781,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1.SoftwareConfig result =
           new com.google.cloud.dataproc.v1.SoftwareConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.imageVersion_ = imageVersion_;
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.optionalComponents_ = optionalComponents_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -827,7 +846,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.optionalComponents_.isEmpty()) {
         if (optionalComponents_.isEmpty()) {
           optionalComponents_ = other.optionalComponents_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureOptionalComponentsIsMutable();
           optionalComponents_.addAll(other.optionalComponents_);
@@ -880,6 +899,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The imageVersion.
      */
     public java.lang.String getImageVersion() {
       java.lang.Object ref = imageVersion_;
@@ -906,6 +927,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for imageVersion.
      */
     public com.google.protobuf.ByteString getImageVersionBytes() {
       java.lang.Object ref = imageVersion_;
@@ -932,6 +955,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The imageVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setImageVersion(java.lang.String value) {
       if (value == null) {
@@ -956,6 +982,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageVersion() {
 
@@ -977,6 +1005,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for imageVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setImageVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1253,9 +1284,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOptionalComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = new java.util.ArrayList<java.lang.Integer>(optionalComponents_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1268,6 +1299,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the optionalComponents.
      */
     public java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1284,6 +1317,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The count of optionalComponents.
      */
     public int getOptionalComponentsCount() {
       return optionalComponents_.size();
@@ -1298,6 +1333,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The optionalComponents at the given index.
      */
     public com.google.cloud.dataproc.v1.Component getOptionalComponents(int index) {
       return optionalComponents_converter_.convert(optionalComponents_.get(index));
@@ -1312,6 +1350,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The optionalComponents to set.
+     * @return This builder for chaining.
      */
     public Builder setOptionalComponents(int index, com.google.cloud.dataproc.v1.Component value) {
       if (value == null) {
@@ -1332,6 +1374,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addOptionalComponents(com.google.cloud.dataproc.v1.Component value) {
       if (value == null) {
@@ -1352,6 +1397,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addAllOptionalComponents(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.Component> values) {
@@ -1372,10 +1420,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOptionalComponents() {
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1389,6 +1439,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for optionalComponents.
      */
     public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
       return java.util.Collections.unmodifiableList(optionalComponents_);
@@ -1403,6 +1455,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of optionalComponents at the given index.
      */
     public int getOptionalComponentsValue(int index) {
       return optionalComponents_.get(index);
@@ -1417,6 +1472,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of optionalComponents at the given index.
+     * @return This builder for chaining.
      */
     public Builder setOptionalComponentsValue(int index, int value) {
       ensureOptionalComponentsIsMutable();
@@ -1434,6 +1493,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addOptionalComponentsValue(int value) {
       ensureOptionalComponentsIsMutable();
@@ -1451,6 +1513,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addAllOptionalComponentsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureOptionalComponentsIsMutable();

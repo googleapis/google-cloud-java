@@ -43,6 +43,8 @@ public interface QueryListOrBuilder
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the queries.
    */
   java.util.List<java.lang.String> getQueriesList();
   /**
@@ -65,6 +67,8 @@ public interface QueryListOrBuilder
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of queries.
    */
   int getQueriesCount();
   /**
@@ -87,6 +91,9 @@ public interface QueryListOrBuilder
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The queries at the given index.
    */
   java.lang.String getQueries(int index);
   /**
@@ -109,6 +116,9 @@ public interface QueryListOrBuilder
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the queries at the given index.
    */
   com.google.protobuf.ByteString getQueriesBytes(int index);
 }

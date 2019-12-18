@@ -33,6 +33,8 @@ public interface InstanceGroupAutoscalingPolicyConfigOrBuilder
    * </pre>
    *
    * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minInstances.
    */
   int getMinInstances();
 
@@ -48,6 +50,8 @@ public interface InstanceGroupAutoscalingPolicyConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxInstances.
    */
   int getMaxInstances();
 
@@ -74,6 +78,8 @@ public interface InstanceGroupAutoscalingPolicyConfigOrBuilder
    * </pre>
    *
    * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The weight.
    */
   int getWeight();
 }

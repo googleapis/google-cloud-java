@@ -35,6 +35,8 @@ public interface ManagedClusterOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
+   *
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -49,6 +51,8 @@ public interface ManagedClusterOrBuilder
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
+   *
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -60,6 +64,8 @@ public interface ManagedClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -70,6 +76,8 @@ public interface ManagedClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+   *
+   * @return The config.
    */
   com.google.cloud.dataproc.v1beta2.ClusterConfig getConfig();
   /**

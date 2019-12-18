@@ -33,6 +33,8 @@ public interface JobStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -45,6 +47,8 @@ public interface JobStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   com.google.cloud.dataproc.v1.JobStatus.State getState();
 
@@ -59,6 +63,8 @@ public interface JobStatusOrBuilder
    * <code>
    * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The details.
    */
   java.lang.String getDetails();
   /**
@@ -72,6 +78,8 @@ public interface JobStatusOrBuilder
    * <code>
    * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The bytes for details.
    */
   com.google.protobuf.ByteString getDetailsBytes();
 
@@ -85,6 +93,8 @@ public interface JobStatusOrBuilder
    * <code>
    * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
   /**
@@ -97,6 +107,8 @@ public interface JobStatusOrBuilder
    * <code>
    * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
@@ -123,6 +135,8 @@ public interface JobStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for substate.
    */
   int getSubstateValue();
   /**
@@ -136,6 +150,8 @@ public interface JobStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The substate.
    */
   com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate();
 }

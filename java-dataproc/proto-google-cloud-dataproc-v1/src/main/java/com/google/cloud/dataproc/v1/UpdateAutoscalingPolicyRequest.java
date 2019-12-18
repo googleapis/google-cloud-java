@@ -41,6 +41,12 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
   private UpdateAutoscalingPolicyRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateAutoscalingPolicyRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    * <code>
    * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the policy field is set.
    */
   public boolean hasPolicy() {
     return policy_ != null;
@@ -140,6 +147,8 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    * <code>
    * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The policy.
    */
   public com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicy() {
     return policy_ == null
@@ -508,6 +517,8 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <code>
      * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
       return policyBuilder_ != null || policy_ != null;
@@ -522,6 +533,8 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <code>
      * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The policy.
      */
     public com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicy() {
       if (policyBuilder_ == null) {

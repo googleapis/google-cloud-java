@@ -46,6 +46,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Cluster();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,10 +130,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 statusHistory_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               statusHistory_.add(
                   input.readMessage(
@@ -136,10 +142,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -177,7 +183,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -211,7 +217,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.Cluster.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
@@ -222,6 +227,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -242,6 +249,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -266,6 +275,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
+   *
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -287,6 +298,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
+   *
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -311,6 +324,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -324,6 +339,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   *
+   * @return The config.
    */
   public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
     return config_ == null
@@ -473,6 +490,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -487,6 +506,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The status.
    */
   public com.google.cloud.dataproc.v1.ClusterStatus getStatus() {
     return status_ == null
@@ -593,6 +614,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -614,6 +637,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
@@ -639,6 +664,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   *
+   * @return Whether the metrics field is set.
    */
   public boolean hasMetrics() {
     return metrics_ != null;
@@ -653,6 +680,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   *
+   * @return The metrics.
    */
   public com.google.cloud.dataproc.v1.ClusterMetrics getMetrics() {
     return metrics_ == null
@@ -1006,7 +1035,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         statusHistoryBuilder_.clear();
       }
@@ -1045,7 +1074,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.Cluster buildPartial() {
       com.google.cloud.dataproc.v1.Cluster result = new com.google.cloud.dataproc.v1.Cluster(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.clusterName_ = clusterName_;
       if (configBuilder_ == null) {
@@ -1061,9 +1089,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.statusHistory_ = statusHistory_;
       } else {
@@ -1075,7 +1103,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1144,7 +1171,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1157,7 +1184,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -1214,6 +1241,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1234,6 +1263,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -1254,6 +1285,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1272,6 +1306,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1287,6 +1323,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1309,6 +1348,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1330,6 +1371,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -1351,6 +1394,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -1370,6 +1416,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
 
@@ -1386,6 +1434,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
+     *
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1413,6 +1464,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -1426,6 +1479,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     *
+     * @return The config.
      */
     public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
       if (configBuilder_ == null) {
@@ -1798,6 +1853,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -1812,6 +1869,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The status.
      */
     public com.google.cloud.dataproc.v1.ClusterStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -1985,10 +2044,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>(statusHistory_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2226,7 +2285,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -2364,7 +2423,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.ClusterStatus.Builder,
                 com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -2382,6 +2441,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -2403,6 +2464,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString getClusterUuidBytes() {
       java.lang.Object ref = clusterUuid_;
@@ -2424,6 +2487,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(java.lang.String value) {
       if (value == null) {
@@ -2443,6 +2509,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
 
@@ -2459,6 +2527,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2487,6 +2558,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     *
+     * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
       return metricsBuilder_ != null || metrics_ != null;
@@ -2501,6 +2574,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     *
+     * @return The metrics.
      */
     public com.google.cloud.dataproc.v1.ClusterMetrics getMetrics() {
       if (metricsBuilder_ == null) {

@@ -43,6 +43,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OrderedJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -171,10 +177,10 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -201,9 +207,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000002;
               }
               prerequisiteStepIds_.add(s);
               break;
@@ -222,7 +228,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -256,11 +262,13 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.OrderedJob.Builder.class);
   }
 
-  private int bitField0_;
   private int jobTypeCase_ = 0;
   private java.lang.Object jobType_;
 
-  public enum JobTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum JobTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HADOOP_JOB(2),
     SPARK_JOB(3),
     PYSPARK_JOB(4),
@@ -273,7 +281,11 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     private JobTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static JobTypeCase valueOf(int value) {
       return forNumber(value);
@@ -327,6 +339,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string step_id = 1;</code>
+   *
+   * @return The stepId.
    */
   public java.lang.String getStepId() {
     java.lang.Object ref = stepId_;
@@ -355,6 +369,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string step_id = 1;</code>
+   *
+   * @return The bytes for stepId.
    */
   public com.google.protobuf.ByteString getStepIdBytes() {
     java.lang.Object ref = stepId_;
@@ -377,6 +393,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+   *
+   * @return Whether the hadoopJob field is set.
    */
   public boolean hasHadoopJob() {
     return jobTypeCase_ == 2;
@@ -389,6 +407,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+   *
+   * @return The hadoopJob.
    */
   public com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob() {
     if (jobTypeCase_ == 2) {
@@ -421,6 +441,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+   *
+   * @return Whether the sparkJob field is set.
    */
   public boolean hasSparkJob() {
     return jobTypeCase_ == 3;
@@ -433,6 +455,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+   *
+   * @return The sparkJob.
    */
   public com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob() {
     if (jobTypeCase_ == 3) {
@@ -465,6 +489,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+   *
+   * @return Whether the pysparkJob field is set.
    */
   public boolean hasPysparkJob() {
     return jobTypeCase_ == 4;
@@ -477,6 +503,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+   *
+   * @return The pysparkJob.
    */
   public com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob() {
     if (jobTypeCase_ == 4) {
@@ -509,6 +537,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+   *
+   * @return Whether the hiveJob field is set.
    */
   public boolean hasHiveJob() {
     return jobTypeCase_ == 5;
@@ -521,6 +551,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+   *
+   * @return The hiveJob.
    */
   public com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob() {
     if (jobTypeCase_ == 5) {
@@ -553,6 +585,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+   *
+   * @return Whether the pigJob field is set.
    */
   public boolean hasPigJob() {
     return jobTypeCase_ == 6;
@@ -565,6 +599,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+   *
+   * @return The pigJob.
    */
   public com.google.cloud.dataproc.v1beta2.PigJob getPigJob() {
     if (jobTypeCase_ == 6) {
@@ -597,6 +633,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+   *
+   * @return Whether the sparkSqlJob field is set.
    */
   public boolean hasSparkSqlJob() {
     return jobTypeCase_ == 7;
@@ -609,6 +647,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+   *
+   * @return The sparkSqlJob.
    */
   public com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob() {
     if (jobTypeCase_ == 7) {
@@ -759,6 +799,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   *
+   * @return Whether the scheduling field is set.
    */
   public boolean hasScheduling() {
     return scheduling_ != null;
@@ -771,6 +813,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   *
+   * @return The scheduling.
    */
   public com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling() {
     return scheduling_ == null
@@ -801,6 +845,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   *
+   * @return A list containing the prerequisiteStepIds.
    */
   public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
     return prerequisiteStepIds_;
@@ -814,6 +860,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   *
+   * @return The count of prerequisiteStepIds.
    */
   public int getPrerequisiteStepIdsCount() {
     return prerequisiteStepIds_.size();
@@ -827,6 +875,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The prerequisiteStepIds at the given index.
    */
   public java.lang.String getPrerequisiteStepIds(int index) {
     return prerequisiteStepIds_.get(index);
@@ -840,6 +891,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the prerequisiteStepIds at the given index.
    */
   public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
     return prerequisiteStepIds_.getByteString(index);
@@ -1226,7 +1280,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_ = null;
       }
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000002);
       jobTypeCase_ = 0;
       jobType_ = null;
       return this;
@@ -1257,7 +1311,6 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.OrderedJob result =
           new com.google.cloud.dataproc.v1beta2.OrderedJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.stepId_ = stepId_;
       if (jobTypeCase_ == 2) {
         if (hadoopJobBuilder_ == null) {
@@ -1308,12 +1361,11 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.scheduling_ = schedulingBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.prerequisiteStepIds_ = prerequisiteStepIds_;
-      result.bitField0_ = to_bitField0_;
       result.jobTypeCase_ = jobTypeCase_;
       onBuilt();
       return result;
@@ -1375,7 +1427,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.prerequisiteStepIds_.isEmpty()) {
         if (prerequisiteStepIds_.isEmpty()) {
           prerequisiteStepIds_ = other.prerequisiteStepIds_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePrerequisiteStepIdsIsMutable();
           prerequisiteStepIds_.addAll(other.prerequisiteStepIds_);
@@ -1480,6 +1532,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string step_id = 1;</code>
+     *
+     * @return The stepId.
      */
     public java.lang.String getStepId() {
       java.lang.Object ref = stepId_;
@@ -1508,6 +1562,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string step_id = 1;</code>
+     *
+     * @return The bytes for stepId.
      */
     public com.google.protobuf.ByteString getStepIdBytes() {
       java.lang.Object ref = stepId_;
@@ -1536,6 +1592,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string step_id = 1;</code>
+     *
+     * @param value The stepId to set.
+     * @return This builder for chaining.
      */
     public Builder setStepId(java.lang.String value) {
       if (value == null) {
@@ -1562,6 +1621,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string step_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStepId() {
 
@@ -1585,6 +1646,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string step_id = 1;</code>
+     *
+     * @param value The bytes for stepId to set.
+     * @return This builder for chaining.
      */
     public Builder setStepIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1610,6 +1674,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+     *
+     * @return Whether the hadoopJob field is set.
      */
     public boolean hasHadoopJob() {
       return jobTypeCase_ == 2;
@@ -1622,6 +1688,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+     *
+     * @return The hadoopJob.
      */
     public com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob() {
       if (hadoopJobBuilder_ == null) {
@@ -1812,6 +1880,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+     *
+     * @return Whether the sparkJob field is set.
      */
     public boolean hasSparkJob() {
       return jobTypeCase_ == 3;
@@ -1824,6 +1894,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+     *
+     * @return The sparkJob.
      */
     public com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob() {
       if (sparkJobBuilder_ == null) {
@@ -2013,6 +2085,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+     *
+     * @return Whether the pysparkJob field is set.
      */
     public boolean hasPysparkJob() {
       return jobTypeCase_ == 4;
@@ -2025,6 +2099,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+     *
+     * @return The pysparkJob.
      */
     public com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob() {
       if (pysparkJobBuilder_ == null) {
@@ -2215,6 +2291,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+     *
+     * @return Whether the hiveJob field is set.
      */
     public boolean hasHiveJob() {
       return jobTypeCase_ == 5;
@@ -2227,6 +2305,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+     *
+     * @return The hiveJob.
      */
     public com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob() {
       if (hiveJobBuilder_ == null) {
@@ -2416,6 +2496,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+     *
+     * @return Whether the pigJob field is set.
      */
     public boolean hasPigJob() {
       return jobTypeCase_ == 6;
@@ -2428,6 +2510,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+     *
+     * @return The pigJob.
      */
     public com.google.cloud.dataproc.v1beta2.PigJob getPigJob() {
       if (pigJobBuilder_ == null) {
@@ -2617,6 +2701,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+     *
+     * @return Whether the sparkSqlJob field is set.
      */
     public boolean hasSparkSqlJob() {
       return jobTypeCase_ == 7;
@@ -2629,6 +2715,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+     *
+     * @return The sparkSqlJob.
      */
     public com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob() {
       if (sparkSqlJobBuilder_ == null) {
@@ -3014,6 +3102,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+     *
+     * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
       return schedulingBuilder_ != null || scheduling_ != null;
@@ -3026,6 +3116,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+     *
+     * @return The scheduling.
      */
     public com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling() {
       if (schedulingBuilder_ == null) {
@@ -3186,9 +3278,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePrerequisiteStepIdsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -3200,6 +3292,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @return A list containing the prerequisiteStepIds.
      */
     public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
       return prerequisiteStepIds_.getUnmodifiableView();
@@ -3213,6 +3307,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @return The count of prerequisiteStepIds.
      */
     public int getPrerequisiteStepIdsCount() {
       return prerequisiteStepIds_.size();
@@ -3226,6 +3322,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The prerequisiteStepIds at the given index.
      */
     public java.lang.String getPrerequisiteStepIds(int index) {
       return prerequisiteStepIds_.get(index);
@@ -3239,6 +3338,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the prerequisiteStepIds at the given index.
      */
     public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
       return prerequisiteStepIds_.getByteString(index);
@@ -3252,6 +3354,10 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The prerequisiteStepIds to set.
+     * @return This builder for chaining.
      */
     public Builder setPrerequisiteStepIds(int index, java.lang.String value) {
       if (value == null) {
@@ -3271,6 +3377,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @param value The prerequisiteStepIds to add.
+     * @return This builder for chaining.
      */
     public Builder addPrerequisiteStepIds(java.lang.String value) {
       if (value == null) {
@@ -3290,6 +3399,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @param values The prerequisiteStepIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllPrerequisiteStepIds(java.lang.Iterable<java.lang.String> values) {
       ensurePrerequisiteStepIdsIsMutable();
@@ -3306,10 +3418,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3322,6 +3436,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prerequisite_step_ids = 10;</code>
+     *
+     * @param value The bytes of the prerequisiteStepIds to add.
+     * @return This builder for chaining.
      */
     public Builder addPrerequisiteStepIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

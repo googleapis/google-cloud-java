@@ -33,6 +33,8 @@ public interface ClusterStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -45,6 +47,8 @@ public interface ClusterStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   com.google.cloud.dataproc.v1beta2.ClusterStatus.State getState();
 
@@ -56,6 +60,8 @@ public interface ClusterStatusOrBuilder
    * </pre>
    *
    * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The detail.
    */
   java.lang.String getDetail();
   /**
@@ -66,6 +72,8 @@ public interface ClusterStatusOrBuilder
    * </pre>
    *
    * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for detail.
    */
   com.google.protobuf.ByteString getDetailBytes();
 
@@ -79,6 +87,8 @@ public interface ClusterStatusOrBuilder
    * <code>
    * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
   /**
@@ -91,6 +101,8 @@ public interface ClusterStatusOrBuilder
    * <code>
    * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
@@ -117,6 +129,8 @@ public interface ClusterStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for substate.
    */
   int getSubstateValue();
   /**
@@ -130,6 +144,8 @@ public interface ClusterStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The substate.
    */
   com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate getSubstate();
 }

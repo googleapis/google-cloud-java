@@ -43,6 +43,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AcceleratorConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   *
+   * @return The acceleratorTypeUri.
    */
   public java.lang.String getAcceleratorTypeUri() {
     java.lang.Object ref = acceleratorTypeUri_;
@@ -166,6 +173,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   *
+   * @return The bytes for acceleratorTypeUri.
    */
   public com.google.protobuf.ByteString getAcceleratorTypeUriBytes() {
     java.lang.Object ref = acceleratorTypeUri_;
@@ -189,6 +198,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 accelerator_count = 2;</code>
+   *
+   * @return The acceleratorCount.
    */
   public int getAcceleratorCount() {
     return acceleratorCount_;
@@ -549,6 +560,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     *
+     * @return The acceleratorTypeUri.
      */
     public java.lang.String getAcceleratorTypeUri() {
       java.lang.Object ref = acceleratorTypeUri_;
@@ -581,6 +594,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     *
+     * @return The bytes for acceleratorTypeUri.
      */
     public com.google.protobuf.ByteString getAcceleratorTypeUriBytes() {
       java.lang.Object ref = acceleratorTypeUri_;
@@ -613,6 +628,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     *
+     * @param value The acceleratorTypeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorTypeUri(java.lang.String value) {
       if (value == null) {
@@ -643,6 +661,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAcceleratorTypeUri() {
 
@@ -670,6 +690,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     *
+     * @param value The bytes for acceleratorTypeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorTypeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -691,6 +714,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 accelerator_count = 2;</code>
+     *
+     * @return The acceleratorCount.
      */
     public int getAcceleratorCount() {
       return acceleratorCount_;
@@ -703,6 +728,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 accelerator_count = 2;</code>
+     *
+     * @param value The acceleratorCount to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorCount(int value) {
 
@@ -718,6 +746,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 accelerator_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAcceleratorCount() {
 

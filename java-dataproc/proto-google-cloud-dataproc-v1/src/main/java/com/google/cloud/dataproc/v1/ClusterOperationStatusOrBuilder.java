@@ -33,6 +33,8 @@ public interface ClusterOperationStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -45,6 +47,8 @@ public interface ClusterOperationStatusOrBuilder
    * <code>
    * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The state.
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState();
 
@@ -56,6 +60,8 @@ public interface ClusterOperationStatusOrBuilder
    * </pre>
    *
    * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The innerState.
    */
   java.lang.String getInnerState();
   /**
@@ -66,6 +72,8 @@ public interface ClusterOperationStatusOrBuilder
    * </pre>
    *
    * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for innerState.
    */
   com.google.protobuf.ByteString getInnerStateBytes();
 
@@ -77,6 +85,8 @@ public interface ClusterOperationStatusOrBuilder
    * </pre>
    *
    * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The details.
    */
   java.lang.String getDetails();
   /**
@@ -87,6 +97,8 @@ public interface ClusterOperationStatusOrBuilder
    * </pre>
    *
    * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for details.
    */
   com.google.protobuf.ByteString getDetailsBytes();
 
@@ -100,6 +112,8 @@ public interface ClusterOperationStatusOrBuilder
    * <code>
    * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
   /**
@@ -112,6 +126,8 @@ public interface ClusterOperationStatusOrBuilder
    * <code>
    * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**

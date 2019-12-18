@@ -46,6 +46,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Job();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -199,10 +205,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 yarnApplications_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000002;
               }
               yarnApplications_.add(
                   input.readMessage(
@@ -227,9 +233,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000001;
               }
               statusHistory_.add(
                   input.readMessage(
@@ -252,10 +258,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -300,10 +306,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -336,11 +342,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.Job.class, com.google.cloud.dataproc.v1.Job.Builder.class);
   }
 
-  private int bitField0_;
   private int typeJobCase_ = 0;
   private java.lang.Object typeJob_;
 
-  public enum TypeJobCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TypeJobCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HADOOP_JOB(3),
     SPARK_JOB(4),
     PYSPARK_JOB(5),
@@ -353,7 +361,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     private TypeJobCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TypeJobCase valueOf(int value) {
       return forNumber(value);
@@ -404,6 +416,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the reference field is set.
    */
   public boolean hasReference() {
     return reference_ != null;
@@ -421,6 +435,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The reference.
    */
   public com.google.cloud.dataproc.v1.JobReference getReference() {
     return reference_ == null
@@ -458,6 +474,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the placement field is set.
    */
   public boolean hasPlacement() {
     return placement_ != null;
@@ -473,6 +491,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The placement.
    */
   public com.google.cloud.dataproc.v1.JobPlacement getPlacement() {
     return placement_ == null
@@ -504,6 +524,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+   *
+   * @return Whether the hadoopJob field is set.
    */
   public boolean hasHadoopJob() {
     return typeJobCase_ == 3;
@@ -516,6 +538,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+   *
+   * @return The hadoopJob.
    */
   public com.google.cloud.dataproc.v1.HadoopJob getHadoopJob() {
     if (typeJobCase_ == 3) {
@@ -548,6 +572,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+   *
+   * @return Whether the sparkJob field is set.
    */
   public boolean hasSparkJob() {
     return typeJobCase_ == 4;
@@ -560,6 +586,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+   *
+   * @return The sparkJob.
    */
   public com.google.cloud.dataproc.v1.SparkJob getSparkJob() {
     if (typeJobCase_ == 4) {
@@ -592,6 +620,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+   *
+   * @return Whether the pysparkJob field is set.
    */
   public boolean hasPysparkJob() {
     return typeJobCase_ == 5;
@@ -604,6 +634,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+   *
+   * @return The pysparkJob.
    */
   public com.google.cloud.dataproc.v1.PySparkJob getPysparkJob() {
     if (typeJobCase_ == 5) {
@@ -636,6 +668,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+   *
+   * @return Whether the hiveJob field is set.
    */
   public boolean hasHiveJob() {
     return typeJobCase_ == 6;
@@ -648,6 +682,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+   *
+   * @return The hiveJob.
    */
   public com.google.cloud.dataproc.v1.HiveJob getHiveJob() {
     if (typeJobCase_ == 6) {
@@ -680,6 +716,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+   *
+   * @return Whether the pigJob field is set.
    */
   public boolean hasPigJob() {
     return typeJobCase_ == 7;
@@ -692,6 +730,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+   *
+   * @return The pigJob.
    */
   public com.google.cloud.dataproc.v1.PigJob getPigJob() {
     if (typeJobCase_ == 7) {
@@ -724,6 +764,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+   *
+   * @return Whether the sparkSqlJob field is set.
    */
   public boolean hasSparkSqlJob() {
     return typeJobCase_ == 12;
@@ -736,6 +778,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+   *
+   * @return The sparkSqlJob.
    */
   public com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob() {
     if (typeJobCase_ == 12) {
@@ -773,6 +817,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -789,6 +835,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The status.
    */
   public com.google.cloud.dataproc.v1.JobStatus getStatus() {
     return status_ == null ? com.google.cloud.dataproc.v1.JobStatus.getDefaultInstance() : status_;
@@ -981,6 +1029,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The driverOutputResourceUri.
    */
   public java.lang.String getDriverOutputResourceUri() {
     java.lang.Object ref = driverOutputResourceUri_;
@@ -1003,6 +1053,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for driverOutputResourceUri.
    */
   public com.google.protobuf.ByteString getDriverOutputResourceUriBytes() {
     java.lang.Object ref = driverOutputResourceUri_;
@@ -1028,6 +1080,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The driverControlFilesUri.
    */
   public java.lang.String getDriverControlFilesUri() {
     java.lang.Object ref = driverControlFilesUri_;
@@ -1050,6 +1104,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for driverControlFilesUri.
    */
   public com.google.protobuf.ByteString getDriverControlFilesUriBytes() {
     java.lang.Object ref = driverControlFilesUri_;
@@ -1192,6 +1248,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the scheduling field is set.
    */
   public boolean hasScheduling() {
     return scheduling_ != null;
@@ -1206,6 +1264,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The scheduling.
    */
   public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
     return scheduling_ == null
@@ -1239,6 +1299,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobUuid.
    */
   public java.lang.String getJobUuid() {
     java.lang.Object ref = jobUuid_;
@@ -1261,6 +1323,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobUuid.
    */
   public com.google.protobuf.ByteString getJobUuidBytes() {
     java.lang.Object ref = jobUuid_;
@@ -1732,13 +1796,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         statusHistoryBuilder_.clear();
       }
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         yarnApplicationsBuilder_.clear();
       }
@@ -1784,7 +1848,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.Job buildPartial() {
       com.google.cloud.dataproc.v1.Job result = new com.google.cloud.dataproc.v1.Job(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (referenceBuilder_ == null) {
         result.reference_ = reference_;
       } else {
@@ -1843,18 +1906,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.statusHistory_ = statusHistory_;
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
       if (yarnApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.yarnApplications_ = yarnApplications_;
       } else {
@@ -1870,7 +1933,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.scheduling_ = schedulingBuilder_.build();
       }
       result.jobUuid_ = jobUuid_;
-      result.bitField0_ = to_bitField0_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
       return result;
@@ -1934,7 +1996,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1947,7 +2009,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -1961,7 +2023,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.yarnApplications_.isEmpty()) {
           if (yarnApplications_.isEmpty()) {
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureYarnApplicationsIsMutable();
             yarnApplications_.addAll(other.yarnApplications_);
@@ -1974,7 +2036,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             yarnApplicationsBuilder_.dispose();
             yarnApplicationsBuilder_ = null;
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
             yarnApplicationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getYarnApplicationsFieldBuilder()
@@ -2100,6 +2162,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the reference field is set.
      */
     public boolean hasReference() {
       return referenceBuilder_ != null || reference_ != null;
@@ -2117,6 +2181,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The reference.
      */
     public com.google.cloud.dataproc.v1.JobReference getReference() {
       if (referenceBuilder_ == null) {
@@ -2324,6 +2390,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the placement field is set.
      */
     public boolean hasPlacement() {
       return placementBuilder_ != null || placement_ != null;
@@ -2339,6 +2407,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The placement.
      */
     public com.google.cloud.dataproc.v1.JobPlacement getPlacement() {
       if (placementBuilder_ == null) {
@@ -2528,6 +2598,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+     *
+     * @return Whether the hadoopJob field is set.
      */
     public boolean hasHadoopJob() {
       return typeJobCase_ == 3;
@@ -2540,6 +2612,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+     *
+     * @return The hadoopJob.
      */
     public com.google.cloud.dataproc.v1.HadoopJob getHadoopJob() {
       if (hadoopJobBuilder_ == null) {
@@ -2729,6 +2803,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+     *
+     * @return Whether the sparkJob field is set.
      */
     public boolean hasSparkJob() {
       return typeJobCase_ == 4;
@@ -2741,6 +2817,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+     *
+     * @return The sparkJob.
      */
     public com.google.cloud.dataproc.v1.SparkJob getSparkJob() {
       if (sparkJobBuilder_ == null) {
@@ -2930,6 +3008,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+     *
+     * @return Whether the pysparkJob field is set.
      */
     public boolean hasPysparkJob() {
       return typeJobCase_ == 5;
@@ -2942,6 +3022,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+     *
+     * @return The pysparkJob.
      */
     public com.google.cloud.dataproc.v1.PySparkJob getPysparkJob() {
       if (pysparkJobBuilder_ == null) {
@@ -3131,6 +3213,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+     *
+     * @return Whether the hiveJob field is set.
      */
     public boolean hasHiveJob() {
       return typeJobCase_ == 6;
@@ -3143,6 +3227,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+     *
+     * @return The hiveJob.
      */
     public com.google.cloud.dataproc.v1.HiveJob getHiveJob() {
       if (hiveJobBuilder_ == null) {
@@ -3330,6 +3416,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+     *
+     * @return Whether the pigJob field is set.
      */
     public boolean hasPigJob() {
       return typeJobCase_ == 7;
@@ -3342,6 +3430,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+     *
+     * @return The pigJob.
      */
     public com.google.cloud.dataproc.v1.PigJob getPigJob() {
       if (pigJobBuilder_ == null) {
@@ -3529,6 +3619,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+     *
+     * @return Whether the sparkSqlJob field is set.
      */
     public boolean hasSparkSqlJob() {
       return typeJobCase_ == 12;
@@ -3541,6 +3633,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+     *
+     * @return The sparkSqlJob.
      */
     public com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob() {
       if (sparkSqlJobBuilder_ == null) {
@@ -3736,6 +3830,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -3752,6 +3848,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The status.
      */
     public com.google.cloud.dataproc.v1.JobStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -3939,10 +4037,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>(statusHistory_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -4180,7 +4278,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -4317,7 +4415,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.JobStatus.Builder,
                 com.google.cloud.dataproc.v1.JobStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -4329,11 +4427,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureYarnApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         yarnApplications_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>(
                 yarnApplications_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -4595,7 +4693,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearYarnApplications() {
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         yarnApplicationsBuilder_.clear();
@@ -4749,7 +4847,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.YarnApplication.Builder,
                 com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>(
                 yarnApplications_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         yarnApplications_ = null;
@@ -4768,6 +4866,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The driverOutputResourceUri.
      */
     public java.lang.String getDriverOutputResourceUri() {
       java.lang.Object ref = driverOutputResourceUri_;
@@ -4790,6 +4890,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for driverOutputResourceUri.
      */
     public com.google.protobuf.ByteString getDriverOutputResourceUriBytes() {
       java.lang.Object ref = driverOutputResourceUri_;
@@ -4812,6 +4914,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The driverOutputResourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverOutputResourceUri(java.lang.String value) {
       if (value == null) {
@@ -4832,6 +4937,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDriverOutputResourceUri() {
 
@@ -4849,6 +4956,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for driverOutputResourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverOutputResourceUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4873,6 +4983,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The driverControlFilesUri.
      */
     public java.lang.String getDriverControlFilesUri() {
       java.lang.Object ref = driverControlFilesUri_;
@@ -4896,6 +5008,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for driverControlFilesUri.
      */
     public com.google.protobuf.ByteString getDriverControlFilesUriBytes() {
       java.lang.Object ref = driverControlFilesUri_;
@@ -4919,6 +5033,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The driverControlFilesUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverControlFilesUri(java.lang.String value) {
       if (value == null) {
@@ -4940,6 +5057,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDriverControlFilesUri() {
 
@@ -4958,6 +5077,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for driverControlFilesUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverControlFilesUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5180,6 +5302,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
       return schedulingBuilder_ != null || scheduling_ != null;
@@ -5194,6 +5318,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The scheduling.
      */
     public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
       if (schedulingBuilder_ == null) {
@@ -5375,6 +5501,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobUuid.
      */
     public java.lang.String getJobUuid() {
       java.lang.Object ref = jobUuid_;
@@ -5397,6 +5525,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobUuid.
      */
     public com.google.protobuf.ByteString getJobUuidBytes() {
       java.lang.Object ref = jobUuid_;
@@ -5419,6 +5549,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The jobUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setJobUuid(java.lang.String value) {
       if (value == null) {
@@ -5439,6 +5572,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobUuid() {
 
@@ -5456,6 +5591,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for jobUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setJobUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

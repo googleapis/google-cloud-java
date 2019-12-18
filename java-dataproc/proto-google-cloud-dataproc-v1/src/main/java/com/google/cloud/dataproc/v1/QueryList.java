@@ -42,6 +42,12 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new QueryList();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -134,6 +140,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the queries.
    */
   public com.google.protobuf.ProtocolStringList getQueriesList() {
     return queries_;
@@ -158,6 +166,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of queries.
    */
   public int getQueriesCount() {
     return queries_.size();
@@ -182,6 +192,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The queries at the given index.
    */
   public java.lang.String getQueries(int index) {
     return queries_.get(index);
@@ -206,6 +219,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the queries at the given index.
    */
   public com.google.protobuf.ByteString getQueriesBytes(int index) {
     return queries_.getByteString(index);
@@ -575,6 +591,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the queries.
      */
     public com.google.protobuf.ProtocolStringList getQueriesList() {
       return queries_.getUnmodifiableView();
@@ -599,6 +617,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of queries.
      */
     public int getQueriesCount() {
       return queries_.size();
@@ -623,6 +643,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The queries at the given index.
      */
     public java.lang.String getQueries(int index) {
       return queries_.get(index);
@@ -647,6 +670,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the queries at the given index.
      */
     public com.google.protobuf.ByteString getQueriesBytes(int index) {
       return queries_.getByteString(index);
@@ -671,6 +697,10 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The queries to set.
+     * @return This builder for chaining.
      */
     public Builder setQueries(int index, java.lang.String value) {
       if (value == null) {
@@ -701,6 +731,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The queries to add.
+     * @return This builder for chaining.
      */
     public Builder addQueries(java.lang.String value) {
       if (value == null) {
@@ -731,6 +764,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The queries to add.
+     * @return This builder for chaining.
      */
     public Builder addAllQueries(java.lang.Iterable<java.lang.String> values) {
       ensureQueriesIsMutable();
@@ -758,6 +794,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQueries() {
       queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -785,6 +823,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the queries to add.
+     * @return This builder for chaining.
      */
     public Builder addQueriesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
