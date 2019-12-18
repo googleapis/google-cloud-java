@@ -32,6 +32,8 @@ public interface CropHintOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
   /**
@@ -43,6 +45,8 @@ public interface CropHintOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly();
   /**
@@ -65,6 +69,8 @@ public interface CropHintOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 
@@ -77,6 +83,8 @@ public interface CropHintOrBuilder
    * </pre>
    *
    * <code>float importance_fraction = 3;</code>
+   *
+   * @return The importanceFraction.
    */
   float getImportanceFraction();
 }

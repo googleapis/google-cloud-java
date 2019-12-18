@@ -34,6 +34,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -82,6 +90,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -93,6 +103,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -106,6 +118,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The productCategory.
    */
   java.lang.String getProductCategory();
   /**
@@ -118,6 +132,8 @@ public interface ProductOrBuilder
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The bytes for productCategory.
    */
   com.google.protobuf.ByteString getProductCategoryBytes();
 

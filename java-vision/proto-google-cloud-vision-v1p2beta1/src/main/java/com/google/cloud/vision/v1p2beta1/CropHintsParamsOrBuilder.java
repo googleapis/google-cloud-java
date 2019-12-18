@@ -36,6 +36,8 @@ public interface CropHintsParamsOrBuilder
    * </pre>
    *
    * <code>repeated float aspect_ratios = 1;</code>
+   *
+   * @return A list containing the aspectRatios.
    */
   java.util.List<java.lang.Float> getAspectRatiosList();
   /**
@@ -51,6 +53,8 @@ public interface CropHintsParamsOrBuilder
    * </pre>
    *
    * <code>repeated float aspect_ratios = 1;</code>
+   *
+   * @return The count of aspectRatios.
    */
   int getAspectRatiosCount();
   /**
@@ -66,6 +70,9 @@ public interface CropHintsParamsOrBuilder
    * </pre>
    *
    * <code>repeated float aspect_ratios = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The aspectRatios at the given index.
    */
   float getAspectRatios(int index);
 }

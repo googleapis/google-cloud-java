@@ -46,6 +46,12 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EntityAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,10 +129,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 locations_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.LocationInfo>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               locations_.add(
                   input.readMessage(
@@ -135,9 +141,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 properties_ = new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.Property>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000002;
               }
               properties_.add(
                   input.readMessage(
@@ -158,10 +164,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         locations_ = java.util.Collections.unmodifiableList(locations_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         properties_ = java.util.Collections.unmodifiableList(properties_);
       }
       this.unknownFields = unknownFields.build();
@@ -184,7 +190,6 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             com.google.cloud.vision.v1p4beta1.EntityAnnotation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MID_FIELD_NUMBER = 1;
   private volatile java.lang.Object mid_;
   /**
@@ -197,6 +202,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The mid.
    */
   public java.lang.String getMid() {
     java.lang.Object ref = mid_;
@@ -219,6 +226,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The bytes for mid.
    */
   public com.google.protobuf.ByteString getMidBytes() {
     java.lang.Object ref = mid_;
@@ -243,6 +252,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string locale = 2;</code>
+   *
+   * @return The locale.
    */
   public java.lang.String getLocale() {
     java.lang.Object ref = locale_;
@@ -264,6 +275,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string locale = 2;</code>
+   *
+   * @return The bytes for locale.
    */
   public com.google.protobuf.ByteString getLocaleBytes() {
     java.lang.Object ref = locale_;
@@ -287,6 +300,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -307,6 +322,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -330,6 +347,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float score = 4;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -349,6 +368,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float confidence = 5 [deprecated = true];</code>
+   *
+   * @return The confidence.
    */
   @java.lang.Deprecated
   public float getConfidence() {
@@ -369,6 +390,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float topicality = 6;</code>
+   *
+   * @return The topicality.
    */
   public float getTopicality() {
     return topicality_;
@@ -385,6 +408,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 7;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
@@ -398,6 +423,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 7;</code>
+   *
+   * @return The boundingPoly.
    */
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
@@ -882,13 +909,13 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       }
       if (locationsBuilder_ == null) {
         locations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         locationsBuilder_.clear();
       }
       if (propertiesBuilder_ == null) {
         properties_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         propertiesBuilder_.clear();
       }
@@ -920,7 +947,6 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       com.google.cloud.vision.v1p4beta1.EntityAnnotation result =
           new com.google.cloud.vision.v1p4beta1.EntityAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.mid_ = mid_;
       result.locale_ = locale_;
       result.description_ = description_;
@@ -933,24 +959,23 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         result.boundingPoly_ = boundingPolyBuilder_.build();
       }
       if (locationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           locations_ = java.util.Collections.unmodifiableList(locations_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.locations_ = locations_;
       } else {
         result.locations_ = locationsBuilder_.build();
       }
       if (propertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           properties_ = java.util.Collections.unmodifiableList(properties_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.properties_ = properties_;
       } else {
         result.properties_ = propertiesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1029,7 +1054,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         if (!other.locations_.isEmpty()) {
           if (locations_.isEmpty()) {
             locations_ = other.locations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLocationsIsMutable();
             locations_.addAll(other.locations_);
@@ -1042,7 +1067,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             locationsBuilder_.dispose();
             locationsBuilder_ = null;
             locations_ = other.locations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
             locationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationsFieldBuilder()
@@ -1056,7 +1081,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         if (!other.properties_.isEmpty()) {
           if (properties_.isEmpty()) {
             properties_ = other.properties_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePropertiesIsMutable();
             properties_.addAll(other.properties_);
@@ -1069,7 +1094,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             propertiesBuilder_.dispose();
             propertiesBuilder_ = null;
             properties_ = other.properties_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
             propertiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPropertiesFieldBuilder()
@@ -1122,6 +1147,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The mid.
      */
     public java.lang.String getMid() {
       java.lang.Object ref = mid_;
@@ -1144,6 +1171,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The bytes for mid.
      */
     public com.google.protobuf.ByteString getMidBytes() {
       java.lang.Object ref = mid_;
@@ -1166,6 +1195,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @param value The mid to set.
+     * @return This builder for chaining.
      */
     public Builder setMid(java.lang.String value) {
       if (value == null) {
@@ -1186,6 +1218,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMid() {
 
@@ -1203,6 +1237,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @param value The bytes for mid to set.
+     * @return This builder for chaining.
      */
     public Builder setMidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1225,6 +1262,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string locale = 2;</code>
+     *
+     * @return The locale.
      */
     public java.lang.String getLocale() {
       java.lang.Object ref = locale_;
@@ -1246,6 +1285,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string locale = 2;</code>
+     *
+     * @return The bytes for locale.
      */
     public com.google.protobuf.ByteString getLocaleBytes() {
       java.lang.Object ref = locale_;
@@ -1267,6 +1308,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string locale = 2;</code>
+     *
+     * @param value The locale to set.
+     * @return This builder for chaining.
      */
     public Builder setLocale(java.lang.String value) {
       if (value == null) {
@@ -1286,6 +1330,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string locale = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocale() {
 
@@ -1302,6 +1348,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string locale = 2;</code>
+     *
+     * @param value The bytes for locale to set.
+     * @return This builder for chaining.
      */
     public Builder setLocaleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1323,6 +1372,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1343,6 +1394,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1363,6 +1416,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1381,6 +1437,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1396,6 +1454,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1417,6 +1478,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -1429,6 +1492,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -1444,6 +1510,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -1465,6 +1533,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float confidence = 5 [deprecated = true];</code>
+     *
+     * @return The confidence.
      */
     @java.lang.Deprecated
     public float getConfidence() {
@@ -1482,6 +1552,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float confidence = 5 [deprecated = true];</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setConfidence(float value) {
@@ -1502,6 +1575,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float confidence = 5 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearConfidence() {
@@ -1524,6 +1599,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float topicality = 6;</code>
+     *
+     * @return The topicality.
      */
     public float getTopicality() {
       return topicality_;
@@ -1540,6 +1617,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float topicality = 6;</code>
+     *
+     * @param value The topicality to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicality(float value) {
 
@@ -1559,6 +1639,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float topicality = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTopicality() {
 
@@ -1582,6 +1664,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 7;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
@@ -1595,6 +1679,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 7;</code>
+     *
+     * @return The boundingPoly.
      */
     public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
@@ -1762,10 +1848,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         locations_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.LocationInfo>(locations_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2025,7 +2111,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder clearLocations() {
       if (locationsBuilder_ == null) {
         locations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         locationsBuilder_.clear();
@@ -2176,7 +2262,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vision.v1p4beta1.LocationInfo,
                 com.google.cloud.vision.v1p4beta1.LocationInfo.Builder,
                 com.google.cloud.vision.v1p4beta1.LocationInfoOrBuilder>(
-                locations_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                locations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         locations_ = null;
       }
       return locationsBuilder_;
@@ -2186,10 +2272,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePropertiesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         properties_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.Property>(properties_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2416,7 +2502,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder clearProperties() {
       if (propertiesBuilder_ == null) {
         properties_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         propertiesBuilder_.clear();
@@ -2545,7 +2631,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vision.v1p4beta1.Property,
                 com.google.cloud.vision.v1p4beta1.Property.Builder,
                 com.google.cloud.vision.v1p4beta1.PropertyOrBuilder>(
-                properties_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                properties_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         properties_ = null;
       }
       return propertiesBuilder_;

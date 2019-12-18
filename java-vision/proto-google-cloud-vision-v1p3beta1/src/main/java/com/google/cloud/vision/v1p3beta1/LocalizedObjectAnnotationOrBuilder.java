@@ -31,6 +31,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The mid.
    */
   java.lang.String getMid();
   /**
@@ -41,6 +43,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The bytes for mid.
    */
   com.google.protobuf.ByteString getMidBytes();
 
@@ -54,6 +58,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -66,6 +72,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -77,6 +85,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -87,6 +97,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -98,6 +110,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 4;</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -109,6 +123,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 5;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
   /**
@@ -119,6 +135,8 @@ public interface LocalizedObjectAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 5;</code>
+   *
+   * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly();
   /**

@@ -31,6 +31,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.LatLongRect lat_long_rect = 1;</code>
+   *
+   * @return Whether the latLongRect field is set.
    */
   boolean hasLatLongRect();
   /**
@@ -41,6 +43,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.LatLongRect lat_long_rect = 1;</code>
+   *
+   * @return The latLongRect.
    */
   com.google.cloud.vision.v1p2beta1.LatLongRect getLatLongRect();
   /**
@@ -69,6 +73,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @return A list containing the languageHints.
    */
   java.util.List<java.lang.String> getLanguageHintsList();
   /**
@@ -86,6 +92,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @return The count of languageHints.
    */
   int getLanguageHintsCount();
   /**
@@ -103,6 +111,9 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageHints at the given index.
    */
   java.lang.String getLanguageHints(int index);
   /**
@@ -120,6 +131,9 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageHints at the given index.
    */
   com.google.protobuf.ByteString getLanguageHintsBytes(int index);
 
@@ -131,6 +145,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.CropHintsParams crop_hints_params = 4;</code>
+   *
+   * @return Whether the cropHintsParams field is set.
    */
   boolean hasCropHintsParams();
   /**
@@ -141,6 +157,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.CropHintsParams crop_hints_params = 4;</code>
+   *
+   * @return The cropHintsParams.
    */
   com.google.cloud.vision.v1p2beta1.CropHintsParams getCropHintsParams();
   /**
@@ -162,6 +180,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.WebDetectionParams web_detection_params = 6;</code>
+   *
+   * @return Whether the webDetectionParams field is set.
    */
   boolean hasWebDetectionParams();
   /**
@@ -172,6 +192,8 @@ public interface ImageContextOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.WebDetectionParams web_detection_params = 6;</code>
+   *
+   * @return The webDetectionParams.
    */
   com.google.cloud.vision.v1p2beta1.WebDetectionParams getWebDetectionParams();
   /**

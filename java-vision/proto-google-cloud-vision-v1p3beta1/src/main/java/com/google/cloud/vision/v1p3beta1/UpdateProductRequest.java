@@ -40,6 +40,12 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
   private UpdateProductRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateProductRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+   *
+   * @return Whether the product field is set.
    */
   public boolean hasProduct() {
     return product_ != null;
@@ -152,6 +159,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+   *
+   * @return The product.
    */
   public com.google.cloud.vision.v1p3beta1.Product getProduct() {
     return product_ == null
@@ -186,6 +195,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -202,6 +213,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -597,6 +610,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+     *
+     * @return Whether the product field is set.
      */
     public boolean hasProduct() {
       return productBuilder_ != null || product_ != null;
@@ -610,6 +625,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+     *
+     * @return The product.
      */
     public com.google.cloud.vision.v1p3beta1.Product getProduct() {
       if (productBuilder_ == null) {
@@ -790,6 +807,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -806,6 +825,8 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

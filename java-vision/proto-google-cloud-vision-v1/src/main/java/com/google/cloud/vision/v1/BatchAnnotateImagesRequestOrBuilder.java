@@ -100,6 +100,8 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -117,6 +119,8 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 }

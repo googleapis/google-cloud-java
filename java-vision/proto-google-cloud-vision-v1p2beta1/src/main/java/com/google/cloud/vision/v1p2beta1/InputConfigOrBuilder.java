@@ -31,6 +31,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -41,6 +43,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.vision.v1p2beta1.GcsSource getGcsSource();
   /**
@@ -63,6 +67,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -74,6 +80,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>string mime_type = 2;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 }

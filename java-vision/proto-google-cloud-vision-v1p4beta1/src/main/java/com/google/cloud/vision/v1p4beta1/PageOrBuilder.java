@@ -31,6 +31,8 @@ public interface PageOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   boolean hasProperty();
   /**
@@ -41,6 +43,8 @@ public interface PageOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return The property.
    */
   com.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty getProperty();
   /**
@@ -63,6 +67,8 @@ public interface PageOrBuilder
    * </pre>
    *
    * <code>int32 width = 2;</code>
+   *
+   * @return The width.
    */
   int getWidth();
 
@@ -75,6 +81,8 @@ public interface PageOrBuilder
    * </pre>
    *
    * <code>int32 height = 3;</code>
+   *
+   * @return The height.
    */
   int getHeight();
 
@@ -138,6 +146,8 @@ public interface PageOrBuilder
    * </pre>
    *
    * <code>float confidence = 5;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

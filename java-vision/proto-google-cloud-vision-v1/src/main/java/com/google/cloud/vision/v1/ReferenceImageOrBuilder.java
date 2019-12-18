@@ -34,6 +34,8 @@ public interface ReferenceImageOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface ReferenceImageOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface ReferenceImageOrBuilder
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -70,6 +76,8 @@ public interface ReferenceImageOrBuilder
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 

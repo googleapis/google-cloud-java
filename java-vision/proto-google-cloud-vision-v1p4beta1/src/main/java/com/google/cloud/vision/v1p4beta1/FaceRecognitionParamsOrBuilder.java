@@ -35,6 +35,8 @@ public interface FaceRecognitionParamsOrBuilder
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @return A list containing the celebritySet.
    */
   java.util.List<java.lang.String> getCelebritySetList();
   /**
@@ -49,6 +51,8 @@ public interface FaceRecognitionParamsOrBuilder
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @return The count of celebritySet.
    */
   int getCelebritySetCount();
   /**
@@ -63,6 +67,9 @@ public interface FaceRecognitionParamsOrBuilder
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The celebritySet at the given index.
    */
   java.lang.String getCelebritySet(int index);
   /**
@@ -77,6 +84,9 @@ public interface FaceRecognitionParamsOrBuilder
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the celebritySet at the given index.
    */
   com.google.protobuf.ByteString getCelebritySetBytes(int index);
 }

@@ -44,6 +44,12 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListProductsInProductSetResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -122,7 +128,6 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
             com.google.cloud.vision.v1.ListProductsInProductSetResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRODUCTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.Product> products_;
   /**
@@ -198,6 +203,8 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -219,6 +226,8 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -486,7 +495,6 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
       com.google.cloud.vision.v1.ListProductsInProductSetResponse result =
           new com.google.cloud.vision.v1.ListProductsInProductSetResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (productsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           products_ = java.util.Collections.unmodifiableList(products_);
@@ -497,7 +505,6 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
         result.products_ = productsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -969,6 +976,8 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -990,6 +999,8 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1011,6 +1022,9 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1030,6 +1044,8 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1046,6 +1062,9 @@ public final class ListProductsInProductSetResponse extends com.google.protobuf.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

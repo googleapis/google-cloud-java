@@ -34,6 +34,8 @@ public interface ProductSetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface ProductSetOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface ProductSetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface ProductSetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -86,6 +94,8 @@ public interface ProductSetOrBuilder
    *
    * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
   /**
@@ -101,6 +111,8 @@ public interface ProductSetOrBuilder
    *
    * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**
@@ -129,6 +141,8 @@ public interface ProductSetOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the indexError field is set.
    */
   boolean hasIndexError();
   /**
@@ -141,6 +155,8 @@ public interface ProductSetOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The indexError.
    */
   com.google.rpc.Status getIndexError();
   /**

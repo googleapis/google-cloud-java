@@ -32,6 +32,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
   /**
@@ -43,6 +45,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
+   *
+   * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly();
   /**
@@ -69,6 +73,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The productSet.
    */
   java.lang.String getProductSet();
   /**
@@ -83,6 +89,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for productSet.
    */
   com.google.protobuf.ByteString getProductSetBytes();
 
@@ -100,6 +108,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @return A list containing the productCategories.
    */
   java.util.List<java.lang.String> getProductCategoriesList();
   /**
@@ -116,6 +126,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @return The count of productCategories.
    */
   int getProductCategoriesCount();
   /**
@@ -132,6 +144,9 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The productCategories at the given index.
    */
   java.lang.String getProductCategories(int index);
   /**
@@ -148,6 +163,9 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the productCategories at the given index.
    */
   com.google.protobuf.ByteString getProductCategoriesBytes(int index);
 
@@ -165,6 +183,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>string filter = 8;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -181,6 +201,8 @@ public interface ProductSearchParamsOrBuilder
    * </pre>
    *
    * <code>string filter = 8;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 }

@@ -31,6 +31,8 @@ public interface PositionOrBuilder
    * </pre>
    *
    * <code>float x = 1;</code>
+   *
+   * @return The x.
    */
   float getX();
 
@@ -42,6 +44,8 @@ public interface PositionOrBuilder
    * </pre>
    *
    * <code>float y = 2;</code>
+   *
+   * @return The y.
    */
   float getY();
 
@@ -53,6 +57,8 @@ public interface PositionOrBuilder
    * </pre>
    *
    * <code>float z = 3;</code>
+   *
+   * @return The z.
    */
   float getZ();
 }

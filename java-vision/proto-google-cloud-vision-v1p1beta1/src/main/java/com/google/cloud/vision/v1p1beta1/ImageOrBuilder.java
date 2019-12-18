@@ -33,6 +33,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>bytes content = 1;</code>
+   *
+   * @return The content.
    */
   com.google.protobuf.ByteString getContent();
 
@@ -46,6 +48,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.ImageSource source = 2;</code>
+   *
+   * @return Whether the source field is set.
    */
   boolean hasSource();
   /**
@@ -58,6 +62,8 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.ImageSource source = 2;</code>
+   *
+   * @return The source.
    */
   com.google.cloud.vision.v1p1beta1.ImageSource getSource();
   /**

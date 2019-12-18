@@ -34,6 +34,8 @@ public interface CreateProductSetRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateProductSetRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateProductSetRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1p4beta1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the productSet field is set.
    */
   boolean hasProductSet();
   /**
@@ -72,6 +78,8 @@ public interface CreateProductSetRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1p4beta1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The productSet.
    */
   com.google.cloud.vision.v1p4beta1.ProductSet getProductSet();
   /**
@@ -98,6 +106,8 @@ public interface CreateProductSetRequestOrBuilder
    * </pre>
    *
    * <code>string product_set_id = 3;</code>
+   *
+   * @return The productSetId.
    */
   java.lang.String getProductSetId();
   /**
@@ -111,6 +121,8 @@ public interface CreateProductSetRequestOrBuilder
    * </pre>
    *
    * <code>string product_set_id = 3;</code>
+   *
+   * @return The bytes for productSetId.
    */
   com.google.protobuf.ByteString getProductSetIdBytes();
 }

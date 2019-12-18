@@ -444,33 +444,25 @@ public final class ImageAnnotatorProto {
           + "pis/cloud/vision/v1p4beta1;vision\370\001\001\242\002\004G"
           + "CVNb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-          com.google.api.FieldBehaviorProto.getDescriptor(),
-          com.google.cloud.vision.v1p4beta1.CelebrityProto.getDescriptor(),
-          com.google.cloud.vision.v1p4beta1.GeometryProto.getDescriptor(),
-          com.google.cloud.vision.v1p4beta1.ProductSearchProto.getDescriptor(),
-          com.google.cloud.vision.v1p4beta1.TextAnnotationProto.getDescriptor(),
-          com.google.cloud.vision.v1p4beta1.WebDetectionProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-          com.google.type.ColorProto.getDescriptor(),
-          com.google.type.LatLngProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.vision.v1p4beta1.CelebrityProto.getDescriptor(),
+              com.google.cloud.vision.v1p4beta1.GeometryProto.getDescriptor(),
+              com.google.cloud.vision.v1p4beta1.ProductSearchProto.getDescriptor(),
+              com.google.cloud.vision.v1p4beta1.TextAnnotationProto.getDescriptor(),
+              com.google.cloud.vision.v1p4beta1.WebDetectionProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+              com.google.type.ColorProto.getDescriptor(),
+              com.google.type.LatLngProto.getDescriptor(),
+            });
     internal_static_google_cloud_vision_v1p4beta1_Feature_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_vision_v1p4beta1_Feature_fieldAccessorTable =

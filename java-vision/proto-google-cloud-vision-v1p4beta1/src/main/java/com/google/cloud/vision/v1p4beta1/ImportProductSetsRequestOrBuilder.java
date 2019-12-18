@@ -34,6 +34,8 @@ public interface ImportProductSetsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ImportProductSetsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface ImportProductSetsRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -72,6 +78,8 @@ public interface ImportProductSetsRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig getInputConfig();
   /**

@@ -31,6 +31,8 @@ public interface VertexOrBuilder
    * </pre>
    *
    * <code>int32 x = 1;</code>
+   *
+   * @return The x.
    */
   int getX();
 
@@ -42,6 +44,8 @@ public interface VertexOrBuilder
    * </pre>
    *
    * <code>int32 y = 2;</code>
+   *
+   * @return The y.
    */
   int getY();
 }

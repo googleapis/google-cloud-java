@@ -298,6 +298,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation full_text_annotation = 12;</code>
+   *
+   * @return Whether the fullTextAnnotation field is set.
    */
   boolean hasFullTextAnnotation();
   /**
@@ -311,6 +313,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation full_text_annotation = 12;</code>
+   *
+   * @return The fullTextAnnotation.
    */
   com.google.cloud.vision.v1p1beta1.TextAnnotation getFullTextAnnotation();
   /**
@@ -335,6 +339,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
+   *
+   * @return Whether the safeSearchAnnotation field is set.
    */
   boolean hasSafeSearchAnnotation();
   /**
@@ -345,6 +351,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
+   *
+   * @return The safeSearchAnnotation.
    */
   com.google.cloud.vision.v1p1beta1.SafeSearchAnnotation getSafeSearchAnnotation();
   /**
@@ -367,6 +375,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.ImageProperties image_properties_annotation = 8;</code>
+   *
+   * @return Whether the imagePropertiesAnnotation field is set.
    */
   boolean hasImagePropertiesAnnotation();
   /**
@@ -377,6 +387,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.ImageProperties image_properties_annotation = 8;</code>
+   *
+   * @return The imagePropertiesAnnotation.
    */
   com.google.cloud.vision.v1p1beta1.ImageProperties getImagePropertiesAnnotation();
   /**
@@ -399,6 +411,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
+   *
+   * @return Whether the cropHintsAnnotation field is set.
    */
   boolean hasCropHintsAnnotation();
   /**
@@ -409,6 +423,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
+   *
+   * @return The cropHintsAnnotation.
    */
   com.google.cloud.vision.v1p1beta1.CropHintsAnnotation getCropHintsAnnotation();
   /**
@@ -430,6 +446,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.WebDetection web_detection = 13;</code>
+   *
+   * @return Whether the webDetection field is set.
    */
   boolean hasWebDetection();
   /**
@@ -440,6 +458,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.WebDetection web_detection = 13;</code>
+   *
+   * @return The webDetection.
    */
   com.google.cloud.vision.v1p1beta1.WebDetection getWebDetection();
   /**
@@ -463,6 +483,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
+   *
+   * @return Whether the error field is set.
    */
   boolean hasError();
   /**
@@ -475,6 +497,8 @@ public interface AnnotateImageResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
+   *
+   * @return The error.
    */
   com.google.rpc.Status getError();
   /**

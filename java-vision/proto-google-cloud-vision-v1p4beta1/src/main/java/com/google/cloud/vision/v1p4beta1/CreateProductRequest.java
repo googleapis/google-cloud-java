@@ -43,6 +43,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateProductRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,6 +149,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -168,6 +175,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -193,6 +202,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the product field is set.
    */
   public boolean hasProduct() {
     return product_ != null;
@@ -207,6 +218,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The product.
    */
   public com.google.cloud.vision.v1p4beta1.Product getProduct() {
     return product_ == null
@@ -241,6 +254,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string product_id = 3;</code>
+   *
+   * @return The productId.
    */
   public java.lang.String getProductId() {
     java.lang.Object ref = productId_;
@@ -264,6 +279,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string product_id = 3;</code>
+   *
+   * @return The bytes for productId.
    */
   public com.google.protobuf.ByteString getProductIdBytes() {
     java.lang.Object ref = productId_;
@@ -653,6 +670,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -677,6 +696,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -701,6 +722,9 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -723,6 +747,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -742,6 +768,9 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -770,6 +799,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the product field is set.
      */
     public boolean hasProduct() {
       return productBuilder_ != null || product_ != null;
@@ -784,6 +815,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The product.
      */
     public com.google.cloud.vision.v1p4beta1.Product getProduct() {
       if (productBuilder_ == null) {
@@ -965,6 +998,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 3;</code>
+     *
+     * @return The productId.
      */
     public java.lang.String getProductId() {
       java.lang.Object ref = productId_;
@@ -988,6 +1023,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 3;</code>
+     *
+     * @return The bytes for productId.
      */
     public com.google.protobuf.ByteString getProductIdBytes() {
       java.lang.Object ref = productId_;
@@ -1011,6 +1048,9 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 3;</code>
+     *
+     * @param value The productId to set.
+     * @return This builder for chaining.
      */
     public Builder setProductId(java.lang.String value) {
       if (value == null) {
@@ -1032,6 +1072,8 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductId() {
 
@@ -1050,6 +1092,9 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 3;</code>
+     *
+     * @param value The bytes for productId to set.
+     * @return This builder for chaining.
      */
     public Builder setProductIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

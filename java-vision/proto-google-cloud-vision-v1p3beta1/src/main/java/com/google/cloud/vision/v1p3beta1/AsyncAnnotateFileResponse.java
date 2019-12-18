@@ -40,6 +40,12 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
   private AsyncAnnotateFileResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsyncAnnotateFileResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.OutputConfig output_config = 1;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -135,6 +142,8 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.OutputConfig output_config = 1;</code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.vision.v1p3beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -499,6 +508,8 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.OutputConfig output_config = 1;</code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -511,6 +522,8 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.OutputConfig output_config = 1;</code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.vision.v1p3beta1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {

@@ -42,6 +42,12 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CropHintsParams();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -140,6 +146,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated float aspect_ratios = 1;</code>
+   *
+   * @return A list containing the aspectRatios.
    */
   public java.util.List<java.lang.Float> getAspectRatiosList() {
     return aspectRatios_;
@@ -157,6 +165,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated float aspect_ratios = 1;</code>
+   *
+   * @return The count of aspectRatios.
    */
   public int getAspectRatiosCount() {
     return aspectRatios_.size();
@@ -174,6 +184,9 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated float aspect_ratios = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The aspectRatios at the given index.
    */
   public float getAspectRatios(int index) {
     return aspectRatios_.getFloat(index);
@@ -545,6 +558,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @return A list containing the aspectRatios.
      */
     public java.util.List<java.lang.Float> getAspectRatiosList() {
       return ((bitField0_ & 0x00000001) != 0)
@@ -564,6 +579,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @return The count of aspectRatios.
      */
     public int getAspectRatiosCount() {
       return aspectRatios_.size();
@@ -581,6 +598,9 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The aspectRatios at the given index.
      */
     public float getAspectRatios(int index) {
       return aspectRatios_.getFloat(index);
@@ -598,6 +618,10 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The aspectRatios to set.
+     * @return This builder for chaining.
      */
     public Builder setAspectRatios(int index, float value) {
       ensureAspectRatiosIsMutable();
@@ -618,6 +642,9 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @param value The aspectRatios to add.
+     * @return This builder for chaining.
      */
     public Builder addAspectRatios(float value) {
       ensureAspectRatiosIsMutable();
@@ -638,6 +665,9 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @param values The aspectRatios to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAspectRatios(java.lang.Iterable<? extends java.lang.Float> values) {
       ensureAspectRatiosIsMutable();
@@ -658,6 +688,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated float aspect_ratios = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAspectRatios() {
       aspectRatios_ = emptyFloatList();

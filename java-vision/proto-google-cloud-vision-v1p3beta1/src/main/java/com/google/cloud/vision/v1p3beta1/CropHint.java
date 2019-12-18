@@ -40,6 +40,12 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
   private CropHint() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CropHint();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
@@ -147,6 +154,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return The boundingPoly.
    */
   public com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
@@ -177,6 +186,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -193,6 +204,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float importance_fraction = 3;</code>
+   *
+   * @return The importanceFraction.
    */
   public float getImportanceFraction() {
     return importanceFraction_;
@@ -573,6 +586,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
@@ -586,6 +601,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return The boundingPoly.
      */
     public com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
@@ -758,6 +775,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -770,6 +789,9 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -785,6 +807,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 
@@ -803,6 +827,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float importance_fraction = 3;</code>
+     *
+     * @return The importanceFraction.
      */
     public float getImportanceFraction() {
       return importanceFraction_;
@@ -816,6 +842,9 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float importance_fraction = 3;</code>
+     *
+     * @param value The importanceFraction to set.
+     * @return This builder for chaining.
      */
     public Builder setImportanceFraction(float value) {
 
@@ -832,6 +861,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float importance_fraction = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImportanceFraction() {
 

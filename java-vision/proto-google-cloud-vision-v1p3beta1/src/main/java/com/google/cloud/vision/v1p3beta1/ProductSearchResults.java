@@ -45,6 +45,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSearchResults();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -92,11 +98,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 products_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               products_.add(
                   input.readMessage(
@@ -113,11 +119,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               results_.add(
                   input.readMessage(
@@ -139,10 +145,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         products_ = java.util.Collections.unmodifiableList(products_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         results_ = java.util.Collections.unmodifiableList(results_);
       }
       this.unknownFields = unknownFields.build();
@@ -178,6 +184,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 1;</code>
+     *
+     * @return The productId.
      */
     java.lang.String getProductId();
     /**
@@ -188,6 +196,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 1;</code>
+     *
+     * @return The bytes for productId.
      */
     com.google.protobuf.ByteString getProductIdBytes();
 
@@ -201,6 +211,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return The imageUri.
      */
     java.lang.String getImageUri();
     /**
@@ -213,6 +225,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return The bytes for imageUri.
      */
     com.google.protobuf.ByteString getImageUriBytes();
 
@@ -227,6 +241,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 3;</code>
+     *
+     * @return The score.
      */
     float getScore();
   }
@@ -255,6 +271,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ProductInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -267,7 +289,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -341,6 +362,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 1;</code>
+     *
+     * @return The productId.
      */
     public java.lang.String getProductId() {
       java.lang.Object ref = productId_;
@@ -361,6 +384,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_id = 1;</code>
+     *
+     * @return The bytes for productId.
      */
     public com.google.protobuf.ByteString getProductIdBytes() {
       java.lang.Object ref = productId_;
@@ -386,6 +411,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return The imageUri.
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -408,6 +435,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return The bytes for imageUri.
      */
     public com.google.protobuf.ByteString getImageUriBytes() {
       java.lang.Object ref = imageUri_;
@@ -434,6 +463,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 3;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -811,6 +842,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string product_id = 1;</code>
+       *
+       * @return The productId.
        */
       public java.lang.String getProductId() {
         java.lang.Object ref = productId_;
@@ -831,6 +864,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string product_id = 1;</code>
+       *
+       * @return The bytes for productId.
        */
       public com.google.protobuf.ByteString getProductIdBytes() {
         java.lang.Object ref = productId_;
@@ -851,6 +886,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string product_id = 1;</code>
+       *
+       * @param value The productId to set.
+       * @return This builder for chaining.
        */
       public Builder setProductId(java.lang.String value) {
         if (value == null) {
@@ -869,6 +907,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string product_id = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearProductId() {
 
@@ -884,6 +924,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string product_id = 1;</code>
+       *
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
        */
       public Builder setProductIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -907,6 +950,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image_uri = 2;</code>
+       *
+       * @return The imageUri.
        */
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
@@ -929,6 +974,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image_uri = 2;</code>
+       *
+       * @return The bytes for imageUri.
        */
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
@@ -951,6 +998,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image_uri = 2;</code>
+       *
+       * @param value The imageUri to set.
+       * @return This builder for chaining.
        */
       public Builder setImageUri(java.lang.String value) {
         if (value == null) {
@@ -971,6 +1021,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image_uri = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearImageUri() {
 
@@ -988,6 +1040,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image_uri = 2;</code>
+       *
+       * @param value The bytes for imageUri to set.
+       * @return This builder for chaining.
        */
       public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1012,6 +1067,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 3;</code>
+       *
+       * @return The score.
        */
       public float getScore() {
         return score_;
@@ -1027,6 +1084,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 3;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
        */
       public Builder setScore(float value) {
 
@@ -1045,6 +1105,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearScore() {
 
@@ -1121,6 +1183,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+     *
+     * @return Whether the product field is set.
      */
     boolean hasProduct();
     /**
@@ -1131,6 +1195,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+     *
+     * @return The product.
      */
     com.google.cloud.vision.v1p3beta1.Product getProduct();
     /**
@@ -1155,6 +1221,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return The score.
      */
     float getScore();
 
@@ -1167,6 +1235,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The image.
      */
     java.lang.String getImage();
     /**
@@ -1178,6 +1248,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The bytes for image.
      */
     com.google.protobuf.ByteString getImageBytes();
   }
@@ -1205,6 +1277,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1217,7 +1295,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1300,6 +1377,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+     *
+     * @return Whether the product field is set.
      */
     public boolean hasProduct() {
       return product_ != null;
@@ -1312,6 +1391,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+     *
+     * @return The product.
      */
     public com.google.cloud.vision.v1p3beta1.Product getProduct() {
       return product_ == null
@@ -1344,6 +1425,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -1360,6 +1443,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The image.
      */
     public java.lang.String getImage() {
       java.lang.Object ref = image_;
@@ -1381,6 +1466,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The bytes for image.
      */
     public com.google.protobuf.ByteString getImageBytes() {
       java.lang.Object ref = image_;
@@ -1779,6 +1866,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+       *
+       * @return Whether the product field is set.
        */
       public boolean hasProduct() {
         return productBuilder_ != null || product_ != null;
@@ -1791,6 +1880,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+       *
+       * @return The product.
        */
       public com.google.cloud.vision.v1p3beta1.Product getProduct() {
         if (productBuilder_ == null) {
@@ -1958,6 +2049,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 2;</code>
+       *
+       * @return The score.
        */
       public float getScore() {
         return score_;
@@ -1973,6 +2066,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 2;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
        */
       public Builder setScore(float value) {
 
@@ -1991,6 +2087,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearScore() {
 
@@ -2009,6 +2107,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @return The image.
        */
       public java.lang.String getImage() {
         java.lang.Object ref = image_;
@@ -2030,6 +2130,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @return The bytes for image.
        */
       public com.google.protobuf.ByteString getImageBytes() {
         java.lang.Object ref = image_;
@@ -2051,6 +2153,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @param value The image to set.
+       * @return This builder for chaining.
        */
       public Builder setImage(java.lang.String value) {
         if (value == null) {
@@ -2070,6 +2175,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearImage() {
 
@@ -2086,6 +2193,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
        */
       public Builder setImageBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2153,7 +2263,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
   }
 
-  private int bitField0_;
   public static final int CATEGORY_FIELD_NUMBER = 1;
   private int category_;
   /**
@@ -2165,6 +2274,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+   *
+   * @return The enum numeric value on the wire for category.
    */
   public int getCategoryValue() {
     return category_;
@@ -2178,6 +2289,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+   *
+   * @return The category.
    */
   public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
     @SuppressWarnings("deprecation")
@@ -2200,6 +2313,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The productCategory.
    */
   public java.lang.String getProductCategory() {
     java.lang.Object ref = productCategory_;
@@ -2222,6 +2337,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The bytes for productCategory.
    */
   public com.google.protobuf.ByteString getProductCategoryBytes() {
     java.lang.Object ref = productCategory_;
@@ -2246,6 +2363,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return Whether the indexTime field is set.
    */
   public boolean hasIndexTime() {
     return indexTime_ != null;
@@ -2259,6 +2378,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return The indexTime.
    */
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
@@ -2688,13 +2809,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       }
       if (productsBuilder_ == null) {
         products_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         productsBuilder_.clear();
       }
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         resultsBuilder_.clear();
       }
@@ -2726,7 +2847,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1p3beta1.ProductSearchResults result =
           new com.google.cloud.vision.v1p3beta1.ProductSearchResults(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.category_ = category_;
       result.productCategory_ = productCategory_;
       if (indexTimeBuilder_ == null) {
@@ -2735,24 +2855,23 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         result.indexTime_ = indexTimeBuilder_.build();
       }
       if (productsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           products_ = java.util.Collections.unmodifiableList(products_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.products_ = products_;
       } else {
         result.products_ = productsBuilder_.build();
       }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.results_ = results_;
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2817,7 +2936,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!other.products_.isEmpty()) {
           if (products_.isEmpty()) {
             products_ = other.products_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureProductsIsMutable();
             products_.addAll(other.products_);
@@ -2830,7 +2949,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             productsBuilder_.dispose();
             productsBuilder_ = null;
             products_ = other.products_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             productsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductsFieldBuilder()
@@ -2844,7 +2963,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!other.results_.isEmpty()) {
           if (results_.isEmpty()) {
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureResultsIsMutable();
             results_.addAll(other.results_);
@@ -2857,7 +2976,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             resultsBuilder_.dispose();
             resultsBuilder_ = null;
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             resultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResultsFieldBuilder()
@@ -2909,6 +3028,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+     *
+     * @return The enum numeric value on the wire for category.
      */
     public int getCategoryValue() {
       return category_;
@@ -2922,6 +3043,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for category to set.
+     * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
       category_ = value;
@@ -2937,6 +3061,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+     *
+     * @return The category.
      */
     public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
       @SuppressWarnings("deprecation")
@@ -2955,6 +3081,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+     *
+     * @param value The category to set.
+     * @return This builder for chaining.
      */
     public Builder setCategory(com.google.cloud.vision.v1p3beta1.ProductSearchCategory value) {
       if (value == null) {
@@ -2974,6 +3103,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCategory() {
 
@@ -2993,6 +3124,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @return The productCategory.
      */
     public java.lang.String getProductCategory() {
       java.lang.Object ref = productCategory_;
@@ -3015,6 +3148,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @return The bytes for productCategory.
      */
     public com.google.protobuf.ByteString getProductCategoryBytes() {
       java.lang.Object ref = productCategory_;
@@ -3037,6 +3172,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @param value The productCategory to set.
+     * @return This builder for chaining.
      */
     public Builder setProductCategory(java.lang.String value) {
       if (value == null) {
@@ -3057,6 +3195,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductCategory() {
 
@@ -3074,6 +3214,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @param value The bytes for productCategory to set.
+     * @return This builder for chaining.
      */
     public Builder setProductCategoryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3101,6 +3244,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
+     *
+     * @return Whether the indexTime field is set.
      */
     public boolean hasIndexTime() {
       return indexTimeBuilder_ != null || indexTime_ != null;
@@ -3114,6 +3259,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
+     *
+     * @return The indexTime.
      */
     public com.google.protobuf.Timestamp getIndexTime() {
       if (indexTimeBuilder_ == null) {
@@ -3274,11 +3421,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         products_ = java.util.Collections.emptyList();
 
     private void ensureProductsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         products_ =
             new java.util.ArrayList<
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>(products_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3517,7 +3664,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearProducts() {
       if (productsBuilder_ == null) {
         products_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         productsBuilder_.clear();
@@ -3657,7 +3804,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo,
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder,
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>(
-                products_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                products_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         products_ = null;
       }
       return productsBuilder_;
@@ -3667,11 +3814,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>(
                 results_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3893,7 +4040,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearResults() {
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         resultsBuilder_.clear();
@@ -4023,7 +4170,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result,
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder,
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>(
-                results_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;

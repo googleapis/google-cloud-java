@@ -105,6 +105,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 3;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -122,6 +124,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 3;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 }

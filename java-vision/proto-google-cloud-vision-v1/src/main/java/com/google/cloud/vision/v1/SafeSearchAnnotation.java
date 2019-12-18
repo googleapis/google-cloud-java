@@ -48,6 +48,12 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SafeSearchAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -182,6 +187,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+   *
+   * @return The enum numeric value on the wire for adult.
    */
   public int getAdultValue() {
     return adult_;
@@ -196,6 +203,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+   *
+   * @return The adult.
    */
   public com.google.cloud.vision.v1.Likelihood getAdult() {
     @SuppressWarnings("deprecation")
@@ -216,6 +225,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+   *
+   * @return The enum numeric value on the wire for spoof.
    */
   public int getSpoofValue() {
     return spoof_;
@@ -230,6 +241,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+   *
+   * @return The spoof.
    */
   public com.google.cloud.vision.v1.Likelihood getSpoof() {
     @SuppressWarnings("deprecation")
@@ -248,6 +261,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+   *
+   * @return The enum numeric value on the wire for medical.
    */
   public int getMedicalValue() {
     return medical_;
@@ -260,6 +275,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+   *
+   * @return The medical.
    */
   public com.google.cloud.vision.v1.Likelihood getMedical() {
     @SuppressWarnings("deprecation")
@@ -278,6 +295,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+   *
+   * @return The enum numeric value on the wire for violence.
    */
   public int getViolenceValue() {
     return violence_;
@@ -290,6 +309,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+   *
+   * @return The violence.
    */
   public com.google.cloud.vision.v1.Likelihood getViolence() {
     @SuppressWarnings("deprecation")
@@ -311,6 +332,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+   *
+   * @return The enum numeric value on the wire for racy.
    */
   public int getRacyValue() {
     return racy_;
@@ -326,6 +349,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+   *
+   * @return The racy.
    */
   public com.google.cloud.vision.v1.Likelihood getRacy() {
     @SuppressWarnings("deprecation")
@@ -345,6 +370,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>float adult_confidence = 16;</code>
+   *
+   * @return The adultConfidence.
    */
   public float getAdultConfidence() {
     return adultConfidence_;
@@ -361,6 +388,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>float spoof_confidence = 18;</code>
+   *
+   * @return The spoofConfidence.
    */
   public float getSpoofConfidence() {
     return spoofConfidence_;
@@ -377,6 +406,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>float medical_confidence = 20;</code>
+   *
+   * @return The medicalConfidence.
    */
   public float getMedicalConfidence() {
     return medicalConfidence_;
@@ -393,6 +424,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>float violence_confidence = 22;</code>
+   *
+   * @return The violenceConfidence.
    */
   public float getViolenceConfidence() {
     return violenceConfidence_;
@@ -409,6 +442,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>float racy_confidence = 24;</code>
+   *
+   * @return The racyConfidence.
    */
   public float getRacyConfidence() {
     return racyConfidence_;
@@ -425,6 +460,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>float nsfw_confidence = 26;</code>
+   *
+   * @return The nsfwConfidence.
    */
   public float getNsfwConfidence() {
     return nsfwConfidence_;
@@ -915,6 +952,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+     *
+     * @return The enum numeric value on the wire for adult.
      */
     public int getAdultValue() {
       return adult_;
@@ -929,6 +968,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for adult to set.
+     * @return This builder for chaining.
      */
     public Builder setAdultValue(int value) {
       adult_ = value;
@@ -945,6 +987,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+     *
+     * @return The adult.
      */
     public com.google.cloud.vision.v1.Likelihood getAdult() {
       @SuppressWarnings("deprecation")
@@ -962,6 +1006,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+     *
+     * @param value The adult to set.
+     * @return This builder for chaining.
      */
     public Builder setAdult(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -982,6 +1029,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood adult = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAdult() {
 
@@ -1001,6 +1050,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+     *
+     * @return The enum numeric value on the wire for spoof.
      */
     public int getSpoofValue() {
       return spoof_;
@@ -1015,6 +1066,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for spoof to set.
+     * @return This builder for chaining.
      */
     public Builder setSpoofValue(int value) {
       spoof_ = value;
@@ -1031,6 +1085,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+     *
+     * @return The spoof.
      */
     public com.google.cloud.vision.v1.Likelihood getSpoof() {
       @SuppressWarnings("deprecation")
@@ -1048,6 +1104,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+     *
+     * @param value The spoof to set.
+     * @return This builder for chaining.
      */
     public Builder setSpoof(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -1068,6 +1127,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood spoof = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpoof() {
 
@@ -1085,6 +1146,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+     *
+     * @return The enum numeric value on the wire for medical.
      */
     public int getMedicalValue() {
       return medical_;
@@ -1097,6 +1160,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for medical to set.
+     * @return This builder for chaining.
      */
     public Builder setMedicalValue(int value) {
       medical_ = value;
@@ -1111,6 +1177,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+     *
+     * @return The medical.
      */
     public com.google.cloud.vision.v1.Likelihood getMedical() {
       @SuppressWarnings("deprecation")
@@ -1126,6 +1194,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+     *
+     * @param value The medical to set.
+     * @return This builder for chaining.
      */
     public Builder setMedical(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -1144,6 +1215,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood medical = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMedical() {
 
@@ -1161,6 +1234,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+     *
+     * @return The enum numeric value on the wire for violence.
      */
     public int getViolenceValue() {
       return violence_;
@@ -1173,6 +1248,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for violence to set.
+     * @return This builder for chaining.
      */
     public Builder setViolenceValue(int value) {
       violence_ = value;
@@ -1187,6 +1265,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+     *
+     * @return The violence.
      */
     public com.google.cloud.vision.v1.Likelihood getViolence() {
       @SuppressWarnings("deprecation")
@@ -1202,6 +1282,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+     *
+     * @param value The violence to set.
+     * @return This builder for chaining.
      */
     public Builder setViolence(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -1220,6 +1303,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood violence = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearViolence() {
 
@@ -1240,6 +1325,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+     *
+     * @return The enum numeric value on the wire for racy.
      */
     public int getRacyValue() {
       return racy_;
@@ -1255,6 +1342,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for racy to set.
+     * @return This builder for chaining.
      */
     public Builder setRacyValue(int value) {
       racy_ = value;
@@ -1272,6 +1362,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+     *
+     * @return The racy.
      */
     public com.google.cloud.vision.v1.Likelihood getRacy() {
       @SuppressWarnings("deprecation")
@@ -1290,6 +1382,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+     *
+     * @param value The racy to set.
+     * @return This builder for chaining.
      */
     public Builder setRacy(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -1311,6 +1406,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRacy() {
 
@@ -1329,6 +1426,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float adult_confidence = 16;</code>
+     *
+     * @return The adultConfidence.
      */
     public float getAdultConfidence() {
       return adultConfidence_;
@@ -1342,6 +1441,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float adult_confidence = 16;</code>
+     *
+     * @param value The adultConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setAdultConfidence(float value) {
 
@@ -1358,6 +1460,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float adult_confidence = 16;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAdultConfidence() {
 
@@ -1376,6 +1480,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float spoof_confidence = 18;</code>
+     *
+     * @return The spoofConfidence.
      */
     public float getSpoofConfidence() {
       return spoofConfidence_;
@@ -1389,6 +1495,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float spoof_confidence = 18;</code>
+     *
+     * @param value The spoofConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setSpoofConfidence(float value) {
 
@@ -1405,6 +1514,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float spoof_confidence = 18;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpoofConfidence() {
 
@@ -1423,6 +1534,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float medical_confidence = 20;</code>
+     *
+     * @return The medicalConfidence.
      */
     public float getMedicalConfidence() {
       return medicalConfidence_;
@@ -1436,6 +1549,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float medical_confidence = 20;</code>
+     *
+     * @param value The medicalConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setMedicalConfidence(float value) {
 
@@ -1452,6 +1568,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float medical_confidence = 20;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMedicalConfidence() {
 
@@ -1470,6 +1588,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float violence_confidence = 22;</code>
+     *
+     * @return The violenceConfidence.
      */
     public float getViolenceConfidence() {
       return violenceConfidence_;
@@ -1483,6 +1603,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float violence_confidence = 22;</code>
+     *
+     * @param value The violenceConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setViolenceConfidence(float value) {
 
@@ -1499,6 +1622,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float violence_confidence = 22;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearViolenceConfidence() {
 
@@ -1517,6 +1642,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float racy_confidence = 24;</code>
+     *
+     * @return The racyConfidence.
      */
     public float getRacyConfidence() {
       return racyConfidence_;
@@ -1530,6 +1657,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float racy_confidence = 24;</code>
+     *
+     * @param value The racyConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setRacyConfidence(float value) {
 
@@ -1546,6 +1676,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float racy_confidence = 24;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRacyConfidence() {
 
@@ -1564,6 +1696,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float nsfw_confidence = 26;</code>
+     *
+     * @return The nsfwConfidence.
      */
     public float getNsfwConfidence() {
       return nsfwConfidence_;
@@ -1577,6 +1711,9 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float nsfw_confidence = 26;</code>
+     *
+     * @param value The nsfwConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setNsfwConfidence(float value) {
 
@@ -1593,6 +1730,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float nsfw_confidence = 26;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNsfwConfidence() {
 

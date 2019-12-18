@@ -31,6 +31,8 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.InputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -41,6 +43,8 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.InputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.vision.v1p2beta1.InputConfig getInputConfig();
   /**
@@ -114,6 +118,8 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.ImageContext image_context = 3;</code>
+   *
+   * @return Whether the imageContext field is set.
    */
   boolean hasImageContext();
   /**
@@ -124,6 +130,8 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.ImageContext image_context = 3;</code>
+   *
+   * @return The imageContext.
    */
   com.google.cloud.vision.v1p2beta1.ImageContext getImageContext();
   /**
@@ -145,6 +153,8 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.OutputConfig output_config = 4;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -155,6 +165,8 @@ public interface AsyncAnnotateFileRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.OutputConfig output_config = 4;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.vision.v1p2beta1.OutputConfig getOutputConfig();
   /**

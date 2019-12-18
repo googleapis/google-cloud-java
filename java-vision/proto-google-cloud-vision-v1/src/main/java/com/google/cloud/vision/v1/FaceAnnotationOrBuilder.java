@@ -37,6 +37,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
   /**
@@ -53,6 +55,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return The boundingPoly.
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingPoly();
   /**
@@ -85,6 +89,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
+   *
+   * @return Whether the fdBoundingPoly field is set.
    */
   boolean hasFdBoundingPoly();
   /**
@@ -100,6 +106,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
+   *
+   * @return The fdBoundingPoly.
    */
   com.google.cloud.vision.v1.BoundingPoly getFdBoundingPoly();
   /**
@@ -180,6 +188,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>float roll_angle = 4;</code>
+   *
+   * @return The rollAngle.
    */
   float getRollAngle();
 
@@ -193,6 +203,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>float pan_angle = 5;</code>
+   *
+   * @return The panAngle.
    */
   float getPanAngle();
 
@@ -205,6 +217,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>float tilt_angle = 6;</code>
+   *
+   * @return The tiltAngle.
    */
   float getTiltAngle();
 
@@ -216,6 +230,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>float detection_confidence = 7;</code>
+   *
+   * @return The detectionConfidence.
    */
   float getDetectionConfidence();
 
@@ -227,6 +243,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>float landmarking_confidence = 8;</code>
+   *
+   * @return The landmarkingConfidence.
    */
   float getLandmarkingConfidence();
 
@@ -238,6 +256,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+   *
+   * @return The enum numeric value on the wire for joyLikelihood.
    */
   int getJoyLikelihoodValue();
   /**
@@ -248,6 +268,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+   *
+   * @return The joyLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getJoyLikelihood();
 
@@ -259,6 +281,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+   *
+   * @return The enum numeric value on the wire for sorrowLikelihood.
    */
   int getSorrowLikelihoodValue();
   /**
@@ -269,6 +293,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+   *
+   * @return The sorrowLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getSorrowLikelihood();
 
@@ -280,6 +306,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+   *
+   * @return The enum numeric value on the wire for angerLikelihood.
    */
   int getAngerLikelihoodValue();
   /**
@@ -290,6 +318,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+   *
+   * @return The angerLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getAngerLikelihood();
 
@@ -301,6 +331,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+   *
+   * @return The enum numeric value on the wire for surpriseLikelihood.
    */
   int getSurpriseLikelihoodValue();
   /**
@@ -311,6 +343,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+   *
+   * @return The surpriseLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood();
 
@@ -322,6 +356,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+   *
+   * @return The enum numeric value on the wire for underExposedLikelihood.
    */
   int getUnderExposedLikelihoodValue();
   /**
@@ -332,6 +368,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+   *
+   * @return The underExposedLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood();
 
@@ -343,6 +381,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+   *
+   * @return The enum numeric value on the wire for blurredLikelihood.
    */
   int getBlurredLikelihoodValue();
   /**
@@ -353,6 +393,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+   *
+   * @return The blurredLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getBlurredLikelihood();
 
@@ -364,6 +406,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+   *
+   * @return The enum numeric value on the wire for headwearLikelihood.
    */
   int getHeadwearLikelihoodValue();
   /**
@@ -374,6 +418,8 @@ public interface FaceAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+   *
+   * @return The headwearLikelihood.
    */
   com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood();
 }

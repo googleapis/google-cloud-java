@@ -40,6 +40,12 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
   private ImageProperties() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageProperties();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.DominantColorsAnnotation dominant_colors = 1;</code>
+   *
+   * @return Whether the dominantColors field is set.
    */
   public boolean hasDominantColors() {
     return dominantColors_ != null;
@@ -136,6 +143,8 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.DominantColorsAnnotation dominant_colors = 1;</code>
+   *
+   * @return The dominantColors.
    */
   public com.google.cloud.vision.v1p2beta1.DominantColorsAnnotation getDominantColors() {
     return dominantColors_ == null
@@ -500,6 +509,8 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.DominantColorsAnnotation dominant_colors = 1;</code>
+     *
+     * @return Whether the dominantColors field is set.
      */
     public boolean hasDominantColors() {
       return dominantColorsBuilder_ != null || dominantColors_ != null;
@@ -512,6 +523,8 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.DominantColorsAnnotation dominant_colors = 1;</code>
+     *
+     * @return The dominantColors.
      */
     public com.google.cloud.vision.v1p2beta1.DominantColorsAnnotation getDominantColors() {
       if (dominantColorsBuilder_ == null) {

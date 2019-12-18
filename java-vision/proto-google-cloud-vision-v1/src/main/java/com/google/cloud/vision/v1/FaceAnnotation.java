@@ -49,6 +49,12 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FaceAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,10 +112,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 landmarks_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               landmarks_.add(
                   input.readMessage(
@@ -205,7 +211,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
       }
       this.unknownFields = unknownFields.build();
@@ -241,6 +247,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
@@ -251,6 +259,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+     *
+     * @return The type.
      */
     com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType();
 
@@ -262,6 +272,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Position position = 4;</code>
+     *
+     * @return Whether the position field is set.
      */
     boolean hasPosition();
     /**
@@ -272,6 +284,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Position position = 4;</code>
+     *
+     * @return The position.
      */
     com.google.cloud.vision.v1.Position getPosition();
     /**
@@ -309,6 +323,12 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Landmark();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -321,7 +341,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1114,12 +1133,20 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Type forNumber(int value) {
         switch (value) {
           case 0:
@@ -1253,6 +1280,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1265,6 +1294,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
       @SuppressWarnings("deprecation")
@@ -1285,6 +1316,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Position position = 4;</code>
+     *
+     * @return Whether the position field is set.
      */
     public boolean hasPosition() {
       return position_ != null;
@@ -1297,6 +1330,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Position position = 4;</code>
+     *
+     * @return The position.
      */
     public com.google.cloud.vision.v1.Position getPosition() {
       return position_ == null
@@ -1676,6 +1711,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+       *
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
@@ -1688,6 +1725,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -1702,6 +1742,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+       *
+       * @return The type.
        */
       public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
         @SuppressWarnings("deprecation")
@@ -1719,6 +1761,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type value) {
         if (value == null) {
@@ -1737,6 +1782,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearType() {
 
@@ -1759,6 +1806,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
+       *
+       * @return Whether the position field is set.
        */
       public boolean hasPosition() {
         return positionBuilder_ != null || position_ != null;
@@ -1771,6 +1820,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
+       *
+       * @return The position.
        */
       public com.google.cloud.vision.v1.Position getPosition() {
         if (positionBuilder_ == null) {
@@ -1978,7 +2029,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
   /**
@@ -1995,6 +2045,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
@@ -2013,6 +2065,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+   *
+   * @return The boundingPoly.
    */
   public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
@@ -2053,6 +2107,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
+   *
+   * @return Whether the fdBoundingPoly field is set.
    */
   public boolean hasFdBoundingPoly() {
     return fdBoundingPoly_ != null;
@@ -2070,6 +2126,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
+   *
+   * @return The fdBoundingPoly.
    */
   public com.google.cloud.vision.v1.BoundingPoly getFdBoundingPoly() {
     return fdBoundingPoly_ == null
@@ -2171,6 +2229,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float roll_angle = 4;</code>
+   *
+   * @return The rollAngle.
    */
   public float getRollAngle() {
     return rollAngle_;
@@ -2188,6 +2248,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float pan_angle = 5;</code>
+   *
+   * @return The panAngle.
    */
   public float getPanAngle() {
     return panAngle_;
@@ -2204,6 +2266,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float tilt_angle = 6;</code>
+   *
+   * @return The tiltAngle.
    */
   public float getTiltAngle() {
     return tiltAngle_;
@@ -2219,6 +2283,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float detection_confidence = 7;</code>
+   *
+   * @return The detectionConfidence.
    */
   public float getDetectionConfidence() {
     return detectionConfidence_;
@@ -2234,6 +2300,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float landmarking_confidence = 8;</code>
+   *
+   * @return The landmarkingConfidence.
    */
   public float getLandmarkingConfidence() {
     return landmarkingConfidence_;
@@ -2249,6 +2317,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+   *
+   * @return The enum numeric value on the wire for joyLikelihood.
    */
   public int getJoyLikelihoodValue() {
     return joyLikelihood_;
@@ -2261,6 +2331,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+   *
+   * @return The joyLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2279,6 +2351,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+   *
+   * @return The enum numeric value on the wire for sorrowLikelihood.
    */
   public int getSorrowLikelihoodValue() {
     return sorrowLikelihood_;
@@ -2291,6 +2365,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+   *
+   * @return The sorrowLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2309,6 +2385,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+   *
+   * @return The enum numeric value on the wire for angerLikelihood.
    */
   public int getAngerLikelihoodValue() {
     return angerLikelihood_;
@@ -2321,6 +2399,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+   *
+   * @return The angerLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2339,6 +2419,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+   *
+   * @return The enum numeric value on the wire for surpriseLikelihood.
    */
   public int getSurpriseLikelihoodValue() {
     return surpriseLikelihood_;
@@ -2351,6 +2433,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+   *
+   * @return The surpriseLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2369,6 +2453,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+   *
+   * @return The enum numeric value on the wire for underExposedLikelihood.
    */
   public int getUnderExposedLikelihoodValue() {
     return underExposedLikelihood_;
@@ -2381,6 +2467,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+   *
+   * @return The underExposedLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2399,6 +2487,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+   *
+   * @return The enum numeric value on the wire for blurredLikelihood.
    */
   public int getBlurredLikelihoodValue() {
     return blurredLikelihood_;
@@ -2411,6 +2501,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+   *
+   * @return The blurredLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2429,6 +2521,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+   *
+   * @return The enum numeric value on the wire for headwearLikelihood.
    */
   public int getHeadwearLikelihoodValue() {
     return headwearLikelihood_;
@@ -2441,6 +2535,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+   *
+   * @return The headwearLikelihood.
    */
   public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
     @SuppressWarnings("deprecation")
@@ -2812,7 +2908,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (landmarksBuilder_ == null) {
         landmarks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         landmarksBuilder_.clear();
       }
@@ -2868,7 +2964,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1.FaceAnnotation result =
           new com.google.cloud.vision.v1.FaceAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (boundingPolyBuilder_ == null) {
         result.boundingPoly_ = boundingPoly_;
       } else {
@@ -2880,9 +2975,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         result.fdBoundingPoly_ = fdBoundingPolyBuilder_.build();
       }
       if (landmarksBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.landmarks_ = landmarks_;
       } else {
@@ -2900,7 +2995,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       result.underExposedLikelihood_ = underExposedLikelihood_;
       result.blurredLikelihood_ = blurredLikelihood_;
       result.headwearLikelihood_ = headwearLikelihood_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2960,7 +3054,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (!other.landmarks_.isEmpty()) {
           if (landmarks_.isEmpty()) {
             landmarks_ = other.landmarks_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLandmarksIsMutable();
             landmarks_.addAll(other.landmarks_);
@@ -2973,7 +3067,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             landmarksBuilder_.dispose();
             landmarksBuilder_ = null;
             landmarks_ = other.landmarks_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             landmarksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLandmarksFieldBuilder()
@@ -3070,6 +3164,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
@@ -3088,6 +3184,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return The boundingPoly.
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
@@ -3305,6 +3403,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
+     *
+     * @return Whether the fdBoundingPoly field is set.
      */
     public boolean hasFdBoundingPoly() {
       return fdBoundingPolyBuilder_ != null || fdBoundingPoly_ != null;
@@ -3322,6 +3422,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
+     *
+     * @return The fdBoundingPoly.
      */
     public com.google.cloud.vision.v1.BoundingPoly getFdBoundingPoly() {
       if (fdBoundingPolyBuilder_ == null) {
@@ -3517,10 +3619,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLandmarksIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         landmarks_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>(landmarks_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3738,7 +3840,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLandmarks() {
       if (landmarksBuilder_ == null) {
         landmarks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         landmarksBuilder_.clear();
@@ -3864,7 +3966,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1.FaceAnnotation.Landmark,
                 com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder,
                 com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>(
-                landmarks_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                landmarks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         landmarks_ = null;
       }
       return landmarksBuilder_;
@@ -3881,6 +3983,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float roll_angle = 4;</code>
+     *
+     * @return The rollAngle.
      */
     public float getRollAngle() {
       return rollAngle_;
@@ -3895,6 +3999,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float roll_angle = 4;</code>
+     *
+     * @param value The rollAngle to set.
+     * @return This builder for chaining.
      */
     public Builder setRollAngle(float value) {
 
@@ -3912,6 +4019,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float roll_angle = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRollAngle() {
 
@@ -3931,6 +4040,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float pan_angle = 5;</code>
+     *
+     * @return The panAngle.
      */
     public float getPanAngle() {
       return panAngle_;
@@ -3945,6 +4056,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float pan_angle = 5;</code>
+     *
+     * @param value The panAngle to set.
+     * @return This builder for chaining.
      */
     public Builder setPanAngle(float value) {
 
@@ -3962,6 +4076,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float pan_angle = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPanAngle() {
 
@@ -3980,6 +4096,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float tilt_angle = 6;</code>
+     *
+     * @return The tiltAngle.
      */
     public float getTiltAngle() {
       return tiltAngle_;
@@ -3993,6 +4111,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float tilt_angle = 6;</code>
+     *
+     * @param value The tiltAngle to set.
+     * @return This builder for chaining.
      */
     public Builder setTiltAngle(float value) {
 
@@ -4009,6 +4130,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float tilt_angle = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTiltAngle() {
 
@@ -4026,6 +4149,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float detection_confidence = 7;</code>
+     *
+     * @return The detectionConfidence.
      */
     public float getDetectionConfidence() {
       return detectionConfidence_;
@@ -4038,6 +4163,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float detection_confidence = 7;</code>
+     *
+     * @param value The detectionConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setDetectionConfidence(float value) {
 
@@ -4053,6 +4181,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float detection_confidence = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDetectionConfidence() {
 
@@ -4070,6 +4200,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float landmarking_confidence = 8;</code>
+     *
+     * @return The landmarkingConfidence.
      */
     public float getLandmarkingConfidence() {
       return landmarkingConfidence_;
@@ -4082,6 +4214,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float landmarking_confidence = 8;</code>
+     *
+     * @param value The landmarkingConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setLandmarkingConfidence(float value) {
 
@@ -4097,6 +4232,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float landmarking_confidence = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLandmarkingConfidence() {
 
@@ -4114,6 +4251,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+     *
+     * @return The enum numeric value on the wire for joyLikelihood.
      */
     public int getJoyLikelihoodValue() {
       return joyLikelihood_;
@@ -4126,6 +4265,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for joyLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setJoyLikelihoodValue(int value) {
       joyLikelihood_ = value;
@@ -4140,6 +4282,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+     *
+     * @return The joyLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4155,6 +4299,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+     *
+     * @param value The joyLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setJoyLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4173,6 +4320,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJoyLikelihood() {
 
@@ -4190,6 +4339,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+     *
+     * @return The enum numeric value on the wire for sorrowLikelihood.
      */
     public int getSorrowLikelihoodValue() {
       return sorrowLikelihood_;
@@ -4202,6 +4353,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for sorrowLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setSorrowLikelihoodValue(int value) {
       sorrowLikelihood_ = value;
@@ -4216,6 +4370,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+     *
+     * @return The sorrowLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4231,6 +4387,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+     *
+     * @param value The sorrowLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setSorrowLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4249,6 +4408,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSorrowLikelihood() {
 
@@ -4266,6 +4427,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+     *
+     * @return The enum numeric value on the wire for angerLikelihood.
      */
     public int getAngerLikelihoodValue() {
       return angerLikelihood_;
@@ -4278,6 +4441,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+     *
+     * @param value The enum numeric value on the wire for angerLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setAngerLikelihoodValue(int value) {
       angerLikelihood_ = value;
@@ -4292,6 +4458,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+     *
+     * @return The angerLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4307,6 +4475,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+     *
+     * @param value The angerLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setAngerLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4325,6 +4496,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAngerLikelihood() {
 
@@ -4342,6 +4515,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+     *
+     * @return The enum numeric value on the wire for surpriseLikelihood.
      */
     public int getSurpriseLikelihoodValue() {
       return surpriseLikelihood_;
@@ -4354,6 +4529,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for surpriseLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setSurpriseLikelihoodValue(int value) {
       surpriseLikelihood_ = value;
@@ -4368,6 +4546,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+     *
+     * @return The surpriseLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4383,6 +4563,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+     *
+     * @param value The surpriseLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setSurpriseLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4401,6 +4584,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSurpriseLikelihood() {
 
@@ -4418,6 +4603,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+     *
+     * @return The enum numeric value on the wire for underExposedLikelihood.
      */
     public int getUnderExposedLikelihoodValue() {
       return underExposedLikelihood_;
@@ -4430,6 +4617,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+     *
+     * @param value The enum numeric value on the wire for underExposedLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setUnderExposedLikelihoodValue(int value) {
       underExposedLikelihood_ = value;
@@ -4444,6 +4634,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+     *
+     * @return The underExposedLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4459,6 +4651,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+     *
+     * @param value The underExposedLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setUnderExposedLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4477,6 +4672,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUnderExposedLikelihood() {
 
@@ -4494,6 +4691,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+     *
+     * @return The enum numeric value on the wire for blurredLikelihood.
      */
     public int getBlurredLikelihoodValue() {
       return blurredLikelihood_;
@@ -4506,6 +4705,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+     *
+     * @param value The enum numeric value on the wire for blurredLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setBlurredLikelihoodValue(int value) {
       blurredLikelihood_ = value;
@@ -4520,6 +4722,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+     *
+     * @return The blurredLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4535,6 +4739,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+     *
+     * @param value The blurredLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setBlurredLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4553,6 +4760,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBlurredLikelihood() {
 
@@ -4570,6 +4779,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+     *
+     * @return The enum numeric value on the wire for headwearLikelihood.
      */
     public int getHeadwearLikelihoodValue() {
       return headwearLikelihood_;
@@ -4582,6 +4793,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+     *
+     * @param value The enum numeric value on the wire for headwearLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setHeadwearLikelihoodValue(int value) {
       headwearLikelihood_ = value;
@@ -4596,6 +4810,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+     *
+     * @return The headwearLikelihood.
      */
     public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
       @SuppressWarnings("deprecation")
@@ -4611,6 +4827,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+     *
+     * @param value The headwearLikelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setHeadwearLikelihood(com.google.cloud.vision.v1.Likelihood value) {
       if (value == null) {
@@ -4629,6 +4848,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHeadwearLikelihood() {
 

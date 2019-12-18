@@ -31,6 +31,8 @@ public interface PurgeProductsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
+   *
+   * @return Whether the productSetPurgeConfig field is set.
    */
   boolean hasProductSetPurgeConfig();
   /**
@@ -41,6 +43,8 @@ public interface PurgeProductsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
+   *
+   * @return The productSetPurgeConfig.
    */
   com.google.cloud.vision.v1.ProductSetPurgeConfig getProductSetPurgeConfig();
   /**
@@ -63,6 +67,8 @@ public interface PurgeProductsRequestOrBuilder
    * </pre>
    *
    * <code>bool delete_orphan_products = 3;</code>
+   *
+   * @return The deleteOrphanProducts.
    */
   boolean getDeleteOrphanProducts();
 
@@ -77,6 +83,8 @@ public interface PurgeProductsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -90,6 +98,8 @@ public interface PurgeProductsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -102,6 +112,8 @@ public interface PurgeProductsRequestOrBuilder
    * </pre>
    *
    * <code>bool force = 4;</code>
+   *
+   * @return The force.
    */
   boolean getForce();
 

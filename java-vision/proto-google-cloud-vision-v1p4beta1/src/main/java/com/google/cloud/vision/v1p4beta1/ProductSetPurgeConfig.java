@@ -42,6 +42,12 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSetPurgeConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string product_set_id = 1;</code>
+   *
+   * @return The productSetId.
    */
   public java.lang.String getProductSetId() {
     java.lang.Object ref = productSetId_;
@@ -140,6 +147,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string product_set_id = 1;</code>
+   *
+   * @return The bytes for productSetId.
    */
   public com.google.protobuf.ByteString getProductSetIdBytes() {
     java.lang.Object ref = productSetId_;
@@ -483,6 +492,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string product_set_id = 1;</code>
+     *
+     * @return The productSetId.
      */
     public java.lang.String getProductSetId() {
       java.lang.Object ref = productSetId_;
@@ -505,6 +516,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string product_set_id = 1;</code>
+     *
+     * @return The bytes for productSetId.
      */
     public com.google.protobuf.ByteString getProductSetIdBytes() {
       java.lang.Object ref = productSetId_;
@@ -527,6 +540,9 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string product_set_id = 1;</code>
+     *
+     * @param value The productSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setProductSetId(java.lang.String value) {
       if (value == null) {
@@ -547,6 +563,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string product_set_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductSetId() {
 
@@ -564,6 +582,9 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string product_set_id = 1;</code>
+     *
+     * @param value The bytes for productSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setProductSetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

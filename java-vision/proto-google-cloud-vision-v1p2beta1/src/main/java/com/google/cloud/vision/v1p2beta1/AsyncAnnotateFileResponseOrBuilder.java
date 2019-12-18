@@ -31,6 +31,8 @@ public interface AsyncAnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.OutputConfig output_config = 1;</code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -41,6 +43,8 @@ public interface AsyncAnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.OutputConfig output_config = 1;</code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.vision.v1p2beta1.OutputConfig getOutputConfig();
   /**

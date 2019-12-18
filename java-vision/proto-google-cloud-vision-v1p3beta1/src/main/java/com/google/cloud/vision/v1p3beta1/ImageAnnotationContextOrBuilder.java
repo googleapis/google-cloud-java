@@ -31,6 +31,8 @@ public interface ImageAnnotationContextOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -41,6 +43,8 @@ public interface ImageAnnotationContextOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 
@@ -53,6 +57,8 @@ public interface ImageAnnotationContextOrBuilder
    * </pre>
    *
    * <code>int32 page_number = 2;</code>
+   *
+   * @return The pageNumber.
    */
   int getPageNumber();
 }

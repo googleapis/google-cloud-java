@@ -44,6 +44,12 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LocalizedObjectAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -153,6 +158,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The mid.
    */
   public java.lang.String getMid() {
     java.lang.Object ref = mid_;
@@ -173,6 +180,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The bytes for mid.
    */
   public com.google.protobuf.ByteString getMidBytes() {
     java.lang.Object ref = mid_;
@@ -198,6 +207,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -220,6 +231,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -243,6 +256,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -263,6 +278,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -286,6 +303,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>float score = 4;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -301,6 +320,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 5;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
@@ -313,6 +334,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 5;</code>
+   *
+   * @return The boundingPoly.
    */
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
@@ -736,6 +759,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The mid.
      */
     public java.lang.String getMid() {
       java.lang.Object ref = mid_;
@@ -756,6 +781,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The bytes for mid.
      */
     public com.google.protobuf.ByteString getMidBytes() {
       java.lang.Object ref = mid_;
@@ -776,6 +803,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @param value The mid to set.
+     * @return This builder for chaining.
      */
     public Builder setMid(java.lang.String value) {
       if (value == null) {
@@ -794,6 +824,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMid() {
 
@@ -809,6 +841,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @param value The bytes for mid to set.
+     * @return This builder for chaining.
      */
     public Builder setMidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -832,6 +867,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -854,6 +891,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -876,6 +915,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -896,6 +938,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -913,6 +957,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -934,6 +981,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -954,6 +1003,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -974,6 +1025,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -992,6 +1046,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1007,6 +1063,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1028,6 +1087,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -1040,6 +1101,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -1055,6 +1119,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -1077,6 +1143,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 5;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
@@ -1089,6 +1157,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 5;</code>
+     *
+     * @return The boundingPoly.
      */
     public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {

@@ -33,6 +33,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The mid.
    */
   java.lang.String getMid();
   /**
@@ -45,6 +47,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>string mid = 1;</code>
+   *
+   * @return The bytes for mid.
    */
   com.google.protobuf.ByteString getMidBytes();
 
@@ -57,6 +61,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>string locale = 2;</code>
+   *
+   * @return The locale.
    */
   java.lang.String getLocale();
   /**
@@ -68,6 +74,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>string locale = 2;</code>
+   *
+   * @return The bytes for locale.
    */
   com.google.protobuf.ByteString getLocaleBytes();
 
@@ -79,6 +87,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -89,6 +99,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -100,6 +112,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>float score = 4;</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -115,6 +129,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>float confidence = 5;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 
@@ -130,6 +146,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>float topicality = 6;</code>
+   *
+   * @return The topicality.
    */
   float getTopicality();
 
@@ -142,6 +160,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.BoundingPoly bounding_poly = 7;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
   /**
@@ -153,6 +173,8 @@ public interface EntityAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.BoundingPoly bounding_poly = 7;</code>
+   *
+   * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p2beta1.BoundingPoly getBoundingPoly();
   /**

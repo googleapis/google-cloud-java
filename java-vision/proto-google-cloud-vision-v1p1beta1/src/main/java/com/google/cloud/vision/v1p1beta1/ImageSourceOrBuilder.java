@@ -36,6 +36,8 @@ public interface ImageSourceOrBuilder
    * </pre>
    *
    * <code>string gcs_image_uri = 1;</code>
+   *
+   * @return The gcsImageUri.
    */
   java.lang.String getGcsImageUri();
   /**
@@ -51,6 +53,8 @@ public interface ImageSourceOrBuilder
    * </pre>
    *
    * <code>string gcs_image_uri = 1;</code>
+   *
+   * @return The bytes for gcsImageUri.
    */
   com.google.protobuf.ByteString getGcsImageUriBytes();
 
@@ -71,6 +75,8 @@ public interface ImageSourceOrBuilder
    * </pre>
    *
    * <code>string image_uri = 2;</code>
+   *
+   * @return The imageUri.
    */
   java.lang.String getImageUri();
   /**
@@ -90,6 +96,8 @@ public interface ImageSourceOrBuilder
    * </pre>
    *
    * <code>string image_uri = 2;</code>
+   *
+   * @return The bytes for imageUri.
    */
   com.google.protobuf.ByteString getImageUriBytes();
 }

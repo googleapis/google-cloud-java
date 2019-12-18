@@ -42,6 +42,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Image();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes content = 1;</code>
+   *
+   * @return The content.
    */
   public com.google.protobuf.ByteString getContent() {
     return content_;
@@ -148,6 +155,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageSource source = 2;</code>
+   *
+   * @return Whether the source field is set.
    */
   public boolean hasSource() {
     return source_ != null;
@@ -162,6 +171,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageSource source = 2;</code>
+   *
+   * @return The source.
    */
   public com.google.cloud.vision.v1.ImageSource getSource() {
     return source_ == null ? com.google.cloud.vision.v1.ImageSource.getDefaultInstance() : source_;
@@ -532,6 +543,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes content = 1;</code>
+     *
+     * @return The content.
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -546,6 +559,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes content = 1;</code>
+     *
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     public Builder setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -566,6 +582,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes content = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContent() {
 
@@ -590,6 +608,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageSource source = 2;</code>
+     *
+     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return sourceBuilder_ != null || source_ != null;
@@ -604,6 +624,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageSource source = 2;</code>
+     *
+     * @return The source.
      */
     public com.google.cloud.vision.v1.ImageSource getSource() {
       if (sourceBuilder_ == null) {

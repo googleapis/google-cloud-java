@@ -35,6 +35,8 @@ public interface CreateReferenceImageRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface CreateReferenceImageRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -63,6 +67,8 @@ public interface CreateReferenceImageRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the referenceImage field is set.
    */
   boolean hasReferenceImage();
   /**
@@ -76,6 +82,8 @@ public interface CreateReferenceImageRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The referenceImage.
    */
   com.google.cloud.vision.v1.ReferenceImage getReferenceImage();
   /**
@@ -103,6 +111,8 @@ public interface CreateReferenceImageRequestOrBuilder
    * </pre>
    *
    * <code>string reference_image_id = 3;</code>
+   *
+   * @return The referenceImageId.
    */
   java.lang.String getReferenceImageId();
   /**
@@ -116,6 +126,8 @@ public interface CreateReferenceImageRequestOrBuilder
    * </pre>
    *
    * <code>string reference_image_id = 3;</code>
+   *
+   * @return The bytes for referenceImageId.
    */
   com.google.protobuf.ByteString getReferenceImageIdBytes();
 }

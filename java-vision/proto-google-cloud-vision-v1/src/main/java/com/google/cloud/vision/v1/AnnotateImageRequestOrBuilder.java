@@ -31,6 +31,8 @@ public interface AnnotateImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Image image = 1;</code>
+   *
+   * @return Whether the image field is set.
    */
   boolean hasImage();
   /**
@@ -41,6 +43,8 @@ public interface AnnotateImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Image image = 1;</code>
+   *
+   * @return The image.
    */
   com.google.cloud.vision.v1.Image getImage();
   /**
@@ -113,6 +117,8 @@ public interface AnnotateImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
+   *
+   * @return Whether the imageContext field is set.
    */
   boolean hasImageContext();
   /**
@@ -123,6 +129,8 @@ public interface AnnotateImageRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
+   *
+   * @return The imageContext.
    */
   com.google.cloud.vision.v1.ImageContext getImageContext();
   /**

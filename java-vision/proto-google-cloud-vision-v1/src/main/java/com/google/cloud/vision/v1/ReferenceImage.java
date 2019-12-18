@@ -45,6 +45,12 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReferenceImage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 boundingPolys_ = new java.util.ArrayList<com.google.cloud.vision.v1.BoundingPoly>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               boundingPolys_.add(
                   input.readMessage(
@@ -107,7 +113,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         boundingPolys_ = java.util.Collections.unmodifiableList(boundingPolys_);
       }
       this.unknownFields = unknownFields.build();
@@ -130,7 +136,6 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.ReferenceImage.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -144,6 +149,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -167,6 +174,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -191,6 +200,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -212,6 +223,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -562,7 +575,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
 
       if (boundingPolysBuilder_ == null) {
         boundingPolys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         boundingPolysBuilder_.clear();
       }
@@ -594,19 +607,17 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1.ReferenceImage result =
           new com.google.cloud.vision.v1.ReferenceImage(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.uri_ = uri_;
       if (boundingPolysBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           boundingPolys_ = java.util.Collections.unmodifiableList(boundingPolys_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.boundingPolys_ = boundingPolys_;
       } else {
         result.boundingPolys_ = boundingPolysBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -668,7 +679,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         if (!other.boundingPolys_.isEmpty()) {
           if (boundingPolys_.isEmpty()) {
             boundingPolys_ = other.boundingPolys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureBoundingPolysIsMutable();
             boundingPolys_.addAll(other.boundingPolys_);
@@ -681,7 +692,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
             boundingPolysBuilder_.dispose();
             boundingPolysBuilder_ = null;
             boundingPolys_ = other.boundingPolys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             boundingPolysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBoundingPolysFieldBuilder()
@@ -734,6 +745,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -757,6 +770,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -780,6 +795,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -801,6 +819,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -819,6 +839,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -841,6 +864,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -862,6 +887,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -883,6 +910,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -902,6 +932,8 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
 
@@ -918,6 +950,9 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -934,10 +969,10 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBoundingPolysIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         boundingPolys_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.BoundingPoly>(boundingPolys_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1241,7 +1276,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     public Builder clearBoundingPolys() {
       if (boundingPolysBuilder_ == null) {
         boundingPolys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         boundingPolysBuilder_.clear();
@@ -1420,7 +1455,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1.BoundingPoly.Builder,
                 com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
                 boundingPolys_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         boundingPolys_ = null;

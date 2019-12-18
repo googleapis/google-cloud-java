@@ -42,6 +42,12 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcsDestination();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -158,6 +165,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -508,6 +517,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -539,6 +550,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -570,6 +583,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -599,6 +615,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
 
@@ -625,6 +643,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 1;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

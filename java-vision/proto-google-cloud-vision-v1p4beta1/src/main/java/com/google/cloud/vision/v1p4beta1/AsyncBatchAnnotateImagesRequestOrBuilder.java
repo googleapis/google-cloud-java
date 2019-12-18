@@ -95,6 +95,8 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -107,6 +109,8 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig();
   /**

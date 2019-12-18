@@ -42,6 +42,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -258,12 +263,20 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -335,6 +348,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -347,6 +362,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.vision.v1.OperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
@@ -367,6 +384,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -379,6 +398,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -406,6 +427,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -418,6 +441,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -817,6 +842,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -829,6 +856,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -843,6 +873,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.vision.v1.OperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
@@ -860,6 +892,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.vision.v1.OperationMetadata.State value) {
       if (value == null) {
@@ -878,6 +913,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.vision.v1.OperationMetadata.State state = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -900,6 +937,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -912,6 +951,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1079,6 +1120,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1091,6 +1134,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {

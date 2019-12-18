@@ -48,6 +48,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -75,6 +77,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 }

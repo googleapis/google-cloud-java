@@ -42,6 +42,12 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Symbol();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,6 +159,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   public boolean hasProperty() {
     return property_ != null;
@@ -166,6 +173,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return The property.
    */
   public com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty() {
     return property_ == null
@@ -209,6 +218,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
@@ -235,6 +246,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return The boundingBox.
    */
   public com.google.cloud.vision.v1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
@@ -278,6 +291,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 3;</code>
+   *
+   * @return The text.
    */
   public java.lang.String getText() {
     java.lang.Object ref = text_;
@@ -298,6 +313,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 3;</code>
+   *
+   * @return The bytes for text.
    */
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
@@ -321,6 +338,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -725,6 +744,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+     *
+     * @return Whether the property field is set.
      */
     public boolean hasProperty() {
       return propertyBuilder_ != null || property_ != null;
@@ -737,6 +758,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+     *
+     * @return The property.
      */
     public com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty() {
       if (propertyBuilder_ == null) {
@@ -921,6 +944,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+     *
+     * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
       return boundingBoxBuilder_ != null || boundingBox_ != null;
@@ -947,6 +972,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+     *
+     * @return The boundingBox.
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingBox() {
       if (boundingBoxBuilder_ == null) {
@@ -1209,6 +1236,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 3;</code>
+     *
+     * @return The text.
      */
     public java.lang.String getText() {
       java.lang.Object ref = text_;
@@ -1229,6 +1258,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 3;</code>
+     *
+     * @return The bytes for text.
      */
     public com.google.protobuf.ByteString getTextBytes() {
       java.lang.Object ref = text_;
@@ -1249,6 +1280,9 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 3;</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
      */
     public Builder setText(java.lang.String value) {
       if (value == null) {
@@ -1267,6 +1301,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearText() {
 
@@ -1282,6 +1318,9 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 3;</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
      */
     public Builder setTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1303,6 +1342,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1315,6 +1356,9 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1330,6 +1374,8 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

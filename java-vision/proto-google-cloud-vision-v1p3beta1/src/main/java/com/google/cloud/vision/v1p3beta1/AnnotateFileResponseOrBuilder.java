@@ -31,6 +31,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -41,6 +43,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.vision.v1p3beta1.InputConfig getInputConfig();
   /**

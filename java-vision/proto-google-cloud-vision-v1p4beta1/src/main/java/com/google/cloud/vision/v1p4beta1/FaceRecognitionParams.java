@@ -42,6 +42,12 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FaceRecognitionParams();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -126,6 +132,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @return A list containing the celebritySet.
    */
   public com.google.protobuf.ProtocolStringList getCelebritySetList() {
     return celebritySet_;
@@ -142,6 +150,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @return The count of celebritySet.
    */
   public int getCelebritySetCount() {
     return celebritySet_.size();
@@ -158,6 +168,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The celebritySet at the given index.
    */
   public java.lang.String getCelebritySet(int index) {
     return celebritySet_.get(index);
@@ -174,6 +187,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>repeated string celebrity_set = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the celebritySet at the given index.
    */
   public com.google.protobuf.ByteString getCelebritySetBytes(int index) {
     return celebritySet_.getByteString(index);
@@ -539,6 +555,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @return A list containing the celebritySet.
      */
     public com.google.protobuf.ProtocolStringList getCelebritySetList() {
       return celebritySet_.getUnmodifiableView();
@@ -555,6 +573,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @return The count of celebritySet.
      */
     public int getCelebritySetCount() {
       return celebritySet_.size();
@@ -571,6 +591,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The celebritySet at the given index.
      */
     public java.lang.String getCelebritySet(int index) {
       return celebritySet_.get(index);
@@ -587,6 +610,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the celebritySet at the given index.
      */
     public com.google.protobuf.ByteString getCelebritySetBytes(int index) {
       return celebritySet_.getByteString(index);
@@ -603,6 +629,10 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The celebritySet to set.
+     * @return This builder for chaining.
      */
     public Builder setCelebritySet(int index, java.lang.String value) {
       if (value == null) {
@@ -625,6 +655,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @param value The celebritySet to add.
+     * @return This builder for chaining.
      */
     public Builder addCelebritySet(java.lang.String value) {
       if (value == null) {
@@ -647,6 +680,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @param values The celebritySet to add.
+     * @return This builder for chaining.
      */
     public Builder addAllCelebritySet(java.lang.Iterable<java.lang.String> values) {
       ensureCelebritySetIsMutable();
@@ -666,6 +702,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCelebritySet() {
       celebritySet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -685,6 +723,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>repeated string celebrity_set = 1;</code>
+     *
+     * @param value The bytes of the celebritySet to add.
+     * @return This builder for chaining.
      */
     public Builder addCelebritySetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

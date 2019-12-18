@@ -31,6 +31,8 @@ public interface WebDetectionParamsOrBuilder
    * </pre>
    *
    * <code>bool include_geo_results = 2;</code>
+   *
+   * @return The includeGeoResults.
    */
   boolean getIncludeGeoResults();
 }

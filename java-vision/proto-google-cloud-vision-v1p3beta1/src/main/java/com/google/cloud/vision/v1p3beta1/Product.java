@@ -46,6 +46,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Product();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -99,10 +105,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 productLabels_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               productLabels_.add(
                   input.readMessage(
@@ -124,7 +130,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         productLabels_ = java.util.Collections.unmodifiableList(productLabels_);
       }
       this.unknownFields = unknownFields.build();
@@ -161,6 +167,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The key.
      */
     java.lang.String getKey();
     /**
@@ -172,6 +180,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString getKeyBytes();
 
@@ -184,6 +194,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 2;</code>
+     *
+     * @return The value.
      */
     java.lang.String getValue();
     /**
@@ -195,6 +207,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 2;</code>
+     *
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString getValueBytes();
   }
@@ -223,6 +237,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KeyValue();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -235,7 +255,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -305,6 +324,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The key.
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -326,6 +347,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string key = 1;</code>
+     *
+     * @return The bytes for key.
      */
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
@@ -350,6 +373,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 2;</code>
+     *
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -371,6 +396,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string value = 2;</code>
+     *
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
@@ -732,6 +759,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -753,6 +782,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
@@ -774,6 +805,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(java.lang.String value) {
         if (value == null) {
@@ -793,6 +827,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
 
@@ -809,6 +845,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string key = 1;</code>
+       *
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -831,6 +870,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 2;</code>
+       *
+       * @return The value.
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -852,6 +893,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 2;</code>
+       *
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString getValueBytes() {
         java.lang.Object ref = value_;
@@ -873,6 +916,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 2;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(java.lang.String value) {
         if (value == null) {
@@ -892,6 +938,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
 
@@ -908,6 +956,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string value = 2;</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -972,7 +1023,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -986,6 +1036,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1009,6 +1061,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1033,6 +1087,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -1054,6 +1110,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -1078,6 +1136,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -1099,6 +1159,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -1124,6 +1186,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The productCategory.
    */
   public java.lang.String getProductCategory() {
     java.lang.Object ref = productCategory_;
@@ -1146,6 +1210,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The bytes for productCategory.
    */
   public com.google.protobuf.ByteString getProductCategoryBytes() {
     java.lang.Object ref = productCategory_;
@@ -1508,7 +1574,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
 
       if (productLabelsBuilder_ == null) {
         productLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         productLabelsBuilder_.clear();
       }
@@ -1540,21 +1606,19 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1p3beta1.Product result =
           new com.google.cloud.vision.v1p3beta1.Product(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.productCategory_ = productCategory_;
       if (productLabelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           productLabels_ = java.util.Collections.unmodifiableList(productLabels_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.productLabels_ = productLabels_;
       } else {
         result.productLabels_ = productLabelsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1624,7 +1688,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         if (!other.productLabels_.isEmpty()) {
           if (productLabels_.isEmpty()) {
             productLabels_ = other.productLabels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureProductLabelsIsMutable();
             productLabels_.addAll(other.productLabels_);
@@ -1637,7 +1701,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             productLabelsBuilder_.dispose();
             productLabelsBuilder_ = null;
             productLabels_ = other.productLabels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             productLabelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductLabelsFieldBuilder()
@@ -1690,6 +1754,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1713,6 +1779,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1736,6 +1804,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1757,6 +1828,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1775,6 +1848,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1797,6 +1873,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1818,6 +1896,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1839,6 +1919,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1858,6 +1941,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1874,6 +1959,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1896,6 +1984,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1917,6 +2007,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1938,6 +2030,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1957,6 +2052,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1973,6 +2070,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1996,6 +2096,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @return The productCategory.
      */
     public java.lang.String getProductCategory() {
       java.lang.Object ref = productCategory_;
@@ -2018,6 +2120,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @return The bytes for productCategory.
      */
     public com.google.protobuf.ByteString getProductCategoryBytes() {
       java.lang.Object ref = productCategory_;
@@ -2040,6 +2144,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @param value The productCategory to set.
+     * @return This builder for chaining.
      */
     public Builder setProductCategory(java.lang.String value) {
       if (value == null) {
@@ -2060,6 +2167,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductCategory() {
 
@@ -2077,6 +2186,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_category = 4;</code>
+     *
+     * @param value The bytes for productCategory to set.
+     * @return This builder for chaining.
      */
     public Builder setProductCategoryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2093,11 +2205,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureProductLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         productLabels_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>(
                 productLabels_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2382,7 +2494,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder clearProductLabels() {
       if (productLabelsBuilder_ == null) {
         productLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         productLabelsBuilder_.clear();
@@ -2551,7 +2663,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder,
                 com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>(
                 productLabels_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         productLabels_ = null;

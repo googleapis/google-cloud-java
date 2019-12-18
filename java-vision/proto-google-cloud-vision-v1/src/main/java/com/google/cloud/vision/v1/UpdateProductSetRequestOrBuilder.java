@@ -33,6 +33,8 @@ public interface UpdateProductSetRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the productSet field is set.
    */
   boolean hasProductSet();
   /**
@@ -45,6 +47,8 @@ public interface UpdateProductSetRequestOrBuilder
    * <code>
    * .google.cloud.vision.v1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The productSet.
    */
   com.google.cloud.vision.v1.ProductSet getProductSet();
   /**
@@ -71,6 +75,8 @@ public interface UpdateProductSetRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -84,6 +90,8 @@ public interface UpdateProductSetRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

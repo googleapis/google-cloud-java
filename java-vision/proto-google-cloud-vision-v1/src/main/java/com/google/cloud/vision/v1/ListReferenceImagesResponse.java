@@ -43,6 +43,12 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListReferenceImagesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -127,7 +133,6 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
             com.google.cloud.vision.v1.ListReferenceImagesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int REFERENCE_IMAGES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.ReferenceImage> referenceImages_;
   /**
@@ -202,6 +207,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -217,6 +224,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -237,6 +246,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -515,7 +526,6 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       com.google.cloud.vision.v1.ListReferenceImagesResponse result =
           new com.google.cloud.vision.v1.ListReferenceImagesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (referenceImagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           referenceImages_ = java.util.Collections.unmodifiableList(referenceImages_);
@@ -527,7 +537,6 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       result.pageSize_ = pageSize_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1008,6 +1017,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1020,6 +1031,9 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1035,6 +1049,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1052,6 +1068,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1072,6 +1090,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1092,6 +1112,9 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1110,6 +1133,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1125,6 +1150,9 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

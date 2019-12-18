@@ -33,6 +33,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * </pre>
    *
    * <code>string product = 2;</code>
+   *
+   * @return The product.
    */
   java.lang.String getProduct();
   /**
@@ -70,6 +76,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * </pre>
    *
    * <code>string product = 2;</code>
+   *
+   * @return The bytes for product.
    */
   com.google.protobuf.ByteString getProductBytes();
 }

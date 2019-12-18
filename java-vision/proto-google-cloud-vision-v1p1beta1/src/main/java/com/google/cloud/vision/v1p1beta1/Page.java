@@ -42,6 +42,12 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Page();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -95,9 +101,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 blocks_ = new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.Block>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               blocks_.add(
                   input.readMessage(
@@ -123,7 +129,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         blocks_ = java.util.Collections.unmodifiableList(blocks_);
       }
       this.unknownFields = unknownFields.build();
@@ -146,7 +152,6 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p1beta1.Page.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property_;
   /**
@@ -157,6 +162,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   public boolean hasProperty() {
     return property_ != null;
@@ -169,6 +176,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return The property.
    */
   public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getProperty() {
     return property_ == null
@@ -199,6 +208,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 width = 2;</code>
+   *
+   * @return The width.
    */
   public int getWidth() {
     return width_;
@@ -214,6 +225,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 height = 3;</code>
+   *
+   * @return The height.
    */
   public int getHeight() {
     return height_;
@@ -293,6 +306,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 5;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -559,7 +574,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
       if (blocksBuilder_ == null) {
         blocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         blocksBuilder_.clear();
       }
@@ -593,7 +608,6 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1p1beta1.Page result =
           new com.google.cloud.vision.v1p1beta1.Page(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (propertyBuilder_ == null) {
         result.property_ = property_;
       } else {
@@ -602,16 +616,15 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       result.width_ = width_;
       result.height_ = height_;
       if (blocksBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           blocks_ = java.util.Collections.unmodifiableList(blocks_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.blocks_ = blocks_;
       } else {
         result.blocks_ = blocksBuilder_.build();
       }
       result.confidence_ = confidence_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -674,7 +687,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         if (!other.blocks_.isEmpty()) {
           if (blocks_.isEmpty()) {
             blocks_ = other.blocks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureBlocksIsMutable();
             blocks_.addAll(other.blocks_);
@@ -687,7 +700,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             blocksBuilder_.dispose();
             blocksBuilder_ = null;
             blocks_ = other.blocks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             blocksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBlocksFieldBuilder()
@@ -745,6 +758,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
+     *
+     * @return Whether the property field is set.
      */
     public boolean hasProperty() {
       return propertyBuilder_ != null || property_ != null;
@@ -757,6 +772,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
+     *
+     * @return The property.
      */
     public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getProperty() {
       if (propertyBuilder_ == null) {
@@ -926,6 +943,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 width = 2;</code>
+     *
+     * @return The width.
      */
     public int getWidth() {
       return width_;
@@ -938,6 +957,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 width = 2;</code>
+     *
+     * @param value The width to set.
+     * @return This builder for chaining.
      */
     public Builder setWidth(int value) {
 
@@ -953,6 +975,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 width = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWidth() {
 
@@ -970,6 +994,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 height = 3;</code>
+     *
+     * @return The height.
      */
     public int getHeight() {
       return height_;
@@ -982,6 +1008,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 height = 3;</code>
+     *
+     * @param value The height to set.
+     * @return This builder for chaining.
      */
     public Builder setHeight(int value) {
 
@@ -997,6 +1026,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 height = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHeight() {
 
@@ -1009,9 +1040,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         blocks_ = new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.Block>(blocks_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1226,7 +1257,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder clearBlocks() {
       if (blocksBuilder_ == null) {
         blocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         blocksBuilder_.clear();
@@ -1347,7 +1378,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p1beta1.Block,
                 com.google.cloud.vision.v1p1beta1.Block.Builder,
                 com.google.cloud.vision.v1p1beta1.BlockOrBuilder>(
-                blocks_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                blocks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         blocks_ = null;
       }
       return blocksBuilder_;
@@ -1362,6 +1393,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 5;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1374,6 +1407,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 5;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1389,6 +1425,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

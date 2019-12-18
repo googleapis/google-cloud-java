@@ -31,6 +31,8 @@ public interface PropertyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface PropertyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface PropertyOrBuilder
    * </pre>
    *
    * <code>string value = 2;</code>
+   *
+   * @return The value.
    */
   java.lang.String getValue();
   /**
@@ -62,6 +68,8 @@ public interface PropertyOrBuilder
    * </pre>
    *
    * <code>string value = 2;</code>
+   *
+   * @return The bytes for value.
    */
   com.google.protobuf.ByteString getValueBytes();
 
@@ -73,6 +81,8 @@ public interface PropertyOrBuilder
    * </pre>
    *
    * <code>uint64 uint64_value = 3;</code>
+   *
+   * @return The uint64Value.
    */
   long getUint64Value();
 }

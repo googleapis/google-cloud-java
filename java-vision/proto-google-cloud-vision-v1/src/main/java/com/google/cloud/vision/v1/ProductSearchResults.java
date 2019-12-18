@@ -43,6 +43,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSearchResults();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,11 +89,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1.ProductSearchResults.Result>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               results_.add(
                   input.readMessage(
@@ -97,11 +103,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 productGroupedResults_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               productGroupedResults_.add(
                   input.readMessage(
@@ -123,10 +129,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         results_ = java.util.Collections.unmodifiableList(results_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -162,6 +168,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Product product = 1;</code>
+     *
+     * @return Whether the product field is set.
      */
     boolean hasProduct();
     /**
@@ -172,6 +180,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Product product = 1;</code>
+     *
+     * @return The product.
      */
     com.google.cloud.vision.v1.Product getProduct();
     /**
@@ -194,6 +204,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return The score.
      */
     float getScore();
 
@@ -206,6 +218,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The image.
      */
     java.lang.String getImage();
     /**
@@ -217,6 +231,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The bytes for image.
      */
     com.google.protobuf.ByteString getImageBytes();
   }
@@ -244,6 +260,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -256,7 +278,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -339,6 +360,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Product product = 1;</code>
+     *
+     * @return Whether the product field is set.
      */
     public boolean hasProduct() {
       return product_ != null;
@@ -351,6 +374,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Product product = 1;</code>
+     *
+     * @return The product.
      */
     public com.google.cloud.vision.v1.Product getProduct() {
       return product_ == null ? com.google.cloud.vision.v1.Product.getDefaultInstance() : product_;
@@ -379,6 +404,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -395,6 +422,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The image.
      */
     public java.lang.String getImage() {
       java.lang.Object ref = image_;
@@ -416,6 +445,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string image = 3;</code>
+     *
+     * @return The bytes for image.
      */
     public com.google.protobuf.ByteString getImageBytes() {
       java.lang.Object ref = image_;
@@ -810,6 +841,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>.google.cloud.vision.v1.Product product = 1;</code>
+       *
+       * @return Whether the product field is set.
        */
       public boolean hasProduct() {
         return productBuilder_ != null || product_ != null;
@@ -822,6 +855,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>.google.cloud.vision.v1.Product product = 1;</code>
+       *
+       * @return The product.
        */
       public com.google.cloud.vision.v1.Product getProduct() {
         if (productBuilder_ == null) {
@@ -987,6 +1022,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 2;</code>
+       *
+       * @return The score.
        */
       public float getScore() {
         return score_;
@@ -1000,6 +1037,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 2;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
        */
       public Builder setScore(float value) {
 
@@ -1016,6 +1056,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearScore() {
 
@@ -1034,6 +1076,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @return The image.
        */
       public java.lang.String getImage() {
         java.lang.Object ref = image_;
@@ -1055,6 +1099,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @return The bytes for image.
        */
       public com.google.protobuf.ByteString getImageBytes() {
         java.lang.Object ref = image_;
@@ -1076,6 +1122,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @param value The image to set.
+       * @return This builder for chaining.
        */
       public Builder setImage(java.lang.String value) {
         if (value == null) {
@@ -1095,6 +1144,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearImage() {
 
@@ -1111,6 +1162,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string image = 3;</code>
+       *
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
        */
       public Builder setImageBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1188,6 +1242,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The mid.
      */
     java.lang.String getMid();
     /**
@@ -1198,6 +1254,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The bytes for mid.
      */
     com.google.protobuf.ByteString getMidBytes();
 
@@ -1211,6 +1269,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
      */
     java.lang.String getLanguageCode();
     /**
@@ -1223,6 +1283,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
      */
     com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -1234,6 +1296,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -1244,6 +1308,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
 
@@ -1255,6 +1321,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return The score.
      */
     float getScore();
   }
@@ -1284,6 +1352,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ObjectAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1296,7 +1370,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1377,6 +1450,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The mid.
      */
     public java.lang.String getMid() {
       java.lang.Object ref = mid_;
@@ -1397,6 +1472,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mid = 1;</code>
+     *
+     * @return The bytes for mid.
      */
     public com.google.protobuf.ByteString getMidBytes() {
       java.lang.Object ref = mid_;
@@ -1422,6 +1499,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1444,6 +1523,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1467,6 +1548,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1487,6 +1570,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1510,6 +1595,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>float score = 4;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -1903,6 +1990,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string mid = 1;</code>
+       *
+       * @return The mid.
        */
       public java.lang.String getMid() {
         java.lang.Object ref = mid_;
@@ -1923,6 +2012,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string mid = 1;</code>
+       *
+       * @return The bytes for mid.
        */
       public com.google.protobuf.ByteString getMidBytes() {
         java.lang.Object ref = mid_;
@@ -1943,6 +2034,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string mid = 1;</code>
+       *
+       * @param value The mid to set.
+       * @return This builder for chaining.
        */
       public Builder setMid(java.lang.String value) {
         if (value == null) {
@@ -1961,6 +2055,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string mid = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMid() {
 
@@ -1976,6 +2072,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string mid = 1;</code>
+       *
+       * @param value The bytes for mid to set.
+       * @return This builder for chaining.
        */
       public Builder setMidBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1999,6 +2098,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string language_code = 2;</code>
+       *
+       * @return The languageCode.
        */
       public java.lang.String getLanguageCode() {
         java.lang.Object ref = languageCode_;
@@ -2021,6 +2122,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string language_code = 2;</code>
+       *
+       * @return The bytes for languageCode.
        */
       public com.google.protobuf.ByteString getLanguageCodeBytes() {
         java.lang.Object ref = languageCode_;
@@ -2043,6 +2146,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string language_code = 2;</code>
+       *
+       * @param value The languageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setLanguageCode(java.lang.String value) {
         if (value == null) {
@@ -2063,6 +2169,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string language_code = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLanguageCode() {
 
@@ -2080,6 +2188,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string language_code = 2;</code>
+       *
+       * @param value The bytes for languageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2101,6 +2212,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string name = 3;</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2121,6 +2234,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string name = 3;</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -2141,6 +2256,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string name = 3;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -2159,6 +2277,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string name = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -2174,6 +2294,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>string name = 3;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2195,6 +2318,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 4;</code>
+       *
+       * @return The score.
        */
       public float getScore() {
         return score_;
@@ -2207,6 +2332,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 4;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
        */
       public Builder setScore(float value) {
 
@@ -2222,6 +2350,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>float score = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearScore() {
 
@@ -2298,6 +2428,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     boolean hasBoundingPoly();
     /**
@@ -2308,6 +2440,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return The boundingPoly.
      */
     com.google.cloud.vision.v1.BoundingPoly getBoundingPoly();
     /**
@@ -2465,6 +2599,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GroupedResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2506,11 +2646,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   results_ =
                       new java.util.ArrayList<
                           com.google.cloud.vision.v1.ProductSearchResults.Result>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 results_.add(
                     input.readMessage(
@@ -2520,11 +2660,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   objectAnnotations_ =
                       new java.util.ArrayList<
                           com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 objectAnnotations_.add(
                     input.readMessage(
@@ -2546,10 +2686,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
         }
         this.unknownFields = unknownFields.build();
@@ -2572,7 +2712,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               com.google.cloud.vision.v1.ProductSearchResults.GroupedResult.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
     private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
     /**
@@ -2583,6 +2722,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
       return boundingPoly_ != null;
@@ -2595,6 +2736,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return The boundingPoly.
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
       return boundingPoly_ == null
@@ -3005,13 +3148,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         }
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           resultsBuilder_.clear();
         }
         if (objectAnnotationsBuilder_ == null) {
           objectAnnotations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           objectAnnotationsBuilder_.clear();
         }
@@ -3044,31 +3187,29 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         com.google.cloud.vision.v1.ProductSearchResults.GroupedResult result =
             new com.google.cloud.vision.v1.ProductSearchResults.GroupedResult(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (boundingPolyBuilder_ == null) {
           result.boundingPoly_ = boundingPoly_;
         } else {
           result.boundingPoly_ = boundingPolyBuilder_.build();
         }
         if (resultsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             results_ = java.util.Collections.unmodifiableList(results_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.results_ = results_;
         } else {
           result.results_ = resultsBuilder_.build();
         }
         if (objectAnnotationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.objectAnnotations_ = objectAnnotations_;
         } else {
           result.objectAnnotations_ = objectAnnotationsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3130,7 +3271,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           if (!other.results_.isEmpty()) {
             if (results_.isEmpty()) {
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureResultsIsMutable();
               results_.addAll(other.results_);
@@ -3143,7 +3284,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               resultsBuilder_.dispose();
               resultsBuilder_ = null;
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               resultsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getResultsFieldBuilder()
@@ -3157,7 +3298,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           if (!other.objectAnnotations_.isEmpty()) {
             if (objectAnnotations_.isEmpty()) {
               objectAnnotations_ = other.objectAnnotations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureObjectAnnotationsIsMutable();
               objectAnnotations_.addAll(other.objectAnnotations_);
@@ -3170,7 +3311,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               objectAnnotationsBuilder_.dispose();
               objectAnnotationsBuilder_ = null;
               objectAnnotations_ = other.objectAnnotations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               objectAnnotationsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getObjectAnnotationsFieldBuilder()
@@ -3227,6 +3368,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+       *
+       * @return Whether the boundingPoly field is set.
        */
       public boolean hasBoundingPoly() {
         return boundingPolyBuilder_ != null || boundingPoly_ != null;
@@ -3239,6 +3382,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
+       *
+       * @return The boundingPoly.
        */
       public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
         if (boundingPolyBuilder_ == null) {
@@ -3399,11 +3544,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           java.util.Collections.emptyList();
 
       private void ensureResultsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           results_ =
               new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.Result>(
                   results_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -3625,7 +3770,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       public Builder clearResults() {
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           resultsBuilder_.clear();
@@ -3753,7 +3898,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                   com.google.cloud.vision.v1.ProductSearchResults.Result,
                   com.google.cloud.vision.v1.ProductSearchResults.Result.Builder,
                   com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>(
-                  results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           results_ = null;
         }
         return resultsBuilder_;
@@ -3763,12 +3908,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           objectAnnotations_ = java.util.Collections.emptyList();
 
       private void ensureObjectAnnotationsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           objectAnnotations_ =
               new java.util.ArrayList<
                   com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>(
                   objectAnnotations_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -4018,7 +4163,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       public Builder clearObjectAnnotations() {
         if (objectAnnotationsBuilder_ == null) {
           objectAnnotations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           objectAnnotationsBuilder_.clear();
@@ -4166,7 +4311,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                   com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder,
                   com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>(
                   objectAnnotations_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           objectAnnotations_ = null;
@@ -4229,7 +4374,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
   }
 
-  private int bitField0_;
   public static final int INDEX_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp indexTime_;
   /**
@@ -4242,6 +4386,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return Whether the indexTime field is set.
    */
   public boolean hasIndexTime() {
     return indexTime_ != null;
@@ -4256,6 +4402,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return The indexTime.
    */
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
@@ -4678,13 +4826,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       }
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         resultsBuilder_.clear();
       }
       if (productGroupedResultsBuilder_ == null) {
         productGroupedResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         productGroupedResultsBuilder_.clear();
       }
@@ -4716,31 +4864,29 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1.ProductSearchResults result =
           new com.google.cloud.vision.v1.ProductSearchResults(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (indexTimeBuilder_ == null) {
         result.indexTime_ = indexTime_;
       } else {
         result.indexTime_ = indexTimeBuilder_.build();
       }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.results_ = results_;
       } else {
         result.results_ = resultsBuilder_.build();
       }
       if (productGroupedResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.productGroupedResults_ = productGroupedResults_;
       } else {
         result.productGroupedResults_ = productGroupedResultsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -4798,7 +4944,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!other.results_.isEmpty()) {
           if (results_.isEmpty()) {
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResultsIsMutable();
             results_.addAll(other.results_);
@@ -4811,7 +4957,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             resultsBuilder_.dispose();
             resultsBuilder_ = null;
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             resultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResultsFieldBuilder()
@@ -4825,7 +4971,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!other.productGroupedResults_.isEmpty()) {
           if (productGroupedResults_.isEmpty()) {
             productGroupedResults_ = other.productGroupedResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureProductGroupedResultsIsMutable();
             productGroupedResults_.addAll(other.productGroupedResults_);
@@ -4838,7 +4984,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             productGroupedResultsBuilder_.dispose();
             productGroupedResultsBuilder_ = null;
             productGroupedResults_ = other.productGroupedResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             productGroupedResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductGroupedResultsFieldBuilder()
@@ -4895,6 +5041,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
+     *
+     * @return Whether the indexTime field is set.
      */
     public boolean hasIndexTime() {
       return indexTimeBuilder_ != null || indexTime_ != null;
@@ -4909,6 +5057,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
+     *
+     * @return The indexTime.
      */
     public com.google.protobuf.Timestamp getIndexTime() {
       if (indexTimeBuilder_ == null) {
@@ -5076,11 +5226,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.Result>(
                 results_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -5299,7 +5449,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearResults() {
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         resultsBuilder_.clear();
@@ -5425,7 +5575,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.ProductSearchResults.Result,
                 com.google.cloud.vision.v1.ProductSearchResults.Result.Builder,
                 com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>(
-                results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;
@@ -5435,11 +5585,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         productGroupedResults_ = java.util.Collections.emptyList();
 
     private void ensureProductGroupedResultsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         productGroupedResults_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>(
                 productGroupedResults_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -5718,7 +5868,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearProductGroupedResults() {
       if (productGroupedResultsBuilder_ == null) {
         productGroupedResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         productGroupedResultsBuilder_.clear();
@@ -5884,7 +6034,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.ProductSearchResults.GroupedResult.Builder,
                 com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder>(
                 productGroupedResults_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         productGroupedResults_ = null;

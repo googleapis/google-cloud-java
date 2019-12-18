@@ -31,6 +31,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   boolean hasProperty();
   /**
@@ -41,6 +43,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return The property.
    */
   com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getProperty();
   /**
@@ -76,6 +80,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
   /**
@@ -100,6 +106,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return The boundingBox.
    */
   com.google.cloud.vision.v1p1beta1.BoundingPoly getBoundingBox();
   /**
@@ -187,6 +195,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.Block.BlockType block_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for blockType.
    */
   int getBlockTypeValue();
   /**
@@ -197,6 +207,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.Block.BlockType block_type = 4;</code>
+   *
+   * @return The blockType.
    */
   com.google.cloud.vision.v1p1beta1.Block.BlockType getBlockType();
 
@@ -208,6 +220,8 @@ public interface BlockOrBuilder
    * </pre>
    *
    * <code>float confidence = 5;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

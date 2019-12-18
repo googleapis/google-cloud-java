@@ -82,6 +82,8 @@ public interface TextAnnotationOrBuilder
    * </pre>
    *
    * <code>string text = 2;</code>
+   *
+   * @return The text.
    */
   java.lang.String getText();
   /**
@@ -92,6 +94,8 @@ public interface TextAnnotationOrBuilder
    * </pre>
    *
    * <code>string text = 2;</code>
+   *
+   * @return The bytes for text.
    */
   com.google.protobuf.ByteString getTextBytes();
 }

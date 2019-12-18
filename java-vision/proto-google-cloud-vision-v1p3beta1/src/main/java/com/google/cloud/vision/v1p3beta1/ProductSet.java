@@ -45,6 +45,12 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSet();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,6 +163,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -181,6 +188,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -205,6 +214,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -226,6 +237,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -252,6 +265,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   *
+   * @return Whether the indexTime field is set.
    */
   public boolean hasIndexTime() {
     return indexTime_ != null;
@@ -267,6 +282,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   *
+   * @return The indexTime.
    */
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
@@ -299,6 +316,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status index_error = 4;</code>
+   *
+   * @return Whether the indexError field is set.
    */
   public boolean hasIndexError() {
     return indexError_ != null;
@@ -313,6 +332,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status index_error = 4;</code>
+   *
+   * @return The indexError.
    */
   public com.google.rpc.Status getIndexError() {
     return indexError_ == null ? com.google.rpc.Status.getDefaultInstance() : indexError_;
@@ -734,6 +755,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -757,6 +780,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -780,6 +805,9 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -801,6 +829,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -819,6 +849,9 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -841,6 +874,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -862,6 +897,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -883,6 +920,9 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -902,6 +942,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -918,6 +960,9 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -947,6 +992,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     *
+     * @return Whether the indexTime field is set.
      */
     public boolean hasIndexTime() {
       return indexTimeBuilder_ != null || indexTime_ != null;
@@ -962,6 +1009,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     *
+     * @return The indexTime.
      */
     public com.google.protobuf.Timestamp getIndexTime() {
       if (indexTimeBuilder_ == null) {
@@ -1146,6 +1195,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status index_error = 4;</code>
+     *
+     * @return Whether the indexError field is set.
      */
     public boolean hasIndexError() {
       return indexErrorBuilder_ != null || indexError_ != null;
@@ -1160,6 +1211,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status index_error = 4;</code>
+     *
+     * @return The indexError.
      */
     public com.google.rpc.Status getIndexError() {
       if (indexErrorBuilder_ == null) {

@@ -32,6 +32,8 @@ public interface ImportProductSetsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ImportProductSetsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -54,6 +58,8 @@ public interface ImportProductSetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig input_config = 2;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -64,6 +70,8 @@ public interface ImportProductSetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig input_config = 2;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig getInputConfig();
   /**

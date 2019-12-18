@@ -45,6 +45,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsyncBatchAnnotateFilesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -125,7 +131,6 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
             com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int REQUESTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileRequest> requests_;
   /**
@@ -218,6 +223,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -245,6 +252,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -513,7 +522,6 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest result =
           new com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -524,7 +532,6 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         result.requests_ = requestsBuilder_.build();
       }
       result.parent_ = parent_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1047,6 +1054,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1074,6 +1083,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1101,6 +1112,9 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1126,6 +1140,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1148,6 +1164,9 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

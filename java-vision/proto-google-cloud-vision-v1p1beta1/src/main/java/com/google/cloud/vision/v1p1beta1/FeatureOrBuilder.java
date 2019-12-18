@@ -31,6 +31,8 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.Feature.Type type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p1beta1.Feature.Type type = 1;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.vision.v1p1beta1.Feature.Type getType();
 
@@ -52,6 +56,8 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>int32 max_results = 2;</code>
+   *
+   * @return The maxResults.
    */
   int getMaxResults();
 
@@ -65,6 +71,8 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>string model = 3;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -77,6 +85,8 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>string model = 3;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 }

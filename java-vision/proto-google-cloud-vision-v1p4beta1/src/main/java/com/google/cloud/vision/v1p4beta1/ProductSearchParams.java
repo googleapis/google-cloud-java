@@ -44,6 +44,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSearchParams();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 productCategories_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               productCategories_.add(s);
               break;
@@ -121,7 +127,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         productCategories_ = productCategories_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -144,7 +150,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             com.google.cloud.vision.v1p4beta1.ProductSearchParams.Builder.class);
   }
 
-  private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 9;
   private com.google.cloud.vision.v1p4beta1.BoundingPoly boundingPoly_;
   /**
@@ -156,6 +161,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
+   *
+   * @return Whether the boundingPoly field is set.
    */
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
@@ -169,6 +176,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
+   *
+   * @return The boundingPoly.
    */
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
@@ -203,6 +212,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The productSet.
    */
   public java.lang.String getProductSet() {
     java.lang.Object ref = productSet_;
@@ -227,6 +238,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for productSet.
    */
   public com.google.protobuf.ByteString getProductSetBytes() {
     java.lang.Object ref = productSet_;
@@ -256,6 +269,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @return A list containing the productCategories.
    */
   public com.google.protobuf.ProtocolStringList getProductCategoriesList() {
     return productCategories_;
@@ -274,6 +289,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @return The count of productCategories.
    */
   public int getProductCategoriesCount() {
     return productCategories_.size();
@@ -292,6 +309,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The productCategories at the given index.
    */
   public java.lang.String getProductCategories(int index) {
     return productCategories_.get(index);
@@ -310,6 +330,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the productCategories at the given index.
    */
   public com.google.protobuf.ByteString getProductCategoriesBytes(int index) {
     return productCategories_.getByteString(index);
@@ -331,6 +354,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string filter = 8;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -357,6 +382,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string filter = 8;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -623,7 +650,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       productSet_ = "";
 
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = "";
 
       return this;
@@ -654,20 +681,18 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       com.google.cloud.vision.v1p4beta1.ProductSearchParams result =
           new com.google.cloud.vision.v1p4beta1.ProductSearchParams(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (boundingPolyBuilder_ == null) {
         result.boundingPoly_ = boundingPoly_;
       } else {
         result.boundingPoly_ = boundingPolyBuilder_.build();
       }
       result.productSet_ = productSet_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         productCategories_ = productCategories_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.productCategories_ = productCategories_;
       result.filter_ = filter_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -728,7 +753,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       if (!other.productCategories_.isEmpty()) {
         if (productCategories_.isEmpty()) {
           productCategories_ = other.productCategories_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureProductCategoriesIsMutable();
           productCategories_.addAll(other.productCategories_);
@@ -786,6 +811,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
+     *
+     * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
@@ -799,6 +826,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
+     *
+     * @return The boundingPoly.
      */
     public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
@@ -975,6 +1004,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The productSet.
      */
     public java.lang.String getProductSet() {
       java.lang.Object ref = productSet_;
@@ -999,6 +1030,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for productSet.
      */
     public com.google.protobuf.ByteString getProductSetBytes() {
       java.lang.Object ref = productSet_;
@@ -1023,6 +1056,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The productSet to set.
+     * @return This builder for chaining.
      */
     public Builder setProductSet(java.lang.String value) {
       if (value == null) {
@@ -1045,6 +1081,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductSet() {
 
@@ -1064,6 +1102,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for productSet to set.
+     * @return This builder for chaining.
      */
     public Builder setProductSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1080,9 +1121,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureProductCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         productCategories_ = new com.google.protobuf.LazyStringArrayList(productCategories_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1099,6 +1140,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @return A list containing the productCategories.
      */
     public com.google.protobuf.ProtocolStringList getProductCategoriesList() {
       return productCategories_.getUnmodifiableView();
@@ -1117,6 +1160,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @return The count of productCategories.
      */
     public int getProductCategoriesCount() {
       return productCategories_.size();
@@ -1135,6 +1180,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The productCategories at the given index.
      */
     public java.lang.String getProductCategories(int index) {
       return productCategories_.get(index);
@@ -1153,6 +1201,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the productCategories at the given index.
      */
     public com.google.protobuf.ByteString getProductCategoriesBytes(int index) {
       return productCategories_.getByteString(index);
@@ -1171,6 +1222,10 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The productCategories to set.
+     * @return This builder for chaining.
      */
     public Builder setProductCategories(int index, java.lang.String value) {
       if (value == null) {
@@ -1195,6 +1250,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @param value The productCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addProductCategories(java.lang.String value) {
       if (value == null) {
@@ -1219,6 +1277,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @param values The productCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllProductCategories(java.lang.Iterable<java.lang.String> values) {
       ensureProductCategoriesIsMutable();
@@ -1240,10 +1301,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductCategories() {
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1261,6 +1324,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
+     *
+     * @param value The bytes of the productCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addProductCategoriesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1288,6 +1354,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string filter = 8;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1314,6 +1382,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string filter = 8;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1340,6 +1410,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string filter = 8;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1364,6 +1437,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string filter = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1385,6 +1460,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string filter = 8;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

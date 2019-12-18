@@ -32,6 +32,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+   *
+   * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
   /**
@@ -43,6 +45,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
+   *
+   * @return The category.
    */
   com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory();
 
@@ -56,6 +60,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The productCategory.
    */
   java.lang.String getProductCategory();
   /**
@@ -68,6 +74,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>string product_category = 4;</code>
+   *
+   * @return The bytes for productCategory.
    */
   com.google.protobuf.ByteString getProductCategoryBytes();
 
@@ -80,6 +88,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
   /**
@@ -91,6 +101,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**

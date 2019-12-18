@@ -41,6 +41,12 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
   private Vertex() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Vertex();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 x = 1;</code>
+   *
+   * @return The x.
    */
   public int getX() {
     return x_;
@@ -133,6 +140,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 y = 2;</code>
+   *
+   * @return The y.
    */
   public int getY() {
     return y_;
@@ -477,6 +486,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 x = 1;</code>
+     *
+     * @return The x.
      */
     public int getX() {
       return x_;
@@ -489,6 +500,9 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 x = 1;</code>
+     *
+     * @param value The x to set.
+     * @return This builder for chaining.
      */
     public Builder setX(int value) {
 
@@ -504,6 +518,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 x = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearX() {
 
@@ -521,6 +537,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 y = 2;</code>
+     *
+     * @return The y.
      */
     public int getY() {
       return y_;
@@ -533,6 +551,9 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 y = 2;</code>
+     *
+     * @param value The y to set.
+     * @return This builder for chaining.
      */
     public Builder setY(int value) {
 
@@ -548,6 +569,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 y = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearY() {
 

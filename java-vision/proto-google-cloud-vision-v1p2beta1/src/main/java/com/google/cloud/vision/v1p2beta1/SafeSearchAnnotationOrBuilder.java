@@ -33,6 +33,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood adult = 1;</code>
+   *
+   * @return The enum numeric value on the wire for adult.
    */
   int getAdultValue();
   /**
@@ -45,6 +47,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood adult = 1;</code>
+   *
+   * @return The adult.
    */
   com.google.cloud.vision.v1p2beta1.Likelihood getAdult();
 
@@ -58,6 +62,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood spoof = 2;</code>
+   *
+   * @return The enum numeric value on the wire for spoof.
    */
   int getSpoofValue();
   /**
@@ -70,6 +76,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood spoof = 2;</code>
+   *
+   * @return The spoof.
    */
   com.google.cloud.vision.v1p2beta1.Likelihood getSpoof();
 
@@ -81,6 +89,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood medical = 3;</code>
+   *
+   * @return The enum numeric value on the wire for medical.
    */
   int getMedicalValue();
   /**
@@ -91,6 +101,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood medical = 3;</code>
+   *
+   * @return The medical.
    */
   com.google.cloud.vision.v1p2beta1.Likelihood getMedical();
 
@@ -102,6 +114,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood violence = 4;</code>
+   *
+   * @return The enum numeric value on the wire for violence.
    */
   int getViolenceValue();
   /**
@@ -112,6 +126,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood violence = 4;</code>
+   *
+   * @return The violence.
    */
   com.google.cloud.vision.v1p2beta1.Likelihood getViolence();
 
@@ -126,6 +142,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood racy = 9;</code>
+   *
+   * @return The enum numeric value on the wire for racy.
    */
   int getRacyValue();
   /**
@@ -139,6 +157,8 @@ public interface SafeSearchAnnotationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.Likelihood racy = 9;</code>
+   *
+   * @return The racy.
    */
   com.google.cloud.vision.v1p2beta1.Likelihood getRacy();
 }

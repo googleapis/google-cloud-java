@@ -35,6 +35,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -65,6 +69,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * <code>
    * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The product.
    */
   java.lang.String getProduct();
   /**
@@ -80,6 +86,8 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * <code>
    * string product = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for product.
    */
   com.google.protobuf.ByteString getProductBytes();
 }

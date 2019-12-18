@@ -31,6 +31,8 @@ public interface ColorInfoOrBuilder
    * </pre>
    *
    * <code>.google.type.Color color = 1;</code>
+   *
+   * @return Whether the color field is set.
    */
   boolean hasColor();
   /**
@@ -41,6 +43,8 @@ public interface ColorInfoOrBuilder
    * </pre>
    *
    * <code>.google.type.Color color = 1;</code>
+   *
+   * @return The color.
    */
   com.google.type.Color getColor();
   /**
@@ -62,6 +66,8 @@ public interface ColorInfoOrBuilder
    * </pre>
    *
    * <code>float score = 2;</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -74,6 +80,8 @@ public interface ColorInfoOrBuilder
    * </pre>
    *
    * <code>float pixel_fraction = 3;</code>
+   *
+   * @return The pixelFraction.
    */
   float getPixelFraction();
 }

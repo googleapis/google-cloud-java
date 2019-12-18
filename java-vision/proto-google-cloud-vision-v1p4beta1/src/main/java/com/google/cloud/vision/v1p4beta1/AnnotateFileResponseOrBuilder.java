@@ -31,6 +31,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.InputConfig input_config = 1;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -41,6 +43,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.InputConfig input_config = 1;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.vision.v1p4beta1.InputConfig getInputConfig();
   /**
@@ -119,6 +123,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>int32 total_pages = 3;</code>
+   *
+   * @return The totalPages.
    */
   int getTotalPages();
 
@@ -131,6 +137,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 4;</code>
+   *
+   * @return Whether the error field is set.
    */
   boolean hasError();
   /**
@@ -142,6 +150,8 @@ public interface AnnotateFileResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 4;</code>
+   *
+   * @return The error.
    */
   com.google.rpc.Status getError();
   /**

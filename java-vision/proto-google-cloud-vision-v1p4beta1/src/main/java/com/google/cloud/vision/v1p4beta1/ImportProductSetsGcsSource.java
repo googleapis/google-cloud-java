@@ -43,6 +43,12 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImportProductSetsGcsSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -165,6 +170,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string csv_file_uri = 1;</code>
+   *
+   * @return The csvFileUri.
    */
   public java.lang.String getCsvFileUri() {
     java.lang.Object ref = csvFileUri_;
@@ -233,6 +240,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string csv_file_uri = 1;</code>
+   *
+   * @return The bytes for csvFileUri.
    */
   public com.google.protobuf.ByteString getCsvFileUriBytes() {
     java.lang.Object ref = csvFileUri_;
@@ -625,6 +634,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string csv_file_uri = 1;</code>
+     *
+     * @return The csvFileUri.
      */
     public java.lang.String getCsvFileUri() {
       java.lang.Object ref = csvFileUri_;
@@ -693,6 +704,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string csv_file_uri = 1;</code>
+     *
+     * @return The bytes for csvFileUri.
      */
     public com.google.protobuf.ByteString getCsvFileUriBytes() {
       java.lang.Object ref = csvFileUri_;
@@ -761,6 +774,9 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string csv_file_uri = 1;</code>
+     *
+     * @param value The csvFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCsvFileUri(java.lang.String value) {
       if (value == null) {
@@ -827,6 +843,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string csv_file_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCsvFileUri() {
 
@@ -890,6 +908,9 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string csv_file_uri = 1;</code>
+     *
+     * @param value The bytes for csvFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCsvFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

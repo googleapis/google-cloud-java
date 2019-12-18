@@ -31,6 +31,8 @@ public interface ParagraphOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   boolean hasProperty();
   /**
@@ -41,6 +43,8 @@ public interface ParagraphOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return The property.
    */
   com.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty getProperty();
   /**
@@ -76,6 +80,8 @@ public interface ParagraphOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
   /**
@@ -100,6 +106,8 @@ public interface ParagraphOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return The boundingBox.
    */
   com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingBox();
   /**
@@ -186,6 +194,8 @@ public interface ParagraphOrBuilder
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

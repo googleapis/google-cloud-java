@@ -79,6 +79,8 @@ public interface ImportProductSetsGcsSourceOrBuilder
    * </pre>
    *
    * <code>string csv_file_uri = 1;</code>
+   *
+   * @return The csvFileUri.
    */
   java.lang.String getCsvFileUri();
   /**
@@ -137,6 +139,8 @@ public interface ImportProductSetsGcsSourceOrBuilder
    * </pre>
    *
    * <code>string csv_file_uri = 1;</code>
+   *
+   * @return The bytes for csvFileUri.
    */
   com.google.protobuf.ByteString getCsvFileUriBytes();
 }

@@ -31,6 +31,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.OperationMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.OperationMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.vision.v1p4beta1.OperationMetadata.State getState();
 
@@ -52,6 +56,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -62,6 +68,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -83,6 +91,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -93,6 +103,8 @@ public interface OperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**

@@ -33,6 +33,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
   /**
@@ -45,6 +47,8 @@ public interface ProductSearchResultsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
+   *
+   * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**

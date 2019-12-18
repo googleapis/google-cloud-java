@@ -42,6 +42,12 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
   private NormalizedVertex() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NormalizedVertex();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -119,6 +124,8 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float x = 1;</code>
+   *
+   * @return The x.
    */
   public float getX() {
     return x_;
@@ -134,6 +141,8 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>float y = 2;</code>
+   *
+   * @return The y.
    */
   public float getY() {
     return y_;
@@ -484,6 +493,8 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float x = 1;</code>
+     *
+     * @return The x.
      */
     public float getX() {
       return x_;
@@ -496,6 +507,9 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float x = 1;</code>
+     *
+     * @param value The x to set.
+     * @return This builder for chaining.
      */
     public Builder setX(float value) {
 
@@ -511,6 +525,8 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float x = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearX() {
 
@@ -528,6 +544,8 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float y = 2;</code>
+     *
+     * @return The y.
      */
     public float getY() {
       return y_;
@@ -540,6 +558,9 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float y = 2;</code>
+     *
+     * @param value The y to set.
+     * @return This builder for chaining.
      */
     public Builder setY(float value) {
 
@@ -555,6 +576,8 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>float y = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearY() {
 

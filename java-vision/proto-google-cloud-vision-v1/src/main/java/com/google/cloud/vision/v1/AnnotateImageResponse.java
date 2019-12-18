@@ -47,6 +47,12 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotateImageResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -323,7 +329,6 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1.AnnotateImageResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FACE_ANNOTATIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.FaceAnnotation> faceAnnotations_;
   /**
@@ -744,6 +749,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.TextAnnotation full_text_annotation = 12;</code>
+   *
+   * @return Whether the fullTextAnnotation field is set.
    */
   public boolean hasFullTextAnnotation() {
     return fullTextAnnotation_ != null;
@@ -759,6 +766,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.TextAnnotation full_text_annotation = 12;</code>
+   *
+   * @return The fullTextAnnotation.
    */
   public com.google.cloud.vision.v1.TextAnnotation getFullTextAnnotation() {
     return fullTextAnnotation_ == null
@@ -791,6 +800,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.SafeSearchAnnotation safe_search_annotation = 6;</code>
+   *
+   * @return Whether the safeSearchAnnotation field is set.
    */
   public boolean hasSafeSearchAnnotation() {
     return safeSearchAnnotation_ != null;
@@ -803,6 +814,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.SafeSearchAnnotation safe_search_annotation = 6;</code>
+   *
+   * @return The safeSearchAnnotation.
    */
   public com.google.cloud.vision.v1.SafeSearchAnnotation getSafeSearchAnnotation() {
     return safeSearchAnnotation_ == null
@@ -833,6 +846,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageProperties image_properties_annotation = 8;</code>
+   *
+   * @return Whether the imagePropertiesAnnotation field is set.
    */
   public boolean hasImagePropertiesAnnotation() {
     return imagePropertiesAnnotation_ != null;
@@ -845,6 +860,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageProperties image_properties_annotation = 8;</code>
+   *
+   * @return The imagePropertiesAnnotation.
    */
   public com.google.cloud.vision.v1.ImageProperties getImagePropertiesAnnotation() {
     return imagePropertiesAnnotation_ == null
@@ -875,6 +892,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.CropHintsAnnotation crop_hints_annotation = 11;</code>
+   *
+   * @return Whether the cropHintsAnnotation field is set.
    */
   public boolean hasCropHintsAnnotation() {
     return cropHintsAnnotation_ != null;
@@ -887,6 +906,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.CropHintsAnnotation crop_hints_annotation = 11;</code>
+   *
+   * @return The cropHintsAnnotation.
    */
   public com.google.cloud.vision.v1.CropHintsAnnotation getCropHintsAnnotation() {
     return cropHintsAnnotation_ == null
@@ -916,6 +937,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code>
+   *
+   * @return Whether the webDetection field is set.
    */
   public boolean hasWebDetection() {
     return webDetection_ != null;
@@ -928,6 +951,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code>
+   *
+   * @return The webDetection.
    */
   public com.google.cloud.vision.v1.WebDetection getWebDetection() {
     return webDetection_ == null
@@ -957,6 +982,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   *
+   * @return Whether the productSearchResults field is set.
    */
   public boolean hasProductSearchResults() {
     return productSearchResults_ != null;
@@ -969,6 +996,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   *
+   * @return The productSearchResults.
    */
   public com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults() {
     return productSearchResults_ == null
@@ -1001,6 +1030,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
+   *
+   * @return Whether the error field is set.
    */
   public boolean hasError() {
     return error_ != null;
@@ -1015,6 +1046,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
+   *
+   * @return The error.
    */
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
@@ -1045,6 +1078,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -1058,6 +1093,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   *
+   * @return The context.
    */
   public com.google.cloud.vision.v1.ImageAnnotationContext getContext() {
     return context_ == null
@@ -1580,7 +1617,6 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.vision.v1.AnnotateImageResponse result =
           new com.google.cloud.vision.v1.AnnotateImageResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (faceAnnotationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
@@ -1676,7 +1712,6 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.context_ = contextBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -4173,6 +4208,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation full_text_annotation = 12;</code>
+     *
+     * @return Whether the fullTextAnnotation field is set.
      */
     public boolean hasFullTextAnnotation() {
       return fullTextAnnotationBuilder_ != null || fullTextAnnotation_ != null;
@@ -4188,6 +4225,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation full_text_annotation = 12;</code>
+     *
+     * @return The fullTextAnnotation.
      */
     public com.google.cloud.vision.v1.TextAnnotation getFullTextAnnotation() {
       if (fullTextAnnotationBuilder_ == null) {
@@ -4379,6 +4418,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.SafeSearchAnnotation safe_search_annotation = 6;</code>
+     *
+     * @return Whether the safeSearchAnnotation field is set.
      */
     public boolean hasSafeSearchAnnotation() {
       return safeSearchAnnotationBuilder_ != null || safeSearchAnnotation_ != null;
@@ -4391,6 +4432,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.SafeSearchAnnotation safe_search_annotation = 6;</code>
+     *
+     * @return The safeSearchAnnotation.
      */
     public com.google.cloud.vision.v1.SafeSearchAnnotation getSafeSearchAnnotation() {
       if (safeSearchAnnotationBuilder_ == null) {
@@ -4564,6 +4607,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageProperties image_properties_annotation = 8;</code>
+     *
+     * @return Whether the imagePropertiesAnnotation field is set.
      */
     public boolean hasImagePropertiesAnnotation() {
       return imagePropertiesAnnotationBuilder_ != null || imagePropertiesAnnotation_ != null;
@@ -4576,6 +4621,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageProperties image_properties_annotation = 8;</code>
+     *
+     * @return The imagePropertiesAnnotation.
      */
     public com.google.cloud.vision.v1.ImageProperties getImagePropertiesAnnotation() {
       if (imagePropertiesAnnotationBuilder_ == null) {
@@ -4749,6 +4796,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.CropHintsAnnotation crop_hints_annotation = 11;</code>
+     *
+     * @return Whether the cropHintsAnnotation field is set.
      */
     public boolean hasCropHintsAnnotation() {
       return cropHintsAnnotationBuilder_ != null || cropHintsAnnotation_ != null;
@@ -4761,6 +4810,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.CropHintsAnnotation crop_hints_annotation = 11;</code>
+     *
+     * @return The cropHintsAnnotation.
      */
     public com.google.cloud.vision.v1.CropHintsAnnotation getCropHintsAnnotation() {
       if (cropHintsAnnotationBuilder_ == null) {
@@ -4932,6 +4983,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code>
+     *
+     * @return Whether the webDetection field is set.
      */
     public boolean hasWebDetection() {
       return webDetectionBuilder_ != null || webDetection_ != null;
@@ -4944,6 +4997,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code>
+     *
+     * @return The webDetection.
      */
     public com.google.cloud.vision.v1.WebDetection getWebDetection() {
       if (webDetectionBuilder_ == null) {
@@ -5114,6 +5169,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     *
+     * @return Whether the productSearchResults field is set.
      */
     public boolean hasProductSearchResults() {
       return productSearchResultsBuilder_ != null || productSearchResults_ != null;
@@ -5126,6 +5183,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     *
+     * @return The productSearchResults.
      */
     public com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults() {
       if (productSearchResultsBuilder_ == null) {
@@ -5299,6 +5358,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
+     *
+     * @return Whether the error field is set.
      */
     public boolean hasError() {
       return errorBuilder_ != null || error_ != null;
@@ -5313,6 +5374,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
+     *
+     * @return The error.
      */
     public com.google.rpc.Status getError() {
       if (errorBuilder_ == null) {
@@ -5487,6 +5550,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -5500,6 +5565,8 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     *
+     * @return The context.
      */
     public com.google.cloud.vision.v1.ImageAnnotationContext getContext() {
       if (contextBuilder_ == null) {

@@ -49,6 +49,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -141,6 +147,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The languageCode.
      */
     java.lang.String getLanguageCode();
     /**
@@ -153,6 +161,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The bytes for languageCode.
      */
     com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -164,6 +174,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return The confidence.
      */
     float getConfidence();
   }
@@ -191,6 +203,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DetectedLanguage();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -203,7 +221,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -272,6 +289,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -294,6 +313,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -317,6 +338,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 2;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -674,6 +697,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string language_code = 1;</code>
+       *
+       * @return The languageCode.
        */
       public java.lang.String getLanguageCode() {
         java.lang.Object ref = languageCode_;
@@ -696,6 +721,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string language_code = 1;</code>
+       *
+       * @return The bytes for languageCode.
        */
       public com.google.protobuf.ByteString getLanguageCodeBytes() {
         java.lang.Object ref = languageCode_;
@@ -718,6 +745,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string language_code = 1;</code>
+       *
+       * @param value The languageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setLanguageCode(java.lang.String value) {
         if (value == null) {
@@ -738,6 +768,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string language_code = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLanguageCode() {
 
@@ -755,6 +787,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string language_code = 1;</code>
+       *
+       * @param value The bytes for languageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -776,6 +811,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence = 2;</code>
+       *
+       * @return The confidence.
        */
       public float getConfidence() {
         return confidence_;
@@ -788,6 +825,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence = 2;</code>
+       *
+       * @param value The confidence to set.
+       * @return This builder for chaining.
        */
       public Builder setConfidence(float value) {
 
@@ -803,6 +843,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>float confidence = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearConfidence() {
 
@@ -877,6 +919,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
@@ -887,6 +931,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+     *
+     * @return The type.
      */
     com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType();
 
@@ -898,6 +944,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_prefix = 2;</code>
+     *
+     * @return The isPrefix.
      */
     boolean getIsPrefix();
   }
@@ -925,6 +973,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DetectedBreak();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -937,7 +991,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1138,12 +1191,20 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static BreakType valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static BreakType forNumber(int value) {
         switch (value) {
           case 0:
@@ -1219,6 +1280,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1231,6 +1294,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType() {
       @SuppressWarnings("deprecation")
@@ -1251,6 +1316,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_prefix = 2;</code>
+     *
+     * @return The isPrefix.
      */
     public boolean getIsPrefix() {
       return isPrefix_;
@@ -1606,6 +1673,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+       *
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
@@ -1618,6 +1687,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -1632,6 +1704,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+       *
+       * @return The type.
        */
       public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType() {
         @SuppressWarnings("deprecation")
@@ -1649,6 +1723,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(
           com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType value) {
@@ -1668,6 +1745,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearType() {
 
@@ -1685,6 +1764,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool is_prefix = 2;</code>
+       *
+       * @return The isPrefix.
        */
       public boolean getIsPrefix() {
         return isPrefix_;
@@ -1697,6 +1778,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool is_prefix = 2;</code>
+       *
+       * @param value The isPrefix to set.
+       * @return This builder for chaining.
        */
       public Builder setIsPrefix(boolean value) {
 
@@ -1712,6 +1796,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool is_prefix = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIsPrefix() {
 
@@ -1849,6 +1935,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
+     *
+     * @return Whether the detectedBreak field is set.
      */
     boolean hasDetectedBreak();
     /**
@@ -1859,6 +1947,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
+     *
+     * @return The detectedBreak.
      */
     com.google.cloud.vision.v1.TextAnnotation.DetectedBreak getDetectedBreak();
     /**
@@ -1893,6 +1983,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     private TextProperty() {
       detectedLanguages_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextProperty();
     }
 
     @java.lang.Override
@@ -1987,7 +2083,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.vision.v1.TextAnnotation.TextProperty.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DETECTED_LANGUAGES_FIELD_NUMBER = 1;
     private java.util.List<com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage>
         detectedLanguages_;
@@ -2077,6 +2172,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
+     *
+     * @return Whether the detectedBreak field is set.
      */
     public boolean hasDetectedBreak() {
       return detectedBreak_ != null;
@@ -2089,6 +2186,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
+     *
+     * @return The detectedBreak.
      */
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak getDetectedBreak() {
       return detectedBreak_ == null
@@ -2375,7 +2474,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1.TextAnnotation.TextProperty result =
             new com.google.cloud.vision.v1.TextAnnotation.TextProperty(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (detectedLanguagesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
@@ -2390,7 +2488,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.detectedBreak_ = detectedBreakBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2926,6 +3023,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
+       *
+       * @return Whether the detectedBreak field is set.
        */
       public boolean hasDetectedBreak() {
         return detectedBreakBuilder_ != null || detectedBreak_ != null;
@@ -2938,6 +3037,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
+       *
+       * @return The detectedBreak.
        */
       public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak getDetectedBreak() {
         if (detectedBreakBuilder_ == null) {
@@ -3150,7 +3251,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int PAGES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.Page> pages_;
   /**
@@ -3225,6 +3325,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 2;</code>
+   *
+   * @return The text.
    */
   public java.lang.String getText() {
     java.lang.Object ref = text_;
@@ -3245,6 +3347,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 2;</code>
+   *
+   * @return The bytes for text.
    */
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
@@ -3517,7 +3621,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1.TextAnnotation result =
           new com.google.cloud.vision.v1.TextAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (pagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pages_ = java.util.Collections.unmodifiableList(pages_);
@@ -3528,7 +3631,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         result.pages_ = pagesBuilder_.build();
       }
       result.text_ = text_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3995,6 +4097,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 2;</code>
+     *
+     * @return The text.
      */
     public java.lang.String getText() {
       java.lang.Object ref = text_;
@@ -4015,6 +4119,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 2;</code>
+     *
+     * @return The bytes for text.
      */
     public com.google.protobuf.ByteString getTextBytes() {
       java.lang.Object ref = text_;
@@ -4035,6 +4141,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 2;</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
      */
     public Builder setText(java.lang.String value) {
       if (value == null) {
@@ -4053,6 +4162,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearText() {
 
@@ -4068,6 +4179,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 2;</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
      */
     public Builder setTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

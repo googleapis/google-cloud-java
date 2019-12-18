@@ -40,6 +40,12 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
   private LocationInfo() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LocationInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +126,8 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 1;</code>
+   *
+   * @return Whether the latLng field is set.
    */
   public boolean hasLatLng() {
     return latLng_ != null;
@@ -133,6 +140,8 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 1;</code>
+   *
+   * @return The latLng.
    */
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
@@ -489,6 +498,8 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 1;</code>
+     *
+     * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
       return latLngBuilder_ != null || latLng_ != null;
@@ -501,6 +512,8 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 1;</code>
+     *
+     * @return The latLng.
      */
     public com.google.type.LatLng getLatLng() {
       if (latLngBuilder_ == null) {

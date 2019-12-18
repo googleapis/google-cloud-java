@@ -42,6 +42,12 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 languageHints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               languageHints_.add(s);
               break;
@@ -139,7 +145,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -162,7 +168,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p2beta1.ImageContext.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LAT_LONG_RECT_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p2beta1.LatLongRect latLongRect_;
   /**
@@ -173,6 +178,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.LatLongRect lat_long_rect = 1;</code>
+   *
+   * @return Whether the latLongRect field is set.
    */
   public boolean hasLatLongRect() {
     return latLongRect_ != null;
@@ -185,6 +192,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.LatLongRect lat_long_rect = 1;</code>
+   *
+   * @return The latLongRect.
    */
   public com.google.cloud.vision.v1p2beta1.LatLongRect getLatLongRect() {
     return latLongRect_ == null
@@ -221,6 +230,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @return A list containing the languageHints.
    */
   public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
     return languageHints_;
@@ -240,6 +251,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @return The count of languageHints.
    */
   public int getLanguageHintsCount() {
     return languageHints_.size();
@@ -259,6 +272,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageHints at the given index.
    */
   public java.lang.String getLanguageHints(int index) {
     return languageHints_.get(index);
@@ -278,6 +294,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_hints = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageHints at the given index.
    */
   public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
     return languageHints_.getByteString(index);
@@ -293,6 +312,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.CropHintsParams crop_hints_params = 4;</code>
+   *
+   * @return Whether the cropHintsParams field is set.
    */
   public boolean hasCropHintsParams() {
     return cropHintsParams_ != null;
@@ -305,6 +326,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.CropHintsParams crop_hints_params = 4;</code>
+   *
+   * @return The cropHintsParams.
    */
   public com.google.cloud.vision.v1p2beta1.CropHintsParams getCropHintsParams() {
     return cropHintsParams_ == null
@@ -334,6 +357,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.WebDetectionParams web_detection_params = 6;</code>
+   *
+   * @return Whether the webDetectionParams field is set.
    */
   public boolean hasWebDetectionParams() {
     return webDetectionParams_ != null;
@@ -346,6 +371,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.WebDetectionParams web_detection_params = 6;</code>
+   *
+   * @return The webDetectionParams.
    */
   public com.google.cloud.vision.v1p2beta1.WebDetectionParams getWebDetectionParams() {
     return webDetectionParams_ == null
@@ -626,7 +653,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         latLongRectBuilder_ = null;
       }
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (cropHintsParamsBuilder_ == null) {
         cropHintsParams_ = null;
       } else {
@@ -667,15 +694,14 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1p2beta1.ImageContext result =
           new com.google.cloud.vision.v1p2beta1.ImageContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (latLongRectBuilder_ == null) {
         result.latLongRect_ = latLongRect_;
       } else {
         result.latLongRect_ = latLongRectBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
       if (cropHintsParamsBuilder_ == null) {
@@ -688,7 +714,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.webDetectionParams_ = webDetectionParamsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -744,7 +769,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageHints_.isEmpty()) {
         if (languageHints_.isEmpty()) {
           languageHints_ = other.languageHints_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLanguageHintsIsMutable();
           languageHints_.addAll(other.languageHints_);
@@ -802,6 +827,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.LatLongRect lat_long_rect = 1;</code>
+     *
+     * @return Whether the latLongRect field is set.
      */
     public boolean hasLatLongRect() {
       return latLongRectBuilder_ != null || latLongRect_ != null;
@@ -814,6 +841,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.LatLongRect lat_long_rect = 1;</code>
+     *
+     * @return The latLongRect.
      */
     public com.google.cloud.vision.v1p2beta1.LatLongRect getLatLongRect() {
       if (latLongRectBuilder_ == null) {
@@ -974,9 +1003,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageHintsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -994,6 +1023,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @return A list containing the languageHints.
      */
     public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
       return languageHints_.getUnmodifiableView();
@@ -1013,6 +1044,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @return The count of languageHints.
      */
     public int getLanguageHintsCount() {
       return languageHints_.size();
@@ -1032,6 +1065,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageHints at the given index.
      */
     public java.lang.String getLanguageHints(int index) {
       return languageHints_.get(index);
@@ -1051,6 +1087,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageHints at the given index.
      */
     public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
       return languageHints_.getByteString(index);
@@ -1070,6 +1109,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageHints to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageHints(int index, java.lang.String value) {
       if (value == null) {
@@ -1095,6 +1138,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @param value The languageHints to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageHints(java.lang.String value) {
       if (value == null) {
@@ -1120,6 +1166,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @param values The languageHints to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageHintsIsMutable();
@@ -1142,10 +1191,12 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageHints() {
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1164,6 +1215,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_hints = 2;</code>
+     *
+     * @param value The bytes of the languageHints to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageHintsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1190,6 +1244,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.CropHintsParams crop_hints_params = 4;</code>
+     *
+     * @return Whether the cropHintsParams field is set.
      */
     public boolean hasCropHintsParams() {
       return cropHintsParamsBuilder_ != null || cropHintsParams_ != null;
@@ -1202,6 +1258,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.CropHintsParams crop_hints_params = 4;</code>
+     *
+     * @return The cropHintsParams.
      */
     public com.google.cloud.vision.v1p2beta1.CropHintsParams getCropHintsParams() {
       if (cropHintsParamsBuilder_ == null) {
@@ -1373,6 +1431,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.WebDetectionParams web_detection_params = 6;</code>
+     *
+     * @return Whether the webDetectionParams field is set.
      */
     public boolean hasWebDetectionParams() {
       return webDetectionParamsBuilder_ != null || webDetectionParams_ != null;
@@ -1385,6 +1445,8 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.WebDetectionParams web_detection_params = 6;</code>
+     *
+     * @return The webDetectionParams.
      */
     public com.google.cloud.vision.v1p2beta1.WebDetectionParams getWebDetectionParams() {
       if (webDetectionParamsBuilder_ == null) {

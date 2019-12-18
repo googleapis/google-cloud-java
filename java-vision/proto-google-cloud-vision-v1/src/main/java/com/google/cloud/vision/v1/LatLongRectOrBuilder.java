@@ -31,6 +31,8 @@ public interface LatLongRectOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng min_lat_lng = 1;</code>
+   *
+   * @return Whether the minLatLng field is set.
    */
   boolean hasMinLatLng();
   /**
@@ -41,6 +43,8 @@ public interface LatLongRectOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng min_lat_lng = 1;</code>
+   *
+   * @return The minLatLng.
    */
   com.google.type.LatLng getMinLatLng();
   /**
@@ -62,6 +66,8 @@ public interface LatLongRectOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng max_lat_lng = 2;</code>
+   *
+   * @return Whether the maxLatLng field is set.
    */
   boolean hasMaxLatLng();
   /**
@@ -72,6 +78,8 @@ public interface LatLongRectOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng max_lat_lng = 2;</code>
+   *
+   * @return The maxLatLng.
    */
   com.google.type.LatLng getMaxLatLng();
   /**

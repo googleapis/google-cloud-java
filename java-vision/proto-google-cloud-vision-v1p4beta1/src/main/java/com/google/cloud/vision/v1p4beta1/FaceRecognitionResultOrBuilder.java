@@ -32,6 +32,8 @@ public interface FaceRecognitionResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.Celebrity celebrity = 1;</code>
+   *
+   * @return Whether the celebrity field is set.
    */
   boolean hasCelebrity();
   /**
@@ -43,6 +45,8 @@ public interface FaceRecognitionResultOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.Celebrity celebrity = 1;</code>
+   *
+   * @return The celebrity.
    */
   com.google.cloud.vision.v1p4beta1.Celebrity getCelebrity();
   /**
@@ -65,6 +69,8 @@ public interface FaceRecognitionResultOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

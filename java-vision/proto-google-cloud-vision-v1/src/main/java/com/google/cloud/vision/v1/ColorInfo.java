@@ -41,6 +41,12 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   private ColorInfo() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ColorInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Color color = 1;</code>
+   *
+   * @return Whether the color field is set.
    */
   public boolean hasColor() {
     return color_ != null;
@@ -144,6 +151,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Color color = 1;</code>
+   *
+   * @return The color.
    */
   public com.google.type.Color getColor() {
     return color_ == null ? com.google.type.Color.getDefaultInstance() : color_;
@@ -171,6 +180,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float score = 2;</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -187,6 +198,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float pixel_fraction = 3;</code>
+   *
+   * @return The pixelFraction.
    */
   public float getPixelFraction() {
     return pixelFraction_;
@@ -562,6 +575,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Color color = 1;</code>
+     *
+     * @return Whether the color field is set.
      */
     public boolean hasColor() {
       return colorBuilder_ != null || color_ != null;
@@ -574,6 +589,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Color color = 1;</code>
+     *
+     * @return The color.
      */
     public com.google.type.Color getColor() {
       if (colorBuilder_ == null) {
@@ -728,6 +745,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -740,6 +759,9 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -755,6 +777,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -773,6 +797,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float pixel_fraction = 3;</code>
+     *
+     * @return The pixelFraction.
      */
     public float getPixelFraction() {
       return pixelFraction_;
@@ -786,6 +812,9 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float pixel_fraction = 3;</code>
+     *
+     * @param value The pixelFraction to set.
+     * @return This builder for chaining.
      */
     public Builder setPixelFraction(float value) {
 
@@ -802,6 +831,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float pixel_fraction = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPixelFraction() {
 

@@ -43,6 +43,12 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Block();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -101,9 +107,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 paragraphs_ = new java.util.ArrayList<com.google.cloud.vision.v1.Paragraph>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               paragraphs_.add(
                   input.readMessage(
@@ -136,7 +142,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         paragraphs_ = java.util.Collections.unmodifiableList(paragraphs_);
       }
       this.unknownFields = unknownFields.build();
@@ -300,12 +306,20 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static BlockType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static BlockType forNumber(int value) {
       switch (value) {
         case 0:
@@ -369,7 +383,6 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.vision.v1.Block.BlockType)
   }
 
-  private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.TextAnnotation.TextProperty property_;
   /**
@@ -380,6 +393,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return Whether the property field is set.
    */
   public boolean hasProperty() {
     return property_ != null;
@@ -392,6 +407,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+   *
+   * @return The property.
    */
   public com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty() {
     return property_ == null
@@ -435,6 +452,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return Whether the boundingBox field is set.
    */
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
@@ -461,6 +480,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+   *
+   * @return The boundingBox.
    */
   public com.google.cloud.vision.v1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
@@ -568,6 +589,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for blockType.
    */
   public int getBlockTypeValue() {
     return blockType_;
@@ -580,6 +603,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+   *
+   * @return The blockType.
    */
   public com.google.cloud.vision.v1.Block.BlockType getBlockType() {
     @SuppressWarnings("deprecation")
@@ -598,6 +623,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float confidence = 5;</code>
+   *
+   * @return The confidence.
    */
   public float getConfidence() {
     return confidence_;
@@ -870,7 +897,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       if (paragraphsBuilder_ == null) {
         paragraphs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         paragraphsBuilder_.clear();
       }
@@ -905,7 +932,6 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Block buildPartial() {
       com.google.cloud.vision.v1.Block result = new com.google.cloud.vision.v1.Block(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (propertyBuilder_ == null) {
         result.property_ = property_;
       } else {
@@ -917,9 +943,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         result.boundingBox_ = boundingBoxBuilder_.build();
       }
       if (paragraphsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           paragraphs_ = java.util.Collections.unmodifiableList(paragraphs_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.paragraphs_ = paragraphs_;
       } else {
@@ -927,7 +953,6 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
       result.blockType_ = blockType_;
       result.confidence_ = confidence_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -987,7 +1012,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         if (!other.paragraphs_.isEmpty()) {
           if (paragraphs_.isEmpty()) {
             paragraphs_ = other.paragraphs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureParagraphsIsMutable();
             paragraphs_.addAll(other.paragraphs_);
@@ -1000,7 +1025,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             paragraphsBuilder_.dispose();
             paragraphsBuilder_ = null;
             paragraphs_ = other.paragraphs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             paragraphsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParagraphsFieldBuilder()
@@ -1061,6 +1086,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+     *
+     * @return Whether the property field is set.
      */
     public boolean hasProperty() {
       return propertyBuilder_ != null || property_ != null;
@@ -1073,6 +1100,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
+     *
+     * @return The property.
      */
     public com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty() {
       if (propertyBuilder_ == null) {
@@ -1257,6 +1286,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+     *
+     * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
       return boundingBoxBuilder_ != null || boundingBox_ != null;
@@ -1283,6 +1314,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
+     *
+     * @return The boundingBox.
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingBox() {
       if (boundingBoxBuilder_ == null) {
@@ -1540,9 +1573,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureParagraphsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         paragraphs_ = new java.util.ArrayList<com.google.cloud.vision.v1.Paragraph>(paragraphs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1757,7 +1790,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParagraphs() {
       if (paragraphsBuilder_ == null) {
         paragraphs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         paragraphsBuilder_.clear();
@@ -1878,7 +1911,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1.Paragraph,
                 com.google.cloud.vision.v1.Paragraph.Builder,
                 com.google.cloud.vision.v1.ParagraphOrBuilder>(
-                paragraphs_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                paragraphs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         paragraphs_ = null;
       }
       return paragraphsBuilder_;
@@ -1893,6 +1926,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for blockType.
      */
     public int getBlockTypeValue() {
       return blockType_;
@@ -1905,6 +1940,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for blockType to set.
+     * @return This builder for chaining.
      */
     public Builder setBlockTypeValue(int value) {
       blockType_ = value;
@@ -1919,6 +1957,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+     *
+     * @return The blockType.
      */
     public com.google.cloud.vision.v1.Block.BlockType getBlockType() {
       @SuppressWarnings("deprecation")
@@ -1934,6 +1974,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+     *
+     * @param value The blockType to set.
+     * @return This builder for chaining.
      */
     public Builder setBlockType(com.google.cloud.vision.v1.Block.BlockType value) {
       if (value == null) {
@@ -1952,6 +1995,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.vision.v1.Block.BlockType block_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBlockType() {
 
@@ -1969,6 +2014,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 5;</code>
+     *
+     * @return The confidence.
      */
     public float getConfidence() {
       return confidence_;
@@ -1981,6 +2028,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 5;</code>
+     *
+     * @param value The confidence to set.
+     * @return This builder for chaining.
      */
     public Builder setConfidence(float value) {
 
@@ -1996,6 +2046,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float confidence = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConfidence() {
 

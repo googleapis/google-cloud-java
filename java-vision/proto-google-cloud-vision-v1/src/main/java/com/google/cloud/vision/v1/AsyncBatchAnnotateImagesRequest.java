@@ -44,6 +44,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsyncBatchAnnotateImagesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -139,7 +145,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
             com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int REQUESTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> requests_;
   /**
@@ -226,6 +231,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * <code>
    * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -240,6 +247,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * <code>
    * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.vision.v1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -278,6 +287,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -305,6 +316,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -592,7 +605,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
       com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest result =
           new com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -608,7 +620,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
         result.outputConfig_ = outputConfigBuilder_.build();
       }
       result.parent_ = parent_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1129,6 +1140,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * <code>
      * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -1143,6 +1156,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * <code>
      * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.vision.v1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1329,6 +1344,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1356,6 +1373,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1383,6 +1402,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1408,6 +1430,8 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1430,6 +1454,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>string parent = 4;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

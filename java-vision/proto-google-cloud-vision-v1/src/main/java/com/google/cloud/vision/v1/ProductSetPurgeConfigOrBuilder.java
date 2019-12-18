@@ -33,6 +33,8 @@ public interface ProductSetPurgeConfigOrBuilder
    * </pre>
    *
    * <code>string product_set_id = 1;</code>
+   *
+   * @return The productSetId.
    */
   java.lang.String getProductSetId();
   /**
@@ -45,6 +47,8 @@ public interface ProductSetPurgeConfigOrBuilder
    * </pre>
    *
    * <code>string product_set_id = 1;</code>
+   *
+   * @return The bytes for productSetId.
    */
   com.google.protobuf.ByteString getProductSetIdBytes();
 }

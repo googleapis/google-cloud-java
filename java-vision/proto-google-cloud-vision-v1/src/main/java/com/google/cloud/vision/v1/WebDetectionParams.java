@@ -40,6 +40,12 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
   private WebDetectionParams() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WebDetectionParams();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool include_geo_results = 2;</code>
+   *
+   * @return The includeGeoResults.
    */
   public boolean getIncludeGeoResults() {
     return includeGeoResults_;
@@ -441,6 +448,8 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_geo_results = 2;</code>
+     *
+     * @return The includeGeoResults.
      */
     public boolean getIncludeGeoResults() {
       return includeGeoResults_;
@@ -453,6 +462,9 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_geo_results = 2;</code>
+     *
+     * @param value The includeGeoResults to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeGeoResults(boolean value) {
 
@@ -468,6 +480,8 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_geo_results = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludeGeoResults() {
 

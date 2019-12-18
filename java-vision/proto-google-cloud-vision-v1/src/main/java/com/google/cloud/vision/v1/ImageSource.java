@@ -43,6 +43,12 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,6 +133,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string gcs_image_uri = 1;</code>
+   *
+   * @return The gcsImageUri.
    */
   public java.lang.String getGcsImageUri() {
     java.lang.Object ref = gcsImageUri_;
@@ -152,6 +159,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string gcs_image_uri = 1;</code>
+   *
+   * @return The bytes for gcsImageUri.
    */
   public com.google.protobuf.ByteString getGcsImageUriBytes() {
     java.lang.Object ref = gcsImageUri_;
@@ -188,6 +197,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_uri = 2;</code>
+   *
+   * @return The imageUri.
    */
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
@@ -221,6 +232,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_uri = 2;</code>
+   *
+   * @return The bytes for imageUri.
    */
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
@@ -578,6 +591,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_image_uri = 1;</code>
+     *
+     * @return The gcsImageUri.
      */
     public java.lang.String getGcsImageUri() {
       java.lang.Object ref = gcsImageUri_;
@@ -602,6 +617,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_image_uri = 1;</code>
+     *
+     * @return The bytes for gcsImageUri.
      */
     public com.google.protobuf.ByteString getGcsImageUriBytes() {
       java.lang.Object ref = gcsImageUri_;
@@ -626,6 +643,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_image_uri = 1;</code>
+     *
+     * @param value The gcsImageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setGcsImageUri(java.lang.String value) {
       if (value == null) {
@@ -648,6 +668,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_image_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGcsImageUri() {
 
@@ -667,6 +689,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_image_uri = 1;</code>
+     *
+     * @param value The bytes for gcsImageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setGcsImageUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -701,6 +726,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return The imageUri.
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -734,6 +761,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return The bytes for imageUri.
      */
     public com.google.protobuf.ByteString getImageUriBytes() {
       java.lang.Object ref = imageUri_;
@@ -767,6 +796,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @param value The imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUri(java.lang.String value) {
       if (value == null) {
@@ -798,6 +830,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageUri() {
 
@@ -826,6 +860,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_uri = 2;</code>
+     *
+     * @param value The bytes for imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

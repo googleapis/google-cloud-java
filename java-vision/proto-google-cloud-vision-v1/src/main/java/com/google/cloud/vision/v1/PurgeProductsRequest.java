@@ -42,6 +42,12 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PurgeProductsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,7 +142,10 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   private int targetCase_ = 0;
   private java.lang.Object target_;
 
-  public enum TargetCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TargetCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PRODUCT_SET_PURGE_CONFIG(2),
     DELETE_ORPHAN_PRODUCTS(3),
     TARGET_NOT_SET(0);
@@ -146,7 +154,11 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     private TargetCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TargetCase valueOf(int value) {
       return forNumber(value);
@@ -183,6 +195,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
+   *
+   * @return Whether the productSetPurgeConfig field is set.
    */
   public boolean hasProductSetPurgeConfig() {
     return targetCase_ == 2;
@@ -195,6 +209,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
+   *
+   * @return The productSetPurgeConfig.
    */
   public com.google.cloud.vision.v1.ProductSetPurgeConfig getProductSetPurgeConfig() {
     if (targetCase_ == 2) {
@@ -229,6 +245,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bool delete_orphan_products = 3;</code>
+   *
+   * @return The deleteOrphanProducts.
    */
   public boolean getDeleteOrphanProducts() {
     if (targetCase_ == 3) {
@@ -250,6 +268,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -273,6 +293,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -297,6 +319,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bool force = 4;</code>
+   *
+   * @return The force.
    */
   public boolean getForce() {
     return force_;
@@ -729,6 +753,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
+     *
+     * @return Whether the productSetPurgeConfig field is set.
      */
     public boolean hasProductSetPurgeConfig() {
       return targetCase_ == 2;
@@ -741,6 +767,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
+     *
+     * @return The productSetPurgeConfig.
      */
     public com.google.cloud.vision.v1.ProductSetPurgeConfig getProductSetPurgeConfig() {
       if (productSetPurgeConfigBuilder_ == null) {
@@ -931,6 +959,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool delete_orphan_products = 3;</code>
+     *
+     * @return The deleteOrphanProducts.
      */
     public boolean getDeleteOrphanProducts() {
       if (targetCase_ == 3) {
@@ -947,6 +977,9 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool delete_orphan_products = 3;</code>
+     *
+     * @param value The deleteOrphanProducts to set.
+     * @return This builder for chaining.
      */
     public Builder setDeleteOrphanProducts(boolean value) {
       targetCase_ = 3;
@@ -963,6 +996,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool delete_orphan_products = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeleteOrphanProducts() {
       if (targetCase_ == 3) {
@@ -985,6 +1020,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1008,6 +1045,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1031,6 +1070,9 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1052,6 +1094,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1070,6 +1114,9 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1092,6 +1139,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool force = 4;</code>
+     *
+     * @return The force.
      */
     public boolean getForce() {
       return force_;
@@ -1105,6 +1154,9 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool force = 4;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
      */
     public Builder setForce(boolean value) {
 
@@ -1121,6 +1173,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool force = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearForce() {
 

@@ -31,6 +31,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BatchOperationMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BatchOperationMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.vision.v1.BatchOperationMetadata.State getState();
 
@@ -52,6 +56,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
   /**
@@ -62,6 +68,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+   *
+   * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**
@@ -84,6 +92,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -95,6 +105,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
