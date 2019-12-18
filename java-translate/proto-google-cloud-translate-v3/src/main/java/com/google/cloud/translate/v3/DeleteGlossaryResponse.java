@@ -44,6 +44,12 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeleteGlossaryResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -148,6 +153,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -168,6 +175,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -191,6 +200,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   public boolean hasSubmitTime() {
     return submitTime_ != null;
@@ -203,6 +214,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+   *
+   * @return The submitTime.
    */
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
@@ -232,6 +245,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -246,6 +261,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -650,6 +667,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -670,6 +689,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -690,6 +711,9 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -708,6 +732,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -723,6 +749,9 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -749,6 +778,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     *
+     * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
       return submitTimeBuilder_ != null || submitTime_ != null;
@@ -761,6 +792,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
+     *
+     * @return The submitTime.
      */
     public com.google.protobuf.Timestamp getSubmitTime() {
       if (submitTimeBuilder_ == null) {
@@ -930,6 +963,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -944,6 +979,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {

@@ -40,6 +40,8 @@ public interface DetectLanguageRequestOrBuilder
    * <code>
    * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -59,6 +61,8 @@ public interface DetectLanguageRequestOrBuilder
    * <code>
    * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -75,6 +79,8 @@ public interface DetectLanguageRequestOrBuilder
    * </pre>
    *
    * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -90,6 +96,8 @@ public interface DetectLanguageRequestOrBuilder
    * </pre>
    *
    * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -101,6 +109,8 @@ public interface DetectLanguageRequestOrBuilder
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The content.
    */
   java.lang.String getContent();
   /**
@@ -111,6 +121,8 @@ public interface DetectLanguageRequestOrBuilder
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The bytes for content.
    */
   com.google.protobuf.ByteString getContentBytes();
 
@@ -123,6 +135,8 @@ public interface DetectLanguageRequestOrBuilder
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -134,6 +148,8 @@ public interface DetectLanguageRequestOrBuilder
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 

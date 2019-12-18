@@ -31,6 +31,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>int64 total_characters = 1;</code>
+   *
+   * @return The totalCharacters.
    */
   long getTotalCharacters();
 
@@ -42,6 +44,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>int64 translated_characters = 2;</code>
+   *
+   * @return The translatedCharacters.
    */
   long getTranslatedCharacters();
 
@@ -53,6 +57,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>int64 failed_characters = 3;</code>
+   *
+   * @return The failedCharacters.
    */
   long getFailedCharacters();
 
@@ -64,6 +70,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
   /**
@@ -74,6 +82,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   *
+   * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**
@@ -97,6 +107,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -109,6 +121,8 @@ public interface BatchTranslateResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**

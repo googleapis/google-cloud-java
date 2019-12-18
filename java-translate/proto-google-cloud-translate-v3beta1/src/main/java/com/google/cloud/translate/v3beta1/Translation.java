@@ -44,6 +44,12 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Translation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -150,6 +155,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string translated_text = 1;</code>
+   *
+   * @return The translatedText.
    */
   public java.lang.String getTranslatedText() {
     java.lang.Object ref = translatedText_;
@@ -170,6 +177,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string translated_text = 1;</code>
+   *
+   * @return The bytes for translatedText.
    */
   public com.google.protobuf.ByteString getTranslatedTextBytes() {
     java.lang.Object ref = translatedText_;
@@ -194,6 +203,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -215,6 +226,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -241,6 +254,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string detected_language_code = 4;</code>
+   *
+   * @return The detectedLanguageCode.
    */
   public java.lang.String getDetectedLanguageCode() {
     java.lang.Object ref = detectedLanguageCode_;
@@ -264,6 +279,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string detected_language_code = 4;</code>
+   *
+   * @return The bytes for detectedLanguageCode.
    */
   public com.google.protobuf.ByteString getDetectedLanguageCodeBytes() {
     java.lang.Object ref = detectedLanguageCode_;
@@ -287,6 +304,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 3;</code>
+   *
+   * @return Whether the glossaryConfig field is set.
    */
   public boolean hasGlossaryConfig() {
     return glossaryConfig_ != null;
@@ -299,6 +318,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 3;</code>
+   *
+   * @return The glossaryConfig.
    */
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig() {
     return glossaryConfig_ == null
@@ -704,6 +725,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string translated_text = 1;</code>
+     *
+     * @return The translatedText.
      */
     public java.lang.String getTranslatedText() {
       java.lang.Object ref = translatedText_;
@@ -724,6 +747,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string translated_text = 1;</code>
+     *
+     * @return The bytes for translatedText.
      */
     public com.google.protobuf.ByteString getTranslatedTextBytes() {
       java.lang.Object ref = translatedText_;
@@ -744,6 +769,9 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string translated_text = 1;</code>
+     *
+     * @param value The translatedText to set.
+     * @return This builder for chaining.
      */
     public Builder setTranslatedText(java.lang.String value) {
       if (value == null) {
@@ -762,6 +790,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string translated_text = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTranslatedText() {
 
@@ -777,6 +807,9 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string translated_text = 1;</code>
+     *
+     * @param value The bytes for translatedText to set.
+     * @return This builder for chaining.
      */
     public Builder setTranslatedTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -799,6 +832,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -820,6 +855,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -841,6 +878,9 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -860,6 +900,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -876,6 +918,9 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -900,6 +945,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detected_language_code = 4;</code>
+     *
+     * @return The detectedLanguageCode.
      */
     public java.lang.String getDetectedLanguageCode() {
       java.lang.Object ref = detectedLanguageCode_;
@@ -923,6 +970,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detected_language_code = 4;</code>
+     *
+     * @return The bytes for detectedLanguageCode.
      */
     public com.google.protobuf.ByteString getDetectedLanguageCodeBytes() {
       java.lang.Object ref = detectedLanguageCode_;
@@ -946,6 +995,9 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detected_language_code = 4;</code>
+     *
+     * @param value The detectedLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setDetectedLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -967,6 +1019,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detected_language_code = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDetectedLanguageCode() {
 
@@ -985,6 +1039,9 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detected_language_code = 4;</code>
+     *
+     * @param value The bytes for detectedLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setDetectedLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1012,6 +1069,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 3;
      * </code>
+     *
+     * @return Whether the glossaryConfig field is set.
      */
     public boolean hasGlossaryConfig() {
       return glossaryConfigBuilder_ != null || glossaryConfig_ != null;
@@ -1025,6 +1084,8 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 3;
      * </code>
+     *
+     * @return The glossaryConfig.
      */
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig() {
       if (glossaryConfigBuilder_ == null) {

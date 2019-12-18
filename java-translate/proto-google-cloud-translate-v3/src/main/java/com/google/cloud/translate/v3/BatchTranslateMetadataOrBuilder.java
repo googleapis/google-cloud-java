@@ -31,6 +31,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.BatchTranslateMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.BatchTranslateMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.translate.v3.BatchTranslateMetadata.State getState();
 
@@ -52,6 +56,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>int64 translated_characters = 2;</code>
+   *
+   * @return The translatedCharacters.
    */
   long getTranslatedCharacters();
 
@@ -64,6 +70,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>int64 failed_characters = 3;</code>
+   *
+   * @return The failedCharacters.
    */
   long getFailedCharacters();
 
@@ -77,6 +85,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>int64 total_characters = 4;</code>
+   *
+   * @return The totalCharacters.
    */
   long getTotalCharacters();
 
@@ -88,6 +98,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 5;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
   /**
@@ -98,6 +110,8 @@ public interface BatchTranslateMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 5;</code>
+   *
+   * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**

@@ -38,6 +38,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -55,6 +57,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -66,6 +70,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
   /**
@@ -76,6 +82,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -88,6 +96,8 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the targetLanguageCodes.
    */
   java.util.List<java.lang.String> getTargetLanguageCodesList();
   /**
@@ -99,6 +109,8 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The count of targetLanguageCodes.
    */
   int getTargetLanguageCodesCount();
   /**
@@ -110,6 +122,9 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetLanguageCodes at the given index.
    */
   java.lang.String getTargetLanguageCodes(int index);
   /**
@@ -121,6 +136,9 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetLanguageCodes at the given index.
    */
   com.google.protobuf.ByteString getTargetLanguageCodesBytes(int index);
 
@@ -317,6 +335,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>
    * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -331,6 +351,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>
    * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outputConfig.
    */
   com.google.cloud.translate.v3beta1.OutputConfig getOutputConfig();
   /**

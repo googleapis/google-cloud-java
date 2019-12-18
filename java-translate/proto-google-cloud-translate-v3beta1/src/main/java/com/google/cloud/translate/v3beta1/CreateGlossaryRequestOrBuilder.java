@@ -33,6 +33,8 @@ public interface CreateGlossaryRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface CreateGlossaryRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface CreateGlossaryRequestOrBuilder
    * <code>
    * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the glossary field is set.
    */
   boolean hasGlossary();
   /**
@@ -70,6 +76,8 @@ public interface CreateGlossaryRequestOrBuilder
    * <code>
    * .google.cloud.translation.v3beta1.Glossary glossary = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The glossary.
    */
   com.google.cloud.translate.v3beta1.Glossary getGlossary();
   /**

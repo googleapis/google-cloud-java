@@ -34,6 +34,8 @@ public interface SupportedLanguageOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -47,6 +49,8 @@ public interface SupportedLanguageOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -59,6 +63,8 @@ public interface SupportedLanguageOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface SupportedLanguageOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -81,6 +89,8 @@ public interface SupportedLanguageOrBuilder
    * </pre>
    *
    * <code>bool support_source = 3;</code>
+   *
+   * @return The supportSource.
    */
   boolean getSupportSource();
 
@@ -92,6 +102,8 @@ public interface SupportedLanguageOrBuilder
    * </pre>
    *
    * <code>bool support_target = 4;</code>
+   *
+   * @return The supportTarget.
    */
   boolean getSupportTarget();
 }

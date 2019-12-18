@@ -44,6 +44,12 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SupportedLanguage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -161,6 +168,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -185,6 +194,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -206,6 +217,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -229,6 +242,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool support_source = 3;</code>
+   *
+   * @return The supportSource.
    */
   public boolean getSupportSource() {
     return supportSource_;
@@ -244,6 +259,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool support_target = 4;</code>
+   *
+   * @return The supportTarget.
    */
   public boolean getSupportTarget() {
     return supportTarget_;
@@ -625,6 +642,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -648,6 +667,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -671,6 +692,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -692,6 +716,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -710,6 +736,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -732,6 +761,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -753,6 +784,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -774,6 +807,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -793,6 +829,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -809,6 +847,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -830,6 +871,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool support_source = 3;</code>
+     *
+     * @return The supportSource.
      */
     public boolean getSupportSource() {
       return supportSource_;
@@ -842,6 +885,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool support_source = 3;</code>
+     *
+     * @param value The supportSource to set.
+     * @return This builder for chaining.
      */
     public Builder setSupportSource(boolean value) {
 
@@ -857,6 +903,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool support_source = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSupportSource() {
 
@@ -874,6 +922,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool support_target = 4;</code>
+     *
+     * @return The supportTarget.
      */
     public boolean getSupportTarget() {
       return supportTarget_;
@@ -886,6 +936,9 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool support_target = 4;</code>
+     *
+     * @param value The supportTarget to set.
+     * @return This builder for chaining.
      */
     public Builder setSupportTarget(boolean value) {
 
@@ -901,6 +954,8 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool support_target = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSupportTarget() {
 

@@ -42,6 +42,12 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Glossary();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -214,6 +219,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return The sourceLanguageCode.
      */
     java.lang.String getSourceLanguageCode();
     /**
@@ -225,6 +232,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return The bytes for sourceLanguageCode.
      */
     com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -237,6 +246,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return The targetLanguageCode.
      */
     java.lang.String getTargetLanguageCode();
     /**
@@ -248,6 +259,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return The bytes for targetLanguageCode.
      */
     com.google.protobuf.ByteString getTargetLanguageCodeBytes();
   }
@@ -276,6 +289,12 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LanguageCodePair();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -288,7 +307,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -358,6 +376,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return The sourceLanguageCode.
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -379,6 +399,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
+     *
+     * @return The bytes for sourceLanguageCode.
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -403,6 +425,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return The targetLanguageCode.
      */
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
@@ -424,6 +448,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
+     *
+     * @return The bytes for targetLanguageCode.
      */
     public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
@@ -789,6 +815,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string source_language_code = 1;</code>
+       *
+       * @return The sourceLanguageCode.
        */
       public java.lang.String getSourceLanguageCode() {
         java.lang.Object ref = sourceLanguageCode_;
@@ -810,6 +838,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string source_language_code = 1;</code>
+       *
+       * @return The bytes for sourceLanguageCode.
        */
       public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
         java.lang.Object ref = sourceLanguageCode_;
@@ -831,6 +861,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string source_language_code = 1;</code>
+       *
+       * @param value The sourceLanguageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceLanguageCode(java.lang.String value) {
         if (value == null) {
@@ -850,6 +883,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string source_language_code = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSourceLanguageCode() {
 
@@ -866,6 +901,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string source_language_code = 1;</code>
+       *
+       * @param value The bytes for sourceLanguageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -888,6 +926,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string target_language_code = 2;</code>
+       *
+       * @return The targetLanguageCode.
        */
       public java.lang.String getTargetLanguageCode() {
         java.lang.Object ref = targetLanguageCode_;
@@ -909,6 +949,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string target_language_code = 2;</code>
+       *
+       * @return The bytes for targetLanguageCode.
        */
       public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
         java.lang.Object ref = targetLanguageCode_;
@@ -930,6 +972,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string target_language_code = 2;</code>
+       *
+       * @param value The targetLanguageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setTargetLanguageCode(java.lang.String value) {
         if (value == null) {
@@ -949,6 +994,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string target_language_code = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearTargetLanguageCode() {
 
@@ -965,6 +1012,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string target_language_code = 2;</code>
+       *
+       * @param value The bytes for targetLanguageCode to set.
+       * @return This builder for chaining.
        */
       public Builder setTargetLanguageCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1047,6 +1097,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return A list containing the languageCodes.
      */
     java.util.List<java.lang.String> getLanguageCodesList();
     /**
@@ -1059,6 +1111,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return The count of languageCodes.
      */
     int getLanguageCodesCount();
     /**
@@ -1071,6 +1125,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
      */
     java.lang.String getLanguageCodes(int index);
     /**
@@ -1083,6 +1140,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
      */
     com.google.protobuf.ByteString getLanguageCodesBytes(int index);
   }
@@ -1107,6 +1167,12 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
     private LanguageCodesSet() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LanguageCodesSet();
     }
 
     @java.lang.Override
@@ -1192,6 +1258,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
       return languageCodes_;
@@ -1206,6 +1274,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return The count of languageCodes.
      */
     public int getLanguageCodesCount() {
       return languageCodes_.size();
@@ -1220,6 +1290,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
      */
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
@@ -1234,6 +1307,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
      */
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
@@ -1604,6 +1680,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @return A list containing the languageCodes.
        */
       public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
         return languageCodes_.getUnmodifiableView();
@@ -1618,6 +1696,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @return The count of languageCodes.
        */
       public int getLanguageCodesCount() {
         return languageCodes_.size();
@@ -1632,6 +1712,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The languageCodes at the given index.
        */
       public java.lang.String getLanguageCodes(int index) {
         return languageCodes_.get(index);
@@ -1646,6 +1729,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the languageCodes at the given index.
        */
       public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
         return languageCodes_.getByteString(index);
@@ -1660,6 +1746,10 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The languageCodes to set.
+       * @return This builder for chaining.
        */
       public Builder setLanguageCodes(int index, java.lang.String value) {
         if (value == null) {
@@ -1680,6 +1770,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @param value The languageCodes to add.
+       * @return This builder for chaining.
        */
       public Builder addLanguageCodes(java.lang.String value) {
         if (value == null) {
@@ -1700,6 +1793,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @param values The languageCodes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
         ensureLanguageCodesIsMutable();
@@ -1717,6 +1813,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearLanguageCodes() {
         languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1734,6 +1832,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string language_codes = 1;</code>
+       *
+       * @param value The bytes of the languageCodes to add.
+       * @return This builder for chaining.
        */
       public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1804,7 +1905,10 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   private int languagesCase_ = 0;
   private java.lang.Object languages_;
 
-  public enum LanguagesCase implements com.google.protobuf.Internal.EnumLite {
+  public enum LanguagesCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LANGUAGE_PAIR(3),
     LANGUAGE_CODES_SET(4),
     LANGUAGES_NOT_SET(0);
@@ -1813,7 +1917,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     private LanguagesCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static LanguagesCase valueOf(int value) {
       return forNumber(value);
@@ -1852,6 +1960,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1873,6 +1983,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1895,6 +2007,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
+   *
+   * @return Whether the languagePair field is set.
    */
   public boolean hasLanguagePair() {
     return languagesCase_ == 3;
@@ -1907,6 +2021,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
+   *
+   * @return The languagePair.
    */
   public com.google.cloud.translate.v3beta1.Glossary.LanguageCodePair getLanguagePair() {
     if (languagesCase_ == 3) {
@@ -1941,6 +2057,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
    * </code>
+   *
+   * @return Whether the languageCodesSet field is set.
    */
   public boolean hasLanguageCodesSet() {
     return languagesCase_ == 4;
@@ -1954,6 +2072,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
    * </code>
+   *
+   * @return The languageCodesSet.
    */
   public com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSet getLanguageCodesSet() {
     if (languagesCase_ == 4) {
@@ -1990,6 +2110,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GlossaryInputConfig input_config = 5;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   public boolean hasInputConfig() {
     return inputConfig_ != null;
@@ -2003,6 +2125,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GlossaryInputConfig input_config = 5;</code>
+   *
+   * @return The inputConfig.
    */
   public com.google.cloud.translate.v3beta1.GlossaryInputConfig getInputConfig() {
     return inputConfig_ == null
@@ -2033,6 +2157,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The entryCount.
    */
   public int getEntryCount() {
     return entryCount_;
@@ -2049,6 +2175,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the submitTime field is set.
    */
   public boolean hasSubmitTime() {
     return submitTime_ != null;
@@ -2062,6 +2190,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The submitTime.
    */
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
@@ -2091,6 +2221,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -2104,6 +2236,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -2635,6 +2769,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2656,6 +2792,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2677,6 +2815,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2696,6 +2837,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2712,6 +2855,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2737,6 +2883,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
+     *
+     * @return Whether the languagePair field is set.
      */
     public boolean hasLanguagePair() {
       return languagesCase_ == 3;
@@ -2749,6 +2897,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
+     *
+     * @return The languagePair.
      */
     public com.google.cloud.translate.v3beta1.Glossary.LanguageCodePair getLanguagePair() {
       if (languagePairBuilder_ == null) {
@@ -2947,6 +3097,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
      * </code>
+     *
+     * @return Whether the languageCodesSet field is set.
      */
     public boolean hasLanguageCodesSet() {
       return languagesCase_ == 4;
@@ -2960,6 +3112,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
      * </code>
+     *
+     * @return The languageCodesSet.
      */
     public com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSet getLanguageCodesSet() {
       if (languageCodesSetBuilder_ == null) {
@@ -3166,6 +3320,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GlossaryInputConfig input_config = 5;</code>
+     *
+     * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
       return inputConfigBuilder_ != null || inputConfig_ != null;
@@ -3179,6 +3335,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GlossaryInputConfig input_config = 5;</code>
+     *
+     * @return The inputConfig.
      */
     public com.google.cloud.translate.v3beta1.GlossaryInputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -3352,6 +3510,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The entryCount.
      */
     public int getEntryCount() {
       return entryCount_;
@@ -3364,6 +3524,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The entryCount to set.
+     * @return This builder for chaining.
      */
     public Builder setEntryCount(int value) {
 
@@ -3379,6 +3542,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEntryCount() {
 
@@ -3403,6 +3568,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
       return submitTimeBuilder_ != null || submitTime_ != null;
@@ -3417,6 +3584,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The submitTime.
      */
     public com.google.protobuf.Timestamp getSubmitTime() {
       if (submitTimeBuilder_ == null) {
@@ -3599,6 +3768,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -3612,6 +3783,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {

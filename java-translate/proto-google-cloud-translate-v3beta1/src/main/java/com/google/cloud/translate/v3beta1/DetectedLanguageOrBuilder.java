@@ -32,6 +32,8 @@ public interface DetectedLanguageOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -43,6 +45,8 @@ public interface DetectedLanguageOrBuilder
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -54,6 +58,8 @@ public interface DetectedLanguageOrBuilder
    * </pre>
    *
    * <code>float confidence = 2;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 }

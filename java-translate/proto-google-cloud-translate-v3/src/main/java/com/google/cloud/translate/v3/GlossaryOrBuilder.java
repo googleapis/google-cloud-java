@@ -32,6 +32,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.Glossary.LanguageCodePair language_pair = 3;</code>
+   *
+   * @return Whether the languagePair field is set.
    */
   boolean hasLanguagePair();
   /**
@@ -64,6 +70,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.Glossary.LanguageCodePair language_pair = 3;</code>
+   *
+   * @return The languagePair.
    */
   com.google.cloud.translate.v3.Glossary.LanguageCodePair getLanguagePair();
   /**
@@ -85,6 +93,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.Glossary.LanguageCodesSet language_codes_set = 4;</code>
+   *
+   * @return Whether the languageCodesSet field is set.
    */
   boolean hasLanguageCodesSet();
   /**
@@ -95,6 +105,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.Glossary.LanguageCodesSet language_codes_set = 4;</code>
+   *
+   * @return The languageCodesSet.
    */
   com.google.cloud.translate.v3.Glossary.LanguageCodesSet getLanguageCodesSet();
   /**
@@ -117,6 +129,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.GlossaryInputConfig input_config = 5;</code>
+   *
+   * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
   /**
@@ -128,6 +142,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3.GlossaryInputConfig input_config = 5;</code>
+   *
+   * @return The inputConfig.
    */
   com.google.cloud.translate.v3.GlossaryInputConfig getInputConfig();
   /**
@@ -150,6 +166,8 @@ public interface GlossaryOrBuilder
    * </pre>
    *
    * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The entryCount.
    */
   int getEntryCount();
 
@@ -162,6 +180,8 @@ public interface GlossaryOrBuilder
    *
    * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
   /**
@@ -173,6 +193,8 @@ public interface GlossaryOrBuilder
    *
    * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**
@@ -196,6 +218,8 @@ public interface GlossaryOrBuilder
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -207,6 +231,8 @@ public interface GlossaryOrBuilder
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**

@@ -44,6 +44,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DetectLanguageRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -97,10 +103,10 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -153,11 +159,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.translate.v3beta1.DetectLanguageRequest.Builder.class);
   }
 
-  private int bitField0_;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CONTENT(1),
     SOURCE_NOT_SET(0);
     private final int value;
@@ -165,7 +173,11 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -210,6 +222,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -239,6 +253,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -267,6 +283,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -292,6 +310,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -314,6 +334,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The content.
    */
   public java.lang.String getContent() {
     java.lang.Object ref = "";
@@ -339,6 +361,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The bytes for content.
    */
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = "";
@@ -368,6 +392,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -389,6 +415,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -834,7 +862,6 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       com.google.cloud.translate.v3beta1.DetectLanguageRequest result =
           new com.google.cloud.translate.v3beta1.DetectLanguageRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.model_ = model_;
       if (sourceCase_ == 1) {
@@ -843,7 +870,6 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       result.mimeType_ = mimeType_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -985,6 +1011,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1014,6 +1042,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1043,6 +1073,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1070,6 +1103,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1094,6 +1129,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1120,6 +1158,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -1145,6 +1185,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -1170,6 +1212,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -1193,6 +1238,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -1213,6 +1260,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1233,6 +1283,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The content.
      */
     public java.lang.String getContent() {
       java.lang.Object ref = "";
@@ -1258,6 +1310,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return The bytes for content.
      */
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
@@ -1283,6 +1337,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     public Builder setContent(java.lang.String value) {
       if (value == null) {
@@ -1301,6 +1358,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContent() {
       if (sourceCase_ == 1) {
@@ -1318,6 +1377,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string content = 1;</code>
+     *
+     * @param value The bytes for content to set.
+     * @return This builder for chaining.
      */
     public Builder setContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1340,6 +1402,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -1361,6 +1425,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -1382,6 +1448,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -1401,6 +1470,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -1417,6 +1488,9 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

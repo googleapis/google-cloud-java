@@ -31,6 +31,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>string translated_text = 1;</code>
+   *
+   * @return The translatedText.
    */
   java.lang.String getTranslatedText();
   /**
@@ -41,6 +43,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>string translated_text = 1;</code>
+   *
+   * @return The bytes for translatedText.
    */
   com.google.protobuf.ByteString getTranslatedTextBytes();
 
@@ -53,6 +57,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -64,6 +70,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>string model = 2;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -78,6 +86,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>string detected_language_code = 4;</code>
+   *
+   * @return The detectedLanguageCode.
    */
   java.lang.String getDetectedLanguageCode();
   /**
@@ -91,6 +101,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>string detected_language_code = 4;</code>
+   *
+   * @return The bytes for detectedLanguageCode.
    */
   com.google.protobuf.ByteString getDetectedLanguageCodeBytes();
 
@@ -102,6 +114,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 3;</code>
+   *
+   * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
   /**
@@ -112,6 +126,8 @@ public interface TranslationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 3;</code>
+   *
+   * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig();
   /**

@@ -32,6 +32,8 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * </pre>
    *
    * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The glossary.
    */
   java.lang.String getGlossary();
   /**
@@ -43,6 +45,8 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * </pre>
    *
    * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for glossary.
    */
   com.google.protobuf.ByteString getGlossaryBytes();
 
@@ -55,6 +59,8 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * </pre>
    *
    * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreCase.
    */
   boolean getIgnoreCase();
 }

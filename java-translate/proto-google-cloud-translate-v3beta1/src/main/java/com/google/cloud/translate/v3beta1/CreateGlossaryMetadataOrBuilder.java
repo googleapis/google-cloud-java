@@ -31,6 +31,8 @@ public interface CreateGlossaryMetadataOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface CreateGlossaryMetadataOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface CreateGlossaryMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.CreateGlossaryMetadata.State state = 2;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -62,6 +68,8 @@ public interface CreateGlossaryMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.CreateGlossaryMetadata.State state = 2;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.translate.v3beta1.CreateGlossaryMetadata.State getState();
 
@@ -73,6 +81,8 @@ public interface CreateGlossaryMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 3;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
   /**
@@ -83,6 +93,8 @@ public interface CreateGlossaryMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 3;</code>
+   *
+   * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**

@@ -42,6 +42,12 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,7 +130,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_SOURCE(2),
     SOURCE_NOT_SET(0);
     private final int value;
@@ -133,7 +141,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -172,6 +184,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -195,6 +209,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -232,6 +248,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 2;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
@@ -259,6 +277,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 2;</code>
+   *
+   * @return The gcsSource.
    */
   public com.google.cloud.translate.v3beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 2) {
@@ -684,6 +704,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -707,6 +729,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -730,6 +754,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -751,6 +778,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -769,6 +798,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -809,6 +841,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
@@ -836,6 +870,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return The gcsSource.
      */
     public com.google.cloud.translate.v3beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {

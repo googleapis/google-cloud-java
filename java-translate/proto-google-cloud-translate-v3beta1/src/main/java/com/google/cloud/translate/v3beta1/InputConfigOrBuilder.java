@@ -34,6 +34,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -47,6 +49,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -73,6 +77,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 2;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -98,6 +104,8 @@ public interface InputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 2;</code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.translate.v3beta1.GcsSource getGcsSource();
   /**

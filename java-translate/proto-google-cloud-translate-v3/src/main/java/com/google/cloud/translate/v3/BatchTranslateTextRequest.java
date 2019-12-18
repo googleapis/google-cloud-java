@@ -45,6 +45,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchTranslateTextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,19 +91,19 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 targetLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               targetLanguageCodes_.add(s);
               break;
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 models_ =
                     com.google.protobuf.MapField.newMapField(ModelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> models__ =
                   input.readMessage(
@@ -107,10 +113,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 inputConfigs_ =
                     new java.util.ArrayList<com.google.cloud.translate.v3.InputConfig>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000004;
               }
               inputConfigs_.add(
                   input.readMessage(
@@ -135,11 +141,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 glossaries_ =
                     com.google.protobuf.MapField.newMapField(
                         GlossariesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.translate.v3.TranslateTextGlossaryConfig>
@@ -152,10 +158,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000010;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -177,10 +183,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         targetLanguageCodes_ = targetLanguageCodes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -218,7 +224,6 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
             com.google.cloud.translate.v3.BatchTranslateTextRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -236,6 +241,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -263,6 +270,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -286,6 +295,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The sourceLanguageCode.
    */
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -306,6 +317,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -330,6 +343,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the targetLanguageCodes.
    */
   public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
     return targetLanguageCodes_;
@@ -343,6 +358,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The count of targetLanguageCodes.
    */
   public int getTargetLanguageCodesCount() {
     return targetLanguageCodes_.size();
@@ -356,6 +373,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetLanguageCodes at the given index.
    */
   public java.lang.String getTargetLanguageCodes(int index) {
     return targetLanguageCodes_.get(index);
@@ -369,6 +389,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetLanguageCodes at the given index.
    */
   public com.google.protobuf.ByteString getTargetLanguageCodesBytes(int index) {
     return targetLanguageCodes_.getByteString(index);
@@ -610,6 +633,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <code>
    * .google.cloud.translation.v3.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -626,6 +651,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <code>
    * .google.cloud.translation.v3.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outputConfig.
    */
   public com.google.cloud.translate.v3.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -1227,11 +1254,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       sourceLanguageCode_ = "";
 
       targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableModels().clear();
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         inputConfigsBuilder_.clear();
       }
@@ -1271,20 +1298,19 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       com.google.cloud.translate.v3.BatchTranslateTextRequest result =
           new com.google.cloud.translate.v3.BatchTranslateTextRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.sourceLanguageCode_ = sourceLanguageCode_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         targetLanguageCodes_ = targetLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.targetLanguageCodes_ = targetLanguageCodes_;
       result.models_ = internalGetModels();
       result.models_.makeImmutable();
       if (inputConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.inputConfigs_ = inputConfigs_;
       } else {
@@ -1299,7 +1325,6 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       result.glossaries_.makeImmutable();
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1361,7 +1386,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       if (!other.targetLanguageCodes_.isEmpty()) {
         if (targetLanguageCodes_.isEmpty()) {
           targetLanguageCodes_ = other.targetLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureTargetLanguageCodesIsMutable();
           targetLanguageCodes_.addAll(other.targetLanguageCodes_);
@@ -1373,7 +1398,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         if (!other.inputConfigs_.isEmpty()) {
           if (inputConfigs_.isEmpty()) {
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureInputConfigsIsMutable();
             inputConfigs_.addAll(other.inputConfigs_);
@@ -1386,7 +1411,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
             inputConfigsBuilder_.dispose();
             inputConfigsBuilder_ = null;
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
             inputConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputConfigsFieldBuilder()
@@ -1449,6 +1474,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1476,6 +1503,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1503,6 +1532,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1528,6 +1560,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1550,6 +1584,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1571,6 +1608,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sourceLanguageCode.
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -1591,6 +1630,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for sourceLanguageCode.
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -1611,6 +1652,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1629,6 +1673,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
 
@@ -1644,6 +1690,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1660,9 +1709,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         targetLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(targetLanguageCodes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1674,6 +1723,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the targetLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
       return targetLanguageCodes_.getUnmodifiableView();
@@ -1687,6 +1738,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The count of targetLanguageCodes.
      */
     public int getTargetLanguageCodesCount() {
       return targetLanguageCodes_.size();
@@ -1700,6 +1753,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The targetLanguageCodes at the given index.
      */
     public java.lang.String getTargetLanguageCodes(int index) {
       return targetLanguageCodes_.get(index);
@@ -1713,6 +1769,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the targetLanguageCodes at the given index.
      */
     public com.google.protobuf.ByteString getTargetLanguageCodesBytes(int index) {
       return targetLanguageCodes_.getByteString(index);
@@ -1726,6 +1785,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The targetLanguageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -1745,6 +1808,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The targetLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addTargetLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -1764,6 +1830,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The targetLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTargetLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureTargetLanguageCodesIsMutable();
@@ -1780,10 +1849,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCodes() {
       targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1796,6 +1867,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The bytes of the targetLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addTargetLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2034,10 +2108,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureInputConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         inputConfigs_ =
             new java.util.ArrayList<com.google.cloud.translate.v3.InputConfig>(inputConfigs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2308,7 +2382,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         inputConfigsBuilder_.clear();
@@ -2465,7 +2539,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
                 com.google.cloud.translate.v3.InputConfig,
                 com.google.cloud.translate.v3.InputConfig.Builder,
                 com.google.cloud.translate.v3.InputConfigOrBuilder>(
-                inputConfigs_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                inputConfigs_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         inputConfigs_ = null;
       }
       return inputConfigsBuilder_;
@@ -2489,6 +2563,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * .google.cloud.translation.v3.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -2505,6 +2581,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <code>
      * .google.cloud.translation.v3.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The outputConfig.
      */
     public com.google.cloud.translate.v3.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {

@@ -42,6 +42,12 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchTranslateMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -286,12 +291,20 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -367,6 +380,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -379,6 +394,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State getState() {
     @SuppressWarnings("deprecation")
@@ -399,6 +416,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 translated_characters = 2;</code>
+   *
+   * @return The translatedCharacters.
    */
   public long getTranslatedCharacters() {
     return translatedCharacters_;
@@ -415,6 +434,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 failed_characters = 3;</code>
+   *
+   * @return The failedCharacters.
    */
   public long getFailedCharacters() {
     return failedCharacters_;
@@ -432,6 +453,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 total_characters = 4;</code>
+   *
+   * @return The totalCharacters.
    */
   public long getTotalCharacters() {
     return totalCharacters_;
@@ -447,6 +470,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 5;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   public boolean hasSubmitTime() {
     return submitTime_ != null;
@@ -459,6 +484,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 5;</code>
+   *
+   * @return The submitTime.
    */
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
@@ -880,6 +907,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -892,6 +921,9 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -906,6 +938,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State getState() {
       @SuppressWarnings("deprecation")
@@ -923,6 +957,9 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.translate.v3beta1.BatchTranslateMetadata.State value) {
       if (value == null) {
@@ -941,6 +978,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.BatchTranslateMetadata.State state = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -958,6 +997,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 translated_characters = 2;</code>
+     *
+     * @return The translatedCharacters.
      */
     public long getTranslatedCharacters() {
       return translatedCharacters_;
@@ -970,6 +1011,9 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 translated_characters = 2;</code>
+     *
+     * @param value The translatedCharacters to set.
+     * @return This builder for chaining.
      */
     public Builder setTranslatedCharacters(long value) {
 
@@ -985,6 +1029,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 translated_characters = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTranslatedCharacters() {
 
@@ -1003,6 +1049,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 failed_characters = 3;</code>
+     *
+     * @return The failedCharacters.
      */
     public long getFailedCharacters() {
       return failedCharacters_;
@@ -1016,6 +1064,9 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 failed_characters = 3;</code>
+     *
+     * @param value The failedCharacters to set.
+     * @return This builder for chaining.
      */
     public Builder setFailedCharacters(long value) {
 
@@ -1032,6 +1083,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 failed_characters = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFailedCharacters() {
 
@@ -1051,6 +1104,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 total_characters = 4;</code>
+     *
+     * @return The totalCharacters.
      */
     public long getTotalCharacters() {
       return totalCharacters_;
@@ -1065,6 +1120,9 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 total_characters = 4;</code>
+     *
+     * @param value The totalCharacters to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalCharacters(long value) {
 
@@ -1082,6 +1140,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 total_characters = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalCharacters() {
 
@@ -1104,6 +1164,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 5;</code>
+     *
+     * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
       return submitTimeBuilder_ != null || submitTime_ != null;
@@ -1116,6 +1178,8 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 5;</code>
+     *
+     * @return The submitTime.
      */
     public com.google.protobuf.Timestamp getSubmitTime() {
       if (submitTimeBuilder_ == null) {

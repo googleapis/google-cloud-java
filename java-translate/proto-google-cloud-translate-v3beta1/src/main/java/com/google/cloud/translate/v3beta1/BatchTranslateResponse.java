@@ -41,6 +41,12 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   private BatchTranslateResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchTranslateResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -153,6 +158,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 total_characters = 1;</code>
+   *
+   * @return The totalCharacters.
    */
   public long getTotalCharacters() {
     return totalCharacters_;
@@ -168,6 +175,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 translated_characters = 2;</code>
+   *
+   * @return The translatedCharacters.
    */
   public long getTranslatedCharacters() {
     return translatedCharacters_;
@@ -183,6 +192,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 failed_characters = 3;</code>
+   *
+   * @return The failedCharacters.
    */
   public long getFailedCharacters() {
     return failedCharacters_;
@@ -198,6 +209,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   *
+   * @return Whether the submitTime field is set.
    */
   public boolean hasSubmitTime() {
     return submitTime_ != null;
@@ -210,6 +223,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   *
+   * @return The submitTime.
    */
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
@@ -238,6 +253,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -251,6 +268,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -683,6 +702,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 total_characters = 1;</code>
+     *
+     * @return The totalCharacters.
      */
     public long getTotalCharacters() {
       return totalCharacters_;
@@ -695,6 +716,9 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 total_characters = 1;</code>
+     *
+     * @param value The totalCharacters to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalCharacters(long value) {
 
@@ -710,6 +734,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 total_characters = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalCharacters() {
 
@@ -727,6 +753,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 translated_characters = 2;</code>
+     *
+     * @return The translatedCharacters.
      */
     public long getTranslatedCharacters() {
       return translatedCharacters_;
@@ -739,6 +767,9 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 translated_characters = 2;</code>
+     *
+     * @param value The translatedCharacters to set.
+     * @return This builder for chaining.
      */
     public Builder setTranslatedCharacters(long value) {
 
@@ -754,6 +785,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 translated_characters = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTranslatedCharacters() {
 
@@ -771,6 +804,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 failed_characters = 3;</code>
+     *
+     * @return The failedCharacters.
      */
     public long getFailedCharacters() {
       return failedCharacters_;
@@ -783,6 +818,9 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 failed_characters = 3;</code>
+     *
+     * @param value The failedCharacters to set.
+     * @return This builder for chaining.
      */
     public Builder setFailedCharacters(long value) {
 
@@ -798,6 +836,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 failed_characters = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFailedCharacters() {
 
@@ -820,6 +860,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     *
+     * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
       return submitTimeBuilder_ != null || submitTime_ != null;
@@ -832,6 +874,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     *
+     * @return The submitTime.
      */
     public com.google.protobuf.Timestamp getSubmitTime() {
       if (submitTimeBuilder_ == null) {
@@ -1000,6 +1044,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1013,6 +1059,8 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {

@@ -47,6 +47,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TranslateTextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -135,10 +141,10 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -194,7 +200,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.translate.v3beta1.TranslateTextRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONTENTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList contents_;
   /**
@@ -207,6 +212,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the contents.
    */
   public com.google.protobuf.ProtocolStringList getContentsList() {
     return contents_;
@@ -221,6 +228,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of contents.
    */
   public int getContentsCount() {
     return contents_.size();
@@ -235,6 +244,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The contents at the given index.
    */
   public java.lang.String getContents(int index) {
     return contents_.get(index);
@@ -249,6 +261,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the contents at the given index.
    */
   public com.google.protobuf.ByteString getContentsBytes(int index) {
     return contents_.getByteString(index);
@@ -265,6 +280,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -286,6 +303,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -313,6 +332,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceLanguageCode.
    */
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -337,6 +358,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -361,6 +384,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The targetLanguageCode.
    */
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
@@ -382,6 +407,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for targetLanguageCode.
    */
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
@@ -416,6 +443,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -447,6 +476,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -480,6 +511,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -510,6 +543,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -537,6 +572,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the glossaryConfig field is set.
    */
   public boolean hasGlossaryConfig() {
     return glossaryConfig_ != null;
@@ -553,6 +590,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The glossaryConfig.
    */
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig() {
     return glossaryConfig_ == null
@@ -1045,7 +1084,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.translate.v3beta1.TranslateTextRequest result =
           new com.google.cloud.translate.v3beta1.TranslateTextRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         contents_ = contents_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1063,7 +1101,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1199,6 +1236,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the contents.
      */
     public com.google.protobuf.ProtocolStringList getContentsList() {
       return contents_.getUnmodifiableView();
@@ -1213,6 +1252,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of contents.
      */
     public int getContentsCount() {
       return contents_.size();
@@ -1227,6 +1268,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The contents at the given index.
      */
     public java.lang.String getContents(int index) {
       return contents_.get(index);
@@ -1241,6 +1285,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the contents at the given index.
      */
     public com.google.protobuf.ByteString getContentsBytes(int index) {
       return contents_.getByteString(index);
@@ -1255,6 +1302,10 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The contents to set.
+     * @return This builder for chaining.
      */
     public Builder setContents(int index, java.lang.String value) {
       if (value == null) {
@@ -1275,6 +1326,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The contents to add.
+     * @return This builder for chaining.
      */
     public Builder addContents(java.lang.String value) {
       if (value == null) {
@@ -1295,6 +1349,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The contents to add.
+     * @return This builder for chaining.
      */
     public Builder addAllContents(java.lang.Iterable<java.lang.String> values) {
       ensureContentsIsMutable();
@@ -1312,6 +1369,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContents() {
       contents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1329,6 +1388,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the contents to add.
+     * @return This builder for chaining.
      */
     public Builder addContentsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1351,6 +1413,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -1372,6 +1436,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -1393,6 +1459,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -1412,6 +1481,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -1428,6 +1499,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1453,6 +1527,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceLanguageCode.
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -1477,6 +1553,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceLanguageCode.
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -1501,6 +1579,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1523,6 +1604,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
 
@@ -1542,6 +1625,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for sourceLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1564,6 +1650,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The targetLanguageCode.
      */
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
@@ -1585,6 +1673,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for targetLanguageCode.
      */
     public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
@@ -1606,6 +1696,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The targetLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1625,6 +1718,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
 
@@ -1641,6 +1736,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for targetLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1673,6 +1771,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1704,6 +1804,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1735,6 +1837,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1764,6 +1869,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1790,6 +1897,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1821,6 +1931,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -1851,6 +1963,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -1881,6 +1995,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -1909,6 +2026,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -1934,6 +2053,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1964,6 +2086,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the glossaryConfig field is set.
      */
     public boolean hasGlossaryConfig() {
       return glossaryConfigBuilder_ != null || glossaryConfig_ != null;
@@ -1980,6 +2104,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The glossaryConfig.
      */
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossaryConfig() {
       if (glossaryConfigBuilder_ == null) {

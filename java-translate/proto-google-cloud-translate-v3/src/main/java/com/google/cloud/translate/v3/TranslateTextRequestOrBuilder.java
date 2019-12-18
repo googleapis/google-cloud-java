@@ -33,6 +33,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the contents.
    */
   java.util.List<java.lang.String> getContentsList();
   /**
@@ -45,6 +47,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of contents.
    */
   int getContentsCount();
   /**
@@ -57,6 +61,9 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The contents at the given index.
    */
   java.lang.String getContents(int index);
   /**
@@ -69,6 +76,9 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the contents at the given index.
    */
   com.google.protobuf.ByteString getContentsBytes(int index);
 
@@ -81,6 +91,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -92,6 +104,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -107,6 +121,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
   /**
@@ -121,6 +137,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceLanguageCode.
    */
   com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -133,6 +151,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
   /**
@@ -144,6 +164,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for targetLanguageCode.
    */
   com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 
@@ -166,6 +188,8 @@ public interface TranslateTextRequestOrBuilder
    * <code>
    * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -187,6 +211,8 @@ public interface TranslateTextRequestOrBuilder
    * <code>
    * string parent = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -208,6 +234,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -228,6 +256,8 @@ public interface TranslateTextRequestOrBuilder
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -243,6 +273,8 @@ public interface TranslateTextRequestOrBuilder
    * <code>
    * .google.cloud.translation.v3.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
   /**
@@ -257,6 +289,8 @@ public interface TranslateTextRequestOrBuilder
    * <code>
    * .google.cloud.translation.v3.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossaryConfig();
   /**

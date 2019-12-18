@@ -47,6 +47,8 @@ public interface GlossaryInputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
   /**
@@ -73,6 +75,8 @@ public interface GlossaryInputConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
    */
   com.google.cloud.translate.v3beta1.GcsSource getGcsSource();
   /**

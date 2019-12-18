@@ -41,6 +41,8 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * <code>
    * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -61,6 +63,8 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * <code>
    * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -74,6 +78,8 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * </pre>
    *
    * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayLanguageCode.
    */
   java.lang.String getDisplayLanguageCode();
   /**
@@ -86,6 +92,8 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * </pre>
    *
    * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayLanguageCode.
    */
   com.google.protobuf.ByteString getDisplayLanguageCodeBytes();
 
@@ -105,6 +113,8 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -123,6 +133,8 @@ public interface GetSupportedLanguagesRequestOrBuilder
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 }

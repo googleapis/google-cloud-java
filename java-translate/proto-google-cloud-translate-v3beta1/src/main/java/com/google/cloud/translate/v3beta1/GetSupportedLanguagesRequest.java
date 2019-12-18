@@ -44,6 +44,12 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetSupportedLanguagesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * <code>
    * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -172,6 +179,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * <code>
    * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -197,6 +206,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayLanguageCode.
    */
   public java.lang.String getDisplayLanguageCode() {
     java.lang.Object ref = displayLanguageCode_;
@@ -219,6 +230,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayLanguageCode.
    */
   public com.google.protobuf.ByteString getDisplayLanguageCodeBytes() {
     java.lang.Object ref = displayLanguageCode_;
@@ -250,6 +263,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -278,6 +293,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -665,6 +682,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <code>
      * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -695,6 +714,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <code>
      * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -725,6 +746,9 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <code>
      * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -753,6 +777,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <code>
      * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -778,6 +804,9 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * <code>
      * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -801,6 +830,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The displayLanguageCode.
      */
     public java.lang.String getDisplayLanguageCode() {
       java.lang.Object ref = displayLanguageCode_;
@@ -823,6 +854,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for displayLanguageCode.
      */
     public com.google.protobuf.ByteString getDisplayLanguageCodeBytes() {
       java.lang.Object ref = displayLanguageCode_;
@@ -845,6 +878,9 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The displayLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -865,6 +901,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayLanguageCode() {
 
@@ -882,6 +920,9 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for displayLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -911,6 +952,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -939,6 +982,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -967,6 +1012,9 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -993,6 +1041,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -1016,6 +1066,9 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -33,6 +33,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string output_uri_prefix = 1;</code>
+   *
+   * @return The outputUriPrefix.
    */
   java.lang.String getOutputUriPrefix();
   /**
@@ -45,6 +47,8 @@ public interface GcsDestinationOrBuilder
    * </pre>
    *
    * <code>string output_uri_prefix = 1;</code>
+   *
+   * @return The bytes for outputUriPrefix.
    */
   com.google.protobuf.ByteString getOutputUriPrefixBytes();
 }
