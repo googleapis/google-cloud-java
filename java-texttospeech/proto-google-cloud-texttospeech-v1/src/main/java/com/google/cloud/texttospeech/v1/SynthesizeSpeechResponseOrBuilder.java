@@ -35,6 +35,8 @@ public interface SynthesizeSpeechResponseOrBuilder
    * </pre>
    *
    * <code>bytes audio_content = 1;</code>
+   *
+   * @return The audioContent.
    */
   com.google.protobuf.ByteString getAudioContent();
 }

@@ -44,6 +44,12 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Voice();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -133,7 +139,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1.Voice.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LANGUAGE_CODES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList languageCodes_;
   /**
@@ -146,6 +151,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @return A list containing the languageCodes.
    */
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
@@ -160,6 +167,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @return The count of languageCodes.
    */
   public int getLanguageCodesCount() {
     return languageCodes_.size();
@@ -174,6 +183,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
@@ -188,6 +200,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
     return languageCodes_.getByteString(index);
@@ -203,6 +218,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -223,6 +240,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -246,6 +265,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+   *
+   * @return The enum numeric value on the wire for ssmlGender.
    */
   public int getSsmlGenderValue() {
     return ssmlGender_;
@@ -258,6 +279,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+   *
+   * @return The ssmlGender.
    */
   public com.google.cloud.texttospeech.v1.SsmlVoiceGender getSsmlGender() {
     @SuppressWarnings("deprecation")
@@ -276,6 +299,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 natural_sample_rate_hertz = 4;</code>
+   *
+   * @return The naturalSampleRateHertz.
    */
   public int getNaturalSampleRateHertz() {
     return naturalSampleRateHertz_;
@@ -558,7 +583,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.texttospeech.v1.Voice result =
           new com.google.cloud.texttospeech.v1.Voice(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -567,7 +591,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.ssmlGender_ = ssmlGender_;
       result.naturalSampleRateHertz_ = naturalSampleRateHertz_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -687,6 +710,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
       return languageCodes_.getUnmodifiableView();
@@ -701,6 +726,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return The count of languageCodes.
      */
     public int getLanguageCodesCount() {
       return languageCodes_.size();
@@ -715,6 +742,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
      */
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
@@ -729,6 +759,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
      */
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
@@ -743,6 +776,10 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -763,6 +800,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -783,6 +823,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageCodesIsMutable();
@@ -800,6 +843,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -817,6 +862,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 1;</code>
+     *
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -838,6 +886,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -858,6 +908,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -878,6 +930,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -896,6 +951,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -911,6 +968,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -932,6 +992,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+     *
+     * @return The enum numeric value on the wire for ssmlGender.
      */
     public int getSsmlGenderValue() {
       return ssmlGender_;
@@ -944,6 +1006,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for ssmlGender to set.
+     * @return This builder for chaining.
      */
     public Builder setSsmlGenderValue(int value) {
       ssmlGender_ = value;
@@ -958,6 +1023,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+     *
+     * @return The ssmlGender.
      */
     public com.google.cloud.texttospeech.v1.SsmlVoiceGender getSsmlGender() {
       @SuppressWarnings("deprecation")
@@ -975,6 +1042,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+     *
+     * @param value The ssmlGender to set.
+     * @return This builder for chaining.
      */
     public Builder setSsmlGender(com.google.cloud.texttospeech.v1.SsmlVoiceGender value) {
       if (value == null) {
@@ -993,6 +1063,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.texttospeech.v1.SsmlVoiceGender ssml_gender = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSsmlGender() {
 
@@ -1010,6 +1082,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 natural_sample_rate_hertz = 4;</code>
+     *
+     * @return The naturalSampleRateHertz.
      */
     public int getNaturalSampleRateHertz() {
       return naturalSampleRateHertz_;
@@ -1022,6 +1096,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 natural_sample_rate_hertz = 4;</code>
+     *
+     * @param value The naturalSampleRateHertz to set.
+     * @return This builder for chaining.
      */
     public Builder setNaturalSampleRateHertz(int value) {
 
@@ -1037,6 +1114,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 natural_sample_rate_hertz = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNaturalSampleRateHertz() {
 

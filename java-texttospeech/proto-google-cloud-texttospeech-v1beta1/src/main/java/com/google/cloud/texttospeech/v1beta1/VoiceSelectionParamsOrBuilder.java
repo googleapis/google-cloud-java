@@ -41,6 +41,8 @@ public interface VoiceSelectionParamsOrBuilder
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -61,6 +63,8 @@ public interface VoiceSelectionParamsOrBuilder
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -73,6 +77,8 @@ public interface VoiceSelectionParamsOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -84,6 +90,8 @@ public interface VoiceSelectionParamsOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -99,6 +107,8 @@ public interface VoiceSelectionParamsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.texttospeech.v1beta1.SsmlVoiceGender ssml_gender = 3;</code>
+   *
+   * @return The enum numeric value on the wire for ssmlGender.
    */
   int getSsmlGenderValue();
   /**
@@ -113,6 +123,8 @@ public interface VoiceSelectionParamsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.texttospeech.v1beta1.SsmlVoiceGender ssml_gender = 3;</code>
+   *
+   * @return The ssmlGender.
    */
   com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender getSsmlGender();
 }

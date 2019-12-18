@@ -42,6 +42,12 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SynthesizeSpeechResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>bytes audio_content = 1;</code>
+   *
+   * @return The audioContent.
    */
   public com.google.protobuf.ByteString getAudioContent() {
     return audioContent_;
@@ -457,6 +464,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bytes audio_content = 1;</code>
+     *
+     * @return The audioContent.
      */
     public com.google.protobuf.ByteString getAudioContent() {
       return audioContent_;
@@ -473,6 +482,9 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bytes audio_content = 1;</code>
+     *
+     * @param value The audioContent to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -495,6 +507,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bytes audio_content = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioContent() {
 

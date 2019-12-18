@@ -42,6 +42,12 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListVoicesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -150,6 +157,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -498,6 +507,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -525,6 +536,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -552,6 +565,9 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -577,6 +593,8 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -599,6 +617,9 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

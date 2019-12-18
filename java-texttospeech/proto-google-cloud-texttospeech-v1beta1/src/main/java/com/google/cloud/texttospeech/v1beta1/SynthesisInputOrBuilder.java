@@ -31,6 +31,8 @@ public interface SynthesisInputOrBuilder
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The text.
    */
   java.lang.String getText();
   /**
@@ -41,6 +43,8 @@ public interface SynthesisInputOrBuilder
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The bytes for text.
    */
   com.google.protobuf.ByteString getTextBytes();
 
@@ -55,6 +59,8 @@ public interface SynthesisInputOrBuilder
    * </pre>
    *
    * <code>string ssml = 2;</code>
+   *
+   * @return The ssml.
    */
   java.lang.String getSsml();
   /**
@@ -68,6 +74,8 @@ public interface SynthesisInputOrBuilder
    * </pre>
    *
    * <code>string ssml = 2;</code>
+   *
+   * @return The bytes for ssml.
    */
   com.google.protobuf.ByteString getSsmlBytes();
 

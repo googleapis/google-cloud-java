@@ -33,6 +33,8 @@ public interface SynthesizeSpeechRequestOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the input field is set.
    */
   boolean hasInput();
   /**
@@ -45,6 +47,8 @@ public interface SynthesizeSpeechRequestOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The input.
    */
   com.google.cloud.texttospeech.v1beta1.SynthesisInput getInput();
   /**
@@ -70,6 +74,8 @@ public interface SynthesizeSpeechRequestOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the voice field is set.
    */
   boolean hasVoice();
   /**
@@ -82,6 +88,8 @@ public interface SynthesizeSpeechRequestOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The voice.
    */
   com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams getVoice();
   /**
@@ -107,6 +115,8 @@ public interface SynthesizeSpeechRequestOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
   /**
@@ -119,6 +129,8 @@ public interface SynthesizeSpeechRequestOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The audioConfig.
    */
   com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig();
   /**

@@ -40,6 +40,12 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
   private SynthesizeSpeechRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SynthesizeSpeechRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,6 +163,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the input field is set.
    */
   public boolean hasInput() {
     return input_ != null;
@@ -172,6 +179,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The input.
    */
   public com.google.cloud.texttospeech.v1.SynthesisInput getInput() {
     return input_ == null
@@ -205,6 +214,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the voice field is set.
    */
   public boolean hasVoice() {
     return voice_ != null;
@@ -219,6 +230,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The voice.
    */
   public com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice() {
     return voice_ == null
@@ -252,6 +265,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the audioConfig field is set.
    */
   public boolean hasAudioConfig() {
     return audioConfig_ != null;
@@ -266,6 +281,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The audioConfig.
    */
   public com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig() {
     return audioConfig_ == null
@@ -690,6 +707,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the input field is set.
      */
     public boolean hasInput() {
       return inputBuilder_ != null || input_ != null;
@@ -704,6 +723,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.texttospeech.v1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The input.
      */
     public com.google.cloud.texttospeech.v1.SynthesisInput getInput() {
       if (inputBuilder_ == null) {
@@ -890,6 +911,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the voice field is set.
      */
     public boolean hasVoice() {
       return voiceBuilder_ != null || voice_ != null;
@@ -904,6 +927,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The voice.
      */
     public com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice() {
       if (voiceBuilder_ == null) {
@@ -1090,6 +1115,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the audioConfig field is set.
      */
     public boolean hasAudioConfig() {
       return audioConfigBuilder_ != null || audioConfig_ != null;
@@ -1104,6 +1131,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.texttospeech.v1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The audioConfig.
      */
     public com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig() {
       if (audioConfigBuilder_ == null) {

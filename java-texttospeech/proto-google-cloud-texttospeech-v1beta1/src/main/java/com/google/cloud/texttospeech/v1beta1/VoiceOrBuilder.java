@@ -33,6 +33,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
   /**
@@ -45,6 +47,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
   /**
@@ -57,6 +61,9 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
   /**
@@ -69,6 +76,9 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   com.google.protobuf.ByteString getLanguageCodesBytes(int index);
 
@@ -80,6 +90,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -90,6 +102,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -101,6 +115,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.texttospeech.v1beta1.SsmlVoiceGender ssml_gender = 3;</code>
+   *
+   * @return The enum numeric value on the wire for ssmlGender.
    */
   int getSsmlGenderValue();
   /**
@@ -111,6 +127,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.texttospeech.v1beta1.SsmlVoiceGender ssml_gender = 3;</code>
+   *
+   * @return The ssmlGender.
    */
   com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender getSsmlGender();
 
@@ -122,6 +140,8 @@ public interface VoiceOrBuilder
    * </pre>
    *
    * <code>int32 natural_sample_rate_hertz = 4;</code>
+   *
+   * @return The naturalSampleRateHertz.
    */
   int getNaturalSampleRateHertz();
 }

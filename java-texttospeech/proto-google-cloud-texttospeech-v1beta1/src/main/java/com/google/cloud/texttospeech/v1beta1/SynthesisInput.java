@@ -43,6 +43,12 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   private SynthesisInput() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SynthesisInput();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,7 +122,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   private int inputSourceCase_ = 0;
   private java.lang.Object inputSource_;
 
-  public enum InputSourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum InputSourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT(1),
     SSML(2),
     INPUTSOURCE_NOT_SET(0);
@@ -126,7 +134,11 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     private InputSourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static InputSourceCase valueOf(int value) {
       return forNumber(value);
@@ -163,6 +175,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The text.
    */
   public java.lang.String getText() {
     java.lang.Object ref = "";
@@ -188,6 +202,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string text = 1;</code>
+   *
+   * @return The bytes for text.
    */
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = "";
@@ -218,6 +234,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string ssml = 2;</code>
+   *
+   * @return The ssml.
    */
   public java.lang.String getSsml() {
     java.lang.Object ref = "";
@@ -246,6 +264,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string ssml = 2;</code>
+   *
+   * @return The bytes for ssml.
    */
   public com.google.protobuf.ByteString getSsmlBytes() {
     java.lang.Object ref = "";
@@ -655,6 +675,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return The text.
      */
     public java.lang.String getText() {
       java.lang.Object ref = "";
@@ -680,6 +702,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return The bytes for text.
      */
     public com.google.protobuf.ByteString getTextBytes() {
       java.lang.Object ref = "";
@@ -705,6 +729,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
      */
     public Builder setText(java.lang.String value) {
       if (value == null) {
@@ -723,6 +750,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearText() {
       if (inputSourceCase_ == 1) {
@@ -740,6 +769,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string text = 1;</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
      */
     public Builder setTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -763,6 +795,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ssml = 2;</code>
+     *
+     * @return The ssml.
      */
     public java.lang.String getSsml() {
       java.lang.Object ref = "";
@@ -791,6 +825,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ssml = 2;</code>
+     *
+     * @return The bytes for ssml.
      */
     public com.google.protobuf.ByteString getSsmlBytes() {
       java.lang.Object ref = "";
@@ -819,6 +855,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ssml = 2;</code>
+     *
+     * @param value The ssml to set.
+     * @return This builder for chaining.
      */
     public Builder setSsml(java.lang.String value) {
       if (value == null) {
@@ -840,6 +879,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ssml = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSsml() {
       if (inputSourceCase_ == 2) {
@@ -860,6 +901,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ssml = 2;</code>
+     *
+     * @param value The bytes for ssml to set.
+     * @return This builder for chaining.
      */
     public Builder setSsmlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

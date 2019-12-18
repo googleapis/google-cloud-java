@@ -33,6 +33,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
   /**
@@ -45,6 +47,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * .google.cloud.texttospeech.v1beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The audioEncoding.
    */
   com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding();
 
@@ -61,6 +65,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The speakingRate.
    */
   double getSpeakingRate();
 
@@ -76,6 +82,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The pitch.
    */
   double getPitch();
 
@@ -96,6 +104,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The volumeGainDb.
    */
   double getVolumeGainDb();
 
@@ -113,6 +123,8 @@ public interface AudioConfigOrBuilder
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sampleRateHertz.
    */
   int getSampleRateHertz();
 
@@ -131,6 +143,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the effectsProfileId.
    */
   java.util.List<java.lang.String> getEffectsProfileIdList();
   /**
@@ -148,6 +162,8 @@ public interface AudioConfigOrBuilder
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The count of effectsProfileId.
    */
   int getEffectsProfileIdCount();
   /**
@@ -165,6 +181,9 @@ public interface AudioConfigOrBuilder
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The effectsProfileId at the given index.
    */
   java.lang.String getEffectsProfileId(int index);
   /**
@@ -182,6 +201,9 @@ public interface AudioConfigOrBuilder
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the effectsProfileId at the given index.
    */
   com.google.protobuf.ByteString getEffectsProfileIdBytes(int index);
 }

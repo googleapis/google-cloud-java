@@ -38,6 +38,8 @@ public interface ListVoicesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -55,6 +57,8 @@ public interface ListVoicesRequestOrBuilder
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

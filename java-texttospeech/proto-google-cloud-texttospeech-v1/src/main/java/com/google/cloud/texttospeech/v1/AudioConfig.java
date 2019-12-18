@@ -43,6 +43,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AudioConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,9 +102,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               effectsProfileId_.add(s);
               break;
@@ -117,7 +123,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -140,7 +146,6 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1.AudioConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
@@ -153,6 +158,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
    */
   public int getAudioEncodingValue() {
     return audioEncoding_;
@@ -167,6 +174,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The audioEncoding.
    */
   public com.google.cloud.texttospeech.v1.AudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
@@ -190,6 +199,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The speakingRate.
    */
   public double getSpeakingRate() {
     return speakingRate_;
@@ -209,6 +220,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The pitch.
    */
   public double getPitch() {
     return pitch_;
@@ -233,6 +246,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The volumeGainDb.
    */
   public double getVolumeGainDb() {
     return volumeGainDb_;
@@ -254,6 +269,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sampleRateHertz.
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
@@ -276,6 +293,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return A list containing the effectsProfileId.
    */
   public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
     return effectsProfileId_;
@@ -295,6 +314,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The count of effectsProfileId.
    */
   public int getEffectsProfileIdCount() {
     return effectsProfileId_.size();
@@ -314,6 +335,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The effectsProfileId at the given index.
    */
   public java.lang.String getEffectsProfileId(int index) {
     return effectsProfileId_.get(index);
@@ -333,6 +357,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the effectsProfileId at the given index.
    */
   public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
     return effectsProfileId_.getByteString(index);
@@ -618,7 +645,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       sampleRateHertz_ = 0;
 
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -647,18 +674,16 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.texttospeech.v1.AudioConfig result =
           new com.google.cloud.texttospeech.v1.AudioConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.audioEncoding_ = audioEncoding_;
       result.speakingRate_ = speakingRate_;
       result.pitch_ = pitch_;
       result.volumeGainDb_ = volumeGainDb_;
       result.sampleRateHertz_ = sampleRateHertz_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.effectsProfileId_ = effectsProfileId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -726,7 +751,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.effectsProfileId_.isEmpty()) {
         if (effectsProfileId_.isEmpty()) {
           effectsProfileId_ = other.effectsProfileId_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEffectsProfileIdIsMutable();
           effectsProfileId_.addAll(other.effectsProfileId_);
@@ -775,6 +800,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for audioEncoding.
      */
     public int getAudioEncodingValue() {
       return audioEncoding_;
@@ -789,6 +816,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for audioEncoding to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
       audioEncoding_ = value;
@@ -805,6 +835,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The audioEncoding.
      */
     public com.google.cloud.texttospeech.v1.AudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
@@ -822,6 +854,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The audioEncoding to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioEncoding(com.google.cloud.texttospeech.v1.AudioEncoding value) {
       if (value == null) {
@@ -842,6 +877,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
 
@@ -864,6 +901,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The speakingRate.
      */
     public double getSpeakingRate() {
       return speakingRate_;
@@ -881,6 +920,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The speakingRate to set.
+     * @return This builder for chaining.
      */
     public Builder setSpeakingRate(double value) {
 
@@ -901,6 +943,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpeakingRate() {
 
@@ -922,6 +966,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The pitch.
      */
     public double getPitch() {
       return pitch_;
@@ -938,6 +984,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The pitch to set.
+     * @return This builder for chaining.
      */
     public Builder setPitch(double value) {
 
@@ -957,6 +1006,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPitch() {
 
@@ -983,6 +1034,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The volumeGainDb.
      */
     public double getVolumeGainDb() {
       return volumeGainDb_;
@@ -1004,6 +1057,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The volumeGainDb to set.
+     * @return This builder for chaining.
      */
     public Builder setVolumeGainDb(double value) {
 
@@ -1028,6 +1084,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVolumeGainDb() {
 
@@ -1051,6 +1109,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sampleRateHertz.
      */
     public int getSampleRateHertz() {
       return sampleRateHertz_;
@@ -1069,6 +1129,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sampleRateHertz to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleRateHertz(int value) {
 
@@ -1090,6 +1153,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
 
@@ -1102,9 +1167,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEffectsProfileIdIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1122,6 +1187,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return A list containing the effectsProfileId.
      */
     public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
       return effectsProfileId_.getUnmodifiableView();
@@ -1141,6 +1208,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The count of effectsProfileId.
      */
     public int getEffectsProfileIdCount() {
       return effectsProfileId_.size();
@@ -1160,6 +1229,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The effectsProfileId at the given index.
      */
     public java.lang.String getEffectsProfileId(int index) {
       return effectsProfileId_.get(index);
@@ -1179,6 +1251,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the effectsProfileId at the given index.
      */
     public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
       return effectsProfileId_.getByteString(index);
@@ -1198,6 +1273,10 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The effectsProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setEffectsProfileId(int index, java.lang.String value) {
       if (value == null) {
@@ -1223,6 +1302,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The effectsProfileId to add.
+     * @return This builder for chaining.
      */
     public Builder addEffectsProfileId(java.lang.String value) {
       if (value == null) {
@@ -1248,6 +1330,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param values The effectsProfileId to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEffectsProfileId(java.lang.Iterable<java.lang.String> values) {
       ensureEffectsProfileIdIsMutable();
@@ -1270,10 +1355,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEffectsProfileId() {
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1292,6 +1379,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The bytes of the effectsProfileId to add.
+     * @return This builder for chaining.
      */
     public Builder addEffectsProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
