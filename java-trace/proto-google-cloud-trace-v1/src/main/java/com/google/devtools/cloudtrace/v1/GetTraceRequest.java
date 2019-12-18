@@ -43,6 +43,12 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetTraceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -144,6 +151,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -167,6 +176,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The traceId.
    */
   public java.lang.String getTraceId() {
     java.lang.Object ref = traceId_;
@@ -187,6 +198,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for traceId.
    */
   public com.google.protobuf.ByteString getTraceIdBytes() {
     java.lang.Object ref = traceId_;
@@ -543,6 +556,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -563,6 +578,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -583,6 +600,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -601,6 +621,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -616,6 +638,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -637,6 +662,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The traceId.
      */
     public java.lang.String getTraceId() {
       java.lang.Object ref = traceId_;
@@ -657,6 +684,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for traceId.
      */
     public com.google.protobuf.ByteString getTraceIdBytes() {
       java.lang.Object ref = traceId_;
@@ -677,6 +706,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The traceId to set.
+     * @return This builder for chaining.
      */
     public Builder setTraceId(java.lang.String value) {
       if (value == null) {
@@ -695,6 +727,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTraceId() {
 
@@ -710,6 +744,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for traceId to set.
+     * @return This builder for chaining.
      */
     public Builder setTraceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface PatchTracesRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface PatchTracesRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface PatchTracesRequestOrBuilder
    * <code>
    * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the traces field is set.
    */
   boolean hasTraces();
   /**
@@ -66,6 +72,8 @@ public interface PatchTracesRequestOrBuilder
    * <code>
    * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The traces.
    */
   com.google.devtools.cloudtrace.v1.Traces getTraces();
   /**

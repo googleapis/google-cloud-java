@@ -32,6 +32,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>fixed64 span_id = 1;</code>
+   *
+   * @return The spanId.
    */
   long getSpanId();
 
@@ -45,6 +47,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
@@ -57,6 +61,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+   *
+   * @return The kind.
    */
   com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind();
 
@@ -74,6 +80,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -90,6 +98,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -101,6 +111,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -111,6 +123,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -132,6 +146,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -142,6 +158,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -163,6 +181,8 @@ public interface TraceSpanOrBuilder
    * </pre>
    *
    * <code>fixed64 parent_span_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parentSpanId.
    */
   long getParentSpanId();
 

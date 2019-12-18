@@ -42,6 +42,12 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PatchTracesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -152,6 +159,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -177,6 +186,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the traces field is set.
    */
   public boolean hasTraces() {
     return traces_ != null;
@@ -191,6 +202,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The traces.
    */
   public com.google.devtools.cloudtrace.v1.Traces getTraces() {
     return traces_ == null
@@ -567,6 +580,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -587,6 +602,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -607,6 +624,9 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -625,6 +645,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -640,6 +662,9 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -668,6 +693,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the traces field is set.
      */
     public boolean hasTraces() {
       return tracesBuilder_ != null || traces_ != null;
@@ -682,6 +709,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The traces.
      */
     public com.google.devtools.cloudtrace.v1.Traces getTraces() {
       if (tracesBuilder_ == null) {

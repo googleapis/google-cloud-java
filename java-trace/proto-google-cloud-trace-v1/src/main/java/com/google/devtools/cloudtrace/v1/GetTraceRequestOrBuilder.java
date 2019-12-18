@@ -31,6 +31,8 @@ public interface GetTraceRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface GetTraceRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -52,6 +56,8 @@ public interface GetTraceRequestOrBuilder
    * </pre>
    *
    * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The traceId.
    */
   java.lang.String getTraceId();
   /**
@@ -62,6 +68,8 @@ public interface GetTraceRequestOrBuilder
    * </pre>
    *
    * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for traceId.
    */
   com.google.protobuf.ByteString getTraceIdBytes();
 }

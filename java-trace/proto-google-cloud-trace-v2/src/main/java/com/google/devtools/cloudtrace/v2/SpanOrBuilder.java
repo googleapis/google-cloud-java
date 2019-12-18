@@ -36,6 +36,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -51,6 +53,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -62,6 +66,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The spanId.
    */
   java.lang.String getSpanId();
   /**
@@ -72,6 +78,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for spanId.
    */
   com.google.protobuf.ByteString getSpanIdBytes();
 
@@ -84,6 +92,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>string parent_span_id = 3;</code>
+   *
+   * @return The parentSpanId.
    */
   java.lang.String getParentSpanId();
   /**
@@ -95,6 +105,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>string parent_span_id = 3;</code>
+   *
+   * @return The bytes for parentSpanId.
    */
   com.google.protobuf.ByteString getParentSpanIdBytes();
 
@@ -114,6 +126,8 @@ public interface SpanOrBuilder
    * <code>
    * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
   /**
@@ -132,6 +146,8 @@ public interface SpanOrBuilder
    * <code>
    * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The displayName.
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getDisplayName();
   /**
@@ -164,6 +180,8 @@ public interface SpanOrBuilder
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -177,6 +195,8 @@ public interface SpanOrBuilder
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -203,6 +223,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -215,6 +237,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -239,6 +263,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 7;</code>
+   *
+   * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
   /**
@@ -250,6 +276,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 7;</code>
+   *
+   * @return The attributes.
    */
   com.google.devtools.cloudtrace.v2.Span.Attributes getAttributes();
   /**
@@ -272,6 +300,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.StackTrace stack_trace = 8;</code>
+   *
+   * @return Whether the stackTrace field is set.
    */
   boolean hasStackTrace();
   /**
@@ -282,6 +312,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.StackTrace stack_trace = 8;</code>
+   *
+   * @return The stackTrace.
    */
   com.google.devtools.cloudtrace.v2.StackTrace getStackTrace();
   /**
@@ -304,6 +336,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.Span.TimeEvents time_events = 9;</code>
+   *
+   * @return Whether the timeEvents field is set.
    */
   boolean hasTimeEvents();
   /**
@@ -315,6 +349,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.Span.TimeEvents time_events = 9;</code>
+   *
+   * @return The timeEvents.
    */
   com.google.devtools.cloudtrace.v2.Span.TimeEvents getTimeEvents();
   /**
@@ -337,6 +373,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.Span.Links links = 10;</code>
+   *
+   * @return Whether the links field is set.
    */
   boolean hasLinks();
   /**
@@ -347,6 +385,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.Span.Links links = 10;</code>
+   *
+   * @return The links.
    */
   com.google.devtools.cloudtrace.v2.Span.Links getLinks();
   /**
@@ -368,6 +408,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -378,6 +420,8 @@ public interface SpanOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The status.
    */
   com.google.rpc.Status getStatus();
   /**
@@ -404,6 +448,8 @@ public interface SpanOrBuilder
    * <code>
    * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the sameProcessAsParentSpan field is set.
    */
   boolean hasSameProcessAsParentSpan();
   /**
@@ -419,6 +465,8 @@ public interface SpanOrBuilder
    * <code>
    * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The sameProcessAsParentSpan.
    */
   com.google.protobuf.BoolValue getSameProcessAsParentSpan();
   /**
@@ -448,6 +496,8 @@ public interface SpanOrBuilder
    * <code>
    * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the childSpanCount field is set.
    */
   boolean hasChildSpanCount();
   /**
@@ -461,6 +511,8 @@ public interface SpanOrBuilder
    * <code>
    * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The childSpanCount.
    */
   com.google.protobuf.Int32Value getChildSpanCount();
   /**

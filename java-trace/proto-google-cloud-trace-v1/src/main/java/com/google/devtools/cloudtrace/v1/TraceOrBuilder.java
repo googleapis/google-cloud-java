@@ -31,6 +31,8 @@ public interface TraceOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface TraceOrBuilder
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,6 +58,8 @@ public interface TraceOrBuilder
    * </pre>
    *
    * <code>string trace_id = 2;</code>
+   *
+   * @return The traceId.
    */
   java.lang.String getTraceId();
   /**
@@ -66,6 +72,8 @@ public interface TraceOrBuilder
    * </pre>
    *
    * <code>string trace_id = 2;</code>
+   *
+   * @return The bytes for traceId.
    */
   com.google.protobuf.ByteString getTraceIdBytes();
 

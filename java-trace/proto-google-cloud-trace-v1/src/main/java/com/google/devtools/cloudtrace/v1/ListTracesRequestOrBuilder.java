@@ -31,6 +31,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -41,6 +43,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -55,6 +59,8 @@ public interface ListTracesRequestOrBuilder
    * <code>
    * .google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -68,6 +74,8 @@ public interface ListTracesRequestOrBuilder
    * <code>
    * .google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The view.
    */
   com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView();
 
@@ -81,6 +89,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -93,6 +103,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -104,6 +116,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -116,6 +130,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -127,6 +143,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -150,6 +168,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -161,6 +181,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -210,6 +232,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -247,6 +271,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -267,6 +293,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -286,6 +314,8 @@ public interface ListTracesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 }

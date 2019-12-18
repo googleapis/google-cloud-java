@@ -36,6 +36,8 @@ public interface TruncatableStringOrBuilder
    * </pre>
    *
    * <code>string value = 1;</code>
+   *
+   * @return The value.
    */
   java.lang.String getValue();
   /**
@@ -51,6 +53,8 @@ public interface TruncatableStringOrBuilder
    * </pre>
    *
    * <code>string value = 1;</code>
+   *
+   * @return The bytes for value.
    */
   com.google.protobuf.ByteString getValueBytes();
 
@@ -63,6 +67,8 @@ public interface TruncatableStringOrBuilder
    * </pre>
    *
    * <code>int32 truncated_byte_count = 2;</code>
+   *
+   * @return The truncatedByteCount.
    */
   int getTruncatedByteCount();
 }

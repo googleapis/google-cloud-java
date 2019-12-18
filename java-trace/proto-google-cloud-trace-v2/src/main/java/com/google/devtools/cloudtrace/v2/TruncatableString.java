@@ -42,6 +42,12 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TruncatableString();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string value = 1;</code>
+   *
+   * @return The value.
    */
   public java.lang.String getValue() {
     java.lang.Object ref = value_;
@@ -151,6 +158,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string value = 1;</code>
+   *
+   * @return The bytes for value.
    */
   public com.google.protobuf.ByteString getValueBytes() {
     java.lang.Object ref = value_;
@@ -175,6 +184,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 truncated_byte_count = 2;</code>
+   *
+   * @return The truncatedByteCount.
    */
   public int getTruncatedByteCount() {
     return truncatedByteCount_;
@@ -527,6 +538,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string value = 1;</code>
+     *
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -552,6 +565,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string value = 1;</code>
+     *
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
@@ -577,6 +592,9 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string value = 1;</code>
+     *
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(java.lang.String value) {
       if (value == null) {
@@ -600,6 +618,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string value = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
 
@@ -620,6 +640,9 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string value = 1;</code>
+     *
+     * @param value The bytes for value to set.
+     * @return This builder for chaining.
      */
     public Builder setValueBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -642,6 +665,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 truncated_byte_count = 2;</code>
+     *
+     * @return The truncatedByteCount.
      */
     public int getTruncatedByteCount() {
       return truncatedByteCount_;
@@ -655,6 +680,9 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 truncated_byte_count = 2;</code>
+     *
+     * @param value The truncatedByteCount to set.
+     * @return This builder for chaining.
      */
     public Builder setTruncatedByteCount(int value) {
 
@@ -671,6 +699,8 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 truncated_byte_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTruncatedByteCount() {
 

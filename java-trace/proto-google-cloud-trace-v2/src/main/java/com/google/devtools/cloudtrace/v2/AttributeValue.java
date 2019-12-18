@@ -40,6 +40,12 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   private AttributeValue() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AttributeValue();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,7 +135,10 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   private int valueCase_ = 0;
   private java.lang.Object value_;
 
-  public enum ValueCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ValueCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STRING_VALUE(1),
     INT_VALUE(2),
     BOOL_VALUE(3),
@@ -140,7 +148,11 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ValueCase valueOf(int value) {
       return forNumber(value);
@@ -179,6 +191,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
+   *
+   * @return Whether the stringValue field is set.
    */
   public boolean hasStringValue() {
     return valueCase_ == 1;
@@ -191,6 +205,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
+   *
+   * @return The stringValue.
    */
   public com.google.devtools.cloudtrace.v2.TruncatableString getStringValue() {
     if (valueCase_ == 1) {
@@ -223,6 +239,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 int_value = 2;</code>
+   *
+   * @return The intValue.
    */
   public long getIntValue() {
     if (valueCase_ == 2) {
@@ -240,6 +258,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool bool_value = 3;</code>
+   *
+   * @return The boolValue.
    */
   public boolean getBoolValue() {
     if (valueCase_ == 3) {
@@ -667,6 +687,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
+     *
+     * @return Whether the stringValue field is set.
      */
     public boolean hasStringValue() {
       return valueCase_ == 1;
@@ -679,6 +701,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
+     *
+     * @return The stringValue.
      */
     public com.google.devtools.cloudtrace.v2.TruncatableString getStringValue() {
       if (stringValueBuilder_ == null) {
@@ -864,6 +888,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 int_value = 2;</code>
+     *
+     * @return The intValue.
      */
     public long getIntValue() {
       if (valueCase_ == 2) {
@@ -879,6 +905,9 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 int_value = 2;</code>
+     *
+     * @param value The intValue to set.
+     * @return This builder for chaining.
      */
     public Builder setIntValue(long value) {
       valueCase_ = 2;
@@ -894,6 +923,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 int_value = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIntValue() {
       if (valueCase_ == 2) {
@@ -912,6 +943,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 3;</code>
+     *
+     * @return The boolValue.
      */
     public boolean getBoolValue() {
       if (valueCase_ == 3) {
@@ -927,6 +960,9 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 3;</code>
+     *
+     * @param value The boolValue to set.
+     * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
       valueCase_ = 3;
@@ -942,6 +978,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool bool_value = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBoolValue() {
       if (valueCase_ == 3) {

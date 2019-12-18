@@ -31,6 +31,8 @@ public interface AttributeValueOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
+   *
+   * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
   /**
@@ -41,6 +43,8 @@ public interface AttributeValueOrBuilder
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
+   *
+   * @return The stringValue.
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getStringValue();
   /**
@@ -62,6 +66,8 @@ public interface AttributeValueOrBuilder
    * </pre>
    *
    * <code>int64 int_value = 2;</code>
+   *
+   * @return The intValue.
    */
   long getIntValue();
 
@@ -73,6 +79,8 @@ public interface AttributeValueOrBuilder
    * </pre>
    *
    * <code>bool bool_value = 3;</code>
+   *
+   * @return The boolValue.
    */
   boolean getBoolValue();
 

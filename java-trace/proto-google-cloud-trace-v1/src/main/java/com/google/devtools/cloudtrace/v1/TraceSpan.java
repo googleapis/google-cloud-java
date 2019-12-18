@@ -47,6 +47,12 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TraceSpan();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -126,10 +132,10 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -269,12 +275,20 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SpanKind valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static SpanKind forNumber(int value) {
       switch (value) {
         case 0:
@@ -332,7 +346,6 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudtrace.v1.TraceSpan.SpanKind)
   }
 
-  private int bitField0_;
   public static final int SPAN_ID_FIELD_NUMBER = 1;
   private long spanId_;
   /**
@@ -344,6 +357,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>fixed64 span_id = 1;</code>
+   *
+   * @return The spanId.
    */
   public long getSpanId() {
     return spanId_;
@@ -361,6 +376,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
@@ -375,6 +392,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+   *
+   * @return The kind.
    */
   public com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind() {
     @SuppressWarnings("deprecation")
@@ -401,6 +420,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -427,6 +448,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 3;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -450,6 +473,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -462,6 +487,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -489,6 +516,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -501,6 +530,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -528,6 +559,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>fixed64 parent_span_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parentSpanId.
    */
   public long getParentSpanId() {
     return parentSpanId_;
@@ -1097,7 +1130,6 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       com.google.devtools.cloudtrace.v1.TraceSpan result =
           new com.google.devtools.cloudtrace.v1.TraceSpan(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.spanId_ = spanId_;
       result.kind_ = kind_;
       result.name_ = name_;
@@ -1114,7 +1146,6 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       result.parentSpanId_ = parentSpanId_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1225,6 +1256,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>fixed64 span_id = 1;</code>
+     *
+     * @return The spanId.
      */
     public long getSpanId() {
       return spanId_;
@@ -1238,6 +1271,9 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>fixed64 span_id = 1;</code>
+     *
+     * @param value The spanId to set.
+     * @return This builder for chaining.
      */
     public Builder setSpanId(long value) {
 
@@ -1254,6 +1290,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>fixed64 span_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpanId() {
 
@@ -1273,6 +1311,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+     *
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
@@ -1287,6 +1327,9 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -1303,6 +1346,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+     *
+     * @return The kind.
      */
     public com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind() {
       @SuppressWarnings("deprecation")
@@ -1322,6 +1367,9 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind value) {
       if (value == null) {
@@ -1342,6 +1390,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
 
@@ -1365,6 +1415,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1391,6 +1443,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1417,6 +1471,9 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1441,6 +1498,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1462,6 +1521,9 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 3;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1488,6 +1550,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -1500,6 +1564,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -1663,6 +1729,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1675,6 +1743,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1833,6 +1903,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>fixed64 parent_span_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The parentSpanId.
      */
     public long getParentSpanId() {
       return parentSpanId_;
@@ -1845,6 +1917,9 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>fixed64 parent_span_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The parentSpanId to set.
+     * @return This builder for chaining.
      */
     public Builder setParentSpanId(long value) {
 
@@ -1860,6 +1935,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>fixed64 parent_span_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParentSpanId() {
 
