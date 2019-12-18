@@ -205,8 +205,8 @@ public final class Snapshot implements ApiMessage {
   }
 
   /**
-   * [Output Only] Set to true if snapshots are automatically by applying resource policy on the
-   * target disk.
+   * [Output Only] Set to true if snapshots are automatically created by applying resource policy on
+   * the target disk.
    */
   public Boolean getAutoCreated() {
     return autoCreated;
@@ -498,16 +498,16 @@ public final class Snapshot implements ApiMessage {
     }
 
     /**
-     * [Output Only] Set to true if snapshots are automatically by applying resource policy on the
-     * target disk.
+     * [Output Only] Set to true if snapshots are automatically created by applying resource policy
+     * on the target disk.
      */
     public Boolean getAutoCreated() {
       return autoCreated;
     }
 
     /**
-     * [Output Only] Set to true if snapshots are automatically by applying resource policy on the
-     * target disk.
+     * [Output Only] Set to true if snapshots are automatically created by applying resource policy
+     * on the target disk.
      */
     public Builder setAutoCreated(Boolean autoCreated) {
       this.autoCreated = autoCreated;

@@ -189,8 +189,8 @@ public final class OutlierDetection implements ApiMessage {
   }
 
   /**
-   * Time interval between ejection sweep analysis. This can result in both new ejections as well as
-   * hosts being returned to service. Defaults to 1 seconds.
+   * Time interval between ejection analysis sweeps. This can result in both new ejections as well
+   * as hosts being returned to service. Defaults to 1 second.
    */
   public Duration getInterval() {
     return interval;
@@ -437,16 +437,16 @@ public final class OutlierDetection implements ApiMessage {
     }
 
     /**
-     * Time interval between ejection sweep analysis. This can result in both new ejections as well
-     * as hosts being returned to service. Defaults to 1 seconds.
+     * Time interval between ejection analysis sweeps. This can result in both new ejections as well
+     * as hosts being returned to service. Defaults to 1 second.
      */
     public Duration getInterval() {
       return interval;
     }
 
     /**
-     * Time interval between ejection sweep analysis. This can result in both new ejections as well
-     * as hosts being returned to service. Defaults to 1 seconds.
+     * Time interval between ejection analysis sweeps. This can result in both new ejections as well
+     * as hosts being returned to service. Defaults to 1 second.
      */
     public Builder setInterval(Duration interval) {
       this.interval = interval;

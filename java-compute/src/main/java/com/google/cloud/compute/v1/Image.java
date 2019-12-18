@@ -61,6 +61,7 @@ public final class Image implements ApiMessage {
   private final String sourceSnapshotId;
   private final String sourceType;
   private final String status;
+  private final List<String> storageLocations;
 
   private Image() {
     this.archiveSizeBytes = null;
@@ -91,6 +92,7 @@ public final class Image implements ApiMessage {
     this.sourceSnapshotId = null;
     this.sourceType = null;
     this.status = null;
+    this.storageLocations = null;
   }
 
   private Image(
@@ -121,7 +123,8 @@ public final class Image implements ApiMessage {
       CustomerEncryptionKey sourceSnapshotEncryptionKey,
       String sourceSnapshotId,
       String sourceType,
-      String status) {
+      String status,
+      List<String> storageLocations) {
     this.archiveSizeBytes = archiveSizeBytes;
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
@@ -150,6 +153,7 @@ public final class Image implements ApiMessage {
     this.sourceSnapshotId = sourceSnapshotId;
     this.sourceType = sourceType;
     this.status = status;
+    this.storageLocations = storageLocations;
   }
 
   @Override
@@ -237,6 +241,9 @@ public final class Image implements ApiMessage {
     }
     if ("status".equals(fieldName)) {
       return status;
+    }
+    if ("storageLocations".equals(fieldName)) {
+      return storageLocations;
     }
     return null;
   }
@@ -474,6 +481,11 @@ public final class Image implements ApiMessage {
     return status;
   }
 
+  /** Cloud Storage bucket storage location of the image (regional or multi-regional). */
+  public List<String> getStorageLocationsList() {
+    return storageLocations;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -525,6 +537,7 @@ public final class Image implements ApiMessage {
     private String sourceSnapshotId;
     private String sourceType;
     private String status;
+    private List<String> storageLocations;
 
     Builder() {}
 
@@ -614,6 +627,9 @@ public final class Image implements ApiMessage {
       if (other.getStatus() != null) {
         this.status = other.status;
       }
+      if (other.getStorageLocationsList() != null) {
+        this.storageLocations = other.storageLocations;
+      }
       return this;
     }
 
@@ -646,6 +662,7 @@ public final class Image implements ApiMessage {
       this.sourceSnapshotId = source.sourceSnapshotId;
       this.sourceType = source.sourceType;
       this.status = source.status;
+      this.storageLocations = source.storageLocations;
     }
 
     /** Size of the image tar.gz archive stored in Google Cloud Storage (in bytes). */
@@ -1148,6 +1165,29 @@ public final class Image implements ApiMessage {
       return this;
     }
 
+    /** Cloud Storage bucket storage location of the image (regional or multi-regional). */
+    public List<String> getStorageLocationsList() {
+      return storageLocations;
+    }
+
+    /** Cloud Storage bucket storage location of the image (regional or multi-regional). */
+    public Builder addAllStorageLocations(List<String> storageLocations) {
+      if (this.storageLocations == null) {
+        this.storageLocations = new LinkedList<>();
+      }
+      this.storageLocations.addAll(storageLocations);
+      return this;
+    }
+
+    /** Cloud Storage bucket storage location of the image (regional or multi-regional). */
+    public Builder addStorageLocations(String storageLocations) {
+      if (this.storageLocations == null) {
+        this.storageLocations = new LinkedList<>();
+      }
+      this.storageLocations.add(storageLocations);
+      return this;
+    }
+
     public Image build() {
 
       return new Image(
@@ -1178,7 +1218,8 @@ public final class Image implements ApiMessage {
           sourceSnapshotEncryptionKey,
           sourceSnapshotId,
           sourceType,
-          status);
+          status,
+          storageLocations);
     }
 
     public Builder clone() {
@@ -1211,6 +1252,7 @@ public final class Image implements ApiMessage {
       newBuilder.setSourceSnapshotId(this.sourceSnapshotId);
       newBuilder.setSourceType(this.sourceType);
       newBuilder.setStatus(this.status);
+      newBuilder.addAllStorageLocations(this.storageLocations);
       return newBuilder;
     }
   }
@@ -1301,6 +1343,9 @@ public final class Image implements ApiMessage {
         + ", "
         + "status="
         + status
+        + ", "
+        + "storageLocations="
+        + storageLocations
         + "}";
   }
 
@@ -1338,7 +1383,8 @@ public final class Image implements ApiMessage {
           && Objects.equals(this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey())
           && Objects.equals(this.sourceSnapshotId, that.getSourceSnapshotId())
           && Objects.equals(this.sourceType, that.getSourceType())
-          && Objects.equals(this.status, that.getStatus());
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.storageLocations, that.getStorageLocationsList());
     }
     return false;
   }
@@ -1373,6 +1419,7 @@ public final class Image implements ApiMessage {
         sourceSnapshotEncryptionKey,
         sourceSnapshotId,
         sourceType,
-        status);
+        status,
+        storageLocations);
   }
 }
