@@ -34,6 +34,8 @@ public interface ReportPhishingRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ReportPhishingRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface ReportPhishingRequestOrBuilder
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -68,6 +74,8 @@ public interface ReportPhishingRequestOrBuilder
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 }

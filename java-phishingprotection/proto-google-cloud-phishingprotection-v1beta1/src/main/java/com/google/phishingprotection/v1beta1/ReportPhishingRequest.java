@@ -43,6 +43,12 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReportPhishingRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -150,6 +157,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -173,6 +182,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -193,6 +204,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -553,6 +566,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -576,6 +591,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -599,6 +616,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -620,6 +640,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -638,6 +660,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -659,6 +684,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -679,6 +706,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -699,6 +728,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -717,6 +749,8 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
 
@@ -732,6 +766,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
