@@ -90,6 +90,8 @@ public interface ThreatEntryAdditionsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_hashes = 2;</code>
+   *
+   * @return Whether the riceHashes field is set.
    */
   boolean hasRiceHashes();
   /**
@@ -102,6 +104,8 @@ public interface ThreatEntryAdditionsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_hashes = 2;</code>
+   *
+   * @return The riceHashes.
    */
   com.google.webrisk.v1beta1.RiceDeltaEncoding getRiceHashes();
   /**

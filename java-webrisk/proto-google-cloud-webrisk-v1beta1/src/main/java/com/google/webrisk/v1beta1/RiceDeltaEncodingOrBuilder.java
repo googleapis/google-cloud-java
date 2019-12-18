@@ -33,6 +33,8 @@ public interface RiceDeltaEncodingOrBuilder
    * </pre>
    *
    * <code>int64 first_value = 1;</code>
+   *
+   * @return The firstValue.
    */
   long getFirstValue();
 
@@ -45,6 +47,8 @@ public interface RiceDeltaEncodingOrBuilder
    * </pre>
    *
    * <code>int32 rice_parameter = 2;</code>
+   *
+   * @return The riceParameter.
    */
   int getRiceParameter();
 
@@ -58,6 +62,8 @@ public interface RiceDeltaEncodingOrBuilder
    * </pre>
    *
    * <code>int32 entry_count = 3;</code>
+   *
+   * @return The entryCount.
    */
   int getEntryCount();
 
@@ -69,6 +75,8 @@ public interface RiceDeltaEncodingOrBuilder
    * </pre>
    *
    * <code>bytes encoded_data = 4;</code>
+   *
+   * @return The encodedData.
    */
   com.google.protobuf.ByteString getEncodedData();
 }

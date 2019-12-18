@@ -31,6 +31,8 @@ public interface RawIndicesOrBuilder
    * </pre>
    *
    * <code>repeated int32 indices = 1;</code>
+   *
+   * @return A list containing the indices.
    */
   java.util.List<java.lang.Integer> getIndicesList();
   /**
@@ -41,6 +43,8 @@ public interface RawIndicesOrBuilder
    * </pre>
    *
    * <code>repeated int32 indices = 1;</code>
+   *
+   * @return The count of indices.
    */
   int getIndicesCount();
   /**
@@ -51,6 +55,9 @@ public interface RawIndicesOrBuilder
    * </pre>
    *
    * <code>repeated int32 indices = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The indices at the given index.
    */
   int getIndices(int index);
 }

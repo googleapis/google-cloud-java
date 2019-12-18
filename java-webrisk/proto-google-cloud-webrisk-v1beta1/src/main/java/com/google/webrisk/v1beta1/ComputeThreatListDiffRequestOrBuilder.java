@@ -33,6 +33,8 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * <code>
    * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for threatType.
    */
   int getThreatTypeValue();
   /**
@@ -45,6 +47,8 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * <code>
    * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The threatType.
    */
   com.google.webrisk.v1beta1.ThreatType getThreatType();
 
@@ -57,6 +61,8 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * </pre>
    *
    * <code>bytes version_token = 2;</code>
+   *
+   * @return The versionToken.
    */
   com.google.protobuf.ByteString getVersionToken();
 
@@ -70,6 +76,8 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * <code>
    * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the constraints field is set.
    */
   boolean hasConstraints();
   /**
@@ -82,6 +90,8 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * <code>
    * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The constraints.
    */
   com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints getConstraints();
   /**

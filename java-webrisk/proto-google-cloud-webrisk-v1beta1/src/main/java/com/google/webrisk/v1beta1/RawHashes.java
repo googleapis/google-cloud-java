@@ -48,6 +48,12 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RawHashes();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +131,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 prefix_size = 1;</code>
+   *
+   * @return The prefixSize.
    */
   public int getPrefixSize() {
     return prefixSize_;
@@ -143,6 +150,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes raw_hashes = 2;</code>
+   *
+   * @return The rawHashes.
    */
   public com.google.protobuf.ByteString getRawHashes() {
     return rawHashes_;
@@ -491,6 +500,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 prefix_size = 1;</code>
+     *
+     * @return The prefixSize.
      */
     public int getPrefixSize() {
       return prefixSize_;
@@ -504,6 +515,9 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 prefix_size = 1;</code>
+     *
+     * @param value The prefixSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPrefixSize(int value) {
 
@@ -520,6 +534,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 prefix_size = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPrefixSize() {
 
@@ -539,6 +555,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes raw_hashes = 2;</code>
+     *
+     * @return The rawHashes.
      */
     public com.google.protobuf.ByteString getRawHashes() {
       return rawHashes_;
@@ -553,6 +571,9 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes raw_hashes = 2;</code>
+     *
+     * @param value The rawHashes to set.
+     * @return This builder for chaining.
      */
     public Builder setRawHashes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -573,6 +594,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes raw_hashes = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRawHashes() {
 

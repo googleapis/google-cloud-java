@@ -43,6 +43,12 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchHashesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,9 +80,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               threatTypes_.add(rawValue);
               break;
@@ -87,9 +93,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 threatTypes_.add(rawValue);
               }
@@ -110,7 +116,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -133,7 +139,6 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
             com.google.webrisk.v1beta1.SearchHashesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HASH_PREFIX_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString hashPrefix_;
   /**
@@ -145,6 +150,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes hash_prefix = 1;</code>
+   *
+   * @return The hashPrefix.
    */
   public com.google.protobuf.ByteString getHashPrefix() {
     return hashPrefix_;
@@ -174,6 +181,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the threatTypes.
    */
   public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -190,6 +199,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param value The threatTypes to add.
    */
   public int getThreatTypesCount() {
     return threatTypes_.size();
@@ -204,6 +215,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The threatTypes at the given index.
    */
   public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
@@ -218,6 +232,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for threatTypes.
    */
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
@@ -232,6 +248,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of threatTypes at the given index.
    */
   public int getThreatTypesValue(int index) {
     return threatTypes_.get(index);
@@ -471,7 +490,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       hashPrefix_ = com.google.protobuf.ByteString.EMPTY;
 
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -500,14 +519,12 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       com.google.webrisk.v1beta1.SearchHashesRequest result =
           new com.google.webrisk.v1beta1.SearchHashesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.hashPrefix_ = hashPrefix_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.threatTypes_ = threatTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -563,7 +580,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       if (!other.threatTypes_.isEmpty()) {
         if (threatTypes_.isEmpty()) {
           threatTypes_ = other.threatTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureThreatTypesIsMutable();
           threatTypes_.addAll(other.threatTypes_);
@@ -611,6 +628,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes hash_prefix = 1;</code>
+     *
+     * @return The hashPrefix.
      */
     public com.google.protobuf.ByteString getHashPrefix() {
       return hashPrefix_;
@@ -624,6 +643,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes hash_prefix = 1;</code>
+     *
+     * @param value The hashPrefix to set.
+     * @return This builder for chaining.
      */
     public Builder setHashPrefix(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -643,6 +665,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes hash_prefix = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHashPrefix() {
 
@@ -654,9 +678,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> threatTypes_ = java.util.Collections.emptyList();
 
     private void ensureThreatTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = new java.util.ArrayList<java.lang.Integer>(threatTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -669,6 +693,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the threatTypes.
      */
     public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -685,6 +711,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The count of threatTypes.
      */
     public int getThreatTypesCount() {
       return threatTypes_.size();
@@ -699,6 +727,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The threatTypes at the given index.
      */
     public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
@@ -713,6 +744,10 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The threatTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setThreatTypes(int index, com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -733,6 +768,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addThreatTypes(com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -753,6 +791,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllThreatTypes(
         java.lang.Iterable<? extends com.google.webrisk.v1beta1.ThreatType> values) {
@@ -773,10 +814,12 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearThreatTypes() {
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -790,6 +833,8 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for threatTypes.
      */
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return java.util.Collections.unmodifiableList(threatTypes_);
@@ -804,6 +849,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of threatTypes at the given index.
      */
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
@@ -818,6 +866,10 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of threatTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setThreatTypesValue(int index, int value) {
       ensureThreatTypesIsMutable();
@@ -835,6 +887,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addThreatTypesValue(int value) {
       ensureThreatTypesIsMutable();
@@ -852,6 +907,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllThreatTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureThreatTypesIsMutable();

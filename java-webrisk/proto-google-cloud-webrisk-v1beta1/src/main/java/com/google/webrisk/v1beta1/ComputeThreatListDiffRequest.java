@@ -43,6 +43,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ComputeThreatListDiffRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -145,6 +150,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 max_diff_entries = 1;</code>
+     *
+     * @return The maxDiffEntries.
      */
     int getMaxDiffEntries();
 
@@ -158,6 +165,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 max_database_entries = 2;</code>
+     *
+     * @return The maxDatabaseEntries.
      */
     int getMaxDatabaseEntries();
 
@@ -170,6 +179,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @return A list containing the supportedCompressions.
      */
     java.util.List<com.google.webrisk.v1beta1.CompressionType> getSupportedCompressionsList();
     /**
@@ -181,6 +192,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @return The count of supportedCompressions.
      */
     int getSupportedCompressionsCount();
     /**
@@ -192,6 +205,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedCompressions at the given index.
      */
     com.google.webrisk.v1beta1.CompressionType getSupportedCompressions(int index);
     /**
@@ -203,6 +219,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for supportedCompressions.
      */
     java.util.List<java.lang.Integer> getSupportedCompressionsValueList();
     /**
@@ -214,6 +232,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedCompressions at the given index.
      */
     int getSupportedCompressionsValue(int index);
   }
@@ -238,6 +259,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
 
     private Constraints() {
       supportedCompressions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Constraints();
     }
 
     @java.lang.Override
@@ -277,9 +304,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
             case 24:
               {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   supportedCompressions_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 supportedCompressions_.add(rawValue);
                 break;
@@ -290,9 +317,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
                 int oldLimit = input.pushLimit(length);
                 while (input.getBytesUntilLimit() > 0) {
                   int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     supportedCompressions_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000004;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   supportedCompressions_.add(rawValue);
                 }
@@ -313,7 +340,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           supportedCompressions_ = java.util.Collections.unmodifiableList(supportedCompressions_);
         }
         this.unknownFields = unknownFields.build();
@@ -336,7 +363,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
               com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MAX_DIFF_ENTRIES_FIELD_NUMBER = 1;
     private int maxDiffEntries_;
     /**
@@ -349,6 +375,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 max_diff_entries = 1;</code>
+     *
+     * @return The maxDiffEntries.
      */
     public int getMaxDiffEntries() {
       return maxDiffEntries_;
@@ -366,6 +394,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>int32 max_database_entries = 2;</code>
+     *
+     * @return The maxDatabaseEntries.
      */
     public int getMaxDatabaseEntries() {
       return maxDatabaseEntries_;
@@ -396,6 +426,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @return A list containing the supportedCompressions.
      */
     public java.util.List<com.google.webrisk.v1beta1.CompressionType>
         getSupportedCompressionsList() {
@@ -412,6 +444,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @param value The supportedCompressions to add.
      */
     public int getSupportedCompressionsCount() {
       return supportedCompressions_.size();
@@ -425,6 +459,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedCompressions at the given index.
      */
     public com.google.webrisk.v1beta1.CompressionType getSupportedCompressions(int index) {
       return supportedCompressions_converter_.convert(supportedCompressions_.get(index));
@@ -438,6 +475,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for supportedCompressions.
      */
     public java.util.List<java.lang.Integer> getSupportedCompressionsValueList() {
       return supportedCompressions_;
@@ -451,6 +490,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedCompressions at the given index.
      */
     public int getSupportedCompressionsValue(int index) {
       return supportedCompressions_.get(index);
@@ -708,7 +750,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         maxDatabaseEntries_ = 0;
 
         supportedCompressions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -739,15 +781,13 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints result =
             new com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.maxDiffEntries_ = maxDiffEntries_;
         result.maxDatabaseEntries_ = maxDatabaseEntries_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           supportedCompressions_ = java.util.Collections.unmodifiableList(supportedCompressions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.supportedCompressions_ = supportedCompressions_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -812,7 +852,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         if (!other.supportedCompressions_.isEmpty()) {
           if (supportedCompressions_.isEmpty()) {
             supportedCompressions_ = other.supportedCompressions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSupportedCompressionsIsMutable();
             supportedCompressions_.addAll(other.supportedCompressions_);
@@ -863,6 +903,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>int32 max_diff_entries = 1;</code>
+       *
+       * @return The maxDiffEntries.
        */
       public int getMaxDiffEntries() {
         return maxDiffEntries_;
@@ -877,6 +919,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>int32 max_diff_entries = 1;</code>
+       *
+       * @param value The maxDiffEntries to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxDiffEntries(int value) {
 
@@ -894,6 +939,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>int32 max_diff_entries = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMaxDiffEntries() {
 
@@ -913,6 +960,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>int32 max_database_entries = 2;</code>
+       *
+       * @return The maxDatabaseEntries.
        */
       public int getMaxDatabaseEntries() {
         return maxDatabaseEntries_;
@@ -927,6 +976,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>int32 max_database_entries = 2;</code>
+       *
+       * @param value The maxDatabaseEntries to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxDatabaseEntries(int value) {
 
@@ -944,6 +996,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        * </pre>
        *
        * <code>int32 max_database_entries = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMaxDatabaseEntries() {
 
@@ -956,10 +1010,10 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
           java.util.Collections.emptyList();
 
       private void ensureSupportedCompressionsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           supportedCompressions_ =
               new java.util.ArrayList<java.lang.Integer>(supportedCompressions_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -971,6 +1025,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @return A list containing the supportedCompressions.
        */
       public java.util.List<com.google.webrisk.v1beta1.CompressionType>
           getSupportedCompressionsList() {
@@ -987,6 +1043,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @return The count of supportedCompressions.
        */
       public int getSupportedCompressionsCount() {
         return supportedCompressions_.size();
@@ -1000,6 +1058,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The supportedCompressions at the given index.
        */
       public com.google.webrisk.v1beta1.CompressionType getSupportedCompressions(int index) {
         return supportedCompressions_converter_.convert(supportedCompressions_.get(index));
@@ -1013,6 +1074,10 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The supportedCompressions to set.
+       * @return This builder for chaining.
        */
       public Builder setSupportedCompressions(
           int index, com.google.webrisk.v1beta1.CompressionType value) {
@@ -1033,6 +1098,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param value The supportedCompressions to add.
+       * @return This builder for chaining.
        */
       public Builder addSupportedCompressions(com.google.webrisk.v1beta1.CompressionType value) {
         if (value == null) {
@@ -1052,6 +1120,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param values The supportedCompressions to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSupportedCompressions(
           java.lang.Iterable<? extends com.google.webrisk.v1beta1.CompressionType> values) {
@@ -1071,10 +1142,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSupportedCompressions() {
         supportedCompressions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1087,6 +1160,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for supportedCompressions.
        */
       public java.util.List<java.lang.Integer> getSupportedCompressionsValueList() {
         return java.util.Collections.unmodifiableList(supportedCompressions_);
@@ -1100,6 +1175,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of supportedCompressions at the given index.
        */
       public int getSupportedCompressionsValue(int index) {
         return supportedCompressions_.get(index);
@@ -1113,6 +1191,10 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of supportedCompressions at the given index.
+       * @return This builder for chaining.
        */
       public Builder setSupportedCompressionsValue(int index, int value) {
         ensureSupportedCompressionsIsMutable();
@@ -1129,6 +1211,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param value The enum numeric value on the wire for supportedCompressions to add.
+       * @return This builder for chaining.
        */
       public Builder addSupportedCompressionsValue(int value) {
         ensureSupportedCompressionsIsMutable();
@@ -1145,6 +1230,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
        * </code>
+       *
+       * @param values The enum numeric values on the wire for supportedCompressions to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSupportedCompressionsValue(
           java.lang.Iterable<java.lang.Integer> values) {
@@ -1223,6 +1311,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for threatType.
    */
   public int getThreatTypeValue() {
     return threatType_;
@@ -1237,6 +1327,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The threatType.
    */
   public com.google.webrisk.v1beta1.ThreatType getThreatType() {
     @SuppressWarnings("deprecation")
@@ -1256,6 +1348,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>bytes version_token = 2;</code>
+   *
+   * @return The versionToken.
    */
   public com.google.protobuf.ByteString getVersionToken() {
     return versionToken_;
@@ -1273,6 +1367,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the constraints field is set.
    */
   public boolean hasConstraints() {
     return constraints_ != null;
@@ -1287,6 +1383,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    * <code>
    * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The constraints.
    */
   public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints getConstraints() {
     return constraints_ == null
@@ -1681,6 +1779,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for threatType.
      */
     public int getThreatTypeValue() {
       return threatType_;
@@ -1695,6 +1795,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for threatType to set.
+     * @return This builder for chaining.
      */
     public Builder setThreatTypeValue(int value) {
       threatType_ = value;
@@ -1711,6 +1814,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The threatType.
      */
     public com.google.webrisk.v1beta1.ThreatType getThreatType() {
       @SuppressWarnings("deprecation")
@@ -1728,6 +1833,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The threatType to set.
+     * @return This builder for chaining.
      */
     public Builder setThreatType(com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -1748,6 +1856,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearThreatType() {
 
@@ -1766,6 +1876,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>bytes version_token = 2;</code>
+     *
+     * @return The versionToken.
      */
     public com.google.protobuf.ByteString getVersionToken() {
       return versionToken_;
@@ -1779,6 +1891,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>bytes version_token = 2;</code>
+     *
+     * @param value The versionToken to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionToken(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1798,6 +1913,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>bytes version_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersionToken() {
 
@@ -1822,6 +1939,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the constraints field is set.
      */
     public boolean hasConstraints() {
       return constraintsBuilder_ != null || constraints_ != null;
@@ -1836,6 +1955,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>
      * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The constraints.
      */
     public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints getConstraints() {
       if (constraintsBuilder_ == null) {

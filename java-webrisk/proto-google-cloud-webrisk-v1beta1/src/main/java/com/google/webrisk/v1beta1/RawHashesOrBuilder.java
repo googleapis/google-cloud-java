@@ -32,6 +32,8 @@ public interface RawHashesOrBuilder
    * </pre>
    *
    * <code>int32 prefix_size = 1;</code>
+   *
+   * @return The prefixSize.
    */
   int getPrefixSize();
 
@@ -45,6 +47,8 @@ public interface RawHashesOrBuilder
    * </pre>
    *
    * <code>bytes raw_hashes = 2;</code>
+   *
+   * @return The rawHashes.
    */
   com.google.protobuf.ByteString getRawHashes();
 }

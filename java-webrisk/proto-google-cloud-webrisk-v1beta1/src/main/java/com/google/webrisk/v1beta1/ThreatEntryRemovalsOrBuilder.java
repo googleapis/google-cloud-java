@@ -31,6 +31,8 @@ public interface ThreatEntryRemovalsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RawIndices raw_indices = 1;</code>
+   *
+   * @return Whether the rawIndices field is set.
    */
   boolean hasRawIndices();
   /**
@@ -41,6 +43,8 @@ public interface ThreatEntryRemovalsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RawIndices raw_indices = 1;</code>
+   *
+   * @return The rawIndices.
    */
   com.google.webrisk.v1beta1.RawIndices getRawIndices();
   /**
@@ -65,6 +69,8 @@ public interface ThreatEntryRemovalsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
+   *
+   * @return Whether the riceIndices field is set.
    */
   boolean hasRiceIndices();
   /**
@@ -78,6 +84,8 @@ public interface ThreatEntryRemovalsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
+   *
+   * @return The riceIndices.
    */
   com.google.webrisk.v1beta1.RiceDeltaEncoding getRiceIndices();
   /**

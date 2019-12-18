@@ -95,6 +95,8 @@ public interface SearchHashesResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp negative_expire_time = 2;</code>
+   *
+   * @return Whether the negativeExpireTime field is set.
    */
   boolean hasNegativeExpireTime();
   /**
@@ -106,6 +108,8 @@ public interface SearchHashesResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp negative_expire_time = 2;</code>
+   *
+   * @return The negativeExpireTime.
    */
   com.google.protobuf.Timestamp getNegativeExpireTime();
   /**

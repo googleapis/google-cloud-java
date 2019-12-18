@@ -40,6 +40,12 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
   private ThreatEntryRemovals() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ThreatEntryRemovals();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RawIndices raw_indices = 1;</code>
+   *
+   * @return Whether the rawIndices field is set.
    */
   public boolean hasRawIndices() {
     return rawIndices_ != null;
@@ -151,6 +158,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RawIndices raw_indices = 1;</code>
+   *
+   * @return The rawIndices.
    */
   public com.google.webrisk.v1beta1.RawIndices getRawIndices() {
     return rawIndices_ == null
@@ -183,6 +192,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
+   *
+   * @return Whether the riceIndices field is set.
    */
   public boolean hasRiceIndices() {
     return riceIndices_ != null;
@@ -198,6 +209,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
+   *
+   * @return The riceIndices.
    */
   public com.google.webrisk.v1beta1.RiceDeltaEncoding getRiceIndices() {
     return riceIndices_ == null
@@ -590,6 +603,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1beta1.RawIndices raw_indices = 1;</code>
+     *
+     * @return Whether the rawIndices field is set.
      */
     public boolean hasRawIndices() {
       return rawIndicesBuilder_ != null || rawIndices_ != null;
@@ -602,6 +617,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1beta1.RawIndices raw_indices = 1;</code>
+     *
+     * @return The rawIndices.
      */
     public com.google.webrisk.v1beta1.RawIndices getRawIndices() {
       if (rawIndicesBuilder_ == null) {
@@ -774,6 +791,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
+     *
+     * @return Whether the riceIndices field is set.
      */
     public boolean hasRiceIndices() {
       return riceIndicesBuilder_ != null || riceIndices_ != null;
@@ -789,6 +808,8 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
+     *
+     * @return The riceIndices.
      */
     public com.google.webrisk.v1beta1.RiceDeltaEncoding getRiceIndices() {
       if (riceIndicesBuilder_ == null) {

@@ -31,6 +31,8 @@ public interface SearchUrisResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.SearchUrisResponse.ThreatUri threat = 1;</code>
+   *
+   * @return Whether the threat field is set.
    */
   boolean hasThreat();
   /**
@@ -41,6 +43,8 @@ public interface SearchUrisResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.SearchUrisResponse.ThreatUri threat = 1;</code>
+   *
+   * @return The threat.
    */
   com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri getThreat();
   /**

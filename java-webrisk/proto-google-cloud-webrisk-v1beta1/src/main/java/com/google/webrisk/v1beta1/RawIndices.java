@@ -42,6 +42,12 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RawIndices();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -135,6 +141,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated int32 indices = 1;</code>
+   *
+   * @return A list containing the indices.
    */
   public java.util.List<java.lang.Integer> getIndicesList() {
     return indices_;
@@ -147,6 +155,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated int32 indices = 1;</code>
+   *
+   * @return The count of indices.
    */
   public int getIndicesCount() {
     return indices_.size();
@@ -159,6 +169,9 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated int32 indices = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The indices at the given index.
    */
   public int getIndices(int index) {
     return indices_.getInt(index);
@@ -525,6 +538,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @return A list containing the indices.
      */
     public java.util.List<java.lang.Integer> getIndicesList() {
       return ((bitField0_ & 0x00000001) != 0)
@@ -539,6 +554,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @return The count of indices.
      */
     public int getIndicesCount() {
       return indices_.size();
@@ -551,6 +568,9 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The indices at the given index.
      */
     public int getIndices(int index) {
       return indices_.getInt(index);
@@ -563,6 +583,10 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The indices to set.
+     * @return This builder for chaining.
      */
     public Builder setIndices(int index, int value) {
       ensureIndicesIsMutable();
@@ -578,6 +602,9 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @param value The indices to add.
+     * @return This builder for chaining.
      */
     public Builder addIndices(int value) {
       ensureIndicesIsMutable();
@@ -593,6 +620,9 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @param values The indices to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIndices(java.lang.Iterable<? extends java.lang.Integer> values) {
       ensureIndicesIsMutable();
@@ -608,6 +638,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated int32 indices = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIndices() {
       indices_ = emptyIntList();

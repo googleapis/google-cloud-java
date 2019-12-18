@@ -43,6 +43,12 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchUrisRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               threatTypes_.add(rawValue);
               break;
@@ -89,9 +95,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 threatTypes_.add(rawValue);
               }
@@ -112,7 +118,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -135,7 +141,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
             com.google.webrisk.v1beta1.SearchUrisRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object uri_;
   /**
@@ -146,6 +151,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -166,6 +173,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -203,6 +212,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the threatTypes.
    */
   public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -219,6 +230,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param value The threatTypes to add.
    */
   public int getThreatTypesCount() {
     return threatTypes_.size();
@@ -233,6 +246,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The threatTypes at the given index.
    */
   public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
@@ -247,6 +263,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for threatTypes.
    */
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
@@ -261,6 +279,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of threatTypes at the given index.
    */
   public int getThreatTypesValue(int index) {
     return threatTypes_.get(index);
@@ -500,7 +521,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       uri_ = "";
 
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -529,14 +550,12 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       com.google.webrisk.v1beta1.SearchUrisRequest result =
           new com.google.webrisk.v1beta1.SearchUrisRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.uri_ = uri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.threatTypes_ = threatTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -593,7 +612,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       if (!other.threatTypes_.isEmpty()) {
         if (threatTypes_.isEmpty()) {
           threatTypes_ = other.threatTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureThreatTypesIsMutable();
           threatTypes_.addAll(other.threatTypes_);
@@ -640,6 +659,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -660,6 +681,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -680,6 +703,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -698,6 +724,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
 
@@ -713,6 +741,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -728,9 +759,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> threatTypes_ = java.util.Collections.emptyList();
 
     private void ensureThreatTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = new java.util.ArrayList<java.lang.Integer>(threatTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -743,6 +774,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the threatTypes.
      */
     public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -759,6 +792,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The count of threatTypes.
      */
     public int getThreatTypesCount() {
       return threatTypes_.size();
@@ -773,6 +808,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The threatTypes at the given index.
      */
     public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
@@ -787,6 +825,10 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The threatTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setThreatTypes(int index, com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -807,6 +849,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addThreatTypes(com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -827,6 +872,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllThreatTypes(
         java.lang.Iterable<? extends com.google.webrisk.v1beta1.ThreatType> values) {
@@ -847,10 +895,12 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearThreatTypes() {
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -864,6 +914,8 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for threatTypes.
      */
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return java.util.Collections.unmodifiableList(threatTypes_);
@@ -878,6 +930,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of threatTypes at the given index.
      */
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
@@ -892,6 +947,10 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of threatTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setThreatTypesValue(int index, int value) {
       ensureThreatTypesIsMutable();
@@ -909,6 +968,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addThreatTypesValue(int value) {
       ensureThreatTypesIsMutable();
@@ -926,6 +988,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for threatTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllThreatTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureThreatTypesIsMutable();

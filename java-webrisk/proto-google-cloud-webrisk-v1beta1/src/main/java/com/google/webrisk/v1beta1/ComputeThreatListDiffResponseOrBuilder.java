@@ -34,6 +34,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * <code>
    * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse.ResponseType response_type = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for responseType.
    */
   int getResponseTypeValue();
   /**
@@ -47,6 +49,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * <code>
    * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse.ResponseType response_type = 4;
    * </code>
+   *
+   * @return The responseType.
    */
   com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.ResponseType getResponseType();
 
@@ -58,6 +62,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.ThreatEntryAdditions additions = 5;</code>
+   *
+   * @return Whether the additions field is set.
    */
   boolean hasAdditions();
   /**
@@ -68,6 +74,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.ThreatEntryAdditions additions = 5;</code>
+   *
+   * @return The additions.
    */
   com.google.webrisk.v1beta1.ThreatEntryAdditions getAdditions();
   /**
@@ -90,6 +98,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.ThreatEntryRemovals removals = 6;</code>
+   *
+   * @return Whether the removals field is set.
    */
   boolean hasRemovals();
   /**
@@ -101,6 +111,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.ThreatEntryRemovals removals = 6;</code>
+   *
+   * @return The removals.
    */
   com.google.webrisk.v1beta1.ThreatEntryRemovals getRemovals();
   /**
@@ -123,6 +135,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>bytes new_version_token = 7;</code>
+   *
+   * @return The newVersionToken.
    */
   com.google.protobuf.ByteString getNewVersionToken();
 
@@ -137,6 +151,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum checksum = 8;</code>
+   *
+   * @return Whether the checksum field is set.
    */
   boolean hasChecksum();
   /**
@@ -150,6 +166,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum checksum = 8;</code>
+   *
+   * @return The checksum.
    */
   com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum getChecksum();
   /**
@@ -177,6 +195,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp recommended_next_diff = 2;</code>
+   *
+   * @return Whether the recommendedNextDiff field is set.
    */
   boolean hasRecommendedNextDiff();
   /**
@@ -190,6 +210,8 @@ public interface ComputeThreatListDiffResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp recommended_next_diff = 2;</code>
+   *
+   * @return The recommendedNextDiff.
    */
   com.google.protobuf.Timestamp getRecommendedNextDiff();
   /**
