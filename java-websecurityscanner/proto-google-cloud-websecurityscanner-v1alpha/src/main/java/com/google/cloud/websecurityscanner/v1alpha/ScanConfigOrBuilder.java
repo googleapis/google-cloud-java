@@ -33,6 +33,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -66,6 +72,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -80,6 +88,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_qps = 3;</code>
+   *
+   * @return The maxQps.
    */
   int getMaxQps();
 
@@ -91,6 +101,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the startingUrls.
    */
   java.util.List<java.lang.String> getStartingUrlsList();
   /**
@@ -101,6 +113,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of startingUrls.
    */
   int getStartingUrlsCount();
   /**
@@ -111,6 +125,9 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The startingUrls at the given index.
    */
   java.lang.String getStartingUrls(int index);
   /**
@@ -121,6 +138,9 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the startingUrls at the given index.
    */
   com.google.protobuf.ByteString getStartingUrlsBytes(int index);
 
@@ -134,6 +154,8 @@ public interface ScanConfigOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
    * </code>
+   *
+   * @return Whether the authentication field is set.
    */
   boolean hasAuthentication();
   /**
@@ -146,6 +168,8 @@ public interface ScanConfigOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
    * </code>
+   *
+   * @return The authentication.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getAuthentication();
   /**
@@ -170,6 +194,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+   *
+   * @return The enum numeric value on the wire for userAgent.
    */
   int getUserAgentValue();
   /**
@@ -180,6 +206,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+   *
+   * @return The userAgent.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent();
 
@@ -192,6 +220,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @return A list containing the blacklistPatterns.
    */
   java.util.List<java.lang.String> getBlacklistPatternsList();
   /**
@@ -203,6 +233,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @return The count of blacklistPatterns.
    */
   int getBlacklistPatternsCount();
   /**
@@ -214,6 +246,9 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blacklistPatterns at the given index.
    */
   java.lang.String getBlacklistPatterns(int index);
   /**
@@ -225,6 +260,9 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the blacklistPatterns at the given index.
    */
   com.google.protobuf.ByteString getBlacklistPatternsBytes(int index);
 
@@ -236,6 +274,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
+   *
+   * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
   /**
@@ -246,6 +286,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
+   *
+   * @return The schedule.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule();
   /**
@@ -270,6 +312,8 @@ public interface ScanConfigOrBuilder
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @return A list containing the targetPlatforms.
    */
   java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
       getTargetPlatformsList();
@@ -284,6 +328,8 @@ public interface ScanConfigOrBuilder
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @return The count of targetPlatforms.
    */
   int getTargetPlatformsCount();
   /**
@@ -297,6 +343,9 @@ public interface ScanConfigOrBuilder
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetPlatforms at the given index.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
       int index);
@@ -311,6 +360,8 @@ public interface ScanConfigOrBuilder
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for targetPlatforms.
    */
   java.util.List<java.lang.Integer> getTargetPlatformsValueList();
   /**
@@ -324,6 +375,9 @@ public interface ScanConfigOrBuilder
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of targetPlatforms at the given index.
    */
   int getTargetPlatformsValue(int index);
 
@@ -335,6 +389,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   *
+   * @return Whether the latestRun field is set.
    */
   boolean hasLatestRun();
   /**
@@ -345,6 +401,8 @@ public interface ScanConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   *
+   * @return The latestRun.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanRun getLatestRun();
   /**

@@ -34,6 +34,8 @@ public interface CreateScanConfigRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateScanConfigRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateScanConfigRequestOrBuilder
    * <code>
    * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scanConfig field is set.
    */
   boolean hasScanConfig();
   /**
@@ -72,6 +78,8 @@ public interface CreateScanConfigRequestOrBuilder
    * <code>
    * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scanConfig.
    */
   com.google.cloud.websecurityscanner.v1beta.ScanConfig getScanConfig();
   /**

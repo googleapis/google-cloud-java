@@ -43,6 +43,12 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Form();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fields_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               fields_.add(s);
               break;
@@ -97,7 +103,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fields_ = fields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +126,6 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1beta.Form.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ACTION_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object actionUri_;
   /**
@@ -131,6 +136,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action_uri = 1;</code>
+   *
+   * @return The actionUri.
    */
   public java.lang.String getActionUri() {
     java.lang.Object ref = actionUri_;
@@ -151,6 +158,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string action_uri = 1;</code>
+   *
+   * @return The bytes for actionUri.
    */
   public com.google.protobuf.ByteString getActionUriBytes() {
     java.lang.Object ref = actionUri_;
@@ -174,6 +183,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @return A list containing the fields.
    */
   public com.google.protobuf.ProtocolStringList getFieldsList() {
     return fields_;
@@ -186,6 +197,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @return The count of fields.
    */
   public int getFieldsCount() {
     return fields_.size();
@@ -198,6 +211,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fields at the given index.
    */
   public java.lang.String getFields(int index) {
     return fields_.get(index);
@@ -210,6 +226,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fields at the given index.
    */
   public com.google.protobuf.ByteString getFieldsBytes(int index) {
     return fields_.getByteString(index);
@@ -438,7 +457,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       actionUri_ = "";
 
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -467,14 +486,12 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1beta.Form result =
           new com.google.cloud.websecurityscanner.v1beta.Form(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.actionUri_ = actionUri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fields_ = fields_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -532,7 +549,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -579,6 +596,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action_uri = 1;</code>
+     *
+     * @return The actionUri.
      */
     public java.lang.String getActionUri() {
       java.lang.Object ref = actionUri_;
@@ -599,6 +618,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action_uri = 1;</code>
+     *
+     * @return The bytes for actionUri.
      */
     public com.google.protobuf.ByteString getActionUriBytes() {
       java.lang.Object ref = actionUri_;
@@ -619,6 +640,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action_uri = 1;</code>
+     *
+     * @param value The actionUri to set.
+     * @return This builder for chaining.
      */
     public Builder setActionUri(java.lang.String value) {
       if (value == null) {
@@ -637,6 +661,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearActionUri() {
 
@@ -652,6 +678,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string action_uri = 1;</code>
+     *
+     * @param value The bytes for actionUri to set.
+     * @return This builder for chaining.
      */
     public Builder setActionUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -668,9 +697,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -681,6 +710,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @return A list containing the fields.
      */
     public com.google.protobuf.ProtocolStringList getFieldsList() {
       return fields_.getUnmodifiableView();
@@ -693,6 +724,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @return The count of fields.
      */
     public int getFieldsCount() {
       return fields_.size();
@@ -705,6 +738,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fields at the given index.
      */
     public java.lang.String getFields(int index) {
       return fields_.get(index);
@@ -717,6 +753,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fields at the given index.
      */
     public com.google.protobuf.ByteString getFieldsBytes(int index) {
       return fields_.getByteString(index);
@@ -729,6 +768,10 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The fields to set.
+     * @return This builder for chaining.
      */
     public Builder setFields(int index, java.lang.String value) {
       if (value == null) {
@@ -747,6 +790,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @param value The fields to add.
+     * @return This builder for chaining.
      */
     public Builder addFields(java.lang.String value) {
       if (value == null) {
@@ -765,6 +811,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @param values The fields to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFields(java.lang.Iterable<java.lang.String> values) {
       ensureFieldsIsMutable();
@@ -780,10 +829,12 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -795,6 +846,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     *
+     * @param value The bytes of the fields to add.
+     * @return This builder for chaining.
      */
     public Builder addFieldsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

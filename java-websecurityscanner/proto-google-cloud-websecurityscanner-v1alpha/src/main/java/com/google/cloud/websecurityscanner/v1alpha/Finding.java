@@ -52,6 +52,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Finding();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,7 +70,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -576,12 +581,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static FindingType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static FindingType forNumber(int value) {
       switch (value) {
         case 0:
@@ -671,6 +684,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -693,6 +708,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -716,6 +733,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for findingType.
    */
   public int getFindingTypeValue() {
     return findingType_;
@@ -728,6 +747,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+   *
+   * @return The findingType.
    */
   public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
     @SuppressWarnings("deprecation")
@@ -749,6 +770,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string http_method = 3;</code>
+   *
+   * @return The httpMethod.
    */
   public java.lang.String getHttpMethod() {
     java.lang.Object ref = httpMethod_;
@@ -770,6 +793,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string http_method = 3;</code>
+   *
+   * @return The bytes for httpMethod.
    */
   public com.google.protobuf.ByteString getHttpMethodBytes() {
     java.lang.Object ref = httpMethod_;
@@ -794,6 +819,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string fuzzed_url = 4;</code>
+   *
+   * @return The fuzzedUrl.
    */
   public java.lang.String getFuzzedUrl() {
     java.lang.Object ref = fuzzedUrl_;
@@ -815,6 +842,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string fuzzed_url = 4;</code>
+   *
+   * @return The bytes for fuzzedUrl.
    */
   public com.google.protobuf.ByteString getFuzzedUrlBytes() {
     java.lang.Object ref = fuzzedUrl_;
@@ -838,6 +867,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string body = 5;</code>
+   *
+   * @return The body.
    */
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
@@ -858,6 +889,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string body = 5;</code>
+   *
+   * @return The bytes for body.
    */
   public com.google.protobuf.ByteString getBodyBytes() {
     java.lang.Object ref = body_;
@@ -881,6 +914,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -901,6 +936,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -925,6 +962,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string reproduction_url = 7;</code>
+   *
+   * @return The reproductionUrl.
    */
   public java.lang.String getReproductionUrl() {
     java.lang.Object ref = reproductionUrl_;
@@ -946,6 +985,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string reproduction_url = 7;</code>
+   *
+   * @return The bytes for reproductionUrl.
    */
   public com.google.protobuf.ByteString getReproductionUrlBytes() {
     java.lang.Object ref = reproductionUrl_;
@@ -970,6 +1011,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string frame_url = 8;</code>
+   *
+   * @return The frameUrl.
    */
   public java.lang.String getFrameUrl() {
     java.lang.Object ref = frameUrl_;
@@ -991,6 +1034,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string frame_url = 8;</code>
+   *
+   * @return The bytes for frameUrl.
    */
   public com.google.protobuf.ByteString getFrameUrlBytes() {
     java.lang.Object ref = frameUrl_;
@@ -1014,6 +1059,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string final_url = 9;</code>
+   *
+   * @return The finalUrl.
    */
   public java.lang.String getFinalUrl() {
     java.lang.Object ref = finalUrl_;
@@ -1034,6 +1081,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string final_url = 9;</code>
+   *
+   * @return The bytes for finalUrl.
    */
   public com.google.protobuf.ByteString getFinalUrlBytes() {
     java.lang.Object ref = finalUrl_;
@@ -1058,6 +1107,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tracking_id = 10;</code>
+   *
+   * @return The trackingId.
    */
   public java.lang.String getTrackingId() {
     java.lang.Object ref = trackingId_;
@@ -1079,6 +1130,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tracking_id = 10;</code>
+   *
+   * @return The bytes for trackingId.
    */
   public com.google.protobuf.ByteString getTrackingIdBytes() {
     java.lang.Object ref = trackingId_;
@@ -1102,6 +1155,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
+   *
+   * @return Whether the outdatedLibrary field is set.
    */
   public boolean hasOutdatedLibrary() {
     return outdatedLibrary_ != null;
@@ -1114,6 +1169,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
+   *
+   * @return The outdatedLibrary.
    */
   public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary getOutdatedLibrary() {
     return outdatedLibrary_ == null
@@ -1146,6 +1203,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
    * </code>
+   *
+   * @return Whether the violatingResource field is set.
    */
   public boolean hasViolatingResource() {
     return violatingResource_ != null;
@@ -1160,6 +1219,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
    * </code>
+   *
+   * @return The violatingResource.
    */
   public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource getViolatingResource() {
     return violatingResource_ == null
@@ -1193,6 +1254,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;
    * </code>
+   *
+   * @return Whether the vulnerableHeaders field is set.
    */
   public boolean hasVulnerableHeaders() {
     return vulnerableHeaders_ != null;
@@ -1206,6 +1269,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;
    * </code>
+   *
+   * @return The vulnerableHeaders.
    */
   public com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders getVulnerableHeaders() {
     return vulnerableHeaders_ == null
@@ -1239,6 +1304,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
    * </code>
+   *
+   * @return Whether the vulnerableParameters field is set.
    */
   public boolean hasVulnerableParameters() {
     return vulnerableParameters_ != null;
@@ -1253,6 +1320,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
    * </code>
+   *
+   * @return The vulnerableParameters.
    */
   public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters
       getVulnerableParameters() {
@@ -1286,6 +1355,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
+   *
+   * @return Whether the xss field is set.
    */
   public boolean hasXss() {
     return xss_ != null;
@@ -1298,6 +1369,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
+   *
+   * @return The xss.
    */
   public com.google.cloud.websecurityscanner.v1alpha.Xss getXss() {
     return xss_ == null
@@ -1935,6 +2008,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1957,6 +2032,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1979,6 +2056,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1999,6 +2079,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2016,6 +2098,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2037,6 +2122,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for findingType.
      */
     public int getFindingTypeValue() {
       return findingType_;
@@ -2049,6 +2136,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for findingType to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingTypeValue(int value) {
       findingType_ = value;
@@ -2063,6 +2153,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+     *
+     * @return The findingType.
      */
     public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
       @SuppressWarnings("deprecation")
@@ -2080,6 +2172,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+     *
+     * @param value The findingType to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingType(
         com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType value) {
@@ -2099,6 +2194,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingType() {
 
@@ -2117,6 +2214,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 3;</code>
+     *
+     * @return The httpMethod.
      */
     public java.lang.String getHttpMethod() {
       java.lang.Object ref = httpMethod_;
@@ -2138,6 +2237,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 3;</code>
+     *
+     * @return The bytes for httpMethod.
      */
     public com.google.protobuf.ByteString getHttpMethodBytes() {
       java.lang.Object ref = httpMethod_;
@@ -2159,6 +2260,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 3;</code>
+     *
+     * @param value The httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethod(java.lang.String value) {
       if (value == null) {
@@ -2178,6 +2282,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
 
@@ -2194,6 +2300,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 3;</code>
+     *
+     * @param value The bytes for httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethodBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2216,6 +2325,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fuzzed_url = 4;</code>
+     *
+     * @return The fuzzedUrl.
      */
     public java.lang.String getFuzzedUrl() {
       java.lang.Object ref = fuzzedUrl_;
@@ -2237,6 +2348,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fuzzed_url = 4;</code>
+     *
+     * @return The bytes for fuzzedUrl.
      */
     public com.google.protobuf.ByteString getFuzzedUrlBytes() {
       java.lang.Object ref = fuzzedUrl_;
@@ -2258,6 +2371,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fuzzed_url = 4;</code>
+     *
+     * @param value The fuzzedUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setFuzzedUrl(java.lang.String value) {
       if (value == null) {
@@ -2277,6 +2393,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fuzzed_url = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFuzzedUrl() {
 
@@ -2293,6 +2411,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string fuzzed_url = 4;</code>
+     *
+     * @param value The bytes for fuzzedUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setFuzzedUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2314,6 +2435,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 5;</code>
+     *
+     * @return The body.
      */
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
@@ -2334,6 +2457,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 5;</code>
+     *
+     * @return The bytes for body.
      */
     public com.google.protobuf.ByteString getBodyBytes() {
       java.lang.Object ref = body_;
@@ -2354,6 +2479,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 5;</code>
+     *
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(java.lang.String value) {
       if (value == null) {
@@ -2372,6 +2500,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
 
@@ -2387,6 +2517,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 5;</code>
+     *
+     * @param value The bytes for body to set.
+     * @return This builder for chaining.
      */
     public Builder setBodyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2408,6 +2541,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2428,6 +2563,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2448,6 +2585,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2466,6 +2606,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2481,6 +2623,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2503,6 +2648,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string reproduction_url = 7;</code>
+     *
+     * @return The reproductionUrl.
      */
     public java.lang.String getReproductionUrl() {
       java.lang.Object ref = reproductionUrl_;
@@ -2524,6 +2671,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string reproduction_url = 7;</code>
+     *
+     * @return The bytes for reproductionUrl.
      */
     public com.google.protobuf.ByteString getReproductionUrlBytes() {
       java.lang.Object ref = reproductionUrl_;
@@ -2545,6 +2694,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string reproduction_url = 7;</code>
+     *
+     * @param value The reproductionUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setReproductionUrl(java.lang.String value) {
       if (value == null) {
@@ -2564,6 +2716,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string reproduction_url = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReproductionUrl() {
 
@@ -2580,6 +2734,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string reproduction_url = 7;</code>
+     *
+     * @param value The bytes for reproductionUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setReproductionUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2602,6 +2759,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string frame_url = 8;</code>
+     *
+     * @return The frameUrl.
      */
     public java.lang.String getFrameUrl() {
       java.lang.Object ref = frameUrl_;
@@ -2623,6 +2782,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string frame_url = 8;</code>
+     *
+     * @return The bytes for frameUrl.
      */
     public com.google.protobuf.ByteString getFrameUrlBytes() {
       java.lang.Object ref = frameUrl_;
@@ -2644,6 +2805,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string frame_url = 8;</code>
+     *
+     * @param value The frameUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setFrameUrl(java.lang.String value) {
       if (value == null) {
@@ -2663,6 +2827,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string frame_url = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFrameUrl() {
 
@@ -2679,6 +2845,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string frame_url = 8;</code>
+     *
+     * @param value The bytes for frameUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setFrameUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2700,6 +2869,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string final_url = 9;</code>
+     *
+     * @return The finalUrl.
      */
     public java.lang.String getFinalUrl() {
       java.lang.Object ref = finalUrl_;
@@ -2720,6 +2891,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string final_url = 9;</code>
+     *
+     * @return The bytes for finalUrl.
      */
     public com.google.protobuf.ByteString getFinalUrlBytes() {
       java.lang.Object ref = finalUrl_;
@@ -2740,6 +2913,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string final_url = 9;</code>
+     *
+     * @param value The finalUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setFinalUrl(java.lang.String value) {
       if (value == null) {
@@ -2758,6 +2934,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string final_url = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFinalUrl() {
 
@@ -2773,6 +2951,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string final_url = 9;</code>
+     *
+     * @param value The bytes for finalUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setFinalUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2795,6 +2976,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tracking_id = 10;</code>
+     *
+     * @return The trackingId.
      */
     public java.lang.String getTrackingId() {
       java.lang.Object ref = trackingId_;
@@ -2816,6 +2999,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tracking_id = 10;</code>
+     *
+     * @return The bytes for trackingId.
      */
     public com.google.protobuf.ByteString getTrackingIdBytes() {
       java.lang.Object ref = trackingId_;
@@ -2837,6 +3022,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tracking_id = 10;</code>
+     *
+     * @param value The trackingId to set.
+     * @return This builder for chaining.
      */
     public Builder setTrackingId(java.lang.String value) {
       if (value == null) {
@@ -2856,6 +3044,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tracking_id = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTrackingId() {
 
@@ -2872,6 +3062,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tracking_id = 10;</code>
+     *
+     * @param value The bytes for trackingId to set.
+     * @return This builder for chaining.
      */
     public Builder setTrackingIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2898,6 +3091,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
+     *
+     * @return Whether the outdatedLibrary field is set.
      */
     public boolean hasOutdatedLibrary() {
       return outdatedLibraryBuilder_ != null || outdatedLibrary_ != null;
@@ -2910,6 +3105,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
+     *
+     * @return The outdatedLibrary.
      */
     public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary getOutdatedLibrary() {
       if (outdatedLibraryBuilder_ == null) {
@@ -3087,6 +3284,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
      * </code>
+     *
+     * @return Whether the violatingResource field is set.
      */
     public boolean hasViolatingResource() {
       return violatingResourceBuilder_ != null || violatingResource_ != null;
@@ -3101,6 +3300,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
      * </code>
+     *
+     * @return The violatingResource.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource getViolatingResource() {
       if (violatingResourceBuilder_ == null) {
@@ -3291,6 +3492,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;
      * </code>
+     *
+     * @return Whether the vulnerableHeaders field is set.
      */
     public boolean hasVulnerableHeaders() {
       return vulnerableHeadersBuilder_ != null || vulnerableHeaders_ != null;
@@ -3304,6 +3507,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;
      * </code>
+     *
+     * @return The vulnerableHeaders.
      */
     public com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders getVulnerableHeaders() {
       if (vulnerableHeadersBuilder_ == null) {
@@ -3489,6 +3694,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
      * </code>
+     *
+     * @return Whether the vulnerableParameters field is set.
      */
     public boolean hasVulnerableParameters() {
       return vulnerableParametersBuilder_ != null || vulnerableParameters_ != null;
@@ -3504,6 +3711,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
      * </code>
+     *
+     * @return The vulnerableParameters.
      */
     public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters
         getVulnerableParameters() {
@@ -3701,6 +3910,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
+     *
+     * @return Whether the xss field is set.
      */
     public boolean hasXss() {
       return xssBuilder_ != null || xss_ != null;
@@ -3713,6 +3924,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
+     *
+     * @return The xss.
      */
     public com.google.cloud.websecurityscanner.v1alpha.Xss getXss() {
       if (xssBuilder_ == null) {

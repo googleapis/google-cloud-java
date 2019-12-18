@@ -35,6 +35,8 @@ public interface UpdateScanConfigRequestOrBuilder
    * <code>
    * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scanConfig field is set.
    */
   boolean hasScanConfig();
   /**
@@ -49,6 +51,8 @@ public interface UpdateScanConfigRequestOrBuilder
    * <code>
    * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scanConfig.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig();
   /**
@@ -77,6 +81,8 @@ public interface UpdateScanConfigRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -90,6 +96,8 @@ public interface UpdateScanConfigRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

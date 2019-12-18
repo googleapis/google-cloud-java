@@ -40,6 +40,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
   private UpdateScanConfigRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateScanConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +148,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scanConfig field is set.
    */
   public boolean hasScanConfig() {
     return scanConfig_ != null;
@@ -159,6 +166,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scanConfig.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanConfig getScanConfig() {
     return scanConfig_ == null
@@ -195,6 +204,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -210,6 +221,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -615,6 +628,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the scanConfig field is set.
      */
     public boolean hasScanConfig() {
       return scanConfigBuilder_ != null || scanConfig_ != null;
@@ -631,6 +646,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The scanConfig.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfig getScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -832,6 +849,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -847,6 +866,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

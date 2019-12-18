@@ -33,6 +33,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface ScanRunOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
   /**
@@ -68,6 +74,8 @@ public interface ScanRunOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
    * </code>
+   *
+   * @return The executionState.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState getExecutionState();
 
@@ -80,6 +88,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result_state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for resultState.
    */
   int getResultStateValue();
   /**
@@ -91,6 +101,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result_state = 3;</code>
+   *
+   * @return The resultState.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState getResultState();
 
@@ -102,6 +114,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -112,6 +126,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -134,6 +150,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -145,6 +163,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -168,6 +188,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>int64 urls_crawled_count = 6;</code>
+   *
+   * @return The urlsCrawledCount.
    */
   long getUrlsCrawledCount();
 
@@ -182,6 +204,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>int64 urls_tested_count = 7;</code>
+   *
+   * @return The urlsTestedCount.
    */
   long getUrlsTestedCount();
 
@@ -193,6 +217,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>bool has_vulnerabilities = 8;</code>
+   *
+   * @return The hasVulnerabilities.
    */
   boolean getHasVulnerabilities();
 
@@ -207,6 +233,8 @@ public interface ScanRunOrBuilder
    * </pre>
    *
    * <code>int32 progress_percent = 9;</code>
+   *
+   * @return The progressPercent.
    */
   int getProgressPercent();
 }

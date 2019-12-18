@@ -48,6 +48,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ScanConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -93,9 +99,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 startingUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               startingUrls_.add(s);
               break;
@@ -129,9 +135,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000002;
               }
               blacklistPatterns_.add(s);
               break;
@@ -157,9 +163,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 72:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000004;
               }
               targetPlatforms_.add(rawValue);
               break;
@@ -170,9 +176,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000100;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 targetPlatforms_.add(rawValue);
               }
@@ -210,13 +216,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
       }
       this.unknownFields = unknownFields.build();
@@ -341,12 +347,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static UserAgent valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static UserAgent forNumber(int value) {
       switch (value) {
         case 0:
@@ -492,12 +506,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TargetPlatform valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TargetPlatform forNumber(int value) {
       switch (value) {
         case 0:
@@ -572,6 +594,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
+     *
+     * @return Whether the googleAccount field is set.
      */
     boolean hasGoogleAccount();
     /**
@@ -584,6 +608,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
+     *
+     * @return The googleAccount.
      */
     com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount();
@@ -611,6 +637,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
      * </code>
+     *
+     * @return Whether the customAccount field is set.
      */
     boolean hasCustomAccount();
     /**
@@ -623,6 +651,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
      * </code>
+     *
+     * @return The customAccount.
      */
     com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
         getCustomAccount();
@@ -665,6 +695,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private Authentication() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Authentication();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -677,7 +713,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -789,6 +824,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The username.
        */
       java.lang.String getUsername();
       /**
@@ -799,6 +836,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for username.
        */
       com.google.protobuf.ByteString getUsernameBytes();
 
@@ -813,6 +852,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The password.
        */
       java.lang.String getPassword();
       /**
@@ -826,6 +867,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The bytes for password.
        */
       com.google.protobuf.ByteString getPasswordBytes();
     }
@@ -855,6 +898,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new GoogleAccount();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -867,7 +916,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -939,6 +987,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The username.
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -959,6 +1009,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -985,6 +1037,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The password.
        */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
@@ -1008,6 +1062,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The bytes for password.
        */
       public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
@@ -1416,6 +1472,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The username.
          */
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
@@ -1436,6 +1494,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for username.
          */
         public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
@@ -1456,6 +1516,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The username to set.
+         * @return This builder for chaining.
          */
         public Builder setUsername(java.lang.String value) {
           if (value == null) {
@@ -1474,6 +1537,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearUsername() {
 
@@ -1489,6 +1554,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for username to set.
+         * @return This builder for chaining.
          */
         public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1513,6 +1581,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @return The password.
          */
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
@@ -1536,6 +1606,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @return The bytes for password.
          */
         public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
@@ -1559,6 +1631,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @param value The password to set.
+         * @return This builder for chaining.
          */
         public Builder setPassword(java.lang.String value) {
           if (value == null) {
@@ -1580,6 +1655,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPassword() {
 
@@ -1598,6 +1675,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @param value The bytes for password to set.
+         * @return This builder for chaining.
          */
         public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1682,6 +1762,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The username.
        */
       java.lang.String getUsername();
       /**
@@ -1692,6 +1774,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for username.
        */
       com.google.protobuf.ByteString getUsernameBytes();
 
@@ -1706,6 +1790,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The password.
        */
       java.lang.String getPassword();
       /**
@@ -1719,6 +1805,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The bytes for password.
        */
       com.google.protobuf.ByteString getPasswordBytes();
 
@@ -1730,6 +1818,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The loginUrl.
        */
       java.lang.String getLoginUrl();
       /**
@@ -1740,6 +1830,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for loginUrl.
        */
       com.google.protobuf.ByteString getLoginUrlBytes();
     }
@@ -1770,6 +1862,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomAccount();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1782,7 +1880,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -1861,6 +1958,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The username.
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -1881,6 +1980,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -1907,6 +2008,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The password.
        */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
@@ -1930,6 +2033,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
        * </code>
+       *
+       * @return The bytes for password.
        */
       public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
@@ -1953,6 +2058,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The loginUrl.
        */
       public java.lang.String getLoginUrl() {
         java.lang.Object ref = loginUrl_;
@@ -1973,6 +2080,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for loginUrl.
        */
       public com.google.protobuf.ByteString getLoginUrlBytes() {
         java.lang.Object ref = loginUrl_;
@@ -2397,6 +2506,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The username.
          */
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
@@ -2417,6 +2528,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for username.
          */
         public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
@@ -2437,6 +2550,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The username to set.
+         * @return This builder for chaining.
          */
         public Builder setUsername(java.lang.String value) {
           if (value == null) {
@@ -2455,6 +2571,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearUsername() {
 
@@ -2470,6 +2588,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for username to set.
+         * @return This builder for chaining.
          */
         public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2494,6 +2615,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @return The password.
          */
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
@@ -2517,6 +2640,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @return The bytes for password.
          */
         public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
@@ -2540,6 +2665,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @param value The password to set.
+         * @return This builder for chaining.
          */
         public Builder setPassword(java.lang.String value) {
           if (value == null) {
@@ -2561,6 +2689,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearPassword() {
 
@@ -2579,6 +2709,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * <code>
          * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
          * </code>
+         *
+         * @param value The bytes for password to set.
+         * @return This builder for chaining.
          */
         public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2600,6 +2733,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The loginUrl.
          */
         public java.lang.String getLoginUrl() {
           java.lang.Object ref = loginUrl_;
@@ -2620,6 +2755,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for loginUrl.
          */
         public com.google.protobuf.ByteString getLoginUrlBytes() {
           java.lang.Object ref = loginUrl_;
@@ -2640,6 +2777,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The loginUrl to set.
+         * @return This builder for chaining.
          */
         public Builder setLoginUrl(java.lang.String value) {
           if (value == null) {
@@ -2658,6 +2798,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
          */
         public Builder clearLoginUrl() {
 
@@ -2673,6 +2815,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for loginUrl to set.
+         * @return This builder for chaining.
          */
         public Builder setLoginUrlBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2747,7 +2892,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private int authenticationCase_ = 0;
     private java.lang.Object authentication_;
 
-    public enum AuthenticationCase implements com.google.protobuf.Internal.EnumLite {
+    public enum AuthenticationCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       GOOGLE_ACCOUNT(1),
       CUSTOM_ACCOUNT(2),
       AUTHENTICATION_NOT_SET(0);
@@ -2756,7 +2904,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       private AuthenticationCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static AuthenticationCase valueOf(int value) {
         return forNumber(value);
@@ -2795,6 +2947,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
+     *
+     * @return Whether the googleAccount field is set.
      */
     public boolean hasGoogleAccount() {
       return authenticationCase_ == 1;
@@ -2809,6 +2963,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
+     *
+     * @return The googleAccount.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount() {
@@ -2852,6 +3008,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
      * </code>
+     *
+     * @return Whether the customAccount field is set.
      */
     public boolean hasCustomAccount() {
       return authenticationCase_ == 2;
@@ -2866,6 +3024,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
      * </code>
+     *
+     * @return The customAccount.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
         getCustomAccount() {
@@ -3331,6 +3491,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
+       *
+       * @return Whether the googleAccount field is set.
        */
       public boolean hasGoogleAccount() {
         return authenticationCase_ == 1;
@@ -3345,6 +3507,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
+       *
+       * @return The googleAccount.
        */
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
           getGoogleAccount() {
@@ -3585,6 +3749,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
        * </code>
+       *
+       * @return Whether the customAccount field is set.
        */
       public boolean hasCustomAccount() {
         return authenticationCase_ == 2;
@@ -3599,6 +3765,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>
        * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
        * </code>
+       *
+       * @return The customAccount.
        */
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
           getCustomAccount() {
@@ -3894,6 +4062,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+     *
+     * @return Whether the scheduleTime field is set.
      */
     boolean hasScheduleTime();
     /**
@@ -3907,6 +4077,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+     *
+     * @return The scheduleTime.
      */
     com.google.protobuf.Timestamp getScheduleTime();
     /**
@@ -3931,6 +4103,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The intervalDurationDays.
      */
     int getIntervalDurationDays();
   }
@@ -3956,6 +4130,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private Schedule() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Schedule();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3968,7 +4148,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4046,6 +4225,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+     *
+     * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
       return scheduleTime_ != null;
@@ -4061,6 +4242,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+     *
+     * @return The scheduleTime.
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       return scheduleTime_ == null
@@ -4093,6 +4276,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The intervalDurationDays.
      */
     public int getIntervalDurationDays() {
       return intervalDurationDays_;
@@ -4471,6 +4656,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+       *
+       * @return Whether the scheduleTime field is set.
        */
       public boolean hasScheduleTime() {
         return scheduleTimeBuilder_ != null || scheduleTime_ != null;
@@ -4486,6 +4673,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+       *
+       * @return The scheduleTime.
        */
       public com.google.protobuf.Timestamp getScheduleTime() {
         if (scheduleTimeBuilder_ == null) {
@@ -4671,6 +4860,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The intervalDurationDays.
        */
       public int getIntervalDurationDays() {
         return intervalDurationDays_;
@@ -4683,6 +4874,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The intervalDurationDays to set.
+       * @return This builder for chaining.
        */
       public Builder setIntervalDurationDays(int value) {
 
@@ -4698,6 +4892,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIntervalDurationDays() {
 
@@ -4761,7 +4957,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -4774,6 +4969,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -4796,6 +4993,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -4819,6 +5018,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -4839,6 +5040,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -4865,6 +5068,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 max_qps = 3;</code>
+   *
+   * @return The maxQps.
    */
   public int getMaxQps() {
     return maxQps_;
@@ -4880,6 +5085,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the startingUrls.
    */
   public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
     return startingUrls_;
@@ -4892,6 +5099,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of startingUrls.
    */
   public int getStartingUrlsCount() {
     return startingUrls_.size();
@@ -4904,6 +5113,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The startingUrls at the given index.
    */
   public java.lang.String getStartingUrls(int index) {
     return startingUrls_.get(index);
@@ -4916,6 +5128,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the startingUrls at the given index.
    */
   public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
     return startingUrls_.getByteString(index);
@@ -4933,6 +5148,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
    * </code>
+   *
+   * @return Whether the authentication field is set.
    */
   public boolean hasAuthentication() {
     return authentication_ != null;
@@ -4947,6 +5164,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
    * </code>
+   *
+   * @return The authentication.
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getAuthentication() {
     return authentication_ == null
@@ -4979,6 +5198,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+   *
+   * @return The enum numeric value on the wire for userAgent.
    */
   public int getUserAgentValue() {
     return userAgent_;
@@ -4991,6 +5212,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+   *
+   * @return The userAgent.
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent() {
     @SuppressWarnings("deprecation")
@@ -5012,6 +5235,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @return A list containing the blacklistPatterns.
    */
   public com.google.protobuf.ProtocolStringList getBlacklistPatternsList() {
     return blacklistPatterns_;
@@ -5025,6 +5250,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @return The count of blacklistPatterns.
    */
   public int getBlacklistPatternsCount() {
     return blacklistPatterns_.size();
@@ -5038,6 +5265,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blacklistPatterns at the given index.
    */
   public java.lang.String getBlacklistPatterns(int index) {
     return blacklistPatterns_.get(index);
@@ -5051,6 +5281,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string blacklist_patterns = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the blacklistPatterns at the given index.
    */
   public com.google.protobuf.ByteString getBlacklistPatternsBytes(int index) {
     return blacklistPatterns_.getByteString(index);
@@ -5066,6 +5299,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
+   *
+   * @return Whether the schedule field is set.
    */
   public boolean hasSchedule() {
     return schedule_ != null;
@@ -5078,6 +5313,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
+   *
+   * @return The schedule.
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule() {
     return schedule_ == null
@@ -5129,6 +5366,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @return A list containing the targetPlatforms.
    */
   public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
       getTargetPlatformsList() {
@@ -5147,6 +5386,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @param value The targetPlatforms to add.
    */
   public int getTargetPlatformsCount() {
     return targetPlatforms_.size();
@@ -5162,6 +5403,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetPlatforms at the given index.
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
       int index) {
@@ -5178,6 +5422,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for targetPlatforms.
    */
   public java.util.List<java.lang.Integer> getTargetPlatformsValueList() {
     return targetPlatforms_;
@@ -5193,6 +5439,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of targetPlatforms at the given index.
    */
   public int getTargetPlatformsValue(int index) {
     return targetPlatforms_.get(index);
@@ -5210,6 +5459,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   *
+   * @return Whether the latestRun field is set.
    */
   public boolean hasLatestRun() {
     return latestRun_ != null;
@@ -5222,6 +5473,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   *
+   * @return The latestRun.
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun getLatestRun() {
     return latestRun_ == null
@@ -5585,7 +5838,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       maxQps_ = 0;
 
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (authenticationBuilder_ == null) {
         authentication_ = null;
       } else {
@@ -5595,7 +5848,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       userAgent_ = 0;
 
       blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (scheduleBuilder_ == null) {
         schedule_ = null;
       } else {
@@ -5603,7 +5856,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         scheduleBuilder_ = null;
       }
       targetPlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (latestRunBuilder_ == null) {
         latestRun_ = null;
       } else {
@@ -5638,13 +5891,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig result =
           new com.google.cloud.websecurityscanner.v1alpha.ScanConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.maxQps_ = maxQps_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.startingUrls_ = startingUrls_;
       if (authenticationBuilder_ == null) {
@@ -5653,9 +5905,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         result.authentication_ = authenticationBuilder_.build();
       }
       result.userAgent_ = userAgent_;
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.blacklistPatterns_ = blacklistPatterns_;
       if (scheduleBuilder_ == null) {
@@ -5663,9 +5915,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.schedule_ = scheduleBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.targetPlatforms_ = targetPlatforms_;
       if (latestRunBuilder_ == null) {
@@ -5673,7 +5925,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.latestRun_ = latestRunBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -5738,7 +5989,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.startingUrls_.isEmpty()) {
         if (startingUrls_.isEmpty()) {
           startingUrls_ = other.startingUrls_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureStartingUrlsIsMutable();
           startingUrls_.addAll(other.startingUrls_);
@@ -5754,7 +6005,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.blacklistPatterns_.isEmpty()) {
         if (blacklistPatterns_.isEmpty()) {
           blacklistPatterns_ = other.blacklistPatterns_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureBlacklistPatternsIsMutable();
           blacklistPatterns_.addAll(other.blacklistPatterns_);
@@ -5767,7 +6018,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetPlatforms_.isEmpty()) {
         if (targetPlatforms_.isEmpty()) {
           targetPlatforms_ = other.targetPlatforms_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTargetPlatformsIsMutable();
           targetPlatforms_.addAll(other.targetPlatforms_);
@@ -5820,6 +6071,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -5842,6 +6095,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -5864,6 +6119,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -5884,6 +6142,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -5901,6 +6161,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5922,6 +6185,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -5942,6 +6207,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -5962,6 +6229,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -5980,6 +6250,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -5995,6 +6267,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6019,6 +6294,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_qps = 3;</code>
+     *
+     * @return The maxQps.
      */
     public int getMaxQps() {
       return maxQps_;
@@ -6034,6 +6311,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_qps = 3;</code>
+     *
+     * @param value The maxQps to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxQps(int value) {
 
@@ -6052,6 +6332,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_qps = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxQps() {
 
@@ -6064,9 +6346,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStartingUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         startingUrls_ = new com.google.protobuf.LazyStringArrayList(startingUrls_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -6077,6 +6359,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the startingUrls.
      */
     public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
       return startingUrls_.getUnmodifiableView();
@@ -6089,6 +6373,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of startingUrls.
      */
     public int getStartingUrlsCount() {
       return startingUrls_.size();
@@ -6101,6 +6387,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The startingUrls at the given index.
      */
     public java.lang.String getStartingUrls(int index) {
       return startingUrls_.get(index);
@@ -6113,6 +6402,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the startingUrls at the given index.
      */
     public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
       return startingUrls_.getByteString(index);
@@ -6125,6 +6417,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The startingUrls to set.
+     * @return This builder for chaining.
      */
     public Builder setStartingUrls(int index, java.lang.String value) {
       if (value == null) {
@@ -6143,6 +6439,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The startingUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addStartingUrls(java.lang.String value) {
       if (value == null) {
@@ -6161,6 +6460,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The startingUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStartingUrls(java.lang.Iterable<java.lang.String> values) {
       ensureStartingUrlsIsMutable();
@@ -6176,10 +6478,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartingUrls() {
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -6191,6 +6495,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the startingUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addStartingUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6219,6 +6526,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
      * </code>
+     *
+     * @return Whether the authentication field is set.
      */
     public boolean hasAuthentication() {
       return authenticationBuilder_ != null || authentication_ != null;
@@ -6233,6 +6542,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
      * </code>
+     *
+     * @return The authentication.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
         getAuthentication() {
@@ -6421,6 +6732,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+     *
+     * @return The enum numeric value on the wire for userAgent.
      */
     public int getUserAgentValue() {
       return userAgent_;
@@ -6433,6 +6746,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for userAgent to set.
+     * @return This builder for chaining.
      */
     public Builder setUserAgentValue(int value) {
       userAgent_ = value;
@@ -6447,6 +6763,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+     *
+     * @return The userAgent.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent() {
       @SuppressWarnings("deprecation")
@@ -6464,6 +6782,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+     *
+     * @param value The userAgent to set.
+     * @return This builder for chaining.
      */
     public Builder setUserAgent(
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent value) {
@@ -6483,6 +6804,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
 
@@ -6495,9 +6818,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlacklistPatternsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList(blacklistPatterns_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -6509,6 +6832,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @return A list containing the blacklistPatterns.
      */
     public com.google.protobuf.ProtocolStringList getBlacklistPatternsList() {
       return blacklistPatterns_.getUnmodifiableView();
@@ -6522,6 +6847,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @return The count of blacklistPatterns.
      */
     public int getBlacklistPatternsCount() {
       return blacklistPatterns_.size();
@@ -6535,6 +6862,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The blacklistPatterns at the given index.
      */
     public java.lang.String getBlacklistPatterns(int index) {
       return blacklistPatterns_.get(index);
@@ -6548,6 +6878,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the blacklistPatterns at the given index.
      */
     public com.google.protobuf.ByteString getBlacklistPatternsBytes(int index) {
       return blacklistPatterns_.getByteString(index);
@@ -6561,6 +6894,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The blacklistPatterns to set.
+     * @return This builder for chaining.
      */
     public Builder setBlacklistPatterns(int index, java.lang.String value) {
       if (value == null) {
@@ -6580,6 +6917,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @param value The blacklistPatterns to add.
+     * @return This builder for chaining.
      */
     public Builder addBlacklistPatterns(java.lang.String value) {
       if (value == null) {
@@ -6599,6 +6939,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @param values The blacklistPatterns to add.
+     * @return This builder for chaining.
      */
     public Builder addAllBlacklistPatterns(java.lang.Iterable<java.lang.String> values) {
       ensureBlacklistPatternsIsMutable();
@@ -6615,10 +6958,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBlacklistPatterns() {
       blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -6631,6 +6976,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string blacklist_patterns = 7;</code>
+     *
+     * @param value The bytes of the blacklistPatterns to add.
+     * @return This builder for chaining.
      */
     public Builder addBlacklistPatternsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6657,6 +7005,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
+     *
+     * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
       return scheduleBuilder_ != null || schedule_ != null;
@@ -6669,6 +7019,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
+     *
+     * @return The schedule.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule() {
       if (scheduleBuilder_ == null) {
@@ -6832,9 +7184,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> targetPlatforms_ = java.util.Collections.emptyList();
 
     private void ensureTargetPlatformsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>(targetPlatforms_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -6848,6 +7200,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @return A list containing the targetPlatforms.
      */
     public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
         getTargetPlatformsList() {
@@ -6866,6 +7220,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @return The count of targetPlatforms.
      */
     public int getTargetPlatformsCount() {
       return targetPlatforms_.size();
@@ -6881,6 +7237,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The targetPlatforms at the given index.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
         int index) {
@@ -6897,6 +7256,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The targetPlatforms to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetPlatforms(
         int index, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform value) {
@@ -6919,6 +7282,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param value The targetPlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addTargetPlatforms(
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform value) {
@@ -6941,6 +7307,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param values The targetPlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTargetPlatforms(
         java.lang.Iterable<
@@ -6964,10 +7333,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetPlatforms() {
       targetPlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -6982,6 +7353,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for targetPlatforms.
      */
     public java.util.List<java.lang.Integer> getTargetPlatformsValueList() {
       return java.util.Collections.unmodifiableList(targetPlatforms_);
@@ -6997,6 +7370,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of targetPlatforms at the given index.
      */
     public int getTargetPlatformsValue(int index) {
       return targetPlatforms_.get(index);
@@ -7012,6 +7388,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of targetPlatforms at the given index.
+     * @return This builder for chaining.
      */
     public Builder setTargetPlatformsValue(int index, int value) {
       ensureTargetPlatformsIsMutable();
@@ -7030,6 +7410,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for targetPlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addTargetPlatformsValue(int value) {
       ensureTargetPlatformsIsMutable();
@@ -7048,6 +7431,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
      * </code>
+     *
+     * @param values The enum numeric values on the wire for targetPlatforms to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTargetPlatformsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureTargetPlatformsIsMutable();
@@ -7072,6 +7458,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     *
+     * @return Whether the latestRun field is set.
      */
     public boolean hasLatestRun() {
       return latestRunBuilder_ != null || latestRun_ != null;
@@ -7084,6 +7472,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     *
+     * @return The latestRun.
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun getLatestRun() {
       if (latestRunBuilder_ == null) {

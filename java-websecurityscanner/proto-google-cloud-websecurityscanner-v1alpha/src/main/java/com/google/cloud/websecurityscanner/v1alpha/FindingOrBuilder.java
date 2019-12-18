@@ -33,6 +33,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for findingType.
    */
   int getFindingTypeValue();
   /**
@@ -66,6 +72,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
+   *
+   * @return The findingType.
    */
   com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType();
 
@@ -78,6 +86,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string http_method = 3;</code>
+   *
+   * @return The httpMethod.
    */
   java.lang.String getHttpMethod();
   /**
@@ -89,6 +99,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string http_method = 3;</code>
+   *
+   * @return The bytes for httpMethod.
    */
   com.google.protobuf.ByteString getHttpMethodBytes();
 
@@ -101,6 +113,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string fuzzed_url = 4;</code>
+   *
+   * @return The fuzzedUrl.
    */
   java.lang.String getFuzzedUrl();
   /**
@@ -112,6 +126,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string fuzzed_url = 4;</code>
+   *
+   * @return The bytes for fuzzedUrl.
    */
   com.google.protobuf.ByteString getFuzzedUrlBytes();
 
@@ -123,6 +139,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string body = 5;</code>
+   *
+   * @return The body.
    */
   java.lang.String getBody();
   /**
@@ -133,6 +151,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string body = 5;</code>
+   *
+   * @return The bytes for body.
    */
   com.google.protobuf.ByteString getBodyBytes();
 
@@ -144,6 +164,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -154,6 +176,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -166,6 +190,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string reproduction_url = 7;</code>
+   *
+   * @return The reproductionUrl.
    */
   java.lang.String getReproductionUrl();
   /**
@@ -177,6 +203,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string reproduction_url = 7;</code>
+   *
+   * @return The bytes for reproductionUrl.
    */
   com.google.protobuf.ByteString getReproductionUrlBytes();
 
@@ -189,6 +217,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string frame_url = 8;</code>
+   *
+   * @return The frameUrl.
    */
   java.lang.String getFrameUrl();
   /**
@@ -200,6 +230,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string frame_url = 8;</code>
+   *
+   * @return The bytes for frameUrl.
    */
   com.google.protobuf.ByteString getFrameUrlBytes();
 
@@ -211,6 +243,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string final_url = 9;</code>
+   *
+   * @return The finalUrl.
    */
   java.lang.String getFinalUrl();
   /**
@@ -221,6 +255,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string final_url = 9;</code>
+   *
+   * @return The bytes for finalUrl.
    */
   com.google.protobuf.ByteString getFinalUrlBytes();
 
@@ -233,6 +269,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string tracking_id = 10;</code>
+   *
+   * @return The trackingId.
    */
   java.lang.String getTrackingId();
   /**
@@ -244,6 +282,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>string tracking_id = 10;</code>
+   *
+   * @return The bytes for trackingId.
    */
   com.google.protobuf.ByteString getTrackingIdBytes();
 
@@ -255,6 +295,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
+   *
+   * @return Whether the outdatedLibrary field is set.
    */
   boolean hasOutdatedLibrary();
   /**
@@ -265,6 +307,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
+   *
+   * @return The outdatedLibrary.
    */
   com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary getOutdatedLibrary();
   /**
@@ -289,6 +333,8 @@ public interface FindingOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
    * </code>
+   *
+   * @return Whether the violatingResource field is set.
    */
   boolean hasViolatingResource();
   /**
@@ -301,6 +347,8 @@ public interface FindingOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
    * </code>
+   *
+   * @return The violatingResource.
    */
   com.google.cloud.websecurityscanner.v1alpha.ViolatingResource getViolatingResource();
   /**
@@ -326,6 +374,8 @@ public interface FindingOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;
    * </code>
+   *
+   * @return Whether the vulnerableHeaders field is set.
    */
   boolean hasVulnerableHeaders();
   /**
@@ -337,6 +387,8 @@ public interface FindingOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;
    * </code>
+   *
+   * @return The vulnerableHeaders.
    */
   com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders getVulnerableHeaders();
   /**
@@ -362,6 +414,8 @@ public interface FindingOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
    * </code>
+   *
+   * @return Whether the vulnerableParameters field is set.
    */
   boolean hasVulnerableParameters();
   /**
@@ -374,6 +428,8 @@ public interface FindingOrBuilder
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
    * </code>
+   *
+   * @return The vulnerableParameters.
    */
   com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters getVulnerableParameters();
   /**
@@ -398,6 +454,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
+   *
+   * @return Whether the xss field is set.
    */
   boolean hasXss();
   /**
@@ -408,6 +466,8 @@ public interface FindingOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
+   *
+   * @return The xss.
    */
   com.google.cloud.websecurityscanner.v1alpha.Xss getXss();
   /**

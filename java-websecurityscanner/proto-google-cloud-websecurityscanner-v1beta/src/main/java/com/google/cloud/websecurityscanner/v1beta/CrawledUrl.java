@@ -46,6 +46,12 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CrawledUrl();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +140,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string http_method = 1;</code>
+   *
+   * @return The httpMethod.
    */
   public java.lang.String getHttpMethod() {
     java.lang.Object ref = httpMethod_;
@@ -156,6 +163,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string http_method = 1;</code>
+   *
+   * @return The bytes for httpMethod.
    */
   public com.google.protobuf.ByteString getHttpMethodBytes() {
     java.lang.Object ref = httpMethod_;
@@ -179,6 +188,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 2;</code>
+   *
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -199,6 +210,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 2;</code>
+   *
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
@@ -222,6 +235,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string body = 3;</code>
+   *
+   * @return The body.
    */
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
@@ -242,6 +257,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string body = 3;</code>
+   *
+   * @return The bytes for body.
    */
   public com.google.protobuf.ByteString getBodyBytes() {
     java.lang.Object ref = body_;
@@ -618,6 +635,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 1;</code>
+     *
+     * @return The httpMethod.
      */
     public java.lang.String getHttpMethod() {
       java.lang.Object ref = httpMethod_;
@@ -639,6 +658,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 1;</code>
+     *
+     * @return The bytes for httpMethod.
      */
     public com.google.protobuf.ByteString getHttpMethodBytes() {
       java.lang.Object ref = httpMethod_;
@@ -660,6 +681,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 1;</code>
+     *
+     * @param value The httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethod(java.lang.String value) {
       if (value == null) {
@@ -679,6 +703,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
 
@@ -695,6 +721,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string http_method = 1;</code>
+     *
+     * @param value The bytes for httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethodBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -716,6 +745,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 2;</code>
+     *
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -736,6 +767,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 2;</code>
+     *
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
@@ -756,6 +789,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 2;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(java.lang.String value) {
       if (value == null) {
@@ -774,6 +810,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
 
@@ -789,6 +827,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 2;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -810,6 +851,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 3;</code>
+     *
+     * @return The body.
      */
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
@@ -830,6 +873,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 3;</code>
+     *
+     * @return The bytes for body.
      */
     public com.google.protobuf.ByteString getBodyBytes() {
       java.lang.Object ref = body_;
@@ -850,6 +895,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 3;</code>
+     *
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(java.lang.String value) {
       if (value == null) {
@@ -868,6 +916,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
 
@@ -883,6 +933,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string body = 3;</code>
+     *
+     * @param value The bytes for body to set.
+     * @return This builder for chaining.
      */
     public Builder setBodyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

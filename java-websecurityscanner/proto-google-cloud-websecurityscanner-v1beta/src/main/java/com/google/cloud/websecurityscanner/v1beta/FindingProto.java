@@ -71,21 +71,13 @@ public final class FindingProto {
           + "/v1beta;websecurityscanner\312\002&Google\\Clou"
           + "d\\WebSecurityScanner\\V1betab\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.cloud.websecurityscanner.v1beta.FindingAddonProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.websecurityscanner.v1beta.FindingAddonProto.getDescriptor(),
+            });
     internal_static_google_cloud_websecurityscanner_v1beta_Finding_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1beta_Finding_fieldAccessorTable =

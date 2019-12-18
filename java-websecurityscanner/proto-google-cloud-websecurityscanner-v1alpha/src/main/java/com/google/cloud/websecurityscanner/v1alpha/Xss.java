@@ -43,6 +43,12 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Xss();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -120,7 +126,6 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1alpha.Xss.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STACK_TRACES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList stackTraces_;
   /**
@@ -131,6 +136,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string stack_traces = 1;</code>
+   *
+   * @return A list containing the stackTraces.
    */
   public com.google.protobuf.ProtocolStringList getStackTracesList() {
     return stackTraces_;
@@ -143,6 +150,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string stack_traces = 1;</code>
+   *
+   * @return The count of stackTraces.
    */
   public int getStackTracesCount() {
     return stackTraces_.size();
@@ -155,6 +164,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string stack_traces = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The stackTraces at the given index.
    */
   public java.lang.String getStackTraces(int index) {
     return stackTraces_.get(index);
@@ -167,6 +179,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string stack_traces = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the stackTraces at the given index.
    */
   public com.google.protobuf.ByteString getStackTracesBytes(int index) {
     return stackTraces_.getByteString(index);
@@ -182,6 +197,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string error_message = 2;</code>
+   *
+   * @return The errorMessage.
    */
   public java.lang.String getErrorMessage() {
     java.lang.Object ref = errorMessage_;
@@ -202,6 +219,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string error_message = 2;</code>
+   *
+   * @return The bytes for errorMessage.
    */
   public com.google.protobuf.ByteString getErrorMessageBytes() {
     java.lang.Object ref = errorMessage_;
@@ -467,14 +486,12 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1alpha.Xss result =
           new com.google.cloud.websecurityscanner.v1alpha.Xss(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         stackTraces_ = stackTraces_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.stackTraces_ = stackTraces_;
       result.errorMessage_ = errorMessage_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -587,6 +604,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @return A list containing the stackTraces.
      */
     public com.google.protobuf.ProtocolStringList getStackTracesList() {
       return stackTraces_.getUnmodifiableView();
@@ -599,6 +618,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @return The count of stackTraces.
      */
     public int getStackTracesCount() {
       return stackTraces_.size();
@@ -611,6 +632,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The stackTraces at the given index.
      */
     public java.lang.String getStackTraces(int index) {
       return stackTraces_.get(index);
@@ -623,6 +647,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the stackTraces at the given index.
      */
     public com.google.protobuf.ByteString getStackTracesBytes(int index) {
       return stackTraces_.getByteString(index);
@@ -635,6 +662,10 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The stackTraces to set.
+     * @return This builder for chaining.
      */
     public Builder setStackTraces(int index, java.lang.String value) {
       if (value == null) {
@@ -653,6 +684,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @param value The stackTraces to add.
+     * @return This builder for chaining.
      */
     public Builder addStackTraces(java.lang.String value) {
       if (value == null) {
@@ -671,6 +705,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @param values The stackTraces to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStackTraces(java.lang.Iterable<java.lang.String> values) {
       ensureStackTracesIsMutable();
@@ -686,6 +723,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStackTraces() {
       stackTraces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -701,6 +740,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string stack_traces = 1;</code>
+     *
+     * @param value The bytes of the stackTraces to add.
+     * @return This builder for chaining.
      */
     public Builder addStackTracesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -722,6 +764,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string error_message = 2;</code>
+     *
+     * @return The errorMessage.
      */
     public java.lang.String getErrorMessage() {
       java.lang.Object ref = errorMessage_;
@@ -742,6 +786,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string error_message = 2;</code>
+     *
+     * @return The bytes for errorMessage.
      */
     public com.google.protobuf.ByteString getErrorMessageBytes() {
       java.lang.Object ref = errorMessage_;
@@ -762,6 +808,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string error_message = 2;</code>
+     *
+     * @param value The errorMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setErrorMessage(java.lang.String value) {
       if (value == null) {
@@ -780,6 +829,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string error_message = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
 
@@ -795,6 +846,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string error_message = 2;</code>
+     *
+     * @param value The bytes for errorMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setErrorMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

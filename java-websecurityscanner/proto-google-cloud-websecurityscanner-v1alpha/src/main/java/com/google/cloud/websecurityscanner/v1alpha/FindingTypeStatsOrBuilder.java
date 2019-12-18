@@ -31,6 +31,8 @@ public interface FindingTypeStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for findingType.
    */
   int getFindingTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface FindingTypeStatsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+   *
+   * @return The findingType.
    */
   com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType();
 
@@ -52,6 +56,8 @@ public interface FindingTypeStatsOrBuilder
    * </pre>
    *
    * <code>int32 finding_count = 2;</code>
+   *
+   * @return The findingCount.
    */
   int getFindingCount();
 }

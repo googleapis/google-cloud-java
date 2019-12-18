@@ -46,6 +46,12 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ScanRun();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -160,11 +166,11 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 warningTraces_ =
                     new java.util.ArrayList<
                         com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000001;
               }
               warningTraces_.add(
                   input.readMessage(
@@ -186,7 +192,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         warningTraces_ = java.util.Collections.unmodifiableList(warningTraces_);
       }
       this.unknownFields = unknownFields.build();
@@ -313,12 +319,20 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ExecutionState valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ExecutionState forNumber(int value) {
       switch (value) {
         case 0:
@@ -484,12 +498,20 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ResultState valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ResultState forNumber(int value) {
       switch (value) {
         case 0:
@@ -551,7 +573,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.websecurityscanner.v1beta.ScanRun.ResultState)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -564,6 +585,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -586,6 +609,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -610,6 +635,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for executionState.
    */
   public int getExecutionStateValue() {
     return executionState_;
@@ -623,6 +650,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
    * </code>
+   *
+   * @return The executionState.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState getExecutionState() {
     @SuppressWarnings("deprecation")
@@ -644,6 +673,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for resultState.
    */
   public int getResultStateValue() {
     return resultState_;
@@ -657,6 +688,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+   *
+   * @return The resultState.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState getResultState() {
     @SuppressWarnings("deprecation")
@@ -677,6 +710,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -689,6 +724,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -717,6 +754,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -730,6 +769,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -759,6 +800,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 urls_crawled_count = 6;</code>
+   *
+   * @return The urlsCrawledCount.
    */
   public long getUrlsCrawledCount() {
     return urlsCrawledCount_;
@@ -777,6 +820,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 urls_tested_count = 7;</code>
+   *
+   * @return The urlsTestedCount.
    */
   public long getUrlsTestedCount() {
     return urlsTestedCount_;
@@ -792,6 +837,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool has_vulnerabilities = 8;</code>
+   *
+   * @return The hasVulnerabilities.
    */
   public boolean getHasVulnerabilities() {
     return hasVulnerabilities_;
@@ -810,6 +857,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 progress_percent = 9;</code>
+   *
+   * @return The progressPercent.
    */
   public int getProgressPercent() {
     return progressPercent_;
@@ -826,6 +875,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace error_trace = 10;</code>
+   *
+   * @return Whether the errorTrace field is set.
    */
   public boolean hasErrorTrace() {
     return errorTrace_ != null;
@@ -839,6 +890,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace error_trace = 10;</code>
+   *
+   * @return The errorTrace.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace getErrorTrace() {
     return errorTrace_ == null
@@ -1292,7 +1345,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (warningTracesBuilder_ == null) {
         warningTraces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         warningTracesBuilder_.clear();
       }
@@ -1324,7 +1377,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1beta.ScanRun result =
           new com.google.cloud.websecurityscanner.v1beta.ScanRun(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.executionState_ = executionState_;
       result.resultState_ = resultState_;
@@ -1348,15 +1400,14 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         result.errorTrace_ = errorTraceBuilder_.build();
       }
       if (warningTracesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           warningTraces_ = java.util.Collections.unmodifiableList(warningTraces_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.warningTraces_ = warningTraces_;
       } else {
         result.warningTraces_ = warningTracesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1442,7 +1493,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         if (!other.warningTraces_.isEmpty()) {
           if (warningTraces_.isEmpty()) {
             warningTraces_ = other.warningTraces_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureWarningTracesIsMutable();
             warningTraces_.addAll(other.warningTraces_);
@@ -1455,7 +1506,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             warningTracesBuilder_.dispose();
             warningTracesBuilder_ = null;
             warningTraces_ = other.warningTraces_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000001);
             warningTracesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningTracesFieldBuilder()
@@ -1508,6 +1559,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1530,6 +1583,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1552,6 +1607,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1572,6 +1630,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1589,6 +1649,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1611,6 +1674,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for executionState.
      */
     public int getExecutionStateValue() {
       return executionState_;
@@ -1624,6 +1689,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for executionState to set.
+     * @return This builder for chaining.
      */
     public Builder setExecutionStateValue(int value) {
       executionState_ = value;
@@ -1639,6 +1707,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
      * </code>
+     *
+     * @return The executionState.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState getExecutionState() {
       @SuppressWarnings("deprecation")
@@ -1658,6 +1728,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
      * </code>
+     *
+     * @param value The executionState to set.
+     * @return This builder for chaining.
      */
     public Builder setExecutionState(
         com.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState value) {
@@ -1678,6 +1751,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ExecutionState execution_state = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExecutionState() {
 
@@ -1696,6 +1771,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+     *
+     * @return The enum numeric value on the wire for resultState.
      */
     public int getResultStateValue() {
       return resultState_;
@@ -1709,6 +1786,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for resultState to set.
+     * @return This builder for chaining.
      */
     public Builder setResultStateValue(int value) {
       resultState_ = value;
@@ -1724,6 +1804,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+     *
+     * @return The resultState.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState getResultState() {
       @SuppressWarnings("deprecation")
@@ -1742,6 +1824,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+     *
+     * @param value The resultState to set.
+     * @return This builder for chaining.
      */
     public Builder setResultState(
         com.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState value) {
@@ -1762,6 +1847,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRun.ResultState result_state = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResultState() {
 
@@ -1784,6 +1871,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -1796,6 +1885,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -1960,6 +2051,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1973,6 +2066,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -2139,6 +2234,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 urls_crawled_count = 6;</code>
+     *
+     * @return The urlsCrawledCount.
      */
     public long getUrlsCrawledCount() {
       return urlsCrawledCount_;
@@ -2152,6 +2249,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 urls_crawled_count = 6;</code>
+     *
+     * @param value The urlsCrawledCount to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlsCrawledCount(long value) {
 
@@ -2168,6 +2268,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 urls_crawled_count = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrlsCrawledCount() {
 
@@ -2188,6 +2290,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 urls_tested_count = 7;</code>
+     *
+     * @return The urlsTestedCount.
      */
     public long getUrlsTestedCount() {
       return urlsTestedCount_;
@@ -2203,6 +2307,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 urls_tested_count = 7;</code>
+     *
+     * @param value The urlsTestedCount to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlsTestedCount(long value) {
 
@@ -2221,6 +2328,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 urls_tested_count = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrlsTestedCount() {
 
@@ -2238,6 +2347,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool has_vulnerabilities = 8;</code>
+     *
+     * @return The hasVulnerabilities.
      */
     public boolean getHasVulnerabilities() {
       return hasVulnerabilities_;
@@ -2250,6 +2361,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool has_vulnerabilities = 8;</code>
+     *
+     * @param value The hasVulnerabilities to set.
+     * @return This builder for chaining.
      */
     public Builder setHasVulnerabilities(boolean value) {
 
@@ -2265,6 +2379,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool has_vulnerabilities = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHasVulnerabilities() {
 
@@ -2285,6 +2401,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 progress_percent = 9;</code>
+     *
+     * @return The progressPercent.
      */
     public int getProgressPercent() {
       return progressPercent_;
@@ -2300,6 +2418,9 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 progress_percent = 9;</code>
+     *
+     * @param value The progressPercent to set.
+     * @return This builder for chaining.
      */
     public Builder setProgressPercent(int value) {
 
@@ -2318,6 +2439,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 progress_percent = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProgressPercent() {
 
@@ -2341,6 +2464,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace error_trace = 10;</code>
+     *
+     * @return Whether the errorTrace field is set.
      */
     public boolean hasErrorTrace() {
       return errorTraceBuilder_ != null || errorTrace_ != null;
@@ -2354,6 +2479,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace error_trace = 10;</code>
+     *
+     * @return The errorTrace.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace getErrorTrace() {
       if (errorTraceBuilder_ == null) {
@@ -2525,11 +2652,11 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         warningTraces_ = java.util.Collections.emptyList();
 
     private void ensureWarningTracesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         warningTraces_ =
             new java.util.ArrayList<com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace>(
                 warningTraces_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2775,7 +2902,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWarningTraces() {
       if (warningTracesBuilder_ == null) {
         warningTraces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         warningTracesBuilder_.clear();
@@ -2920,7 +3047,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Builder,
                 com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTraceOrBuilder>(
                 warningTraces_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         warningTraces_ = null;

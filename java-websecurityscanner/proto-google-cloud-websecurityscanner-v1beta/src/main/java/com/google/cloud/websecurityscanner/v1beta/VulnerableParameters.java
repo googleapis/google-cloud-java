@@ -42,6 +42,12 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VulnerableParameters();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -122,6 +128,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string parameter_names = 1;</code>
+   *
+   * @return A list containing the parameterNames.
    */
   public com.google.protobuf.ProtocolStringList getParameterNamesList() {
     return parameterNames_;
@@ -134,6 +142,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string parameter_names = 1;</code>
+   *
+   * @return The count of parameterNames.
    */
   public int getParameterNamesCount() {
     return parameterNames_.size();
@@ -146,6 +156,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string parameter_names = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The parameterNames at the given index.
    */
   public java.lang.String getParameterNames(int index) {
     return parameterNames_.get(index);
@@ -158,6 +171,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string parameter_names = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the parameterNames at the given index.
    */
   public com.google.protobuf.ByteString getParameterNamesBytes(int index) {
     return parameterNames_.getByteString(index);
@@ -523,6 +539,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @return A list containing the parameterNames.
      */
     public com.google.protobuf.ProtocolStringList getParameterNamesList() {
       return parameterNames_.getUnmodifiableView();
@@ -535,6 +553,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @return The count of parameterNames.
      */
     public int getParameterNamesCount() {
       return parameterNames_.size();
@@ -547,6 +567,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The parameterNames at the given index.
      */
     public java.lang.String getParameterNames(int index) {
       return parameterNames_.get(index);
@@ -559,6 +582,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the parameterNames at the given index.
      */
     public com.google.protobuf.ByteString getParameterNamesBytes(int index) {
       return parameterNames_.getByteString(index);
@@ -571,6 +597,10 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The parameterNames to set.
+     * @return This builder for chaining.
      */
     public Builder setParameterNames(int index, java.lang.String value) {
       if (value == null) {
@@ -589,6 +619,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @param value The parameterNames to add.
+     * @return This builder for chaining.
      */
     public Builder addParameterNames(java.lang.String value) {
       if (value == null) {
@@ -607,6 +640,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @param values The parameterNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllParameterNames(java.lang.Iterable<java.lang.String> values) {
       ensureParameterNamesIsMutable();
@@ -622,6 +658,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParameterNames() {
       parameterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -637,6 +675,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string parameter_names = 1;</code>
+     *
+     * @param value The bytes of the parameterNames to add.
+     * @return This builder for chaining.
      */
     public Builder addParameterNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface ViolatingResourceOrBuilder
    * </pre>
    *
    * <code>string content_type = 1;</code>
+   *
+   * @return The contentType.
    */
   java.lang.String getContentType();
   /**
@@ -41,6 +43,8 @@ public interface ViolatingResourceOrBuilder
    * </pre>
    *
    * <code>string content_type = 1;</code>
+   *
+   * @return The bytes for contentType.
    */
   com.google.protobuf.ByteString getContentTypeBytes();
 
@@ -52,6 +56,8 @@ public interface ViolatingResourceOrBuilder
    * </pre>
    *
    * <code>string resource_url = 2;</code>
+   *
+   * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
   /**
@@ -62,6 +68,8 @@ public interface ViolatingResourceOrBuilder
    * </pre>
    *
    * <code>string resource_url = 2;</code>
+   *
+   * @return The bytes for resourceUrl.
    */
   com.google.protobuf.ByteString getResourceUrlBytes();
 }

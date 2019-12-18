@@ -31,6 +31,8 @@ public interface ScanRunWarningTraceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
   /**
@@ -41,6 +43,8 @@ public interface ScanRunWarningTraceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+   *
+   * @return The code.
    */
   com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code getCode();
 }

@@ -43,6 +43,12 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FindingTypeStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string finding_type = 1;</code>
+   *
+   * @return The findingType.
    */
   public java.lang.String getFindingType() {
     java.lang.Object ref = findingType_;
@@ -142,6 +149,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string finding_type = 1;</code>
+   *
+   * @return The bytes for findingType.
    */
   public com.google.protobuf.ByteString getFindingTypeBytes() {
     java.lang.Object ref = findingType_;
@@ -165,6 +174,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 finding_count = 2;</code>
+   *
+   * @return The findingCount.
    */
   public int getFindingCount() {
     return findingCount_;
@@ -514,6 +525,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string finding_type = 1;</code>
+     *
+     * @return The findingType.
      */
     public java.lang.String getFindingType() {
       java.lang.Object ref = findingType_;
@@ -534,6 +547,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string finding_type = 1;</code>
+     *
+     * @return The bytes for findingType.
      */
     public com.google.protobuf.ByteString getFindingTypeBytes() {
       java.lang.Object ref = findingType_;
@@ -554,6 +569,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string finding_type = 1;</code>
+     *
+     * @param value The findingType to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingType(java.lang.String value) {
       if (value == null) {
@@ -572,6 +590,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string finding_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingType() {
 
@@ -587,6 +607,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string finding_type = 1;</code>
+     *
+     * @param value The bytes for findingType to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -608,6 +631,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 finding_count = 2;</code>
+     *
+     * @return The findingCount.
      */
     public int getFindingCount() {
       return findingCount_;
@@ -620,6 +645,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 finding_count = 2;</code>
+     *
+     * @param value The findingCount to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingCount(int value) {
 
@@ -635,6 +663,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 finding_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingCount() {
 

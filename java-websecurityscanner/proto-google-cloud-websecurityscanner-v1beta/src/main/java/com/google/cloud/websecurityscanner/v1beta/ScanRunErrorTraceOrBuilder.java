@@ -31,6 +31,8 @@ public interface ScanRunErrorTraceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
   /**
@@ -41,6 +43,8 @@ public interface ScanRunErrorTraceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+   *
+   * @return The code.
    */
   com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode();
 
@@ -54,6 +58,8 @@ public interface ScanRunErrorTraceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
+   *
+   * @return Whether the scanConfigError field is set.
    */
   boolean hasScanConfigError();
   /**
@@ -66,6 +72,8 @@ public interface ScanRunErrorTraceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
+   *
+   * @return The scanConfigError.
    */
   com.google.cloud.websecurityscanner.v1beta.ScanConfigError getScanConfigError();
   /**
@@ -91,6 +99,8 @@ public interface ScanRunErrorTraceOrBuilder
    * </pre>
    *
    * <code>int32 most_common_http_error_code = 3;</code>
+   *
+   * @return The mostCommonHttpErrorCode.
    */
   int getMostCommonHttpErrorCode();
 }

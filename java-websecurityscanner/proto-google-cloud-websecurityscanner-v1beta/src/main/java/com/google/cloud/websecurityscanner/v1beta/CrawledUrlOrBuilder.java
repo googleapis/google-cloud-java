@@ -32,6 +32,8 @@ public interface CrawledUrlOrBuilder
    * </pre>
    *
    * <code>string http_method = 1;</code>
+   *
+   * @return The httpMethod.
    */
   java.lang.String getHttpMethod();
   /**
@@ -43,6 +45,8 @@ public interface CrawledUrlOrBuilder
    * </pre>
    *
    * <code>string http_method = 1;</code>
+   *
+   * @return The bytes for httpMethod.
    */
   com.google.protobuf.ByteString getHttpMethodBytes();
 
@@ -54,6 +58,8 @@ public interface CrawledUrlOrBuilder
    * </pre>
    *
    * <code>string url = 2;</code>
+   *
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -64,6 +70,8 @@ public interface CrawledUrlOrBuilder
    * </pre>
    *
    * <code>string url = 2;</code>
+   *
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString getUrlBytes();
 
@@ -75,6 +83,8 @@ public interface CrawledUrlOrBuilder
    * </pre>
    *
    * <code>string body = 3;</code>
+   *
+   * @return The body.
    */
   java.lang.String getBody();
   /**
@@ -85,6 +95,8 @@ public interface CrawledUrlOrBuilder
    * </pre>
    *
    * <code>string body = 3;</code>
+   *
+   * @return The bytes for body.
    */
   com.google.protobuf.ByteString getBodyBytes();
 }

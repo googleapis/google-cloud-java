@@ -31,6 +31,8 @@ public interface FindingTypeStatsOrBuilder
    * </pre>
    *
    * <code>string finding_type = 1;</code>
+   *
+   * @return The findingType.
    */
   java.lang.String getFindingType();
   /**
@@ -41,6 +43,8 @@ public interface FindingTypeStatsOrBuilder
    * </pre>
    *
    * <code>string finding_type = 1;</code>
+   *
+   * @return The bytes for findingType.
    */
   com.google.protobuf.ByteString getFindingTypeBytes();
 
@@ -52,6 +56,8 @@ public interface FindingTypeStatsOrBuilder
    * </pre>
    *
    * <code>int32 finding_count = 2;</code>
+   *
+   * @return The findingCount.
    */
   int getFindingCount();
 }

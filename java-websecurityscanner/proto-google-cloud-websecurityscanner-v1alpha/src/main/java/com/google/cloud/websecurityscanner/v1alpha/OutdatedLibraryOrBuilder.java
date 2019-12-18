@@ -31,6 +31,8 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>string library_name = 1;</code>
+   *
+   * @return The libraryName.
    */
   java.lang.String getLibraryName();
   /**
@@ -41,6 +43,8 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>string library_name = 1;</code>
+   *
+   * @return The bytes for libraryName.
    */
   com.google.protobuf.ByteString getLibraryNameBytes();
 
@@ -52,6 +56,8 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
@@ -62,6 +68,8 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
 
@@ -73,6 +81,8 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @return A list containing the learnMoreUrls.
    */
   java.util.List<java.lang.String> getLearnMoreUrlsList();
   /**
@@ -83,6 +93,8 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @return The count of learnMoreUrls.
    */
   int getLearnMoreUrlsCount();
   /**
@@ -93,6 +105,9 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The learnMoreUrls at the given index.
    */
   java.lang.String getLearnMoreUrls(int index);
   /**
@@ -103,6 +118,9 @@ public interface OutdatedLibraryOrBuilder
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the learnMoreUrls at the given index.
    */
   com.google.protobuf.ByteString getLearnMoreUrlsBytes(int index);
 }

@@ -43,6 +43,12 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ScanRunErrorTrace();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -303,12 +308,20 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Code valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Code forNumber(int value) {
       switch (value) {
         case 0:
@@ -386,6 +399,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   public int getCodeValue() {
     return code_;
@@ -398,6 +413,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+   *
+   * @return The code.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode() {
     @SuppressWarnings("deprecation")
@@ -420,6 +437,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
+   *
+   * @return Whether the scanConfigError field is set.
    */
   public boolean hasScanConfigError() {
     return scanConfigError_ != null;
@@ -434,6 +453,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
+   *
+   * @return The scanConfigError.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigError getScanConfigError() {
     return scanConfigError_ == null
@@ -468,6 +489,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 most_common_http_error_code = 3;</code>
+   *
+   * @return The mostCommonHttpErrorCode.
    */
   public int getMostCommonHttpErrorCode() {
     return mostCommonHttpErrorCode_;
@@ -850,6 +873,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for code.
      */
     public int getCodeValue() {
       return code_;
@@ -862,6 +887,9 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
       code_ = value;
@@ -876,6 +904,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+     *
+     * @return The code.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode() {
       @SuppressWarnings("deprecation")
@@ -893,6 +923,9 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+     *
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(
         com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code value) {
@@ -912,6 +945,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
 
@@ -936,6 +971,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
+     *
+     * @return Whether the scanConfigError field is set.
      */
     public boolean hasScanConfigError() {
       return scanConfigErrorBuilder_ != null || scanConfigError_ != null;
@@ -950,6 +987,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
+     *
+     * @return The scanConfigError.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfigError getScanConfigError() {
       if (scanConfigErrorBuilder_ == null) {
@@ -1136,6 +1175,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 most_common_http_error_code = 3;</code>
+     *
+     * @return The mostCommonHttpErrorCode.
      */
     public int getMostCommonHttpErrorCode() {
       return mostCommonHttpErrorCode_;
@@ -1150,6 +1191,9 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 most_common_http_error_code = 3;</code>
+     *
+     * @param value The mostCommonHttpErrorCode to set.
+     * @return This builder for chaining.
      */
     public Builder setMostCommonHttpErrorCode(int value) {
 
@@ -1167,6 +1211,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 most_common_http_error_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMostCommonHttpErrorCode() {
 

@@ -43,6 +43,12 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FindingTypeStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for findingType.
    */
   public int getFindingTypeValue() {
     return findingType_;
@@ -134,6 +141,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+   *
+   * @return The findingType.
    */
   public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
     @SuppressWarnings("deprecation")
@@ -154,6 +163,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>int32 finding_count = 2;</code>
+   *
+   * @return The findingCount.
    */
   public int getFindingCount() {
     return findingCount_;
@@ -508,6 +519,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for findingType.
      */
     public int getFindingTypeValue() {
       return findingType_;
@@ -520,6 +533,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for findingType to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingTypeValue(int value) {
       findingType_ = value;
@@ -534,6 +550,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+     *
+     * @return The findingType.
      */
     public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
       @SuppressWarnings("deprecation")
@@ -551,6 +569,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+     *
+     * @param value The findingType to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingType(
         com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType value) {
@@ -570,6 +591,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingType() {
 
@@ -587,6 +610,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 finding_count = 2;</code>
+     *
+     * @return The findingCount.
      */
     public int getFindingCount() {
       return findingCount_;
@@ -599,6 +624,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 finding_count = 2;</code>
+     *
+     * @param value The findingCount to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingCount(int value) {
 
@@ -614,6 +642,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>int32 finding_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingCount() {
 

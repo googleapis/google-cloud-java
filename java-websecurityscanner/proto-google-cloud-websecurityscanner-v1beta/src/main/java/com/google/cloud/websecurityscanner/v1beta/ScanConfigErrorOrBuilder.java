@@ -31,6 +31,8 @@ public interface ScanConfigErrorOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
   /**
@@ -41,6 +43,8 @@ public interface ScanConfigErrorOrBuilder
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+   *
+   * @return The code.
    */
   com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code getCode();
 
@@ -55,6 +59,8 @@ public interface ScanConfigErrorOrBuilder
    * </pre>
    *
    * <code>string field_name = 2;</code>
+   *
+   * @return The fieldName.
    */
   java.lang.String getFieldName();
   /**
@@ -68,6 +74,8 @@ public interface ScanConfigErrorOrBuilder
    * </pre>
    *
    * <code>string field_name = 2;</code>
+   *
+   * @return The bytes for fieldName.
    */
   com.google.protobuf.ByteString getFieldNameBytes();
 }

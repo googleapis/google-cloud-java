@@ -46,6 +46,12 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ScanConfigError();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -1013,12 +1018,20 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Code valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Code forNumber(int value) {
       switch (value) {
         case 0:
@@ -1209,6 +1222,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   public int getCodeValue() {
     return code_;
@@ -1221,6 +1236,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+   *
+   * @return The code.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code getCode() {
     @SuppressWarnings("deprecation")
@@ -1244,6 +1261,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string field_name = 2;</code>
+   *
+   * @return The fieldName.
    */
   public java.lang.String getFieldName() {
     java.lang.Object ref = fieldName_;
@@ -1267,6 +1286,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string field_name = 2;</code>
+   *
+   * @return The bytes for fieldName.
    */
   public com.google.protobuf.ByteString getFieldNameBytes() {
     java.lang.Object ref = fieldName_;
@@ -1630,6 +1651,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for code.
      */
     public int getCodeValue() {
       return code_;
@@ -1642,6 +1665,9 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
       code_ = value;
@@ -1656,6 +1682,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+     *
+     * @return The code.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code getCode() {
       @SuppressWarnings("deprecation")
@@ -1673,6 +1701,9 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+     *
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code value) {
       if (value == null) {
@@ -1691,6 +1722,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
 
@@ -1711,6 +1744,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string field_name = 2;</code>
+     *
+     * @return The fieldName.
      */
     public java.lang.String getFieldName() {
       java.lang.Object ref = fieldName_;
@@ -1734,6 +1769,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string field_name = 2;</code>
+     *
+     * @return The bytes for fieldName.
      */
     public com.google.protobuf.ByteString getFieldNameBytes() {
       java.lang.Object ref = fieldName_;
@@ -1757,6 +1794,9 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string field_name = 2;</code>
+     *
+     * @param value The fieldName to set.
+     * @return This builder for chaining.
      */
     public Builder setFieldName(java.lang.String value) {
       if (value == null) {
@@ -1778,6 +1818,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string field_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFieldName() {
 
@@ -1796,6 +1838,9 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string field_name = 2;</code>
+     *
+     * @param value The bytes for fieldName to set.
+     * @return This builder for chaining.
      */
     public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

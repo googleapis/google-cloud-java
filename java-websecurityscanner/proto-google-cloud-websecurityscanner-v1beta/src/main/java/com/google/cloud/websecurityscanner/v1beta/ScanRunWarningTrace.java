@@ -44,6 +44,12 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ScanRunWarningTrace();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -242,12 +247,20 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Code valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Code forNumber(int value) {
       switch (value) {
         case 0:
@@ -321,6 +334,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+   *
+   * @return The enum numeric value on the wire for code.
    */
   public int getCodeValue() {
     return code_;
@@ -333,6 +348,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+   *
+   * @return The code.
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code getCode() {
     @SuppressWarnings("deprecation")
@@ -679,6 +696,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for code.
      */
     public int getCodeValue() {
       return code_;
@@ -691,6 +710,9 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
       code_ = value;
@@ -705,6 +727,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+     *
+     * @return The code.
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code getCode() {
       @SuppressWarnings("deprecation")
@@ -722,6 +746,9 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+     *
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(
         com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code value) {
@@ -741,6 +768,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code code = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
 

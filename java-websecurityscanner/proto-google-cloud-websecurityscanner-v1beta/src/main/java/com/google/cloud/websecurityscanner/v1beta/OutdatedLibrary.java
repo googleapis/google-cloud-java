@@ -44,6 +44,12 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OutdatedLibrary();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               learnMoreUrls_.add(s);
               break;
@@ -105,7 +111,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -128,7 +134,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LIBRARY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object libraryName_;
   /**
@@ -139,6 +144,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string library_name = 1;</code>
+   *
+   * @return The libraryName.
    */
   public java.lang.String getLibraryName() {
     java.lang.Object ref = libraryName_;
@@ -159,6 +166,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string library_name = 1;</code>
+   *
+   * @return The bytes for libraryName.
    */
   public com.google.protobuf.ByteString getLibraryNameBytes() {
     java.lang.Object ref = libraryName_;
@@ -182,6 +191,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The version.
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -202,6 +213,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
    */
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
@@ -225,6 +238,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @return A list containing the learnMoreUrls.
    */
   public com.google.protobuf.ProtocolStringList getLearnMoreUrlsList() {
     return learnMoreUrls_;
@@ -237,6 +252,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @return The count of learnMoreUrls.
    */
   public int getLearnMoreUrlsCount() {
     return learnMoreUrls_.size();
@@ -249,6 +266,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The learnMoreUrls at the given index.
    */
   public java.lang.String getLearnMoreUrls(int index) {
     return learnMoreUrls_.get(index);
@@ -261,6 +281,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string learn_more_urls = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the learnMoreUrls at the given index.
    */
   public com.google.protobuf.ByteString getLearnMoreUrlsBytes(int index) {
     return learnMoreUrls_.getByteString(index);
@@ -501,7 +524,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       version_ = "";
 
       learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -530,15 +553,13 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary result =
           new com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.libraryName_ = libraryName_;
       result.version_ = version_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.learnMoreUrls_ = learnMoreUrls_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -600,7 +621,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       if (!other.learnMoreUrls_.isEmpty()) {
         if (learnMoreUrls_.isEmpty()) {
           learnMoreUrls_ = other.learnMoreUrls_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLearnMoreUrlsIsMutable();
           learnMoreUrls_.addAll(other.learnMoreUrls_);
@@ -648,6 +669,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string library_name = 1;</code>
+     *
+     * @return The libraryName.
      */
     public java.lang.String getLibraryName() {
       java.lang.Object ref = libraryName_;
@@ -668,6 +691,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string library_name = 1;</code>
+     *
+     * @return The bytes for libraryName.
      */
     public com.google.protobuf.ByteString getLibraryNameBytes() {
       java.lang.Object ref = libraryName_;
@@ -688,6 +713,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string library_name = 1;</code>
+     *
+     * @param value The libraryName to set.
+     * @return This builder for chaining.
      */
     public Builder setLibraryName(java.lang.String value) {
       if (value == null) {
@@ -706,6 +734,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string library_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLibraryName() {
 
@@ -721,6 +751,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string library_name = 1;</code>
+     *
+     * @param value The bytes for libraryName to set.
+     * @return This builder for chaining.
      */
     public Builder setLibraryNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -742,6 +775,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return The version.
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -762,6 +797,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return The bytes for version.
      */
     public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
@@ -782,6 +819,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(java.lang.String value) {
       if (value == null) {
@@ -800,6 +840,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -815,6 +857,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string version = 2;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -831,9 +876,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLearnMoreUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList(learnMoreUrls_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -844,6 +889,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @return A list containing the learnMoreUrls.
      */
     public com.google.protobuf.ProtocolStringList getLearnMoreUrlsList() {
       return learnMoreUrls_.getUnmodifiableView();
@@ -856,6 +903,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @return The count of learnMoreUrls.
      */
     public int getLearnMoreUrlsCount() {
       return learnMoreUrls_.size();
@@ -868,6 +917,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The learnMoreUrls at the given index.
      */
     public java.lang.String getLearnMoreUrls(int index) {
       return learnMoreUrls_.get(index);
@@ -880,6 +932,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the learnMoreUrls at the given index.
      */
     public com.google.protobuf.ByteString getLearnMoreUrlsBytes(int index) {
       return learnMoreUrls_.getByteString(index);
@@ -892,6 +947,10 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The learnMoreUrls to set.
+     * @return This builder for chaining.
      */
     public Builder setLearnMoreUrls(int index, java.lang.String value) {
       if (value == null) {
@@ -910,6 +969,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @param value The learnMoreUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addLearnMoreUrls(java.lang.String value) {
       if (value == null) {
@@ -928,6 +990,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @param values The learnMoreUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLearnMoreUrls(java.lang.Iterable<java.lang.String> values) {
       ensureLearnMoreUrlsIsMutable();
@@ -943,10 +1008,12 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLearnMoreUrls() {
       learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -958,6 +1025,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string learn_more_urls = 3;</code>
+     *
+     * @param value The bytes of the learnMoreUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addLearnMoreUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

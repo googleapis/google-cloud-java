@@ -31,6 +31,8 @@ public interface FormOrBuilder
    * </pre>
    *
    * <code>string action_uri = 1;</code>
+   *
+   * @return The actionUri.
    */
   java.lang.String getActionUri();
   /**
@@ -41,6 +43,8 @@ public interface FormOrBuilder
    * </pre>
    *
    * <code>string action_uri = 1;</code>
+   *
+   * @return The bytes for actionUri.
    */
   com.google.protobuf.ByteString getActionUriBytes();
 
@@ -52,6 +56,8 @@ public interface FormOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @return A list containing the fields.
    */
   java.util.List<java.lang.String> getFieldsList();
   /**
@@ -62,6 +68,8 @@ public interface FormOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @return The count of fields.
    */
   int getFieldsCount();
   /**
@@ -72,6 +80,9 @@ public interface FormOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fields at the given index.
    */
   java.lang.String getFields(int index);
   /**
@@ -82,6 +93,9 @@ public interface FormOrBuilder
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fields at the given index.
    */
   com.google.protobuf.ByteString getFieldsBytes(int index);
 }
