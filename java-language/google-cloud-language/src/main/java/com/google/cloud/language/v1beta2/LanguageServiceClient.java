@@ -378,7 +378,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part of speech tags, dependency trees, and other properties.
+   * part-of-speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
@@ -407,7 +407,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part of speech tags, dependency trees, and other properties.
+   * part-of-speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
@@ -431,7 +431,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part of speech tags, dependency trees, and other properties.
+   * part-of-speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
