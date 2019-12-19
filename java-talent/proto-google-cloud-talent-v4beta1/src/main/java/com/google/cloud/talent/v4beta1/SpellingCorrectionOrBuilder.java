@@ -31,6 +31,8 @@ public interface SpellingCorrectionOrBuilder
    * </pre>
    *
    * <code>bool corrected = 1;</code>
+   *
+   * @return The corrected.
    */
   boolean getCorrected();
 
@@ -42,6 +44,8 @@ public interface SpellingCorrectionOrBuilder
    * </pre>
    *
    * <code>string corrected_text = 2;</code>
+   *
+   * @return The correctedText.
    */
   java.lang.String getCorrectedText();
   /**
@@ -52,6 +56,8 @@ public interface SpellingCorrectionOrBuilder
    * </pre>
    *
    * <code>string corrected_text = 2;</code>
+   *
+   * @return The bytes for correctedText.
    */
   com.google.protobuf.ByteString getCorrectedTextBytes();
 
@@ -68,6 +74,8 @@ public interface SpellingCorrectionOrBuilder
    * </pre>
    *
    * <code>string corrected_html = 3;</code>
+   *
+   * @return The correctedHtml.
    */
   java.lang.String getCorrectedHtml();
   /**
@@ -83,6 +91,8 @@ public interface SpellingCorrectionOrBuilder
    * </pre>
    *
    * <code>string corrected_html = 3;</code>
+   *
+   * @return The bytes for correctedHtml.
    */
   com.google.protobuf.ByteString getCorrectedHtmlBytes();
 }

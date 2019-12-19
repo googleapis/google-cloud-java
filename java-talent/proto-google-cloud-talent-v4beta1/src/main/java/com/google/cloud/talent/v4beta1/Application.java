@@ -52,6 +52,12 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Application();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -134,9 +140,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 interviews_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000001;
               }
               interviews_.add(
                   input.readMessage(
@@ -245,7 +251,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         interviews_ = java.util.Collections.unmodifiableList(interviews_);
       }
       this.unknownFields = unknownFields.build();
@@ -416,12 +422,20 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ApplicationState valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ApplicationState forNumber(int value) {
       switch (value) {
         case 0:
@@ -679,12 +693,20 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ApplicationStage valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ApplicationStage forNumber(int value) {
       switch (value) {
         case 0:
@@ -754,7 +776,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.Application.ApplicationStage)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -769,6 +790,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -793,6 +816,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -818,6 +843,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The externalId.
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -840,6 +867,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
@@ -866,6 +895,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The profile.
    */
   public java.lang.String getProfile() {
     java.lang.Object ref = profile_;
@@ -889,6 +920,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for profile.
    */
   public com.google.protobuf.ByteString getProfileBytes() {
     java.lang.Object ref = profile_;
@@ -916,6 +949,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job = 4;</code>
+   *
+   * @return The job.
    */
   public java.lang.String getJob() {
     java.lang.Object ref = job_;
@@ -940,6 +975,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job = 4;</code>
+   *
+   * @return The bytes for job.
    */
   public com.google.protobuf.ByteString getJobBytes() {
     java.lang.Object ref = job_;
@@ -967,6 +1004,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The company.
    */
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
@@ -991,6 +1030,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The bytes for company.
    */
   public com.google.protobuf.ByteString getCompanyBytes() {
     java.lang.Object ref = company_;
@@ -1014,6 +1055,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
+   *
+   * @return Whether the applicationDate field is set.
    */
   public boolean hasApplicationDate() {
     return applicationDate_ != null;
@@ -1026,6 +1069,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
+   *
+   * @return The applicationDate.
    */
   public com.google.type.Date getApplicationDate() {
     return applicationDate_ == null ? com.google.type.Date.getDefaultInstance() : applicationDate_;
@@ -1058,6 +1103,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for stage.
    */
   public int getStageValue() {
     return stage_;
@@ -1075,6 +1122,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The stage.
    */
   public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
     @SuppressWarnings("deprecation")
@@ -1095,6 +1144,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -1107,6 +1158,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.talent.v4beta1.Application.ApplicationState getState() {
     @SuppressWarnings("deprecation")
@@ -1201,6 +1254,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
+   *
+   * @return Whether the referral field is set.
    */
   public boolean hasReferral() {
     return referral_ != null;
@@ -1213,6 +1268,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
+   *
+   * @return The referral.
    */
   public com.google.protobuf.BoolValue getReferral() {
     return referral_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : referral_;
@@ -1241,6 +1298,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -1254,6 +1313,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1282,6 +1343,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -1294,6 +1357,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -1323,6 +1388,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string outcome_notes = 21;</code>
+   *
+   * @return The outcomeNotes.
    */
   public java.lang.String getOutcomeNotes() {
     java.lang.Object ref = outcomeNotes_;
@@ -1345,6 +1412,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string outcome_notes = 21;</code>
+   *
+   * @return The bytes for outcomeNotes.
    */
   public com.google.protobuf.ByteString getOutcomeNotesBytes() {
     java.lang.Object ref = outcomeNotes_;
@@ -1368,6 +1437,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+   *
+   * @return The enum numeric value on the wire for outcome.
    */
   public int getOutcomeValue() {
     return outcome_;
@@ -1380,6 +1451,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+   *
+   * @return The outcome.
    */
   public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
     @SuppressWarnings("deprecation")
@@ -1401,6 +1474,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the isMatch field is set.
    */
   public boolean hasIsMatch() {
     return isMatch_ != null;
@@ -1416,6 +1491,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The isMatch.
    */
   public com.google.protobuf.BoolValue getIsMatch() {
     return isMatch_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isMatch_;
@@ -1448,6 +1525,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobTitleSnippet.
    */
   public java.lang.String getJobTitleSnippet() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -1470,6 +1549,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobTitleSnippet.
    */
   public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -1885,7 +1966,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
 
       if (interviewsBuilder_ == null) {
         interviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         interviewsBuilder_.clear();
       }
@@ -1947,7 +2028,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Application result =
           new com.google.cloud.talent.v4beta1.Application(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.externalId_ = externalId_;
       result.profile_ = profile_;
@@ -1961,9 +2041,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       result.stage_ = stage_;
       result.state_ = state_;
       if (interviewsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           interviews_ = java.util.Collections.unmodifiableList(interviews_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.interviews_ = interviews_;
       } else {
@@ -1992,7 +2072,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         result.isMatch_ = isMatchBuilder_.build();
       }
       result.jobTitleSnippet_ = jobTitleSnippet_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2075,7 +2154,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         if (!other.interviews_.isEmpty()) {
           if (interviews_.isEmpty()) {
             interviews_ = other.interviews_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInterviewsIsMutable();
             interviews_.addAll(other.interviews_);
@@ -2088,7 +2167,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             interviewsBuilder_.dispose();
             interviewsBuilder_ = null;
             interviews_ = other.interviews_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
             interviewsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInterviewsFieldBuilder()
@@ -2165,6 +2244,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2189,6 +2270,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2213,6 +2296,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2235,6 +2321,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2254,6 +2342,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2277,6 +2368,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The externalId.
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -2299,6 +2392,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString getExternalIdBytes() {
       java.lang.Object ref = externalId_;
@@ -2321,6 +2416,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalId(java.lang.String value) {
       if (value == null) {
@@ -2341,6 +2439,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExternalId() {
 
@@ -2358,6 +2458,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2382,6 +2485,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The profile.
      */
     public java.lang.String getProfile() {
       java.lang.Object ref = profile_;
@@ -2405,6 +2510,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for profile.
      */
     public com.google.protobuf.ByteString getProfileBytes() {
       java.lang.Object ref = profile_;
@@ -2428,6 +2535,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfile(java.lang.String value) {
       if (value == null) {
@@ -2449,6 +2559,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProfile() {
 
@@ -2467,6 +2579,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfileBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2492,6 +2607,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job = 4;</code>
+     *
+     * @return The job.
      */
     public java.lang.String getJob() {
       java.lang.Object ref = job_;
@@ -2516,6 +2633,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job = 4;</code>
+     *
+     * @return The bytes for job.
      */
     public com.google.protobuf.ByteString getJobBytes() {
       java.lang.Object ref = job_;
@@ -2540,6 +2659,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job = 4;</code>
+     *
+     * @param value The job to set.
+     * @return This builder for chaining.
      */
     public Builder setJob(java.lang.String value) {
       if (value == null) {
@@ -2562,6 +2684,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJob() {
 
@@ -2581,6 +2705,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job = 4;</code>
+     *
+     * @param value The bytes for job to set.
+     * @return This builder for chaining.
      */
     public Builder setJobBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2606,6 +2733,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @return The company.
      */
     public java.lang.String getCompany() {
       java.lang.Object ref = company_;
@@ -2630,6 +2759,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @return The bytes for company.
      */
     public com.google.protobuf.ByteString getCompanyBytes() {
       java.lang.Object ref = company_;
@@ -2654,6 +2785,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @param value The company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompany(java.lang.String value) {
       if (value == null) {
@@ -2676,6 +2810,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCompany() {
 
@@ -2695,6 +2831,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @param value The bytes for company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2719,6 +2858,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
+     *
+     * @return Whether the applicationDate field is set.
      */
     public boolean hasApplicationDate() {
       return applicationDateBuilder_ != null || applicationDate_ != null;
@@ -2731,6 +2872,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
+     *
+     * @return The applicationDate.
      */
     public com.google.type.Date getApplicationDate() {
       if (applicationDateBuilder_ == null) {
@@ -2894,6 +3037,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for stage.
      */
     public int getStageValue() {
       return stage_;
@@ -2911,6 +3056,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for stage to set.
+     * @return This builder for chaining.
      */
     public Builder setStageValue(int value) {
       stage_ = value;
@@ -2930,6 +3078,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The stage.
      */
     public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
       @SuppressWarnings("deprecation")
@@ -2952,6 +3102,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The stage to set.
+     * @return This builder for chaining.
      */
     public Builder setStage(com.google.cloud.talent.v4beta1.Application.ApplicationStage value) {
       if (value == null) {
@@ -2975,6 +3128,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStage() {
 
@@ -2992,6 +3147,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -3004,6 +3161,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -3018,6 +3178,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.talent.v4beta1.Application.ApplicationState getState() {
       @SuppressWarnings("deprecation")
@@ -3035,6 +3197,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.talent.v4beta1.Application.ApplicationState value) {
       if (value == null) {
@@ -3053,6 +3218,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -3065,10 +3232,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInterviewsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         interviews_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>(interviews_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3306,7 +3473,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInterviews() {
       if (interviewsBuilder_ == null) {
         interviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         interviewsBuilder_.clear();
@@ -3442,7 +3609,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Interview,
                 com.google.cloud.talent.v4beta1.Interview.Builder,
                 com.google.cloud.talent.v4beta1.InterviewOrBuilder>(
-                interviews_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                interviews_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         interviews_ = null;
       }
       return interviewsBuilder_;
@@ -3462,6 +3629,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
+     *
+     * @return Whether the referral field is set.
      */
     public boolean hasReferral() {
       return referralBuilder_ != null || referral_ != null;
@@ -3474,6 +3643,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
+     *
+     * @return The referral.
      */
     public com.google.protobuf.BoolValue getReferral() {
       if (referralBuilder_ == null) {
@@ -3638,6 +3809,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -3651,6 +3824,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3825,6 +4000,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -3837,6 +4014,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -4001,6 +4180,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     *
+     * @return The outcomeNotes.
      */
     public java.lang.String getOutcomeNotes() {
       java.lang.Object ref = outcomeNotes_;
@@ -4023,6 +4204,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     *
+     * @return The bytes for outcomeNotes.
      */
     public com.google.protobuf.ByteString getOutcomeNotesBytes() {
       java.lang.Object ref = outcomeNotes_;
@@ -4045,6 +4228,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     *
+     * @param value The outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotes(java.lang.String value) {
       if (value == null) {
@@ -4065,6 +4251,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutcomeNotes() {
 
@@ -4082,6 +4270,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     *
+     * @param value The bytes for outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4103,6 +4294,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     *
+     * @return The enum numeric value on the wire for outcome.
      */
     public int getOutcomeValue() {
       return outcome_;
@@ -4115,6 +4308,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     *
+     * @param value The enum numeric value on the wire for outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
       outcome_ = value;
@@ -4129,6 +4325,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     *
+     * @return The outcome.
      */
     public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
       @SuppressWarnings("deprecation")
@@ -4144,6 +4342,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     *
+     * @param value The outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcome(com.google.cloud.talent.v4beta1.Outcome value) {
       if (value == null) {
@@ -4162,6 +4363,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutcome() {
 
@@ -4187,6 +4390,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the isMatch field is set.
      */
     public boolean hasIsMatch() {
       return isMatchBuilder_ != null || isMatch_ != null;
@@ -4202,6 +4407,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The isMatch.
      */
     public com.google.protobuf.BoolValue getIsMatch() {
       if (isMatchBuilder_ == null) {
@@ -4383,6 +4590,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobTitleSnippet.
      */
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -4405,6 +4614,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobTitleSnippet.
      */
     public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -4427,6 +4638,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The jobTitleSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleSnippet(java.lang.String value) {
       if (value == null) {
@@ -4447,6 +4661,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobTitleSnippet() {
 
@@ -4464,6 +4680,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for jobTitleSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

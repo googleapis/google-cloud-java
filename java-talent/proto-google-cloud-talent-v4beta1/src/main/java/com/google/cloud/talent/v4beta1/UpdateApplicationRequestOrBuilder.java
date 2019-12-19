@@ -34,6 +34,8 @@ public interface UpdateApplicationRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the application field is set.
    */
   boolean hasApplication();
   /**
@@ -47,6 +49,8 @@ public interface UpdateApplicationRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The application.
    */
   com.google.cloud.talent.v4beta1.Application getApplication();
   /**
@@ -79,6 +83,8 @@ public interface UpdateApplicationRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -97,6 +103,8 @@ public interface UpdateApplicationRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -35,6 +35,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -62,6 +66,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
@@ -74,6 +80,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString getExternalIdBytes();
 
@@ -88,6 +96,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The profile.
    */
   java.lang.String getProfile();
   /**
@@ -101,6 +111,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for profile.
    */
   com.google.protobuf.ByteString getProfileBytes();
 
@@ -116,6 +128,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string job = 4;</code>
+   *
+   * @return The job.
    */
   java.lang.String getJob();
   /**
@@ -130,6 +144,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string job = 4;</code>
+   *
+   * @return The bytes for job.
    */
   com.google.protobuf.ByteString getJobBytes();
 
@@ -145,6 +161,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The company.
    */
   java.lang.String getCompany();
   /**
@@ -159,6 +177,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The bytes for company.
    */
   com.google.protobuf.ByteString getCompanyBytes();
 
@@ -170,6 +190,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
+   *
+   * @return Whether the applicationDate field is set.
    */
   boolean hasApplicationDate();
   /**
@@ -180,6 +202,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
+   *
+   * @return The applicationDate.
    */
   com.google.type.Date getApplicationDate();
   /**
@@ -206,6 +230,8 @@ public interface ApplicationOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for stage.
    */
   int getStageValue();
   /**
@@ -221,6 +247,8 @@ public interface ApplicationOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The stage.
    */
   com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage();
 
@@ -232,6 +260,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -242,6 +272,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.talent.v4beta1.Application.ApplicationState getState();
 
@@ -315,6 +347,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
+   *
+   * @return Whether the referral field is set.
    */
   boolean hasReferral();
   /**
@@ -325,6 +359,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
+   *
+   * @return The referral.
    */
   com.google.protobuf.BoolValue getReferral();
   /**
@@ -347,6 +383,8 @@ public interface ApplicationOrBuilder
    *
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -358,6 +396,8 @@ public interface ApplicationOrBuilder
    *
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -380,6 +420,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -390,6 +432,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -413,6 +457,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string outcome_notes = 21;</code>
+   *
+   * @return The outcomeNotes.
    */
   java.lang.String getOutcomeNotes();
   /**
@@ -425,6 +471,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string outcome_notes = 21;</code>
+   *
+   * @return The bytes for outcomeNotes.
    */
   com.google.protobuf.ByteString getOutcomeNotesBytes();
 
@@ -436,6 +484,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+   *
+   * @return The enum numeric value on the wire for outcome.
    */
   int getOutcomeValue();
   /**
@@ -446,6 +496,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+   *
+   * @return The outcome.
    */
   com.google.cloud.talent.v4beta1.Outcome getOutcome();
 
@@ -460,6 +512,8 @@ public interface ApplicationOrBuilder
    *
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the isMatch field is set.
    */
   boolean hasIsMatch();
   /**
@@ -473,6 +527,8 @@ public interface ApplicationOrBuilder
    *
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The isMatch.
    */
   com.google.protobuf.BoolValue getIsMatch();
   /**
@@ -499,6 +555,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobTitleSnippet.
    */
   java.lang.String getJobTitleSnippet();
   /**
@@ -511,6 +569,8 @@ public interface ApplicationOrBuilder
    * </pre>
    *
    * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobTitleSnippet.
    */
   com.google.protobuf.ByteString getJobTitleSnippetBytes();
 }

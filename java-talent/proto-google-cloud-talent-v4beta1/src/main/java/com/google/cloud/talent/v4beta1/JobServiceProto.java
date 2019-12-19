@@ -255,32 +255,24 @@ public final class JobServiceProto {
           + "e.golang.org/genproto/googleapis/cloud/t"
           + "alent/v4beta1;talent\242\002\003CTSb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-          com.google.api.FieldBehaviorProto.getDescriptor(),
-          com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
-          com.google.cloud.talent.v4beta1.FiltersProto.getDescriptor(),
-          com.google.cloud.talent.v4beta1.HistogramProto.getDescriptor(),
-          com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
+              com.google.cloud.talent.v4beta1.FiltersProto.getDescriptor(),
+              com.google.cloud.talent.v4beta1.HistogramProto.getDescriptor(),
+              com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.AnyProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+            });
     internal_static_google_cloud_talent_v4beta1_CreateJobRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_talent_v4beta1_CreateJobRequest_fieldAccessorTable =

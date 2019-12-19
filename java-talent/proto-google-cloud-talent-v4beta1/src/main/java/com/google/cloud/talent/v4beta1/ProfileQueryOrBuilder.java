@@ -32,6 +32,8 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>string query = 1;</code>
+   *
+   * @return The query.
    */
   java.lang.String getQuery();
   /**
@@ -43,6 +45,8 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>string query = 1;</code>
+   *
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString getQueryBytes();
 
@@ -1060,6 +1064,8 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
+   *
+   * @return Whether the hirableFilter field is set.
    */
   boolean hasHirableFilter();
   /**
@@ -1070,6 +1076,8 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
+   *
+   * @return The hirableFilter.
    */
   com.google.protobuf.BoolValue getHirableFilter();
   /**
@@ -1302,6 +1310,8 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>string custom_attribute_filter = 15;</code>
+   *
+   * @return The customAttributeFilter.
    */
   java.lang.String getCustomAttributeFilter();
   /**
@@ -1330,6 +1340,8 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>string custom_attribute_filter = 15;</code>
+   *
+   * @return The bytes for customAttributeFilter.
    */
   com.google.protobuf.ByteString getCustomAttributeFilterBytes();
 
@@ -1356,6 +1368,8 @@ public interface ProfileQueryOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
+   *
+   * @return Whether the candidateAvailabilityFilter field is set.
    */
   @java.lang.Deprecated
   boolean hasCandidateAvailabilityFilter();
@@ -1382,6 +1396,8 @@ public interface ProfileQueryOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
+   *
+   * @return The candidateAvailabilityFilter.
    */
   @java.lang.Deprecated
   com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter getCandidateAvailabilityFilter();

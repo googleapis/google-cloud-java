@@ -48,6 +48,12 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobOperationResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -141,6 +147,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return Whether the job field is set.
      */
     boolean hasJob();
     /**
@@ -157,6 +165,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return The job.
      */
     com.google.cloud.talent.v4beta1.Job getJob();
     /**
@@ -187,6 +197,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
@@ -200,6 +212,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
      */
     com.google.rpc.Status getStatus();
     /**
@@ -238,6 +252,12 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     private JobResult() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new JobResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -250,7 +270,6 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -341,6 +360,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return job_ != null;
@@ -359,6 +380,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return The job.
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
@@ -395,6 +418,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return status_ != null;
@@ -410,6 +435,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
      */
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -816,6 +843,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       *
+       * @return Whether the job field is set.
        */
       public boolean hasJob() {
         return jobBuilder_ != null || job_ != null;
@@ -834,6 +863,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       *
+       * @return The job.
        */
       public com.google.cloud.talent.v4beta1.Job getJob() {
         if (jobBuilder_ == null) {
@@ -1042,6 +1073,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
@@ -1057,6 +1090,8 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return The status.
        */
       public com.google.rpc.Status getStatus() {
         if (statusBuilder_ == null) {

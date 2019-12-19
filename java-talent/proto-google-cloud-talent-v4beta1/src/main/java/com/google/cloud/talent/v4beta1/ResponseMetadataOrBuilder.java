@@ -32,6 +32,8 @@ public interface ResponseMetadataOrBuilder
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   *
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -43,6 +45,8 @@ public interface ResponseMetadataOrBuilder
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   *
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 }

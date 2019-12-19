@@ -48,6 +48,12 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EmploymentRecord();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -253,6 +258,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return Whether the startDate field is set.
    */
   public boolean hasStartDate() {
     return startDate_ != null;
@@ -265,6 +272,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return The startDate.
    */
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
@@ -292,6 +301,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return Whether the endDate field is set.
    */
   public boolean hasEndDate() {
     return endDate_ != null;
@@ -304,6 +315,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return The endDate.
    */
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
@@ -333,6 +346,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string employer_name = 3;</code>
+   *
+   * @return The employerName.
    */
   public java.lang.String getEmployerName() {
     java.lang.Object ref = employerName_;
@@ -355,6 +370,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string employer_name = 3;</code>
+   *
+   * @return The bytes for employerName.
    */
   public com.google.protobuf.ByteString getEmployerNameBytes() {
     java.lang.Object ref = employerName_;
@@ -380,6 +397,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string division_name = 4;</code>
+   *
+   * @return The divisionName.
    */
   public java.lang.String getDivisionName() {
     java.lang.Object ref = divisionName_;
@@ -402,6 +421,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string division_name = 4;</code>
+   *
+   * @return The bytes for divisionName.
    */
   public com.google.protobuf.ByteString getDivisionNameBytes() {
     java.lang.Object ref = divisionName_;
@@ -425,6 +446,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   *
+   * @return Whether the address field is set.
    */
   public boolean hasAddress() {
     return address_ != null;
@@ -437,6 +460,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   *
+   * @return The address.
    */
   public com.google.cloud.talent.v4beta1.Address getAddress() {
     return address_ == null
@@ -468,6 +493,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_title = 6;</code>
+   *
+   * @return The jobTitle.
    */
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
@@ -490,6 +517,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_title = 6;</code>
+   *
+   * @return The bytes for jobTitle.
    */
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
@@ -514,6 +543,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_description = 7;</code>
+   *
+   * @return The jobDescription.
    */
   public java.lang.String getJobDescription() {
     java.lang.Object ref = jobDescription_;
@@ -535,6 +566,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_description = 7;</code>
+   *
+   * @return The bytes for jobDescription.
    */
   public com.google.protobuf.ByteString getJobDescriptionBytes() {
     java.lang.Object ref = jobDescription_;
@@ -558,6 +591,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
+   *
+   * @return Whether the isSupervisor field is set.
    */
   public boolean hasIsSupervisor() {
     return isSupervisor_ != null;
@@ -570,6 +605,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
+   *
+   * @return The isSupervisor.
    */
   public com.google.protobuf.BoolValue getIsSupervisor() {
     return isSupervisor_ == null
@@ -599,6 +636,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
+   *
+   * @return Whether the isSelfEmployed field is set.
    */
   public boolean hasIsSelfEmployed() {
     return isSelfEmployed_ != null;
@@ -611,6 +650,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
+   *
+   * @return The isSelfEmployed.
    */
   public com.google.protobuf.BoolValue getIsSelfEmployed() {
     return isSelfEmployed_ == null
@@ -640,6 +681,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
+   *
+   * @return Whether the isCurrent field is set.
    */
   public boolean hasIsCurrent() {
     return isCurrent_ != null;
@@ -652,6 +695,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
+   *
+   * @return The isCurrent.
    */
   public com.google.protobuf.BoolValue getIsCurrent() {
     return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
@@ -683,6 +728,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobTitleSnippet.
    */
   public java.lang.String getJobTitleSnippet() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -707,6 +754,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobTitleSnippet.
    */
   public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -734,6 +783,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobDescriptionSnippet.
    */
   public java.lang.String getJobDescriptionSnippet() {
     java.lang.Object ref = jobDescriptionSnippet_;
@@ -758,6 +809,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobDescriptionSnippet.
    */
   public com.google.protobuf.ByteString getJobDescriptionSnippetBytes() {
     java.lang.Object ref = jobDescriptionSnippet_;
@@ -785,6 +838,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The employerNameSnippet.
    */
   public java.lang.String getEmployerNameSnippet() {
     java.lang.Object ref = employerNameSnippet_;
@@ -809,6 +864,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for employerNameSnippet.
    */
   public com.google.protobuf.ByteString getEmployerNameSnippetBytes() {
     java.lang.Object ref = employerNameSnippet_;
@@ -1415,6 +1472,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
       return startDateBuilder_ != null || startDate_ != null;
@@ -1427,6 +1486,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return The startDate.
      */
     public com.google.type.Date getStartDate() {
       if (startDateBuilder_ == null) {
@@ -1583,6 +1644,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
       return endDateBuilder_ != null || endDate_ != null;
@@ -1595,6 +1658,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return The endDate.
      */
     public com.google.type.Date getEndDate() {
       if (endDateBuilder_ == null) {
@@ -1750,6 +1815,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name = 3;</code>
+     *
+     * @return The employerName.
      */
     public java.lang.String getEmployerName() {
       java.lang.Object ref = employerName_;
@@ -1772,6 +1839,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name = 3;</code>
+     *
+     * @return The bytes for employerName.
      */
     public com.google.protobuf.ByteString getEmployerNameBytes() {
       java.lang.Object ref = employerName_;
@@ -1794,6 +1863,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name = 3;</code>
+     *
+     * @param value The employerName to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployerName(java.lang.String value) {
       if (value == null) {
@@ -1814,6 +1886,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEmployerName() {
 
@@ -1831,6 +1905,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name = 3;</code>
+     *
+     * @param value The bytes for employerName to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployerNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1854,6 +1931,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string division_name = 4;</code>
+     *
+     * @return The divisionName.
      */
     public java.lang.String getDivisionName() {
       java.lang.Object ref = divisionName_;
@@ -1876,6 +1955,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string division_name = 4;</code>
+     *
+     * @return The bytes for divisionName.
      */
     public com.google.protobuf.ByteString getDivisionNameBytes() {
       java.lang.Object ref = divisionName_;
@@ -1898,6 +1979,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string division_name = 4;</code>
+     *
+     * @param value The divisionName to set.
+     * @return This builder for chaining.
      */
     public Builder setDivisionName(java.lang.String value) {
       if (value == null) {
@@ -1918,6 +2002,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string division_name = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDivisionName() {
 
@@ -1935,6 +2021,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string division_name = 4;</code>
+     *
+     * @param value The bytes for divisionName to set.
+     * @return This builder for chaining.
      */
     public Builder setDivisionNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1961,6 +2050,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+     *
+     * @return Whether the address field is set.
      */
     public boolean hasAddress() {
       return addressBuilder_ != null || address_ != null;
@@ -1973,6 +2064,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+     *
+     * @return The address.
      */
     public com.google.cloud.talent.v4beta1.Address getAddress() {
       if (addressBuilder_ == null) {
@@ -2139,6 +2232,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title = 6;</code>
+     *
+     * @return The jobTitle.
      */
     public java.lang.String getJobTitle() {
       java.lang.Object ref = jobTitle_;
@@ -2161,6 +2256,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title = 6;</code>
+     *
+     * @return The bytes for jobTitle.
      */
     public com.google.protobuf.ByteString getJobTitleBytes() {
       java.lang.Object ref = jobTitle_;
@@ -2183,6 +2280,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title = 6;</code>
+     *
+     * @param value The jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitle(java.lang.String value) {
       if (value == null) {
@@ -2203,6 +2303,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobTitle() {
 
@@ -2220,6 +2322,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title = 6;</code>
+     *
+     * @param value The bytes for jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2242,6 +2347,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_description = 7;</code>
+     *
+     * @return The jobDescription.
      */
     public java.lang.String getJobDescription() {
       java.lang.Object ref = jobDescription_;
@@ -2263,6 +2370,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_description = 7;</code>
+     *
+     * @return The bytes for jobDescription.
      */
     public com.google.protobuf.ByteString getJobDescriptionBytes() {
       java.lang.Object ref = jobDescription_;
@@ -2284,6 +2393,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_description = 7;</code>
+     *
+     * @param value The jobDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setJobDescription(java.lang.String value) {
       if (value == null) {
@@ -2303,6 +2415,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_description = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobDescription() {
 
@@ -2319,6 +2433,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_description = 7;</code>
+     *
+     * @param value The bytes for jobDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setJobDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2345,6 +2462,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
+     *
+     * @return Whether the isSupervisor field is set.
      */
     public boolean hasIsSupervisor() {
       return isSupervisorBuilder_ != null || isSupervisor_ != null;
@@ -2357,6 +2476,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
+     *
+     * @return The isSupervisor.
      */
     public com.google.protobuf.BoolValue getIsSupervisor() {
       if (isSupervisorBuilder_ == null) {
@@ -2526,6 +2647,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
+     *
+     * @return Whether the isSelfEmployed field is set.
      */
     public boolean hasIsSelfEmployed() {
       return isSelfEmployedBuilder_ != null || isSelfEmployed_ != null;
@@ -2538,6 +2661,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
+     *
+     * @return The isSelfEmployed.
      */
     public com.google.protobuf.BoolValue getIsSelfEmployed() {
       if (isSelfEmployedBuilder_ == null) {
@@ -2707,6 +2832,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_current = 10;</code>
+     *
+     * @return Whether the isCurrent field is set.
      */
     public boolean hasIsCurrent() {
       return isCurrentBuilder_ != null || isCurrent_ != null;
@@ -2719,6 +2846,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_current = 10;</code>
+     *
+     * @return The isCurrent.
      */
     public com.google.protobuf.BoolValue getIsCurrent() {
       if (isCurrentBuilder_ == null) {
@@ -2881,6 +3010,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobTitleSnippet.
      */
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -2905,6 +3036,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobTitleSnippet.
      */
     public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -2929,6 +3062,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The jobTitleSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleSnippet(java.lang.String value) {
       if (value == null) {
@@ -2951,6 +3087,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobTitleSnippet() {
 
@@ -2970,6 +3108,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for jobTitleSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2996,6 +3137,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The jobDescriptionSnippet.
      */
     public java.lang.String getJobDescriptionSnippet() {
       java.lang.Object ref = jobDescriptionSnippet_;
@@ -3021,6 +3164,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for jobDescriptionSnippet.
      */
     public com.google.protobuf.ByteString getJobDescriptionSnippetBytes() {
       java.lang.Object ref = jobDescriptionSnippet_;
@@ -3046,6 +3191,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The jobDescriptionSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobDescriptionSnippet(java.lang.String value) {
       if (value == null) {
@@ -3069,6 +3217,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobDescriptionSnippet() {
 
@@ -3089,6 +3239,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for jobDescriptionSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobDescriptionSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3114,6 +3267,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The employerNameSnippet.
      */
     public java.lang.String getEmployerNameSnippet() {
       java.lang.Object ref = employerNameSnippet_;
@@ -3138,6 +3293,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for employerNameSnippet.
      */
     public com.google.protobuf.ByteString getEmployerNameSnippetBytes() {
       java.lang.Object ref = employerNameSnippet_;
@@ -3162,6 +3319,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The employerNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployerNameSnippet(java.lang.String value) {
       if (value == null) {
@@ -3184,6 +3344,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEmployerNameSnippet() {
 
@@ -3203,6 +3365,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for employerNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployerNameSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

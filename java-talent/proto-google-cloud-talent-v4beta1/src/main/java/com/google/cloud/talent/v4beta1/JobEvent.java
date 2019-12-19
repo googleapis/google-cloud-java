@@ -45,6 +45,12 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobEvent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -78,9 +84,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 jobs_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               jobs_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -568,12 +574,20 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static JobEventType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static JobEventType forNumber(int value) {
       switch (value) {
         case 0:
@@ -657,7 +671,6 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.JobEvent.JobEventType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -671,6 +684,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -686,6 +701,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType() {
     @SuppressWarnings("deprecation")
@@ -715,6 +732,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the jobs.
    */
   public com.google.protobuf.ProtocolStringList getJobsList() {
     return jobs_;
@@ -736,6 +755,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of jobs.
    */
   public int getJobsCount() {
     return jobs_.size();
@@ -757,6 +778,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
    */
   public java.lang.String getJobs(int index) {
     return jobs_.get(index);
@@ -778,6 +802,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
    */
   public com.google.protobuf.ByteString getJobsBytes(int index) {
     return jobs_.getByteString(index);
@@ -797,6 +824,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string profile = 3;</code>
+   *
+   * @return The profile.
    */
   public java.lang.String getProfile() {
     java.lang.Object ref = profile_;
@@ -821,6 +850,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string profile = 3;</code>
+   *
+   * @return The bytes for profile.
    */
   public com.google.protobuf.ByteString getProfileBytes() {
     java.lang.Object ref = profile_;
@@ -1070,7 +1101,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       type_ = 0;
 
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       profile_ = "";
 
       return this;
@@ -1101,15 +1132,13 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.JobEvent result =
           new com.google.cloud.talent.v4beta1.JobEvent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.jobs_ = jobs_;
       result.profile_ = profile_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1165,7 +1194,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
@@ -1219,6 +1248,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1234,6 +1265,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1251,6 +1285,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType() {
       @SuppressWarnings("deprecation")
@@ -1271,6 +1307,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.JobEvent.JobEventType value) {
       if (value == null) {
@@ -1292,6 +1331,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1304,9 +1345,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1326,6 +1367,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the jobs.
      */
     public com.google.protobuf.ProtocolStringList getJobsList() {
       return jobs_.getUnmodifiableView();
@@ -1347,6 +1390,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of jobs.
      */
     public int getJobsCount() {
       return jobs_.size();
@@ -1368,6 +1413,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The jobs at the given index.
      */
     public java.lang.String getJobs(int index) {
       return jobs_.get(index);
@@ -1389,6 +1437,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the jobs at the given index.
      */
     public com.google.protobuf.ByteString getJobsBytes(int index) {
       return jobs_.getByteString(index);
@@ -1410,6 +1461,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The jobs to set.
+     * @return This builder for chaining.
      */
     public Builder setJobs(int index, java.lang.String value) {
       if (value == null) {
@@ -1437,6 +1492,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addJobs(java.lang.String value) {
       if (value == null) {
@@ -1464,6 +1522,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
       ensureJobsIsMutable();
@@ -1488,10 +1549,12 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1512,6 +1575,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addJobsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1537,6 +1603,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 3;</code>
+     *
+     * @return The profile.
      */
     public java.lang.String getProfile() {
       java.lang.Object ref = profile_;
@@ -1561,6 +1629,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 3;</code>
+     *
+     * @return The bytes for profile.
      */
     public com.google.protobuf.ByteString getProfileBytes() {
       java.lang.Object ref = profile_;
@@ -1585,6 +1655,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 3;</code>
+     *
+     * @param value The profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfile(java.lang.String value) {
       if (value == null) {
@@ -1607,6 +1680,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProfile() {
 
@@ -1626,6 +1701,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string profile = 3;</code>
+     *
+     * @param value The bytes for profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfileBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

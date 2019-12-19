@@ -42,6 +42,12 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PersonNameFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +125,8 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The personName.
    */
   public java.lang.String getPersonName() {
     java.lang.Object ref = personName_;
@@ -144,6 +151,8 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for personName.
    */
   public com.google.protobuf.ByteString getPersonNameBytes() {
     java.lang.Object ref = personName_;
@@ -487,6 +496,8 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The personName.
      */
     public java.lang.String getPersonName() {
       java.lang.Object ref = personName_;
@@ -511,6 +522,8 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for personName.
      */
     public com.google.protobuf.ByteString getPersonNameBytes() {
       java.lang.Object ref = personName_;
@@ -535,6 +548,9 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The personName to set.
+     * @return This builder for chaining.
      */
     public Builder setPersonName(java.lang.String value) {
       if (value == null) {
@@ -557,6 +573,8 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPersonName() {
 
@@ -576,6 +594,9 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for personName to set.
+     * @return This builder for chaining.
      */
     public Builder setPersonNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

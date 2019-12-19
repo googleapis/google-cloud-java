@@ -35,6 +35,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -62,6 +66,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
@@ -74,6 +80,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString getExternalIdBytes();
 
@@ -89,6 +97,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for usageType.
    */
   int getUsageTypeValue();
   /**
@@ -103,6 +113,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+   *
+   * @return The usageType.
    */
   com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType();
 
@@ -120,6 +132,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   *
+   * @return A list containing the keywordSearchableProfileCustomAttributes.
    */
   java.util.List<java.lang.String> getKeywordSearchableProfileCustomAttributesList();
   /**
@@ -136,6 +150,8 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   *
+   * @return The count of keywordSearchableProfileCustomAttributes.
    */
   int getKeywordSearchableProfileCustomAttributesCount();
   /**
@@ -152,6 +168,9 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The keywordSearchableProfileCustomAttributes at the given index.
    */
   java.lang.String getKeywordSearchableProfileCustomAttributes(int index);
   /**
@@ -168,6 +187,9 @@ public interface TenantOrBuilder
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the keywordSearchableProfileCustomAttributes at the given index.
    */
   com.google.protobuf.ByteString getKeywordSearchableProfileCustomAttributesBytes(int index);
 }

@@ -31,6 +31,8 @@ public interface HistogramQueryResultOrBuilder
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
+   *
+   * @return The histogramQuery.
    */
   java.lang.String getHistogramQuery();
   /**
@@ -41,6 +43,8 @@ public interface HistogramQueryResultOrBuilder
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
+   *
+   * @return The bytes for histogramQuery.
    */
   com.google.protobuf.ByteString getHistogramQueryBytes();
 

@@ -31,6 +31,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +43,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState();
 
@@ -52,6 +56,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>string state_description = 2;</code>
+   *
+   * @return The stateDescription.
    */
   java.lang.String getStateDescription();
   /**
@@ -62,6 +68,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>string state_description = 2;</code>
+   *
+   * @return The bytes for stateDescription.
    */
   com.google.protobuf.ByteString getStateDescriptionBytes();
 
@@ -73,6 +81,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>int32 success_count = 3;</code>
+   *
+   * @return The successCount.
    */
   int getSuccessCount();
 
@@ -84,6 +94,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>int32 failure_count = 4;</code>
+   *
+   * @return The failureCount.
    */
   int getFailureCount();
 
@@ -95,6 +107,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>int32 total_count = 5;</code>
+   *
+   * @return The totalCount.
    */
   int getTotalCount();
 
@@ -106,6 +120,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -116,6 +132,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -139,6 +157,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -151,6 +171,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -176,6 +198,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -188,6 +212,8 @@ public interface BatchOperationMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**

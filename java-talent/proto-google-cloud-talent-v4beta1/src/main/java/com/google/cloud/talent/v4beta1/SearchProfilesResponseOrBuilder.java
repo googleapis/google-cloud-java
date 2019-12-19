@@ -32,6 +32,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>int64 estimated_total_size = 1;</code>
+   *
+   * @return The estimatedTotalSize.
    */
   long getEstimatedTotalSize();
 
@@ -43,6 +45,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+   *
+   * @return Whether the spellCorrection field is set.
    */
   boolean hasSpellCorrection();
   /**
@@ -53,6 +57,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+   *
+   * @return The spellCorrection.
    */
   com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection();
   /**
@@ -75,6 +81,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -86,6 +94,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
   /**
@@ -109,6 +119,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 4;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -120,6 +132,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 4;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 
@@ -255,6 +269,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
+   *
+   * @return The resultSetId.
    */
   java.lang.String getResultSetId();
   /**
@@ -267,6 +283,8 @@ public interface SearchProfilesResponseOrBuilder
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
+   *
+   * @return The bytes for resultSetId.
    */
   com.google.protobuf.ByteString getResultSetIdBytes();
 }

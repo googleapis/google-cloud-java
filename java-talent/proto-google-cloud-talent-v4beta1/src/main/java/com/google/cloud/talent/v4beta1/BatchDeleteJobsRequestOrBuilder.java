@@ -34,6 +34,8 @@ public interface BatchDeleteJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface BatchDeleteJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -64,6 +68,8 @@ public interface BatchDeleteJobsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -80,6 +86,8 @@ public interface BatchDeleteJobsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 }

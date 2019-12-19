@@ -31,6 +31,8 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for degreeType.
    */
   int getDegreeTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+   *
+   * @return The degreeType.
    */
   com.google.cloud.talent.v4beta1.DegreeType getDegreeType();
 
@@ -54,6 +58,8 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>string degree_name = 2;</code>
+   *
+   * @return The degreeName.
    */
   java.lang.String getDegreeName();
   /**
@@ -66,6 +72,8 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>string degree_name = 2;</code>
+   *
+   * @return The bytes for degreeName.
    */
   com.google.protobuf.ByteString getDegreeNameBytes();
 
@@ -79,6 +87,8 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @return A list containing the fieldsOfStudy.
    */
   java.util.List<java.lang.String> getFieldsOfStudyList();
   /**
@@ -91,6 +101,8 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @return The count of fieldsOfStudy.
    */
   int getFieldsOfStudyCount();
   /**
@@ -103,6 +115,9 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fieldsOfStudy at the given index.
    */
   java.lang.String getFieldsOfStudy(int index);
   /**
@@ -115,6 +130,9 @@ public interface DegreeOrBuilder
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fieldsOfStudy at the given index.
    */
   com.google.protobuf.ByteString getFieldsOfStudyBytes(int index);
 }

@@ -51,6 +51,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobQuery();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,19 +90,19 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 companies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               companies_.add(s);
               break;
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 locationFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.LocationFilter>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               locationFilters_.add(
                   input.readMessage(
@@ -106,9 +112,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 32:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 jobCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000004;
               }
               jobCategories_.add(rawValue);
               break;
@@ -119,9 +125,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   jobCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 jobCategories_.add(rawValue);
               }
@@ -147,9 +153,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 companyDisplayNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000008;
               }
               companyDisplayNames_.add(s);
               break;
@@ -186,9 +192,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 80:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 employmentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000010;
               }
               employmentTypes_.add(rawValue);
               break;
@@ -199,9 +205,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   employmentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000400;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 employmentTypes_.add(rawValue);
               }
@@ -211,9 +217,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 languageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000020;
               }
               languageCodes_.add(s);
               break;
@@ -237,9 +243,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 excludedJobs_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00000040;
               }
               excludedJobs_.add(s);
               break;
@@ -265,25 +271,25 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         companies_ = companies_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jobCategories_ = java.util.Collections.unmodifiableList(jobCategories_);
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         companyDisplayNames_ = companyDisplayNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         excludedJobs_ = excludedJobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -306,7 +312,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.JobQuery.Builder.class);
   }
 
-  private int bitField0_;
   public static final int QUERY_FIELD_NUMBER = 1;
   private volatile java.lang.Object query_;
   /**
@@ -319,6 +324,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query = 1;</code>
+   *
+   * @return The query.
    */
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
@@ -341,6 +348,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query = 1;</code>
+   *
+   * @return The bytes for query.
    */
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
@@ -370,6 +379,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_language_code = 14;</code>
+   *
+   * @return The queryLanguageCode.
    */
   public java.lang.String getQueryLanguageCode() {
     java.lang.Object ref = queryLanguageCode_;
@@ -396,6 +407,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_language_code = 14;</code>
+   *
+   * @return The bytes for queryLanguageCode.
    */
   public com.google.protobuf.ByteString getQueryLanguageCodeBytes() {
     java.lang.Object ref = queryLanguageCode_;
@@ -429,6 +442,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @return A list containing the companies.
    */
   public com.google.protobuf.ProtocolStringList getCompaniesList() {
     return companies_;
@@ -451,6 +466,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @return The count of companies.
    */
   public int getCompaniesCount() {
     return companies_.size();
@@ -473,6 +490,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The companies at the given index.
    */
   public java.lang.String getCompanies(int index) {
     return companies_.get(index);
@@ -495,6 +515,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the companies at the given index.
    */
   public com.google.protobuf.ByteString getCompaniesBytes(int index) {
     return companies_.getByteString(index);
@@ -644,6 +667,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @return A list containing the jobCategories.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -663,6 +688,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @param value The jobCategories to add.
    */
   public int getJobCategoriesCount() {
     return jobCategories_.size();
@@ -680,6 +707,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobCategories at the given index.
    */
   public com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index) {
     return jobCategories_converter_.convert(jobCategories_.get(index));
@@ -697,6 +727,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for jobCategories.
    */
   public java.util.List<java.lang.Integer> getJobCategoriesValueList() {
     return jobCategories_;
@@ -714,6 +746,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of jobCategories at the given index.
    */
   public int getJobCategoriesValue(int index) {
     return jobCategories_.get(index);
@@ -737,6 +772,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
+   *
+   * @return Whether the commuteFilter field is set.
    */
   public boolean hasCommuteFilter() {
     return commuteFilter_ != null;
@@ -755,6 +792,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
+   *
+   * @return The commuteFilter.
    */
   public com.google.cloud.talent.v4beta1.CommuteFilter getCommuteFilter() {
     return commuteFilter_ == null
@@ -797,6 +836,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @return A list containing the companyDisplayNames.
    */
   public com.google.protobuf.ProtocolStringList getCompanyDisplayNamesList() {
     return companyDisplayNames_;
@@ -816,6 +857,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @return The count of companyDisplayNames.
    */
   public int getCompanyDisplayNamesCount() {
     return companyDisplayNames_.size();
@@ -835,6 +878,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The companyDisplayNames at the given index.
    */
   public java.lang.String getCompanyDisplayNames(int index) {
     return companyDisplayNames_.get(index);
@@ -854,6 +900,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the companyDisplayNames at the given index.
    */
   public com.google.protobuf.ByteString getCompanyDisplayNamesBytes(int index) {
     return companyDisplayNames_.getByteString(index);
@@ -873,6 +922,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
+   *
+   * @return Whether the compensationFilter field is set.
    */
   public boolean hasCompensationFilter() {
     return compensationFilter_ != null;
@@ -889,6 +940,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
+   *
+   * @return The compensationFilter.
    */
   public com.google.cloud.talent.v4beta1.CompensationFilter getCompensationFilter() {
     return compensationFilter_ == null
@@ -940,6 +993,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string custom_attribute_filter = 8;</code>
+   *
+   * @return The customAttributeFilter.
    */
   public java.lang.String getCustomAttributeFilter() {
     java.lang.Object ref = customAttributeFilter_;
@@ -977,6 +1032,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string custom_attribute_filter = 8;</code>
+   *
+   * @return The bytes for customAttributeFilter.
    */
   public com.google.protobuf.ByteString getCustomAttributeFilterBytes() {
     java.lang.Object ref = customAttributeFilter_;
@@ -1003,6 +1060,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool disable_spell_check = 9;</code>
+   *
+   * @return The disableSpellCheck.
    */
   public boolean getDisableSpellCheck() {
     return disableSpellCheck_;
@@ -1038,6 +1097,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @return A list containing the employmentTypes.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -1058,6 +1119,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @param value The employmentTypes to add.
    */
   public int getEmploymentTypesCount() {
     return employmentTypes_.size();
@@ -1076,6 +1139,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The employmentTypes at the given index.
    */
   public com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index) {
     return employmentTypes_converter_.convert(employmentTypes_.get(index));
@@ -1094,6 +1160,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
   public java.util.List<java.lang.Integer> getEmploymentTypesValueList() {
     return employmentTypes_;
@@ -1112,6 +1180,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
   public int getEmploymentTypesValue(int index) {
     return employmentTypes_.get(index);
@@ -1136,6 +1207,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @return A list containing the languageCodes.
    */
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
@@ -1155,6 +1228,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @return The count of languageCodes.
    */
   public int getLanguageCodesCount() {
     return languageCodes_.size();
@@ -1174,6 +1249,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
@@ -1193,6 +1271,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
     return languageCodes_.getByteString(index);
@@ -1209,6 +1290,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
+   *
+   * @return Whether the publishTimeRange field is set.
    */
   public boolean hasPublishTimeRange() {
     return publishTimeRange_ != null;
@@ -1222,6 +1305,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
+   *
+   * @return The publishTimeRange.
    */
   public com.google.cloud.talent.v4beta1.TimestampRange getPublishTimeRange() {
     return publishTimeRange_ == null
@@ -1253,6 +1338,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @return A list containing the excludedJobs.
    */
   public com.google.protobuf.ProtocolStringList getExcludedJobsList() {
     return excludedJobs_;
@@ -1266,6 +1353,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @return The count of excludedJobs.
    */
   public int getExcludedJobsCount() {
     return excludedJobs_.size();
@@ -1279,6 +1368,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludedJobs at the given index.
    */
   public java.lang.String getExcludedJobs(int index) {
     return excludedJobs_.get(index);
@@ -1292,6 +1384,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludedJobs at the given index.
    */
   public com.google.protobuf.ByteString getExcludedJobsBytes(int index) {
     return excludedJobs_.getByteString(index);
@@ -1702,15 +1797,15 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       queryLanguageCode_ = "";
 
       companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         locationFiltersBuilder_.clear();
       }
       jobCategories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (commuteFilterBuilder_ == null) {
         commuteFilter_ = null;
       } else {
@@ -1718,7 +1813,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         commuteFilterBuilder_ = null;
       }
       companyDisplayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (compensationFilterBuilder_ == null) {
         compensationFilter_ = null;
       } else {
@@ -1730,9 +1825,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       disableSpellCheck_ = false;
 
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000010);
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (publishTimeRangeBuilder_ == null) {
         publishTimeRange_ = null;
       } else {
@@ -1740,7 +1835,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         publishTimeRangeBuilder_ = null;
       }
       excludedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1769,26 +1864,25 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.JobQuery result =
           new com.google.cloud.talent.v4beta1.JobQuery(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.query_ = query_;
       result.queryLanguageCode_ = queryLanguageCode_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         companies_ = companies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.companies_ = companies_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.locationFilters_ = locationFilters_;
       } else {
         result.locationFilters_ = locationFiltersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         jobCategories_ = java.util.Collections.unmodifiableList(jobCategories_);
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.jobCategories_ = jobCategories_;
       if (commuteFilterBuilder_ == null) {
@@ -1796,9 +1890,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.commuteFilter_ = commuteFilterBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         companyDisplayNames_ = companyDisplayNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.companyDisplayNames_ = companyDisplayNames_;
       if (compensationFilterBuilder_ == null) {
@@ -1808,14 +1902,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       result.customAttributeFilter_ = customAttributeFilter_;
       result.disableSpellCheck_ = disableSpellCheck_;
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.employmentTypes_ = employmentTypes_;
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.languageCodes_ = languageCodes_;
       if (publishTimeRangeBuilder_ == null) {
@@ -1823,12 +1917,11 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.publishTimeRange_ = publishTimeRangeBuilder_.build();
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         excludedJobs_ = excludedJobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.excludedJobs_ = excludedJobs_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1889,7 +1982,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.companies_.isEmpty()) {
         if (companies_.isEmpty()) {
           companies_ = other.companies_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureCompaniesIsMutable();
           companies_.addAll(other.companies_);
@@ -1900,7 +1993,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         if (!other.locationFilters_.isEmpty()) {
           if (locationFilters_.isEmpty()) {
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureLocationFiltersIsMutable();
             locationFilters_.addAll(other.locationFilters_);
@@ -1913,7 +2006,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             locationFiltersBuilder_.dispose();
             locationFiltersBuilder_ = null;
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             locationFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationFiltersFieldBuilder()
@@ -1926,7 +2019,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.jobCategories_.isEmpty()) {
         if (jobCategories_.isEmpty()) {
           jobCategories_ = other.jobCategories_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureJobCategoriesIsMutable();
           jobCategories_.addAll(other.jobCategories_);
@@ -1939,7 +2032,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.companyDisplayNames_.isEmpty()) {
         if (companyDisplayNames_.isEmpty()) {
           companyDisplayNames_ = other.companyDisplayNames_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureCompanyDisplayNamesIsMutable();
           companyDisplayNames_.addAll(other.companyDisplayNames_);
@@ -1959,7 +2052,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.employmentTypes_.isEmpty()) {
         if (employmentTypes_.isEmpty()) {
           employmentTypes_ = other.employmentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureEmploymentTypesIsMutable();
           employmentTypes_.addAll(other.employmentTypes_);
@@ -1969,7 +2062,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1982,7 +2075,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.excludedJobs_.isEmpty()) {
         if (excludedJobs_.isEmpty()) {
           excludedJobs_ = other.excludedJobs_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureExcludedJobsIsMutable();
           excludedJobs_.addAll(other.excludedJobs_);
@@ -2031,6 +2124,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query = 1;</code>
+     *
+     * @return The query.
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -2053,6 +2148,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query = 1;</code>
+     *
+     * @return The bytes for query.
      */
     public com.google.protobuf.ByteString getQueryBytes() {
       java.lang.Object ref = query_;
@@ -2075,6 +2172,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query = 1;</code>
+     *
+     * @param value The query to set.
+     * @return This builder for chaining.
      */
     public Builder setQuery(java.lang.String value) {
       if (value == null) {
@@ -2095,6 +2195,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQuery() {
 
@@ -2112,6 +2214,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query = 1;</code>
+     *
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2139,6 +2244,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_language_code = 14;</code>
+     *
+     * @return The queryLanguageCode.
      */
     public java.lang.String getQueryLanguageCode() {
       java.lang.Object ref = queryLanguageCode_;
@@ -2165,6 +2272,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_language_code = 14;</code>
+     *
+     * @return The bytes for queryLanguageCode.
      */
     public com.google.protobuf.ByteString getQueryLanguageCodeBytes() {
       java.lang.Object ref = queryLanguageCode_;
@@ -2191,6 +2300,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_language_code = 14;</code>
+     *
+     * @param value The queryLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -2215,6 +2327,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_language_code = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQueryLanguageCode() {
 
@@ -2236,6 +2350,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_language_code = 14;</code>
+     *
+     * @param value The bytes for queryLanguageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2252,9 +2369,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCompaniesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         companies_ = new com.google.protobuf.LazyStringArrayList(companies_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2275,6 +2392,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @return A list containing the companies.
      */
     public com.google.protobuf.ProtocolStringList getCompaniesList() {
       return companies_.getUnmodifiableView();
@@ -2297,6 +2416,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @return The count of companies.
      */
     public int getCompaniesCount() {
       return companies_.size();
@@ -2319,6 +2440,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The companies at the given index.
      */
     public java.lang.String getCompanies(int index) {
       return companies_.get(index);
@@ -2341,6 +2465,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the companies at the given index.
      */
     public com.google.protobuf.ByteString getCompaniesBytes(int index) {
       return companies_.getByteString(index);
@@ -2363,6 +2490,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The companies to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanies(int index, java.lang.String value) {
       if (value == null) {
@@ -2391,6 +2522,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @param value The companies to add.
+     * @return This builder for chaining.
      */
     public Builder addCompanies(java.lang.String value) {
       if (value == null) {
@@ -2419,6 +2553,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @param values The companies to add.
+     * @return This builder for chaining.
      */
     public Builder addAllCompanies(java.lang.Iterable<java.lang.String> values) {
       ensureCompaniesIsMutable();
@@ -2444,10 +2581,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCompanies() {
       companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2469,6 +2608,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string companies = 2;</code>
+     *
+     * @param value The bytes of the companies to add.
+     * @return This builder for chaining.
      */
     public Builder addCompaniesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2485,11 +2627,11 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         locationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.LocationFilter>(
                 locationFilters_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2817,7 +2959,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLocationFilters() {
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         locationFiltersBuilder_.clear();
@@ -3013,7 +3155,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.LocationFilter.Builder,
                 com.google.cloud.talent.v4beta1.LocationFilterOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -3024,9 +3166,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> jobCategories_ = java.util.Collections.emptyList();
 
     private void ensureJobCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jobCategories_ = new java.util.ArrayList<java.lang.Integer>(jobCategories_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -3042,6 +3184,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @return A list containing the jobCategories.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -3061,6 +3205,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @return The count of jobCategories.
      */
     public int getJobCategoriesCount() {
       return jobCategories_.size();
@@ -3078,6 +3224,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The jobCategories at the given index.
      */
     public com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index) {
       return jobCategories_converter_.convert(jobCategories_.get(index));
@@ -3095,6 +3244,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The jobCategories to set.
+     * @return This builder for chaining.
      */
     public Builder setJobCategories(int index, com.google.cloud.talent.v4beta1.JobCategory value) {
       if (value == null) {
@@ -3118,6 +3271,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param value The jobCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addJobCategories(com.google.cloud.talent.v4beta1.JobCategory value) {
       if (value == null) {
@@ -3141,6 +3297,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param values The jobCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobCategories(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.JobCategory> values) {
@@ -3164,10 +3323,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobCategories() {
       jobCategories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3184,6 +3345,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for jobCategories.
      */
     public java.util.List<java.lang.Integer> getJobCategoriesValueList() {
       return java.util.Collections.unmodifiableList(jobCategories_);
@@ -3201,6 +3364,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of jobCategories at the given index.
      */
     public int getJobCategoriesValue(int index) {
       return jobCategories_.get(index);
@@ -3218,6 +3384,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of jobCategories at the given index.
+     * @return This builder for chaining.
      */
     public Builder setJobCategoriesValue(int index, int value) {
       ensureJobCategoriesIsMutable();
@@ -3238,6 +3408,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for jobCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addJobCategoriesValue(int value) {
       ensureJobCategoriesIsMutable();
@@ -3258,6 +3431,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+     *
+     * @param values The enum numeric values on the wire for jobCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobCategoriesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureJobCategoriesIsMutable();
@@ -3288,6 +3464,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
+     *
+     * @return Whether the commuteFilter field is set.
      */
     public boolean hasCommuteFilter() {
       return commuteFilterBuilder_ != null || commuteFilter_ != null;
@@ -3306,6 +3484,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
+     *
+     * @return The commuteFilter.
      */
     public com.google.cloud.talent.v4beta1.CommuteFilter getCommuteFilter() {
       if (commuteFilterBuilder_ == null) {
@@ -3508,9 +3688,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCompanyDisplayNamesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         companyDisplayNames_ = new com.google.protobuf.LazyStringArrayList(companyDisplayNames_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3528,6 +3708,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @return A list containing the companyDisplayNames.
      */
     public com.google.protobuf.ProtocolStringList getCompanyDisplayNamesList() {
       return companyDisplayNames_.getUnmodifiableView();
@@ -3547,6 +3729,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @return The count of companyDisplayNames.
      */
     public int getCompanyDisplayNamesCount() {
       return companyDisplayNames_.size();
@@ -3566,6 +3750,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The companyDisplayNames at the given index.
      */
     public java.lang.String getCompanyDisplayNames(int index) {
       return companyDisplayNames_.get(index);
@@ -3585,6 +3772,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the companyDisplayNames at the given index.
      */
     public com.google.protobuf.ByteString getCompanyDisplayNamesBytes(int index) {
       return companyDisplayNames_.getByteString(index);
@@ -3604,6 +3794,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The companyDisplayNames to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyDisplayNames(int index, java.lang.String value) {
       if (value == null) {
@@ -3629,6 +3823,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @param value The companyDisplayNames to add.
+     * @return This builder for chaining.
      */
     public Builder addCompanyDisplayNames(java.lang.String value) {
       if (value == null) {
@@ -3654,6 +3851,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @param values The companyDisplayNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllCompanyDisplayNames(java.lang.Iterable<java.lang.String> values) {
       ensureCompanyDisplayNamesIsMutable();
@@ -3676,10 +3876,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCompanyDisplayNames() {
       companyDisplayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3698,6 +3900,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string company_display_names = 6;</code>
+     *
+     * @param value The bytes of the companyDisplayNames to add.
+     * @return This builder for chaining.
      */
     public Builder addCompanyDisplayNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3728,6 +3933,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
+     *
+     * @return Whether the compensationFilter field is set.
      */
     public boolean hasCompensationFilter() {
       return compensationFilterBuilder_ != null || compensationFilter_ != null;
@@ -3744,6 +3951,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
+     *
+     * @return The compensationFilter.
      */
     public com.google.cloud.talent.v4beta1.CompensationFilter getCompensationFilter() {
       if (compensationFilterBuilder_ == null) {
@@ -3957,6 +4166,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string custom_attribute_filter = 8;</code>
+     *
+     * @return The customAttributeFilter.
      */
     public java.lang.String getCustomAttributeFilter() {
       java.lang.Object ref = customAttributeFilter_;
@@ -3994,6 +4205,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string custom_attribute_filter = 8;</code>
+     *
+     * @return The bytes for customAttributeFilter.
      */
     public com.google.protobuf.ByteString getCustomAttributeFilterBytes() {
       java.lang.Object ref = customAttributeFilter_;
@@ -4031,6 +4244,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string custom_attribute_filter = 8;</code>
+     *
+     * @param value The customAttributeFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomAttributeFilter(java.lang.String value) {
       if (value == null) {
@@ -4066,6 +4282,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string custom_attribute_filter = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCustomAttributeFilter() {
 
@@ -4098,6 +4316,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string custom_attribute_filter = 8;</code>
+     *
+     * @param value The bytes for customAttributeFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomAttributeFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4122,6 +4343,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool disable_spell_check = 9;</code>
+     *
+     * @return The disableSpellCheck.
      */
     public boolean getDisableSpellCheck() {
       return disableSpellCheck_;
@@ -4137,6 +4360,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool disable_spell_check = 9;</code>
+     *
+     * @param value The disableSpellCheck to set.
+     * @return This builder for chaining.
      */
     public Builder setDisableSpellCheck(boolean value) {
 
@@ -4155,6 +4381,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool disable_spell_check = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisableSpellCheck() {
 
@@ -4166,9 +4394,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> employmentTypes_ = java.util.Collections.emptyList();
 
     private void ensureEmploymentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         employmentTypes_ = new java.util.ArrayList<java.lang.Integer>(employmentTypes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -4185,6 +4413,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @return A list containing the employmentTypes.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -4205,6 +4435,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @return The count of employmentTypes.
      */
     public int getEmploymentTypesCount() {
       return employmentTypes_.size();
@@ -4223,6 +4455,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The employmentTypes at the given index.
      */
     public com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index) {
       return employmentTypes_converter_.convert(employmentTypes_.get(index));
@@ -4241,6 +4476,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The employmentTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setEmploymentTypes(
         int index, com.google.cloud.talent.v4beta1.EmploymentType value) {
@@ -4266,6 +4505,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param value The employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addEmploymentTypes(com.google.cloud.talent.v4beta1.EmploymentType value) {
       if (value == null) {
@@ -4290,6 +4532,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param values The employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEmploymentTypes(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.EmploymentType> values) {
@@ -4314,10 +4559,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEmploymentTypes() {
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4335,6 +4582,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for employmentTypes.
      */
     public java.util.List<java.lang.Integer> getEmploymentTypesValueList() {
       return java.util.Collections.unmodifiableList(employmentTypes_);
@@ -4353,6 +4602,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of employmentTypes at the given index.
      */
     public int getEmploymentTypesValue(int index) {
       return employmentTypes_.get(index);
@@ -4371,6 +4623,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of employmentTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setEmploymentTypesValue(int index, int value) {
       ensureEmploymentTypesIsMutable();
@@ -4392,6 +4648,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addEmploymentTypesValue(int value) {
       ensureEmploymentTypesIsMutable();
@@ -4413,6 +4672,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+     *
+     * @param values The enum numeric values on the wire for employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEmploymentTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureEmploymentTypesIsMutable();
@@ -4427,9 +4689,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -4447,6 +4709,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
       return languageCodes_.getUnmodifiableView();
@@ -4466,6 +4730,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @return The count of languageCodes.
      */
     public int getLanguageCodesCount() {
       return languageCodes_.size();
@@ -4485,6 +4751,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
      */
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
@@ -4504,6 +4773,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
      */
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
@@ -4523,6 +4795,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -4548,6 +4824,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -4573,6 +4852,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageCodesIsMutable();
@@ -4595,10 +4877,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4617,6 +4901,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string language_codes = 11;</code>
+     *
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4644,6 +4931,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
+     *
+     * @return Whether the publishTimeRange field is set.
      */
     public boolean hasPublishTimeRange() {
       return publishTimeRangeBuilder_ != null || publishTimeRange_ != null;
@@ -4657,6 +4946,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
+     *
+     * @return The publishTimeRange.
      */
     public com.google.cloud.talent.v4beta1.TimestampRange getPublishTimeRange() {
       if (publishTimeRangeBuilder_ == null) {
@@ -4824,9 +5115,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExcludedJobsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         excludedJobs_ = new com.google.protobuf.LazyStringArrayList(excludedJobs_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -4838,6 +5129,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @return A list containing the excludedJobs.
      */
     public com.google.protobuf.ProtocolStringList getExcludedJobsList() {
       return excludedJobs_.getUnmodifiableView();
@@ -4851,6 +5144,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @return The count of excludedJobs.
      */
     public int getExcludedJobsCount() {
       return excludedJobs_.size();
@@ -4864,6 +5159,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedJobs at the given index.
      */
     public java.lang.String getExcludedJobs(int index) {
       return excludedJobs_.get(index);
@@ -4877,6 +5175,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedJobs at the given index.
      */
     public com.google.protobuf.ByteString getExcludedJobsBytes(int index) {
       return excludedJobs_.getByteString(index);
@@ -4890,6 +5191,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludedJobs to set.
+     * @return This builder for chaining.
      */
     public Builder setExcludedJobs(int index, java.lang.String value) {
       if (value == null) {
@@ -4909,6 +5214,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @param value The excludedJobs to add.
+     * @return This builder for chaining.
      */
     public Builder addExcludedJobs(java.lang.String value) {
       if (value == null) {
@@ -4928,6 +5236,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @param values The excludedJobs to add.
+     * @return This builder for chaining.
      */
     public Builder addAllExcludedJobs(java.lang.Iterable<java.lang.String> values) {
       ensureExcludedJobsIsMutable();
@@ -4944,10 +5255,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExcludedJobs() {
       excludedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4960,6 +5273,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string excluded_jobs = 13;</code>
+     *
+     * @param value The bytes of the excludedJobs to add.
+     * @return This builder for chaining.
      */
     public Builder addExcludedJobsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

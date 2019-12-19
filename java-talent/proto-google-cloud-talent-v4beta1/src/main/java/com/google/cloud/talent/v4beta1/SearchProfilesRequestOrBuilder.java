@@ -33,6 +33,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface SearchProfilesRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
   /**
@@ -74,6 +80,8 @@ public interface SearchProfilesRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The requestMetadata.
    */
   com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata();
   /**
@@ -100,6 +108,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
+   *
+   * @return Whether the profileQuery field is set.
    */
   boolean hasProfileQuery();
   /**
@@ -111,6 +121,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
+   *
+   * @return The profileQuery.
    */
   com.google.cloud.talent.v4beta1.ProfileQuery getProfileQuery();
   /**
@@ -135,6 +147,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -152,6 +166,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -168,6 +184,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -186,6 +204,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>int32 offset = 6;</code>
+   *
+   * @return The offset.
    */
   int getOffset();
 
@@ -199,6 +219,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>bool disable_spell_check = 7;</code>
+   *
+   * @return The disableSpellCheck.
    */
   boolean getDisableSpellCheck();
 
@@ -236,6 +258,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 8;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -272,6 +296,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 8;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 
@@ -285,6 +311,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>bool case_sensitive_sort = 9;</code>
+   *
+   * @return The caseSensitiveSort.
    */
   boolean getCaseSensitiveSort();
 
@@ -713,6 +741,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string result_set_id = 12;</code>
+   *
+   * @return The resultSetId.
    */
   java.lang.String getResultSetId();
   /**
@@ -748,6 +778,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>string result_set_id = 12;</code>
+   *
+   * @return The bytes for resultSetId.
    */
   com.google.protobuf.ByteString getResultSetIdBytes();
 
@@ -770,6 +802,8 @@ public interface SearchProfilesRequestOrBuilder
    * </pre>
    *
    * <code>bool strict_keywords_search = 13;</code>
+   *
+   * @return The strictKeywordsSearch.
    */
   boolean getStrictKeywordsSearch();
 }

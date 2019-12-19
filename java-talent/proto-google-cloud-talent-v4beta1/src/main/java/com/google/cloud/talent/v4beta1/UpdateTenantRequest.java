@@ -40,6 +40,12 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
   private UpdateTenantRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateTenantRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tenant field is set.
    */
   public boolean hasTenant() {
     return tenant_ != null;
@@ -154,6 +161,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tenant.
    */
   public com.google.cloud.talent.v4beta1.Tenant getTenant() {
     return tenant_ == null ? com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance() : tenant_;
@@ -191,6 +200,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -211,6 +222,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -611,6 +624,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the tenant field is set.
      */
     public boolean hasTenant() {
       return tenantBuilder_ != null || tenant_ != null;
@@ -626,6 +641,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The tenant.
      */
     public com.google.cloud.talent.v4beta1.Tenant getTenant() {
       if (tenantBuilder_ == null) {
@@ -824,6 +841,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -844,6 +863,8 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

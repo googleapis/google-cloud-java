@@ -33,6 +33,8 @@ public interface UpdateTenantRequestOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tenant field is set.
    */
   boolean hasTenant();
   /**
@@ -45,6 +47,8 @@ public interface UpdateTenantRequestOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tenant.
    */
   com.google.cloud.talent.v4beta1.Tenant getTenant();
   /**
@@ -76,6 +80,8 @@ public interface UpdateTenantRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -94,6 +100,8 @@ public interface UpdateTenantRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

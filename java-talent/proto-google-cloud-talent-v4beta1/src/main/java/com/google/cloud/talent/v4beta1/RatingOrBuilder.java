@@ -31,6 +31,8 @@ public interface RatingOrBuilder
    * </pre>
    *
    * <code>double overall = 1;</code>
+   *
+   * @return The overall.
    */
   double getOverall();
 
@@ -42,6 +44,8 @@ public interface RatingOrBuilder
    * </pre>
    *
    * <code>double min = 2;</code>
+   *
+   * @return The min.
    */
   double getMin();
 
@@ -53,6 +57,8 @@ public interface RatingOrBuilder
    * </pre>
    *
    * <code>double max = 3;</code>
+   *
+   * @return The max.
    */
   double getMax();
 
@@ -65,6 +71,8 @@ public interface RatingOrBuilder
    * </pre>
    *
    * <code>double interval = 4;</code>
+   *
+   * @return The interval.
    */
   double getInterval();
 }

@@ -47,6 +47,12 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
   private ApplicationDateFilter() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ApplicationDateFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +148,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return Whether the startDate field is set.
    */
   public boolean hasStartDate() {
     return startDate_ != null;
@@ -156,6 +163,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return The startDate.
    */
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
@@ -185,6 +194,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return Whether the endDate field is set.
    */
   public boolean hasEndDate() {
     return endDate_ != null;
@@ -198,6 +209,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return The endDate.
    */
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
@@ -595,6 +608,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
       return startDateBuilder_ != null || startDate_ != null;
@@ -608,6 +623,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return The startDate.
      */
     public com.google.type.Date getStartDate() {
       if (startDateBuilder_ == null) {
@@ -772,6 +789,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
       return endDateBuilder_ != null || endDate_ != null;
@@ -785,6 +804,8 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return The endDate.
      */
     public com.google.type.Date getEndDate() {
       if (endDateBuilder_ == null) {

@@ -44,6 +44,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LocationFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -228,12 +233,20 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TelecommutePreference valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TelecommutePreference forNumber(int value) {
       switch (value) {
         case 0:
@@ -304,6 +317,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string address = 1;</code>
+   *
+   * @return The address.
    */
   public java.lang.String getAddress() {
     java.lang.Object ref = address_;
@@ -324,6 +339,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string address = 1;</code>
+   *
+   * @return The bytes for address.
    */
   public com.google.protobuf.ByteString getAddressBytes() {
     java.lang.Object ref = address_;
@@ -356,6 +373,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   *
+   * @return The regionCode.
    */
   public java.lang.String getRegionCode() {
     java.lang.Object ref = regionCode_;
@@ -385,6 +404,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   *
+   * @return The bytes for regionCode.
    */
   public com.google.protobuf.ByteString getRegionCodeBytes() {
     java.lang.Object ref = regionCode_;
@@ -409,6 +430,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return Whether the latLng field is set.
    */
   public boolean hasLatLng() {
     return latLng_ != null;
@@ -422,6 +445,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return The latLng.
    */
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
@@ -452,6 +477,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
+   *
+   * @return The distanceInMiles.
    */
   public double getDistanceInMiles() {
     return distanceInMiles_;
@@ -487,6 +514,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for telecommutePreference.
    */
   public int getTelecommutePreferenceValue() {
     return telecommutePreference_;
@@ -519,6 +548,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
    * </code>
+   *
+   * @return The telecommutePreference.
    */
   public com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference
       getTelecommutePreference() {
@@ -543,6 +574,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool negated = 6;</code>
+   *
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -972,6 +1005,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string address = 1;</code>
+     *
+     * @return The address.
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -992,6 +1027,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string address = 1;</code>
+     *
+     * @return The bytes for address.
      */
     public com.google.protobuf.ByteString getAddressBytes() {
       java.lang.Object ref = address_;
@@ -1012,6 +1049,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string address = 1;</code>
+     *
+     * @param value The address to set.
+     * @return This builder for chaining.
      */
     public Builder setAddress(java.lang.String value) {
       if (value == null) {
@@ -1030,6 +1070,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string address = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAddress() {
 
@@ -1045,6 +1087,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string address = 1;</code>
+     *
+     * @param value The bytes for address to set.
+     * @return This builder for chaining.
      */
     public Builder setAddressBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1075,6 +1120,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     *
+     * @return The regionCode.
      */
     public java.lang.String getRegionCode() {
       java.lang.Object ref = regionCode_;
@@ -1104,6 +1151,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     *
+     * @return The bytes for regionCode.
      */
     public com.google.protobuf.ByteString getRegionCodeBytes() {
       java.lang.Object ref = regionCode_;
@@ -1133,6 +1182,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     *
+     * @param value The regionCode to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionCode(java.lang.String value) {
       if (value == null) {
@@ -1160,6 +1212,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRegionCode() {
 
@@ -1184,6 +1238,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     *
+     * @param value The bytes for regionCode to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1209,6 +1266,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     *
+     * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
       return latLngBuilder_ != null || latLng_ != null;
@@ -1222,6 +1281,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     *
+     * @return The latLng.
      */
     public com.google.type.LatLng getLatLng() {
       if (latLngBuilder_ == null) {
@@ -1385,6 +1446,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double distance_in_miles = 4;</code>
+     *
+     * @return The distanceInMiles.
      */
     public double getDistanceInMiles() {
       return distanceInMiles_;
@@ -1399,6 +1462,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double distance_in_miles = 4;</code>
+     *
+     * @param value The distanceInMiles to set.
+     * @return This builder for chaining.
      */
     public Builder setDistanceInMiles(double value) {
 
@@ -1416,6 +1482,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double distance_in_miles = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDistanceInMiles() {
 
@@ -1453,6 +1521,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
      * </code>
+     *
+     * @return The enum numeric value on the wire for telecommutePreference.
      */
     public int getTelecommutePreferenceValue() {
       return telecommutePreference_;
@@ -1485,6 +1555,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for telecommutePreference to set.
+     * @return This builder for chaining.
      */
     public Builder setTelecommutePreferenceValue(int value) {
       telecommutePreference_ = value;
@@ -1519,6 +1592,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
      * </code>
+     *
+     * @return The telecommutePreference.
      */
     public com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference
         getTelecommutePreference() {
@@ -1558,6 +1633,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
      * </code>
+     *
+     * @param value The telecommutePreference to set.
+     * @return This builder for chaining.
      */
     public Builder setTelecommutePreference(
         com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference value) {
@@ -1597,6 +1675,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTelecommutePreference() {
 
@@ -1616,6 +1696,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     *
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -1630,6 +1712,9 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     *
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
 
@@ -1647,6 +1732,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
 

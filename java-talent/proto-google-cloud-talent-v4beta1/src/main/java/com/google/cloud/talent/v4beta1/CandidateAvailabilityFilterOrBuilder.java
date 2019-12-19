@@ -33,6 +33,8 @@ public interface CandidateAvailabilityFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 1;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

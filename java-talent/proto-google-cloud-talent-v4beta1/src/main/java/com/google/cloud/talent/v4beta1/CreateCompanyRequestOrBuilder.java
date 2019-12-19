@@ -34,6 +34,8 @@ public interface CreateCompanyRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateCompanyRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateCompanyRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Company company = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the company field is set.
    */
   boolean hasCompany();
   /**
@@ -72,6 +78,8 @@ public interface CreateCompanyRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Company company = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The company.
    */
   com.google.cloud.talent.v4beta1.Company getCompany();
   /**

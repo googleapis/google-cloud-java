@@ -33,6 +33,8 @@ public interface CreateTenantRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface CreateTenantRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -57,6 +61,8 @@ public interface CreateTenantRequestOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the tenant field is set.
    */
   boolean hasTenant();
   /**
@@ -68,6 +74,8 @@ public interface CreateTenantRequestOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The tenant.
    */
   com.google.cloud.talent.v4beta1.Tenant getTenant();
   /**

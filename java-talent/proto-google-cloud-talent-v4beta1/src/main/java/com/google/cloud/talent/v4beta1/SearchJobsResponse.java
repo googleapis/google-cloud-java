@@ -45,6 +45,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchJobsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -104,10 +110,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 locationFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               locationFilters_.add(
                   input.readMessage(
@@ -182,7 +188,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
       }
       this.unknownFields = unknownFields.build();
@@ -219,6 +225,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return Whether the job field is set.
      */
     boolean hasJob();
     /**
@@ -230,6 +238,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return The job.
      */
     com.google.cloud.talent.v4beta1.Job getJob();
     /**
@@ -253,6 +263,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     *
+     * @return The jobSummary.
      */
     java.lang.String getJobSummary();
     /**
@@ -264,6 +276,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     *
+     * @return The bytes for jobSummary.
      */
     com.google.protobuf.ByteString getJobSummaryBytes();
 
@@ -278,6 +292,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     *
+     * @return The jobTitleSnippet.
      */
     java.lang.String getJobTitleSnippet();
     /**
@@ -291,6 +307,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     *
+     * @return The bytes for jobTitleSnippet.
      */
     com.google.protobuf.ByteString getJobTitleSnippetBytes();
 
@@ -307,6 +325,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     *
+     * @return The searchTextSnippet.
      */
     java.lang.String getSearchTextSnippet();
     /**
@@ -322,6 +342,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     *
+     * @return The bytes for searchTextSnippet.
      */
     com.google.protobuf.ByteString getSearchTextSnippetBytes();
 
@@ -334,6 +356,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     *
+     * @return Whether the commuteInfo field is set.
      */
     boolean hasCommuteInfo();
     /**
@@ -345,6 +369,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     *
+     * @return The commuteInfo.
      */
     com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo();
     /**
@@ -387,6 +413,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MatchingJob();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -399,7 +431,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -510,6 +541,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return job_ != null;
@@ -523,6 +556,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     *
+     * @return The job.
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
@@ -552,6 +587,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     *
+     * @return The jobSummary.
      */
     public java.lang.String getJobSummary() {
       java.lang.Object ref = jobSummary_;
@@ -573,6 +610,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     *
+     * @return The bytes for jobSummary.
      */
     public com.google.protobuf.ByteString getJobSummaryBytes() {
       java.lang.Object ref = jobSummary_;
@@ -599,6 +638,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     *
+     * @return The jobTitleSnippet.
      */
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -622,6 +663,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     *
+     * @return The bytes for jobTitleSnippet.
      */
     public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -650,6 +693,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     *
+     * @return The searchTextSnippet.
      */
     public java.lang.String getSearchTextSnippet() {
       java.lang.Object ref = searchTextSnippet_;
@@ -675,6 +720,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     *
+     * @return The bytes for searchTextSnippet.
      */
     public com.google.protobuf.ByteString getSearchTextSnippetBytes() {
       java.lang.Object ref = searchTextSnippet_;
@@ -699,6 +746,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     *
+     * @return Whether the commuteInfo field is set.
      */
     public boolean hasCommuteInfo() {
       return commuteInfo_ != null;
@@ -712,6 +761,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     *
+     * @return The commuteInfo.
      */
     public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo() {
       return commuteInfo_ == null
@@ -1164,6 +1215,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       *
+       * @return Whether the job field is set.
        */
       public boolean hasJob() {
         return jobBuilder_ != null || job_ != null;
@@ -1177,6 +1230,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       *
+       * @return The job.
        */
       public com.google.cloud.talent.v4beta1.Job getJob() {
         if (jobBuilder_ == null) {
@@ -1345,6 +1400,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       *
+       * @return The jobSummary.
        */
       public java.lang.String getJobSummary() {
         java.lang.Object ref = jobSummary_;
@@ -1366,6 +1423,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       *
+       * @return The bytes for jobSummary.
        */
       public com.google.protobuf.ByteString getJobSummaryBytes() {
         java.lang.Object ref = jobSummary_;
@@ -1387,6 +1446,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       *
+       * @param value The jobSummary to set.
+       * @return This builder for chaining.
        */
       public Builder setJobSummary(java.lang.String value) {
         if (value == null) {
@@ -1406,6 +1468,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearJobSummary() {
 
@@ -1422,6 +1486,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       *
+       * @param value The bytes for jobSummary to set.
+       * @return This builder for chaining.
        */
       public Builder setJobSummaryBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1446,6 +1513,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       *
+       * @return The jobTitleSnippet.
        */
       public java.lang.String getJobTitleSnippet() {
         java.lang.Object ref = jobTitleSnippet_;
@@ -1469,6 +1538,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       *
+       * @return The bytes for jobTitleSnippet.
        */
       public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
         java.lang.Object ref = jobTitleSnippet_;
@@ -1492,6 +1563,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       *
+       * @param value The jobTitleSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setJobTitleSnippet(java.lang.String value) {
         if (value == null) {
@@ -1513,6 +1587,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearJobTitleSnippet() {
 
@@ -1531,6 +1607,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       *
+       * @param value The bytes for jobTitleSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setJobTitleSnippetBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1557,6 +1636,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       *
+       * @return The searchTextSnippet.
        */
       public java.lang.String getSearchTextSnippet() {
         java.lang.Object ref = searchTextSnippet_;
@@ -1582,6 +1663,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       *
+       * @return The bytes for searchTextSnippet.
        */
       public com.google.protobuf.ByteString getSearchTextSnippetBytes() {
         java.lang.Object ref = searchTextSnippet_;
@@ -1607,6 +1690,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       *
+       * @param value The searchTextSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setSearchTextSnippet(java.lang.String value) {
         if (value == null) {
@@ -1630,6 +1716,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSearchTextSnippet() {
 
@@ -1650,6 +1738,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       *
+       * @param value The bytes for searchTextSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setSearchTextSnippetBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1677,6 +1768,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+       *
+       * @return Whether the commuteInfo field is set.
        */
       public boolean hasCommuteInfo() {
         return commuteInfoBuilder_ != null || commuteInfo_ != null;
@@ -1690,6 +1783,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+       *
+       * @return The commuteInfo.
        */
       public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo() {
         if (commuteInfoBuilder_ == null) {
@@ -1926,6 +2021,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     *
+     * @return Whether the jobLocation field is set.
      */
     boolean hasJobLocation();
     /**
@@ -1936,6 +2033,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     *
+     * @return The jobLocation.
      */
     com.google.cloud.talent.v4beta1.Location getJobLocation();
     /**
@@ -1960,6 +2059,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     *
+     * @return Whether the travelDuration field is set.
      */
     boolean hasTravelDuration();
     /**
@@ -1973,6 +2074,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     *
+     * @return The travelDuration.
      */
     com.google.protobuf.Duration getTravelDuration();
     /**
@@ -2011,6 +2114,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     private CommuteInfo() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CommuteInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2023,7 +2132,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2109,6 +2217,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     *
+     * @return Whether the jobLocation field is set.
      */
     public boolean hasJobLocation() {
       return jobLocation_ != null;
@@ -2121,6 +2231,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     *
+     * @return The jobLocation.
      */
     public com.google.cloud.talent.v4beta1.Location getJobLocation() {
       return jobLocation_ == null
@@ -2153,6 +2265,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     *
+     * @return Whether the travelDuration field is set.
      */
     public boolean hasTravelDuration() {
       return travelDuration_ != null;
@@ -2168,6 +2282,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     *
+     * @return The travelDuration.
      */
     public com.google.protobuf.Duration getTravelDuration() {
       return travelDuration_ == null
@@ -2571,6 +2687,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+       *
+       * @return Whether the jobLocation field is set.
        */
       public boolean hasJobLocation() {
         return jobLocationBuilder_ != null || jobLocation_ != null;
@@ -2583,6 +2701,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+       *
+       * @return The jobLocation.
        */
       public com.google.cloud.talent.v4beta1.Location getJobLocation() {
         if (jobLocationBuilder_ == null) {
@@ -2756,6 +2876,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.protobuf.Duration travel_duration = 2;</code>
+       *
+       * @return Whether the travelDuration field is set.
        */
       public boolean hasTravelDuration() {
         return travelDurationBuilder_ != null || travelDuration_ != null;
@@ -2771,6 +2893,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.protobuf.Duration travel_duration = 2;</code>
+       *
+       * @return The travelDuration.
        */
       public com.google.protobuf.Duration getTravelDuration() {
         if (travelDurationBuilder_ == null) {
@@ -3002,7 +3126,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  private int bitField0_;
   public static final int MATCHING_JOBS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob>
       matchingJobs_;
@@ -3169,6 +3292,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -3190,6 +3315,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -3300,6 +3427,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>
+   *
+   * @return The estimatedTotalSize.
    */
   public int getEstimatedTotalSize() {
     return estimatedTotalSize_;
@@ -3318,6 +3447,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int32 total_size = 6;</code>
+   *
+   * @return The totalSize.
    */
   public int getTotalSize() {
     return totalSize_;
@@ -3334,6 +3465,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -3347,6 +3480,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   *
+   * @return The metadata.
    */
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
@@ -3383,6 +3518,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int32 broadened_query_jobs_count = 8;</code>
+   *
+   * @return The broadenedQueryJobsCount.
    */
   public int getBroadenedQueryJobsCount() {
     return broadenedQueryJobsCount_;
@@ -3398,6 +3535,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   *
+   * @return Whether the spellCorrection field is set.
    */
   public boolean hasSpellCorrection() {
     return spellCorrection_ != null;
@@ -3410,6 +3549,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   *
+   * @return The spellCorrection.
    */
   public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
     return spellCorrection_ == null
@@ -3743,7 +3884,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         locationFiltersBuilder_.clear();
       }
@@ -3793,7 +3934,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.talent.v4beta1.SearchJobsResponse result =
           new com.google.cloud.talent.v4beta1.SearchJobsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (matchingJobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           matchingJobs_ = java.util.Collections.unmodifiableList(matchingJobs_);
@@ -3814,9 +3954,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       result.nextPageToken_ = nextPageToken_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.locationFilters_ = locationFilters_;
       } else {
@@ -3835,7 +3975,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.spellCorrection_ = spellCorrectionBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3948,7 +4087,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         if (!other.locationFilters_.isEmpty()) {
           if (locationFilters_.isEmpty()) {
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLocationFiltersIsMutable();
             locationFilters_.addAll(other.locationFilters_);
@@ -3961,7 +4100,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             locationFiltersBuilder_.dispose();
             locationFiltersBuilder_ = null;
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
             locationFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationFiltersFieldBuilder()
@@ -4833,6 +4972,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -4854,6 +4995,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -4875,6 +5018,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -4894,6 +5040,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -4910,6 +5058,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4926,10 +5077,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         locationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>(locationFilters_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -5189,7 +5340,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public Builder clearLocationFilters() {
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         locationFiltersBuilder_.clear();
@@ -5341,7 +5492,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.talent.v4beta1.Location.Builder,
                 com.google.cloud.talent.v4beta1.LocationOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -5361,6 +5512,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
+     *
+     * @return The estimatedTotalSize.
      */
     public int getEstimatedTotalSize() {
       return estimatedTotalSize_;
@@ -5376,6 +5529,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
+     *
+     * @param value The estimatedTotalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setEstimatedTotalSize(int value) {
 
@@ -5394,6 +5550,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEstimatedTotalSize() {
 
@@ -5414,6 +5572,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 total_size = 6;</code>
+     *
+     * @return The totalSize.
      */
     public int getTotalSize() {
       return totalSize_;
@@ -5429,6 +5589,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 total_size = 6;</code>
+     *
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalSize(int value) {
 
@@ -5447,6 +5610,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 total_size = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
 
@@ -5470,6 +5635,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+     *
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -5483,6 +5650,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+     *
+     * @return The metadata.
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -5661,6 +5830,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 broadened_query_jobs_count = 8;</code>
+     *
+     * @return The broadenedQueryJobsCount.
      */
     public int getBroadenedQueryJobsCount() {
       return broadenedQueryJobsCount_;
@@ -5679,6 +5850,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 broadened_query_jobs_count = 8;</code>
+     *
+     * @param value The broadenedQueryJobsCount to set.
+     * @return This builder for chaining.
      */
     public Builder setBroadenedQueryJobsCount(int value) {
 
@@ -5700,6 +5874,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 broadened_query_jobs_count = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBroadenedQueryJobsCount() {
 
@@ -5722,6 +5898,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+     *
+     * @return Whether the spellCorrection field is set.
      */
     public boolean hasSpellCorrection() {
       return spellCorrectionBuilder_ != null || spellCorrection_ != null;
@@ -5734,6 +5912,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+     *
+     * @return The spellCorrection.
      */
     public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
       if (spellCorrectionBuilder_ == null) {

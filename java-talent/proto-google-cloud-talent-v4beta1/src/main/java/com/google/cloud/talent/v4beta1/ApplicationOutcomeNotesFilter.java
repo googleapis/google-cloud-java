@@ -42,6 +42,12 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ApplicationOutcomeNotesFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The outcomeNotes.
    */
   public java.lang.String getOutcomeNotes() {
     java.lang.Object ref = outcomeNotes_;
@@ -147,6 +154,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for outcomeNotes.
    */
   public com.google.protobuf.ByteString getOutcomeNotesBytes() {
     java.lang.Object ref = outcomeNotes_;
@@ -172,6 +181,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   *
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -526,6 +537,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The outcomeNotes.
      */
     public java.lang.String getOutcomeNotes() {
       java.lang.Object ref = outcomeNotes_;
@@ -549,6 +562,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for outcomeNotes.
      */
     public com.google.protobuf.ByteString getOutcomeNotesBytes() {
       java.lang.Object ref = outcomeNotes_;
@@ -572,6 +587,9 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotes(java.lang.String value) {
       if (value == null) {
@@ -593,6 +611,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutcomeNotes() {
 
@@ -611,6 +631,9 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -634,6 +657,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     *
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -648,6 +673,9 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     *
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
 
@@ -665,6 +693,8 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
 

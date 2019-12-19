@@ -46,6 +46,12 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchProfilesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -144,10 +150,10 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 histogramQueries_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000001;
               }
               histogramQueries_.add(
                   input.readMessage(
@@ -180,7 +186,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
       }
       this.unknownFields = unknownFields.build();
@@ -203,7 +209,6 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.talent.v4beta1.SearchProfilesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -216,6 +221,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -238,6 +245,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -265,6 +274,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the requestMetadata field is set.
    */
   public boolean hasRequestMetadata() {
     return requestMetadata_ != null;
@@ -281,6 +292,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The requestMetadata.
    */
   public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
     return requestMetadata_ == null
@@ -315,6 +328,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
+   *
+   * @return Whether the profileQuery field is set.
    */
   public boolean hasProfileQuery() {
     return profileQuery_ != null;
@@ -328,6 +343,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
+   *
+   * @return The profileQuery.
    */
   public com.google.cloud.talent.v4beta1.ProfileQuery getProfileQuery() {
     return profileQuery_ == null
@@ -360,6 +377,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -381,6 +400,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -407,6 +428,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -437,6 +460,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>int32 offset = 6;</code>
+   *
+   * @return The offset.
    */
   public int getOffset() {
     return offset_;
@@ -454,6 +479,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>bool disable_spell_check = 7;</code>
+   *
+   * @return The disableSpellCheck.
    */
   public boolean getDisableSpellCheck() {
     return disableSpellCheck_;
@@ -495,6 +522,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string order_by = 8;</code>
+   *
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -541,6 +570,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string order_by = 8;</code>
+   *
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
@@ -566,6 +597,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>bool case_sensitive_sort = 9;</code>
+   *
+   * @return The caseSensitiveSort.
    */
   public boolean getCaseSensitiveSort() {
     return caseSensitiveSort_;
@@ -1011,6 +1044,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string result_set_id = 12;</code>
+   *
+   * @return The resultSetId.
    */
   public java.lang.String getResultSetId() {
     java.lang.Object ref = resultSetId_;
@@ -1056,6 +1091,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string result_set_id = 12;</code>
+   *
+   * @return The bytes for resultSetId.
    */
   public com.google.protobuf.ByteString getResultSetIdBytes() {
     java.lang.Object ref = resultSetId_;
@@ -1090,6 +1127,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>bool strict_keywords_search = 13;</code>
+   *
+   * @return The strictKeywordsSearch.
    */
   public boolean getStrictKeywordsSearch() {
     return strictKeywordsSearch_;
@@ -1442,7 +1481,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
 
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         histogramQueriesBuilder_.clear();
       }
@@ -1478,7 +1517,6 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       com.google.cloud.talent.v4beta1.SearchProfilesRequest result =
           new com.google.cloud.talent.v4beta1.SearchProfilesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (requestMetadataBuilder_ == null) {
         result.requestMetadata_ = requestMetadata_;
@@ -1497,9 +1535,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       result.orderBy_ = orderBy_;
       result.caseSensitiveSort_ = caseSensitiveSort_;
       if (histogramQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.histogramQueries_ = histogramQueries_;
       } else {
@@ -1507,7 +1545,6 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
       }
       result.resultSetId_ = resultSetId_;
       result.strictKeywordsSearch_ = strictKeywordsSearch_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1592,7 +1629,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
         if (!other.histogramQueries_.isEmpty()) {
           if (histogramQueries_.isEmpty()) {
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureHistogramQueriesIsMutable();
             histogramQueries_.addAll(other.histogramQueries_);
@@ -1605,7 +1642,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
             histogramQueriesBuilder_.dispose();
             histogramQueriesBuilder_ = null;
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             histogramQueriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHistogramQueriesFieldBuilder()
@@ -1665,6 +1702,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1687,6 +1726,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1709,6 +1750,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1729,6 +1773,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1746,6 +1792,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1776,6 +1825,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the requestMetadata field is set.
      */
     public boolean hasRequestMetadata() {
       return requestMetadataBuilder_ != null || requestMetadata_ != null;
@@ -1792,6 +1843,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * <code>
      * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The requestMetadata.
      */
     public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
       if (requestMetadataBuilder_ == null) {
@@ -1991,6 +2044,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
+     *
+     * @return Whether the profileQuery field is set.
      */
     public boolean hasProfileQuery() {
       return profileQueryBuilder_ != null || profileQuery_ != null;
@@ -2004,6 +2059,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
+     *
+     * @return The profileQuery.
      */
     public com.google.cloud.talent.v4beta1.ProfileQuery getProfileQuery() {
       if (profileQueryBuilder_ == null) {
@@ -2178,6 +2235,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -2192,6 +2251,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -2209,6 +2271,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -2232,6 +2296,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -2258,6 +2324,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -2284,6 +2352,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -2308,6 +2379,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -2329,6 +2402,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string page_token = 5;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2357,6 +2433,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 offset = 6;</code>
+     *
+     * @return The offset.
      */
     public int getOffset() {
       return offset_;
@@ -2376,6 +2454,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 offset = 6;</code>
+     *
+     * @param value The offset to set.
+     * @return This builder for chaining.
      */
     public Builder setOffset(int value) {
 
@@ -2398,6 +2479,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int32 offset = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOffset() {
 
@@ -2417,6 +2500,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool disable_spell_check = 7;</code>
+     *
+     * @return The disableSpellCheck.
      */
     public boolean getDisableSpellCheck() {
       return disableSpellCheck_;
@@ -2431,6 +2516,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool disable_spell_check = 7;</code>
+     *
+     * @param value The disableSpellCheck to set.
+     * @return This builder for chaining.
      */
     public Builder setDisableSpellCheck(boolean value) {
 
@@ -2448,6 +2536,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool disable_spell_check = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisableSpellCheck() {
 
@@ -2491,6 +2581,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 8;</code>
+     *
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -2537,6 +2629,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 8;</code>
+     *
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
@@ -2583,6 +2677,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 8;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
@@ -2627,6 +2724,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
 
@@ -2668,6 +2767,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string order_by = 8;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2691,6 +2793,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool case_sensitive_sort = 9;</code>
+     *
+     * @return The caseSensitiveSort.
      */
     public boolean getCaseSensitiveSort() {
       return caseSensitiveSort_;
@@ -2705,6 +2809,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool case_sensitive_sort = 9;</code>
+     *
+     * @param value The caseSensitiveSort to set.
+     * @return This builder for chaining.
      */
     public Builder setCaseSensitiveSort(boolean value) {
 
@@ -2722,6 +2829,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool case_sensitive_sort = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCaseSensitiveSort() {
 
@@ -2734,11 +2843,11 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureHistogramQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         histogramQueries_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>(
                 histogramQueries_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3705,7 +3814,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
     public Builder clearHistogramQueries() {
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         histogramQueriesBuilder_.clear();
@@ -4307,7 +4416,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
                 com.google.cloud.talent.v4beta1.HistogramQuery.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder>(
                 histogramQueries_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueries_ = null;
@@ -4349,6 +4458,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string result_set_id = 12;</code>
+     *
+     * @return The resultSetId.
      */
     public java.lang.String getResultSetId() {
       java.lang.Object ref = resultSetId_;
@@ -4394,6 +4505,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string result_set_id = 12;</code>
+     *
+     * @return The bytes for resultSetId.
      */
     public com.google.protobuf.ByteString getResultSetIdBytes() {
       java.lang.Object ref = resultSetId_;
@@ -4439,6 +4552,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string result_set_id = 12;</code>
+     *
+     * @param value The resultSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setResultSetId(java.lang.String value) {
       if (value == null) {
@@ -4482,6 +4598,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string result_set_id = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResultSetId() {
 
@@ -4522,6 +4640,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string result_set_id = 12;</code>
+     *
+     * @param value The bytes for resultSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setResultSetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4554,6 +4675,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool strict_keywords_search = 13;</code>
+     *
+     * @return The strictKeywordsSearch.
      */
     public boolean getStrictKeywordsSearch() {
       return strictKeywordsSearch_;
@@ -4577,6 +4700,9 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool strict_keywords_search = 13;</code>
+     *
+     * @param value The strictKeywordsSearch to set.
+     * @return This builder for chaining.
      */
     public Builder setStrictKeywordsSearch(boolean value) {
 
@@ -4603,6 +4729,8 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bool strict_keywords_search = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStrictKeywordsSearch() {
 

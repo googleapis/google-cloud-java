@@ -48,6 +48,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchJobsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -129,10 +135,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 histogramQueries_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               histogramQueries_.add(
                   input.readMessage(
@@ -214,7 +220,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
       }
       this.unknownFields = unknownFields.build();
@@ -332,12 +338,20 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SearchMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static SearchMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -498,12 +512,20 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DiversificationLevel valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DiversificationLevel forNumber(int value) {
       switch (value) {
         case 0:
@@ -584,6 +606,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for importanceLevel.
      */
     int getImportanceLevelValue();
     /**
@@ -599,6 +623,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The importanceLevel.
      */
     com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
         getImportanceLevel();
@@ -624,6 +650,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The rankingExpression.
      */
     java.lang.String getRankingExpression();
     /**
@@ -647,6 +675,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for rankingExpression.
      */
     com.google.protobuf.ByteString getRankingExpressionBytes();
   }
@@ -676,6 +706,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CustomRankingInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -688,7 +724,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -935,12 +970,20 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static ImportanceLevel valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static ImportanceLevel forNumber(int value) {
         switch (value) {
           case 0:
@@ -1026,6 +1069,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for importanceLevel.
      */
     public int getImportanceLevelValue() {
       return importanceLevel_;
@@ -1043,6 +1088,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The importanceLevel.
      */
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
         getImportanceLevel() {
@@ -1079,6 +1126,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The rankingExpression.
      */
     public java.lang.String getRankingExpression() {
       java.lang.Object ref = rankingExpression_;
@@ -1112,6 +1161,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for rankingExpression.
      */
     public com.google.protobuf.ByteString getRankingExpressionBytes() {
       java.lang.Object ref = rankingExpression_;
@@ -1492,6 +1543,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The enum numeric value on the wire for importanceLevel.
        */
       public int getImportanceLevelValue() {
         return importanceLevel_;
@@ -1509,6 +1562,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @param value The enum numeric value on the wire for importanceLevel to set.
+       * @return This builder for chaining.
        */
       public Builder setImportanceLevelValue(int value) {
         importanceLevel_ = value;
@@ -1528,6 +1584,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The importanceLevel.
        */
       public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
           getImportanceLevel() {
@@ -1553,6 +1611,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @param value The importanceLevel to set.
+       * @return This builder for chaining.
        */
       public Builder setImportanceLevel(
           com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
@@ -1578,6 +1639,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <code>
        * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel importance_level = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearImportanceLevel() {
 
@@ -1608,6 +1671,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The rankingExpression.
        */
       public java.lang.String getRankingExpression() {
         java.lang.Object ref = rankingExpression_;
@@ -1641,6 +1706,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for rankingExpression.
        */
       public com.google.protobuf.ByteString getRankingExpressionBytes() {
         java.lang.Object ref = rankingExpression_;
@@ -1674,6 +1741,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The rankingExpression to set.
+       * @return This builder for chaining.
        */
       public Builder setRankingExpression(java.lang.String value) {
         if (value == null) {
@@ -1705,6 +1775,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRankingExpression() {
 
@@ -1733,6 +1805,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>string ranking_expression = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for rankingExpression to set.
+       * @return This builder for chaining.
        */
       public Builder setRankingExpressionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1800,7 +1875,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -1814,6 +1888,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -1837,6 +1913,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -1862,6 +1940,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for searchMode.
    */
   public int getSearchModeValue() {
     return searchMode_;
@@ -1876,6 +1956,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+   *
+   * @return The searchMode.
    */
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode getSearchMode() {
     @SuppressWarnings("deprecation")
@@ -1900,6 +1982,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the requestMetadata field is set.
    */
   public boolean hasRequestMetadata() {
     return requestMetadata_ != null;
@@ -1916,6 +2000,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The requestMetadata.
    */
   public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
     return requestMetadata_ == null
@@ -1949,6 +2035,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
+   *
+   * @return Whether the jobQuery field is set.
    */
   public boolean hasJobQuery() {
     return jobQuery_ != null;
@@ -1961,6 +2049,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
+   *
+   * @return The jobQuery.
    */
   public com.google.cloud.talent.v4beta1.JobQuery getJobQuery() {
     return jobQuery_ == null
@@ -1993,6 +2083,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool enable_broadening = 5;</code>
+   *
+   * @return The enableBroadening.
    */
   public boolean getEnableBroadening() {
     return enableBroadening_;
@@ -2014,6 +2106,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool require_precise_result_size = 6;</code>
+   *
+   * @return The requirePreciseResultSize.
    */
   public boolean getRequirePreciseResultSize() {
     return requirePreciseResultSize_;
@@ -2567,6 +2661,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+   *
+   * @return The enum numeric value on the wire for jobView.
    */
   public int getJobViewValue() {
     return jobView_;
@@ -2582,6 +2678,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+   *
+   * @return The jobView.
    */
   public com.google.cloud.talent.v4beta1.JobView getJobView() {
     @SuppressWarnings("deprecation")
@@ -2608,6 +2706,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 offset = 9;</code>
+   *
+   * @return The offset.
    */
   public int getOffset() {
     return offset_;
@@ -2625,6 +2725,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 page_size = 10;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -2643,6 +2745,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string page_token = 11;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -2666,6 +2770,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string page_token = 11;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -2740,6 +2846,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string order_by = 12;</code>
+   *
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -2811,6 +2919,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string order_by = 12;</code>
+   *
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
@@ -2844,6 +2954,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
    * </code>
+   *
+   * @return The enum numeric value on the wire for diversificationLevel.
    */
   public int getDiversificationLevelValue() {
     return diversificationLevel_;
@@ -2866,6 +2978,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
    * </code>
+   *
+   * @return The diversificationLevel.
    */
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel
       getDiversificationLevel() {
@@ -2891,6 +3005,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
    * </code>
+   *
+   * @return Whether the customRankingInfo field is set.
    */
   public boolean hasCustomRankingInfo() {
     return customRankingInfo_ != null;
@@ -2906,6 +3022,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
    * </code>
+   *
+   * @return The customRankingInfo.
    */
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo
       getCustomRankingInfo() {
@@ -2960,6 +3078,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool disable_keyword_match = 16;</code>
+   *
+   * @return The disableKeywordMatch.
    */
   public boolean getDisableKeywordMatch() {
     return disableKeywordMatch_;
@@ -3346,7 +3466,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         histogramQueriesBuilder_.clear();
       }
@@ -3398,7 +3518,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       com.google.cloud.talent.v4beta1.SearchJobsRequest result =
           new com.google.cloud.talent.v4beta1.SearchJobsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.searchMode_ = searchMode_;
       if (requestMetadataBuilder_ == null) {
@@ -3414,9 +3533,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       result.enableBroadening_ = enableBroadening_;
       result.requirePreciseResultSize_ = requirePreciseResultSize_;
       if (histogramQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.histogramQueries_ = histogramQueries_;
       } else {
@@ -3434,7 +3553,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         result.customRankingInfo_ = customRankingInfoBuilder_.build();
       }
       result.disableKeywordMatch_ = disableKeywordMatch_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3508,7 +3626,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         if (!other.histogramQueries_.isEmpty()) {
           if (histogramQueries_.isEmpty()) {
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureHistogramQueriesIsMutable();
             histogramQueries_.addAll(other.histogramQueries_);
@@ -3521,7 +3639,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             histogramQueriesBuilder_.dispose();
             histogramQueriesBuilder_ = null;
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             histogramQueriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHistogramQueriesFieldBuilder()
@@ -3601,6 +3719,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -3624,6 +3744,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -3647,6 +3769,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -3668,6 +3793,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -3686,6 +3813,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3709,6 +3839,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+     *
+     * @return The enum numeric value on the wire for searchMode.
      */
     public int getSearchModeValue() {
       return searchMode_;
@@ -3723,6 +3855,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for searchMode to set.
+     * @return This builder for chaining.
      */
     public Builder setSearchModeValue(int value) {
       searchMode_ = value;
@@ -3739,6 +3874,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+     *
+     * @return The searchMode.
      */
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode getSearchMode() {
       @SuppressWarnings("deprecation")
@@ -3758,6 +3895,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+     *
+     * @param value The searchMode to set.
+     * @return This builder for chaining.
      */
     public Builder setSearchMode(
         com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode value) {
@@ -3779,6 +3919,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSearchMode() {
 
@@ -3805,6 +3947,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the requestMetadata field is set.
      */
     public boolean hasRequestMetadata() {
       return requestMetadataBuilder_ != null || requestMetadata_ != null;
@@ -3821,6 +3965,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The requestMetadata.
      */
     public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
       if (requestMetadataBuilder_ == null) {
@@ -4019,6 +4165,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
+     *
+     * @return Whether the jobQuery field is set.
      */
     public boolean hasJobQuery() {
       return jobQueryBuilder_ != null || jobQuery_ != null;
@@ -4031,6 +4179,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
+     *
+     * @return The jobQuery.
      */
     public com.google.cloud.talent.v4beta1.JobQuery getJobQuery() {
       if (jobQueryBuilder_ == null) {
@@ -4198,6 +4348,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_broadening = 5;</code>
+     *
+     * @return The enableBroadening.
      */
     public boolean getEnableBroadening() {
       return enableBroadening_;
@@ -4213,6 +4365,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_broadening = 5;</code>
+     *
+     * @param value The enableBroadening to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableBroadening(boolean value) {
 
@@ -4231,6 +4386,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_broadening = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableBroadening() {
 
@@ -4254,6 +4411,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool require_precise_result_size = 6;</code>
+     *
+     * @return The requirePreciseResultSize.
      */
     public boolean getRequirePreciseResultSize() {
       return requirePreciseResultSize_;
@@ -4272,6 +4431,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool require_precise_result_size = 6;</code>
+     *
+     * @param value The requirePreciseResultSize to set.
+     * @return This builder for chaining.
      */
     public Builder setRequirePreciseResultSize(boolean value) {
 
@@ -4293,6 +4455,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool require_precise_result_size = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequirePreciseResultSize() {
 
@@ -4305,11 +4469,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureHistogramQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         histogramQueries_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>(
                 histogramQueries_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -5562,7 +5726,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearHistogramQueries() {
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         histogramQueriesBuilder_.clear();
@@ -6346,7 +6510,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.talent.v4beta1.HistogramQuery.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder>(
                 histogramQueries_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueries_ = null;
@@ -6366,6 +6530,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+     *
+     * @return The enum numeric value on the wire for jobView.
      */
     public int getJobViewValue() {
       return jobView_;
@@ -6381,6 +6547,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for jobView to set.
+     * @return This builder for chaining.
      */
     public Builder setJobViewValue(int value) {
       jobView_ = value;
@@ -6398,6 +6567,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+     *
+     * @return The jobView.
      */
     public com.google.cloud.talent.v4beta1.JobView getJobView() {
       @SuppressWarnings("deprecation")
@@ -6416,6 +6587,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+     *
+     * @param value The jobView to set.
+     * @return This builder for chaining.
      */
     public Builder setJobView(com.google.cloud.talent.v4beta1.JobView value) {
       if (value == null) {
@@ -6437,6 +6611,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobView() {
 
@@ -6462,6 +6638,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 offset = 9;</code>
+     *
+     * @return The offset.
      */
     public int getOffset() {
       return offset_;
@@ -6482,6 +6660,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 offset = 9;</code>
+     *
+     * @param value The offset to set.
+     * @return This builder for chaining.
      */
     public Builder setOffset(int value) {
 
@@ -6505,6 +6686,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 offset = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOffset() {
 
@@ -6524,6 +6707,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 page_size = 10;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -6538,6 +6723,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 page_size = 10;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -6555,6 +6743,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 page_size = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -6575,6 +6765,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 11;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -6598,6 +6790,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 11;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -6621,6 +6815,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 11;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -6642,6 +6839,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -6660,6 +6859,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string page_token = 11;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6732,6 +6934,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string order_by = 12;</code>
+     *
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -6803,6 +7007,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string order_by = 12;</code>
+     *
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
@@ -6874,6 +7080,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string order_by = 12;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
@@ -6943,6 +7152,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string order_by = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
 
@@ -7009,6 +7220,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string order_by = 12;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7040,6 +7254,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
      * </code>
+     *
+     * @return The enum numeric value on the wire for diversificationLevel.
      */
     public int getDiversificationLevelValue() {
       return diversificationLevel_;
@@ -7062,6 +7278,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for diversificationLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setDiversificationLevelValue(int value) {
       diversificationLevel_ = value;
@@ -7086,6 +7305,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
      * </code>
+     *
+     * @return The diversificationLevel.
      */
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel
         getDiversificationLevel() {
@@ -7115,6 +7336,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
      * </code>
+     *
+     * @param value The diversificationLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setDiversificationLevel(
         com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel value) {
@@ -7144,6 +7368,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiversificationLevel() {
 
@@ -7169,6 +7395,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
      * </code>
+     *
+     * @return Whether the customRankingInfo field is set.
      */
     public boolean hasCustomRankingInfo() {
       return customRankingInfoBuilder_ != null || customRankingInfo_ != null;
@@ -7184,6 +7412,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
      * </code>
+     *
+     * @return The customRankingInfo.
      */
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo
         getCustomRankingInfo() {
@@ -7399,6 +7629,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool disable_keyword_match = 16;</code>
+     *
+     * @return The disableKeywordMatch.
      */
     public boolean getDisableKeywordMatch() {
       return disableKeywordMatch_;
@@ -7431,6 +7663,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool disable_keyword_match = 16;</code>
+     *
+     * @param value The disableKeywordMatch to set.
+     * @return This builder for chaining.
      */
     public Builder setDisableKeywordMatch(boolean value) {
 
@@ -7466,6 +7701,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool disable_keyword_match = 16;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisableKeywordMatch() {
 

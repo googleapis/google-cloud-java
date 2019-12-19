@@ -43,6 +43,12 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EmployerFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -229,12 +234,20 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EmployerFilterMode valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static EmployerFilterMode forNumber(int value) {
       switch (value) {
         case 0:
@@ -307,6 +320,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The employer.
    */
   public java.lang.String getEmployer() {
     java.lang.Object ref = employer_;
@@ -327,6 +342,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for employer.
    */
   public com.google.protobuf.ByteString getEmployerBytes() {
     java.lang.Object ref = employer_;
@@ -354,6 +371,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
    */
   public int getModeValue() {
     return mode_;
@@ -370,6 +389,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   *
+   * @return The mode.
    */
   public com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode() {
     @SuppressWarnings("deprecation")
@@ -391,6 +412,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool negated = 3;</code>
+   *
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -757,6 +780,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The employer.
      */
     public java.lang.String getEmployer() {
       java.lang.Object ref = employer_;
@@ -777,6 +802,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for employer.
      */
     public com.google.protobuf.ByteString getEmployerBytes() {
       java.lang.Object ref = employer_;
@@ -797,6 +824,9 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The employer to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployer(java.lang.String value) {
       if (value == null) {
@@ -815,6 +845,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEmployer() {
 
@@ -830,6 +862,9 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for employer to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -855,6 +890,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
      */
     public int getModeValue() {
       return mode_;
@@ -871,6 +908,9 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
       mode_ = value;
@@ -889,6 +929,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     *
+     * @return The mode.
      */
     public com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode() {
       @SuppressWarnings("deprecation")
@@ -910,6 +952,9 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
      */
     public Builder setMode(
         com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode value) {
@@ -933,6 +978,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMode() {
 
@@ -951,6 +998,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 3;</code>
+     *
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -964,6 +1013,9 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 3;</code>
+     *
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
 
@@ -980,6 +1032,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
 

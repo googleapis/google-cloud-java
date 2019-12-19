@@ -43,6 +43,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>string domain = 1;</code>
+   *
+   * @return The domain.
    */
   java.lang.String getDomain();
   /**
@@ -65,6 +67,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>string domain = 1;</code>
+   *
+   * @return The bytes for domain.
    */
   com.google.protobuf.ByteString getDomainBytes();
 
@@ -86,6 +90,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   *
+   * @return The sessionId.
    */
   java.lang.String getSessionId();
   /**
@@ -106,6 +112,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   *
+   * @return The bytes for sessionId.
    */
   com.google.protobuf.ByteString getSessionIdBytes();
 
@@ -127,6 +135,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   *
+   * @return The userId.
    */
   java.lang.String getUserId();
   /**
@@ -147,6 +157,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   *
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString getUserIdBytes();
 
@@ -167,6 +179,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>bool allow_missing_ids = 4;</code>
+   *
+   * @return The allowMissingIds.
    */
   boolean getAllowMissingIds();
 
@@ -179,6 +193,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   *
+   * @return Whether the deviceInfo field is set.
    */
   boolean hasDeviceInfo();
   /**
@@ -190,6 +206,8 @@ public interface RequestMetadataOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   *
+   * @return The deviceInfo.
    */
   com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo();
   /**

@@ -42,6 +42,12 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HistogramQuery();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
+   *
+   * @return The histogramQuery.
    */
   public java.lang.String getHistogramQuery() {
     java.lang.Object ref = histogramQuery_;
@@ -148,6 +155,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
+   *
+   * @return The bytes for histogramQuery.
    */
   public com.google.protobuf.ByteString getHistogramQueryBytes() {
     java.lang.Object ref = histogramQuery_;
@@ -492,6 +501,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @return The histogramQuery.
      */
     public java.lang.String getHistogramQuery() {
       java.lang.Object ref = histogramQuery_;
@@ -518,6 +529,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @return The bytes for histogramQuery.
      */
     public com.google.protobuf.ByteString getHistogramQueryBytes() {
       java.lang.Object ref = histogramQuery_;
@@ -544,6 +557,9 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @param value The histogramQuery to set.
+     * @return This builder for chaining.
      */
     public Builder setHistogramQuery(java.lang.String value) {
       if (value == null) {
@@ -568,6 +584,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHistogramQuery() {
 
@@ -589,6 +607,9 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @param value The bytes for histogramQuery to set.
+     * @return This builder for chaining.
      */
     public Builder setHistogramQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

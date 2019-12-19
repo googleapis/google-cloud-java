@@ -43,6 +43,12 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpellingCorrection();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool corrected = 1;</code>
+   *
+   * @return The corrected.
    */
   public boolean getCorrected() {
     return corrected_;
@@ -144,6 +151,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string corrected_text = 2;</code>
+   *
+   * @return The correctedText.
    */
   public java.lang.String getCorrectedText() {
     java.lang.Object ref = correctedText_;
@@ -164,6 +173,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string corrected_text = 2;</code>
+   *
+   * @return The bytes for correctedText.
    */
   public com.google.protobuf.ByteString getCorrectedTextBytes() {
     java.lang.Object ref = correctedText_;
@@ -192,6 +203,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string corrected_html = 3;</code>
+   *
+   * @return The correctedHtml.
    */
   public java.lang.String getCorrectedHtml() {
     java.lang.Object ref = correctedHtml_;
@@ -217,6 +230,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string corrected_html = 3;</code>
+   *
+   * @return The bytes for correctedHtml.
    */
   public com.google.protobuf.ByteString getCorrectedHtmlBytes() {
     java.lang.Object ref = correctedHtml_;
@@ -588,6 +603,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool corrected = 1;</code>
+     *
+     * @return The corrected.
      */
     public boolean getCorrected() {
       return corrected_;
@@ -600,6 +617,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool corrected = 1;</code>
+     *
+     * @param value The corrected to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrected(boolean value) {
 
@@ -615,6 +635,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool corrected = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCorrected() {
 
@@ -632,6 +654,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     *
+     * @return The correctedText.
      */
     public java.lang.String getCorrectedText() {
       java.lang.Object ref = correctedText_;
@@ -652,6 +676,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     *
+     * @return The bytes for correctedText.
      */
     public com.google.protobuf.ByteString getCorrectedTextBytes() {
       java.lang.Object ref = correctedText_;
@@ -672,6 +698,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     *
+     * @param value The correctedText to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedText(java.lang.String value) {
       if (value == null) {
@@ -690,6 +719,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCorrectedText() {
 
@@ -705,6 +736,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     *
+     * @param value The bytes for correctedText to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -731,6 +765,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     *
+     * @return The correctedHtml.
      */
     public java.lang.String getCorrectedHtml() {
       java.lang.Object ref = correctedHtml_;
@@ -756,6 +792,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     *
+     * @return The bytes for correctedHtml.
      */
     public com.google.protobuf.ByteString getCorrectedHtmlBytes() {
       java.lang.Object ref = correctedHtml_;
@@ -781,6 +819,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     *
+     * @param value The correctedHtml to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedHtml(java.lang.String value) {
       if (value == null) {
@@ -804,6 +845,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCorrectedHtml() {
 
@@ -824,6 +867,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     *
+     * @param value The bytes for correctedHtml to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedHtmlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

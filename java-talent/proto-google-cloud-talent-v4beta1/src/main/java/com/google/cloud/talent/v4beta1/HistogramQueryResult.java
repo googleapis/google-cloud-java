@@ -44,6 +44,12 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HistogramQueryResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,11 +82,11 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 histogram_ =
                     com.google.protobuf.MapField.newMapField(
                         HistogramDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> histogram__ =
                   input.readMessage(
@@ -134,7 +140,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
             com.google.cloud.talent.v4beta1.HistogramQueryResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HISTOGRAM_QUERY_FIELD_NUMBER = 1;
   private volatile java.lang.Object histogramQuery_;
   /**
@@ -145,6 +150,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
+   *
+   * @return The histogramQuery.
    */
   public java.lang.String getHistogramQuery() {
     java.lang.Object ref = histogramQuery_;
@@ -165,6 +172,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string histogram_query = 1;</code>
+   *
+   * @return The bytes for histogramQuery.
    */
   public com.google.protobuf.ByteString getHistogramQueryBytes() {
     java.lang.Object ref = histogramQuery_;
@@ -573,11 +582,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       com.google.cloud.talent.v4beta1.HistogramQueryResult result =
           new com.google.cloud.talent.v4beta1.HistogramQueryResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.histogramQuery_ = histogramQuery_;
       result.histogram_ = internalGetHistogram();
       result.histogram_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -674,6 +681,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @return The histogramQuery.
      */
     public java.lang.String getHistogramQuery() {
       java.lang.Object ref = histogramQuery_;
@@ -694,6 +703,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @return The bytes for histogramQuery.
      */
     public com.google.protobuf.ByteString getHistogramQueryBytes() {
       java.lang.Object ref = histogramQuery_;
@@ -714,6 +725,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @param value The histogramQuery to set.
+     * @return This builder for chaining.
      */
     public Builder setHistogramQuery(java.lang.String value) {
       if (value == null) {
@@ -732,6 +746,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHistogramQuery() {
 
@@ -747,6 +763,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string histogram_query = 1;</code>
+     *
+     * @param value The bytes for histogramQuery to set.
+     * @return This builder for chaining.
      */
     public Builder setHistogramQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -51,6 +51,12 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Activity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -126,18 +132,18 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 teamMembers_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               teamMembers_.add(s);
               break;
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000002;
               }
               skillsUsed_.add(
                   input.readMessage(
@@ -161,9 +167,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 skillsUsedSnippet_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000004;
               }
               skillsUsedSnippet_.add(s);
               break;
@@ -182,13 +188,13 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         teamMembers_ = teamMembers_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         skillsUsedSnippet_ = skillsUsedSnippet_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -211,7 +217,6 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.Activity.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object displayName_;
   /**
@@ -223,6 +228,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -244,6 +251,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -268,6 +277,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -289,6 +300,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -313,6 +326,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 3;</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -334,6 +349,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string uri = 3;</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -357,6 +374,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
+   *
+   * @return Whether the createDate field is set.
    */
   public boolean hasCreateDate() {
     return createDate_ != null;
@@ -369,6 +388,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
+   *
+   * @return The createDate.
    */
   public com.google.type.Date getCreateDate() {
     return createDate_ == null ? com.google.type.Date.getDefaultInstance() : createDate_;
@@ -396,6 +417,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
+   *
+   * @return Whether the updateDate field is set.
    */
   public boolean hasUpdateDate() {
     return updateDate_ != null;
@@ -408,6 +431,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
+   *
+   * @return The updateDate.
    */
   public com.google.type.Date getUpdateDate() {
     return updateDate_ == null ? com.google.type.Date.getDefaultInstance() : updateDate_;
@@ -437,6 +462,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @return A list containing the teamMembers.
    */
   public com.google.protobuf.ProtocolStringList getTeamMembersList() {
     return teamMembers_;
@@ -451,6 +478,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @return The count of teamMembers.
    */
   public int getTeamMembersCount() {
     return teamMembers_.size();
@@ -465,6 +494,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The teamMembers at the given index.
    */
   public java.lang.String getTeamMembers(int index) {
     return teamMembers_.get(index);
@@ -479,6 +511,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the teamMembers at the given index.
    */
   public com.google.protobuf.ByteString getTeamMembersBytes(int index) {
     return teamMembers_.getByteString(index);
@@ -567,6 +602,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The activityNameSnippet.
    */
   public java.lang.String getActivityNameSnippet() {
     java.lang.Object ref = activityNameSnippet_;
@@ -591,6 +628,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for activityNameSnippet.
    */
   public com.google.protobuf.ByteString getActivityNameSnippetBytes() {
     java.lang.Object ref = activityNameSnippet_;
@@ -619,6 +658,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The activityDescriptionSnippet.
    */
   public java.lang.String getActivityDescriptionSnippet() {
     java.lang.Object ref = activityDescriptionSnippet_;
@@ -644,6 +685,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for activityDescriptionSnippet.
    */
   public com.google.protobuf.ByteString getActivityDescriptionSnippetBytes() {
     java.lang.Object ref = activityDescriptionSnippet_;
@@ -672,6 +715,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the skillsUsedSnippet.
    */
   public com.google.protobuf.ProtocolStringList getSkillsUsedSnippetList() {
     return skillsUsedSnippet_;
@@ -689,6 +734,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The count of skillsUsedSnippet.
    */
   public int getSkillsUsedSnippetCount() {
     return skillsUsedSnippet_.size();
@@ -706,6 +753,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The skillsUsedSnippet at the given index.
    */
   public java.lang.String getSkillsUsedSnippet(int index) {
     return skillsUsedSnippet_.get(index);
@@ -723,6 +773,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the skillsUsedSnippet at the given index.
    */
   public com.google.protobuf.ByteString getSkillsUsedSnippetBytes(int index) {
     return skillsUsedSnippet_.getByteString(index);
@@ -1063,10 +1116,10 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         updateDateBuilder_ = null;
       }
       teamMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (skillsUsedBuilder_ == null) {
         skillsUsed_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         skillsUsedBuilder_.clear();
       }
@@ -1075,7 +1128,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       activityDescriptionSnippet_ = "";
 
       skillsUsedSnippet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1104,7 +1157,6 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Activity result =
           new com.google.cloud.talent.v4beta1.Activity(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.uri_ = uri_;
@@ -1118,15 +1170,15 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateDate_ = updateDateBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         teamMembers_ = teamMembers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.teamMembers_ = teamMembers_;
       if (skillsUsedBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.skillsUsed_ = skillsUsed_;
       } else {
@@ -1134,12 +1186,11 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       }
       result.activityNameSnippet_ = activityNameSnippet_;
       result.activityDescriptionSnippet_ = activityDescriptionSnippet_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         skillsUsedSnippet_ = skillsUsedSnippet_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.skillsUsedSnippet_ = skillsUsedSnippet_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1210,7 +1261,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       if (!other.teamMembers_.isEmpty()) {
         if (teamMembers_.isEmpty()) {
           teamMembers_ = other.teamMembers_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureTeamMembersIsMutable();
           teamMembers_.addAll(other.teamMembers_);
@@ -1221,7 +1272,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         if (!other.skillsUsed_.isEmpty()) {
           if (skillsUsed_.isEmpty()) {
             skillsUsed_ = other.skillsUsed_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillsUsedIsMutable();
             skillsUsed_.addAll(other.skillsUsed_);
@@ -1234,7 +1285,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
             skillsUsedBuilder_.dispose();
             skillsUsedBuilder_ = null;
             skillsUsed_ = other.skillsUsed_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
             skillsUsedBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSkillsUsedFieldBuilder()
@@ -1255,7 +1306,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       if (!other.skillsUsedSnippet_.isEmpty()) {
         if (skillsUsedSnippet_.isEmpty()) {
           skillsUsedSnippet_ = other.skillsUsedSnippet_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSkillsUsedSnippetIsMutable();
           skillsUsedSnippet_.addAll(other.skillsUsedSnippet_);
@@ -1303,6 +1354,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1324,6 +1377,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1345,6 +1400,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1364,6 +1422,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1380,6 +1440,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1402,6 +1465,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1423,6 +1488,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1444,6 +1511,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1463,6 +1533,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1479,6 +1551,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1501,6 +1576,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 3;</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -1522,6 +1599,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 3;</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -1543,6 +1622,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 3;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -1562,6 +1644,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
 
@@ -1578,6 +1662,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string uri = 3;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1602,6 +1689,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
+     *
+     * @return Whether the createDate field is set.
      */
     public boolean hasCreateDate() {
       return createDateBuilder_ != null || createDate_ != null;
@@ -1614,6 +1703,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
+     *
+     * @return The createDate.
      */
     public com.google.type.Date getCreateDate() {
       if (createDateBuilder_ == null) {
@@ -1771,6 +1862,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
+     *
+     * @return Whether the updateDate field is set.
      */
     public boolean hasUpdateDate() {
       return updateDateBuilder_ != null || updateDate_ != null;
@@ -1783,6 +1876,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
+     *
+     * @return The updateDate.
      */
     public com.google.type.Date getUpdateDate() {
       if (updateDateBuilder_ == null) {
@@ -1932,9 +2027,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTeamMembersIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         teamMembers_ = new com.google.protobuf.LazyStringArrayList(teamMembers_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1947,6 +2042,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @return A list containing the teamMembers.
      */
     public com.google.protobuf.ProtocolStringList getTeamMembersList() {
       return teamMembers_.getUnmodifiableView();
@@ -1961,6 +2058,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @return The count of teamMembers.
      */
     public int getTeamMembersCount() {
       return teamMembers_.size();
@@ -1975,6 +2074,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The teamMembers at the given index.
      */
     public java.lang.String getTeamMembers(int index) {
       return teamMembers_.get(index);
@@ -1989,6 +2091,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the teamMembers at the given index.
      */
     public com.google.protobuf.ByteString getTeamMembersBytes(int index) {
       return teamMembers_.getByteString(index);
@@ -2003,6 +2108,10 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The teamMembers to set.
+     * @return This builder for chaining.
      */
     public Builder setTeamMembers(int index, java.lang.String value) {
       if (value == null) {
@@ -2023,6 +2132,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @param value The teamMembers to add.
+     * @return This builder for chaining.
      */
     public Builder addTeamMembers(java.lang.String value) {
       if (value == null) {
@@ -2043,6 +2155,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @param values The teamMembers to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTeamMembers(java.lang.Iterable<java.lang.String> values) {
       ensureTeamMembersIsMutable();
@@ -2060,10 +2175,12 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTeamMembers() {
       teamMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2077,6 +2194,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     *
+     * @param value The bytes of the teamMembers to add.
+     * @return This builder for chaining.
      */
     public Builder addTeamMembersBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2093,9 +2213,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSkillsUsedIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skillsUsed_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2321,7 +2441,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSkillsUsed() {
       if (skillsUsedBuilder_ == null) {
         skillsUsed_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         skillsUsedBuilder_.clear();
@@ -2450,7 +2570,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Skill,
                 com.google.cloud.talent.v4beta1.Skill.Builder,
                 com.google.cloud.talent.v4beta1.SkillOrBuilder>(
-                skillsUsed_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                skillsUsed_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         skillsUsed_ = null;
       }
       return skillsUsedBuilder_;
@@ -2469,6 +2589,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The activityNameSnippet.
      */
     public java.lang.String getActivityNameSnippet() {
       java.lang.Object ref = activityNameSnippet_;
@@ -2493,6 +2615,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for activityNameSnippet.
      */
     public com.google.protobuf.ByteString getActivityNameSnippetBytes() {
       java.lang.Object ref = activityNameSnippet_;
@@ -2517,6 +2641,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The activityNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityNameSnippet(java.lang.String value) {
       if (value == null) {
@@ -2539,6 +2666,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearActivityNameSnippet() {
 
@@ -2558,6 +2687,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for activityNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityNameSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2584,6 +2716,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The activityDescriptionSnippet.
      */
     public java.lang.String getActivityDescriptionSnippet() {
       java.lang.Object ref = activityDescriptionSnippet_;
@@ -2609,6 +2743,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for activityDescriptionSnippet.
      */
     public com.google.protobuf.ByteString getActivityDescriptionSnippetBytes() {
       java.lang.Object ref = activityDescriptionSnippet_;
@@ -2634,6 +2770,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The activityDescriptionSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityDescriptionSnippet(java.lang.String value) {
       if (value == null) {
@@ -2657,6 +2796,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearActivityDescriptionSnippet() {
 
@@ -2677,6 +2818,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for activityDescriptionSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityDescriptionSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2693,9 +2837,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSkillsUsedSnippetIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         skillsUsedSnippet_ = new com.google.protobuf.LazyStringArrayList(skillsUsedSnippet_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2711,6 +2855,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return A list containing the skillsUsedSnippet.
      */
     public com.google.protobuf.ProtocolStringList getSkillsUsedSnippetList() {
       return skillsUsedSnippet_.getUnmodifiableView();
@@ -2728,6 +2874,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The count of skillsUsedSnippet.
      */
     public int getSkillsUsedSnippetCount() {
       return skillsUsedSnippet_.size();
@@ -2745,6 +2893,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The skillsUsedSnippet at the given index.
      */
     public java.lang.String getSkillsUsedSnippet(int index) {
       return skillsUsedSnippet_.get(index);
@@ -2762,6 +2913,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the skillsUsedSnippet at the given index.
      */
     public com.google.protobuf.ByteString getSkillsUsedSnippetBytes(int index) {
       return skillsUsedSnippet_.getByteString(index);
@@ -2779,6 +2933,10 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The skillsUsedSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSkillsUsedSnippet(int index, java.lang.String value) {
       if (value == null) {
@@ -2802,6 +2960,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The skillsUsedSnippet to add.
+     * @return This builder for chaining.
      */
     public Builder addSkillsUsedSnippet(java.lang.String value) {
       if (value == null) {
@@ -2825,6 +2986,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param values The skillsUsedSnippet to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSkillsUsedSnippet(java.lang.Iterable<java.lang.String> values) {
       ensureSkillsUsedSnippetIsMutable();
@@ -2845,10 +3009,12 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSkillsUsedSnippet() {
       skillsUsedSnippet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2865,6 +3031,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes of the skillsUsedSnippet to add.
+     * @return This builder for chaining.
      */
     public Builder addSkillsUsedSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

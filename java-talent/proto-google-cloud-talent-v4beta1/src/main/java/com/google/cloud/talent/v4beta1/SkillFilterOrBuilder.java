@@ -31,6 +31,8 @@ public interface SkillFilterOrBuilder
    * </pre>
    *
    * <code>string skill = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The skill.
    */
   java.lang.String getSkill();
   /**
@@ -41,6 +43,8 @@ public interface SkillFilterOrBuilder
    * </pre>
    *
    * <code>string skill = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for skill.
    */
   com.google.protobuf.ByteString getSkillBytes();
 
@@ -53,6 +57,8 @@ public interface SkillFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

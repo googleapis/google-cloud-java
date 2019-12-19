@@ -42,6 +42,12 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ResponseMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   *
+   * @return The requestId.
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -138,6 +145,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   *
+   * @return The bytes for requestId.
    */
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
@@ -478,6 +487,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @return The requestId.
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -499,6 +510,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @return The bytes for requestId.
      */
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
@@ -520,6 +533,9 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
@@ -539,6 +555,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestId() {
 
@@ -555,6 +573,9 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

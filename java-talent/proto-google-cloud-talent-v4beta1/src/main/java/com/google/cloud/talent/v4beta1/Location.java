@@ -42,6 +42,12 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -390,12 +395,20 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static LocationType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static LocationType forNumber(int value) {
       switch (value) {
         case 0:
@@ -484,6 +497,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for locationType.
    */
   public int getLocationTypeValue() {
     return locationType_;
@@ -501,6 +516,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   *
+   * @return The locationType.
    */
   public com.google.cloud.talent.v4beta1.Location.LocationType getLocationType() {
     @SuppressWarnings("deprecation")
@@ -524,6 +541,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   *
+   * @return Whether the postalAddress field is set.
    */
   public boolean hasPostalAddress() {
     return postalAddress_ != null;
@@ -539,6 +558,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   *
+   * @return The postalAddress.
    */
   public com.google.type.PostalAddress getPostalAddress() {
     return postalAddress_ == null
@@ -571,6 +592,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return Whether the latLng field is set.
    */
   public boolean hasLatLng() {
     return latLng_ != null;
@@ -583,6 +606,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return The latLng.
    */
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
@@ -614,6 +639,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double radius_miles = 4;</code>
+   *
+   * @return The radiusMiles.
    */
   public double getRadiusMiles() {
     return radiusMiles_;
@@ -1026,6 +1053,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for locationType.
      */
     public int getLocationTypeValue() {
       return locationType_;
@@ -1043,6 +1072,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for locationType to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationTypeValue(int value) {
       locationType_ = value;
@@ -1062,6 +1094,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     *
+     * @return The locationType.
      */
     public com.google.cloud.talent.v4beta1.Location.LocationType getLocationType() {
       @SuppressWarnings("deprecation")
@@ -1084,6 +1118,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     *
+     * @param value The locationType to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationType(com.google.cloud.talent.v4beta1.Location.LocationType value) {
       if (value == null) {
@@ -1107,6 +1144,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationType() {
 
@@ -1132,6 +1171,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.PostalAddress postal_address = 2;</code>
+     *
+     * @return Whether the postalAddress field is set.
      */
     public boolean hasPostalAddress() {
       return postalAddressBuilder_ != null || postalAddress_ != null;
@@ -1147,6 +1188,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.PostalAddress postal_address = 2;</code>
+     *
+     * @return The postalAddress.
      */
     public com.google.type.PostalAddress getPostalAddress() {
       if (postalAddressBuilder_ == null) {
@@ -1335,6 +1378,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     *
+     * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
       return latLngBuilder_ != null || latLng_ != null;
@@ -1347,6 +1392,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     *
+     * @return The latLng.
      */
     public com.google.type.LatLng getLatLng() {
       if (latLngBuilder_ == null) {
@@ -1505,6 +1552,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
+     *
+     * @return The radiusMiles.
      */
     public double getRadiusMiles() {
       return radiusMiles_;
@@ -1521,6 +1570,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
+     *
+     * @param value The radiusMiles to set.
+     * @return This builder for chaining.
      */
     public Builder setRadiusMiles(double value) {
 
@@ -1540,6 +1592,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRadiusMiles() {
 

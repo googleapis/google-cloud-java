@@ -31,6 +31,8 @@ public interface WorkExperienceFilterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
+   *
+   * @return Whether the minExperience field is set.
    */
   boolean hasMinExperience();
   /**
@@ -41,6 +43,8 @@ public interface WorkExperienceFilterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
+   *
+   * @return The minExperience.
    */
   com.google.protobuf.Duration getMinExperience();
   /**
@@ -62,6 +66,8 @@ public interface WorkExperienceFilterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
+   *
+   * @return Whether the maxExperience field is set.
    */
   boolean hasMaxExperience();
   /**
@@ -72,6 +78,8 @@ public interface WorkExperienceFilterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
+   *
+   * @return The maxExperience.
    */
   com.google.protobuf.Duration getMaxExperience();
   /**

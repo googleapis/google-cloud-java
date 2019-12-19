@@ -33,6 +33,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -45,6 +47,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -56,6 +60,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   *
+   * @return Whether the lastUsedDate field is set.
    */
   boolean hasLastUsedDate();
   /**
@@ -66,6 +72,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   *
+   * @return The lastUsedDate.
    */
   com.google.type.Date getLastUsedDate();
   /**
@@ -88,6 +96,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   *
+   * @return The enum numeric value on the wire for level.
    */
   int getLevelValue();
   /**
@@ -99,6 +109,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   *
+   * @return The level.
    */
   com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel();
 
@@ -111,6 +123,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>string context = 4;</code>
+   *
+   * @return The context.
    */
   java.lang.String getContext();
   /**
@@ -122,6 +136,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>string context = 4;</code>
+   *
+   * @return The bytes for context.
    */
   com.google.protobuf.ByteString getContextBytes();
 
@@ -137,6 +153,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The skillNameSnippet.
    */
   java.lang.String getSkillNameSnippet();
   /**
@@ -151,6 +169,8 @@ public interface SkillOrBuilder
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for skillNameSnippet.
    */
   com.google.protobuf.ByteString getSkillNameSnippetBytes();
 }

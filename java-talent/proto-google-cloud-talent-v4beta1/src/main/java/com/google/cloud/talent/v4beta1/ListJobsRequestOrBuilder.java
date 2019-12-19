@@ -34,6 +34,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -70,6 +74,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -92,6 +98,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -103,6 +111,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -113,6 +123,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -130,6 +142,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -144,6 +158,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+   *
+   * @return The enum numeric value on the wire for jobView.
    */
   int getJobViewValue();
   /**
@@ -157,6 +173,8 @@ public interface ListJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+   *
+   * @return The jobView.
    */
   com.google.cloud.talent.v4beta1.JobView getJobView();
 }

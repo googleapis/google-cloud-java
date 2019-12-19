@@ -34,6 +34,8 @@ public interface JobEventOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -47,6 +49,8 @@ public interface JobEventOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType();
 
@@ -67,6 +71,8 @@ public interface JobEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the jobs.
    */
   java.util.List<java.lang.String> getJobsList();
   /**
@@ -86,6 +92,8 @@ public interface JobEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of jobs.
    */
   int getJobsCount();
   /**
@@ -105,6 +113,9 @@ public interface JobEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
    */
   java.lang.String getJobs(int index);
   /**
@@ -124,6 +135,9 @@ public interface JobEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
    */
   com.google.protobuf.ByteString getJobsBytes(int index);
 
@@ -139,6 +153,8 @@ public interface JobEventOrBuilder
    * </pre>
    *
    * <code>string profile = 3;</code>
+   *
+   * @return The profile.
    */
   java.lang.String getProfile();
   /**
@@ -153,6 +169,8 @@ public interface JobEventOrBuilder
    * </pre>
    *
    * <code>string profile = 3;</code>
+   *
+   * @return The bytes for profile.
    */
   com.google.protobuf.ByteString getProfileBytes();
 }

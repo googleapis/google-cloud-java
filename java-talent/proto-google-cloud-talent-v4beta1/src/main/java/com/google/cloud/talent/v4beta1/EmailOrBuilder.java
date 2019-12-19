@@ -31,6 +31,8 @@ public interface EmailOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The enum numeric value on the wire for usage.
    */
   int getUsageValue();
   /**
@@ -41,6 +43,8 @@ public interface EmailOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The usage.
    */
   com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage();
 
@@ -53,6 +57,8 @@ public interface EmailOrBuilder
    * </pre>
    *
    * <code>string email_address = 2;</code>
+   *
+   * @return The emailAddress.
    */
   java.lang.String getEmailAddress();
   /**
@@ -64,6 +70,8 @@ public interface EmailOrBuilder
    * </pre>
    *
    * <code>string email_address = 2;</code>
+   *
+   * @return The bytes for emailAddress.
    */
   com.google.protobuf.ByteString getEmailAddressBytes();
 }

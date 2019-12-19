@@ -35,6 +35,8 @@ public interface CreateApplicationRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface CreateApplicationRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface CreateApplicationRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the application field is set.
    */
   boolean hasApplication();
   /**
@@ -74,6 +80,8 @@ public interface CreateApplicationRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The application.
    */
   com.google.cloud.talent.v4beta1.Application getApplication();
   /**

@@ -42,6 +42,12 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AvailabilityFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for signalType.
    */
   public int getSignalTypeValue() {
     return signalType_;
@@ -153,6 +160,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The signalType.
    */
   public com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType() {
     @SuppressWarnings("deprecation")
@@ -175,6 +184,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the range field is set.
    */
   public boolean hasRange() {
     return range_ != null;
@@ -189,6 +200,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The range.
    */
   public com.google.cloud.talent.v4beta1.TimestampRange getRange() {
     return range_ == null
@@ -226,6 +239,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool required = 3;</code>
+   *
+   * @return The required.
    */
   public boolean getRequired() {
     return required_;
@@ -608,6 +623,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for signalType.
      */
     public int getSignalTypeValue() {
       return signalType_;
@@ -622,6 +639,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for signalType to set.
+     * @return This builder for chaining.
      */
     public Builder setSignalTypeValue(int value) {
       signalType_ = value;
@@ -638,6 +658,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The signalType.
      */
     public com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType() {
       @SuppressWarnings("deprecation")
@@ -657,6 +679,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The signalType to set.
+     * @return This builder for chaining.
      */
     public Builder setSignalType(com.google.cloud.talent.v4beta1.AvailabilitySignalType value) {
       if (value == null) {
@@ -677,6 +702,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignalType() {
 
@@ -701,6 +728,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return rangeBuilder_ != null || range_ != null;
@@ -715,6 +744,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The range.
      */
     public com.google.cloud.talent.v4beta1.TimestampRange getRange() {
       if (rangeBuilder_ == null) {
@@ -900,6 +931,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool required = 3;</code>
+     *
+     * @return The required.
      */
     public boolean getRequired() {
       return required_;
@@ -918,6 +951,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool required = 3;</code>
+     *
+     * @param value The required to set.
+     * @return This builder for chaining.
      */
     public Builder setRequired(boolean value) {
 
@@ -939,6 +975,8 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool required = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequired() {
 

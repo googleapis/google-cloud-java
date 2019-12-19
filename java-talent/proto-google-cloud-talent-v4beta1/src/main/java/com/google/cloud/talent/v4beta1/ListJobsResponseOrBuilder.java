@@ -92,6 +92,8 @@ public interface ListJobsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -102,6 +104,8 @@ public interface ListJobsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 
@@ -114,6 +118,8 @@ public interface ListJobsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -125,6 +131,8 @@ public interface ListJobsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
   /**

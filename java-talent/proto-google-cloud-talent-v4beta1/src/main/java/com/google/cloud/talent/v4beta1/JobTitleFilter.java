@@ -42,6 +42,12 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobTitleFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The jobTitle.
    */
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
@@ -143,6 +150,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for jobTitle.
    */
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
@@ -167,6 +176,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   *
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -513,6 +524,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The jobTitle.
      */
     public java.lang.String getJobTitle() {
       java.lang.Object ref = jobTitle_;
@@ -534,6 +547,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for jobTitle.
      */
     public com.google.protobuf.ByteString getJobTitleBytes() {
       java.lang.Object ref = jobTitle_;
@@ -555,6 +570,9 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitle(java.lang.String value) {
       if (value == null) {
@@ -574,6 +592,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobTitle() {
 
@@ -590,6 +610,9 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -612,6 +635,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     *
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -625,6 +650,9 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     *
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
 
@@ -641,6 +669,8 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
 

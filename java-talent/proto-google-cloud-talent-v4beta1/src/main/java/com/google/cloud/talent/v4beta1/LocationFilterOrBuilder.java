@@ -31,6 +31,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>string address = 1;</code>
+   *
+   * @return The address.
    */
   java.lang.String getAddress();
   /**
@@ -41,6 +43,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>string address = 1;</code>
+   *
+   * @return The bytes for address.
    */
   com.google.protobuf.ByteString getAddressBytes();
 
@@ -61,6 +65,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   *
+   * @return The regionCode.
    */
   java.lang.String getRegionCode();
   /**
@@ -80,6 +86,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   *
+   * @return The bytes for regionCode.
    */
   com.google.protobuf.ByteString getRegionCodeBytes();
 
@@ -92,6 +100,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
   /**
@@ -103,6 +113,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
   /**
@@ -127,6 +139,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
+   *
+   * @return The distanceInMiles.
    */
   double getDistanceInMiles();
 
@@ -158,6 +172,8 @@ public interface LocationFilterOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for telecommutePreference.
    */
   int getTelecommutePreferenceValue();
   /**
@@ -188,6 +204,8 @@ public interface LocationFilterOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;
    * </code>
+   *
+   * @return The telecommutePreference.
    */
   com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference getTelecommutePreference();
 
@@ -201,6 +219,8 @@ public interface LocationFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 6;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

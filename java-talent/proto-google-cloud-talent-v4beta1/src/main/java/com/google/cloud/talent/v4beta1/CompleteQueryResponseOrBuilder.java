@@ -98,6 +98,8 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -109,6 +111,8 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
+   *
+   * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
   /**

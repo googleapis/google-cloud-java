@@ -33,6 +33,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>string query = 1;</code>
+   *
+   * @return The query.
    */
   java.lang.String getQuery();
   /**
@@ -45,6 +47,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>string query = 1;</code>
+   *
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString getQueryBytes();
 
@@ -62,6 +66,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>string query_language_code = 14;</code>
+   *
+   * @return The queryLanguageCode.
    */
   java.lang.String getQueryLanguageCode();
   /**
@@ -78,6 +84,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>string query_language_code = 14;</code>
+   *
+   * @return The bytes for queryLanguageCode.
    */
   com.google.protobuf.ByteString getQueryLanguageCodeBytes();
 
@@ -99,6 +107,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @return A list containing the companies.
    */
   java.util.List<java.lang.String> getCompaniesList();
   /**
@@ -119,6 +129,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @return The count of companies.
    */
   int getCompaniesCount();
   /**
@@ -139,6 +151,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The companies at the given index.
    */
   java.lang.String getCompanies(int index);
   /**
@@ -159,6 +174,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string companies = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the companies at the given index.
    */
   com.google.protobuf.ByteString getCompaniesBytes(int index);
 
@@ -277,6 +295,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @return A list containing the jobCategories.
    */
   java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList();
   /**
@@ -292,6 +312,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @return The count of jobCategories.
    */
   int getJobCategoriesCount();
   /**
@@ -307,6 +329,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobCategories at the given index.
    */
   com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index);
   /**
@@ -322,6 +347,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for jobCategories.
    */
   java.util.List<java.lang.Integer> getJobCategoriesValueList();
   /**
@@ -337,6 +364,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of jobCategories at the given index.
    */
   int getJobCategoriesValue(int index);
 
@@ -354,6 +384,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
+   *
+   * @return Whether the commuteFilter field is set.
    */
   boolean hasCommuteFilter();
   /**
@@ -370,6 +402,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
+   *
+   * @return The commuteFilter.
    */
   com.google.cloud.talent.v4beta1.CommuteFilter getCommuteFilter();
   /**
@@ -404,6 +438,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @return A list containing the companyDisplayNames.
    */
   java.util.List<java.lang.String> getCompanyDisplayNamesList();
   /**
@@ -421,6 +457,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @return The count of companyDisplayNames.
    */
   int getCompanyDisplayNamesCount();
   /**
@@ -438,6 +476,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The companyDisplayNames at the given index.
    */
   java.lang.String getCompanyDisplayNames(int index);
   /**
@@ -455,6 +496,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string company_display_names = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the companyDisplayNames at the given index.
    */
   com.google.protobuf.ByteString getCompanyDisplayNamesBytes(int index);
 
@@ -470,6 +514,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
+   *
+   * @return Whether the compensationFilter field is set.
    */
   boolean hasCompensationFilter();
   /**
@@ -484,6 +530,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
+   *
+   * @return The compensationFilter.
    */
   com.google.cloud.talent.v4beta1.CompensationFilter getCompensationFilter();
   /**
@@ -526,6 +574,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>string custom_attribute_filter = 8;</code>
+   *
+   * @return The customAttributeFilter.
    */
   java.lang.String getCustomAttributeFilter();
   /**
@@ -553,6 +603,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>string custom_attribute_filter = 8;</code>
+   *
+   * @return The bytes for customAttributeFilter.
    */
   com.google.protobuf.ByteString getCustomAttributeFilterBytes();
 
@@ -567,6 +619,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>bool disable_spell_check = 9;</code>
+   *
+   * @return The disableSpellCheck.
    */
   boolean getDisableSpellCheck();
 
@@ -584,6 +638,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @return A list containing the employmentTypes.
    */
   java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList();
   /**
@@ -600,6 +656,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @return The count of employmentTypes.
    */
   int getEmploymentTypesCount();
   /**
@@ -616,6 +674,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The employmentTypes at the given index.
    */
   com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index);
   /**
@@ -632,6 +693,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
   java.util.List<java.lang.Integer> getEmploymentTypesValueList();
   /**
@@ -648,6 +711,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
   int getEmploymentTypesValue(int index);
 
@@ -666,6 +732,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
   /**
@@ -683,6 +751,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
   /**
@@ -700,6 +770,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
   /**
@@ -717,6 +790,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   com.google.protobuf.ByteString getLanguageCodesBytes(int index);
 
@@ -729,6 +805,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
+   *
+   * @return Whether the publishTimeRange field is set.
    */
   boolean hasPublishTimeRange();
   /**
@@ -740,6 +818,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
+   *
+   * @return The publishTimeRange.
    */
   com.google.cloud.talent.v4beta1.TimestampRange getPublishTimeRange();
   /**
@@ -763,6 +843,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @return A list containing the excludedJobs.
    */
   java.util.List<java.lang.String> getExcludedJobsList();
   /**
@@ -774,6 +856,8 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @return The count of excludedJobs.
    */
   int getExcludedJobsCount();
   /**
@@ -785,6 +869,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludedJobs at the given index.
    */
   java.lang.String getExcludedJobs(int index);
   /**
@@ -796,6 +883,9 @@ public interface JobQueryOrBuilder
    * </pre>
    *
    * <code>repeated string excluded_jobs = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludedJobs at the given index.
    */
   com.google.protobuf.ByteString getExcludedJobsBytes(int index);
 }

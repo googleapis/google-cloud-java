@@ -46,6 +46,12 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RequestMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -167,6 +172,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string domain = 1;</code>
+   *
+   * @return The domain.
    */
   public java.lang.String getDomain() {
     java.lang.Object ref = domain_;
@@ -199,6 +206,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string domain = 1;</code>
+   *
+   * @return The bytes for domain.
    */
   public com.google.protobuf.ByteString getDomainBytes() {
     java.lang.Object ref = domain_;
@@ -232,6 +241,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   *
+   * @return The sessionId.
    */
   public java.lang.String getSessionId() {
     java.lang.Object ref = sessionId_;
@@ -262,6 +273,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   *
+   * @return The bytes for sessionId.
    */
   public com.google.protobuf.ByteString getSessionIdBytes() {
     java.lang.Object ref = sessionId_;
@@ -295,6 +308,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   *
+   * @return The userId.
    */
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
@@ -325,6 +340,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   *
+   * @return The bytes for userId.
    */
   public com.google.protobuf.ByteString getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -357,6 +374,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool allow_missing_ids = 4;</code>
+   *
+   * @return The allowMissingIds.
    */
   public boolean getAllowMissingIds() {
     return allowMissingIds_;
@@ -373,6 +392,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   *
+   * @return Whether the deviceInfo field is set.
    */
   public boolean hasDeviceInfo() {
     return deviceInfo_ != null;
@@ -386,6 +407,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   *
+   * @return The deviceInfo.
    */
   public com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo() {
     return deviceInfo_ == null
@@ -821,6 +844,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string domain = 1;</code>
+     *
+     * @return The domain.
      */
     public java.lang.String getDomain() {
       java.lang.Object ref = domain_;
@@ -853,6 +878,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string domain = 1;</code>
+     *
+     * @return The bytes for domain.
      */
     public com.google.protobuf.ByteString getDomainBytes() {
       java.lang.Object ref = domain_;
@@ -885,6 +912,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string domain = 1;</code>
+     *
+     * @param value The domain to set.
+     * @return This builder for chaining.
      */
     public Builder setDomain(java.lang.String value) {
       if (value == null) {
@@ -915,6 +945,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string domain = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDomain() {
 
@@ -942,6 +974,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string domain = 1;</code>
+     *
+     * @param value The bytes for domain to set.
+     * @return This builder for chaining.
      */
     public Builder setDomainBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -973,6 +1008,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     *
+     * @return The sessionId.
      */
     public java.lang.String getSessionId() {
       java.lang.Object ref = sessionId_;
@@ -1003,6 +1040,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     *
+     * @return The bytes for sessionId.
      */
     public com.google.protobuf.ByteString getSessionIdBytes() {
       java.lang.Object ref = sessionId_;
@@ -1033,6 +1072,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     *
+     * @param value The sessionId to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionId(java.lang.String value) {
       if (value == null) {
@@ -1061,6 +1103,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSessionId() {
 
@@ -1086,6 +1130,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     *
+     * @param value The bytes for sessionId to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1117,6 +1164,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     *
+     * @return The userId.
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -1147,6 +1196,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     *
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString getUserIdBytes() {
       java.lang.Object ref = userId_;
@@ -1177,6 +1228,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     *
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(java.lang.String value) {
       if (value == null) {
@@ -1205,6 +1259,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
 
@@ -1230,6 +1286,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     *
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1260,6 +1319,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
+     *
+     * @return The allowMissingIds.
      */
     public boolean getAllowMissingIds() {
       return allowMissingIds_;
@@ -1281,6 +1342,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
+     *
+     * @param value The allowMissingIds to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowMissingIds(boolean value) {
 
@@ -1305,6 +1369,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowMissingIds() {
 
@@ -1328,6 +1394,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+     *
+     * @return Whether the deviceInfo field is set.
      */
     public boolean hasDeviceInfo() {
       return deviceInfoBuilder_ != null || deviceInfo_ != null;
@@ -1341,6 +1409,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+     *
+     * @return The deviceInfo.
      */
     public com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo() {
       if (deviceInfoBuilder_ == null) {

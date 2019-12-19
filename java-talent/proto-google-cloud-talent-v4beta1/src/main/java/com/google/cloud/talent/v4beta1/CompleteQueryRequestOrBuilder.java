@@ -35,6 +35,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -61,6 +65,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The query.
    */
   java.lang.String getQuery();
   /**
@@ -72,6 +78,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString getQueryBytes();
 
@@ -104,6 +112,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
   /**
@@ -135,6 +145,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
   /**
@@ -166,6 +178,9 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
   /**
@@ -197,6 +212,9 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   com.google.protobuf.ByteString getLanguageCodesBytes(int index);
 
@@ -209,6 +227,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -225,6 +245,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The company.
    */
   java.lang.String getCompany();
   /**
@@ -240,6 +262,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The bytes for company.
    */
   com.google.protobuf.ByteString getCompanyBytes();
 
@@ -252,6 +276,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   *
+   * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
   /**
@@ -263,6 +289,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   *
+   * @return The scope.
    */
   com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope();
 
@@ -275,6 +303,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -286,6 +316,8 @@ public interface CompleteQueryRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType();
 }

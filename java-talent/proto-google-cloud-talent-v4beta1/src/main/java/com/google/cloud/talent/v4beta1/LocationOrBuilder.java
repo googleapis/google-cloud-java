@@ -36,6 +36,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for locationType.
    */
   int getLocationTypeValue();
   /**
@@ -51,6 +53,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   *
+   * @return The locationType.
    */
   com.google.cloud.talent.v4beta1.Location.LocationType getLocationType();
 
@@ -65,6 +69,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   *
+   * @return Whether the postalAddress field is set.
    */
   boolean hasPostalAddress();
   /**
@@ -78,6 +84,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   *
+   * @return The postalAddress.
    */
   com.google.type.PostalAddress getPostalAddress();
   /**
@@ -102,6 +110,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
   /**
@@ -112,6 +122,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   *
+   * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
   /**
@@ -137,6 +149,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>double radius_miles = 4;</code>
+   *
+   * @return The radiusMiles.
    */
   double getRadiusMiles();
 }

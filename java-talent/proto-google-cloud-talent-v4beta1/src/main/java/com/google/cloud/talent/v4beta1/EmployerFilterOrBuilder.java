@@ -31,6 +31,8 @@ public interface EmployerFilterOrBuilder
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The employer.
    */
   java.lang.String getEmployer();
   /**
@@ -41,6 +43,8 @@ public interface EmployerFilterOrBuilder
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for employer.
    */
   com.google.protobuf.ByteString getEmployerBytes();
 
@@ -56,6 +60,8 @@ public interface EmployerFilterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
   /**
@@ -70,6 +76,8 @@ public interface EmployerFilterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   *
+   * @return The mode.
    */
   com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode();
 
@@ -82,6 +90,8 @@ public interface EmployerFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 3;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

@@ -35,6 +35,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string external_id = 2;</code>
+   *
+   * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
@@ -76,6 +82,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string external_id = 2;</code>
+   *
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString getExternalIdBytes();
 
@@ -90,6 +98,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string source = 3;</code>
+   *
+   * @return The source.
    */
   java.lang.String getSource();
   /**
@@ -103,6 +113,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string source = 3;</code>
+   *
+   * @return The bytes for source.
    */
   com.google.protobuf.ByteString getSourceBytes();
 
@@ -115,6 +127,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string uri = 4;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -126,6 +140,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string uri = 4;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 
@@ -147,6 +163,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string group_id = 5;</code>
+   *
+   * @return The groupId.
    */
   java.lang.String getGroupId();
   /**
@@ -167,6 +185,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string group_id = 5;</code>
+   *
+   * @return The bytes for groupId.
    */
   com.google.protobuf.ByteString getGroupIdBytes();
 
@@ -178,6 +198,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+   *
+   * @return Whether the isHirable field is set.
    */
   boolean hasIsHirable();
   /**
@@ -188,6 +210,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+   *
+   * @return The isHirable.
    */
   com.google.protobuf.BoolValue getIsHirable();
   /**
@@ -209,6 +233,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -219,6 +245,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -240,6 +268,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -250,6 +280,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -289,6 +321,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   *
+   * @return Whether the candidateUpdateTime field is set.
    */
   boolean hasCandidateUpdateTime();
   /**
@@ -317,6 +351,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   *
+   * @return The candidateUpdateTime.
    */
   com.google.protobuf.Timestamp getCandidateUpdateTime();
   /**
@@ -362,6 +398,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   *
+   * @return Whether the resumeUpdateTime field is set.
    */
   boolean hasResumeUpdateTime();
   /**
@@ -378,6 +416,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   *
+   * @return The resumeUpdateTime.
    */
   com.google.protobuf.Timestamp getResumeUpdateTime();
   /**
@@ -405,6 +445,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+   *
+   * @return Whether the resume field is set.
    */
   boolean hasResume();
   /**
@@ -415,6 +457,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+   *
+   * @return The resume.
    */
   com.google.cloud.talent.v4beta1.Resume getResume();
   /**
@@ -1424,6 +1468,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the applications.
    */
   java.util.List<java.lang.String> getApplicationsList();
   /**
@@ -1434,6 +1480,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of applications.
    */
   int getApplicationsCount();
   /**
@@ -1444,6 +1492,9 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The applications at the given index.
    */
   java.lang.String getApplications(int index);
   /**
@@ -1454,6 +1505,9 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the applications at the given index.
    */
   com.google.protobuf.ByteString getApplicationsBytes(int index);
 
@@ -1465,6 +1519,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the assignments.
    */
   java.util.List<java.lang.String> getAssignmentsList();
   /**
@@ -1475,6 +1531,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of assignments.
    */
   int getAssignmentsCount();
   /**
@@ -1485,6 +1543,9 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assignments at the given index.
    */
   java.lang.String getAssignments(int index);
   /**
@@ -1495,6 +1556,9 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assignments at the given index.
    */
   com.google.protobuf.ByteString getAssignmentsBytes(int index);
 
@@ -1645,6 +1709,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>bool processed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The processed.
    */
   boolean getProcessed();
 
@@ -1658,6 +1724,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The keywordSnippet.
    */
   java.lang.String getKeywordSnippet();
   /**
@@ -1670,6 +1738,8 @@ public interface ProfileOrBuilder
    * </pre>
    *
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for keywordSnippet.
    */
   com.google.protobuf.ByteString getKeywordSnippetBytes();
 

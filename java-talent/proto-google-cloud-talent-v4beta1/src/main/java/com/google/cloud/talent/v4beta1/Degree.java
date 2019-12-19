@@ -44,6 +44,12 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Degree();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,9 +90,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fieldsOfStudy_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               fieldsOfStudy_.add(s);
               break;
@@ -105,7 +111,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fieldsOfStudy_ = fieldsOfStudy_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -128,7 +134,6 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.Degree.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DEGREE_TYPE_FIELD_NUMBER = 1;
   private int degreeType_;
   /**
@@ -139,6 +144,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for degreeType.
    */
   public int getDegreeTypeValue() {
     return degreeType_;
@@ -151,6 +158,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+   *
+   * @return The degreeType.
    */
   public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
     @SuppressWarnings("deprecation")
@@ -171,6 +180,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string degree_name = 2;</code>
+   *
+   * @return The degreeName.
    */
   public java.lang.String getDegreeName() {
     java.lang.Object ref = degreeName_;
@@ -193,6 +204,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string degree_name = 2;</code>
+   *
+   * @return The bytes for degreeName.
    */
   public com.google.protobuf.ByteString getDegreeNameBytes() {
     java.lang.Object ref = degreeName_;
@@ -218,6 +231,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @return A list containing the fieldsOfStudy.
    */
   public com.google.protobuf.ProtocolStringList getFieldsOfStudyList() {
     return fieldsOfStudy_;
@@ -232,6 +247,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @return The count of fieldsOfStudy.
    */
   public int getFieldsOfStudyCount() {
     return fieldsOfStudy_.size();
@@ -246,6 +263,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The fieldsOfStudy at the given index.
    */
   public java.lang.String getFieldsOfStudy(int index) {
     return fieldsOfStudy_.get(index);
@@ -260,6 +280,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string fields_of_study = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fieldsOfStudy at the given index.
    */
   public com.google.protobuf.ByteString getFieldsOfStudyBytes(int index) {
     return fieldsOfStudy_.getByteString(index);
@@ -500,7 +523,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       degreeName_ = "";
 
       fieldsOfStudy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -529,15 +552,13 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Degree result =
           new com.google.cloud.talent.v4beta1.Degree(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.degreeType_ = degreeType_;
       result.degreeName_ = degreeName_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fieldsOfStudy_ = fieldsOfStudy_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fieldsOfStudy_ = fieldsOfStudy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -597,7 +618,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       if (!other.fieldsOfStudy_.isEmpty()) {
         if (fieldsOfStudy_.isEmpty()) {
           fieldsOfStudy_ = other.fieldsOfStudy_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFieldsOfStudyIsMutable();
           fieldsOfStudy_.addAll(other.fieldsOfStudy_);
@@ -644,6 +665,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for degreeType.
      */
     public int getDegreeTypeValue() {
       return degreeType_;
@@ -656,6 +679,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for degreeType to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeTypeValue(int value) {
       degreeType_ = value;
@@ -670,6 +696,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+     *
+     * @return The degreeType.
      */
     public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
       @SuppressWarnings("deprecation")
@@ -685,6 +713,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+     *
+     * @param value The degreeType to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeType(com.google.cloud.talent.v4beta1.DegreeType value) {
       if (value == null) {
@@ -703,6 +734,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDegreeType() {
 
@@ -722,6 +755,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string degree_name = 2;</code>
+     *
+     * @return The degreeName.
      */
     public java.lang.String getDegreeName() {
       java.lang.Object ref = degreeName_;
@@ -744,6 +779,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string degree_name = 2;</code>
+     *
+     * @return The bytes for degreeName.
      */
     public com.google.protobuf.ByteString getDegreeNameBytes() {
       java.lang.Object ref = degreeName_;
@@ -766,6 +803,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string degree_name = 2;</code>
+     *
+     * @param value The degreeName to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeName(java.lang.String value) {
       if (value == null) {
@@ -786,6 +826,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string degree_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDegreeName() {
 
@@ -803,6 +845,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string degree_name = 2;</code>
+     *
+     * @param value The bytes for degreeName to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -819,9 +864,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsOfStudyIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fieldsOfStudy_ = new com.google.protobuf.LazyStringArrayList(fieldsOfStudy_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -834,6 +879,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @return A list containing the fieldsOfStudy.
      */
     public com.google.protobuf.ProtocolStringList getFieldsOfStudyList() {
       return fieldsOfStudy_.getUnmodifiableView();
@@ -848,6 +895,8 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @return The count of fieldsOfStudy.
      */
     public int getFieldsOfStudyCount() {
       return fieldsOfStudy_.size();
@@ -862,6 +911,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fieldsOfStudy at the given index.
      */
     public java.lang.String getFieldsOfStudy(int index) {
       return fieldsOfStudy_.get(index);
@@ -876,6 +928,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fieldsOfStudy at the given index.
      */
     public com.google.protobuf.ByteString getFieldsOfStudyBytes(int index) {
       return fieldsOfStudy_.getByteString(index);
@@ -890,6 +945,10 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The fieldsOfStudy to set.
+     * @return This builder for chaining.
      */
     public Builder setFieldsOfStudy(int index, java.lang.String value) {
       if (value == null) {
@@ -910,6 +969,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @param value The fieldsOfStudy to add.
+     * @return This builder for chaining.
      */
     public Builder addFieldsOfStudy(java.lang.String value) {
       if (value == null) {
@@ -930,6 +992,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @param values The fieldsOfStudy to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFieldsOfStudy(java.lang.Iterable<java.lang.String> values) {
       ensureFieldsOfStudyIsMutable();
@@ -947,10 +1012,12 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFieldsOfStudy() {
       fieldsOfStudy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -964,6 +1031,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string fields_of_study = 3;</code>
+     *
+     * @param value The bytes of the fieldsOfStudy to add.
+     * @return This builder for chaining.
      */
     public Builder addFieldsOfStudyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -43,6 +43,12 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CustomAttribute();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -144,7 +150,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.talent.v4beta1.CustomAttribute.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STRING_VALUES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList stringValues_;
   /**
@@ -165,6 +170,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @return A list containing the stringValues.
    */
   public com.google.protobuf.ProtocolStringList getStringValuesList() {
     return stringValues_;
@@ -187,6 +194,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @return The count of stringValues.
    */
   public int getStringValuesCount() {
     return stringValues_.size();
@@ -209,6 +218,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The stringValues at the given index.
    */
   public java.lang.String getStringValues(int index) {
     return stringValues_.get(index);
@@ -231,6 +243,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the stringValues at the given index.
    */
   public com.google.protobuf.ByteString getStringValuesBytes(int index) {
     return stringValues_.getByteString(index);
@@ -254,6 +269,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   *
+   * @return A list containing the longValues.
    */
   public java.util.List<java.lang.Long> getLongValuesList() {
     return longValues_;
@@ -274,6 +291,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   *
+   * @return The count of longValues.
    */
   public int getLongValuesCount() {
     return longValues_.size();
@@ -294,6 +313,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The longValues at the given index.
    */
   public long getLongValues(int index) {
     return longValues_.getLong(index);
@@ -313,6 +335,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool filterable = 3;</code>
+   *
+   * @return The filterable.
    */
   public boolean getFilterable() {
     return filterable_;
@@ -598,7 +622,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.talent.v4beta1.CustomAttribute result =
           new com.google.cloud.talent.v4beta1.CustomAttribute(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         stringValues_ = stringValues_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -610,7 +633,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       result.longValues_ = longValues_;
       result.filterable_ = filterable_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -742,6 +764,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @return A list containing the stringValues.
      */
     public com.google.protobuf.ProtocolStringList getStringValuesList() {
       return stringValues_.getUnmodifiableView();
@@ -764,6 +788,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @return The count of stringValues.
      */
     public int getStringValuesCount() {
       return stringValues_.size();
@@ -786,6 +812,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The stringValues at the given index.
      */
     public java.lang.String getStringValues(int index) {
       return stringValues_.get(index);
@@ -808,6 +837,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the stringValues at the given index.
      */
     public com.google.protobuf.ByteString getStringValuesBytes(int index) {
       return stringValues_.getByteString(index);
@@ -830,6 +862,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The stringValues to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValues(int index, java.lang.String value) {
       if (value == null) {
@@ -858,6 +894,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @param value The stringValues to add.
+     * @return This builder for chaining.
      */
     public Builder addStringValues(java.lang.String value) {
       if (value == null) {
@@ -886,6 +925,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @param values The stringValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStringValues(java.lang.Iterable<java.lang.String> values) {
       ensureStringValuesIsMutable();
@@ -911,6 +953,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStringValues() {
       stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -936,6 +980,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     *
+     * @param value The bytes of the stringValues to add.
+     * @return This builder for chaining.
      */
     public Builder addStringValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -972,6 +1019,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @return A list containing the longValues.
      */
     public java.util.List<java.lang.Long> getLongValuesList() {
       return ((bitField0_ & 0x00000002) != 0)
@@ -994,6 +1043,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @return The count of longValues.
      */
     public int getLongValuesCount() {
       return longValues_.size();
@@ -1014,6 +1065,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The longValues at the given index.
      */
     public long getLongValues(int index) {
       return longValues_.getLong(index);
@@ -1034,6 +1088,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The longValues to set.
+     * @return This builder for chaining.
      */
     public Builder setLongValues(int index, long value) {
       ensureLongValuesIsMutable();
@@ -1057,6 +1115,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @param value The longValues to add.
+     * @return This builder for chaining.
      */
     public Builder addLongValues(long value) {
       ensureLongValuesIsMutable();
@@ -1080,6 +1141,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @param values The longValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLongValues(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureLongValuesIsMutable();
@@ -1103,6 +1167,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLongValues() {
       longValues_ = emptyLongList();
@@ -1122,6 +1188,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool filterable = 3;</code>
+     *
+     * @return The filterable.
      */
     public boolean getFilterable() {
       return filterable_;
@@ -1136,6 +1204,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool filterable = 3;</code>
+     *
+     * @param value The filterable to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterable(boolean value) {
 
@@ -1153,6 +1224,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool filterable = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilterable() {
 

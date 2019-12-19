@@ -45,6 +45,12 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -342,12 +347,20 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -425,6 +438,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -437,6 +452,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
@@ -457,6 +474,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string state_description = 2;</code>
+   *
+   * @return The stateDescription.
    */
   public java.lang.String getStateDescription() {
     java.lang.Object ref = stateDescription_;
@@ -477,6 +496,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string state_description = 2;</code>
+   *
+   * @return The bytes for stateDescription.
    */
   public com.google.protobuf.ByteString getStateDescriptionBytes() {
     java.lang.Object ref = stateDescription_;
@@ -500,6 +521,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int32 success_count = 3;</code>
+   *
+   * @return The successCount.
    */
   public int getSuccessCount() {
     return successCount_;
@@ -515,6 +538,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int32 failure_count = 4;</code>
+   *
+   * @return The failureCount.
    */
   public int getFailureCount() {
     return failureCount_;
@@ -530,6 +555,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int32 total_count = 5;</code>
+   *
+   * @return The totalCount.
    */
   public int getTotalCount() {
     return totalCount_;
@@ -545,6 +572,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -557,6 +586,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -586,6 +617,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -600,6 +633,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -631,6 +666,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -645,6 +682,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -1142,6 +1181,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1154,6 +1195,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1168,6 +1212,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
@@ -1185,6 +1231,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.talent.v4beta1.BatchOperationMetadata.State value) {
       if (value == null) {
@@ -1203,6 +1252,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1220,6 +1271,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     *
+     * @return The stateDescription.
      */
     public java.lang.String getStateDescription() {
       java.lang.Object ref = stateDescription_;
@@ -1240,6 +1293,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     *
+     * @return The bytes for stateDescription.
      */
     public com.google.protobuf.ByteString getStateDescriptionBytes() {
       java.lang.Object ref = stateDescription_;
@@ -1260,6 +1315,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     *
+     * @param value The stateDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setStateDescription(java.lang.String value) {
       if (value == null) {
@@ -1278,6 +1336,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStateDescription() {
 
@@ -1293,6 +1353,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     *
+     * @param value The bytes for stateDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setStateDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1314,6 +1377,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 success_count = 3;</code>
+     *
+     * @return The successCount.
      */
     public int getSuccessCount() {
       return successCount_;
@@ -1326,6 +1391,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 success_count = 3;</code>
+     *
+     * @param value The successCount to set.
+     * @return This builder for chaining.
      */
     public Builder setSuccessCount(int value) {
 
@@ -1341,6 +1409,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 success_count = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSuccessCount() {
 
@@ -1358,6 +1428,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 failure_count = 4;</code>
+     *
+     * @return The failureCount.
      */
     public int getFailureCount() {
       return failureCount_;
@@ -1370,6 +1442,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 failure_count = 4;</code>
+     *
+     * @param value The failureCount to set.
+     * @return This builder for chaining.
      */
     public Builder setFailureCount(int value) {
 
@@ -1385,6 +1460,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 failure_count = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFailureCount() {
 
@@ -1402,6 +1479,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 total_count = 5;</code>
+     *
+     * @return The totalCount.
      */
     public int getTotalCount() {
       return totalCount_;
@@ -1414,6 +1493,9 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 total_count = 5;</code>
+     *
+     * @param value The totalCount to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalCount(int value) {
 
@@ -1429,6 +1511,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int32 total_count = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalCount() {
 
@@ -1451,6 +1535,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1463,6 +1549,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1632,6 +1720,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1646,6 +1736,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1829,6 +1921,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1843,6 +1937,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {

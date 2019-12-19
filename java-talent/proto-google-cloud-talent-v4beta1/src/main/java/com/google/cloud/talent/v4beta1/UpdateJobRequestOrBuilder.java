@@ -32,6 +32,8 @@ public interface UpdateJobRequestOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the job field is set.
    */
   boolean hasJob();
   /**
@@ -43,6 +45,8 @@ public interface UpdateJobRequestOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The job.
    */
   com.google.cloud.talent.v4beta1.Job getJob();
   /**
@@ -71,6 +75,8 @@ public interface UpdateJobRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -87,6 +93,8 @@ public interface UpdateJobRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

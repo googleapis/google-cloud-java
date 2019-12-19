@@ -43,6 +43,12 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ApplicationJobFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
+   *
+   * @return The jobRequisitionId.
    */
   public java.lang.String getJobRequisitionId() {
     java.lang.Object ref = jobRequisitionId_;
@@ -153,6 +160,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
+   *
+   * @return The bytes for jobRequisitionId.
    */
   public com.google.protobuf.ByteString getJobRequisitionIdBytes() {
     java.lang.Object ref = jobRequisitionId_;
@@ -178,6 +187,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string job_title = 3;</code>
+   *
+   * @return The jobTitle.
    */
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
@@ -200,6 +211,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string job_title = 3;</code>
+   *
+   * @return The bytes for jobTitle.
    */
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
@@ -225,6 +238,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bool negated = 4;</code>
+   *
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -590,6 +605,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     *
+     * @return The jobRequisitionId.
      */
     public java.lang.String getJobRequisitionId() {
       java.lang.Object ref = jobRequisitionId_;
@@ -612,6 +629,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     *
+     * @return The bytes for jobRequisitionId.
      */
     public com.google.protobuf.ByteString getJobRequisitionIdBytes() {
       java.lang.Object ref = jobRequisitionId_;
@@ -634,6 +653,9 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     *
+     * @param value The jobRequisitionId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobRequisitionId(java.lang.String value) {
       if (value == null) {
@@ -654,6 +676,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobRequisitionId() {
 
@@ -671,6 +695,9 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     *
+     * @param value The bytes for jobRequisitionId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobRequisitionIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -694,6 +721,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     *
+     * @return The jobTitle.
      */
     public java.lang.String getJobTitle() {
       java.lang.Object ref = jobTitle_;
@@ -716,6 +745,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     *
+     * @return The bytes for jobTitle.
      */
     public com.google.protobuf.ByteString getJobTitleBytes() {
       java.lang.Object ref = jobTitle_;
@@ -738,6 +769,9 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     *
+     * @param value The jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitle(java.lang.String value) {
       if (value == null) {
@@ -758,6 +792,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobTitle() {
 
@@ -775,6 +811,9 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     *
+     * @param value The bytes for jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -798,6 +837,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool negated = 4;</code>
+     *
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -812,6 +853,9 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool negated = 4;</code>
+     *
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
 
@@ -829,6 +873,8 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool negated = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
 

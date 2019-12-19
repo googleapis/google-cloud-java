@@ -47,6 +47,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompleteQueryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -87,9 +93,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 languageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               languageCodes_.add(s);
               break;
@@ -134,7 +140,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -241,12 +247,20 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CompletionScope valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompletionScope forNumber(int value) {
       switch (value) {
         case 0:
@@ -410,12 +424,20 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CompletionType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompletionType forNumber(int value) {
       switch (value) {
         case 0:
@@ -477,7 +499,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType)
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -492,6 +513,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -516,6 +539,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -540,6 +565,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The query.
    */
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
@@ -561,6 +588,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for query.
    */
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
@@ -605,6 +634,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @return A list containing the languageCodes.
    */
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
@@ -638,6 +669,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @return The count of languageCodes.
    */
   public int getLanguageCodesCount() {
     return languageCodes_.size();
@@ -671,6 +704,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
@@ -704,6 +740,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
     return languageCodes_.getByteString(index);
@@ -720,6 +759,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -740,6 +781,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The company.
    */
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
@@ -765,6 +808,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string company = 5;</code>
+   *
+   * @return The bytes for company.
    */
   public com.google.protobuf.ByteString getCompanyBytes() {
     java.lang.Object ref = company_;
@@ -789,6 +834,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   *
+   * @return The enum numeric value on the wire for scope.
    */
   public int getScopeValue() {
     return scope_;
@@ -802,6 +849,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   *
+   * @return The scope.
    */
   public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope() {
     @SuppressWarnings("deprecation")
@@ -823,6 +872,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -836,6 +887,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   *
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
     @SuppressWarnings("deprecation")
@@ -1128,7 +1181,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       query_ = "";
 
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageSize_ = 0;
 
       company_ = "";
@@ -1165,19 +1218,17 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.talent.v4beta1.CompleteQueryRequest result =
           new com.google.cloud.talent.v4beta1.CompleteQueryRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.query_ = query_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageCodes_ = languageCodes_;
       result.pageSize_ = pageSize_;
       result.company_ = company_;
       result.scope_ = scope_;
       result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1239,7 +1290,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1304,6 +1355,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1328,6 +1381,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1352,6 +1407,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1374,6 +1432,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1393,6 +1453,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1415,6 +1478,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The query.
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -1436,6 +1501,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for query.
      */
     public com.google.protobuf.ByteString getQueryBytes() {
       java.lang.Object ref = query_;
@@ -1457,6 +1524,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The query to set.
+     * @return This builder for chaining.
      */
     public Builder setQuery(java.lang.String value) {
       if (value == null) {
@@ -1476,6 +1546,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQuery() {
 
@@ -1492,6 +1564,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1508,9 +1583,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1542,6 +1617,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
       return languageCodes_.getUnmodifiableView();
@@ -1575,6 +1652,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @return The count of languageCodes.
      */
     public int getLanguageCodesCount() {
       return languageCodes_.size();
@@ -1608,6 +1687,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
      */
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
@@ -1641,6 +1723,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
      */
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
@@ -1674,6 +1759,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -1713,6 +1802,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -1752,6 +1844,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageCodesIsMutable();
@@ -1788,10 +1883,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1824,6 +1921,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     *
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1846,6 +1946,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1859,6 +1961,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1875,6 +1980,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1897,6 +2004,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @return The company.
      */
     public java.lang.String getCompany() {
       java.lang.Object ref = company_;
@@ -1922,6 +2031,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @return The bytes for company.
      */
     public com.google.protobuf.ByteString getCompanyBytes() {
       java.lang.Object ref = company_;
@@ -1947,6 +2058,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @param value The company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompany(java.lang.String value) {
       if (value == null) {
@@ -1970,6 +2084,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCompany() {
 
@@ -1990,6 +2106,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string company = 5;</code>
+     *
+     * @param value The bytes for company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2012,6 +2131,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     *
+     * @return The enum numeric value on the wire for scope.
      */
     public int getScopeValue() {
       return scope_;
@@ -2025,6 +2146,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
       scope_ = value;
@@ -2040,6 +2164,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     *
+     * @return The scope.
      */
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope() {
       @SuppressWarnings("deprecation")
@@ -2058,6 +2184,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     *
+     * @param value The scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScope(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope value) {
@@ -2078,6 +2207,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScope() {
 
@@ -2096,6 +2227,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -2109,6 +2242,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -2124,6 +2260,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
       @SuppressWarnings("deprecation")
@@ -2142,6 +2280,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType value) {
@@ -2162,6 +2303,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 

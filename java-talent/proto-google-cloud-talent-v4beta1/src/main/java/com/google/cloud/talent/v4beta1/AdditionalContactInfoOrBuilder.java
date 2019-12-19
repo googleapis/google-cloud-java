@@ -31,6 +31,8 @@ public interface AdditionalContactInfoOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The enum numeric value on the wire for usage.
    */
   int getUsageValue();
   /**
@@ -41,6 +43,8 @@ public interface AdditionalContactInfoOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The usage.
    */
   com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage();
 
@@ -54,6 +58,8 @@ public interface AdditionalContactInfoOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -66,6 +72,8 @@ public interface AdditionalContactInfoOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -78,6 +86,8 @@ public interface AdditionalContactInfoOrBuilder
    * </pre>
    *
    * <code>string contact_id = 3;</code>
+   *
+   * @return The contactId.
    */
   java.lang.String getContactId();
   /**
@@ -89,6 +99,8 @@ public interface AdditionalContactInfoOrBuilder
    * </pre>
    *
    * <code>string contact_id = 3;</code>
+   *
+   * @return The bytes for contactId.
    */
   com.google.protobuf.ByteString getContactIdBytes();
 }

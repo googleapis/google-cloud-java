@@ -34,6 +34,8 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -134,6 +138,8 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -159,6 +165,8 @@ public interface BatchUpdateJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -34,6 +34,8 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The outcomeNotes.
    */
   java.lang.String getOutcomeNotes();
   /**
@@ -47,6 +49,8 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for outcomeNotes.
    */
   com.google.protobuf.ByteString getOutcomeNotesBytes();
 
@@ -60,6 +64,8 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

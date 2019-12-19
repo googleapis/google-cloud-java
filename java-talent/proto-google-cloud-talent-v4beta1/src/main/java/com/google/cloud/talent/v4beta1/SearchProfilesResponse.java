@@ -45,6 +45,12 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchProfilesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -115,10 +121,10 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 histogramQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               histogramQueryResults_.add(
                   input.readMessage(
@@ -128,10 +134,10 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 summarizedProfiles_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.SummarizedProfile>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               summarizedProfiles_.add(
                   input.readMessage(
@@ -160,10 +166,10 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         summarizedProfiles_ = java.util.Collections.unmodifiableList(summarizedProfiles_);
       }
       this.unknownFields = unknownFields.build();
@@ -186,7 +192,6 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.talent.v4beta1.SearchProfilesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ESTIMATED_TOTAL_SIZE_FIELD_NUMBER = 1;
   private long estimatedTotalSize_;
   /**
@@ -198,6 +203,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>int64 estimated_total_size = 1;</code>
+   *
+   * @return The estimatedTotalSize.
    */
   public long getEstimatedTotalSize() {
     return estimatedTotalSize_;
@@ -213,6 +220,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+   *
+   * @return Whether the spellCorrection field is set.
    */
   public boolean hasSpellCorrection() {
     return spellCorrection_ != null;
@@ -225,6 +234,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+   *
+   * @return The spellCorrection.
    */
   public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
     return spellCorrection_ == null
@@ -255,6 +266,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -268,6 +281,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
    */
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
@@ -299,6 +314,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string next_page_token = 4;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -320,6 +337,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string next_page_token = 4;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -493,6 +512,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
+   *
+   * @return The resultSetId.
    */
   public java.lang.String getResultSetId() {
     java.lang.Object ref = resultSetId_;
@@ -515,6 +536,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
+   *
+   * @return The bytes for resultSetId.
    */
   public com.google.protobuf.ByteString getResultSetIdBytes() {
     java.lang.Object ref = resultSetId_;
@@ -825,13 +848,13 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
 
       if (histogramQueryResultsBuilder_ == null) {
         histogramQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         histogramQueryResultsBuilder_.clear();
       }
       if (summarizedProfilesBuilder_ == null) {
         summarizedProfiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         summarizedProfilesBuilder_.clear();
       }
@@ -865,7 +888,6 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
       com.google.cloud.talent.v4beta1.SearchProfilesResponse result =
           new com.google.cloud.talent.v4beta1.SearchProfilesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.estimatedTotalSize_ = estimatedTotalSize_;
       if (spellCorrectionBuilder_ == null) {
         result.spellCorrection_ = spellCorrection_;
@@ -879,25 +901,24 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
       }
       result.nextPageToken_ = nextPageToken_;
       if (histogramQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.histogramQueryResults_ = histogramQueryResults_;
       } else {
         result.histogramQueryResults_ = histogramQueryResultsBuilder_.build();
       }
       if (summarizedProfilesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           summarizedProfiles_ = java.util.Collections.unmodifiableList(summarizedProfiles_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.summarizedProfiles_ = summarizedProfiles_;
       } else {
         result.summarizedProfiles_ = summarizedProfilesBuilder_.build();
       }
       result.resultSetId_ = resultSetId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -965,7 +986,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         if (!other.histogramQueryResults_.isEmpty()) {
           if (histogramQueryResults_.isEmpty()) {
             histogramQueryResults_ = other.histogramQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureHistogramQueryResultsIsMutable();
             histogramQueryResults_.addAll(other.histogramQueryResults_);
@@ -978,7 +999,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             histogramQueryResultsBuilder_.dispose();
             histogramQueryResultsBuilder_ = null;
             histogramQueryResults_ = other.histogramQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             histogramQueryResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHistogramQueryResultsFieldBuilder()
@@ -992,7 +1013,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         if (!other.summarizedProfiles_.isEmpty()) {
           if (summarizedProfiles_.isEmpty()) {
             summarizedProfiles_ = other.summarizedProfiles_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSummarizedProfilesIsMutable();
             summarizedProfiles_.addAll(other.summarizedProfiles_);
@@ -1005,7 +1026,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             summarizedProfilesBuilder_.dispose();
             summarizedProfilesBuilder_ = null;
             summarizedProfiles_ = other.summarizedProfiles_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             summarizedProfilesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSummarizedProfilesFieldBuilder()
@@ -1061,6 +1082,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 estimated_total_size = 1;</code>
+     *
+     * @return The estimatedTotalSize.
      */
     public long getEstimatedTotalSize() {
       return estimatedTotalSize_;
@@ -1074,6 +1097,9 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 estimated_total_size = 1;</code>
+     *
+     * @param value The estimatedTotalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setEstimatedTotalSize(long value) {
 
@@ -1090,6 +1116,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>int64 estimated_total_size = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEstimatedTotalSize() {
 
@@ -1112,6 +1140,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+     *
+     * @return Whether the spellCorrection field is set.
      */
     public boolean hasSpellCorrection() {
       return spellCorrectionBuilder_ != null || spellCorrection_ != null;
@@ -1124,6 +1154,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+     *
+     * @return The spellCorrection.
      */
     public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
       if (spellCorrectionBuilder_ == null) {
@@ -1296,6 +1328,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+     *
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -1309,6 +1343,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+     *
+     * @return The metadata.
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -1482,6 +1518,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1503,6 +1541,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1524,6 +1564,9 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1543,6 +1586,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1559,6 +1604,9 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1575,11 +1623,11 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         histogramQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureHistogramQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         histogramQueryResults_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>(
                 histogramQueryResults_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1822,7 +1870,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     public Builder clearHistogramQueryResults() {
       if (histogramQueryResultsBuilder_ == null) {
         histogramQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         histogramQueryResultsBuilder_.clear();
@@ -1964,7 +2012,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.talent.v4beta1.HistogramQueryResult.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>(
                 histogramQueryResults_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueryResults_ = null;
@@ -1976,11 +2024,11 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureSummarizedProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         summarizedProfiles_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.SummarizedProfile>(
                 summarizedProfiles_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2210,7 +2258,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     public Builder clearSummarizedProfiles() {
       if (summarizedProfilesBuilder_ == null) {
         summarizedProfiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         summarizedProfilesBuilder_.clear();
@@ -2345,7 +2393,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.talent.v4beta1.SummarizedProfile.Builder,
                 com.google.cloud.talent.v4beta1.SummarizedProfileOrBuilder>(
                 summarizedProfiles_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         summarizedProfiles_ = null;
@@ -2364,6 +2412,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     *
+     * @return The resultSetId.
      */
     public java.lang.String getResultSetId() {
       java.lang.Object ref = resultSetId_;
@@ -2386,6 +2436,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     *
+     * @return The bytes for resultSetId.
      */
     public com.google.protobuf.ByteString getResultSetIdBytes() {
       java.lang.Object ref = resultSetId_;
@@ -2408,6 +2460,9 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     *
+     * @param value The resultSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setResultSetId(java.lang.String value) {
       if (value == null) {
@@ -2428,6 +2483,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResultSetId() {
 
@@ -2445,6 +2502,9 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     *
+     * @param value The bytes for resultSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setResultSetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

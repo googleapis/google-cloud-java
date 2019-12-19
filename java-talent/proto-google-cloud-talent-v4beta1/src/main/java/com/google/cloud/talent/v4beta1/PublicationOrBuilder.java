@@ -32,6 +32,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   *
+   * @return A list containing the authors.
    */
   java.util.List<java.lang.String> getAuthorsList();
   /**
@@ -43,6 +45,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   *
+   * @return The count of authors.
    */
   int getAuthorsCount();
   /**
@@ -54,6 +58,9 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The authors at the given index.
    */
   java.lang.String getAuthors(int index);
   /**
@@ -65,6 +72,9 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the authors at the given index.
    */
   com.google.protobuf.ByteString getAuthorsBytes(int index);
 
@@ -77,6 +87,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string title = 2;</code>
+   *
+   * @return The title.
    */
   java.lang.String getTitle();
   /**
@@ -88,6 +100,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string title = 2;</code>
+   *
+   * @return The bytes for title.
    */
   com.google.protobuf.ByteString getTitleBytes();
 
@@ -100,6 +114,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -111,6 +127,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -123,6 +141,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string journal = 4;</code>
+   *
+   * @return The journal.
    */
   java.lang.String getJournal();
   /**
@@ -134,6 +154,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string journal = 4;</code>
+   *
+   * @return The bytes for journal.
    */
   com.google.protobuf.ByteString getJournalBytes();
 
@@ -146,6 +168,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string volume = 5;</code>
+   *
+   * @return The volume.
    */
   java.lang.String getVolume();
   /**
@@ -157,6 +181,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string volume = 5;</code>
+   *
+   * @return The bytes for volume.
    */
   com.google.protobuf.ByteString getVolumeBytes();
 
@@ -169,6 +195,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string publisher = 6;</code>
+   *
+   * @return The publisher.
    */
   java.lang.String getPublisher();
   /**
@@ -180,6 +208,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string publisher = 6;</code>
+   *
+   * @return The bytes for publisher.
    */
   com.google.protobuf.ByteString getPublisherBytes();
 
@@ -191,6 +221,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
+   *
+   * @return Whether the publicationDate field is set.
    */
   boolean hasPublicationDate();
   /**
@@ -201,6 +233,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
+   *
+   * @return The publicationDate.
    */
   com.google.type.Date getPublicationDate();
   /**
@@ -223,6 +257,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string publication_type = 8;</code>
+   *
+   * @return The publicationType.
    */
   java.lang.String getPublicationType();
   /**
@@ -234,6 +270,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string publication_type = 8;</code>
+   *
+   * @return The bytes for publicationType.
    */
   com.google.protobuf.ByteString getPublicationTypeBytes();
 
@@ -246,6 +284,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string isbn = 9;</code>
+   *
+   * @return The isbn.
    */
   java.lang.String getIsbn();
   /**
@@ -257,6 +297,8 @@ public interface PublicationOrBuilder
    * </pre>
    *
    * <code>string isbn = 9;</code>
+   *
+   * @return The bytes for isbn.
    */
   com.google.protobuf.ByteString getIsbnBytes();
 }

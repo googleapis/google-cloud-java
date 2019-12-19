@@ -41,6 +41,8 @@ public interface ResumeOrBuilder
    * </pre>
    *
    * <code>string structured_resume = 1;</code>
+   *
+   * @return The structuredResume.
    */
   java.lang.String getStructuredResume();
   /**
@@ -61,6 +63,8 @@ public interface ResumeOrBuilder
    * </pre>
    *
    * <code>string structured_resume = 1;</code>
+   *
+   * @return The bytes for structuredResume.
    */
   com.google.protobuf.ByteString getStructuredResumeBytes();
 
@@ -73,6 +77,8 @@ public interface ResumeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for resumeType.
    */
   int getResumeTypeValue();
   /**
@@ -84,6 +90,8 @@ public interface ResumeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+   *
+   * @return The resumeType.
    */
   com.google.cloud.talent.v4beta1.Resume.ResumeType getResumeType();
 }

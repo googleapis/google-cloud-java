@@ -32,6 +32,8 @@ public interface PersonNameOrBuilder
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   *
+   * @return The formattedName.
    */
   java.lang.String getFormattedName();
   /**
@@ -43,6 +45,8 @@ public interface PersonNameOrBuilder
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   *
+   * @return The bytes for formattedName.
    */
   com.google.protobuf.ByteString getFormattedNameBytes();
 
@@ -55,6 +59,8 @@ public interface PersonNameOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   *
+   * @return Whether the structuredName field is set.
    */
   boolean hasStructuredName();
   /**
@@ -66,6 +72,8 @@ public interface PersonNameOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   *
+   * @return The structuredName.
    */
   com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName();
   /**
@@ -92,6 +100,8 @@ public interface PersonNameOrBuilder
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   *
+   * @return The preferredName.
    */
   java.lang.String getPreferredName();
   /**
@@ -105,6 +115,8 @@ public interface PersonNameOrBuilder
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   *
+   * @return The bytes for preferredName.
    */
   com.google.protobuf.ByteString getPreferredNameBytes();
 

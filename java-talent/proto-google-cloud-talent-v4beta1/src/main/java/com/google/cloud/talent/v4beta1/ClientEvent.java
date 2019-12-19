@@ -48,6 +48,12 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClientEvent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -176,7 +181,10 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   private int eventCase_ = 0;
   private java.lang.Object event_;
 
-  public enum EventCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EventCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     JOB_EVENT(5),
     PROFILE_EVENT(6),
     EVENT_NOT_SET(0);
@@ -185,7 +193,11 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     private EventCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EventCase valueOf(int value) {
       return forNumber(value);
@@ -225,6 +237,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   *
+   * @return The requestId.
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -247,6 +261,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   *
+   * @return The bytes for requestId.
    */
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
@@ -270,6 +286,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The eventId.
    */
   public java.lang.String getEventId() {
     java.lang.Object ref = eventId_;
@@ -290,6 +308,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for eventId.
    */
   public com.google.protobuf.ByteString getEventIdBytes() {
     java.lang.Object ref = eventId_;
@@ -314,6 +334,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -327,6 +349,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -355,6 +379,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
+   *
+   * @return Whether the jobEvent field is set.
    */
   public boolean hasJobEvent() {
     return eventCase_ == 5;
@@ -368,6 +394,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
+   *
+   * @return The jobEvent.
    */
   public com.google.cloud.talent.v4beta1.JobEvent getJobEvent() {
     if (eventCase_ == 5) {
@@ -402,6 +430,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
+   *
+   * @return Whether the profileEvent field is set.
    */
   public boolean hasProfileEvent() {
     return eventCase_ == 6;
@@ -415,6 +445,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
+   *
+   * @return The profileEvent.
    */
   public com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent() {
     if (eventCase_ == 6) {
@@ -450,6 +482,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string event_notes = 9;</code>
+   *
+   * @return The eventNotes.
    */
   public java.lang.String getEventNotes() {
     java.lang.Object ref = eventNotes_;
@@ -471,6 +505,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string event_notes = 9;</code>
+   *
+   * @return The bytes for eventNotes.
    */
   public com.google.protobuf.ByteString getEventNotesBytes() {
     java.lang.Object ref = eventNotes_;
@@ -961,6 +997,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @return The requestId.
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -983,6 +1021,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @return The bytes for requestId.
      */
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
@@ -1005,6 +1045,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
@@ -1025,6 +1068,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestId() {
 
@@ -1042,6 +1087,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string request_id = 1;</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1063,6 +1111,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The eventId.
      */
     public java.lang.String getEventId() {
       java.lang.Object ref = eventId_;
@@ -1083,6 +1133,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for eventId.
      */
     public com.google.protobuf.ByteString getEventIdBytes() {
       java.lang.Object ref = eventId_;
@@ -1103,6 +1155,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The eventId to set.
+     * @return This builder for chaining.
      */
     public Builder setEventId(java.lang.String value) {
       if (value == null) {
@@ -1121,6 +1176,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEventId() {
 
@@ -1136,6 +1193,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for eventId to set.
+     * @return This builder for chaining.
      */
     public Builder setEventIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1163,6 +1223,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1176,6 +1238,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1350,6 +1414,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
+     *
+     * @return Whether the jobEvent field is set.
      */
     public boolean hasJobEvent() {
       return eventCase_ == 5;
@@ -1363,6 +1429,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
+     *
+     * @return The jobEvent.
      */
     public com.google.cloud.talent.v4beta1.JobEvent getJobEvent() {
       if (jobEventBuilder_ == null) {
@@ -1560,6 +1628,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
+     *
+     * @return Whether the profileEvent field is set.
      */
     public boolean hasProfileEvent() {
       return eventCase_ == 6;
@@ -1573,6 +1643,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
+     *
+     * @return The profileEvent.
      */
     public com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent() {
       if (profileEventBuilder_ == null) {
@@ -1767,6 +1839,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_notes = 9;</code>
+     *
+     * @return The eventNotes.
      */
     public java.lang.String getEventNotes() {
       java.lang.Object ref = eventNotes_;
@@ -1788,6 +1862,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_notes = 9;</code>
+     *
+     * @return The bytes for eventNotes.
      */
     public com.google.protobuf.ByteString getEventNotesBytes() {
       java.lang.Object ref = eventNotes_;
@@ -1809,6 +1885,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_notes = 9;</code>
+     *
+     * @param value The eventNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setEventNotes(java.lang.String value) {
       if (value == null) {
@@ -1828,6 +1907,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_notes = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEventNotes() {
 
@@ -1844,6 +1925,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string event_notes = 9;</code>
+     *
+     * @param value The bytes for eventNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setEventNotesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

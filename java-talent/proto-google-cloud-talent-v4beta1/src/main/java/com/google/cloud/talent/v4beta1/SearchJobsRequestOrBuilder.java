@@ -34,6 +34,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for searchMode.
    */
   int getSearchModeValue();
   /**
@@ -72,6 +78,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
+   *
+   * @return The searchMode.
    */
   com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode getSearchMode();
 
@@ -87,6 +95,8 @@ public interface SearchJobsRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
   /**
@@ -101,6 +111,8 @@ public interface SearchJobsRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The requestMetadata.
    */
   com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata();
   /**
@@ -126,6 +138,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
+   *
+   * @return Whether the jobQuery field is set.
    */
   boolean hasJobQuery();
   /**
@@ -136,6 +150,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
+   *
+   * @return The jobQuery.
    */
   com.google.cloud.talent.v4beta1.JobQuery getJobQuery();
   /**
@@ -160,6 +176,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>bool enable_broadening = 5;</code>
+   *
+   * @return The enableBroadening.
    */
   boolean getEnableBroadening();
 
@@ -177,6 +195,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>bool require_precise_result_size = 6;</code>
+   *
+   * @return The requirePreciseResultSize.
    */
   boolean getRequirePreciseResultSize();
 
@@ -713,6 +733,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+   *
+   * @return The enum numeric value on the wire for jobView.
    */
   int getJobViewValue();
   /**
@@ -726,6 +748,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 8;</code>
+   *
+   * @return The jobView.
    */
   com.google.cloud.talent.v4beta1.JobView getJobView();
 
@@ -745,6 +769,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>int32 offset = 9;</code>
+   *
+   * @return The offset.
    */
   int getOffset();
 
@@ -758,6 +784,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 10;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -772,6 +800,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 11;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -785,6 +815,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 11;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -847,6 +879,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 12;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -908,6 +942,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 12;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 
@@ -929,6 +965,8 @@ public interface SearchJobsRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
    * </code>
+   *
+   * @return The enum numeric value on the wire for diversificationLevel.
    */
   int getDiversificationLevelValue();
   /**
@@ -949,6 +987,8 @@ public interface SearchJobsRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel diversification_level = 13;
    * </code>
+   *
+   * @return The diversificationLevel.
    */
   com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel getDiversificationLevel();
 
@@ -963,6 +1003,8 @@ public interface SearchJobsRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
    * </code>
+   *
+   * @return Whether the customRankingInfo field is set.
    */
   boolean hasCustomRankingInfo();
   /**
@@ -976,6 +1018,8 @@ public interface SearchJobsRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
    * </code>
+   *
+   * @return The customRankingInfo.
    */
   com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo getCustomRankingInfo();
   /**
@@ -1021,6 +1065,8 @@ public interface SearchJobsRequestOrBuilder
    * </pre>
    *
    * <code>bool disable_keyword_match = 16;</code>
+   *
+   * @return The disableKeywordMatch.
    */
   boolean getDisableKeywordMatch();
 }

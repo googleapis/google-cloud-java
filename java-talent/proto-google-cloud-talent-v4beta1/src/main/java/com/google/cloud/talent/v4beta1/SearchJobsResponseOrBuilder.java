@@ -160,6 +160,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -171,6 +173,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 
@@ -257,6 +261,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>
+   *
+   * @return The estimatedTotalSize.
    */
   int getEstimatedTotalSize();
 
@@ -271,6 +277,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>int32 total_size = 6;</code>
+   *
+   * @return The totalSize.
    */
   int getTotalSize();
 
@@ -283,6 +291,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -294,6 +304,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   *
+   * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
   /**
@@ -322,6 +334,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>int32 broadened_query_jobs_count = 8;</code>
+   *
+   * @return The broadenedQueryJobsCount.
    */
   int getBroadenedQueryJobsCount();
 
@@ -333,6 +347,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   *
+   * @return Whether the spellCorrection field is set.
    */
   boolean hasSpellCorrection();
   /**
@@ -343,6 +359,8 @@ public interface SearchJobsResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   *
+   * @return The spellCorrection.
    */
   com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection();
   /**

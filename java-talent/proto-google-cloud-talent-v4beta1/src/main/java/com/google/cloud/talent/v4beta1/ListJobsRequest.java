@@ -45,6 +45,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListJobsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -148,6 +153,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -171,6 +178,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -206,6 +215,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -238,6 +249,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -261,6 +274,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -281,6 +296,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -310,6 +327,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -328,6 +347,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+   *
+   * @return The enum numeric value on the wire for jobView.
    */
   public int getJobViewValue() {
     return jobView_;
@@ -343,6 +364,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+   *
+   * @return The jobView.
    */
   public com.google.cloud.talent.v4beta1.JobView getJobView() {
     @SuppressWarnings("deprecation")
@@ -742,6 +765,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -765,6 +790,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -788,6 +815,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -809,6 +839,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -827,6 +859,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -860,6 +895,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -892,6 +929,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -924,6 +963,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -954,6 +996,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -981,6 +1025,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1002,6 +1049,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1022,6 +1071,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1042,6 +1093,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1060,6 +1114,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1075,6 +1131,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1102,6 +1161,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1120,6 +1181,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1141,6 +1205,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1161,6 +1227,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+     *
+     * @return The enum numeric value on the wire for jobView.
      */
     public int getJobViewValue() {
       return jobView_;
@@ -1176,6 +1244,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for jobView to set.
+     * @return This builder for chaining.
      */
     public Builder setJobViewValue(int value) {
       jobView_ = value;
@@ -1193,6 +1264,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+     *
+     * @return The jobView.
      */
     public com.google.cloud.talent.v4beta1.JobView getJobView() {
       @SuppressWarnings("deprecation")
@@ -1211,6 +1284,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+     *
+     * @param value The jobView to set.
+     * @return This builder for chaining.
      */
     public Builder setJobView(com.google.cloud.talent.v4beta1.JobView value) {
       if (value == null) {
@@ -1232,6 +1308,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearJobView() {
 

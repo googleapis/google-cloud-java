@@ -41,6 +41,8 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @return A list containing the stringValues.
    */
   java.util.List<java.lang.String> getStringValuesList();
   /**
@@ -61,6 +63,8 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @return The count of stringValues.
    */
   int getStringValuesCount();
   /**
@@ -81,6 +85,9 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The stringValues at the given index.
    */
   java.lang.String getStringValues(int index);
   /**
@@ -101,6 +108,9 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the stringValues at the given index.
    */
   com.google.protobuf.ByteString getStringValuesBytes(int index);
 
@@ -120,6 +130,8 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   *
+   * @return A list containing the longValues.
    */
   java.util.List<java.lang.Long> getLongValuesList();
   /**
@@ -138,6 +150,8 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   *
+   * @return The count of longValues.
    */
   int getLongValuesCount();
   /**
@@ -156,6 +170,9 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The longValues at the given index.
    */
   long getLongValues(int index);
 
@@ -169,6 +186,8 @@ public interface CustomAttributeOrBuilder
    * </pre>
    *
    * <code>bool filterable = 3;</code>
+   *
+   * @return The filterable.
    */
   boolean getFilterable();
 }

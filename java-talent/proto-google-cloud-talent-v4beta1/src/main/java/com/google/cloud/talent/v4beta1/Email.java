@@ -43,6 +43,12 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Email();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The enum numeric value on the wire for usage.
    */
   public int getUsageValue() {
     return usage_;
@@ -136,6 +143,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The usage.
    */
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
@@ -155,6 +164,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string email_address = 2;</code>
+   *
+   * @return The emailAddress.
    */
   public java.lang.String getEmailAddress() {
     java.lang.Object ref = emailAddress_;
@@ -176,6 +187,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string email_address = 2;</code>
+   *
+   * @return The bytes for emailAddress.
    */
   public com.google.protobuf.ByteString getEmailAddressBytes() {
     java.lang.Object ref = emailAddress_;
@@ -531,6 +544,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @return The enum numeric value on the wire for usage.
      */
     public int getUsageValue() {
       return usage_;
@@ -543,6 +558,9 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
       usage_ = value;
@@ -557,6 +575,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @return The usage.
      */
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
@@ -574,6 +594,9 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @param value The usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsage(com.google.cloud.talent.v4beta1.ContactInfoUsage value) {
       if (value == null) {
@@ -592,6 +615,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUsage() {
 
@@ -610,6 +635,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string email_address = 2;</code>
+     *
+     * @return The emailAddress.
      */
     public java.lang.String getEmailAddress() {
       java.lang.Object ref = emailAddress_;
@@ -631,6 +658,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string email_address = 2;</code>
+     *
+     * @return The bytes for emailAddress.
      */
     public com.google.protobuf.ByteString getEmailAddressBytes() {
       java.lang.Object ref = emailAddress_;
@@ -652,6 +681,9 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string email_address = 2;</code>
+     *
+     * @param value The emailAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setEmailAddress(java.lang.String value) {
       if (value == null) {
@@ -671,6 +703,8 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string email_address = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEmailAddress() {
 
@@ -687,6 +721,9 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string email_address = 2;</code>
+     *
+     * @param value The bytes for emailAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setEmailAddressBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

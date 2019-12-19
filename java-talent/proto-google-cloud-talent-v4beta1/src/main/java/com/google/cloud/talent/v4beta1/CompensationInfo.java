@@ -42,6 +42,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompensationInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -383,12 +389,20 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CompensationType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompensationType forNumber(int value) {
       switch (value) {
         case 0:
@@ -642,12 +656,20 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CompensationUnit valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompensationUnit forNumber(int value) {
       switch (value) {
         case 0:
@@ -732,6 +754,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
@@ -744,6 +768,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     *
+     * @return The type.
      */
     com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType getType();
 
@@ -757,6 +783,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
      */
     int getUnitValue();
     /**
@@ -769,6 +797,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     *
+     * @return The unit.
      */
     com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnit();
 
@@ -780,6 +810,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     *
+     * @return Whether the amount field is set.
      */
     boolean hasAmount();
     /**
@@ -790,6 +822,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     *
+     * @return The amount.
      */
     com.google.type.Money getAmount();
     /**
@@ -811,6 +845,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     *
+     * @return Whether the range field is set.
      */
     boolean hasRange();
     /**
@@ -821,6 +857,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     *
+     * @return The range.
      */
     com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange();
     /**
@@ -844,6 +882,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
@@ -856,6 +896,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -876,6 +918,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     *
+     * @return Whether the expectedUnitsPerYear field is set.
      */
     boolean hasExpectedUnitsPerYear();
     /**
@@ -895,6 +939,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     *
+     * @return The expectedUnitsPerYear.
      */
     com.google.protobuf.DoubleValue getExpectedUnitsPerYear();
     /**
@@ -960,6 +1006,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CompensationEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -972,7 +1024,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1094,7 +1145,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     private int compensationAmountCase_ = 0;
     private java.lang.Object compensationAmount_;
 
-    public enum CompensationAmountCase implements com.google.protobuf.Internal.EnumLite {
+    public enum CompensationAmountCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       AMOUNT(3),
       RANGE(4),
       COMPENSATIONAMOUNT_NOT_SET(0);
@@ -1103,7 +1157,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       private CompensationAmountCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static CompensationAmountCase valueOf(int value) {
         return forNumber(value);
@@ -1143,6 +1201,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1157,6 +1217,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType getType() {
       @SuppressWarnings("deprecation")
@@ -1179,6 +1241,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
      */
     public int getUnitValue() {
       return unit_;
@@ -1193,6 +1257,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     *
+     * @return The unit.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnit() {
       @SuppressWarnings("deprecation")
@@ -1212,6 +1278,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     *
+     * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
       return compensationAmountCase_ == 3;
@@ -1224,6 +1292,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     *
+     * @return The amount.
      */
     public com.google.type.Money getAmount() {
       if (compensationAmountCase_ == 3) {
@@ -1256,6 +1326,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     *
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return compensationAmountCase_ == 4;
@@ -1268,6 +1340,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     *
+     * @return The range.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
       if (compensationAmountCase_ == 4) {
@@ -1308,6 +1382,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1330,6 +1406,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1362,6 +1440,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     *
+     * @return Whether the expectedUnitsPerYear field is set.
      */
     public boolean hasExpectedUnitsPerYear() {
       return expectedUnitsPerYear_ != null;
@@ -1383,6 +1463,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     *
+     * @return The expectedUnitsPerYear.
      */
     public com.google.protobuf.DoubleValue getExpectedUnitsPerYear() {
       return expectedUnitsPerYear_ == null
@@ -1929,6 +2011,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       *
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
@@ -1943,6 +2027,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -1959,6 +2046,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       *
+       * @return The type.
        */
       public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType getType() {
         @SuppressWarnings("deprecation")
@@ -1978,6 +2067,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(
           com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType value) {
@@ -1999,6 +2091,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearType() {
 
@@ -2018,6 +2112,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       *
+       * @return The enum numeric value on the wire for unit.
        */
       public int getUnitValue() {
         return unit_;
@@ -2032,6 +2128,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
        */
       public Builder setUnitValue(int value) {
         unit_ = value;
@@ -2048,6 +2147,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       *
+       * @return The unit.
        */
       public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnit() {
         @SuppressWarnings("deprecation")
@@ -2067,6 +2168,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
        */
       public Builder setUnit(
           com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit value) {
@@ -2088,6 +2192,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearUnit() {
 
@@ -2107,6 +2213,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
+       *
+       * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return compensationAmountCase_ == 3;
@@ -2119,6 +2227,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
+       *
+       * @return The amount.
        */
       public com.google.type.Money getAmount() {
         if (amountBuilder_ == null) {
@@ -2303,6 +2413,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+       *
+       * @return Whether the range field is set.
        */
       public boolean hasRange() {
         return compensationAmountCase_ == 4;
@@ -2315,6 +2427,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+       *
+       * @return The range.
        */
       public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
         if (rangeBuilder_ == null) {
@@ -2519,6 +2633,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string description = 5;</code>
+       *
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -2541,6 +2657,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string description = 5;</code>
+       *
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString getDescriptionBytes() {
         java.lang.Object ref = description_;
@@ -2563,6 +2681,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string description = 5;</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(java.lang.String value) {
         if (value == null) {
@@ -2583,6 +2704,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string description = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
 
@@ -2600,6 +2723,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>string description = 5;</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2635,6 +2761,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+       *
+       * @return Whether the expectedUnitsPerYear field is set.
        */
       public boolean hasExpectedUnitsPerYear() {
         return expectedUnitsPerYearBuilder_ != null || expectedUnitsPerYear_ != null;
@@ -2656,6 +2784,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+       *
+       * @return The expectedUnitsPerYear.
        */
       public com.google.protobuf.DoubleValue getExpectedUnitsPerYear() {
         if (expectedUnitsPerYearBuilder_ == null) {
@@ -2946,6 +3076,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     *
+     * @return Whether the maxCompensation field is set.
      */
     boolean hasMaxCompensation();
     /**
@@ -2959,6 +3091,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     *
+     * @return The maxCompensation.
      */
     com.google.type.Money getMaxCompensation();
     /**
@@ -2985,6 +3119,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     *
+     * @return Whether the minCompensation field is set.
      */
     boolean hasMinCompensation();
     /**
@@ -2997,6 +3133,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     *
+     * @return The minCompensation.
      */
     com.google.type.Money getMinCompensation();
     /**
@@ -3034,6 +3172,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     private CompensationRange() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CompensationRange();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3046,7 +3190,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3134,6 +3277,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     *
+     * @return Whether the maxCompensation field is set.
      */
     public boolean hasMaxCompensation() {
       return maxCompensation_ != null;
@@ -3149,6 +3294,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     *
+     * @return The maxCompensation.
      */
     public com.google.type.Money getMaxCompensation() {
       return maxCompensation_ == null
@@ -3183,6 +3330,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     *
+     * @return Whether the minCompensation field is set.
      */
     public boolean hasMinCompensation() {
       return minCompensation_ != null;
@@ -3197,6 +3346,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     *
+     * @return The minCompensation.
      */
     public com.google.type.Money getMinCompensation() {
       return minCompensation_ == null
@@ -3604,6 +3755,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
+       *
+       * @return Whether the maxCompensation field is set.
        */
       public boolean hasMaxCompensation() {
         return maxCompensationBuilder_ != null || maxCompensation_ != null;
@@ -3619,6 +3772,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
+       *
+       * @return The maxCompensation.
        */
       public com.google.type.Money getMaxCompensation() {
         if (maxCompensationBuilder_ == null) {
@@ -3805,6 +3960,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
+       *
+       * @return Whether the minCompensation field is set.
        */
       public boolean hasMinCompensation() {
         return minCompensationBuilder_ != null || minCompensation_ != null;
@@ -3819,6 +3976,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
+       *
+       * @return The minCompensation.
        */
       public com.google.type.Money getMinCompensation() {
         if (minCompensationBuilder_ == null) {
@@ -4039,7 +4198,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  private int bitField0_;
   public static final int ENTRIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry>
       entries_;
@@ -4148,6 +4306,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the annualizedBaseCompensationRange field is set.
    */
   public boolean hasAnnualizedBaseCompensationRange() {
     return annualizedBaseCompensationRange_ != null;
@@ -4169,6 +4329,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The annualizedBaseCompensationRange.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
       getAnnualizedBaseCompensationRange() {
@@ -4219,6 +4381,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the annualizedTotalCompensationRange field is set.
    */
   public boolean hasAnnualizedTotalCompensationRange() {
     return annualizedTotalCompensationRange_ != null;
@@ -4240,6 +4404,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The annualizedTotalCompensationRange.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
       getAnnualizedTotalCompensationRange() {
@@ -4560,7 +4726,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       com.google.cloud.talent.v4beta1.CompensationInfo result =
           new com.google.cloud.talent.v4beta1.CompensationInfo(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -4580,7 +4745,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       } else {
         result.annualizedTotalCompensationRange_ = annualizedTotalCompensationRangeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -5166,6 +5330,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the annualizedBaseCompensationRange field is set.
      */
     public boolean hasAnnualizedBaseCompensationRange() {
       return annualizedBaseCompensationRangeBuilder_ != null
@@ -5188,6 +5354,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The annualizedBaseCompensationRange.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
         getAnnualizedBaseCompensationRange() {
@@ -5440,6 +5608,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the annualizedTotalCompensationRange field is set.
      */
     public boolean hasAnnualizedTotalCompensationRange() {
       return annualizedTotalCompensationRangeBuilder_ != null
@@ -5462,6 +5632,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The annualizedTotalCompensationRange.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
         getAnnualizedTotalCompensationRange() {

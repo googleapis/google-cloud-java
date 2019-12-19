@@ -42,6 +42,12 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Interview();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+   *
+   * @return Whether the rating field is set.
    */
   public boolean hasRating() {
     return rating_ != null;
@@ -144,6 +151,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+   *
+   * @return The rating.
    */
   public com.google.cloud.talent.v4beta1.Rating getRating() {
     return rating_ == null ? com.google.cloud.talent.v4beta1.Rating.getDefaultInstance() : rating_;
@@ -174,6 +183,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for outcome.
    */
   public int getOutcomeValue() {
     return outcome_;
@@ -189,6 +200,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outcome.
    */
   public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
     @SuppressWarnings("deprecation")
@@ -554,6 +567,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+     *
+     * @return Whether the rating field is set.
      */
     public boolean hasRating() {
       return ratingBuilder_ != null || rating_ != null;
@@ -566,6 +581,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+     *
+     * @return The rating.
      */
     public com.google.cloud.talent.v4beta1.Rating getRating() {
       if (ratingBuilder_ == null) {
@@ -733,6 +750,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for outcome.
      */
     public int getOutcomeValue() {
       return outcome_;
@@ -748,6 +767,9 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
       outcome_ = value;
@@ -765,6 +787,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The outcome.
      */
     public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
       @SuppressWarnings("deprecation")
@@ -783,6 +807,9 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcome(com.google.cloud.talent.v4beta1.Outcome value) {
       if (value == null) {
@@ -804,6 +831,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOutcome() {
 

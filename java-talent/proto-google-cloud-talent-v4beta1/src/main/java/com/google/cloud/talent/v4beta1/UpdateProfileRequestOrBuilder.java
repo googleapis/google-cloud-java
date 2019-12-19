@@ -33,6 +33,8 @@ public interface UpdateProfileRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the profile field is set.
    */
   boolean hasProfile();
   /**
@@ -45,6 +47,8 @@ public interface UpdateProfileRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The profile.
    */
   com.google.cloud.talent.v4beta1.Profile getProfile();
   /**
@@ -116,6 +120,8 @@ public interface UpdateProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -174,6 +180,8 @@ public interface UpdateProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

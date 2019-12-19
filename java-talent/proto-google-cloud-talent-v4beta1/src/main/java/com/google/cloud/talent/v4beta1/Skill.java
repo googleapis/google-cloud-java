@@ -45,6 +45,12 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Skill();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -156,6 +161,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -178,6 +185,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -201,6 +210,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   *
+   * @return Whether the lastUsedDate field is set.
    */
   public boolean hasLastUsedDate() {
     return lastUsedDate_ != null;
@@ -213,6 +224,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   *
+   * @return The lastUsedDate.
    */
   public com.google.type.Date getLastUsedDate() {
     return lastUsedDate_ == null ? com.google.type.Date.getDefaultInstance() : lastUsedDate_;
@@ -241,6 +254,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   *
+   * @return The enum numeric value on the wire for level.
    */
   public int getLevelValue() {
     return level_;
@@ -254,6 +269,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   *
+   * @return The level.
    */
   public com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel() {
     @SuppressWarnings("deprecation")
@@ -275,6 +292,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string context = 4;</code>
+   *
+   * @return The context.
    */
   public java.lang.String getContext() {
     java.lang.Object ref = context_;
@@ -296,6 +315,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string context = 4;</code>
+   *
+   * @return The bytes for context.
    */
   public com.google.protobuf.ByteString getContextBytes() {
     java.lang.Object ref = context_;
@@ -323,6 +344,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The skillNameSnippet.
    */
   public java.lang.String getSkillNameSnippet() {
     java.lang.Object ref = skillNameSnippet_;
@@ -347,6 +370,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for skillNameSnippet.
    */
   public com.google.protobuf.ByteString getSkillNameSnippetBytes() {
     java.lang.Object ref = skillNameSnippet_;
@@ -764,6 +789,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -786,6 +813,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -808,6 +837,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -828,6 +860,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -845,6 +879,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -869,6 +906,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
+     *
+     * @return Whether the lastUsedDate field is set.
      */
     public boolean hasLastUsedDate() {
       return lastUsedDateBuilder_ != null || lastUsedDate_ != null;
@@ -881,6 +920,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
+     *
+     * @return The lastUsedDate.
      */
     public com.google.type.Date getLastUsedDate() {
       if (lastUsedDateBuilder_ == null) {
@@ -1036,6 +1077,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     *
+     * @return The enum numeric value on the wire for level.
      */
     public int getLevelValue() {
       return level_;
@@ -1049,6 +1092,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for level to set.
+     * @return This builder for chaining.
      */
     public Builder setLevelValue(int value) {
       level_ = value;
@@ -1064,6 +1110,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     *
+     * @return The level.
      */
     public com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel() {
       @SuppressWarnings("deprecation")
@@ -1082,6 +1130,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     *
+     * @param value The level to set.
+     * @return This builder for chaining.
      */
     public Builder setLevel(com.google.cloud.talent.v4beta1.SkillProficiencyLevel value) {
       if (value == null) {
@@ -1101,6 +1152,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLevel() {
 
@@ -1119,6 +1172,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string context = 4;</code>
+     *
+     * @return The context.
      */
     public java.lang.String getContext() {
       java.lang.Object ref = context_;
@@ -1140,6 +1195,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string context = 4;</code>
+     *
+     * @return The bytes for context.
      */
     public com.google.protobuf.ByteString getContextBytes() {
       java.lang.Object ref = context_;
@@ -1161,6 +1218,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string context = 4;</code>
+     *
+     * @param value The context to set.
+     * @return This builder for chaining.
      */
     public Builder setContext(java.lang.String value) {
       if (value == null) {
@@ -1180,6 +1240,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string context = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContext() {
 
@@ -1196,6 +1258,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string context = 4;</code>
+     *
+     * @param value The bytes for context to set.
+     * @return This builder for chaining.
      */
     public Builder setContextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1221,6 +1286,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The skillNameSnippet.
      */
     public java.lang.String getSkillNameSnippet() {
       java.lang.Object ref = skillNameSnippet_;
@@ -1245,6 +1312,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for skillNameSnippet.
      */
     public com.google.protobuf.ByteString getSkillNameSnippetBytes() {
       java.lang.Object ref = skillNameSnippet_;
@@ -1269,6 +1338,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The skillNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSkillNameSnippet(java.lang.String value) {
       if (value == null) {
@@ -1291,6 +1363,8 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSkillNameSnippet() {
 
@@ -1310,6 +1384,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for skillNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSkillNameSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

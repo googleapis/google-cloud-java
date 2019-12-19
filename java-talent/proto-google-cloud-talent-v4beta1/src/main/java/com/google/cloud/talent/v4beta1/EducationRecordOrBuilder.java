@@ -31,6 +31,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
   /**
@@ -41,6 +43,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return The startDate.
    */
   com.google.type.Date getStartDate();
   /**
@@ -62,6 +66,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
   /**
@@ -72,6 +78,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return The endDate.
    */
   com.google.type.Date getEndDate();
   /**
@@ -93,6 +101,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.type.Date expected_graduation_date = 3;</code>
+   *
+   * @return Whether the expectedGraduationDate field is set.
    */
   boolean hasExpectedGraduationDate();
   /**
@@ -103,6 +113,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.type.Date expected_graduation_date = 3;</code>
+   *
+   * @return The expectedGraduationDate.
    */
   com.google.type.Date getExpectedGraduationDate();
   /**
@@ -126,6 +138,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string school_name = 4;</code>
+   *
+   * @return The schoolName.
    */
   java.lang.String getSchoolName();
   /**
@@ -138,6 +152,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string school_name = 4;</code>
+   *
+   * @return The bytes for schoolName.
    */
   com.google.protobuf.ByteString getSchoolNameBytes();
 
@@ -149,6 +165,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   *
+   * @return Whether the address field is set.
    */
   boolean hasAddress();
   /**
@@ -159,6 +177,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   *
+   * @return The address.
    */
   com.google.cloud.talent.v4beta1.Address getAddress();
   /**
@@ -182,6 +202,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string degree_description = 6;</code>
+   *
+   * @return The degreeDescription.
    */
   java.lang.String getDegreeDescription();
   /**
@@ -194,6 +216,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string degree_description = 6;</code>
+   *
+   * @return The bytes for degreeDescription.
    */
   com.google.protobuf.ByteString getDegreeDescriptionBytes();
 
@@ -205,6 +229,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
+   *
+   * @return Whether the structuredDegree field is set.
    */
   boolean hasStructuredDegree();
   /**
@@ -215,6 +241,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
+   *
+   * @return The structuredDegree.
    */
   com.google.cloud.talent.v4beta1.Degree getStructuredDegree();
   /**
@@ -237,6 +265,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string description = 8;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -248,6 +278,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string description = 8;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -259,6 +291,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 9;</code>
+   *
+   * @return Whether the isCurrent field is set.
    */
   boolean hasIsCurrent();
   /**
@@ -269,6 +303,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 9;</code>
+   *
+   * @return The isCurrent.
    */
   com.google.protobuf.BoolValue getIsCurrent();
   /**
@@ -294,6 +330,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The schoolNameSnippet.
    */
   java.lang.String getSchoolNameSnippet();
   /**
@@ -308,6 +346,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for schoolNameSnippet.
    */
   com.google.protobuf.ByteString getSchoolNameSnippetBytes();
 
@@ -323,6 +363,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The degreeSnippet.
    */
   java.lang.String getDegreeSnippet();
   /**
@@ -337,6 +379,8 @@ public interface EducationRecordOrBuilder
    * </pre>
    *
    * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for degreeSnippet.
    */
   com.google.protobuf.ByteString getDegreeSnippetBytes();
 

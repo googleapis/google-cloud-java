@@ -115,6 +115,8 @@ public interface CompensationInfoOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the annualizedBaseCompensationRange field is set.
    */
   boolean hasAnnualizedBaseCompensationRange();
   /**
@@ -134,6 +136,8 @@ public interface CompensationInfoOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The annualizedBaseCompensationRange.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
       getAnnualizedBaseCompensationRange();
@@ -175,6 +179,8 @@ public interface CompensationInfoOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the annualizedTotalCompensationRange field is set.
    */
   boolean hasAnnualizedTotalCompensationRange();
   /**
@@ -194,6 +200,8 @@ public interface CompensationInfoOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The annualizedTotalCompensationRange.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
       getAnnualizedTotalCompensationRange();

@@ -34,6 +34,8 @@ public interface CreateClientEventRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateClientEventRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -61,6 +65,8 @@ public interface CreateClientEventRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the clientEvent field is set.
    */
   boolean hasClientEvent();
   /**
@@ -74,6 +80,8 @@ public interface CreateClientEventRequestOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The clientEvent.
    */
   com.google.cloud.talent.v4beta1.ClientEvent getClientEvent();
   /**

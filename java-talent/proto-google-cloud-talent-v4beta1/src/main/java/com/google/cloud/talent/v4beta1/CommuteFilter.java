@@ -42,6 +42,12 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommuteFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -245,12 +250,20 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RoadTraffic valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static RoadTraffic forNumber(int value) {
       switch (value) {
         case 0:
@@ -311,7 +324,10 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   private int trafficOptionCase_ = 0;
   private java.lang.Object trafficOption_;
 
-  public enum TrafficOptionCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TrafficOptionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ROAD_TRAFFIC(5),
     DEPARTURE_TIME(6),
     TRAFFICOPTION_NOT_SET(0);
@@ -320,7 +336,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     private TrafficOptionCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TrafficOptionCase valueOf(int value) {
       return forNumber(value);
@@ -360,6 +380,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for commuteMethod.
    */
   public int getCommuteMethodValue() {
     return commuteMethod_;
@@ -374,6 +396,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The commuteMethod.
    */
   public com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod() {
     @SuppressWarnings("deprecation")
@@ -394,6 +418,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the startCoordinates field is set.
    */
   public boolean hasStartCoordinates() {
     return startCoordinates_ != null;
@@ -408,6 +434,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The startCoordinates.
    */
   public com.google.type.LatLng getStartCoordinates() {
     return startCoordinates_ == null
@@ -441,6 +469,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the travelDuration field is set.
    */
   public boolean hasTravelDuration() {
     return travelDuration_ != null;
@@ -455,6 +485,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The travelDuration.
    */
   public com.google.protobuf.Duration getTravelDuration() {
     return travelDuration_ == null
@@ -490,6 +522,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool allow_imprecise_addresses = 4;</code>
+   *
+   * @return The allowImpreciseAddresses.
    */
   public boolean getAllowImpreciseAddresses() {
     return allowImpreciseAddresses_;
@@ -504,6 +538,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   *
+   * @return The enum numeric value on the wire for roadTraffic.
    */
   public int getRoadTrafficValue() {
     if (trafficOptionCase_ == 5) {
@@ -519,6 +555,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   *
+   * @return The roadTraffic.
    */
   public com.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic getRoadTraffic() {
     if (trafficOptionCase_ == 5) {
@@ -544,6 +582,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.TimeOfDay departure_time = 6;</code>
+   *
+   * @return Whether the departureTime field is set.
    */
   public boolean hasDepartureTime() {
     return trafficOptionCase_ == 6;
@@ -558,6 +598,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.TimeOfDay departure_time = 6;</code>
+   *
+   * @return The departureTime.
    */
   public com.google.type.TimeOfDay getDepartureTime() {
     if (trafficOptionCase_ == 6) {
@@ -1064,6 +1106,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for commuteMethod.
      */
     public int getCommuteMethodValue() {
       return commuteMethod_;
@@ -1078,6 +1122,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for commuteMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setCommuteMethodValue(int value) {
       commuteMethod_ = value;
@@ -1094,6 +1141,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The commuteMethod.
      */
     public com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod() {
       @SuppressWarnings("deprecation")
@@ -1111,6 +1160,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The commuteMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setCommuteMethod(com.google.cloud.talent.v4beta1.CommuteMethod value) {
       if (value == null) {
@@ -1131,6 +1183,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCommuteMethod() {
 
@@ -1153,6 +1207,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the startCoordinates field is set.
      */
     public boolean hasStartCoordinates() {
       return startCoordinatesBuilder_ != null || startCoordinates_ != null;
@@ -1167,6 +1223,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The startCoordinates.
      */
     public com.google.type.LatLng getStartCoordinates() {
       if (startCoordinatesBuilder_ == null) {
@@ -1349,6 +1407,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the travelDuration field is set.
      */
     public boolean hasTravelDuration() {
       return travelDurationBuilder_ != null || travelDuration_ != null;
@@ -1364,6 +1424,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The travelDuration.
      */
     public com.google.protobuf.Duration getTravelDuration() {
       if (travelDurationBuilder_ == null) {
@@ -1553,6 +1615,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_imprecise_addresses = 4;</code>
+     *
+     * @return The allowImpreciseAddresses.
      */
     public boolean getAllowImpreciseAddresses() {
       return allowImpreciseAddresses_;
@@ -1569,6 +1633,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_imprecise_addresses = 4;</code>
+     *
+     * @param value The allowImpreciseAddresses to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowImpreciseAddresses(boolean value) {
 
@@ -1588,6 +1655,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_imprecise_addresses = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowImpreciseAddresses() {
 
@@ -1604,6 +1673,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     *
+     * @return The enum numeric value on the wire for roadTraffic.
      */
     public int getRoadTrafficValue() {
       if (trafficOptionCase_ == 5) {
@@ -1619,6 +1690,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for roadTraffic to set.
+     * @return This builder for chaining.
      */
     public Builder setRoadTrafficValue(int value) {
       trafficOptionCase_ = 5;
@@ -1634,6 +1708,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     *
+     * @return The roadTraffic.
      */
     public com.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic getRoadTraffic() {
       if (trafficOptionCase_ == 5) {
@@ -1655,6 +1731,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     *
+     * @param value The roadTraffic to set.
+     * @return This builder for chaining.
      */
     public Builder setRoadTraffic(com.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic value) {
       if (value == null) {
@@ -1673,6 +1752,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRoadTraffic() {
       if (trafficOptionCase_ == 5) {
@@ -1698,6 +1779,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.TimeOfDay departure_time = 6;</code>
+     *
+     * @return Whether the departureTime field is set.
      */
     public boolean hasDepartureTime() {
       return trafficOptionCase_ == 6;
@@ -1712,6 +1795,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.TimeOfDay departure_time = 6;</code>
+     *
+     * @return The departureTime.
      */
     public com.google.type.TimeOfDay getDepartureTime() {
       if (departureTimeBuilder_ == null) {

@@ -33,6 +33,8 @@ public interface AvailabilityFilterOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for signalType.
    */
   int getSignalTypeValue();
   /**
@@ -45,6 +47,8 @@ public interface AvailabilityFilterOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The signalType.
    */
   com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType();
 
@@ -58,6 +62,8 @@ public interface AvailabilityFilterOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the range field is set.
    */
   boolean hasRange();
   /**
@@ -70,6 +76,8 @@ public interface AvailabilityFilterOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The range.
    */
   com.google.cloud.talent.v4beta1.TimestampRange getRange();
   /**
@@ -99,6 +107,8 @@ public interface AvailabilityFilterOrBuilder
    * </pre>
    *
    * <code>bool required = 3;</code>
+   *
+   * @return The required.
    */
   boolean getRequired();
 }

@@ -32,6 +32,8 @@ public interface JobTitleFilterOrBuilder
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The jobTitle.
    */
   java.lang.String getJobTitle();
   /**
@@ -43,6 +45,8 @@ public interface JobTitleFilterOrBuilder
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for jobTitle.
    */
   com.google.protobuf.ByteString getJobTitleBytes();
 
@@ -55,6 +59,8 @@ public interface JobTitleFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

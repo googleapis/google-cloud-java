@@ -40,6 +40,12 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
   private UpdateProfileRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateProfileRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the profile field is set.
    */
   public boolean hasProfile() {
     return profile_ != null;
@@ -154,6 +161,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The profile.
    */
   public com.google.cloud.talent.v4beta1.Profile getProfile() {
     return profile_ == null
@@ -233,6 +242,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -293,6 +304,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -732,6 +745,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the profile field is set.
      */
     public boolean hasProfile() {
       return profileBuilder_ != null || profile_ != null;
@@ -746,6 +761,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The profile.
      */
     public com.google.cloud.talent.v4beta1.Profile getProfile() {
       if (profileBuilder_ == null) {
@@ -977,6 +994,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1037,6 +1056,8 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

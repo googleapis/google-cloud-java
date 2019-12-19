@@ -42,6 +42,12 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateProfileRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -156,6 +163,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -181,6 +190,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the profile field is set.
    */
   public boolean hasProfile() {
     return profile_ != null;
@@ -195,6 +206,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * <code>
    * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The profile.
    */
   public com.google.cloud.talent.v4beta1.Profile getProfile() {
     return profile_ == null
@@ -573,6 +586,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -595,6 +610,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -617,6 +634,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -637,6 +657,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -654,6 +676,9 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -682,6 +707,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the profile field is set.
      */
     public boolean hasProfile() {
       return profileBuilder_ != null || profile_ != null;
@@ -696,6 +723,8 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * <code>
      * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The profile.
      */
     public com.google.cloud.talent.v4beta1.Profile getProfile() {
       if (profileBuilder_ == null) {

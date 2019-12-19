@@ -31,6 +31,8 @@ public interface InterviewOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+   *
+   * @return Whether the rating field is set.
    */
   boolean hasRating();
   /**
@@ -41,6 +43,8 @@ public interface InterviewOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+   *
+   * @return The rating.
    */
   com.google.cloud.talent.v4beta1.Rating getRating();
   /**
@@ -65,6 +69,8 @@ public interface InterviewOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for outcome.
    */
   int getOutcomeValue();
   /**
@@ -78,6 +84,8 @@ public interface InterviewOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The outcome.
    */
   com.google.cloud.talent.v4beta1.Outcome getOutcome();
 }

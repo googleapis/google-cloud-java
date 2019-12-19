@@ -33,6 +33,8 @@ public interface ProfileEventOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -45,6 +47,8 @@ public interface ProfileEventOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType getType();
 
@@ -60,6 +64,8 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the profiles.
    */
   java.util.List<java.lang.String> getProfilesList();
   /**
@@ -74,6 +80,8 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of profiles.
    */
   int getProfilesCount();
   /**
@@ -88,6 +96,9 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The profiles at the given index.
    */
   java.lang.String getProfiles(int index);
   /**
@@ -102,6 +113,9 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the profiles at the given index.
    */
   com.google.protobuf.ByteString getProfilesBytes(int index);
 
@@ -117,6 +131,8 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   *
+   * @return A list containing the jobs.
    */
   java.util.List<java.lang.String> getJobsList();
   /**
@@ -131,6 +147,8 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   *
+   * @return The count of jobs.
    */
   int getJobsCount();
   /**
@@ -145,6 +163,9 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
    */
   java.lang.String getJobs(int index);
   /**
@@ -159,6 +180,9 @@ public interface ProfileEventOrBuilder
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
    */
   com.google.protobuf.ByteString getJobsBytes(int index);
 }

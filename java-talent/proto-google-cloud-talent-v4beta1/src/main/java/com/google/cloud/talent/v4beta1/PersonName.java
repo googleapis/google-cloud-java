@@ -42,6 +42,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PersonName();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     *
+     * @return The givenName.
      */
     java.lang.String getGivenName();
     /**
@@ -165,6 +172,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     *
+     * @return The bytes for givenName.
      */
     com.google.protobuf.ByteString getGivenNameBytes();
 
@@ -177,6 +186,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     *
+     * @return The preferredName.
      */
     java.lang.String getPreferredName();
     /**
@@ -188,6 +199,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     *
+     * @return The bytes for preferredName.
      */
     com.google.protobuf.ByteString getPreferredNameBytes();
 
@@ -203,6 +216,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     *
+     * @return The middleInitial.
      */
     java.lang.String getMiddleInitial();
     /**
@@ -217,6 +232,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     *
+     * @return The bytes for middleInitial.
      */
     com.google.protobuf.ByteString getMiddleInitialBytes();
 
@@ -232,6 +249,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     *
+     * @return The familyName.
      */
     java.lang.String getFamilyName();
     /**
@@ -246,6 +265,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     *
+     * @return The bytes for familyName.
      */
     com.google.protobuf.ByteString getFamilyNameBytes();
 
@@ -258,6 +279,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @return A list containing the suffixes.
      */
     java.util.List<java.lang.String> getSuffixesList();
     /**
@@ -269,6 +292,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @return The count of suffixes.
      */
     int getSuffixesCount();
     /**
@@ -280,6 +305,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The suffixes at the given index.
      */
     java.lang.String getSuffixes(int index);
     /**
@@ -291,6 +319,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the suffixes at the given index.
      */
     com.google.protobuf.ByteString getSuffixesBytes(int index);
 
@@ -303,6 +334,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @return A list containing the prefixes.
      */
     java.util.List<java.lang.String> getPrefixesList();
     /**
@@ -314,6 +347,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @return The count of prefixes.
      */
     int getPrefixesCount();
     /**
@@ -325,6 +360,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The prefixes at the given index.
      */
     java.lang.String getPrefixes(int index);
     /**
@@ -336,6 +374,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the prefixes at the given index.
      */
     com.google.protobuf.ByteString getPrefixesBytes(int index);
   }
@@ -365,6 +406,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       familyName_ = "";
       suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PersonStructuredName();
     }
 
     @java.lang.Override
@@ -415,9 +462,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   suffixes_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 suffixes_.add(s);
                 break;
@@ -425,9 +472,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   prefixes_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000020;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 prefixes_.add(s);
                 break;
@@ -453,10 +500,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -479,7 +526,6 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName.Builder.class);
     }
 
-    private int bitField0_;
     public static final int GIVEN_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object givenName_;
     /**
@@ -494,6 +540,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     *
+     * @return The givenName.
      */
     public java.lang.String getGivenName() {
       java.lang.Object ref = givenName_;
@@ -518,6 +566,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     *
+     * @return The bytes for givenName.
      */
     public com.google.protobuf.ByteString getGivenNameBytes() {
       java.lang.Object ref = givenName_;
@@ -542,6 +592,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     *
+     * @return The preferredName.
      */
     public java.lang.String getPreferredName() {
       java.lang.Object ref = preferredName_;
@@ -563,6 +615,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     *
+     * @return The bytes for preferredName.
      */
     public com.google.protobuf.ByteString getPreferredNameBytes() {
       java.lang.Object ref = preferredName_;
@@ -590,6 +644,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     *
+     * @return The middleInitial.
      */
     public java.lang.String getMiddleInitial() {
       java.lang.Object ref = middleInitial_;
@@ -614,6 +670,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     *
+     * @return The bytes for middleInitial.
      */
     public com.google.protobuf.ByteString getMiddleInitialBytes() {
       java.lang.Object ref = middleInitial_;
@@ -641,6 +699,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     *
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -665,6 +725,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     *
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
@@ -689,6 +751,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @return A list containing the suffixes.
      */
     public com.google.protobuf.ProtocolStringList getSuffixesList() {
       return suffixes_;
@@ -702,6 +766,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @return The count of suffixes.
      */
     public int getSuffixesCount() {
       return suffixes_.size();
@@ -715,6 +781,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The suffixes at the given index.
      */
     public java.lang.String getSuffixes(int index) {
       return suffixes_.get(index);
@@ -728,6 +797,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the suffixes at the given index.
      */
     public com.google.protobuf.ByteString getSuffixesBytes(int index) {
       return suffixes_.getByteString(index);
@@ -744,6 +816,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @return A list containing the prefixes.
      */
     public com.google.protobuf.ProtocolStringList getPrefixesList() {
       return prefixes_;
@@ -757,6 +831,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @return The count of prefixes.
      */
     public int getPrefixesCount() {
       return prefixes_.size();
@@ -770,6 +846,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The prefixes at the given index.
      */
     public java.lang.String getPrefixes(int index) {
       return prefixes_.get(index);
@@ -783,6 +862,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the prefixes at the given index.
      */
     public com.google.protobuf.ByteString getPrefixesBytes(int index) {
       return prefixes_.getByteString(index);
@@ -1065,9 +1147,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         familyName_ = "";
 
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1097,22 +1179,20 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName result =
             new com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.givenName_ = givenName_;
         result.preferredName_ = preferredName_;
         result.middleInitial_ = middleInitial_;
         result.familyName_ = familyName_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.suffixes_ = suffixes_;
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.prefixes_ = prefixes_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1186,7 +1266,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         if (!other.suffixes_.isEmpty()) {
           if (suffixes_.isEmpty()) {
             suffixes_ = other.suffixes_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSuffixesIsMutable();
             suffixes_.addAll(other.suffixes_);
@@ -1196,7 +1276,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         if (!other.prefixes_.isEmpty()) {
           if (prefixes_.isEmpty()) {
             prefixes_ = other.prefixes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePrefixesIsMutable();
             prefixes_.addAll(other.prefixes_);
@@ -1249,6 +1329,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       *
+       * @return The givenName.
        */
       public java.lang.String getGivenName() {
         java.lang.Object ref = givenName_;
@@ -1273,6 +1355,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       *
+       * @return The bytes for givenName.
        */
       public com.google.protobuf.ByteString getGivenNameBytes() {
         java.lang.Object ref = givenName_;
@@ -1297,6 +1381,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       *
+       * @param value The givenName to set.
+       * @return This builder for chaining.
        */
       public Builder setGivenName(java.lang.String value) {
         if (value == null) {
@@ -1319,6 +1406,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearGivenName() {
 
@@ -1338,6 +1427,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       *
+       * @param value The bytes for givenName to set.
+       * @return This builder for chaining.
        */
       public Builder setGivenNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1360,6 +1452,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       *
+       * @return The preferredName.
        */
       public java.lang.String getPreferredName() {
         java.lang.Object ref = preferredName_;
@@ -1381,6 +1475,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       *
+       * @return The bytes for preferredName.
        */
       public com.google.protobuf.ByteString getPreferredNameBytes() {
         java.lang.Object ref = preferredName_;
@@ -1402,6 +1498,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       *
+       * @param value The preferredName to set.
+       * @return This builder for chaining.
        */
       public Builder setPreferredName(java.lang.String value) {
         if (value == null) {
@@ -1421,6 +1520,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPreferredName() {
 
@@ -1437,6 +1538,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       *
+       * @param value The bytes for preferredName to set.
+       * @return This builder for chaining.
        */
       public Builder setPreferredNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1462,6 +1566,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       *
+       * @return The middleInitial.
        */
       public java.lang.String getMiddleInitial() {
         java.lang.Object ref = middleInitial_;
@@ -1486,6 +1592,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       *
+       * @return The bytes for middleInitial.
        */
       public com.google.protobuf.ByteString getMiddleInitialBytes() {
         java.lang.Object ref = middleInitial_;
@@ -1510,6 +1618,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       *
+       * @param value The middleInitial to set.
+       * @return This builder for chaining.
        */
       public Builder setMiddleInitial(java.lang.String value) {
         if (value == null) {
@@ -1532,6 +1643,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearMiddleInitial() {
 
@@ -1551,6 +1664,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       *
+       * @param value The bytes for middleInitial to set.
+       * @return This builder for chaining.
        */
       public Builder setMiddleInitialBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1576,6 +1692,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       *
+       * @return The familyName.
        */
       public java.lang.String getFamilyName() {
         java.lang.Object ref = familyName_;
@@ -1600,6 +1718,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       *
+       * @return The bytes for familyName.
        */
       public com.google.protobuf.ByteString getFamilyNameBytes() {
         java.lang.Object ref = familyName_;
@@ -1624,6 +1744,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       *
+       * @param value The familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyName(java.lang.String value) {
         if (value == null) {
@@ -1646,6 +1769,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
 
@@ -1665,6 +1790,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       *
+       * @param value The bytes for familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1681,9 +1809,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSuffixesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           suffixes_ = new com.google.protobuf.LazyStringArrayList(suffixes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1695,6 +1823,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @return A list containing the suffixes.
        */
       public com.google.protobuf.ProtocolStringList getSuffixesList() {
         return suffixes_.getUnmodifiableView();
@@ -1708,6 +1838,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @return The count of suffixes.
        */
       public int getSuffixesCount() {
         return suffixes_.size();
@@ -1721,6 +1853,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The suffixes at the given index.
        */
       public java.lang.String getSuffixes(int index) {
         return suffixes_.get(index);
@@ -1734,6 +1869,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the suffixes at the given index.
        */
       public com.google.protobuf.ByteString getSuffixesBytes(int index) {
         return suffixes_.getByteString(index);
@@ -1747,6 +1885,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The suffixes to set.
+       * @return This builder for chaining.
        */
       public Builder setSuffixes(int index, java.lang.String value) {
         if (value == null) {
@@ -1766,6 +1908,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @param value The suffixes to add.
+       * @return This builder for chaining.
        */
       public Builder addSuffixes(java.lang.String value) {
         if (value == null) {
@@ -1785,6 +1930,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @param values The suffixes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSuffixes(java.lang.Iterable<java.lang.String> values) {
         ensureSuffixesIsMutable();
@@ -1801,10 +1949,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSuffixes() {
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1817,6 +1967,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       *
+       * @param value The bytes of the suffixes to add.
+       * @return This builder for chaining.
        */
       public Builder addSuffixesBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1833,9 +1986,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -1847,6 +2000,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @return A list containing the prefixes.
        */
       public com.google.protobuf.ProtocolStringList getPrefixesList() {
         return prefixes_.getUnmodifiableView();
@@ -1860,6 +2015,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @return The count of prefixes.
        */
       public int getPrefixesCount() {
         return prefixes_.size();
@@ -1873,6 +2030,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The prefixes at the given index.
        */
       public java.lang.String getPrefixes(int index) {
         return prefixes_.get(index);
@@ -1886,6 +2046,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the prefixes at the given index.
        */
       public com.google.protobuf.ByteString getPrefixesBytes(int index) {
         return prefixes_.getByteString(index);
@@ -1899,6 +2062,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The prefixes to set.
+       * @return This builder for chaining.
        */
       public Builder setPrefixes(int index, java.lang.String value) {
         if (value == null) {
@@ -1918,6 +2085,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @param value The prefixes to add.
+       * @return This builder for chaining.
        */
       public Builder addPrefixes(java.lang.String value) {
         if (value == null) {
@@ -1937,6 +2107,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @param values The prefixes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllPrefixes(java.lang.Iterable<java.lang.String> values) {
         ensurePrefixesIsMutable();
@@ -1953,10 +2126,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPrefixes() {
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1969,6 +2144,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       *
+       * @param value The bytes of the prefixes to add.
+       * @return This builder for chaining.
        */
       public Builder addPrefixesBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2039,7 +2217,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
   private int personNameCase_ = 0;
   private java.lang.Object personName_;
 
-  public enum PersonNameCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PersonNameCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     FORMATTED_NAME(1),
     STRUCTURED_NAME(2),
     PERSONNAME_NOT_SET(0);
@@ -2048,7 +2229,11 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
     private PersonNameCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PersonNameCase valueOf(int value) {
       return forNumber(value);
@@ -2086,6 +2271,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   *
+   * @return The formattedName.
    */
   public java.lang.String getFormattedName() {
     java.lang.Object ref = "";
@@ -2112,6 +2299,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   *
+   * @return The bytes for formattedName.
    */
   public com.google.protobuf.ByteString getFormattedNameBytes() {
     java.lang.Object ref = "";
@@ -2140,6 +2329,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   *
+   * @return Whether the structuredName field is set.
    */
   public boolean hasStructuredName() {
     return personNameCase_ == 2;
@@ -2153,6 +2344,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   *
+   * @return The structuredName.
    */
   public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName() {
     if (personNameCase_ == 2) {
@@ -2191,6 +2384,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   *
+   * @return The preferredName.
    */
   public java.lang.String getPreferredName() {
     java.lang.Object ref = preferredName_;
@@ -2214,6 +2409,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   *
+   * @return The bytes for preferredName.
    */
   public com.google.protobuf.ByteString getPreferredNameBytes() {
     java.lang.Object ref = preferredName_;
@@ -2635,6 +2832,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     *
+     * @return The formattedName.
      */
     public java.lang.String getFormattedName() {
       java.lang.Object ref = "";
@@ -2661,6 +2860,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     *
+     * @return The bytes for formattedName.
      */
     public com.google.protobuf.ByteString getFormattedNameBytes() {
       java.lang.Object ref = "";
@@ -2687,6 +2888,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     *
+     * @param value The formattedName to set.
+     * @return This builder for chaining.
      */
     public Builder setFormattedName(java.lang.String value) {
       if (value == null) {
@@ -2706,6 +2910,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFormattedName() {
       if (personNameCase_ == 1) {
@@ -2724,6 +2930,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     *
+     * @param value The bytes for formattedName to set.
+     * @return This builder for chaining.
      */
     public Builder setFormattedNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2751,6 +2960,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;
      * </code>
+     *
+     * @return Whether the structuredName field is set.
      */
     public boolean hasStructuredName() {
       return personNameCase_ == 2;
@@ -2765,6 +2976,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;
      * </code>
+     *
+     * @return The structuredName.
      */
     public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName() {
       if (structuredNameBuilder_ == null) {
@@ -2975,6 +3188,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     *
+     * @return The preferredName.
      */
     public java.lang.String getPreferredName() {
       java.lang.Object ref = preferredName_;
@@ -2998,6 +3213,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     *
+     * @return The bytes for preferredName.
      */
     public com.google.protobuf.ByteString getPreferredNameBytes() {
       java.lang.Object ref = preferredName_;
@@ -3021,6 +3238,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     *
+     * @param value The preferredName to set.
+     * @return This builder for chaining.
      */
     public Builder setPreferredName(java.lang.String value) {
       if (value == null) {
@@ -3042,6 +3262,8 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPreferredName() {
 
@@ -3060,6 +3282,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     *
+     * @param value The bytes for preferredName to set.
+     * @return This builder for chaining.
      */
     public Builder setPreferredNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

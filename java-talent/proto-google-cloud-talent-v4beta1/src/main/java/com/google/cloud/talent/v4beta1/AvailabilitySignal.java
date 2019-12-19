@@ -42,6 +42,12 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AvailabilitySignal();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -146,6 +151,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -158,6 +165,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+   *
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.AvailabilitySignalType getType() {
     @SuppressWarnings("deprecation")
@@ -178,6 +187,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   *
+   * @return Whether the lastUpdateTime field is set.
    */
   public boolean hasLastUpdateTime() {
     return lastUpdateTime_ != null;
@@ -190,6 +201,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   *
+   * @return The lastUpdateTime.
    */
   public com.google.protobuf.Timestamp getLastUpdateTime() {
     return lastUpdateTime_ == null
@@ -228,6 +241,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
+   *
+   * @return Whether the filterSatisfied field is set.
    */
   public boolean hasFilterSatisfied() {
     return filterSatisfied_ != null;
@@ -249,6 +264,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
+   *
+   * @return The filterSatisfied.
    */
   public com.google.protobuf.BoolValue getFilterSatisfied() {
     return filterSatisfied_ == null
@@ -665,6 +682,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -677,6 +696,9 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -691,6 +713,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.AvailabilitySignalType getType() {
       @SuppressWarnings("deprecation")
@@ -708,6 +732,9 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.AvailabilitySignalType value) {
       if (value == null) {
@@ -726,6 +753,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -748,6 +777,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     *
+     * @return Whether the lastUpdateTime field is set.
      */
     public boolean hasLastUpdateTime() {
       return lastUpdateTimeBuilder_ != null || lastUpdateTime_ != null;
@@ -760,6 +791,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     *
+     * @return The lastUpdateTime.
      */
     public com.google.protobuf.Timestamp getLastUpdateTime() {
       if (lastUpdateTimeBuilder_ == null) {
@@ -938,6 +971,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
+     *
+     * @return Whether the filterSatisfied field is set.
      */
     public boolean hasFilterSatisfied() {
       return filterSatisfiedBuilder_ != null || filterSatisfied_ != null;
@@ -959,6 +994,8 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
+     *
+     * @return The filterSatisfied.
      */
     public com.google.protobuf.BoolValue getFilterSatisfied() {
       if (filterSatisfiedBuilder_ == null) {

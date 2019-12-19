@@ -31,6 +31,8 @@ public interface AvailabilitySignalOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface AvailabilitySignalOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType type = 1;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.AvailabilitySignalType getType();
 
@@ -52,6 +56,8 @@ public interface AvailabilitySignalOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   *
+   * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
   /**
@@ -62,6 +68,8 @@ public interface AvailabilitySignalOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   *
+   * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
   /**
@@ -92,6 +100,8 @@ public interface AvailabilitySignalOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
+   *
+   * @return Whether the filterSatisfied field is set.
    */
   boolean hasFilterSatisfied();
   /**
@@ -111,6 +121,8 @@ public interface AvailabilitySignalOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
+   *
+   * @return The filterSatisfied.
    */
   com.google.protobuf.BoolValue getFilterSatisfied();
   /**

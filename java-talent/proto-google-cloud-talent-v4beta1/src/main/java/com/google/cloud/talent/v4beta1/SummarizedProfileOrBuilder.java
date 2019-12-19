@@ -99,6 +99,8 @@ public interface SummarizedProfileOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
+   *
+   * @return Whether the summary field is set.
    */
   boolean hasSummary();
   /**
@@ -120,6 +122,8 @@ public interface SummarizedProfileOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
+   *
+   * @return The summary.
    */
   com.google.cloud.talent.v4beta1.Profile getSummary();
   /**

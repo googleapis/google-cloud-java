@@ -33,6 +33,8 @@ public interface ApplicationJobFilterOrBuilder
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
+   *
+   * @return The jobRequisitionId.
    */
   java.lang.String getJobRequisitionId();
   /**
@@ -45,6 +47,8 @@ public interface ApplicationJobFilterOrBuilder
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
+   *
+   * @return The bytes for jobRequisitionId.
    */
   com.google.protobuf.ByteString getJobRequisitionIdBytes();
 
@@ -58,6 +62,8 @@ public interface ApplicationJobFilterOrBuilder
    * </pre>
    *
    * <code>string job_title = 3;</code>
+   *
+   * @return The jobTitle.
    */
   java.lang.String getJobTitle();
   /**
@@ -70,6 +76,8 @@ public interface ApplicationJobFilterOrBuilder
    * </pre>
    *
    * <code>string job_title = 3;</code>
+   *
+   * @return The bytes for jobTitle.
    */
   com.google.protobuf.ByteString getJobTitleBytes();
 
@@ -83,6 +91,8 @@ public interface ApplicationJobFilterOrBuilder
    * </pre>
    *
    * <code>bool negated = 4;</code>
+   *
+   * @return The negated.
    */
   boolean getNegated();
 }

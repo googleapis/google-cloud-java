@@ -45,6 +45,12 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Phone();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -366,12 +371,20 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PhoneType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static PhoneType forNumber(int value) {
       switch (value) {
         case 0:
@@ -453,6 +466,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The enum numeric value on the wire for usage.
    */
   public int getUsageValue() {
     return usage_;
@@ -465,6 +480,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   *
+   * @return The usage.
    */
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
@@ -483,6 +500,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -495,6 +514,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+   *
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.Phone.PhoneType getType() {
     @SuppressWarnings("deprecation")
@@ -518,6 +539,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string number = 3;</code>
+   *
+   * @return The number.
    */
   public java.lang.String getNumber() {
     java.lang.Object ref = number_;
@@ -543,6 +566,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string number = 3;</code>
+   *
+   * @return The bytes for number.
    */
   public com.google.protobuf.ByteString getNumberBytes() {
     java.lang.Object ref = number_;
@@ -567,6 +592,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string when_available = 4;</code>
+   *
+   * @return The whenAvailable.
    */
   public java.lang.String getWhenAvailable() {
     java.lang.Object ref = whenAvailable_;
@@ -588,6 +615,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string when_available = 4;</code>
+   *
+   * @return The bytes for whenAvailable.
    */
   public com.google.protobuf.ByteString getWhenAvailableBytes() {
     java.lang.Object ref = whenAvailable_;
@@ -976,6 +1005,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @return The enum numeric value on the wire for usage.
      */
     public int getUsageValue() {
       return usage_;
@@ -988,6 +1019,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
       usage_ = value;
@@ -1002,6 +1036,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @return The usage.
      */
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
@@ -1019,6 +1055,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @param value The usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsage(com.google.cloud.talent.v4beta1.ContactInfoUsage value) {
       if (value == null) {
@@ -1037,6 +1076,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUsage() {
 
@@ -1054,6 +1095,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1066,6 +1109,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1080,6 +1126,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.Phone.PhoneType getType() {
       @SuppressWarnings("deprecation")
@@ -1095,6 +1143,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.Phone.PhoneType value) {
       if (value == null) {
@@ -1113,6 +1164,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1135,6 +1188,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string number = 3;</code>
+     *
+     * @return The number.
      */
     public java.lang.String getNumber() {
       java.lang.Object ref = number_;
@@ -1160,6 +1215,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string number = 3;</code>
+     *
+     * @return The bytes for number.
      */
     public com.google.protobuf.ByteString getNumberBytes() {
       java.lang.Object ref = number_;
@@ -1185,6 +1242,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string number = 3;</code>
+     *
+     * @param value The number to set.
+     * @return This builder for chaining.
      */
     public Builder setNumber(java.lang.String value) {
       if (value == null) {
@@ -1208,6 +1268,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string number = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNumber() {
 
@@ -1228,6 +1290,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string number = 3;</code>
+     *
+     * @param value The bytes for number to set.
+     * @return This builder for chaining.
      */
     public Builder setNumberBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1250,6 +1315,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     *
+     * @return The whenAvailable.
      */
     public java.lang.String getWhenAvailable() {
       java.lang.Object ref = whenAvailable_;
@@ -1271,6 +1338,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     *
+     * @return The bytes for whenAvailable.
      */
     public com.google.protobuf.ByteString getWhenAvailableBytes() {
       java.lang.Object ref = whenAvailable_;
@@ -1292,6 +1361,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     *
+     * @param value The whenAvailable to set.
+     * @return This builder for chaining.
      */
     public Builder setWhenAvailable(java.lang.String value) {
       if (value == null) {
@@ -1311,6 +1383,8 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWhenAvailable() {
 
@@ -1327,6 +1401,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     *
+     * @param value The bytes for whenAvailable to set.
+     * @return This builder for chaining.
      */
     public Builder setWhenAvailableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

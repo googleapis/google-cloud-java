@@ -18,7 +18,7 @@ package com.google.cloud.talent.v4beta1;
 
 import com.google.api.resourcenames.ResourceName;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public abstract class CompanyName implements ResourceName {
   protected CompanyName() {}

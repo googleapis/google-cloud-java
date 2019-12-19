@@ -42,6 +42,12 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
   private CandidateAvailabilityFilter() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CandidateAvailabilityFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +120,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>bool negated = 1;</code>
+   *
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -449,6 +456,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>bool negated = 1;</code>
+     *
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -462,6 +471,9 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>bool negated = 1;</code>
+     *
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
 
@@ -478,6 +490,8 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>bool negated = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
 

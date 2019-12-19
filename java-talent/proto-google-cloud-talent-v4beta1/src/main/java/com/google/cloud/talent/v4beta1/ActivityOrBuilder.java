@@ -32,6 +32,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -43,6 +45,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -55,6 +59,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -66,6 +72,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -78,6 +86,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string uri = 3;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -89,6 +99,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string uri = 3;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 
@@ -100,6 +112,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
+   *
+   * @return Whether the createDate field is set.
    */
   boolean hasCreateDate();
   /**
@@ -110,6 +124,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
+   *
+   * @return The createDate.
    */
   com.google.type.Date getCreateDate();
   /**
@@ -131,6 +147,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
+   *
+   * @return Whether the updateDate field is set.
    */
   boolean hasUpdateDate();
   /**
@@ -141,6 +159,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
+   *
+   * @return The updateDate.
    */
   com.google.type.Date getUpdateDate();
   /**
@@ -164,6 +184,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @return A list containing the teamMembers.
    */
   java.util.List<java.lang.String> getTeamMembersList();
   /**
@@ -176,6 +198,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @return The count of teamMembers.
    */
   int getTeamMembersCount();
   /**
@@ -188,6 +212,9 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The teamMembers at the given index.
    */
   java.lang.String getTeamMembers(int index);
   /**
@@ -200,6 +227,9 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the teamMembers at the given index.
    */
   com.google.protobuf.ByteString getTeamMembersBytes(int index);
 
@@ -272,6 +302,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The activityNameSnippet.
    */
   java.lang.String getActivityNameSnippet();
   /**
@@ -286,6 +318,8 @@ public interface ActivityOrBuilder
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for activityNameSnippet.
    */
   com.google.protobuf.ByteString getActivityNameSnippetBytes();
 
@@ -302,6 +336,8 @@ public interface ActivityOrBuilder
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The activityDescriptionSnippet.
    */
   java.lang.String getActivityDescriptionSnippet();
   /**
@@ -317,6 +353,8 @@ public interface ActivityOrBuilder
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for activityDescriptionSnippet.
    */
   com.google.protobuf.ByteString getActivityDescriptionSnippetBytes();
 
@@ -333,6 +371,8 @@ public interface ActivityOrBuilder
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the skillsUsedSnippet.
    */
   java.util.List<java.lang.String> getSkillsUsedSnippetList();
   /**
@@ -348,6 +388,8 @@ public interface ActivityOrBuilder
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The count of skillsUsedSnippet.
    */
   int getSkillsUsedSnippetCount();
   /**
@@ -363,6 +405,9 @@ public interface ActivityOrBuilder
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The skillsUsedSnippet at the given index.
    */
   java.lang.String getSkillsUsedSnippet(int index);
   /**
@@ -378,6 +423,9 @@ public interface ActivityOrBuilder
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the skillsUsedSnippet at the given index.
    */
   com.google.protobuf.ByteString getSkillsUsedSnippetBytes(int index);
 }

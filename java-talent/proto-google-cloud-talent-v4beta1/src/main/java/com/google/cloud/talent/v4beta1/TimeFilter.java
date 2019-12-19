@@ -42,6 +42,12 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TimeFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -218,12 +223,20 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TimeField valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TimeField forNumber(int value) {
       switch (value) {
         case 0:
@@ -293,6 +306,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -307,6 +322,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -338,6 +355,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -352,6 +371,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -383,6 +404,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+   *
+   * @return The enum numeric value on the wire for timeField.
    */
   public int getTimeFieldValue() {
     return timeField_;
@@ -397,6 +420,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+   *
+   * @return The timeField.
    */
   public com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField() {
     @SuppressWarnings("deprecation")
@@ -798,6 +823,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -812,6 +839,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -991,6 +1020,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1005,6 +1036,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1179,6 +1212,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     *
+     * @return The enum numeric value on the wire for timeField.
      */
     public int getTimeFieldValue() {
       return timeField_;
@@ -1193,6 +1228,9 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for timeField to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeFieldValue(int value) {
       timeField_ = value;
@@ -1209,6 +1247,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     *
+     * @return The timeField.
      */
     public com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField() {
       @SuppressWarnings("deprecation")
@@ -1228,6 +1268,9 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     *
+     * @param value The timeField to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeField(com.google.cloud.talent.v4beta1.TimeFilter.TimeField value) {
       if (value == null) {
@@ -1248,6 +1291,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeField() {
 

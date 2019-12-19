@@ -41,6 +41,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -61,6 +63,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -77,6 +81,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The company.
    */
   java.lang.String getCompany();
   /**
@@ -92,6 +98,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for company.
    */
   com.google.protobuf.ByteString getCompanyBytes();
 
@@ -110,6 +118,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The requisitionId.
    */
   java.lang.String getRequisitionId();
   /**
@@ -127,6 +137,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for requisitionId.
    */
   com.google.protobuf.ByteString getRequisitionIdBytes();
 
@@ -139,6 +151,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The title.
    */
   java.lang.String getTitle();
   /**
@@ -150,6 +164,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for title.
    */
   com.google.protobuf.ByteString getTitleBytes();
 
@@ -169,6 +185,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -187,6 +205,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -214,6 +234,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   *
+   * @return A list containing the addresses.
    */
   java.util.List<java.lang.String> getAddressesList();
   /**
@@ -240,6 +262,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   *
+   * @return The count of addresses.
    */
   int getAddressesCount();
   /**
@@ -266,6 +290,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The addresses at the given index.
    */
   java.lang.String getAddresses(int index);
   /**
@@ -292,6 +319,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the addresses at the given index.
    */
   com.google.protobuf.ByteString getAddressesBytes(int index);
 
@@ -303,6 +333,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+   *
+   * @return Whether the applicationInfo field is set.
    */
   boolean hasApplicationInfo();
   /**
@@ -313,6 +345,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+   *
+   * @return The applicationInfo.
    */
   com.google.cloud.talent.v4beta1.Job.ApplicationInfo getApplicationInfo();
   /**
@@ -334,6 +368,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   *
+   * @return A list containing the jobBenefits.
    */
   java.util.List<com.google.cloud.talent.v4beta1.JobBenefit> getJobBenefitsList();
   /**
@@ -344,6 +380,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   *
+   * @return The count of jobBenefits.
    */
   int getJobBenefitsCount();
   /**
@@ -354,6 +392,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobBenefits at the given index.
    */
   com.google.cloud.talent.v4beta1.JobBenefit getJobBenefits(int index);
   /**
@@ -364,6 +405,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for jobBenefits.
    */
   java.util.List<java.lang.Integer> getJobBenefitsValueList();
   /**
@@ -374,6 +417,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of jobBenefits at the given index.
    */
   int getJobBenefitsValue(int index);
 
@@ -386,6 +432,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+   *
+   * @return Whether the compensationInfo field is set.
    */
   boolean hasCompensationInfo();
   /**
@@ -397,6 +445,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+   *
+   * @return The compensationInfo.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo getCompensationInfo();
   /**
@@ -526,6 +576,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   *
+   * @return A list containing the degreeTypes.
    */
   java.util.List<com.google.cloud.talent.v4beta1.DegreeType> getDegreeTypesList();
   /**
@@ -536,6 +588,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   *
+   * @return The count of degreeTypes.
    */
   int getDegreeTypesCount();
   /**
@@ -546,6 +600,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The degreeTypes at the given index.
    */
   com.google.cloud.talent.v4beta1.DegreeType getDegreeTypes(int index);
   /**
@@ -556,6 +613,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for degreeTypes.
    */
   java.util.List<java.lang.Integer> getDegreeTypesValueList();
   /**
@@ -566,6 +625,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of degreeTypes at the given index.
    */
   int getDegreeTypesValue(int index);
 
@@ -579,6 +641,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string department = 12;</code>
+   *
+   * @return The department.
    */
   java.lang.String getDepartment();
   /**
@@ -591,6 +655,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string department = 12;</code>
+   *
+   * @return The bytes for department.
    */
   com.google.protobuf.ByteString getDepartmentBytes();
 
@@ -604,6 +670,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   *
+   * @return A list containing the employmentTypes.
    */
   java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList();
   /**
@@ -616,6 +684,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   *
+   * @return The count of employmentTypes.
    */
   int getEmploymentTypesCount();
   /**
@@ -628,6 +698,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The employmentTypes at the given index.
    */
   com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index);
   /**
@@ -640,6 +713,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
   java.util.List<java.lang.Integer> getEmploymentTypesValueList();
   /**
@@ -652,6 +727,9 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
   int getEmploymentTypesValue(int index);
 
@@ -665,6 +743,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string incentives = 14;</code>
+   *
+   * @return The incentives.
    */
   java.lang.String getIncentives();
   /**
@@ -677,6 +757,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string incentives = 14;</code>
+   *
+   * @return The bytes for incentives.
    */
   com.google.protobuf.ByteString getIncentivesBytes();
 
@@ -698,6 +780,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -718,6 +802,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -729,6 +815,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+   *
+   * @return The enum numeric value on the wire for jobLevel.
    */
   int getJobLevelValue();
   /**
@@ -739,6 +827,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+   *
+   * @return The jobLevel.
    */
   com.google.cloud.talent.v4beta1.JobLevel getJobLevel();
 
@@ -755,6 +845,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>int32 promotion_value = 17;</code>
+   *
+   * @return The promotionValue.
    */
   int getPromotionValue();
 
@@ -772,6 +864,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string qualifications = 18;</code>
+   *
+   * @return The qualifications.
    */
   java.lang.String getQualifications();
   /**
@@ -788,6 +882,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string qualifications = 18;</code>
+   *
+   * @return The bytes for qualifications.
    */
   com.google.protobuf.ByteString getQualificationsBytes();
 
@@ -804,6 +900,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string responsibilities = 19;</code>
+   *
+   * @return The responsibilities.
    */
   java.lang.String getResponsibilities();
   /**
@@ -819,6 +917,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string responsibilities = 19;</code>
+   *
+   * @return The bytes for responsibilities.
    */
   com.google.protobuf.ByteString getResponsibilitiesBytes();
 
@@ -839,6 +939,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+   *
+   * @return The enum numeric value on the wire for postingRegion.
    */
   int getPostingRegionValue();
   /**
@@ -858,6 +960,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+   *
+   * @return The postingRegion.
    */
   com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion();
 
@@ -873,6 +977,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+   *
+   * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Deprecated
   int getVisibilityValue();
@@ -888,6 +994,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+   *
+   * @return The visibility.
    */
   @java.lang.Deprecated
   com.google.cloud.talent.v4beta1.Visibility getVisibility();
@@ -901,6 +1009,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+   *
+   * @return Whether the jobStartTime field is set.
    */
   boolean hasJobStartTime();
   /**
@@ -912,6 +1022,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+   *
+   * @return The jobStartTime.
    */
   com.google.protobuf.Timestamp getJobStartTime();
   /**
@@ -935,6 +1047,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+   *
+   * @return Whether the jobEndTime field is set.
    */
   boolean hasJobEndTime();
   /**
@@ -946,6 +1060,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+   *
+   * @return The jobEndTime.
    */
   com.google.protobuf.Timestamp getJobEndTime();
   /**
@@ -970,6 +1086,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+   *
+   * @return Whether the postingPublishTime field is set.
    */
   boolean hasPostingPublishTime();
   /**
@@ -982,6 +1100,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+   *
+   * @return The postingPublishTime.
    */
   com.google.protobuf.Timestamp getPostingPublishTime();
   /**
@@ -1048,6 +1168,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+   *
+   * @return Whether the postingExpireTime field is set.
    */
   boolean hasPostingExpireTime();
   /**
@@ -1101,6 +1223,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+   *
+   * @return The postingExpireTime.
    */
   com.google.protobuf.Timestamp getPostingExpireTime();
   /**
@@ -1167,6 +1291,8 @@ public interface JobOrBuilder
    * <code>
    * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the postingCreateTime field is set.
    */
   boolean hasPostingCreateTime();
   /**
@@ -1179,6 +1305,8 @@ public interface JobOrBuilder
    * <code>
    * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The postingCreateTime.
    */
   com.google.protobuf.Timestamp getPostingCreateTime();
   /**
@@ -1204,6 +1332,8 @@ public interface JobOrBuilder
    * <code>
    * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the postingUpdateTime field is set.
    */
   boolean hasPostingUpdateTime();
   /**
@@ -1216,6 +1346,8 @@ public interface JobOrBuilder
    * <code>
    * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The postingUpdateTime.
    */
   com.google.protobuf.Timestamp getPostingUpdateTime();
   /**
@@ -1239,6 +1371,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The companyDisplayName.
    */
   java.lang.String getCompanyDisplayName();
   /**
@@ -1249,6 +1383,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for companyDisplayName.
    */
   com.google.protobuf.ByteString getCompanyDisplayNameBytes();
 
@@ -1262,6 +1398,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the derivedInfo field is set.
    */
   boolean hasDerivedInfo();
   /**
@@ -1274,6 +1412,8 @@ public interface JobOrBuilder
    * <code>
    * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The derivedInfo.
    */
   com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo();
   /**
@@ -1297,6 +1437,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+   *
+   * @return Whether the processingOptions field is set.
    */
   boolean hasProcessingOptions();
   /**
@@ -1307,6 +1449,8 @@ public interface JobOrBuilder
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+   *
+   * @return The processingOptions.
    */
   com.google.cloud.talent.v4beta1.Job.ProcessingOptions getProcessingOptions();
   /**

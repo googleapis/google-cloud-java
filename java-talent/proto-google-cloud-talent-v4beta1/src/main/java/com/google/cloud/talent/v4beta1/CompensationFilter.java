@@ -43,6 +43,12 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompensationFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 units_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               units_.add(rawValue);
               break;
@@ -89,9 +95,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   units_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 units_.add(rawValue);
               }
@@ -135,7 +141,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         units_ = java.util.Collections.unmodifiableList(units_);
       }
       this.unknownFields = unknownFields.build();
@@ -330,12 +336,20 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static FilterType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static FilterType forNumber(int value) {
       switch (value) {
         case 0:
@@ -399,7 +413,6 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.CompensationFilter.FilterType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -412,6 +425,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -426,6 +441,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
     @SuppressWarnings("deprecation")
@@ -465,6 +482,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the units.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit>
       getUnitsList() {
@@ -483,6 +502,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param value The units to add.
    */
   public int getUnitsCount() {
     return units_.size();
@@ -498,6 +519,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The units at the given index.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
     return units_converter_.convert(units_.get(index));
@@ -513,6 +537,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for units.
    */
   public java.util.List<java.lang.Integer> getUnitsValueList() {
     return units_;
@@ -528,6 +554,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * <code>
    * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of units at the given index.
    */
   public int getUnitsValue(int index) {
     return units_.get(index);
@@ -545,6 +574,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+   *
+   * @return Whether the range field is set.
    */
   public boolean hasRange() {
     return range_ != null;
@@ -557,6 +588,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+   *
+   * @return The range.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
     return range_ == null
@@ -588,6 +621,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+   *
+   * @return The includeJobsWithUnspecifiedCompensationRange.
    */
   public boolean getIncludeJobsWithUnspecifiedCompensationRange() {
     return includeJobsWithUnspecifiedCompensationRange_;
@@ -858,7 +893,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       type_ = 0;
 
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (rangeBuilder_ == null) {
         range_ = null;
       } else {
@@ -895,11 +930,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       com.google.cloud.talent.v4beta1.CompensationFilter result =
           new com.google.cloud.talent.v4beta1.CompensationFilter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         units_ = java.util.Collections.unmodifiableList(units_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.units_ = units_;
       if (rangeBuilder_ == null) {
@@ -909,7 +943,6 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       }
       result.includeJobsWithUnspecifiedCompensationRange_ =
           includeJobsWithUnspecifiedCompensationRange_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -966,7 +999,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       if (!other.units_.isEmpty()) {
         if (units_.isEmpty()) {
           units_ = other.units_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureUnitsIsMutable();
           units_.addAll(other.units_);
@@ -1023,6 +1056,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1037,6 +1072,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1053,6 +1091,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
       @SuppressWarnings("deprecation")
@@ -1072,6 +1112,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.CompensationFilter.FilterType value) {
       if (value == null) {
@@ -1092,6 +1135,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1103,9 +1148,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> units_ = java.util.Collections.emptyList();
 
     private void ensureUnitsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         units_ = new java.util.ArrayList<java.lang.Integer>(units_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1119,6 +1164,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the units.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit>
         getUnitsList() {
@@ -1137,6 +1184,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The count of units.
      */
     public int getUnitsCount() {
       return units_.size();
@@ -1152,6 +1201,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The units at the given index.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
       return units_converter_.convert(units_.get(index));
@@ -1167,6 +1219,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The units to set.
+     * @return This builder for chaining.
      */
     public Builder setUnits(
         int index, com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit value) {
@@ -1189,6 +1245,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The units to add.
+     * @return This builder for chaining.
      */
     public Builder addUnits(
         com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit value) {
@@ -1211,6 +1270,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The units to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUnits(
         java.lang.Iterable<
@@ -1234,10 +1296,12 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUnits() {
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1252,6 +1316,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for units.
      */
     public java.util.List<java.lang.Integer> getUnitsValueList() {
       return java.util.Collections.unmodifiableList(units_);
@@ -1267,6 +1333,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of units at the given index.
      */
     public int getUnitsValue(int index) {
       return units_.get(index);
@@ -1282,6 +1351,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of units at the given index.
+     * @return This builder for chaining.
      */
     public Builder setUnitsValue(int index, int value) {
       ensureUnitsIsMutable();
@@ -1300,6 +1373,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for units to add.
+     * @return This builder for chaining.
      */
     public Builder addUnitsValue(int value) {
       ensureUnitsIsMutable();
@@ -1318,6 +1394,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <code>
      * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for units to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUnitsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureUnitsIsMutable();
@@ -1342,6 +1421,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+     *
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return rangeBuilder_ != null || range_ != null;
@@ -1354,6 +1435,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+     *
+     * @return The range.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
       if (rangeBuilder_ == null) {
@@ -1527,6 +1610,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+     *
+     * @return The includeJobsWithUnspecifiedCompensationRange.
      */
     public boolean getIncludeJobsWithUnspecifiedCompensationRange() {
       return includeJobsWithUnspecifiedCompensationRange_;
@@ -1540,6 +1625,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+     *
+     * @param value The includeJobsWithUnspecifiedCompensationRange to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeJobsWithUnspecifiedCompensationRange(boolean value) {
 
@@ -1556,6 +1644,8 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludeJobsWithUnspecifiedCompensationRange() {
 
