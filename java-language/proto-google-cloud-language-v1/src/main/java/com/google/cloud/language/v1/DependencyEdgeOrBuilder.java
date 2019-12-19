@@ -35,6 +35,8 @@ public interface DependencyEdgeOrBuilder
    * </pre>
    *
    * <code>int32 head_token_index = 1;</code>
+   *
+   * @return The headTokenIndex.
    */
   int getHeadTokenIndex();
 
@@ -46,6 +48,8 @@ public interface DependencyEdgeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.DependencyEdge.Label label = 2;</code>
+   *
+   * @return The enum numeric value on the wire for label.
    */
   int getLabelValue();
   /**
@@ -56,6 +60,8 @@ public interface DependencyEdgeOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.DependencyEdge.Label label = 2;</code>
+   *
+   * @return The label.
    */
   com.google.cloud.language.v1.DependencyEdge.Label getLabel();
 }

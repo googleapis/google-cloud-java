@@ -85,6 +85,8 @@ public interface AnalyzeEntitiesResponseOrBuilder
    * </pre>
    *
    * <code>string language = 2;</code>
+   *
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -97,6 +99,8 @@ public interface AnalyzeEntitiesResponseOrBuilder
    * </pre>
    *
    * <code>string language = 2;</code>
+   *
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString getLanguageBytes();
 }

@@ -42,6 +42,12 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnalyzeEntitiesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    * <code>
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the document field is set.
    */
   public boolean hasDocument() {
     return document_ != null;
@@ -148,6 +155,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    * <code>
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The document.
    */
   public com.google.cloud.language.v1beta2.Document getDocument() {
     return document_ == null
@@ -179,6 +188,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for encodingType.
    */
   public int getEncodingTypeValue() {
     return encodingType_;
@@ -191,6 +202,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+   *
+   * @return The encodingType.
    */
   public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
     @SuppressWarnings("deprecation")
@@ -561,6 +574,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the document field is set.
      */
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
@@ -575,6 +590,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The document.
      */
     public com.google.cloud.language.v1beta2.Document getDocument() {
       if (documentBuilder_ == null) {
@@ -753,6 +770,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for encodingType.
      */
     public int getEncodingTypeValue() {
       return encodingType_;
@@ -765,6 +784,9 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for encodingType to set.
+     * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
       encodingType_ = value;
@@ -779,6 +801,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+     *
+     * @return The encodingType.
      */
     public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
       @SuppressWarnings("deprecation")
@@ -794,6 +818,9 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+     *
+     * @param value The encodingType to set.
+     * @return This builder for chaining.
      */
     public Builder setEncodingType(com.google.cloud.language.v1beta2.EncodingType value) {
       if (value == null) {
@@ -812,6 +839,8 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEncodingType() {
 

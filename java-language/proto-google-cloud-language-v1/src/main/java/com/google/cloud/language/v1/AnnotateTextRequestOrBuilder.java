@@ -33,6 +33,8 @@ public interface AnnotateTextRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the document field is set.
    */
   boolean hasDocument();
   /**
@@ -45,6 +47,8 @@ public interface AnnotateTextRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The document.
    */
   com.google.cloud.language.v1.Document getDocument();
   /**
@@ -70,6 +74,8 @@ public interface AnnotateTextRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the features field is set.
    */
   boolean hasFeatures();
   /**
@@ -82,6 +88,8 @@ public interface AnnotateTextRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The features.
    */
   com.google.cloud.language.v1.AnnotateTextRequest.Features getFeatures();
   /**
@@ -105,6 +113,8 @@ public interface AnnotateTextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.EncodingType encoding_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for encodingType.
    */
   int getEncodingTypeValue();
   /**
@@ -115,6 +125,8 @@ public interface AnnotateTextRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.EncodingType encoding_type = 3;</code>
+   *
+   * @return The encodingType.
    */
   com.google.cloud.language.v1.EncodingType getEncodingType();
 }

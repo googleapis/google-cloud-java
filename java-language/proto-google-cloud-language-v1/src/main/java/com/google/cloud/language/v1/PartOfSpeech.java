@@ -55,6 +55,12 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PartOfSpeech();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,7 +73,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -498,12 +503,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Tag valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Tag forNumber(int value) {
       switch (value) {
         case 0:
@@ -685,12 +698,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Aspect valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Aspect forNumber(int value) {
       switch (value) {
         case 0:
@@ -1074,12 +1095,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Case valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Case forNumber(int value) {
       switch (value) {
         case 0:
@@ -1426,12 +1455,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Form valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Form forNumber(int value) {
       switch (value) {
         case 0:
@@ -1609,12 +1646,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Gender valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Gender forNumber(int value) {
       switch (value) {
         case 0:
@@ -1836,12 +1881,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Mood valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Mood forNumber(int value) {
       switch (value) {
         case 0:
@@ -2009,12 +2062,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Number valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Number forNumber(int value) {
       switch (value) {
         case 0:
@@ -2196,12 +2257,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Person valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Person forNumber(int value) {
       switch (value) {
         case 0:
@@ -2345,12 +2414,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Proper valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Proper forNumber(int value) {
       switch (value) {
         case 0:
@@ -2492,12 +2569,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Reciprocity valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Reciprocity forNumber(int value) {
       switch (value) {
         case 0:
@@ -2717,12 +2802,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Tense valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Tense forNumber(int value) {
       switch (value) {
         case 0:
@@ -2891,12 +2984,20 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Voice valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Voice forNumber(int value) {
       switch (value) {
         case 0:
@@ -2966,6 +3067,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+   *
+   * @return The enum numeric value on the wire for tag.
    */
   public int getTagValue() {
     return tag_;
@@ -2978,6 +3081,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+   *
+   * @return The tag.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Tag getTag() {
     @SuppressWarnings("deprecation")
@@ -2996,6 +3101,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+   *
+   * @return The enum numeric value on the wire for aspect.
    */
   public int getAspectValue() {
     return aspect_;
@@ -3008,6 +3115,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+   *
+   * @return The aspect.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Aspect getAspect() {
     @SuppressWarnings("deprecation")
@@ -3026,6 +3135,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+   *
+   * @return The enum numeric value on the wire for case.
    */
   public int getCaseValue() {
     return case_;
@@ -3038,6 +3149,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+   *
+   * @return The case.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Case getCase() {
     @SuppressWarnings("deprecation")
@@ -3056,6 +3169,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+   *
+   * @return The enum numeric value on the wire for form.
    */
   public int getFormValue() {
     return form_;
@@ -3068,6 +3183,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+   *
+   * @return The form.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Form getForm() {
     @SuppressWarnings("deprecation")
@@ -3086,6 +3203,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+   *
+   * @return The enum numeric value on the wire for gender.
    */
   public int getGenderValue() {
     return gender_;
@@ -3098,6 +3217,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+   *
+   * @return The gender.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Gender getGender() {
     @SuppressWarnings("deprecation")
@@ -3116,6 +3237,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+   *
+   * @return The enum numeric value on the wire for mood.
    */
   public int getMoodValue() {
     return mood_;
@@ -3128,6 +3251,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+   *
+   * @return The mood.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Mood getMood() {
     @SuppressWarnings("deprecation")
@@ -3146,6 +3271,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+   *
+   * @return The enum numeric value on the wire for number.
    */
   public int getNumberValue() {
     return number_;
@@ -3158,6 +3285,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+   *
+   * @return The number.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Number getNumber() {
     @SuppressWarnings("deprecation")
@@ -3176,6 +3305,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+   *
+   * @return The enum numeric value on the wire for person.
    */
   public int getPersonValue() {
     return person_;
@@ -3188,6 +3319,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+   *
+   * @return The person.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Person getPerson() {
     @SuppressWarnings("deprecation")
@@ -3206,6 +3339,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+   *
+   * @return The enum numeric value on the wire for proper.
    */
   public int getProperValue() {
     return proper_;
@@ -3218,6 +3353,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+   *
+   * @return The proper.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Proper getProper() {
     @SuppressWarnings("deprecation")
@@ -3236,6 +3373,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+   *
+   * @return The enum numeric value on the wire for reciprocity.
    */
   public int getReciprocityValue() {
     return reciprocity_;
@@ -3248,6 +3387,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+   *
+   * @return The reciprocity.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Reciprocity getReciprocity() {
     @SuppressWarnings("deprecation")
@@ -3268,6 +3409,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+   *
+   * @return The enum numeric value on the wire for tense.
    */
   public int getTenseValue() {
     return tense_;
@@ -3280,6 +3423,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+   *
+   * @return The tense.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Tense getTense() {
     @SuppressWarnings("deprecation")
@@ -3298,6 +3443,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+   *
+   * @return The enum numeric value on the wire for voice.
    */
   public int getVoiceValue() {
     return voice_;
@@ -3310,6 +3457,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+   *
+   * @return The voice.
    */
   public com.google.cloud.language.v1.PartOfSpeech.Voice getVoice() {
     @SuppressWarnings("deprecation")
@@ -3811,6 +3960,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+     *
+     * @return The enum numeric value on the wire for tag.
      */
     public int getTagValue() {
       return tag_;
@@ -3823,6 +3974,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTagValue(int value) {
       tag_ = value;
@@ -3837,6 +3991,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+     *
+     * @return The tag.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Tag getTag() {
       @SuppressWarnings("deprecation")
@@ -3852,6 +4008,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+     *
+     * @param value The tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTag(com.google.cloud.language.v1.PartOfSpeech.Tag value) {
       if (value == null) {
@@ -3870,6 +4029,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTag() {
 
@@ -3887,6 +4048,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+     *
+     * @return The enum numeric value on the wire for aspect.
      */
     public int getAspectValue() {
       return aspect_;
@@ -3899,6 +4062,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for aspect to set.
+     * @return This builder for chaining.
      */
     public Builder setAspectValue(int value) {
       aspect_ = value;
@@ -3913,6 +4079,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+     *
+     * @return The aspect.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Aspect getAspect() {
       @SuppressWarnings("deprecation")
@@ -3930,6 +4098,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+     *
+     * @param value The aspect to set.
+     * @return This builder for chaining.
      */
     public Builder setAspect(com.google.cloud.language.v1.PartOfSpeech.Aspect value) {
       if (value == null) {
@@ -3948,6 +4119,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAspect() {
 
@@ -3965,6 +4138,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+     *
+     * @return The enum numeric value on the wire for case.
      */
     public int getCaseValue() {
       return case_;
@@ -3977,6 +4152,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for case to set.
+     * @return This builder for chaining.
      */
     public Builder setCaseValue(int value) {
       case_ = value;
@@ -3991,6 +4169,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+     *
+     * @return The case.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Case getCase() {
       @SuppressWarnings("deprecation")
@@ -4006,6 +4186,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+     *
+     * @param value The case to set.
+     * @return This builder for chaining.
      */
     public Builder setCase(com.google.cloud.language.v1.PartOfSpeech.Case value) {
       if (value == null) {
@@ -4024,6 +4207,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCase() {
 
@@ -4041,6 +4226,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+     *
+     * @return The enum numeric value on the wire for form.
      */
     public int getFormValue() {
       return form_;
@@ -4053,6 +4240,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for form to set.
+     * @return This builder for chaining.
      */
     public Builder setFormValue(int value) {
       form_ = value;
@@ -4067,6 +4257,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+     *
+     * @return The form.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Form getForm() {
       @SuppressWarnings("deprecation")
@@ -4082,6 +4274,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+     *
+     * @param value The form to set.
+     * @return This builder for chaining.
      */
     public Builder setForm(com.google.cloud.language.v1.PartOfSpeech.Form value) {
       if (value == null) {
@@ -4100,6 +4295,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearForm() {
 
@@ -4117,6 +4314,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+     *
+     * @return The enum numeric value on the wire for gender.
      */
     public int getGenderValue() {
       return gender_;
@@ -4129,6 +4328,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for gender to set.
+     * @return This builder for chaining.
      */
     public Builder setGenderValue(int value) {
       gender_ = value;
@@ -4143,6 +4345,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+     *
+     * @return The gender.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Gender getGender() {
       @SuppressWarnings("deprecation")
@@ -4160,6 +4364,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+     *
+     * @param value The gender to set.
+     * @return This builder for chaining.
      */
     public Builder setGender(com.google.cloud.language.v1.PartOfSpeech.Gender value) {
       if (value == null) {
@@ -4178,6 +4385,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGender() {
 
@@ -4195,6 +4404,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+     *
+     * @return The enum numeric value on the wire for mood.
      */
     public int getMoodValue() {
       return mood_;
@@ -4207,6 +4418,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for mood to set.
+     * @return This builder for chaining.
      */
     public Builder setMoodValue(int value) {
       mood_ = value;
@@ -4221,6 +4435,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+     *
+     * @return The mood.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Mood getMood() {
       @SuppressWarnings("deprecation")
@@ -4236,6 +4452,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+     *
+     * @param value The mood to set.
+     * @return This builder for chaining.
      */
     public Builder setMood(com.google.cloud.language.v1.PartOfSpeech.Mood value) {
       if (value == null) {
@@ -4254,6 +4473,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMood() {
 
@@ -4271,6 +4492,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+     *
+     * @return The enum numeric value on the wire for number.
      */
     public int getNumberValue() {
       return number_;
@@ -4283,6 +4506,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for number to set.
+     * @return This builder for chaining.
      */
     public Builder setNumberValue(int value) {
       number_ = value;
@@ -4297,6 +4523,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+     *
+     * @return The number.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Number getNumber() {
       @SuppressWarnings("deprecation")
@@ -4314,6 +4542,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+     *
+     * @param value The number to set.
+     * @return This builder for chaining.
      */
     public Builder setNumber(com.google.cloud.language.v1.PartOfSpeech.Number value) {
       if (value == null) {
@@ -4332,6 +4563,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNumber() {
 
@@ -4349,6 +4582,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+     *
+     * @return The enum numeric value on the wire for person.
      */
     public int getPersonValue() {
       return person_;
@@ -4361,6 +4596,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for person to set.
+     * @return This builder for chaining.
      */
     public Builder setPersonValue(int value) {
       person_ = value;
@@ -4375,6 +4613,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+     *
+     * @return The person.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Person getPerson() {
       @SuppressWarnings("deprecation")
@@ -4392,6 +4632,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+     *
+     * @param value The person to set.
+     * @return This builder for chaining.
      */
     public Builder setPerson(com.google.cloud.language.v1.PartOfSpeech.Person value) {
       if (value == null) {
@@ -4410,6 +4653,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPerson() {
 
@@ -4427,6 +4672,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+     *
+     * @return The enum numeric value on the wire for proper.
      */
     public int getProperValue() {
       return proper_;
@@ -4439,6 +4686,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for proper to set.
+     * @return This builder for chaining.
      */
     public Builder setProperValue(int value) {
       proper_ = value;
@@ -4453,6 +4703,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+     *
+     * @return The proper.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Proper getProper() {
       @SuppressWarnings("deprecation")
@@ -4470,6 +4722,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+     *
+     * @param value The proper to set.
+     * @return This builder for chaining.
      */
     public Builder setProper(com.google.cloud.language.v1.PartOfSpeech.Proper value) {
       if (value == null) {
@@ -4488,6 +4743,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProper() {
 
@@ -4505,6 +4762,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+     *
+     * @return The enum numeric value on the wire for reciprocity.
      */
     public int getReciprocityValue() {
       return reciprocity_;
@@ -4517,6 +4776,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for reciprocity to set.
+     * @return This builder for chaining.
      */
     public Builder setReciprocityValue(int value) {
       reciprocity_ = value;
@@ -4531,6 +4793,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+     *
+     * @return The reciprocity.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Reciprocity getReciprocity() {
       @SuppressWarnings("deprecation")
@@ -4548,6 +4812,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+     *
+     * @param value The reciprocity to set.
+     * @return This builder for chaining.
      */
     public Builder setReciprocity(com.google.cloud.language.v1.PartOfSpeech.Reciprocity value) {
       if (value == null) {
@@ -4566,6 +4833,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReciprocity() {
 
@@ -4583,6 +4852,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+     *
+     * @return The enum numeric value on the wire for tense.
      */
     public int getTenseValue() {
       return tense_;
@@ -4595,6 +4866,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+     *
+     * @param value The enum numeric value on the wire for tense to set.
+     * @return This builder for chaining.
      */
     public Builder setTenseValue(int value) {
       tense_ = value;
@@ -4609,6 +4883,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+     *
+     * @return The tense.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Tense getTense() {
       @SuppressWarnings("deprecation")
@@ -4624,6 +4900,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+     *
+     * @param value The tense to set.
+     * @return This builder for chaining.
      */
     public Builder setTense(com.google.cloud.language.v1.PartOfSpeech.Tense value) {
       if (value == null) {
@@ -4642,6 +4921,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTense() {
 
@@ -4659,6 +4940,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+     *
+     * @return The enum numeric value on the wire for voice.
      */
     public int getVoiceValue() {
       return voice_;
@@ -4671,6 +4954,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for voice to set.
+     * @return This builder for chaining.
      */
     public Builder setVoiceValue(int value) {
       voice_ = value;
@@ -4685,6 +4971,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+     *
+     * @return The voice.
      */
     public com.google.cloud.language.v1.PartOfSpeech.Voice getVoice() {
       @SuppressWarnings("deprecation")
@@ -4700,6 +4988,9 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+     *
+     * @param value The voice to set.
+     * @return This builder for chaining.
      */
     public Builder setVoice(com.google.cloud.language.v1.PartOfSpeech.Voice value) {
       if (value == null) {
@@ -4718,6 +5009,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVoice() {
 

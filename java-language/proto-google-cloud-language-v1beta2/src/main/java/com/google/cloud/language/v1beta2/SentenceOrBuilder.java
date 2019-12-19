@@ -31,6 +31,8 @@ public interface SentenceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
+   *
+   * @return Whether the text field is set.
    */
   boolean hasText();
   /**
@@ -41,6 +43,8 @@ public interface SentenceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
+   *
+   * @return The text.
    */
   com.google.cloud.language.v1beta2.TextSpan getText();
   /**
@@ -64,6 +68,8 @@ public interface SentenceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
+   *
+   * @return Whether the sentiment field is set.
    */
   boolean hasSentiment();
   /**
@@ -76,6 +82,8 @@ public interface SentenceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
+   *
+   * @return The sentiment.
    */
   com.google.cloud.language.v1beta2.Sentiment getSentiment();
   /**

@@ -136,6 +136,8 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * </pre>
    *
    * <code>string language = 3;</code>
+   *
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -148,6 +150,8 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * </pre>
    *
    * <code>string language = 3;</code>
+   *
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString getLanguageBytes();
 }

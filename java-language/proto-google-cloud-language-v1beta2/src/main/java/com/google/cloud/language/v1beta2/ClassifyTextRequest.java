@@ -40,6 +40,12 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
   private ClassifyTextRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClassifyTextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the document field is set.
    */
   public boolean hasDocument() {
     return document_ != null;
@@ -139,6 +146,8 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The document.
    */
   public com.google.cloud.language.v1beta2.Document getDocument() {
     return document_ == null
@@ -507,6 +516,8 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the document field is set.
      */
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
@@ -521,6 +532,8 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The document.
      */
     public com.google.cloud.language.v1beta2.Document getDocument() {
       if (documentBuilder_ == null) {

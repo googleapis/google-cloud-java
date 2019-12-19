@@ -43,6 +43,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotateTextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,6 +159,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_syntax = 1;</code>
+     *
+     * @return The extractSyntax.
      */
     boolean getExtractSyntax();
 
@@ -165,6 +172,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_entities = 2;</code>
+     *
+     * @return The extractEntities.
      */
     boolean getExtractEntities();
 
@@ -176,6 +185,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_document_sentiment = 3;</code>
+     *
+     * @return The extractDocumentSentiment.
      */
     boolean getExtractDocumentSentiment();
 
@@ -187,6 +198,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_entity_sentiment = 4;</code>
+     *
+     * @return The extractEntitySentiment.
      */
     boolean getExtractEntitySentiment();
 
@@ -200,6 +213,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool classify_text = 6;</code>
+     *
+     * @return The classifyText.
      */
     boolean getClassifyText();
   }
@@ -227,6 +242,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     private Features() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Features();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -239,7 +260,6 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -319,6 +339,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_syntax = 1;</code>
+     *
+     * @return The extractSyntax.
      */
     public boolean getExtractSyntax() {
       return extractSyntax_;
@@ -334,6 +356,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_entities = 2;</code>
+     *
+     * @return The extractEntities.
      */
     public boolean getExtractEntities() {
       return extractEntities_;
@@ -349,6 +373,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_document_sentiment = 3;</code>
+     *
+     * @return The extractDocumentSentiment.
      */
     public boolean getExtractDocumentSentiment() {
       return extractDocumentSentiment_;
@@ -364,6 +390,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool extract_entity_sentiment = 4;</code>
+     *
+     * @return The extractEntitySentiment.
      */
     public boolean getExtractEntitySentiment() {
       return extractEntitySentiment_;
@@ -381,6 +409,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bool classify_text = 6;</code>
+     *
+     * @return The classifyText.
      */
     public boolean getClassifyText() {
       return classifyText_;
@@ -783,6 +813,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_syntax = 1;</code>
+       *
+       * @return The extractSyntax.
        */
       public boolean getExtractSyntax() {
         return extractSyntax_;
@@ -795,6 +827,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_syntax = 1;</code>
+       *
+       * @param value The extractSyntax to set.
+       * @return This builder for chaining.
        */
       public Builder setExtractSyntax(boolean value) {
 
@@ -810,6 +845,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_syntax = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearExtractSyntax() {
 
@@ -827,6 +864,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_entities = 2;</code>
+       *
+       * @return The extractEntities.
        */
       public boolean getExtractEntities() {
         return extractEntities_;
@@ -839,6 +878,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_entities = 2;</code>
+       *
+       * @param value The extractEntities to set.
+       * @return This builder for chaining.
        */
       public Builder setExtractEntities(boolean value) {
 
@@ -854,6 +896,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_entities = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearExtractEntities() {
 
@@ -871,6 +915,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_document_sentiment = 3;</code>
+       *
+       * @return The extractDocumentSentiment.
        */
       public boolean getExtractDocumentSentiment() {
         return extractDocumentSentiment_;
@@ -883,6 +929,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_document_sentiment = 3;</code>
+       *
+       * @param value The extractDocumentSentiment to set.
+       * @return This builder for chaining.
        */
       public Builder setExtractDocumentSentiment(boolean value) {
 
@@ -898,6 +947,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_document_sentiment = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearExtractDocumentSentiment() {
 
@@ -915,6 +966,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_entity_sentiment = 4;</code>
+       *
+       * @return The extractEntitySentiment.
        */
       public boolean getExtractEntitySentiment() {
         return extractEntitySentiment_;
@@ -927,6 +980,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_entity_sentiment = 4;</code>
+       *
+       * @param value The extractEntitySentiment to set.
+       * @return This builder for chaining.
        */
       public Builder setExtractEntitySentiment(boolean value) {
 
@@ -942,6 +998,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool extract_entity_sentiment = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearExtractEntitySentiment() {
 
@@ -961,6 +1019,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
+       *
+       * @return The classifyText.
        */
       public boolean getClassifyText() {
         return classifyText_;
@@ -975,6 +1035,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
+       *
+       * @param value The classifyText to set.
+       * @return This builder for chaining.
        */
       public Builder setClassifyText(boolean value) {
 
@@ -992,6 +1055,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </pre>
        *
        * <code>bool classify_text = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearClassifyText() {
 
@@ -1067,6 +1132,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the document field is set.
    */
   public boolean hasDocument() {
     return document_ != null;
@@ -1081,6 +1148,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The document.
    */
   public com.google.cloud.language.v1beta2.Document getDocument() {
     return document_ == null
@@ -1114,6 +1183,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the features field is set.
    */
   public boolean hasFeatures() {
     return features_ != null;
@@ -1128,6 +1199,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The features.
    */
   public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures() {
     return features_ == null
@@ -1160,6 +1233,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for encodingType.
    */
   public int getEncodingTypeValue() {
     return encodingType_;
@@ -1172,6 +1247,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+   *
+   * @return The encodingType.
    */
   public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
     @SuppressWarnings("deprecation")
@@ -1571,6 +1648,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the document field is set.
      */
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
@@ -1585,6 +1664,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The document.
      */
     public com.google.cloud.language.v1beta2.Document getDocument() {
       if (documentBuilder_ == null) {
@@ -1770,6 +1851,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the features field is set.
      */
     public boolean hasFeatures() {
       return featuresBuilder_ != null || features_ != null;
@@ -1784,6 +1867,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The features.
      */
     public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures() {
       if (featuresBuilder_ == null) {
@@ -1967,6 +2052,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for encodingType.
      */
     public int getEncodingTypeValue() {
       return encodingType_;
@@ -1979,6 +2066,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for encodingType to set.
+     * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
       encodingType_ = value;
@@ -1993,6 +2083,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+     *
+     * @return The encodingType.
      */
     public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
       @SuppressWarnings("deprecation")
@@ -2008,6 +2100,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+     *
+     * @param value The encodingType to set.
+     * @return This builder for chaining.
      */
     public Builder setEncodingType(com.google.cloud.language.v1beta2.EncodingType value) {
       if (value == null) {
@@ -2026,6 +2121,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEncodingType() {
 

@@ -33,6 +33,8 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the document field is set.
    */
   boolean hasDocument();
   /**
@@ -45,6 +47,8 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The document.
    */
   com.google.cloud.language.v1.Document getDocument();
   /**
@@ -68,6 +72,8 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.EncodingType encoding_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for encodingType.
    */
   int getEncodingTypeValue();
   /**
@@ -78,6 +84,8 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.EncodingType encoding_type = 2;</code>
+   *
+   * @return The encodingType.
    */
   com.google.cloud.language.v1.EncodingType getEncodingType();
 }

@@ -44,6 +44,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Document();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -211,12 +216,20 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Type valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Type forNumber(int value) {
       switch (value) {
         case 0:
@@ -277,7 +290,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
-  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CONTENT(2),
     GCS_CONTENT_URI(3),
     SOURCE_NOT_SET(0);
@@ -286,7 +302,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -325,6 +345,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -338,6 +360,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+   *
+   * @return The type.
    */
   public com.google.cloud.language.v1.Document.Type getType() {
     @SuppressWarnings("deprecation")
@@ -356,6 +380,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content = 2;</code>
+   *
+   * @return The content.
    */
   public java.lang.String getContent() {
     java.lang.Object ref = "";
@@ -382,6 +408,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string content = 2;</code>
+   *
+   * @return The bytes for content.
    */
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = "";
@@ -412,6 +440,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string gcs_content_uri = 3;</code>
+   *
+   * @return The gcsContentUri.
    */
   public java.lang.String getGcsContentUri() {
     java.lang.Object ref = "";
@@ -440,6 +470,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string gcs_content_uri = 3;</code>
+   *
+   * @return The bytes for gcsContentUri.
    */
   public com.google.protobuf.ByteString getGcsContentUriBytes() {
     java.lang.Object ref = "";
@@ -475,6 +507,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language = 4;</code>
+   *
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -502,6 +536,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string language = 4;</code>
+   *
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -933,6 +969,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -946,6 +984,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -961,6 +1002,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+     *
+     * @return The type.
      */
     public com.google.cloud.language.v1.Document.Type getType() {
       @SuppressWarnings("deprecation")
@@ -977,6 +1020,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.language.v1.Document.Type value) {
       if (value == null) {
@@ -996,6 +1042,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.Document.Type type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 
@@ -1013,6 +1061,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 2;</code>
+     *
+     * @return The content.
      */
     public java.lang.String getContent() {
       java.lang.Object ref = "";
@@ -1039,6 +1089,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 2;</code>
+     *
+     * @return The bytes for content.
      */
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
@@ -1065,6 +1117,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 2;</code>
+     *
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     public Builder setContent(java.lang.String value) {
       if (value == null) {
@@ -1084,6 +1139,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContent() {
       if (sourceCase_ == 2) {
@@ -1102,6 +1159,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string content = 2;</code>
+     *
+     * @param value The bytes for content to set.
+     * @return This builder for chaining.
      */
     public Builder setContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1125,6 +1185,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_content_uri = 3;</code>
+     *
+     * @return The gcsContentUri.
      */
     public java.lang.String getGcsContentUri() {
       java.lang.Object ref = "";
@@ -1153,6 +1215,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_content_uri = 3;</code>
+     *
+     * @return The bytes for gcsContentUri.
      */
     public com.google.protobuf.ByteString getGcsContentUriBytes() {
       java.lang.Object ref = "";
@@ -1181,6 +1245,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_content_uri = 3;</code>
+     *
+     * @param value The gcsContentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setGcsContentUri(java.lang.String value) {
       if (value == null) {
@@ -1202,6 +1269,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_content_uri = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGcsContentUri() {
       if (sourceCase_ == 3) {
@@ -1222,6 +1291,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string gcs_content_uri = 3;</code>
+     *
+     * @param value The bytes for gcsContentUri to set.
+     * @return This builder for chaining.
      */
     public Builder setGcsContentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1250,6 +1322,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language = 4;</code>
+     *
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -1277,6 +1351,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language = 4;</code>
+     *
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString getLanguageBytes() {
       java.lang.Object ref = language_;
@@ -1304,6 +1380,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language = 4;</code>
+     *
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(java.lang.String value) {
       if (value == null) {
@@ -1329,6 +1408,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
 
@@ -1351,6 +1432,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string language = 4;</code>
+     *
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

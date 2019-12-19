@@ -42,6 +42,12 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Token();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -164,6 +169,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
+   *
+   * @return Whether the text field is set.
    */
   public boolean hasText() {
     return text_ != null;
@@ -176,6 +183,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
+   *
+   * @return The text.
    */
   public com.google.cloud.language.v1.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1.TextSpan.getDefaultInstance() : text_;
@@ -203,6 +212,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech part_of_speech = 2;</code>
+   *
+   * @return Whether the partOfSpeech field is set.
    */
   public boolean hasPartOfSpeech() {
     return partOfSpeech_ != null;
@@ -215,6 +226,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech part_of_speech = 2;</code>
+   *
+   * @return The partOfSpeech.
    */
   public com.google.cloud.language.v1.PartOfSpeech getPartOfSpeech() {
     return partOfSpeech_ == null
@@ -244,6 +257,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.DependencyEdge dependency_edge = 3;</code>
+   *
+   * @return Whether the dependencyEdge field is set.
    */
   public boolean hasDependencyEdge() {
     return dependencyEdge_ != null;
@@ -256,6 +271,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1.DependencyEdge dependency_edge = 3;</code>
+   *
+   * @return The dependencyEdge.
    */
   public com.google.cloud.language.v1.DependencyEdge getDependencyEdge() {
     return dependencyEdge_ == null
@@ -285,6 +302,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string lemma = 4;</code>
+   *
+   * @return The lemma.
    */
   public java.lang.String getLemma() {
     java.lang.Object ref = lemma_;
@@ -305,6 +324,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string lemma = 4;</code>
+   *
+   * @return The bytes for lemma.
    */
   public com.google.protobuf.ByteString getLemmaBytes() {
     java.lang.Object ref = lemma_;
@@ -729,6 +750,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
+     *
+     * @return Whether the text field is set.
      */
     public boolean hasText() {
       return textBuilder_ != null || text_ != null;
@@ -741,6 +764,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
+     *
+     * @return The text.
      */
     public com.google.cloud.language.v1.TextSpan getText() {
       if (textBuilder_ == null) {
@@ -906,6 +931,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech part_of_speech = 2;</code>
+     *
+     * @return Whether the partOfSpeech field is set.
      */
     public boolean hasPartOfSpeech() {
       return partOfSpeechBuilder_ != null || partOfSpeech_ != null;
@@ -918,6 +945,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.PartOfSpeech part_of_speech = 2;</code>
+     *
+     * @return The partOfSpeech.
      */
     public com.google.cloud.language.v1.PartOfSpeech getPartOfSpeech() {
       if (partOfSpeechBuilder_ == null) {
@@ -1088,6 +1117,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.DependencyEdge dependency_edge = 3;</code>
+     *
+     * @return Whether the dependencyEdge field is set.
      */
     public boolean hasDependencyEdge() {
       return dependencyEdgeBuilder_ != null || dependencyEdge_ != null;
@@ -1100,6 +1131,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1.DependencyEdge dependency_edge = 3;</code>
+     *
+     * @return The dependencyEdge.
      */
     public com.google.cloud.language.v1.DependencyEdge getDependencyEdge() {
       if (dependencyEdgeBuilder_ == null) {
@@ -1265,6 +1298,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string lemma = 4;</code>
+     *
+     * @return The lemma.
      */
     public java.lang.String getLemma() {
       java.lang.Object ref = lemma_;
@@ -1285,6 +1320,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string lemma = 4;</code>
+     *
+     * @return The bytes for lemma.
      */
     public com.google.protobuf.ByteString getLemmaBytes() {
       java.lang.Object ref = lemma_;
@@ -1305,6 +1342,9 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string lemma = 4;</code>
+     *
+     * @param value The lemma to set.
+     * @return This builder for chaining.
      */
     public Builder setLemma(java.lang.String value) {
       if (value == null) {
@@ -1323,6 +1363,8 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string lemma = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLemma() {
 
@@ -1338,6 +1380,9 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string lemma = 4;</code>
+     *
+     * @param value The bytes for lemma to set.
+     * @return This builder for chaining.
      */
     public Builder setLemmaBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

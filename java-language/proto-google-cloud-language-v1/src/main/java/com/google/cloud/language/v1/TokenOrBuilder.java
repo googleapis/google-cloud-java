@@ -31,6 +31,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
+   *
+   * @return Whether the text field is set.
    */
   boolean hasText();
   /**
@@ -41,6 +43,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
+   *
+   * @return The text.
    */
   com.google.cloud.language.v1.TextSpan getText();
   /**
@@ -62,6 +66,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech part_of_speech = 2;</code>
+   *
+   * @return Whether the partOfSpeech field is set.
    */
   boolean hasPartOfSpeech();
   /**
@@ -72,6 +78,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.PartOfSpeech part_of_speech = 2;</code>
+   *
+   * @return The partOfSpeech.
    */
   com.google.cloud.language.v1.PartOfSpeech getPartOfSpeech();
   /**
@@ -93,6 +101,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.DependencyEdge dependency_edge = 3;</code>
+   *
+   * @return Whether the dependencyEdge field is set.
    */
   boolean hasDependencyEdge();
   /**
@@ -103,6 +113,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.DependencyEdge dependency_edge = 3;</code>
+   *
+   * @return The dependencyEdge.
    */
   com.google.cloud.language.v1.DependencyEdge getDependencyEdge();
   /**
@@ -124,6 +136,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>string lemma = 4;</code>
+   *
+   * @return The lemma.
    */
   java.lang.String getLemma();
   /**
@@ -134,6 +148,8 @@ public interface TokenOrBuilder
    * </pre>
    *
    * <code>string lemma = 4;</code>
+   *
+   * @return The bytes for lemma.
    */
   com.google.protobuf.ByteString getLemmaBytes();
 }

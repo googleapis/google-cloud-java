@@ -44,6 +44,12 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnalyzeEntitySentimentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -122,7 +128,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
             com.google.cloud.language.v1.AnalyzeEntitySentimentResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ENTITIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.language.v1.Entity> entities_;
   /**
@@ -199,6 +204,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string language = 2;</code>
+   *
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -221,6 +228,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string language = 2;</code>
+   *
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -488,7 +497,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       com.google.cloud.language.v1.AnalyzeEntitySentimentResponse result =
           new com.google.cloud.language.v1.AnalyzeEntitySentimentResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entitiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
@@ -499,7 +507,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         result.entities_ = entitiesBuilder_.build();
       }
       result.language_ = language_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -972,6 +979,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string language = 2;</code>
+     *
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -994,6 +1003,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string language = 2;</code>
+     *
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString getLanguageBytes() {
       java.lang.Object ref = language_;
@@ -1016,6 +1027,9 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string language = 2;</code>
+     *
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(java.lang.String value) {
       if (value == null) {
@@ -1036,6 +1050,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string language = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
 
@@ -1053,6 +1069,9 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string language = 2;</code>
+     *
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

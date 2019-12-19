@@ -31,6 +31,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Tag tag = 1;</code>
+   *
+   * @return The enum numeric value on the wire for tag.
    */
   int getTagValue();
   /**
@@ -41,6 +43,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Tag tag = 1;</code>
+   *
+   * @return The tag.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Tag getTag();
 
@@ -52,6 +56,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Aspect aspect = 2;</code>
+   *
+   * @return The enum numeric value on the wire for aspect.
    */
   int getAspectValue();
   /**
@@ -62,6 +68,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Aspect aspect = 2;</code>
+   *
+   * @return The aspect.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Aspect getAspect();
 
@@ -73,6 +81,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Case case = 3;</code>
+   *
+   * @return The enum numeric value on the wire for case.
    */
   int getCaseValue();
   /**
@@ -83,6 +93,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Case case = 3;</code>
+   *
+   * @return The case.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Case getCase();
 
@@ -94,6 +106,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Form form = 4;</code>
+   *
+   * @return The enum numeric value on the wire for form.
    */
   int getFormValue();
   /**
@@ -104,6 +118,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Form form = 4;</code>
+   *
+   * @return The form.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Form getForm();
 
@@ -115,6 +131,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Gender gender = 5;</code>
+   *
+   * @return The enum numeric value on the wire for gender.
    */
   int getGenderValue();
   /**
@@ -125,6 +143,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Gender gender = 5;</code>
+   *
+   * @return The gender.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Gender getGender();
 
@@ -136,6 +156,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Mood mood = 6;</code>
+   *
+   * @return The enum numeric value on the wire for mood.
    */
   int getMoodValue();
   /**
@@ -146,6 +168,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Mood mood = 6;</code>
+   *
+   * @return The mood.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Mood getMood();
 
@@ -157,6 +181,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Number number = 7;</code>
+   *
+   * @return The enum numeric value on the wire for number.
    */
   int getNumberValue();
   /**
@@ -167,6 +193,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Number number = 7;</code>
+   *
+   * @return The number.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Number getNumber();
 
@@ -178,6 +206,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Person person = 8;</code>
+   *
+   * @return The enum numeric value on the wire for person.
    */
   int getPersonValue();
   /**
@@ -188,6 +218,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Person person = 8;</code>
+   *
+   * @return The person.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Person getPerson();
 
@@ -199,6 +231,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Proper proper = 9;</code>
+   *
+   * @return The enum numeric value on the wire for proper.
    */
   int getProperValue();
   /**
@@ -209,6 +243,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Proper proper = 9;</code>
+   *
+   * @return The proper.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Proper getProper();
 
@@ -220,6 +256,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+   *
+   * @return The enum numeric value on the wire for reciprocity.
    */
   int getReciprocityValue();
   /**
@@ -230,6 +268,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity reciprocity = 10;</code>
+   *
+   * @return The reciprocity.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity getReciprocity();
 
@@ -241,6 +281,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Tense tense = 11;</code>
+   *
+   * @return The enum numeric value on the wire for tense.
    */
   int getTenseValue();
   /**
@@ -251,6 +293,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Tense tense = 11;</code>
+   *
+   * @return The tense.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Tense getTense();
 
@@ -262,6 +306,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Voice voice = 12;</code>
+   *
+   * @return The enum numeric value on the wire for voice.
    */
   int getVoiceValue();
   /**
@@ -272,6 +318,8 @@ public interface PartOfSpeechOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech.Voice voice = 12;</code>
+   *
+   * @return The voice.
    */
   com.google.cloud.language.v1beta2.PartOfSpeech.Voice getVoice();
 }

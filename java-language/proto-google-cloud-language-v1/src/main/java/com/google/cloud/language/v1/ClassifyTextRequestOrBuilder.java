@@ -33,6 +33,8 @@ public interface ClassifyTextRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the document field is set.
    */
   boolean hasDocument();
   /**
@@ -45,6 +47,8 @@ public interface ClassifyTextRequestOrBuilder
    * <code>
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The document.
    */
   com.google.cloud.language.v1.Document getDocument();
   /**

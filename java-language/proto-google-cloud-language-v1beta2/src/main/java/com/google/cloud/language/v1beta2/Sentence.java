@@ -40,6 +40,12 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
   private Sentence() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Sentence();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,6 +144,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
+   *
+   * @return Whether the text field is set.
    */
   public boolean hasText() {
     return text_ != null;
@@ -151,6 +158,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
+   *
+   * @return The text.
    */
   public com.google.cloud.language.v1beta2.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1beta2.TextSpan.getDefaultInstance() : text_;
@@ -180,6 +189,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
+   *
+   * @return Whether the sentiment field is set.
    */
   public boolean hasSentiment() {
     return sentiment_ != null;
@@ -194,6 +205,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
+   *
+   * @return The sentiment.
    */
   public com.google.cloud.language.v1beta2.Sentiment getSentiment() {
     return sentiment_ == null
@@ -585,6 +598,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
+     *
+     * @return Whether the text field is set.
      */
     public boolean hasText() {
       return textBuilder_ != null || text_ != null;
@@ -597,6 +612,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
+     *
+     * @return The text.
      */
     public com.google.cloud.language.v1beta2.TextSpan getText() {
       if (textBuilder_ == null) {
@@ -768,6 +785,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
+     *
+     * @return Whether the sentiment field is set.
      */
     public boolean hasSentiment() {
       return sentimentBuilder_ != null || sentiment_ != null;
@@ -782,6 +801,8 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
+     *
+     * @return The sentiment.
      */
     public com.google.cloud.language.v1beta2.Sentiment getSentiment() {
       if (sentimentBuilder_ == null) {

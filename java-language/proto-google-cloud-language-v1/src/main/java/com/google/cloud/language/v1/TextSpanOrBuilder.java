@@ -31,6 +31,8 @@ public interface TextSpanOrBuilder
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The content.
    */
   java.lang.String getContent();
   /**
@@ -41,6 +43,8 @@ public interface TextSpanOrBuilder
    * </pre>
    *
    * <code>string content = 1;</code>
+   *
+   * @return The bytes for content.
    */
   com.google.protobuf.ByteString getContentBytes();
 
@@ -53,6 +57,8 @@ public interface TextSpanOrBuilder
    * </pre>
    *
    * <code>int32 begin_offset = 2;</code>
+   *
+   * @return The beginOffset.
    */
   int getBeginOffset();
 }

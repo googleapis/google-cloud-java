@@ -46,6 +46,12 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotateTextResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -127,11 +133,11 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 categories_ =
                     new java.util.ArrayList<
                         com.google.cloud.language.v1beta2.ClassificationCategory>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000008;
               }
               categories_.add(
                   input.readMessage(
@@ -162,7 +168,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         categories_ = java.util.Collections.unmodifiableList(categories_);
       }
       this.unknownFields = unknownFields.build();
@@ -185,7 +191,6 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.language.v1beta2.AnnotateTextResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SENTENCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.language.v1beta2.Sentence> sentences_;
   /**
@@ -414,6 +419,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 4;</code>
+   *
+   * @return Whether the documentSentiment field is set.
    */
   public boolean hasDocumentSentiment() {
     return documentSentiment_ != null;
@@ -427,6 +434,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 4;</code>
+   *
+   * @return The documentSentiment.
    */
   public com.google.cloud.language.v1beta2.Sentiment getDocumentSentiment() {
     return documentSentiment_ == null
@@ -459,6 +468,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string language = 5;</code>
+   *
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -481,6 +492,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string language = 5;</code>
+   *
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -856,7 +869,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         categoriesBuilder_.clear();
       }
@@ -888,7 +901,6 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.language.v1beta2.AnnotateTextResponse result =
           new com.google.cloud.language.v1beta2.AnnotateTextResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (sentencesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
@@ -923,15 +935,14 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       result.language_ = language_;
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.categories_ = categories_;
       } else {
         result.categories_ = categoriesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1074,7 +1085,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -1087,7 +1098,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             categoriesBuilder_.dispose();
             categoriesBuilder_ = null;
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000008);
             categoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoriesFieldBuilder()
@@ -2282,6 +2293,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 4;</code>
+     *
+     * @return Whether the documentSentiment field is set.
      */
     public boolean hasDocumentSentiment() {
       return documentSentimentBuilder_ != null || documentSentiment_ != null;
@@ -2295,6 +2308,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 4;</code>
+     *
+     * @return The documentSentiment.
      */
     public com.google.cloud.language.v1beta2.Sentiment getDocumentSentiment() {
       if (documentSentimentBuilder_ == null) {
@@ -2469,6 +2484,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language = 5;</code>
+     *
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -2491,6 +2508,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language = 5;</code>
+     *
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString getLanguageBytes() {
       java.lang.Object ref = language_;
@@ -2513,6 +2532,9 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language = 5;</code>
+     *
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(java.lang.String value) {
       if (value == null) {
@@ -2533,6 +2555,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
 
@@ -2550,6 +2574,9 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string language = 5;</code>
+     *
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2566,11 +2593,11 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         categories_ =
             new java.util.ArrayList<com.google.cloud.language.v1beta2.ClassificationCategory>(
                 categories_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2792,7 +2819,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public Builder clearCategories() {
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         categoriesBuilder_.clear();
@@ -2920,7 +2947,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.language.v1beta2.ClassificationCategory,
                 com.google.cloud.language.v1beta2.ClassificationCategory.Builder,
                 com.google.cloud.language.v1beta2.ClassificationCategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                categories_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;

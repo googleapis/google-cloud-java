@@ -31,6 +31,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.Entity.Type type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -62,6 +68,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.Entity.Type type = 2;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.language.v1.Entity.Type getType();
 
@@ -146,6 +154,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>float salience = 4;</code>
+   *
+   * @return The salience.
    */
   float getSalience();
 
@@ -217,6 +227,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
+   *
+   * @return Whether the sentiment field is set.
    */
   boolean hasSentiment();
   /**
@@ -230,6 +242,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
+   *
+   * @return The sentiment.
    */
   com.google.cloud.language.v1.Sentiment getSentiment();
   /**

@@ -32,6 +32,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Document.Type type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -43,6 +45,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Document.Type type = 1;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.language.v1beta2.Document.Type getType();
 
@@ -55,6 +59,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string content = 2;</code>
+   *
+   * @return The content.
    */
   java.lang.String getContent();
   /**
@@ -66,6 +72,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string content = 2;</code>
+   *
+   * @return The bytes for content.
    */
   com.google.protobuf.ByteString getContentBytes();
 
@@ -80,6 +88,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string gcs_content_uri = 3;</code>
+   *
+   * @return The gcsContentUri.
    */
   java.lang.String getGcsContentUri();
   /**
@@ -93,6 +103,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string gcs_content_uri = 3;</code>
+   *
+   * @return The bytes for gcsContentUri.
    */
   com.google.protobuf.ByteString getGcsContentUriBytes();
 
@@ -111,6 +123,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string language = 4;</code>
+   *
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -128,6 +142,8 @@ public interface DocumentOrBuilder
    * </pre>
    *
    * <code>string language = 4;</code>
+   *
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString getLanguageBytes();
 

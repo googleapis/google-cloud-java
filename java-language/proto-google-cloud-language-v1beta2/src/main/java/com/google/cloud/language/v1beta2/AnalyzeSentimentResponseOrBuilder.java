@@ -31,6 +31,8 @@ public interface AnalyzeSentimentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 1;</code>
+   *
+   * @return Whether the documentSentiment field is set.
    */
   boolean hasDocumentSentiment();
   /**
@@ -41,6 +43,8 @@ public interface AnalyzeSentimentResponseOrBuilder
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 1;</code>
+   *
+   * @return The documentSentiment.
    */
   com.google.cloud.language.v1beta2.Sentiment getDocumentSentiment();
   /**
@@ -64,6 +68,8 @@ public interface AnalyzeSentimentResponseOrBuilder
    * </pre>
    *
    * <code>string language = 2;</code>
+   *
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -76,6 +82,8 @@ public interface AnalyzeSentimentResponseOrBuilder
    * </pre>
    *
    * <code>string language = 2;</code>
+   *
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString getLanguageBytes();
 
