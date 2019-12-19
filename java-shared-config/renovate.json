@@ -1,27 +1,41 @@
 {
   "extends": [
-    "config:base"
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":updateNotScheduled",
+    ":automergeDisabled",
+    ":ignoreModulesAndTests",
+    ":maintainLockFilesDisabled",
+    ":autodetectPinVersions"
   ],
-  "ignoreDeps": [],
   "packageRules": [
     {
-      "managers": ["maven"],
-      "packageNames": ["com.google.guava:guava*"],
+      "packagePatterns": [
+        "^com.google.guava:"
+      ],
       "versionScheme": "docker"
     },
     {
-      "packagePatterns": ["^io.grpc:grpc-"],
-      "groupName": "gRPC packages"
+      "packagePatterns": [
+        "*"
+      ],
+      "semanticCommitType": "deps",
+      "semanticCommitScope": null
     },
     {
-      "packagePatterns": ["^com.google.protobuf:protobuf-"],
-      "groupName": "Protobuf packages"
-    },
-    {
-      "packagePatterns": ["^io.opencensus:opencensus-"],
-      "groupName": "OpenCensus packages"
+      "packagePatterns": [
+        "^org.apache.maven",
+        "^org.jacoco:",
+        "^org.codehaus.mojo:",
+        "^org.sonatype.plugins:",
+        "^com.coveo:",
+        "^com.google.cloud:google-cloud-shared-config"
+      ],
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps"
     }
   ],
-  "semanticCommits": true,
-  "semanticCommitType": "deps"
+  "semanticCommits": true
 }
