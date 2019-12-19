@@ -22,6 +22,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -79,6 +80,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.crypto.spec.SecretKeySpec;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -2314,6 +2317,132 @@ public class StorageImplTest {
     signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
     assertTrue(
         signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testV2SignUrlWithQueryParams()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    String dispositionNotEncoded = "attachment; filename=\"" + BLOB_NAME1 + "\"";
+    String dispositionEncoded = "attachment%3B%20filename%3D%22" + BLOB_NAME1 + "%22";
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withV2Signature(),
+            Storage.SignUrlOption.withQueryParams(
+                ImmutableMap.<String, String>of(
+                    "response-content-disposition", dispositionNotEncoded)));
+
+    String stringUrl = url.toString();
+
+    String expectedPrefix =
+        new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            // Query params aren't sorted for V2 signatures; user-supplied params are inserted at
+            // the start of the query string, before the required auth params.
+            .append("?response-content-disposition=")
+            .append(dispositionEncoded)
+            .append("&GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedPrefix));
+    String signature = stringUrl.substring(expectedPrefix.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append('\n')
+        // No value for Content-MD5, blank
+        .append('\n')
+        // No value for Content-Type, blank
+        .append('\n')
+        // Expiration line:
+        .append(42L + 1209600)
+        .append('\n')
+        // Resource line:
+        .append('/')
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  // TODO(b/144304815): Remove this test once all conformance tests contain query param test cases.
+  @Test
+  public void testV4SignUrlWithQueryParams() {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    String dispositionNotEncoded = "attachment; filename=\"" + BLOB_NAME1 + "\"";
+    String dispositionEncoded = "attachment%3B%20filename%3D%22" + BLOB_NAME1 + "%22";
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            6,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withV4Signature(),
+            Storage.SignUrlOption.withQueryParams(
+                ImmutableMap.<String, String>of(
+                    "response-content-disposition", dispositionNotEncoded)));
+    String stringUrl = url.toString();
+    String expectedPrefix =
+        new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append('?')
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedPrefix));
+    String restOfUrl = stringUrl.substring(expectedPrefix.length());
+
+    Pattern pattern =
+        Pattern.compile(
+            // We use the same code to construct the canonical request query string as we do to
+            // construct the query string used in the final URL, so this query string should also be
+            // sorted correctly, except for the trailing x-goog-signature param.
+            new StringBuilder("X-Goog-Algorithm=GOOG4-RSA-SHA256")
+                .append("&X-Goog-Credential=[^&]+")
+                .append("&X-Goog-Date=[^&]+")
+                .append("&X-Goog-Expires=[^&]+")
+                .append("&X-Goog-SignedHeaders=[^&]+")
+                .append("&response-content-disposition=[^&]+")
+                // Signature is always tacked onto the end of the final URL; it's not sorted w/ the
+                // other params above, since the signature is not known when you're constructing the
+                // query string line of the canonical request string.
+                .append("&X-Goog-Signature=.*")
+                .toString());
+    Matcher matcher = pattern.matcher(restOfUrl);
+    assertTrue(restOfUrl, matcher.matches());
+
+    // Make sure query param was encoded properly.
+    assertNotEquals(-1, restOfUrl.indexOf("&response-content-disposition=" + dispositionEncoded));
   }
 
   @Test
