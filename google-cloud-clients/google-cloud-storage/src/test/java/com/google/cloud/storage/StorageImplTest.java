@@ -714,10 +714,10 @@ public class StorageImplTest {
     BlobInfo infoWithHashes = infoBuilder.setMd5(CONTENT_MD5).setCrc32c(CONTENT_CRC32C).build();
     BlobInfo infoWithoutHashes = infoBuilder.setMd5(null).setCrc32c(null).build();
     EasyMock.expect(
-        storageRpcMock.create(
-            EasyMock.eq(infoWithoutHashes.toPb()),
-            EasyMock.capture(capturedStream),
-            EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT)))
+            storageRpcMock.create(
+                EasyMock.eq(infoWithoutHashes.toPb()),
+                EasyMock.capture(capturedStream),
+                EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT)))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
