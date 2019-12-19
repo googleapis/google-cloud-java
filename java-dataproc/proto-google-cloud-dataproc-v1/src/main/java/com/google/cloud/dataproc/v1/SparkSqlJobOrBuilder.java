@@ -153,7 +153,7 @@ public interface SparkSqlJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -166,7 +166,7 @@ public interface SparkSqlJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -182,7 +182,7 @@ public interface SparkSqlJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -195,7 +195,7 @@ public interface SparkSqlJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -208,7 +208,7 @@ public interface SparkSqlJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];

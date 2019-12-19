@@ -172,7 +172,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param job Required. The job resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -252,7 +252,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param jobId Required. The job ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -337,7 +337,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String projectId, String region) {
@@ -364,7 +364,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param filter Optional. A filter constraining the jobs to list. Filters are case-sensitive and
    *     have the following syntax:
    *     <p>[field = value] AND [field [= value]] ...
@@ -551,7 +551,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param jobId Required. The job ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -640,7 +640,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param jobId Required. The job ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

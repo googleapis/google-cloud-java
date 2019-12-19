@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
+ * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
  * applications on YARN.
  * </pre>
  *
@@ -676,7 +676,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -700,7 +700,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -716,7 +716,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -737,7 +737,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -1089,7 +1089,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
+   * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
    * applications on YARN.
    * </pre>
    *
@@ -2386,7 +2386,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2410,7 +2410,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2426,7 +2426,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2447,7 +2447,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2475,7 +2475,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2500,7 +2500,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2523,7 +2523,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>

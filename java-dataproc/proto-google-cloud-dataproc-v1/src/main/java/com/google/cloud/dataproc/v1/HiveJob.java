@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
+ * A Dataproc job for running [Apache Hive](https://hive.apache.org/)
  * queries on YARN.
  * </pre>
  *
@@ -496,7 +496,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -520,7 +520,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -536,7 +536,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -557,7 +557,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -893,7 +893,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
+   * A Dataproc job for running [Apache Hive](https://hive.apache.org/)
    * queries on YARN.
    * </pre>
    *
@@ -1731,7 +1731,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
@@ -1755,7 +1755,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
@@ -1771,7 +1771,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
@@ -1792,7 +1792,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
@@ -1820,7 +1820,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
@@ -1845,7 +1845,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
@@ -1868,7 +1868,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>

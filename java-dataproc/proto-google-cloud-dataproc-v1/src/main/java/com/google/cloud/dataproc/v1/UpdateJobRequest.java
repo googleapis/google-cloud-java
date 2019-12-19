@@ -212,7 +212,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -234,7 +234,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -924,7 +924,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -946,7 +946,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -968,7 +968,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -989,7 +989,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1006,7 +1006,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>

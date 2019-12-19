@@ -32,7 +32,7 @@ public interface AutoscalingConfigOrBuilder
    * Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-   * Note that the policy must be in the same project and Cloud Dataproc region.
+   * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49,7 +49,7 @@ public interface AutoscalingConfigOrBuilder
    * Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-   * Note that the policy must be in the same project and Cloud Dataproc region.
+   * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

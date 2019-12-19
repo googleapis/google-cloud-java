@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * Cloud Dataproc job status.
+ * Dataproc job status.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.JobStatus}
@@ -506,7 +506,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The agent-reported status is out of date, which may be caused by a
-     * loss of communication between the agent and Cloud Dataproc. If the
+     * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
      * Applies to RUNNING state.
      * </pre>
@@ -556,7 +556,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The agent-reported status is out of date, which may be caused by a
-     * loss of communication between the agent and Cloud Dataproc. If the
+     * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
      * Applies to RUNNING state.
      * </pre>
@@ -1022,7 +1022,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Dataproc job status.
+   * Dataproc job status.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.JobStatus}

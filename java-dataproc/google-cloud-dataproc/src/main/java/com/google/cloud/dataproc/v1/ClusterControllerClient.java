@@ -195,7 +195,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param cluster Required. The cluster to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -323,7 +323,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project the cluster belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param clusterName Required. The cluster name.
    * @param cluster Required. The changes to the cluster.
    * @param updateMask Required. Specifies the path, relative to `Cluster`, of the field to update.
@@ -486,7 +486,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param clusterName Required. The cluster name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -611,7 +611,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param clusterName Required. The cluster name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -697,7 +697,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersPagedResponse listClusters(String projectId, String region) {
@@ -725,7 +725,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param filter Optional. A filter constraining the clusters to list. Filters are case-sensitive
    *     and have the following syntax:
    *     <p>field = value [AND [field = value]] ...
@@ -862,7 +862,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param clusterName Required. The cluster name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

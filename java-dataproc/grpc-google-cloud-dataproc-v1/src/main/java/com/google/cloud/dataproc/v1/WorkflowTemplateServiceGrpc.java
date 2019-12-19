@@ -27,7 +27,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  * <pre>
  * The API interface for managing Workflow Templates in the
- * Cloud Dataproc API.
+ * Dataproc API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -506,7 +506,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public abstract static class WorkflowTemplateServiceImplBase implements io.grpc.BindableService {
@@ -703,7 +703,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public static final class WorkflowTemplateServiceStub
@@ -881,7 +881,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public static final class WorkflowTemplateServiceBlockingStub
@@ -1037,7 +1037,7 @@ public final class WorkflowTemplateServiceGrpc {
    *
    * <pre>
    * The API interface for managing Workflow Templates in the
-   * Cloud Dataproc API.
+   * Dataproc API.
    * </pre>
    */
   public static final class WorkflowTemplateServiceFutureStub

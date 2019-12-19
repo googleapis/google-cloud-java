@@ -130,7 +130,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the template field is set.
@@ -147,7 +147,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The template.
@@ -166,7 +166,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
@@ -523,7 +523,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the template field is set.
@@ -540,7 +540,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The template.
@@ -563,7 +563,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTemplate(com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
@@ -588,7 +588,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTemplate(
@@ -611,7 +611,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTemplate(com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
@@ -640,7 +640,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTemplate() {
@@ -663,7 +663,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder getTemplateBuilder() {
@@ -680,7 +680,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
@@ -701,7 +701,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

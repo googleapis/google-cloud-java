@@ -226,7 +226,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The projectId.
    */
@@ -248,7 +248,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for projectId.
    */
@@ -274,7 +274,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The clusterName.
    */
@@ -297,7 +297,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for clusterName.
    */
@@ -319,11 +319,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -334,11 +336,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The config.
    */
@@ -351,11 +355,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -609,7 +615,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -632,7 +638,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -1240,7 +1246,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The projectId.
      */
@@ -1262,7 +1268,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for projectId.
      */
@@ -1284,7 +1290,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -1305,7 +1311,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1322,7 +1328,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -1347,7 +1353,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The clusterName.
      */
@@ -1370,7 +1376,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for clusterName.
      */
@@ -1393,7 +1399,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The clusterName to set.
      * @return This builder for chaining.
@@ -1415,7 +1421,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1433,7 +1439,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for clusterName to set.
      * @return This builder for chaining.
@@ -1459,11 +1465,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the config field is set.
      */
@@ -1474,11 +1482,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The config.
      */
@@ -1495,11 +1505,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -1518,11 +1530,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
@@ -1538,11 +1552,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -1565,11 +1581,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -1586,11 +1604,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfig.Builder getConfigBuilder() {
 
@@ -1601,11 +1621,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -1620,11 +1642,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ClusterConfig,
@@ -2436,7 +2460,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2459,7 +2483,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2482,7 +2506,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2504,7 +2528,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2522,7 +2546,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *

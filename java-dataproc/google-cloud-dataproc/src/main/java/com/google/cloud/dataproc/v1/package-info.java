@@ -56,8 +56,7 @@
  *
  * ============================= WorkflowTemplateServiceClient =============================
  *
- * <p>Service Description: The API interface for managing Workflow Templates in the Cloud Dataproc
- * API.
+ * <p>Service Description: The API interface for managing Workflow Templates in the Dataproc API.
  *
  * <p>Sample for WorkflowTemplateServiceClient:
  *

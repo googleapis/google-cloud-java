@@ -30,7 +30,7 @@ public interface ClusterOrBuilder
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The projectId.
    */
@@ -42,7 +42,7 @@ public interface ClusterOrBuilder
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for projectId.
    */
@@ -56,7 +56,7 @@ public interface ClusterOrBuilder
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The clusterName.
    */
@@ -69,7 +69,7 @@ public interface ClusterOrBuilder
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for clusterName.
    */
@@ -79,11 +79,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -92,11 +94,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The config.
    */
@@ -105,11 +109,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder();
 
@@ -304,7 +310,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -317,7 +323,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *

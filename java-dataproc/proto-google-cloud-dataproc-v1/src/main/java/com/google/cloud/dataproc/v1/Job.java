@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Cloud Dataproc job resource.
+ * A Dataproc job resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.Job}
@@ -1712,7 +1712,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job resource.
+   * A Dataproc job resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.Job}

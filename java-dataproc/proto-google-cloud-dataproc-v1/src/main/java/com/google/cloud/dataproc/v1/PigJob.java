@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Cloud Dataproc job for running [Apache Pig](https://pig.apache.org/)
+ * A Dataproc job for running [Apache Pig](https://pig.apache.org/)
  * queries on YARN.
  * </pre>
  *
@@ -512,7 +512,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -536,7 +536,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -552,7 +552,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -573,7 +573,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -970,7 +970,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job for running [Apache Pig](https://pig.apache.org/)
+   * A Dataproc job for running [Apache Pig](https://pig.apache.org/)
    * queries on YARN.
    * </pre>
    *
@@ -1822,7 +1822,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1846,7 +1846,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1862,7 +1862,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1883,7 +1883,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1911,7 +1911,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1936,7 +1936,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1959,7 +1959,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>

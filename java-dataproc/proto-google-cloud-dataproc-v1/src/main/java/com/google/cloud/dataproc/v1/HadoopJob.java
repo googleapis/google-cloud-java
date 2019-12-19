@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Cloud Dataproc job for running
+ * A Dataproc job for running
  * [Apache Hadoop
  * MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
  * jobs on [Apache Hadoop
@@ -695,7 +695,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
@@ -719,7 +719,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
@@ -735,7 +735,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
@@ -756,7 +756,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
    * classes in user code.
    * </pre>
@@ -1109,7 +1109,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job for running
+   * A Dataproc job for running
    * [Apache Hadoop
    * MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
    * jobs on [Apache Hadoop
@@ -2447,7 +2447,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>
@@ -2471,7 +2471,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>
@@ -2487,7 +2487,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>
@@ -2508,7 +2508,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>
@@ -2536,7 +2536,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>
@@ -2561,7 +2561,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>
@@ -2584,7 +2584,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Hadoop.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
      * classes in user code.
      * </pre>

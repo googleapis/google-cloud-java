@@ -399,7 +399,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The agent-reported status is out of date (may occur if
-     * Cloud Dataproc loses communication with Agent).
+     * Dataproc loses communication with Agent).
      * Applies to RUNNING state.
      * </pre>
      *
@@ -437,7 +437,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The agent-reported status is out of date (may occur if
-     * Cloud Dataproc loses communication with Agent).
+     * Dataproc loses communication with Agent).
      * Applies to RUNNING state.
      * </pre>
      *
