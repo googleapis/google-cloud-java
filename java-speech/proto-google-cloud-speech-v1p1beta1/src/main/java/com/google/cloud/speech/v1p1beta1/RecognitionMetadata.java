@@ -48,6 +48,12 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecognitionMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -381,12 +386,20 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static InteractionType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static InteractionType forNumber(int value) {
       switch (value) {
         case 0:
@@ -566,12 +579,20 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MicrophoneDistance valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MicrophoneDistance forNumber(int value) {
       switch (value) {
         case 0:
@@ -718,12 +739,20 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static OriginalMediaType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static OriginalMediaType forNumber(int value) {
       switch (value) {
         case 0:
@@ -948,12 +977,20 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RecordingDeviceType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static RecordingDeviceType forNumber(int value) {
       switch (value) {
         case 0:
@@ -1035,6 +1072,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
    * </code>
+   *
+   * @return The enum numeric value on the wire for interactionType.
    */
   public int getInteractionTypeValue() {
     return interactionType_;
@@ -1048,6 +1087,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
    * </code>
+   *
+   * @return The interactionType.
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType
       getInteractionType() {
@@ -1073,6 +1114,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>uint32 industry_naics_code_of_audio = 3;</code>
+   *
+   * @return The industryNaicsCodeOfAudio.
    */
   public int getIndustryNaicsCodeOfAudio() {
     return industryNaicsCodeOfAudio_;
@@ -1090,6 +1133,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for microphoneDistance.
    */
   public int getMicrophoneDistanceValue() {
     return microphoneDistance_;
@@ -1104,6 +1149,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
    * </code>
+   *
+   * @return The microphoneDistance.
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance
       getMicrophoneDistance() {
@@ -1128,6 +1175,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for originalMediaType.
    */
   public int getOriginalMediaTypeValue() {
     return originalMediaType_;
@@ -1142,6 +1191,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
    * </code>
+   *
+   * @return The originalMediaType.
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType
       getOriginalMediaType() {
@@ -1166,6 +1217,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
    * </code>
+   *
+   * @return The enum numeric value on the wire for recordingDeviceType.
    */
   public int getRecordingDeviceTypeValue() {
     return recordingDeviceType_;
@@ -1180,6 +1233,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
    * </code>
+   *
+   * @return The recordingDeviceType.
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
       getRecordingDeviceType() {
@@ -1204,6 +1259,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string recording_device_name = 7;</code>
+   *
+   * @return The recordingDeviceName.
    */
   public java.lang.String getRecordingDeviceName() {
     java.lang.Object ref = recordingDeviceName_;
@@ -1226,6 +1283,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string recording_device_name = 7;</code>
+   *
+   * @return The bytes for recordingDeviceName.
    */
   public com.google.protobuf.ByteString getRecordingDeviceNameBytes() {
     java.lang.Object ref = recordingDeviceName_;
@@ -1252,6 +1311,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string original_mime_type = 8;</code>
+   *
+   * @return The originalMimeType.
    */
   public java.lang.String getOriginalMimeType() {
     java.lang.Object ref = originalMimeType_;
@@ -1275,6 +1336,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string original_mime_type = 8;</code>
+   *
+   * @return The bytes for originalMimeType.
    */
   public com.google.protobuf.ByteString getOriginalMimeTypeBytes() {
     java.lang.Object ref = originalMimeType_;
@@ -1299,6 +1362,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
+   *
+   * @return The obfuscatedId.
    */
   @java.lang.Deprecated
   public long getObfuscatedId() {
@@ -1316,6 +1381,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string audio_topic = 10;</code>
+   *
+   * @return The audioTopic.
    */
   public java.lang.String getAudioTopic() {
     java.lang.Object ref = audioTopic_;
@@ -1337,6 +1404,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string audio_topic = 10;</code>
+   *
+   * @return The bytes for audioTopic.
    */
   public com.google.protobuf.ByteString getAudioTopicBytes() {
     java.lang.Object ref = audioTopic_;
@@ -1826,6 +1895,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for interactionType.
      */
     public int getInteractionTypeValue() {
       return interactionType_;
@@ -1840,6 +1911,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for interactionType to set.
+     * @return This builder for chaining.
      */
     public Builder setInteractionTypeValue(int value) {
       interactionType_ = value;
@@ -1856,6 +1930,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
      * </code>
+     *
+     * @return The interactionType.
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType
         getInteractionType() {
@@ -1877,6 +1953,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
      * </code>
+     *
+     * @param value The interactionType to set.
+     * @return This builder for chaining.
      */
     public Builder setInteractionType(
         com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType value) {
@@ -1898,6 +1977,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInteractionType() {
 
@@ -1918,6 +1999,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>uint32 industry_naics_code_of_audio = 3;</code>
+     *
+     * @return The industryNaicsCodeOfAudio.
      */
     public int getIndustryNaicsCodeOfAudio() {
       return industryNaicsCodeOfAudio_;
@@ -1933,6 +2016,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>uint32 industry_naics_code_of_audio = 3;</code>
+     *
+     * @param value The industryNaicsCodeOfAudio to set.
+     * @return This builder for chaining.
      */
     public Builder setIndustryNaicsCodeOfAudio(int value) {
 
@@ -1951,6 +2037,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>uint32 industry_naics_code_of_audio = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIndustryNaicsCodeOfAudio() {
 
@@ -1970,6 +2058,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
      * </code>
+     *
+     * @return The enum numeric value on the wire for microphoneDistance.
      */
     public int getMicrophoneDistanceValue() {
       return microphoneDistance_;
@@ -1984,6 +2074,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for microphoneDistance to set.
+     * @return This builder for chaining.
      */
     public Builder setMicrophoneDistanceValue(int value) {
       microphoneDistance_ = value;
@@ -2000,6 +2093,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
      * </code>
+     *
+     * @return The microphoneDistance.
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance
         getMicrophoneDistance() {
@@ -2021,6 +2116,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
      * </code>
+     *
+     * @param value The microphoneDistance to set.
+     * @return This builder for chaining.
      */
     public Builder setMicrophoneDistance(
         com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance value) {
@@ -2042,6 +2140,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMicrophoneDistance() {
 
@@ -2061,6 +2161,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
      * </code>
+     *
+     * @return The enum numeric value on the wire for originalMediaType.
      */
     public int getOriginalMediaTypeValue() {
       return originalMediaType_;
@@ -2075,6 +2177,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for originalMediaType to set.
+     * @return This builder for chaining.
      */
     public Builder setOriginalMediaTypeValue(int value) {
       originalMediaType_ = value;
@@ -2091,6 +2196,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
      * </code>
+     *
+     * @return The originalMediaType.
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType
         getOriginalMediaType() {
@@ -2112,6 +2219,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
      * </code>
+     *
+     * @param value The originalMediaType to set.
+     * @return This builder for chaining.
      */
     public Builder setOriginalMediaType(
         com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType value) {
@@ -2133,6 +2243,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOriginalMediaType() {
 
@@ -2152,6 +2264,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
      * </code>
+     *
+     * @return The enum numeric value on the wire for recordingDeviceType.
      */
     public int getRecordingDeviceTypeValue() {
       return recordingDeviceType_;
@@ -2166,6 +2280,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for recordingDeviceType to set.
+     * @return This builder for chaining.
      */
     public Builder setRecordingDeviceTypeValue(int value) {
       recordingDeviceType_ = value;
@@ -2182,6 +2299,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
      * </code>
+     *
+     * @return The recordingDeviceType.
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
         getRecordingDeviceType() {
@@ -2203,6 +2322,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
      * </code>
+     *
+     * @param value The recordingDeviceType to set.
+     * @return This builder for chaining.
      */
     public Builder setRecordingDeviceType(
         com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType value) {
@@ -2224,6 +2346,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRecordingDeviceType() {
 
@@ -2243,6 +2367,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string recording_device_name = 7;</code>
+     *
+     * @return The recordingDeviceName.
      */
     public java.lang.String getRecordingDeviceName() {
       java.lang.Object ref = recordingDeviceName_;
@@ -2265,6 +2391,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string recording_device_name = 7;</code>
+     *
+     * @return The bytes for recordingDeviceName.
      */
     public com.google.protobuf.ByteString getRecordingDeviceNameBytes() {
       java.lang.Object ref = recordingDeviceName_;
@@ -2287,6 +2415,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string recording_device_name = 7;</code>
+     *
+     * @param value The recordingDeviceName to set.
+     * @return This builder for chaining.
      */
     public Builder setRecordingDeviceName(java.lang.String value) {
       if (value == null) {
@@ -2307,6 +2438,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string recording_device_name = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRecordingDeviceName() {
 
@@ -2324,6 +2457,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string recording_device_name = 7;</code>
+     *
+     * @param value The bytes for recordingDeviceName to set.
+     * @return This builder for chaining.
      */
     public Builder setRecordingDeviceNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2348,6 +2484,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string original_mime_type = 8;</code>
+     *
+     * @return The originalMimeType.
      */
     public java.lang.String getOriginalMimeType() {
       java.lang.Object ref = originalMimeType_;
@@ -2371,6 +2509,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string original_mime_type = 8;</code>
+     *
+     * @return The bytes for originalMimeType.
      */
     public com.google.protobuf.ByteString getOriginalMimeTypeBytes() {
       java.lang.Object ref = originalMimeType_;
@@ -2394,6 +2534,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string original_mime_type = 8;</code>
+     *
+     * @param value The originalMimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setOriginalMimeType(java.lang.String value) {
       if (value == null) {
@@ -2415,6 +2558,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string original_mime_type = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOriginalMimeType() {
 
@@ -2433,6 +2578,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string original_mime_type = 8;</code>
+     *
+     * @param value The bytes for originalMimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setOriginalMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2455,6 +2603,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
+     *
+     * @return The obfuscatedId.
      */
     @java.lang.Deprecated
     public long getObfuscatedId() {
@@ -2469,6 +2619,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
+     *
+     * @param value The obfuscatedId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setObfuscatedId(long value) {
@@ -2486,6 +2639,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearObfuscatedId() {
@@ -2505,6 +2660,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string audio_topic = 10;</code>
+     *
+     * @return The audioTopic.
      */
     public java.lang.String getAudioTopic() {
       java.lang.Object ref = audioTopic_;
@@ -2526,6 +2683,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string audio_topic = 10;</code>
+     *
+     * @return The bytes for audioTopic.
      */
     public com.google.protobuf.ByteString getAudioTopicBytes() {
       java.lang.Object ref = audioTopic_;
@@ -2547,6 +2706,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string audio_topic = 10;</code>
+     *
+     * @param value The audioTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioTopic(java.lang.String value) {
       if (value == null) {
@@ -2566,6 +2728,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string audio_topic = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioTopic() {
 
@@ -2582,6 +2746,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string audio_topic = 10;</code>
+     *
+     * @param value The bytes for audioTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioTopicBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

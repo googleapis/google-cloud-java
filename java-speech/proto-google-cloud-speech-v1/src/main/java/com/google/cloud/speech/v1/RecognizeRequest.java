@@ -40,6 +40,12 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
   private RecognizeRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecognizeRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -157,6 +164,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The config.
    */
   public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
     return config_ == null
@@ -191,6 +200,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the audio field is set.
    */
   public boolean hasAudio() {
     return audio_ != null;
@@ -205,6 +216,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    * <code>
    * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The audio.
    */
   public com.google.cloud.speech.v1.RecognitionAudio getAudio() {
     return audio_ == null
@@ -599,6 +612,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -614,6 +629,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The config.
      */
     public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
       if (configBuilder_ == null) {
@@ -806,6 +823,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the audio field is set.
      */
     public boolean hasAudio() {
       return audioBuilder_ != null || audio_ != null;
@@ -820,6 +839,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <code>
      * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The audio.
      */
     public com.google.cloud.speech.v1.RecognitionAudio getAudio() {
       if (audioBuilder_ == null) {

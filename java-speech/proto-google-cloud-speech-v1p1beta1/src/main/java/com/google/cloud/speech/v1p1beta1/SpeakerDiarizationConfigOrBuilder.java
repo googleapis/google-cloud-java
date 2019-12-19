@@ -33,6 +33,8 @@ public interface SpeakerDiarizationConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 1;</code>
+   *
+   * @return The enableSpeakerDiarization.
    */
   boolean getEnableSpeakerDiarization();
 
@@ -46,6 +48,8 @@ public interface SpeakerDiarizationConfigOrBuilder
    * </pre>
    *
    * <code>int32 min_speaker_count = 2;</code>
+   *
+   * @return The minSpeakerCount.
    */
   int getMinSpeakerCount();
 
@@ -59,6 +63,8 @@ public interface SpeakerDiarizationConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_speaker_count = 3;</code>
+   *
+   * @return The maxSpeakerCount.
    */
   int getMaxSpeakerCount();
 }

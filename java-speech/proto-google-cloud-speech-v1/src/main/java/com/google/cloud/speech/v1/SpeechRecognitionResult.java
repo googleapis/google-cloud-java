@@ -42,6 +42,12 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeechRecognitionResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -121,7 +127,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
             com.google.cloud.speech.v1.SpeechRecognitionResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> alternatives_;
   /**
@@ -215,6 +220,8 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int32 channel_tag = 2;</code>
+   *
+   * @return The channelTag.
    */
   public int getChannelTag() {
     return channelTag_;
@@ -473,7 +480,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       com.google.cloud.speech.v1.SpeechRecognitionResult result =
           new com.google.cloud.speech.v1.SpeechRecognitionResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -484,7 +490,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         result.alternatives_ = alternativesBuilder_.build();
       }
       result.channelTag_ = channelTag_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1026,6 +1031,8 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 channel_tag = 2;</code>
+     *
+     * @return The channelTag.
      */
     public int getChannelTag() {
       return channelTag_;
@@ -1040,6 +1047,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 channel_tag = 2;</code>
+     *
+     * @param value The channelTag to set.
+     * @return This builder for chaining.
      */
     public Builder setChannelTag(int value) {
 
@@ -1057,6 +1067,8 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 channel_tag = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearChannelTag() {
 

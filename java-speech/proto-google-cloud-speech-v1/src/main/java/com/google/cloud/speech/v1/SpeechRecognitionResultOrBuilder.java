@@ -101,6 +101,8 @@ public interface SpeechRecognitionResultOrBuilder
    * </pre>
    *
    * <code>int32 channel_tag = 2;</code>
+   *
+   * @return The channelTag.
    */
   int getChannelTag();
 }

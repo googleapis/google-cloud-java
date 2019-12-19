@@ -78,6 +78,12 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognizeResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -117,11 +123,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               results_.add(
                   input.readMessage(
@@ -150,7 +156,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         results_ = java.util.Collections.unmodifiableList(results_);
       }
       this.unknownFields = unknownFields.build();
@@ -247,12 +253,20 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static SpeechEventType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static SpeechEventType forNumber(int value) {
       switch (value) {
         case 0:
@@ -312,7 +326,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType)
   }
 
-  private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 1;
   private com.google.rpc.Status error_;
   /**
@@ -324,6 +337,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return Whether the error field is set.
    */
   public boolean hasError() {
     return error_ != null;
@@ -337,6 +352,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return The error.
    */
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
@@ -449,6 +466,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    * <code>
    * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for speechEventType.
    */
   public int getSpeechEventTypeValue() {
     return speechEventType_;
@@ -463,6 +482,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    * <code>
    * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
    * </code>
+   *
+   * @return The speechEventType.
    */
   public com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType
       getSpeechEventType() {
@@ -756,7 +777,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         resultsBuilder_.clear();
       }
@@ -791,23 +812,21 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse result =
           new com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (errorBuilder_ == null) {
         result.error_ = error_;
       } else {
         result.error_ = errorBuilder_.build();
       }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.results_ = results_;
       } else {
         result.results_ = resultsBuilder_.build();
       }
       result.speechEventType_ = speechEventType_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -866,7 +885,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         if (!other.results_.isEmpty()) {
           if (results_.isEmpty()) {
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResultsIsMutable();
             results_.addAll(other.results_);
@@ -879,7 +898,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             resultsBuilder_.dispose();
             resultsBuilder_ = null;
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             resultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResultsFieldBuilder()
@@ -937,6 +956,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
+     *
+     * @return Whether the error field is set.
      */
     public boolean hasError() {
       return errorBuilder_ != null || error_ != null;
@@ -950,6 +971,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
+     *
+     * @return The error.
      */
     public com.google.rpc.Status getError() {
       if (errorBuilder_ == null) {
@@ -1106,11 +1129,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult>(
                 results_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1365,7 +1388,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     public Builder clearResults() {
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         resultsBuilder_.clear();
@@ -1516,7 +1539,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
                 com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult,
                 com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult.Builder,
                 com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder>(
-                results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;
@@ -1533,6 +1556,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
      * </code>
+     *
+     * @return The enum numeric value on the wire for speechEventType.
      */
     public int getSpeechEventTypeValue() {
       return speechEventType_;
@@ -1547,6 +1572,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for speechEventType to set.
+     * @return This builder for chaining.
      */
     public Builder setSpeechEventTypeValue(int value) {
       speechEventType_ = value;
@@ -1563,6 +1591,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
      * </code>
+     *
+     * @return The speechEventType.
      */
     public com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType
         getSpeechEventType() {
@@ -1585,6 +1615,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
      * </code>
+     *
+     * @param value The speechEventType to set.
+     * @return This builder for chaining.
      */
     public Builder setSpeechEventType(
         com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType value) {
@@ -1606,6 +1639,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpeechEventType() {
 

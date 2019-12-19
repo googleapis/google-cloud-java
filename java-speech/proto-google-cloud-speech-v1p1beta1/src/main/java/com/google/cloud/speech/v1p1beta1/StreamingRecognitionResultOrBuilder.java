@@ -109,6 +109,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>bool is_final = 2;</code>
+   *
+   * @return The isFinal.
    */
   boolean getIsFinal();
 
@@ -124,6 +126,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>float stability = 3;</code>
+   *
+   * @return The stability.
    */
   float getStability();
 
@@ -136,6 +140,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   *
+   * @return Whether the resultEndTime field is set.
    */
   boolean hasResultEndTime();
   /**
@@ -147,6 +153,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   *
+   * @return The resultEndTime.
    */
   com.google.protobuf.Duration getResultEndTime();
   /**
@@ -171,6 +179,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>int32 channel_tag = 5;</code>
+   *
+   * @return The channelTag.
    */
   int getChannelTag();
 
@@ -184,6 +194,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>string language_code = 6;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -196,6 +208,8 @@ public interface StreamingRecognitionResultOrBuilder
    * </pre>
    *
    * <code>string language_code = 6;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

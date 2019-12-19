@@ -40,6 +40,12 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   private SpeakerDiarizationConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeakerDiarizationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +134,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 1;</code>
+   *
+   * @return The enableSpeakerDiarization.
    */
   public boolean getEnableSpeakerDiarization() {
     return enableSpeakerDiarization_;
@@ -146,6 +153,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>int32 min_speaker_count = 2;</code>
+   *
+   * @return The minSpeakerCount.
    */
   public int getMinSpeakerCount() {
     return minSpeakerCount_;
@@ -163,6 +172,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>int32 max_speaker_count = 3;</code>
+   *
+   * @return The maxSpeakerCount.
    */
   public int getMaxSpeakerCount() {
     return maxSpeakerCount_;
@@ -179,6 +190,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The speakerTag.
    */
   @java.lang.Deprecated
   public int getSpeakerTag() {
@@ -558,6 +571,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
+     *
+     * @return The enableSpeakerDiarization.
      */
     public boolean getEnableSpeakerDiarization() {
       return enableSpeakerDiarization_;
@@ -572,6 +587,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
+     *
+     * @param value The enableSpeakerDiarization to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableSpeakerDiarization(boolean value) {
 
@@ -589,6 +607,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableSpeakerDiarization() {
 
@@ -608,6 +628,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>int32 min_speaker_count = 2;</code>
+     *
+     * @return The minSpeakerCount.
      */
     public int getMinSpeakerCount() {
       return minSpeakerCount_;
@@ -622,6 +644,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>int32 min_speaker_count = 2;</code>
+     *
+     * @param value The minSpeakerCount to set.
+     * @return This builder for chaining.
      */
     public Builder setMinSpeakerCount(int value) {
 
@@ -639,6 +664,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>int32 min_speaker_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMinSpeakerCount() {
 
@@ -658,6 +685,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>int32 max_speaker_count = 3;</code>
+     *
+     * @return The maxSpeakerCount.
      */
     public int getMaxSpeakerCount() {
       return maxSpeakerCount_;
@@ -672,6 +701,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>int32 max_speaker_count = 3;</code>
+     *
+     * @param value The maxSpeakerCount to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxSpeakerCount(int value) {
 
@@ -689,6 +721,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>int32 max_speaker_count = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxSpeakerCount() {
 
@@ -707,6 +741,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The speakerTag.
      */
     @java.lang.Deprecated
     public int getSpeakerTag() {
@@ -721,6 +757,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The speakerTag to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setSpeakerTag(int value) {
@@ -738,6 +777,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearSpeakerTag() {

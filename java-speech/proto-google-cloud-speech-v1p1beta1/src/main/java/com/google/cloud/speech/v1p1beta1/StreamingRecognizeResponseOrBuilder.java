@@ -32,6 +32,8 @@ public interface StreamingRecognizeResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return Whether the error field is set.
    */
   boolean hasError();
   /**
@@ -43,6 +45,8 @@ public interface StreamingRecognizeResponseOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
+   *
+   * @return The error.
    */
   com.google.rpc.Status getError();
   /**
@@ -135,6 +139,8 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for speechEventType.
    */
   int getSpeechEventTypeValue();
   /**
@@ -147,6 +153,8 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
    * </code>
+   *
+   * @return The speechEventType.
    */
   com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType getSpeechEventType();
 }

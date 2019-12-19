@@ -41,6 +41,12 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   private StreamingRecognitionConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognitionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,6 +142,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * <code>
    * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -152,6 +159,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * <code>
    * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The config.
    */
   public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
     return config_ == null
@@ -193,6 +202,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>bool single_utterance = 2;</code>
+   *
+   * @return The singleUtterance.
    */
   public boolean getSingleUtterance() {
     return singleUtterance_;
@@ -211,6 +222,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>bool interim_results = 3;</code>
+   *
+   * @return The interimResults.
    */
   public boolean getInterimResults() {
     return interimResults_;
@@ -595,6 +608,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -610,6 +625,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * <code>
      * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The config.
      */
     public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
       if (configBuilder_ == null) {
@@ -804,6 +821,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool single_utterance = 2;</code>
+     *
+     * @return The singleUtterance.
      */
     public boolean getSingleUtterance() {
       return singleUtterance_;
@@ -825,6 +844,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool single_utterance = 2;</code>
+     *
+     * @param value The singleUtterance to set.
+     * @return This builder for chaining.
      */
     public Builder setSingleUtterance(boolean value) {
 
@@ -849,6 +871,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool single_utterance = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSingleUtterance() {
 
@@ -869,6 +893,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool interim_results = 3;</code>
+     *
+     * @return The interimResults.
      */
     public boolean getInterimResults() {
       return interimResults_;
@@ -884,6 +910,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool interim_results = 3;</code>
+     *
+     * @param value The interimResults to set.
+     * @return This builder for chaining.
      */
     public Builder setInterimResults(boolean value) {
 
@@ -902,6 +931,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool interim_results = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInterimResults() {
 

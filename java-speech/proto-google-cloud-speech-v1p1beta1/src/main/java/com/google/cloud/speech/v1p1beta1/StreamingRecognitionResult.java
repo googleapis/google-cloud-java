@@ -44,6 +44,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognitionResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -155,7 +161,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
       alternatives_;
@@ -258,6 +263,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>bool is_final = 2;</code>
+   *
+   * @return The isFinal.
    */
   public boolean getIsFinal() {
     return isFinal_;
@@ -277,6 +284,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>float stability = 3;</code>
+   *
+   * @return The stability.
    */
   public float getStability() {
     return stability_;
@@ -293,6 +302,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   *
+   * @return Whether the resultEndTime field is set.
    */
   public boolean hasResultEndTime() {
     return resultEndTime_ != null;
@@ -306,6 +317,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   *
+   * @return The resultEndTime.
    */
   public com.google.protobuf.Duration getResultEndTime() {
     return resultEndTime_ == null
@@ -338,6 +351,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>int32 channel_tag = 5;</code>
+   *
+   * @return The channelTag.
    */
   public int getChannelTag() {
     return channelTag_;
@@ -355,6 +370,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string language_code = 6;</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -377,6 +394,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string language_code = 6;</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -700,7 +719,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult result =
           new com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -719,7 +737,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       result.channelTag_ = channelTag_;
       result.languageCode_ = languageCode_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1299,6 +1316,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 2;</code>
+     *
+     * @return The isFinal.
      */
     public boolean getIsFinal() {
       return isFinal_;
@@ -1315,6 +1334,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 2;</code>
+     *
+     * @param value The isFinal to set.
+     * @return This builder for chaining.
      */
     public Builder setIsFinal(boolean value) {
 
@@ -1334,6 +1356,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bool is_final = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsFinal() {
 
@@ -1355,6 +1379,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float stability = 3;</code>
+     *
+     * @return The stability.
      */
     public float getStability() {
       return stability_;
@@ -1371,6 +1397,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float stability = 3;</code>
+     *
+     * @param value The stability to set.
+     * @return This builder for chaining.
      */
     public Builder setStability(float value) {
 
@@ -1390,6 +1419,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>float stability = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStability() {
 
@@ -1413,6 +1444,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     *
+     * @return Whether the resultEndTime field is set.
      */
     public boolean hasResultEndTime() {
       return resultEndTimeBuilder_ != null || resultEndTime_ != null;
@@ -1426,6 +1459,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     *
+     * @return The resultEndTime.
      */
     public com.google.protobuf.Duration getResultEndTime() {
       if (resultEndTimeBuilder_ == null) {
@@ -1599,6 +1634,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 channel_tag = 5;</code>
+     *
+     * @return The channelTag.
      */
     public int getChannelTag() {
       return channelTag_;
@@ -1613,6 +1650,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 channel_tag = 5;</code>
+     *
+     * @param value The channelTag to set.
+     * @return This builder for chaining.
      */
     public Builder setChannelTag(int value) {
 
@@ -1630,6 +1670,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 channel_tag = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearChannelTag() {
 
@@ -1649,6 +1691,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 6;</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1671,6 +1715,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 6;</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1693,6 +1739,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 6;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1713,6 +1762,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -1730,6 +1781,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string language_code = 6;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -33,6 +33,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+   *
+   * @return The enum numeric value on the wire for encoding.
    */
   int getEncodingValue();
   /**
@@ -45,6 +47,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+   *
+   * @return The encoding.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding getEncoding();
 
@@ -62,6 +66,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
+   *
+   * @return The sampleRateHertz.
    */
   int getSampleRateHertz();
 
@@ -81,6 +87,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>int32 audio_channel_count = 7;</code>
+   *
+   * @return The audioChannelCount.
    */
   int getAudioChannelCount();
 
@@ -97,6 +105,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   *
+   * @return The enableSeparateRecognitionPerChannel.
    */
   boolean getEnableSeparateRecognitionPerChannel();
 
@@ -113,6 +123,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -128,6 +140,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -150,6 +164,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return A list containing the alternativeLanguageCodes.
    */
   java.util.List<java.lang.String> getAlternativeLanguageCodesList();
   /**
@@ -171,6 +187,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return The count of alternativeLanguageCodes.
    */
   int getAlternativeLanguageCodesCount();
   /**
@@ -192,6 +210,9 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The alternativeLanguageCodes at the given index.
    */
   java.lang.String getAlternativeLanguageCodes(int index);
   /**
@@ -213,6 +234,9 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the alternativeLanguageCodes at the given index.
    */
   com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index);
 
@@ -229,6 +253,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_alternatives = 4;</code>
+   *
+   * @return The maxAlternatives.
    */
   int getMaxAlternatives();
 
@@ -243,6 +269,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool profanity_filter = 5;</code>
+   *
+   * @return The profanityFilter.
    */
   boolean getProfanityFilter();
 
@@ -329,6 +357,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_word_time_offsets = 8;</code>
+   *
+   * @return The enableWordTimeOffsets.
    */
   boolean getEnableWordTimeOffsets();
 
@@ -342,6 +372,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_word_confidence = 15;</code>
+   *
+   * @return The enableWordConfidence.
    */
   boolean getEnableWordConfidence();
 
@@ -359,6 +391,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>
+   *
+   * @return The enableAutomaticPunctuation.
    */
   boolean getEnableAutomaticPunctuation();
 
@@ -373,6 +407,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
+   *
+   * @return The enableSpeakerDiarization.
    */
   @java.lang.Deprecated
   boolean getEnableSpeakerDiarization();
@@ -387,6 +423,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
+   *
+   * @return The diarizationSpeakerCount.
    */
   @java.lang.Deprecated
   int getDiarizationSpeakerCount();
@@ -406,6 +444,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   *
+   * @return Whether the diarizationConfig field is set.
    */
   boolean hasDiarizationConfig();
   /**
@@ -423,6 +463,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   *
+   * @return The diarizationConfig.
    */
   com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig getDiarizationConfig();
   /**
@@ -452,6 +494,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -462,6 +506,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
+   *
+   * @return The metadata.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata getMetadata();
   /**
@@ -514,6 +560,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 13;</code>
+   *
+   * @return The model.
    */
   java.lang.String getModel();
   /**
@@ -555,6 +603,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>string model = 13;</code>
+   *
+   * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
 
@@ -572,6 +622,8 @@ public interface RecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool use_enhanced = 14;</code>
+   *
+   * @return The useEnhanced.
    */
   boolean getUseEnhanced();
 }

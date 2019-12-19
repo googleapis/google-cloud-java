@@ -43,6 +43,12 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   private RecognitionAudio() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecognitionAudio();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,7 +121,10 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   private int audioSourceCase_ = 0;
   private java.lang.Object audioSource_;
 
-  public enum AudioSourceCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AudioSourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CONTENT(1),
     URI(2),
     AUDIOSOURCE_NOT_SET(0);
@@ -125,7 +133,11 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     private AudioSourceCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AudioSourceCase valueOf(int value) {
       return forNumber(value);
@@ -164,6 +176,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>bytes content = 1;</code>
+   *
+   * @return The content.
    */
   public com.google.protobuf.ByteString getContent() {
     if (audioSourceCase_ == 1) {
@@ -187,6 +201,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string uri = 2;</code>
+   *
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = "";
@@ -218,6 +234,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string uri = 2;</code>
+   *
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = "";
@@ -629,6 +647,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bytes content = 1;</code>
+     *
+     * @return The content.
      */
     public com.google.protobuf.ByteString getContent() {
       if (audioSourceCase_ == 1) {
@@ -646,6 +666,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bytes content = 1;</code>
+     *
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     public Builder setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -666,6 +689,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bytes content = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearContent() {
       if (audioSourceCase_ == 1) {
@@ -690,6 +715,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string uri = 2;</code>
+     *
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = "";
@@ -721,6 +748,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string uri = 2;</code>
+     *
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = "";
@@ -752,6 +781,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string uri = 2;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -776,6 +808,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string uri = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
       if (audioSourceCase_ == 2) {
@@ -799,6 +833,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string uri = 2;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

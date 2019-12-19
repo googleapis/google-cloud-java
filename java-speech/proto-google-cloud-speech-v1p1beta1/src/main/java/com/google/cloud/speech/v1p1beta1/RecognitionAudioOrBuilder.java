@@ -33,6 +33,8 @@ public interface RecognitionAudioOrBuilder
    * </pre>
    *
    * <code>bytes content = 1;</code>
+   *
+   * @return The content.
    */
   com.google.protobuf.ByteString getContent();
 
@@ -50,6 +52,8 @@ public interface RecognitionAudioOrBuilder
    * </pre>
    *
    * <code>string uri = 2;</code>
+   *
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -66,6 +70,8 @@ public interface RecognitionAudioOrBuilder
    * </pre>
    *
    * <code>string uri = 2;</code>
+   *
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
 

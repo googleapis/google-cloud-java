@@ -33,6 +33,8 @@ public interface StreamingRecognizeRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
+   *
+   * @return Whether the streamingConfig field is set.
    */
   boolean hasStreamingConfig();
   /**
@@ -45,6 +47,8 @@ public interface StreamingRecognizeRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
+   *
+   * @return The streamingConfig.
    */
   com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig getStreamingConfig();
   /**
@@ -76,6 +80,8 @@ public interface StreamingRecognizeRequestOrBuilder
    * </pre>
    *
    * <code>bytes audio_content = 2;</code>
+   *
+   * @return The audioContent.
    */
   com.google.protobuf.ByteString getAudioContent();
 

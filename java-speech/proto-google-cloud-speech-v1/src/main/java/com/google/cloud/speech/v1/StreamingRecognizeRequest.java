@@ -44,6 +44,12 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   private StreamingRecognizeRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognizeRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,7 +135,10 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   private int streamingRequestCase_ = 0;
   private java.lang.Object streamingRequest_;
 
-  public enum StreamingRequestCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StreamingRequestCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STREAMING_CONFIG(1),
     AUDIO_CONTENT(2),
     STREAMINGREQUEST_NOT_SET(0);
@@ -139,7 +147,11 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     private StreamingRequestCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StreamingRequestCase valueOf(int value) {
       return forNumber(value);
@@ -178,6 +190,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.speech.v1.StreamingRecognitionConfig streaming_config = 1;</code>
+   *
+   * @return Whether the streamingConfig field is set.
    */
   public boolean hasStreamingConfig() {
     return streamingRequestCase_ == 1;
@@ -192,6 +206,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>.google.cloud.speech.v1.StreamingRecognitionConfig streaming_config = 1;</code>
+   *
+   * @return The streamingConfig.
    */
   public com.google.cloud.speech.v1.StreamingRecognitionConfig getStreamingConfig() {
     if (streamingRequestCase_ == 1) {
@@ -234,6 +250,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>bytes audio_content = 2;</code>
+   *
+   * @return The audioContent.
    */
   public com.google.protobuf.ByteString getAudioContent() {
     if (streamingRequestCase_ == 2) {
@@ -646,6 +664,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognitionConfig streaming_config = 1;</code>
+     *
+     * @return Whether the streamingConfig field is set.
      */
     public boolean hasStreamingConfig() {
       return streamingRequestCase_ == 1;
@@ -660,6 +680,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognitionConfig streaming_config = 1;</code>
+     *
+     * @return The streamingConfig.
      */
     public com.google.cloud.speech.v1.StreamingRecognitionConfig getStreamingConfig() {
       if (streamingConfigBuilder_ == null) {
@@ -871,6 +893,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bytes audio_content = 2;</code>
+     *
+     * @return The audioContent.
      */
     public com.google.protobuf.ByteString getAudioContent() {
       if (streamingRequestCase_ == 2) {
@@ -893,6 +917,9 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bytes audio_content = 2;</code>
+     *
+     * @param value The audioContent to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -918,6 +945,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>bytes audio_content = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioContent() {
       if (streamingRequestCase_ == 2) {

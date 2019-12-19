@@ -107,6 +107,8 @@ public interface SpeechRecognitionResultOrBuilder
    * </pre>
    *
    * <code>int32 channel_tag = 2;</code>
+   *
+   * @return The channelTag.
    */
   int getChannelTag();
 
@@ -120,6 +122,8 @@ public interface SpeechRecognitionResultOrBuilder
    * </pre>
    *
    * <code>string language_code = 5;</code>
+   *
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -132,6 +136,8 @@ public interface SpeechRecognitionResultOrBuilder
    * </pre>
    *
    * <code>string language_code = 5;</code>
+   *
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

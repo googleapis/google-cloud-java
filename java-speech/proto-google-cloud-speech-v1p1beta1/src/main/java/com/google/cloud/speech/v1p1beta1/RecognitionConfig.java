@@ -47,6 +47,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecognitionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -101,10 +107,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 speechContexts_ =
                     new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechContext>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000002;
               }
               speechContexts_.add(
                   input.readMessage(
@@ -178,9 +184,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           case 146:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 alternativeLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               alternativeLanguageCodes_.add(s);
               break;
@@ -216,10 +222,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -504,12 +510,20 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AudioEncoding valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AudioEncoding forNumber(int value) {
       switch (value) {
         case 0:
@@ -581,7 +595,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding)
   }
 
-  private int bitField0_;
   public static final int ENCODING_FIELD_NUMBER = 1;
   private int encoding_;
   /**
@@ -594,6 +607,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+   *
+   * @return The enum numeric value on the wire for encoding.
    */
   public int getEncodingValue() {
     return encoding_;
@@ -608,6 +623,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+   *
+   * @return The encoding.
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding getEncoding() {
     @SuppressWarnings("deprecation")
@@ -634,6 +651,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
+   *
+   * @return The sampleRateHertz.
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
@@ -657,6 +676,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 audio_channel_count = 7;</code>
+   *
+   * @return The audioChannelCount.
    */
   public int getAudioChannelCount() {
     return audioChannelCount_;
@@ -677,6 +698,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   *
+   * @return The enableSeparateRecognitionPerChannel.
    */
   public boolean getEnableSeparateRecognitionPerChannel() {
     return enableSeparateRecognitionPerChannel_;
@@ -697,6 +720,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -722,6 +747,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -756,6 +783,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return A list containing the alternativeLanguageCodes.
    */
   public com.google.protobuf.ProtocolStringList getAlternativeLanguageCodesList() {
     return alternativeLanguageCodes_;
@@ -779,6 +808,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @return The count of alternativeLanguageCodes.
    */
   public int getAlternativeLanguageCodesCount() {
     return alternativeLanguageCodes_.size();
@@ -802,6 +833,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The alternativeLanguageCodes at the given index.
    */
   public java.lang.String getAlternativeLanguageCodes(int index) {
     return alternativeLanguageCodes_.get(index);
@@ -825,6 +859,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>repeated string alternative_language_codes = 18;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the alternativeLanguageCodes at the given index.
    */
   public com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index) {
     return alternativeLanguageCodes_.getByteString(index);
@@ -845,6 +882,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 max_alternatives = 4;</code>
+   *
+   * @return The maxAlternatives.
    */
   public int getMaxAlternatives() {
     return maxAlternatives_;
@@ -863,6 +902,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool profanity_filter = 5;</code>
+   *
+   * @return The profanityFilter.
    */
   public boolean getProfanityFilter() {
     return profanityFilter_;
@@ -966,6 +1007,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool enable_word_time_offsets = 8;</code>
+   *
+   * @return The enableWordTimeOffsets.
    */
   public boolean getEnableWordTimeOffsets() {
     return enableWordTimeOffsets_;
@@ -983,6 +1026,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool enable_word_confidence = 15;</code>
+   *
+   * @return The enableWordConfidence.
    */
   public boolean getEnableWordConfidence() {
     return enableWordConfidence_;
@@ -1004,6 +1049,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>
+   *
+   * @return The enableAutomaticPunctuation.
    */
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
@@ -1022,6 +1069,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
+   *
+   * @return The enableSpeakerDiarization.
    */
   @java.lang.Deprecated
   public boolean getEnableSpeakerDiarization() {
@@ -1040,6 +1089,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
+   *
+   * @return The diarizationSpeakerCount.
    */
   @java.lang.Deprecated
   public int getDiarizationSpeakerCount() {
@@ -1063,6 +1114,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   *
+   * @return Whether the diarizationConfig field is set.
    */
   public boolean hasDiarizationConfig() {
     return diarizationConfig_ != null;
@@ -1082,6 +1135,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+   *
+   * @return The diarizationConfig.
    */
   public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig getDiarizationConfig() {
     return diarizationConfig_ == null
@@ -1119,6 +1174,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
+   *
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -1131,6 +1188,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
+   *
+   * @return The metadata.
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionMetadata getMetadata() {
     return metadata_ == null
@@ -1191,6 +1250,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string model = 13;</code>
+   *
+   * @return The model.
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -1242,6 +1303,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string model = 13;</code>
+   *
+   * @return The bytes for model.
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -1271,6 +1334,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bool use_enhanced = 14;</code>
+   *
+   * @return The useEnhanced.
    */
   public boolean getUseEnhanced() {
     return useEnhanced_;
@@ -1678,14 +1743,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       languageCode_ = "";
 
       alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxAlternatives_ = 0;
 
       profanityFilter_ = false;
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         speechContextsBuilder_.clear();
       }
@@ -1743,23 +1808,22 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       com.google.cloud.speech.v1p1beta1.RecognitionConfig result =
           new com.google.cloud.speech.v1p1beta1.RecognitionConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.encoding_ = encoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.audioChannelCount_ = audioChannelCount_;
       result.enableSeparateRecognitionPerChannel_ = enableSeparateRecognitionPerChannel_;
       result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.speechContexts_ = speechContexts_;
       } else {
@@ -1782,7 +1846,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       result.model_ = model_;
       result.useEnhanced_ = useEnhanced_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1852,7 +1915,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (!other.alternativeLanguageCodes_.isEmpty()) {
         if (alternativeLanguageCodes_.isEmpty()) {
           alternativeLanguageCodes_ = other.alternativeLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAlternativeLanguageCodesIsMutable();
           alternativeLanguageCodes_.addAll(other.alternativeLanguageCodes_);
@@ -1869,7 +1932,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -1882,7 +1945,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -1963,6 +2026,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+     *
+     * @return The enum numeric value on the wire for encoding.
      */
     public int getEncodingValue() {
       return encoding_;
@@ -1977,6 +2042,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for encoding to set.
+     * @return This builder for chaining.
      */
     public Builder setEncodingValue(int value) {
       encoding_ = value;
@@ -1993,6 +2061,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+     *
+     * @return The encoding.
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding getEncoding() {
       @SuppressWarnings("deprecation")
@@ -2012,6 +2082,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+     *
+     * @param value The encoding to set.
+     * @return This builder for chaining.
      */
     public Builder setEncoding(
         com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding value) {
@@ -2033,6 +2106,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEncoding() {
 
@@ -2056,6 +2131,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @return The sampleRateHertz.
      */
     public int getSampleRateHertz() {
       return sampleRateHertz_;
@@ -2074,6 +2151,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @param value The sampleRateHertz to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleRateHertz(int value) {
 
@@ -2095,6 +2175,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
 
@@ -2120,6 +2202,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 audio_channel_count = 7;</code>
+     *
+     * @return The audioChannelCount.
      */
     public int getAudioChannelCount() {
       return audioChannelCount_;
@@ -2140,6 +2224,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 audio_channel_count = 7;</code>
+     *
+     * @param value The audioChannelCount to set.
+     * @return This builder for chaining.
      */
     public Builder setAudioChannelCount(int value) {
 
@@ -2163,6 +2250,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 audio_channel_count = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAudioChannelCount() {
 
@@ -2185,6 +2274,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     *
+     * @return The enableSeparateRecognitionPerChannel.
      */
     public boolean getEnableSeparateRecognitionPerChannel() {
       return enableSeparateRecognitionPerChannel_;
@@ -2202,6 +2293,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     *
+     * @param value The enableSeparateRecognitionPerChannel to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableSeparateRecognitionPerChannel(boolean value) {
 
@@ -2222,6 +2316,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableSeparateRecognitionPerChannel() {
 
@@ -2244,6 +2340,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -2269,6 +2367,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -2294,6 +2394,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -2317,6 +2420,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
 
@@ -2337,6 +2442,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2353,10 +2461,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAlternativeLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         alternativeLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(alternativeLanguageCodes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2378,6 +2486,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @return A list containing the alternativeLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getAlternativeLanguageCodesList() {
       return alternativeLanguageCodes_.getUnmodifiableView();
@@ -2401,6 +2511,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @return The count of alternativeLanguageCodes.
      */
     public int getAlternativeLanguageCodesCount() {
       return alternativeLanguageCodes_.size();
@@ -2424,6 +2536,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The alternativeLanguageCodes at the given index.
      */
     public java.lang.String getAlternativeLanguageCodes(int index) {
       return alternativeLanguageCodes_.get(index);
@@ -2447,6 +2562,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the alternativeLanguageCodes at the given index.
      */
     public com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index) {
       return alternativeLanguageCodes_.getByteString(index);
@@ -2470,6 +2588,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The alternativeLanguageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setAlternativeLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -2499,6 +2621,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param value The alternativeLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAlternativeLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -2528,6 +2653,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param values The alternativeLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAlternativeLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureAlternativeLanguageCodesIsMutable();
@@ -2554,10 +2682,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlternativeLanguageCodes() {
       alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2580,6 +2710,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>repeated string alternative_language_codes = 18;</code>
+     *
+     * @param value The bytes of the alternativeLanguageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAlternativeLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2606,6 +2739,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 max_alternatives = 4;</code>
+     *
+     * @return The maxAlternatives.
      */
     public int getMaxAlternatives() {
       return maxAlternatives_;
@@ -2623,6 +2758,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 max_alternatives = 4;</code>
+     *
+     * @param value The maxAlternatives to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxAlternatives(int value) {
 
@@ -2643,6 +2781,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 max_alternatives = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxAlternatives() {
 
@@ -2663,6 +2803,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool profanity_filter = 5;</code>
+     *
+     * @return The profanityFilter.
      */
     public boolean getProfanityFilter() {
       return profanityFilter_;
@@ -2678,6 +2820,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool profanity_filter = 5;</code>
+     *
+     * @param value The profanityFilter to set.
+     * @return This builder for chaining.
      */
     public Builder setProfanityFilter(boolean value) {
 
@@ -2696,6 +2841,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool profanity_filter = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProfanityFilter() {
 
@@ -2708,11 +2855,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechContext>(
                 speechContexts_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2974,7 +3121,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -3128,7 +3275,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.speech.v1p1beta1.SpeechContext.Builder,
                 com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -3148,6 +3295,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_word_time_offsets = 8;</code>
+     *
+     * @return The enableWordTimeOffsets.
      */
     public boolean getEnableWordTimeOffsets() {
       return enableWordTimeOffsets_;
@@ -3163,6 +3312,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_word_time_offsets = 8;</code>
+     *
+     * @param value The enableWordTimeOffsets to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableWordTimeOffsets(boolean value) {
 
@@ -3181,6 +3333,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_word_time_offsets = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableWordTimeOffsets() {
 
@@ -3200,6 +3354,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_word_confidence = 15;</code>
+     *
+     * @return The enableWordConfidence.
      */
     public boolean getEnableWordConfidence() {
       return enableWordConfidence_;
@@ -3214,6 +3370,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_word_confidence = 15;</code>
+     *
+     * @param value The enableWordConfidence to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableWordConfidence(boolean value) {
 
@@ -3231,6 +3390,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_word_confidence = 15;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableWordConfidence() {
 
@@ -3254,6 +3415,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
+     *
+     * @return The enableAutomaticPunctuation.
      */
     public boolean getEnableAutomaticPunctuation() {
       return enableAutomaticPunctuation_;
@@ -3272,6 +3435,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
+     *
+     * @param value The enableAutomaticPunctuation to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableAutomaticPunctuation(boolean value) {
 
@@ -3293,6 +3459,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableAutomaticPunctuation() {
 
@@ -3313,6 +3481,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
+     *
+     * @return The enableSpeakerDiarization.
      */
     @java.lang.Deprecated
     public boolean getEnableSpeakerDiarization() {
@@ -3329,6 +3499,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
+     *
+     * @param value The enableSpeakerDiarization to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setEnableSpeakerDiarization(boolean value) {
@@ -3348,6 +3521,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEnableSpeakerDiarization() {
@@ -3368,6 +3543,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
+     *
+     * @return The diarizationSpeakerCount.
      */
     @java.lang.Deprecated
     public int getDiarizationSpeakerCount() {
@@ -3383,6 +3560,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
+     *
+     * @param value The diarizationSpeakerCount to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setDiarizationSpeakerCount(int value) {
@@ -3401,6 +3581,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearDiarizationSpeakerCount() {
@@ -3431,6 +3613,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     *
+     * @return Whether the diarizationConfig field is set.
      */
     public boolean hasDiarizationConfig() {
       return diarizationConfigBuilder_ != null || diarizationConfig_ != null;
@@ -3450,6 +3634,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig diarization_config = 19;</code>
+     *
+     * @return The diarizationConfig.
      */
     public com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig getDiarizationConfig() {
       if (diarizationConfigBuilder_ == null) {
@@ -3674,6 +3860,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
+     *
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -3686,6 +3874,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
+     *
+     * @return The metadata.
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -3882,6 +4072,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string model = 13;</code>
+     *
+     * @return The model.
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -3933,6 +4125,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string model = 13;</code>
+     *
+     * @return The bytes for model.
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -3984,6 +4178,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string model = 13;</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -4033,6 +4230,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string model = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModel() {
 
@@ -4079,6 +4278,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string model = 13;</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4106,6 +4308,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool use_enhanced = 14;</code>
+     *
+     * @return The useEnhanced.
      */
     public boolean getUseEnhanced() {
       return useEnhanced_;
@@ -4124,6 +4328,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool use_enhanced = 14;</code>
+     *
+     * @param value The useEnhanced to set.
+     * @return This builder for chaining.
      */
     public Builder setUseEnhanced(boolean value) {
 
@@ -4145,6 +4352,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bool use_enhanced = 14;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUseEnhanced() {
 

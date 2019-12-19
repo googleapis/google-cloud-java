@@ -32,6 +32,8 @@ public interface RecognitionMetadataOrBuilder
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
    * </code>
+   *
+   * @return The enum numeric value on the wire for interactionType.
    */
   int getInteractionTypeValue();
   /**
@@ -43,6 +45,8 @@ public interface RecognitionMetadataOrBuilder
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
    * </code>
+   *
+   * @return The interactionType.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType getInteractionType();
 
@@ -57,6 +61,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>uint32 industry_naics_code_of_audio = 3;</code>
+   *
+   * @return The industryNaicsCodeOfAudio.
    */
   int getIndustryNaicsCodeOfAudio();
 
@@ -70,6 +76,8 @@ public interface RecognitionMetadataOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
    * </code>
+   *
+   * @return The enum numeric value on the wire for microphoneDistance.
    */
   int getMicrophoneDistanceValue();
   /**
@@ -82,6 +90,8 @@ public interface RecognitionMetadataOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
    * </code>
+   *
+   * @return The microphoneDistance.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance getMicrophoneDistance();
 
@@ -95,6 +105,8 @@ public interface RecognitionMetadataOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for originalMediaType.
    */
   int getOriginalMediaTypeValue();
   /**
@@ -107,6 +119,8 @@ public interface RecognitionMetadataOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
    * </code>
+   *
+   * @return The originalMediaType.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType getOriginalMediaType();
 
@@ -120,6 +134,8 @@ public interface RecognitionMetadataOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
    * </code>
+   *
+   * @return The enum numeric value on the wire for recordingDeviceType.
    */
   int getRecordingDeviceTypeValue();
   /**
@@ -132,6 +148,8 @@ public interface RecognitionMetadataOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
    * </code>
+   *
+   * @return The recordingDeviceType.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
       getRecordingDeviceType();
@@ -146,6 +164,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>string recording_device_name = 7;</code>
+   *
+   * @return The recordingDeviceName.
    */
   java.lang.String getRecordingDeviceName();
   /**
@@ -158,6 +178,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>string recording_device_name = 7;</code>
+   *
+   * @return The bytes for recordingDeviceName.
    */
   com.google.protobuf.ByteString getRecordingDeviceNameBytes();
 
@@ -172,6 +194,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>string original_mime_type = 8;</code>
+   *
+   * @return The originalMimeType.
    */
   java.lang.String getOriginalMimeType();
   /**
@@ -185,6 +209,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>string original_mime_type = 8;</code>
+   *
+   * @return The bytes for originalMimeType.
    */
   com.google.protobuf.ByteString getOriginalMimeTypeBytes();
 
@@ -197,6 +223,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
+   *
+   * @return The obfuscatedId.
    */
   @java.lang.Deprecated
   long getObfuscatedId();
@@ -210,6 +238,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>string audio_topic = 10;</code>
+   *
+   * @return The audioTopic.
    */
   java.lang.String getAudioTopic();
   /**
@@ -221,6 +251,8 @@ public interface RecognitionMetadataOrBuilder
    * </pre>
    *
    * <code>string audio_topic = 10;</code>
+   *
+   * @return The bytes for audioTopic.
    */
   com.google.protobuf.ByteString getAudioTopicBytes();
 }

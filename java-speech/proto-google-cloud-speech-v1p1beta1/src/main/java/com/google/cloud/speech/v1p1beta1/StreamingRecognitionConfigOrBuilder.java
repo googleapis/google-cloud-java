@@ -34,6 +34,8 @@ public interface StreamingRecognitionConfigOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -47,6 +49,8 @@ public interface StreamingRecognitionConfigOrBuilder
    * <code>
    * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The config.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionConfig getConfig();
   /**
@@ -80,6 +84,8 @@ public interface StreamingRecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool single_utterance = 2;</code>
+   *
+   * @return The singleUtterance.
    */
   boolean getSingleUtterance();
 
@@ -94,6 +100,8 @@ public interface StreamingRecognitionConfigOrBuilder
    * </pre>
    *
    * <code>bool interim_results = 3;</code>
+   *
+   * @return The interimResults.
    */
   boolean getInterimResults();
 }

@@ -36,6 +36,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration start_time = 1;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -51,6 +53,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration start_time = 1;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Duration getStartTime();
   /**
@@ -82,6 +86,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration end_time = 2;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -97,6 +103,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration end_time = 2;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Duration getEndTime();
   /**
@@ -123,6 +131,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The word.
    */
   java.lang.String getWord();
   /**
@@ -133,6 +143,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>string word = 3;</code>
+   *
+   * @return The bytes for word.
    */
   com.google.protobuf.ByteString getWordBytes();
 
@@ -150,6 +162,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>float confidence = 4;</code>
+   *
+   * @return The confidence.
    */
   float getConfidence();
 
@@ -165,6 +179,8 @@ public interface WordInfoOrBuilder
    * </pre>
    *
    * <code>int32 speaker_tag = 5;</code>
+   *
+   * @return The speakerTag.
    */
   int getSpeakerTag();
 }
