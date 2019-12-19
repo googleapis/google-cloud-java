@@ -2,14 +2,15 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-datastore-v1</artifactId>
   <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
   <name>proto-google-cloud-datastore-v1</name>
   <description>PROTO library for proto-google-cloud-datastore-v1</description>
   <parent>
-    <groupId>com.google.api.grpc</groupId>
-    <artifactId>google-api-grpc</artifactId>
-    <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-datastore-parent</artifactId>
+    <version>1.102.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore-parent:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -18,14 +19,23 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>api-common</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>java9</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>javax.annotation</groupId>
+          <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>
