@@ -32,7 +32,14 @@ for version in versions:
       artman_output_name='')
 
   # Datastore only generates protos
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
 
-  java.format_code('./src')
-  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+  java.format_code('google-cloud-datastore/src')
+  java.format_code(f'proto-google-cloud-{service}-{version}/src')
+
+common_templates = gcp.CommonTemplates()
+templates = common_templates.java_library()
+s.copy(templates, excludes=[
+    '.gitignore',
+    'README.md',
+])

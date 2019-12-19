@@ -6,8 +6,8 @@
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559768",
   "release_level": "ga",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-datastore",
+  "repo_short": "java-datastore",
   "distribution_name": "com.google.cloud:google-cloud-datastore",
   "api_id": "datastore.googleapis.com"
 }
