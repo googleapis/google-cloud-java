@@ -74,6 +74,8 @@ public interface CommitResponseOrBuilder
    * </pre>
    *
    * <code>int32 index_updates = 4;</code>
+   *
+   * @return The indexUpdates.
    */
   int getIndexUpdates();
 }

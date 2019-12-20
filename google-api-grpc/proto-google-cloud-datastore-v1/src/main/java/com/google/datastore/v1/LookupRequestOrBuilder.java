@@ -12,20 +12,24 @@ public interface LookupRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -37,6 +41,8 @@ public interface LookupRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return Whether the readOptions field is set.
    */
   boolean hasReadOptions();
   /**
@@ -47,6 +53,8 @@ public interface LookupRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return The readOptions.
    */
   com.google.datastore.v1.ReadOptions getReadOptions();
   /**
@@ -64,50 +72,55 @@ public interface LookupRequestOrBuilder
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.datastore.v1.Key> getKeysList();
   /**
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.datastore.v1.Key getKeys(int index);
   /**
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getKeysCount();
   /**
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
   /**
    *
    *
    * <pre>
-   * Keys of entities to look up.
+   * Required. Keys of entities to look up.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 3;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index);
 }

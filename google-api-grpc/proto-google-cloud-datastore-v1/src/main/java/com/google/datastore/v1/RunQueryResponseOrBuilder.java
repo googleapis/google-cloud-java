@@ -16,6 +16,8 @@ public interface RunQueryResponseOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   *
+   * @return Whether the batch field is set.
    */
   boolean hasBatch();
   /**
@@ -26,6 +28,8 @@ public interface RunQueryResponseOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   *
+   * @return The batch.
    */
   com.google.datastore.v1.QueryResultBatch getBatch();
   /**
@@ -47,6 +51,8 @@ public interface RunQueryResponseOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 2;</code>
+   *
+   * @return Whether the query field is set.
    */
   boolean hasQuery();
   /**
@@ -57,6 +63,8 @@ public interface RunQueryResponseOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 2;</code>
+   *
+   * @return The query.
    */
   com.google.datastore.v1.Query getQuery();
   /**

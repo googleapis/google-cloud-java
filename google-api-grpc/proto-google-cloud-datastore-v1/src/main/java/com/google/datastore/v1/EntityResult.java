@@ -27,6 +27,12 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EntityResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -215,12 +220,20 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ResultType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ResultType forNumber(int value) {
       switch (value) {
         case 0:
@@ -290,6 +303,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity entity = 1;</code>
+   *
+   * @return Whether the entity field is set.
    */
   public boolean hasEntity() {
     return entity_ != null;
@@ -302,6 +317,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Entity entity = 1;</code>
+   *
+   * @return The entity.
    */
   public com.google.datastore.v1.Entity getEntity() {
     return entity_ == null ? com.google.datastore.v1.Entity.getDefaultInstance() : entity_;
@@ -327,14 +344,16 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The version of the entity, a strictly positive number that monotonically
    * increases with changes to the entity.
-   * This field is set for
-   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-   * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-   * `LookupResponse`, this is the version of the snapshot that was used to look
-   * up the entity, and it is always set except for eventually consistent reads.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+   * is the version of the snapshot that was used to look up the entity, and it
+   * is always set except for eventually consistent reads.
    * </pre>
    *
    * <code>int64 version = 4;</code>
+   *
+   * @return The version.
    */
   public long getVersion() {
     return version_;
@@ -351,6 +370,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes cursor = 3;</code>
+   *
+   * @return The cursor.
    */
   public com.google.protobuf.ByteString getCursor() {
     return cursor_;
@@ -725,6 +746,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity entity = 1;</code>
+     *
+     * @return Whether the entity field is set.
      */
     public boolean hasEntity() {
       return entityBuilder_ != null || entity_ != null;
@@ -737,6 +760,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Entity entity = 1;</code>
+     *
+     * @return The entity.
      */
     public com.google.datastore.v1.Entity getEntity() {
       if (entityBuilder_ == null) {
@@ -893,14 +918,16 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the entity, a strictly positive number that monotonically
      * increases with changes to the entity.
-     * This field is set for
-     * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-     * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-     * `LookupResponse`, this is the version of the snapshot that was used to look
-     * up the entity, and it is always set except for eventually consistent reads.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+     * is the version of the snapshot that was used to look up the entity, and it
+     * is always set except for eventually consistent reads.
      * </pre>
      *
      * <code>int64 version = 4;</code>
+     *
+     * @return The version.
      */
     public long getVersion() {
       return version_;
@@ -911,14 +938,17 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the entity, a strictly positive number that monotonically
      * increases with changes to the entity.
-     * This field is set for
-     * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-     * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-     * `LookupResponse`, this is the version of the snapshot that was used to look
-     * up the entity, and it is always set except for eventually consistent reads.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+     * is the version of the snapshot that was used to look up the entity, and it
+     * is always set except for eventually consistent reads.
      * </pre>
      *
      * <code>int64 version = 4;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(long value) {
 
@@ -932,14 +962,16 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the entity, a strictly positive number that monotonically
      * increases with changes to the entity.
-     * This field is set for
-     * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-     * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-     * `LookupResponse`, this is the version of the snapshot that was used to look
-     * up the entity, and it is always set except for eventually consistent reads.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+     * is the version of the snapshot that was used to look up the entity, and it
+     * is always set except for eventually consistent reads.
      * </pre>
      *
      * <code>int64 version = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -958,6 +990,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes cursor = 3;</code>
+     *
+     * @return The cursor.
      */
     public com.google.protobuf.ByteString getCursor() {
       return cursor_;
@@ -971,6 +1005,9 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes cursor = 3;</code>
+     *
+     * @param value The cursor to set.
+     * @return This builder for chaining.
      */
     public Builder setCursor(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -990,6 +1027,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes cursor = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCursor() {
 

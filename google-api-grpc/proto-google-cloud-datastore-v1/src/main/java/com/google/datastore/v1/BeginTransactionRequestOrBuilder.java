@@ -12,20 +12,24 @@ public interface BeginTransactionRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -37,6 +41,8 @@ public interface BeginTransactionRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
+   *
+   * @return Whether the transactionOptions field is set.
    */
   boolean hasTransactionOptions();
   /**
@@ -47,6 +53,8 @@ public interface BeginTransactionRequestOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
+   *
+   * @return The transactionOptions.
    */
   com.google.datastore.v1.TransactionOptions getTransactionOptions();
   /**

@@ -28,6 +28,12 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RollbackRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -103,10 +108,12 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -123,10 +130,12 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -146,11 +155,13 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The transaction identifier, returned by a call to
+   * Required. The transaction identifier, returned by a call to
    * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
    * </pre>
    *
-   * <code>bytes transaction = 1;</code>
+   * <code>bytes transaction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The transaction.
    */
   public com.google.protobuf.ByteString getTransaction() {
     return transaction_;
@@ -491,10 +502,12 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -511,10 +524,12 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -531,10 +546,13 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -549,10 +567,12 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -564,10 +584,13 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -585,11 +608,13 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The transaction identifier, returned by a call to
+     * Required. The transaction identifier, returned by a call to
      * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
      * </pre>
      *
-     * <code>bytes transaction = 1;</code>
+     * <code>bytes transaction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The transaction.
      */
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
@@ -598,11 +623,14 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The transaction identifier, returned by a call to
+     * Required. The transaction identifier, returned by a call to
      * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
      * </pre>
      *
-     * <code>bytes transaction = 1;</code>
+     * <code>bytes transaction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The transaction to set.
+     * @return This builder for chaining.
      */
     public Builder setTransaction(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -617,11 +645,13 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The transaction identifier, returned by a call to
+     * Required. The transaction identifier, returned by a call to
      * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
      * </pre>
      *
-     * <code>bytes transaction = 1;</code>
+     * <code>bytes transaction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTransaction() {
 

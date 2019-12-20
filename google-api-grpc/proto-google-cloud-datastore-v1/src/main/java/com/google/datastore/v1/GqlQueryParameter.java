@@ -25,6 +25,12 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
   private GqlQueryParameter() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GqlQueryParameter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,7 +111,10 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
   private int parameterTypeCase_ = 0;
   private java.lang.Object parameterType_;
 
-  public enum ParameterTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum ParameterTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VALUE(2),
     CURSOR(3),
     PARAMETERTYPE_NOT_SET(0);
@@ -115,7 +123,11 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
     private ParameterTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ParameterTypeCase valueOf(int value) {
       return forNumber(value);
@@ -152,6 +164,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.datastore.v1.Value value = 2;</code>
+   *
+   * @return Whether the value field is set.
    */
   public boolean hasValue() {
     return parameterTypeCase_ == 2;
@@ -164,6 +178,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.datastore.v1.Value value = 2;</code>
+   *
+   * @return The value.
    */
   public com.google.datastore.v1.Value getValue() {
     if (parameterTypeCase_ == 2) {
@@ -197,6 +213,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>bytes cursor = 3;</code>
+   *
+   * @return The cursor.
    */
   public com.google.protobuf.ByteString getCursor() {
     if (parameterTypeCase_ == 3) {
@@ -600,6 +618,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.datastore.v1.Value value = 2;</code>
+     *
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return parameterTypeCase_ == 2;
@@ -612,6 +632,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.datastore.v1.Value value = 2;</code>
+     *
+     * @return The value.
      */
     public com.google.datastore.v1.Value getValue() {
       if (valueBuilder_ == null) {
@@ -795,6 +817,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes cursor = 3;</code>
+     *
+     * @return The cursor.
      */
     public com.google.protobuf.ByteString getCursor() {
       if (parameterTypeCase_ == 3) {
@@ -811,6 +835,9 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes cursor = 3;</code>
+     *
+     * @param value The cursor to set.
+     * @return This builder for chaining.
      */
     public Builder setCursor(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -830,6 +857,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes cursor = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCursor() {
       if (parameterTypeCase_ == 3) {

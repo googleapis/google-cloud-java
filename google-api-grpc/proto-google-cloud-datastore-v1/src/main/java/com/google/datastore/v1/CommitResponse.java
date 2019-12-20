@@ -27,6 +27,12 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommitResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -104,7 +110,6 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.CommitResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MUTATION_RESULTS_FIELD_NUMBER = 3;
   private java.util.List<com.google.datastore.v1.MutationResult> mutationResults_;
   /**
@@ -185,6 +190,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 index_updates = 4;</code>
+   *
+   * @return The indexUpdates.
    */
   public int getIndexUpdates() {
     return indexUpdates_;
@@ -442,7 +449,6 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       com.google.datastore.v1.CommitResponse result =
           new com.google.datastore.v1.CommitResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (mutationResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           mutationResults_ = java.util.Collections.unmodifiableList(mutationResults_);
@@ -453,7 +459,6 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         result.mutationResults_ = mutationResultsBuilder_.build();
       }
       result.indexUpdates_ = indexUpdates_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -946,6 +951,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 index_updates = 4;</code>
+     *
+     * @return The indexUpdates.
      */
     public int getIndexUpdates() {
       return indexUpdates_;
@@ -959,6 +966,9 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 index_updates = 4;</code>
+     *
+     * @param value The indexUpdates to set.
+     * @return This builder for chaining.
      */
     public Builder setIndexUpdates(int value) {
 
@@ -975,6 +985,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 index_updates = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIndexUpdates() {
 

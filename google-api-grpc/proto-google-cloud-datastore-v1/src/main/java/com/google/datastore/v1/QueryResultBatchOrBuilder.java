@@ -16,6 +16,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>int32 skipped_results = 6;</code>
+   *
+   * @return The skippedResults.
    */
   int getSkippedResults();
 
@@ -28,6 +30,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>bytes skipped_cursor = 3;</code>
+   *
+   * @return The skippedCursor.
    */
   com.google.protobuf.ByteString getSkippedCursor();
 
@@ -39,6 +43,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.EntityResult.ResultType entity_result_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for entityResultType.
    */
   int getEntityResultTypeValue();
   /**
@@ -49,6 +55,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.EntityResult.ResultType entity_result_type = 1;</code>
+   *
+   * @return The entityResultType.
    */
   com.google.datastore.v1.EntityResult.ResultType getEntityResultType();
 
@@ -112,6 +120,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>bytes end_cursor = 4;</code>
+   *
+   * @return The endCursor.
    */
   com.google.protobuf.ByteString getEndCursor();
 
@@ -123,6 +133,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch.MoreResultsType more_results = 5;</code>
+   *
+   * @return The enum numeric value on the wire for moreResults.
    */
   int getMoreResultsValue();
   /**
@@ -133,6 +145,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch.MoreResultsType more_results = 5;</code>
+   *
+   * @return The moreResults.
    */
   com.google.datastore.v1.QueryResultBatch.MoreResultsType getMoreResults();
 
@@ -151,6 +165,8 @@ public interface QueryResultBatchOrBuilder
    * </pre>
    *
    * <code>int64 snapshot_version = 7;</code>
+   *
+   * @return The snapshotVersion.
    */
   long getSnapshotVersion();
 }

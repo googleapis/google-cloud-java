@@ -124,6 +124,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Filter filter = 4;</code>
+   *
+   * @return Whether the filter field is set.
    */
   boolean hasFilter();
   /**
@@ -134,6 +136,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Filter filter = 4;</code>
+   *
+   * @return The filter.
    */
   com.google.datastore.v1.Filter getFilter();
   /**
@@ -271,6 +275,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>bytes start_cursor = 7;</code>
+   *
+   * @return The startCursor.
    */
   com.google.protobuf.ByteString getStartCursor();
 
@@ -285,6 +291,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>bytes end_cursor = 8;</code>
+   *
+   * @return The endCursor.
    */
   com.google.protobuf.ByteString getEndCursor();
 
@@ -297,6 +305,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>int32 offset = 10;</code>
+   *
+   * @return The offset.
    */
   int getOffset();
 
@@ -311,6 +321,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Int32Value limit = 12;</code>
+   *
+   * @return Whether the limit field is set.
    */
   boolean hasLimit();
   /**
@@ -324,6 +336,8 @@ public interface QueryOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Int32Value limit = 12;</code>
+   *
+   * @return The limit.
    */
   com.google.protobuf.Int32Value getLimit();
   /**

@@ -7,8 +7,7 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for
- * [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
+ * The response for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.ReserveIdsResponse}
@@ -24,6 +23,12 @@ public final class ReserveIdsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   private ReserveIdsResponse() {}
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReserveIdsResponse();
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -236,8 +241,7 @@ public final class ReserveIdsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The response for
-   * [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
+   * The response for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.ReserveIdsResponse}

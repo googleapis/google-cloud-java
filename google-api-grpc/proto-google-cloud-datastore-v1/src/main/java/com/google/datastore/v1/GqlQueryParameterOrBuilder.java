@@ -16,6 +16,8 @@ public interface GqlQueryParameterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Value value = 2;</code>
+   *
+   * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
@@ -26,6 +28,8 @@ public interface GqlQueryParameterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Value value = 2;</code>
+   *
+   * @return The value.
    */
   com.google.datastore.v1.Value getValue();
   /**
@@ -48,6 +52,8 @@ public interface GqlQueryParameterOrBuilder
    * </pre>
    *
    * <code>bytes cursor = 3;</code>
+   *
+   * @return The cursor.
    */
   com.google.protobuf.ByteString getCursor();
 

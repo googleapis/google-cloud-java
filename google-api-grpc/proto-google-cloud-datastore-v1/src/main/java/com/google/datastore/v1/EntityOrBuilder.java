@@ -20,6 +20,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Key key = 1;</code>
+   *
+   * @return Whether the key field is set.
    */
   boolean hasKey();
   /**
@@ -34,6 +36,8 @@ public interface EntityOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.Key key = 1;</code>
+   *
+   * @return The key.
    */
   com.google.datastore.v1.Key getKey();
   /**

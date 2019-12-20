@@ -7,8 +7,7 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for
- * [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+ * The response for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.RunQueryResponse}
@@ -26,6 +25,12 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   private RunQueryResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RunQueryResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -38,7 +43,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +127,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   *
+   * @return Whether the batch field is set.
    */
   public boolean hasBatch() {
     return batch_ != null;
@@ -135,6 +141,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   *
+   * @return The batch.
    */
   public com.google.datastore.v1.QueryResultBatch getBatch() {
     return batch_ == null ? com.google.datastore.v1.QueryResultBatch.getDefaultInstance() : batch_;
@@ -162,6 +170,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 2;</code>
+   *
+   * @return Whether the query field is set.
    */
   public boolean hasQuery() {
     return query_ != null;
@@ -174,6 +184,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 2;</code>
+   *
+   * @return The query.
    */
   public com.google.datastore.v1.Query getQuery() {
     return query_ == null ? com.google.datastore.v1.Query.getDefaultInstance() : query_;
@@ -372,8 +384,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The response for
-   * [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+   * The response for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.RunQueryResponse}
@@ -561,6 +572,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     *
+     * @return Whether the batch field is set.
      */
     public boolean hasBatch() {
       return batchBuilder_ != null || batch_ != null;
@@ -573,6 +586,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     *
+     * @return The batch.
      */
     public com.google.datastore.v1.QueryResultBatch getBatch() {
       if (batchBuilder_ == null) {
@@ -742,6 +757,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.datastore.v1.Query query = 2;</code>
+     *
+     * @return Whether the query field is set.
      */
     public boolean hasQuery() {
       return queryBuilder_ != null || query_ != null;
@@ -754,6 +771,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.datastore.v1.Query query = 2;</code>
+     *
+     * @return The query.
      */
     public com.google.datastore.v1.Query getQuery() {
       if (queryBuilder_ == null) {

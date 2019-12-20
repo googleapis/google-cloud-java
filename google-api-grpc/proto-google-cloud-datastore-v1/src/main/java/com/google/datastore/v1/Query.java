@@ -32,6 +32,12 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Query();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -94,9 +100,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               order_.add(
                   input.readMessage(
@@ -105,9 +111,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 distinctOn_ = new java.util.ArrayList<com.google.datastore.v1.PropertyReference>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000008;
               }
               distinctOn_.add(
                   input.readMessage(
@@ -164,10 +170,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         kind_ = java.util.Collections.unmodifiableList(kind_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         order_ = java.util.Collections.unmodifiableList(order_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         distinctOn_ = java.util.Collections.unmodifiableList(distinctOn_);
       }
       this.unknownFields = unknownFields.build();
@@ -188,7 +194,6 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.Query.class, com.google.datastore.v1.Query.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECTION_FIELD_NUMBER = 2;
   private java.util.List<com.google.datastore.v1.Projection> projection_;
   /**
@@ -332,6 +337,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Filter filter = 4;</code>
+   *
+   * @return Whether the filter field is set.
    */
   public boolean hasFilter() {
     return filter_ != null;
@@ -344,6 +351,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.Filter filter = 4;</code>
+   *
+   * @return The filter.
    */
   public com.google.datastore.v1.Filter getFilter() {
     return filter_ == null ? com.google.datastore.v1.Filter.getDefaultInstance() : filter_;
@@ -512,6 +521,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_cursor = 7;</code>
+   *
+   * @return The startCursor.
    */
   public com.google.protobuf.ByteString getStartCursor() {
     return startCursor_;
@@ -530,6 +541,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_cursor = 8;</code>
+   *
+   * @return The endCursor.
    */
   public com.google.protobuf.ByteString getEndCursor() {
     return endCursor_;
@@ -546,6 +559,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 offset = 10;</code>
+   *
+   * @return The offset.
    */
   public int getOffset() {
     return offset_;
@@ -564,6 +579,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Int32Value limit = 12;</code>
+   *
+   * @return Whether the limit field is set.
    */
   public boolean hasLimit() {
     return limit_ != null;
@@ -579,6 +596,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Int32Value limit = 12;</code>
+   *
+   * @return The limit.
    */
   public com.google.protobuf.Int32Value getLimit() {
     return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
@@ -915,13 +934,13 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       }
       if (orderBuilder_ == null) {
         order_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         orderBuilder_.clear();
       }
       if (distinctOnBuilder_ == null) {
         distinctOn_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         distinctOnBuilder_.clear();
       }
@@ -964,7 +983,6 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.Query buildPartial() {
       com.google.datastore.v1.Query result = new com.google.datastore.v1.Query(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (projectionBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           projection_ = java.util.Collections.unmodifiableList(projection_);
@@ -989,18 +1007,18 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         result.filter_ = filterBuilder_.build();
       }
       if (orderBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           order_ = java.util.Collections.unmodifiableList(order_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.order_ = order_;
       } else {
         result.order_ = orderBuilder_.build();
       }
       if (distinctOnBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           distinctOn_ = java.util.Collections.unmodifiableList(distinctOn_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.distinctOn_ = distinctOn_;
       } else {
@@ -1014,7 +1032,6 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.limit_ = limitBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1125,7 +1142,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         if (!other.order_.isEmpty()) {
           if (order_.isEmpty()) {
             order_ = other.order_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOrderIsMutable();
             order_.addAll(other.order_);
@@ -1138,7 +1155,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             orderBuilder_.dispose();
             orderBuilder_ = null;
             order_ = other.order_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
             orderBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOrderFieldBuilder()
@@ -1152,7 +1169,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         if (!other.distinctOn_.isEmpty()) {
           if (distinctOn_.isEmpty()) {
             distinctOn_ = other.distinctOn_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDistinctOnIsMutable();
             distinctOn_.addAll(other.distinctOn_);
@@ -1165,7 +1182,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             distinctOnBuilder_.dispose();
             distinctOnBuilder_ = null;
             distinctOn_ = other.distinctOn_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
             distinctOnBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDistinctOnFieldBuilder()
@@ -1946,6 +1963,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Filter filter = 4;</code>
+     *
+     * @return Whether the filter field is set.
      */
     public boolean hasFilter() {
       return filterBuilder_ != null || filter_ != null;
@@ -1958,6 +1977,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.Filter filter = 4;</code>
+     *
+     * @return The filter.
      */
     public com.google.datastore.v1.Filter getFilter() {
       if (filterBuilder_ == null) {
@@ -2111,9 +2132,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOrderIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>(order_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2328,7 +2349,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOrder() {
       if (orderBuilder_ == null) {
         order_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         orderBuilder_.clear();
@@ -2449,7 +2470,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.PropertyOrder,
                 com.google.datastore.v1.PropertyOrder.Builder,
                 com.google.datastore.v1.PropertyOrderOrBuilder>(
-                order_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                order_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         order_ = null;
       }
       return orderBuilder_;
@@ -2459,10 +2480,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDistinctOnIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         distinctOn_ =
             new java.util.ArrayList<com.google.datastore.v1.PropertyReference>(distinctOn_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2700,7 +2721,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDistinctOn() {
       if (distinctOnBuilder_ == null) {
         distinctOn_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         distinctOnBuilder_.clear();
@@ -2836,7 +2857,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.PropertyReference,
                 com.google.datastore.v1.PropertyReference.Builder,
                 com.google.datastore.v1.PropertyReferenceOrBuilder>(
-                distinctOn_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                distinctOn_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         distinctOn_ = null;
       }
       return distinctOnBuilder_;
@@ -2854,6 +2875,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
+     *
+     * @return The startCursor.
      */
     public com.google.protobuf.ByteString getStartCursor() {
       return startCursor_;
@@ -2869,6 +2892,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
+     *
+     * @param value The startCursor to set.
+     * @return This builder for chaining.
      */
     public Builder setStartCursor(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2890,6 +2916,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartCursor() {
 
@@ -2910,6 +2938,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
+     *
+     * @return The endCursor.
      */
     public com.google.protobuf.ByteString getEndCursor() {
       return endCursor_;
@@ -2925,6 +2955,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
+     *
+     * @param value The endCursor to set.
+     * @return This builder for chaining.
      */
     public Builder setEndCursor(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2946,6 +2979,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndCursor() {
 
@@ -2964,6 +2999,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 offset = 10;</code>
+     *
+     * @return The offset.
      */
     public int getOffset() {
       return offset_;
@@ -2977,6 +3014,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 offset = 10;</code>
+     *
+     * @param value The offset to set.
+     * @return This builder for chaining.
      */
     public Builder setOffset(int value) {
 
@@ -2993,6 +3033,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 offset = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOffset() {
 
@@ -3018,6 +3060,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Int32Value limit = 12;</code>
+     *
+     * @return Whether the limit field is set.
      */
     public boolean hasLimit() {
       return limitBuilder_ != null || limit_ != null;
@@ -3033,6 +3077,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Int32Value limit = 12;</code>
+     *
+     * @return The limit.
      */
     public com.google.protobuf.Int32Value getLimit() {
       if (limitBuilder_ == null) {

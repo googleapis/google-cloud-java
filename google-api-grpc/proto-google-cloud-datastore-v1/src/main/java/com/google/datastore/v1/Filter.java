@@ -25,6 +25,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   private Filter() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Filter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +120,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   private int filterTypeCase_ = 0;
   private java.lang.Object filterType_;
 
-  public enum FilterTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum FilterTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMPOSITE_FILTER(1),
     PROPERTY_FILTER(2),
     FILTERTYPE_NOT_SET(0);
@@ -124,7 +132,11 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     private FilterTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static FilterTypeCase valueOf(int value) {
       return forNumber(value);
@@ -161,6 +173,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
+   *
+   * @return Whether the compositeFilter field is set.
    */
   public boolean hasCompositeFilter() {
     return filterTypeCase_ == 1;
@@ -173,6 +187,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
+   *
+   * @return The compositeFilter.
    */
   public com.google.datastore.v1.CompositeFilter getCompositeFilter() {
     if (filterTypeCase_ == 1) {
@@ -205,6 +221,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
+   *
+   * @return Whether the propertyFilter field is set.
    */
   public boolean hasPropertyFilter() {
     return filterTypeCase_ == 2;
@@ -217,6 +235,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
+   *
+   * @return The propertyFilter.
    */
   public com.google.datastore.v1.PropertyFilter getPropertyFilter() {
     if (filterTypeCase_ == 2) {
@@ -635,6 +655,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
+     *
+     * @return Whether the compositeFilter field is set.
      */
     public boolean hasCompositeFilter() {
       return filterTypeCase_ == 1;
@@ -647,6 +669,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
+     *
+     * @return The compositeFilter.
      */
     public com.google.datastore.v1.CompositeFilter getCompositeFilter() {
       if (compositeFilterBuilder_ == null) {
@@ -837,6 +861,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
+     *
+     * @return Whether the propertyFilter field is set.
      */
     public boolean hasPropertyFilter() {
       return filterTypeCase_ == 2;
@@ -849,6 +875,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
+     *
+     * @return The propertyFilter.
      */
     public com.google.datastore.v1.PropertyFilter getPropertyFilter() {
       if (propertyFilterBuilder_ == null) {

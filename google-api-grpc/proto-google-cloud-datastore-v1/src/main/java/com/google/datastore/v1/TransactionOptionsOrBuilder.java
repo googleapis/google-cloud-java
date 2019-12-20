@@ -16,6 +16,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+   *
+   * @return Whether the readWrite field is set.
    */
   boolean hasReadWrite();
   /**
@@ -26,6 +28,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadWrite read_write = 1;</code>
+   *
+   * @return The readWrite.
    */
   com.google.datastore.v1.TransactionOptions.ReadWrite getReadWrite();
   /**
@@ -47,6 +51,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+   *
+   * @return Whether the readOnly field is set.
    */
   boolean hasReadOnly();
   /**
@@ -57,6 +63,8 @@ public interface TransactionOptionsOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.TransactionOptions.ReadOnly read_only = 2;</code>
+   *
+   * @return The readOnly.
    */
   com.google.datastore.v1.TransactionOptions.ReadOnly getReadOnly();
   /**

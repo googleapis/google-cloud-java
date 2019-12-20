@@ -17,6 +17,8 @@ public interface GqlQueryOrBuilder
    * </pre>
    *
    * <code>string query_string = 1;</code>
+   *
+   * @return The queryString.
    */
   java.lang.String getQueryString();
   /**
@@ -28,6 +30,8 @@ public interface GqlQueryOrBuilder
    * </pre>
    *
    * <code>string query_string = 1;</code>
+   *
+   * @return The bytes for queryString.
    */
   com.google.protobuf.ByteString getQueryStringBytes();
 
@@ -42,6 +46,8 @@ public interface GqlQueryOrBuilder
    * </pre>
    *
    * <code>bool allow_literals = 2;</code>
+   *
+   * @return The allowLiterals.
    */
   boolean getAllowLiterals();
 

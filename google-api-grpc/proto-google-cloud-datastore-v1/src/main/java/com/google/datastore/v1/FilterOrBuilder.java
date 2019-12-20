@@ -16,6 +16,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
+   *
+   * @return Whether the compositeFilter field is set.
    */
   boolean hasCompositeFilter();
   /**
@@ -26,6 +28,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
+   *
+   * @return The compositeFilter.
    */
   com.google.datastore.v1.CompositeFilter getCompositeFilter();
   /**
@@ -47,6 +51,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
+   *
+   * @return Whether the propertyFilter field is set.
    */
   boolean hasPropertyFilter();
   /**
@@ -57,6 +63,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
+   *
+   * @return The propertyFilter.
    */
   com.google.datastore.v1.PropertyFilter getPropertyFilter();
   /**

@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-03-29T07:41:19.868162Z",
+  "updateTime": "2019-12-20T08:33:18.957897Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.16.21",
-        "dockerImage": "googleapis/artman@sha256:854131ec1af7b3a313253474c24748dc0acd217a58a0b74dbfb559f340a15d78"
+        "version": "0.42.3",
+        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "37386f1ebcaed51bcb7d15d00124d22c38606e45",
-        "internalRef": "240841842"
+        "sha": "50af0530730348f1e3697bf3c70261f7daaf2981",
+        "internalRef": "286491002"
       }
     }
   ],
@@ -27,6 +27,314 @@
         "generator": "gapic",
         "config": "google/datastore/artman_datastore.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/KeyFactoryTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/NullValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/KeyTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/IncompleteKeyTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/StringValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/ValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/StructuredQueryTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/LongValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/TransactionExceptionHandlerTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/LatLngValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/PathElementTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/EntityValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/DatastoreHelperTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/CursorTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/EntityTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/DoubleValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/DatastoreExceptionTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/BaseKeyTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/FullEntityTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/BaseEntityTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/BaseDatastoreBatchWriterTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/BlobTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/TimestampValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/RawValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/DatastoreOptionsTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/KeyValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/SerializationTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/LatLngTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/BlobValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/ListValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/DatastoreTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/BooleanValueTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/ProjectionEntityTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/testing/LocalDatastoreHelperTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/datastore/it/ITDatastoreTest.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Query.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreImpl.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Blob.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreHelper.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/RawValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Batch.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/BlobValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ValueMarshaller.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/BatchImpl.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/EntityQuery.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/TransactionImpl.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/LatLngValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/KeyValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ValueBuilder.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/FullEntity.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreException.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/BaseEntity.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/BaseKey.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/TimestampValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ReadOption.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Transaction.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/KeyFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/StructuredQuery.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Cursor.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ValueType.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/PathElement.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Datastore.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ProjectionEntityQuery.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Validator.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/TransactionExceptionHandler.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/BaseDatastoreBatchWriter.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreWriter.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/package-info.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/EntityValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Value.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreOptions.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/NullValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/KeyQuery.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/LatLng.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreBatchWriter.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/IncompleteKey.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Entity.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ProjectionEntity.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/QueryResults.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/ListValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/Key.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/BooleanValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreReaderWriter.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreReader.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/QueryResultsImpl.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/StringValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DoubleValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/GqlQuery.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/LongValue.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/DatastoreFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/testing/LocalDatastoreHelper.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/testing/package-info.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/testing/RemoteDatastoreHelper.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/spi/DatastoreRpcFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/spi/v1/HttpDatastoreRpc.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/datastore/spi/v1/DatastoreRpc.java"
     }
   ]
 }

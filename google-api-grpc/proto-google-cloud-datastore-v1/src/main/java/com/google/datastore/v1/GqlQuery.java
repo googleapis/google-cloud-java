@@ -29,6 +29,12 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GqlQuery();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -66,10 +72,10 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 positionalBindings_ =
                     new java.util.ArrayList<com.google.datastore.v1.GqlQueryParameter>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               positionalBindings_.add(
                   input.readMessage(
@@ -78,11 +84,11 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 namedBindings_ =
                     com.google.protobuf.MapField.newMapField(
                         NamedBindingsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.datastore.v1.GqlQueryParameter>
@@ -109,7 +115,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         positionalBindings_ = java.util.Collections.unmodifiableList(positionalBindings_);
       }
       this.unknownFields = unknownFields.build();
@@ -142,7 +148,6 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.GqlQuery.class, com.google.datastore.v1.GqlQuery.Builder.class);
   }
 
-  private int bitField0_;
   public static final int QUERY_STRING_FIELD_NUMBER = 1;
   private volatile java.lang.Object queryString_;
   /**
@@ -154,6 +159,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_string = 1;</code>
+   *
+   * @return The queryString.
    */
   public java.lang.String getQueryString() {
     java.lang.Object ref = queryString_;
@@ -175,6 +182,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string query_string = 1;</code>
+   *
+   * @return The bytes for queryString.
    */
   public com.google.protobuf.ByteString getQueryStringBytes() {
     java.lang.Object ref = queryString_;
@@ -201,6 +210,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool allow_literals = 2;</code>
+   *
+   * @return The allowLiterals.
    */
   public boolean getAllowLiterals() {
     return allowLiterals_;
@@ -673,7 +684,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableNamedBindings().clear();
       if (positionalBindingsBuilder_ == null) {
         positionalBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         positionalBindingsBuilder_.clear();
       }
@@ -704,21 +715,19 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.GqlQuery buildPartial() {
       com.google.datastore.v1.GqlQuery result = new com.google.datastore.v1.GqlQuery(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.queryString_ = queryString_;
       result.allowLiterals_ = allowLiterals_;
       result.namedBindings_ = internalGetNamedBindings();
       result.namedBindings_.makeImmutable();
       if (positionalBindingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           positionalBindings_ = java.util.Collections.unmodifiableList(positionalBindings_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.positionalBindings_ = positionalBindings_;
       } else {
         result.positionalBindings_ = positionalBindingsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -780,7 +789,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
         if (!other.positionalBindings_.isEmpty()) {
           if (positionalBindings_.isEmpty()) {
             positionalBindings_ = other.positionalBindings_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePositionalBindingsIsMutable();
             positionalBindings_.addAll(other.positionalBindings_);
@@ -793,7 +802,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
             positionalBindingsBuilder_.dispose();
             positionalBindingsBuilder_ = null;
             positionalBindings_ = other.positionalBindings_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             positionalBindingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPositionalBindingsFieldBuilder()
@@ -844,6 +853,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_string = 1;</code>
+     *
+     * @return The queryString.
      */
     public java.lang.String getQueryString() {
       java.lang.Object ref = queryString_;
@@ -865,6 +876,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_string = 1;</code>
+     *
+     * @return The bytes for queryString.
      */
     public com.google.protobuf.ByteString getQueryStringBytes() {
       java.lang.Object ref = queryString_;
@@ -886,6 +899,9 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_string = 1;</code>
+     *
+     * @param value The queryString to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryString(java.lang.String value) {
       if (value == null) {
@@ -905,6 +921,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_string = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQueryString() {
 
@@ -921,6 +939,9 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string query_string = 1;</code>
+     *
+     * @param value The bytes for queryString to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryStringBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -945,6 +966,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_literals = 2;</code>
+     *
+     * @return The allowLiterals.
      */
     public boolean getAllowLiterals() {
       return allowLiterals_;
@@ -960,6 +983,9 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_literals = 2;</code>
+     *
+     * @param value The allowLiterals to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowLiterals(boolean value) {
 
@@ -978,6 +1004,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_literals = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowLiterals() {
 
@@ -1177,10 +1205,10 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePositionalBindingsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         positionalBindings_ =
             new java.util.ArrayList<com.google.datastore.v1.GqlQueryParameter>(positionalBindings_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1431,7 +1459,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPositionalBindings() {
       if (positionalBindingsBuilder_ == null) {
         positionalBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         positionalBindingsBuilder_.clear();
@@ -1578,7 +1606,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.GqlQueryParameter.Builder,
                 com.google.datastore.v1.GqlQueryParameterOrBuilder>(
                 positionalBindings_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         positionalBindings_ = null;

@@ -7,9 +7,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for
- * [Datastore.Rollback][google.datastore.v1.Datastore.Rollback]. (an empty
- * message).
+ * The response for [Datastore.Rollback][google.datastore.v1.Datastore.Rollback].
+ * (an empty message).
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.RollbackResponse}
@@ -25,6 +24,12 @@ public final class RollbackResponse extends com.google.protobuf.GeneratedMessage
   }
 
   private RollbackResponse() {}
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RollbackResponse();
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -236,9 +241,8 @@ public final class RollbackResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The response for
-   * [Datastore.Rollback][google.datastore.v1.Datastore.Rollback]. (an empty
-   * message).
+   * The response for [Datastore.Rollback][google.datastore.v1.Datastore.Rollback].
+   * (an empty message).
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.RollbackResponse}

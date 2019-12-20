@@ -27,6 +27,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RunQueryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -156,7 +161,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
   private int queryTypeCase_ = 0;
   private java.lang.Object queryType_;
 
-  public enum QueryTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum QueryTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     QUERY(3),
     GQL_QUERY(7),
     QUERYTYPE_NOT_SET(0);
@@ -165,7 +173,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     private QueryTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static QueryTypeCase valueOf(int value) {
       return forNumber(value);
@@ -199,10 +211,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -219,10 +233,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -249,6 +265,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
+   *
+   * @return Whether the partitionId field is set.
    */
   public boolean hasPartitionId() {
     return partitionId_ != null;
@@ -264,6 +282,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
+   *
+   * @return The partitionId.
    */
   public com.google.datastore.v1.PartitionId getPartitionId() {
     return partitionId_ == null
@@ -296,6 +316,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return Whether the readOptions field is set.
    */
   public boolean hasReadOptions() {
     return readOptions_ != null;
@@ -308,6 +330,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+   *
+   * @return The readOptions.
    */
   public com.google.datastore.v1.ReadOptions getReadOptions() {
     return readOptions_ == null
@@ -336,6 +360,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 3;</code>
+   *
+   * @return Whether the query field is set.
    */
   public boolean hasQuery() {
     return queryTypeCase_ == 3;
@@ -348,6 +374,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.Query query = 3;</code>
+   *
+   * @return The query.
    */
   public com.google.datastore.v1.Query getQuery() {
     if (queryTypeCase_ == 3) {
@@ -380,6 +408,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
+   *
+   * @return Whether the gqlQuery field is set.
    */
   public boolean hasGqlQuery() {
     return queryTypeCase_ == 7;
@@ -392,6 +422,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
+   *
+   * @return The gqlQuery.
    */
   public com.google.datastore.v1.GqlQuery getGqlQuery() {
     if (queryTypeCase_ == 7) {
@@ -877,10 +909,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -897,10 +931,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -917,10 +953,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -935,10 +974,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -950,10 +991,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -983,6 +1027,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
+     *
+     * @return Whether the partitionId field is set.
      */
     public boolean hasPartitionId() {
       return partitionIdBuilder_ != null || partitionId_ != null;
@@ -998,6 +1044,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
+     *
+     * @return The partitionId.
      */
     public com.google.datastore.v1.PartitionId getPartitionId() {
       if (partitionIdBuilder_ == null) {
@@ -1188,6 +1236,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+     *
+     * @return Whether the readOptions field is set.
      */
     public boolean hasReadOptions() {
       return readOptionsBuilder_ != null || readOptions_ != null;
@@ -1200,6 +1250,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
+     *
+     * @return The readOptions.
      */
     public com.google.datastore.v1.ReadOptions getReadOptions() {
       if (readOptionsBuilder_ == null) {
@@ -1368,6 +1420,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.Query query = 3;</code>
+     *
+     * @return Whether the query field is set.
      */
     public boolean hasQuery() {
       return queryTypeCase_ == 3;
@@ -1380,6 +1434,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.Query query = 3;</code>
+     *
+     * @return The query.
      */
     public com.google.datastore.v1.Query getQuery() {
       if (queryBuilder_ == null) {
@@ -1566,6 +1622,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
+     *
+     * @return Whether the gqlQuery field is set.
      */
     public boolean hasGqlQuery() {
       return queryTypeCase_ == 7;
@@ -1578,6 +1636,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
+     *
+     * @return The gqlQuery.
      */
     public com.google.datastore.v1.GqlQuery getGqlQuery() {
       if (gqlQueryBuilder_ == null) {

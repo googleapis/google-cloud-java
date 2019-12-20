@@ -16,6 +16,8 @@ public interface PartitionIdOrBuilder
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -26,6 +28,8 @@ public interface PartitionIdOrBuilder
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -37,6 +41,8 @@ public interface PartitionIdOrBuilder
    * </pre>
    *
    * <code>string namespace_id = 4;</code>
+   *
+   * @return The namespaceId.
    */
   java.lang.String getNamespaceId();
   /**
@@ -47,6 +53,8 @@ public interface PartitionIdOrBuilder
    * </pre>
    *
    * <code>string namespace_id = 4;</code>
+   *
+   * @return The bytes for namespaceId.
    */
   com.google.protobuf.ByteString getNamespaceIdBytes();
 }
