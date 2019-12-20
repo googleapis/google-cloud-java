@@ -31,6 +31,8 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   *
+   * @return A list containing the snapshots.
    */
   java.util.List<java.lang.String> getSnapshotsList();
   /**
@@ -41,6 +43,8 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   *
+   * @return The count of snapshots.
    */
   int getSnapshotsCount();
   /**
@@ -51,6 +55,9 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The snapshots at the given index.
    */
   java.lang.String getSnapshots(int index);
   /**
@@ -61,6 +68,9 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the snapshots at the given index.
    */
   com.google.protobuf.ByteString getSnapshotsBytes(int index);
 
@@ -74,6 +84,8 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -86,6 +98,8 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

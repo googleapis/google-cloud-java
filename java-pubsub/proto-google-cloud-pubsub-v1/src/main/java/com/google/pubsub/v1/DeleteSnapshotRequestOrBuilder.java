@@ -32,6 +32,8 @@ public interface DeleteSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string snapshot = 1;</code>
+   *
+   * @return The snapshot.
    */
   java.lang.String getSnapshot();
   /**
@@ -43,6 +45,8 @@ public interface DeleteSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string snapshot = 1;</code>
+   *
+   * @return The bytes for snapshot.
    */
   com.google.protobuf.ByteString getSnapshotBytes();
 }

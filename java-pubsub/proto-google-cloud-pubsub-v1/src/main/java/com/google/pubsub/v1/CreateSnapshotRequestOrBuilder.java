@@ -37,6 +37,8 @@ public interface CreateSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -53,6 +55,8 @@ public interface CreateSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -72,6 +76,8 @@ public interface CreateSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 2;</code>
+   *
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -90,6 +96,8 @@ public interface CreateSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 2;</code>
+   *
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString getSubscriptionBytes();
 

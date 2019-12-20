@@ -43,6 +43,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Topic();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,10 +81,10 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -152,7 +158,6 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
             com.google.pubsub.v1.Topic.class, com.google.pubsub.v1.Topic.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -168,6 +173,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -193,6 +200,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -315,6 +324,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   *
+   * @return Whether the messageStoragePolicy field is set.
    */
   public boolean hasMessageStoragePolicy() {
     return messageStoragePolicy_ != null;
@@ -329,6 +340,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   *
+   * @return The messageStoragePolicy.
    */
   public com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy() {
     return messageStoragePolicy_ == null
@@ -362,6 +375,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string kms_key_name = 5;</code>
+   *
+   * @return The kmsKeyName.
    */
   public java.lang.String getKmsKeyName() {
     java.lang.Object ref = kmsKeyName_;
@@ -384,6 +399,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string kms_key_name = 5;</code>
+   *
+   * @return The bytes for kmsKeyName.
    */
   public com.google.protobuf.ByteString getKmsKeyNameBytes() {
     java.lang.Object ref = kmsKeyName_;
@@ -695,7 +712,6 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     public com.google.pubsub.v1.Topic buildPartial() {
       com.google.pubsub.v1.Topic result = new com.google.pubsub.v1.Topic(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -705,7 +721,6 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         result.messageStoragePolicy_ = messageStoragePolicyBuilder_.build();
       }
       result.kmsKeyName_ = kmsKeyName_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -812,6 +827,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -837,6 +854,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -862,6 +881,9 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -885,6 +907,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -905,6 +929,9 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1092,6 +1119,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     *
+     * @return Whether the messageStoragePolicy field is set.
      */
     public boolean hasMessageStoragePolicy() {
       return messageStoragePolicyBuilder_ != null || messageStoragePolicy_ != null;
@@ -1106,6 +1135,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     *
+     * @return The messageStoragePolicy.
      */
     public com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy() {
       if (messageStoragePolicyBuilder_ == null) {
@@ -1287,6 +1318,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 5;</code>
+     *
+     * @return The kmsKeyName.
      */
     public java.lang.String getKmsKeyName() {
       java.lang.Object ref = kmsKeyName_;
@@ -1309,6 +1342,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 5;</code>
+     *
+     * @return The bytes for kmsKeyName.
      */
     public com.google.protobuf.ByteString getKmsKeyNameBytes() {
       java.lang.Object ref = kmsKeyName_;
@@ -1331,6 +1366,9 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 5;</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setKmsKeyName(java.lang.String value) {
       if (value == null) {
@@ -1351,6 +1389,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
 
@@ -1368,6 +1408,9 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string kms_key_name = 5;</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

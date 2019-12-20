@@ -32,6 +32,8 @@ public interface ListSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string project = 1;</code>
+   *
+   * @return The project.
    */
   java.lang.String getProject();
   /**
@@ -43,6 +45,8 @@ public interface ListSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string project = 1;</code>
+   *
+   * @return The bytes for project.
    */
   com.google.protobuf.ByteString getProjectBytes();
 
@@ -54,6 +58,8 @@ public interface ListSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -67,6 +73,8 @@ public interface ListSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -79,6 +87,8 @@ public interface ListSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

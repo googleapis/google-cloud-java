@@ -42,6 +42,12 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PublishResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,6 +130,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   *
+   * @return A list containing the messageIds.
    */
   public com.google.protobuf.ProtocolStringList getMessageIdsList() {
     return messageIds_;
@@ -138,6 +146,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   *
+   * @return The count of messageIds.
    */
   public int getMessageIdsCount() {
     return messageIds_.size();
@@ -152,6 +162,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The messageIds at the given index.
    */
   public java.lang.String getMessageIds(int index) {
     return messageIds_.get(index);
@@ -166,6 +179,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the messageIds at the given index.
    */
   public com.google.protobuf.ByteString getMessageIdsBytes(int index) {
     return messageIds_.getByteString(index);
@@ -523,6 +539,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @return A list containing the messageIds.
      */
     public com.google.protobuf.ProtocolStringList getMessageIdsList() {
       return messageIds_.getUnmodifiableView();
@@ -537,6 +555,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @return The count of messageIds.
      */
     public int getMessageIdsCount() {
       return messageIds_.size();
@@ -551,6 +571,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The messageIds at the given index.
      */
     public java.lang.String getMessageIds(int index) {
       return messageIds_.get(index);
@@ -565,6 +588,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the messageIds at the given index.
      */
     public com.google.protobuf.ByteString getMessageIdsBytes(int index) {
       return messageIds_.getByteString(index);
@@ -579,6 +605,10 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The messageIds to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageIds(int index, java.lang.String value) {
       if (value == null) {
@@ -599,6 +629,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @param value The messageIds to add.
+     * @return This builder for chaining.
      */
     public Builder addMessageIds(java.lang.String value) {
       if (value == null) {
@@ -619,6 +652,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @param values The messageIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMessageIds(java.lang.Iterable<java.lang.String> values) {
       ensureMessageIdsIsMutable();
@@ -636,6 +672,8 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessageIds() {
       messageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -653,6 +691,9 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated string message_ids = 1;</code>
+     *
+     * @param value The bytes of the messageIds to add.
+     * @return This builder for chaining.
      */
     public Builder addMessageIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

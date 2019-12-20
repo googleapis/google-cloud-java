@@ -32,6 +32,8 @@ public interface PushConfigOrBuilder
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
+   *
+   * @return The pushEndpoint.
    */
   java.lang.String getPushEndpoint();
   /**
@@ -43,6 +45,8 @@ public interface PushConfigOrBuilder
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
+   *
+   * @return The bytes for pushEndpoint.
    */
   com.google.protobuf.ByteString getPushEndpointBytes();
 
@@ -184,6 +188,8 @@ public interface PushConfigOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   *
+   * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
   /**
@@ -195,6 +201,8 @@ public interface PushConfigOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   *
+   * @return The oidcToken.
    */
   com.google.pubsub.v1.PushConfig.OidcToken getOidcToken();
   /**

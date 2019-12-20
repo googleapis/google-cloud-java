@@ -32,6 +32,8 @@ public interface DeleteSubscriptionRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -43,6 +45,8 @@ public interface DeleteSubscriptionRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString getSubscriptionBytes();
 }

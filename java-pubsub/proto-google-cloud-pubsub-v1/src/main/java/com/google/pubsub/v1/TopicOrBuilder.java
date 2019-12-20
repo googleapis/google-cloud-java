@@ -36,6 +36,8 @@ public interface TopicOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -51,6 +53,8 @@ public interface TopicOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -123,6 +127,8 @@ public interface TopicOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   *
+   * @return Whether the messageStoragePolicy field is set.
    */
   boolean hasMessageStoragePolicy();
   /**
@@ -135,6 +141,8 @@ public interface TopicOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   *
+   * @return The messageStoragePolicy.
    */
   com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy();
   /**
@@ -160,6 +168,8 @@ public interface TopicOrBuilder
    * </pre>
    *
    * <code>string kms_key_name = 5;</code>
+   *
+   * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
   /**
@@ -172,6 +182,8 @@ public interface TopicOrBuilder
    * </pre>
    *
    * <code>string kms_key_name = 5;</code>
+   *
+   * @return The bytes for kmsKeyName.
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
 }

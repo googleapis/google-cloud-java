@@ -42,6 +42,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PushConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,11 +80,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
                   input.readMessage(
@@ -165,6 +171,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The serviceAccountEmail.
      */
     java.lang.String getServiceAccountEmail();
     /**
@@ -179,6 +187,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The bytes for serviceAccountEmail.
      */
     com.google.protobuf.ByteString getServiceAccountEmailBytes();
 
@@ -195,6 +205,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return The audience.
      */
     java.lang.String getAudience();
     /**
@@ -210,6 +222,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return The bytes for audience.
      */
     com.google.protobuf.ByteString getAudienceBytes();
   }
@@ -240,6 +254,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OidcToken();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -252,7 +272,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -325,6 +344,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The serviceAccountEmail.
      */
     public java.lang.String getServiceAccountEmail() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -349,6 +370,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The bytes for serviceAccountEmail.
      */
     public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -377,6 +400,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return The audience.
      */
     public java.lang.String getAudience() {
       java.lang.Object ref = audience_;
@@ -402,6 +427,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string audience = 2;</code>
+     *
+     * @return The bytes for audience.
      */
     public com.google.protobuf.ByteString getAudienceBytes() {
       java.lang.Object ref = audience_;
@@ -766,6 +793,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
+       *
+       * @return The serviceAccountEmail.
        */
       public java.lang.String getServiceAccountEmail() {
         java.lang.Object ref = serviceAccountEmail_;
@@ -790,6 +819,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
+       *
+       * @return The bytes for serviceAccountEmail.
        */
       public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
         java.lang.Object ref = serviceAccountEmail_;
@@ -814,6 +845,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
+       *
+       * @param value The serviceAccountEmail to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceAccountEmail(java.lang.String value) {
         if (value == null) {
@@ -836,6 +870,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearServiceAccountEmail() {
 
@@ -855,6 +891,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
+       *
+       * @param value The bytes for serviceAccountEmail to set.
+       * @return This builder for chaining.
        */
       public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -881,6 +920,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string audience = 2;</code>
+       *
+       * @return The audience.
        */
       public java.lang.String getAudience() {
         java.lang.Object ref = audience_;
@@ -906,6 +947,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string audience = 2;</code>
+       *
+       * @return The bytes for audience.
        */
       public com.google.protobuf.ByteString getAudienceBytes() {
         java.lang.Object ref = audience_;
@@ -931,6 +974,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string audience = 2;</code>
+       *
+       * @param value The audience to set.
+       * @return This builder for chaining.
        */
       public Builder setAudience(java.lang.String value) {
         if (value == null) {
@@ -954,6 +1000,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string audience = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAudience() {
 
@@ -974,6 +1022,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string audience = 2;</code>
+       *
+       * @param value The bytes for audience to set.
+       * @return This builder for chaining.
        */
       public Builder setAudienceBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1038,11 +1089,13 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   private int authenticationMethodCase_ = 0;
   private java.lang.Object authenticationMethod_;
 
-  public enum AuthenticationMethodCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AuthenticationMethodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     OIDC_TOKEN(3),
     AUTHENTICATIONMETHOD_NOT_SET(0);
     private final int value;
@@ -1050,7 +1103,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     private AuthenticationMethodCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AuthenticationMethodCase valueOf(int value) {
       return forNumber(value);
@@ -1087,6 +1144,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
+   *
+   * @return The pushEndpoint.
    */
   public java.lang.String getPushEndpoint() {
     java.lang.Object ref = pushEndpoint_;
@@ -1108,6 +1167,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
+   *
+   * @return The bytes for pushEndpoint.
    */
   public com.google.protobuf.ByteString getPushEndpointBytes() {
     java.lang.Object ref = pushEndpoint_;
@@ -1285,6 +1346,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   *
+   * @return Whether the oidcToken field is set.
    */
   public boolean hasOidcToken() {
     return authenticationMethodCase_ == 3;
@@ -1298,6 +1361,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   *
+   * @return The oidcToken.
    */
   public com.google.pubsub.v1.PushConfig.OidcToken getOidcToken() {
     if (authenticationMethodCase_ == 3) {
@@ -1616,7 +1681,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.pubsub.v1.PushConfig buildPartial() {
       com.google.pubsub.v1.PushConfig result = new com.google.pubsub.v1.PushConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.pushEndpoint_ = pushEndpoint_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
@@ -1627,7 +1691,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           result.authenticationMethod_ = oidcTokenBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.authenticationMethodCase_ = authenticationMethodCase_;
       onBuilt();
       return result;
@@ -1749,6 +1812,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
+     *
+     * @return The pushEndpoint.
      */
     public java.lang.String getPushEndpoint() {
       java.lang.Object ref = pushEndpoint_;
@@ -1770,6 +1835,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
+     *
+     * @return The bytes for pushEndpoint.
      */
     public com.google.protobuf.ByteString getPushEndpointBytes() {
       java.lang.Object ref = pushEndpoint_;
@@ -1791,6 +1858,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
+     *
+     * @param value The pushEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setPushEndpoint(java.lang.String value) {
       if (value == null) {
@@ -1810,6 +1880,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPushEndpoint() {
 
@@ -1826,6 +1898,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
+     *
+     * @param value The bytes for pushEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setPushEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2112,6 +2187,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     *
+     * @return Whether the oidcToken field is set.
      */
     public boolean hasOidcToken() {
       return authenticationMethodCase_ == 3;
@@ -2125,6 +2202,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     *
+     * @return The oidcToken.
      */
     public com.google.pubsub.v1.PushConfig.OidcToken getOidcToken() {
       if (oidcTokenBuilder_ == null) {

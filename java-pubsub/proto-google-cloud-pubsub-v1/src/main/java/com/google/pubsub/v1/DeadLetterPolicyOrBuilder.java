@@ -38,6 +38,8 @@ public interface DeadLetterPolicyOrBuilder
    * </pre>
    *
    * <code>string dead_letter_topic = 1;</code>
+   *
+   * @return The deadLetterTopic.
    */
   java.lang.String getDeadLetterTopic();
   /**
@@ -55,6 +57,8 @@ public interface DeadLetterPolicyOrBuilder
    * </pre>
    *
    * <code>string dead_letter_topic = 1;</code>
+   *
+   * @return The bytes for deadLetterTopic.
    */
   com.google.protobuf.ByteString getDeadLetterTopicBytes();
 
@@ -74,6 +78,8 @@ public interface DeadLetterPolicyOrBuilder
    * </pre>
    *
    * <code>int32 max_delivery_attempts = 2;</code>
+   *
+   * @return The maxDeliveryAttempts.
    */
   int getMaxDeliveryAttempts();
 }

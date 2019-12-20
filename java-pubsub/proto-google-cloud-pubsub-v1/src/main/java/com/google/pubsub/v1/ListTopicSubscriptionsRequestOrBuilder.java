@@ -32,6 +32,8 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string topic = 1;</code>
+   *
+   * @return The topic.
    */
   java.lang.String getTopic();
   /**
@@ -43,6 +45,8 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string topic = 1;</code>
+   *
+   * @return The bytes for topic.
    */
   com.google.protobuf.ByteString getTopicBytes();
 
@@ -54,6 +58,8 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -67,6 +73,8 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -79,6 +87,8 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

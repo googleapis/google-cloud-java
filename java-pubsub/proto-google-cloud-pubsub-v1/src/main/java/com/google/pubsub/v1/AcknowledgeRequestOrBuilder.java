@@ -32,6 +32,8 @@ public interface AcknowledgeRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -43,6 +45,8 @@ public interface AcknowledgeRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString getSubscriptionBytes();
 
@@ -55,6 +59,8 @@ public interface AcknowledgeRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @return A list containing the ackIds.
    */
   java.util.List<java.lang.String> getAckIdsList();
   /**
@@ -66,6 +72,8 @@ public interface AcknowledgeRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @return The count of ackIds.
    */
   int getAckIdsCount();
   /**
@@ -77,6 +85,9 @@ public interface AcknowledgeRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ackIds at the given index.
    */
   java.lang.String getAckIds(int index);
   /**
@@ -88,6 +99,9 @@ public interface AcknowledgeRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ackIds at the given index.
    */
   com.google.protobuf.ByteString getAckIdsBytes(int index);
 }

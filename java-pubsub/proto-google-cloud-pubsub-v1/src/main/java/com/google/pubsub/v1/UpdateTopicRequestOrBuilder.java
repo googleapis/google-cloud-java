@@ -31,6 +31,8 @@ public interface UpdateTopicRequestOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   *
+   * @return Whether the topic field is set.
    */
   boolean hasTopic();
   /**
@@ -41,6 +43,8 @@ public interface UpdateTopicRequestOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   *
+   * @return The topic.
    */
   com.google.pubsub.v1.Topic getTopic();
   /**
@@ -66,6 +70,8 @@ public interface UpdateTopicRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -80,6 +86,8 @@ public interface UpdateTopicRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

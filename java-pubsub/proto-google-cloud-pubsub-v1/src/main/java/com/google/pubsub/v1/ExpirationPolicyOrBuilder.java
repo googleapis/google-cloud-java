@@ -36,6 +36,8 @@ public interface ExpirationPolicyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
+   *
+   * @return Whether the ttl field is set.
    */
   boolean hasTtl();
   /**
@@ -51,6 +53,8 @@ public interface ExpirationPolicyOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
+   *
+   * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
   /**

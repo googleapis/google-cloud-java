@@ -42,6 +42,12 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetTopicRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string topic = 1;</code>
+   *
+   * @return The topic.
    */
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
@@ -138,6 +145,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string topic = 1;</code>
+   *
+   * @return The bytes for topic.
    */
   public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
@@ -474,6 +483,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -495,6 +506,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -516,6 +529,9 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @param value The topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopic(java.lang.String value) {
       if (value == null) {
@@ -535,6 +551,8 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTopic() {
 
@@ -551,6 +569,9 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string topic = 1;</code>
+     *
+     * @param value The bytes for topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

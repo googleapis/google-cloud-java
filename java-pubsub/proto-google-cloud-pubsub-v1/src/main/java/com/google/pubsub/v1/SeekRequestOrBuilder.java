@@ -31,6 +31,8 @@ public interface SeekRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -41,6 +43,8 @@ public interface SeekRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString getSubscriptionBytes();
 
@@ -62,6 +66,8 @@ public interface SeekRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time = 2;</code>
+   *
+   * @return Whether the time field is set.
    */
   boolean hasTime();
   /**
@@ -82,6 +88,8 @@ public interface SeekRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time = 2;</code>
+   *
+   * @return The time.
    */
   com.google.protobuf.Timestamp getTime();
   /**
@@ -115,6 +123,8 @@ public interface SeekRequestOrBuilder
    * </pre>
    *
    * <code>string snapshot = 3;</code>
+   *
+   * @return The snapshot.
    */
   java.lang.String getSnapshot();
   /**
@@ -127,6 +137,8 @@ public interface SeekRequestOrBuilder
    * </pre>
    *
    * <code>string snapshot = 3;</code>
+   *
+   * @return The bytes for snapshot.
    */
   com.google.protobuf.ByteString getSnapshotBytes();
 

@@ -34,6 +34,12 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MessageStoragePolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -118,6 +124,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
+   *
+   * @return A list containing the allowedPersistenceRegions.
    */
   public com.google.protobuf.ProtocolStringList getAllowedPersistenceRegionsList() {
     return allowedPersistenceRegions_;
@@ -134,6 +142,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
+   *
+   * @return The count of allowedPersistenceRegions.
    */
   public int getAllowedPersistenceRegionsCount() {
     return allowedPersistenceRegions_.size();
@@ -150,6 +160,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedPersistenceRegions at the given index.
    */
   public java.lang.String getAllowedPersistenceRegions(int index) {
     return allowedPersistenceRegions_.get(index);
@@ -166,6 +179,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string allowed_persistence_regions = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedPersistenceRegions at the given index.
    */
   public com.google.protobuf.ByteString getAllowedPersistenceRegionsBytes(int index) {
     return allowedPersistenceRegions_.getByteString(index);
@@ -523,6 +539,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @return A list containing the allowedPersistenceRegions.
      */
     public com.google.protobuf.ProtocolStringList getAllowedPersistenceRegionsList() {
       return allowedPersistenceRegions_.getUnmodifiableView();
@@ -539,6 +557,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @return The count of allowedPersistenceRegions.
      */
     public int getAllowedPersistenceRegionsCount() {
       return allowedPersistenceRegions_.size();
@@ -555,6 +575,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedPersistenceRegions at the given index.
      */
     public java.lang.String getAllowedPersistenceRegions(int index) {
       return allowedPersistenceRegions_.get(index);
@@ -571,6 +594,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedPersistenceRegions at the given index.
      */
     public com.google.protobuf.ByteString getAllowedPersistenceRegionsBytes(int index) {
       return allowedPersistenceRegions_.getByteString(index);
@@ -587,6 +613,10 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowedPersistenceRegions to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowedPersistenceRegions(int index, java.lang.String value) {
       if (value == null) {
@@ -609,6 +639,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @param value The allowedPersistenceRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedPersistenceRegions(java.lang.String value) {
       if (value == null) {
@@ -631,6 +664,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @param values The allowedPersistenceRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAllowedPersistenceRegions(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedPersistenceRegionsIsMutable();
@@ -650,6 +686,8 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowedPersistenceRegions() {
       allowedPersistenceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -669,6 +707,9 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string allowed_persistence_regions = 1;</code>
+     *
+     * @param value The bytes of the allowedPersistenceRegions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedPersistenceRegionsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

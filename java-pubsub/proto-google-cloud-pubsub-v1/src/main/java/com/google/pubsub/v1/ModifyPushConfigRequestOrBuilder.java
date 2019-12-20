@@ -32,6 +32,8 @@ public interface ModifyPushConfigRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -43,6 +45,8 @@ public interface ModifyPushConfigRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString getSubscriptionBytes();
 
@@ -58,6 +62,8 @@ public interface ModifyPushConfigRequestOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   *
+   * @return Whether the pushConfig field is set.
    */
   boolean hasPushConfig();
   /**
@@ -72,6 +78,8 @@ public interface ModifyPushConfigRequestOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   *
+   * @return The pushConfig.
    */
   com.google.pubsub.v1.PushConfig getPushConfig();
   /**

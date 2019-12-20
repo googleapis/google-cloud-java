@@ -47,6 +47,12 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingPullRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,18 +86,18 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ackIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               ackIds_.add(s);
               break;
             }
           case 24:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 modifyDeadlineSeconds_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               modifyDeadlineSeconds_.addInt(input.readInt32());
               break;
@@ -100,9 +106,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 modifyDeadlineSeconds_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 modifyDeadlineSeconds_.addInt(input.readInt32());
@@ -113,9 +119,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 modifyDeadlineAckIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               modifyDeadlineAckIds_.add(s);
               break;
@@ -139,13 +145,13 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         ackIds_ = ackIds_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         modifyDeadlineSeconds_.makeImmutable(); // C
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         modifyDeadlineAckIds_ = modifyDeadlineAckIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -168,7 +174,6 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
             com.google.pubsub.v1.StreamingPullRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object subscription_;
   /**
@@ -182,6 +187,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The subscription.
    */
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
@@ -205,6 +212,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
@@ -232,6 +241,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @return A list containing the ackIds.
    */
   public com.google.protobuf.ProtocolStringList getAckIdsList() {
     return ackIds_;
@@ -248,6 +259,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @return The count of ackIds.
    */
   public int getAckIdsCount() {
     return ackIds_.size();
@@ -264,6 +277,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ackIds at the given index.
    */
   public java.lang.String getAckIds(int index) {
     return ackIds_.get(index);
@@ -280,6 +296,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ackIds at the given index.
    */
   public com.google.protobuf.ByteString getAckIdsBytes(int index) {
     return ackIds_.getByteString(index);
@@ -305,6 +324,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   *
+   * @return A list containing the modifyDeadlineSeconds.
    */
   public java.util.List<java.lang.Integer> getModifyDeadlineSecondsList() {
     return modifyDeadlineSeconds_;
@@ -327,6 +348,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   *
+   * @return The count of modifyDeadlineSeconds.
    */
   public int getModifyDeadlineSecondsCount() {
     return modifyDeadlineSeconds_.size();
@@ -349,6 +372,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The modifyDeadlineSeconds at the given index.
    */
   public int getModifyDeadlineSeconds(int index) {
     return modifyDeadlineSeconds_.getInt(index);
@@ -370,6 +396,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @return A list containing the modifyDeadlineAckIds.
    */
   public com.google.protobuf.ProtocolStringList getModifyDeadlineAckIdsList() {
     return modifyDeadlineAckIds_;
@@ -386,6 +414,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @return The count of modifyDeadlineAckIds.
    */
   public int getModifyDeadlineAckIdsCount() {
     return modifyDeadlineAckIds_.size();
@@ -402,6 +432,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The modifyDeadlineAckIds at the given index.
    */
   public java.lang.String getModifyDeadlineAckIds(int index) {
     return modifyDeadlineAckIds_.get(index);
@@ -418,6 +451,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the modifyDeadlineAckIds at the given index.
    */
   public com.google.protobuf.ByteString getModifyDeadlineAckIdsBytes(int index) {
     return modifyDeadlineAckIds_.getByteString(index);
@@ -436,6 +472,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>int32 stream_ack_deadline_seconds = 5;</code>
+   *
+   * @return The streamAckDeadlineSeconds.
    */
   public int getStreamAckDeadlineSeconds() {
     return streamAckDeadlineSeconds_;
@@ -719,11 +757,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       subscription_ = "";
 
       ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       modifyDeadlineSeconds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       streamAckDeadlineSeconds_ = 0;
 
       return this;
@@ -754,25 +792,23 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       com.google.pubsub.v1.StreamingPullRequest result =
           new com.google.pubsub.v1.StreamingPullRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.subscription_ = subscription_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         ackIds_ = ackIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ackIds_ = ackIds_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         modifyDeadlineSeconds_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.modifyDeadlineSeconds_ = modifyDeadlineSeconds_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         modifyDeadlineAckIds_ = modifyDeadlineAckIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.modifyDeadlineAckIds_ = modifyDeadlineAckIds_;
       result.streamAckDeadlineSeconds_ = streamAckDeadlineSeconds_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -829,7 +865,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (!other.ackIds_.isEmpty()) {
         if (ackIds_.isEmpty()) {
           ackIds_ = other.ackIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAckIdsIsMutable();
           ackIds_.addAll(other.ackIds_);
@@ -839,7 +875,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (!other.modifyDeadlineSeconds_.isEmpty()) {
         if (modifyDeadlineSeconds_.isEmpty()) {
           modifyDeadlineSeconds_ = other.modifyDeadlineSeconds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureModifyDeadlineSecondsIsMutable();
           modifyDeadlineSeconds_.addAll(other.modifyDeadlineSeconds_);
@@ -849,7 +885,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (!other.modifyDeadlineAckIds_.isEmpty()) {
         if (modifyDeadlineAckIds_.isEmpty()) {
           modifyDeadlineAckIds_ = other.modifyDeadlineAckIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureModifyDeadlineAckIdsIsMutable();
           modifyDeadlineAckIds_.addAll(other.modifyDeadlineAckIds_);
@@ -902,6 +938,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     *
+     * @return The subscription.
      */
     public java.lang.String getSubscription() {
       java.lang.Object ref = subscription_;
@@ -925,6 +963,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     *
+     * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString getSubscriptionBytes() {
       java.lang.Object ref = subscription_;
@@ -948,6 +988,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     *
+     * @param value The subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscription(java.lang.String value) {
       if (value == null) {
@@ -969,6 +1012,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubscription() {
 
@@ -987,6 +1032,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     *
+     * @param value The bytes for subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1003,9 +1051,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAckIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         ackIds_ = new com.google.protobuf.LazyStringArrayList(ackIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1020,6 +1068,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @return A list containing the ackIds.
      */
     public com.google.protobuf.ProtocolStringList getAckIdsList() {
       return ackIds_.getUnmodifiableView();
@@ -1036,6 +1086,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @return The count of ackIds.
      */
     public int getAckIdsCount() {
       return ackIds_.size();
@@ -1052,6 +1104,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ackIds at the given index.
      */
     public java.lang.String getAckIds(int index) {
       return ackIds_.get(index);
@@ -1068,6 +1123,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ackIds at the given index.
      */
     public com.google.protobuf.ByteString getAckIdsBytes(int index) {
       return ackIds_.getByteString(index);
@@ -1084,6 +1142,10 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The ackIds to set.
+     * @return This builder for chaining.
      */
     public Builder setAckIds(int index, java.lang.String value) {
       if (value == null) {
@@ -1106,6 +1168,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @param value The ackIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAckIds(java.lang.String value) {
       if (value == null) {
@@ -1128,6 +1193,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @param values The ackIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAckIds(java.lang.Iterable<java.lang.String> values) {
       ensureAckIdsIsMutable();
@@ -1147,10 +1215,12 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAckIds() {
       ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1166,6 +1236,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string ack_ids = 2;</code>
+     *
+     * @param value The bytes of the ackIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAckIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1181,9 +1254,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.Internal.IntList modifyDeadlineSeconds_ = emptyIntList();
 
     private void ensureModifyDeadlineSecondsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         modifyDeadlineSeconds_ = mutableCopy(modifyDeadlineSeconds_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1204,9 +1277,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @return A list containing the modifyDeadlineSeconds.
      */
     public java.util.List<java.lang.Integer> getModifyDeadlineSecondsList() {
-      return ((bitField0_ & 0x00000004) != 0)
+      return ((bitField0_ & 0x00000002) != 0)
           ? java.util.Collections.unmodifiableList(modifyDeadlineSeconds_)
           : modifyDeadlineSeconds_;
     }
@@ -1228,6 +1303,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @return The count of modifyDeadlineSeconds.
      */
     public int getModifyDeadlineSecondsCount() {
       return modifyDeadlineSeconds_.size();
@@ -1250,6 +1327,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The modifyDeadlineSeconds at the given index.
      */
     public int getModifyDeadlineSeconds(int index) {
       return modifyDeadlineSeconds_.getInt(index);
@@ -1272,6 +1352,10 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The modifyDeadlineSeconds to set.
+     * @return This builder for chaining.
      */
     public Builder setModifyDeadlineSeconds(int index, int value) {
       ensureModifyDeadlineSecondsIsMutable();
@@ -1297,6 +1381,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @param value The modifyDeadlineSeconds to add.
+     * @return This builder for chaining.
      */
     public Builder addModifyDeadlineSeconds(int value) {
       ensureModifyDeadlineSecondsIsMutable();
@@ -1322,6 +1409,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @param values The modifyDeadlineSeconds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllModifyDeadlineSeconds(
         java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -1348,10 +1438,12 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated int32 modify_deadline_seconds = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModifyDeadlineSeconds() {
       modifyDeadlineSeconds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1360,9 +1452,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureModifyDeadlineAckIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         modifyDeadlineAckIds_ = new com.google.protobuf.LazyStringArrayList(modifyDeadlineAckIds_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1377,6 +1469,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @return A list containing the modifyDeadlineAckIds.
      */
     public com.google.protobuf.ProtocolStringList getModifyDeadlineAckIdsList() {
       return modifyDeadlineAckIds_.getUnmodifiableView();
@@ -1393,6 +1487,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @return The count of modifyDeadlineAckIds.
      */
     public int getModifyDeadlineAckIdsCount() {
       return modifyDeadlineAckIds_.size();
@@ -1409,6 +1505,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The modifyDeadlineAckIds at the given index.
      */
     public java.lang.String getModifyDeadlineAckIds(int index) {
       return modifyDeadlineAckIds_.get(index);
@@ -1425,6 +1524,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the modifyDeadlineAckIds at the given index.
      */
     public com.google.protobuf.ByteString getModifyDeadlineAckIdsBytes(int index) {
       return modifyDeadlineAckIds_.getByteString(index);
@@ -1441,6 +1543,10 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The modifyDeadlineAckIds to set.
+     * @return This builder for chaining.
      */
     public Builder setModifyDeadlineAckIds(int index, java.lang.String value) {
       if (value == null) {
@@ -1463,6 +1569,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @param value The modifyDeadlineAckIds to add.
+     * @return This builder for chaining.
      */
     public Builder addModifyDeadlineAckIds(java.lang.String value) {
       if (value == null) {
@@ -1485,6 +1594,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @param values The modifyDeadlineAckIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllModifyDeadlineAckIds(java.lang.Iterable<java.lang.String> values) {
       ensureModifyDeadlineAckIdsIsMutable();
@@ -1504,10 +1616,12 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearModifyDeadlineAckIds() {
       modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1523,6 +1637,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string modify_deadline_ack_ids = 4;</code>
+     *
+     * @param value The bytes of the modifyDeadlineAckIds to add.
+     * @return This builder for chaining.
      */
     public Builder addModifyDeadlineAckIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1547,6 +1664,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 stream_ack_deadline_seconds = 5;</code>
+     *
+     * @return The streamAckDeadlineSeconds.
      */
     public int getStreamAckDeadlineSeconds() {
       return streamAckDeadlineSeconds_;
@@ -1562,6 +1681,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 stream_ack_deadline_seconds = 5;</code>
+     *
+     * @param value The streamAckDeadlineSeconds to set.
+     * @return This builder for chaining.
      */
     public Builder setStreamAckDeadlineSeconds(int value) {
 
@@ -1580,6 +1702,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 stream_ack_deadline_seconds = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStreamAckDeadlineSeconds() {
 

@@ -36,6 +36,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -51,6 +53,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -65,6 +69,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>string topic = 2;</code>
+   *
+   * @return The topic.
    */
   java.lang.String getTopic();
   /**
@@ -78,6 +84,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>string topic = 2;</code>
+   *
+   * @return The bytes for topic.
    */
   com.google.protobuf.ByteString getTopicBytes();
 
@@ -91,6 +99,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   *
+   * @return Whether the pushConfig field is set.
    */
   boolean hasPushConfig();
   /**
@@ -103,6 +113,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   *
+   * @return The pushConfig.
    */
   com.google.pubsub.v1.PushConfig getPushConfig();
   /**
@@ -142,6 +154,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>int32 ack_deadline_seconds = 5;</code>
+   *
+   * @return The ackDeadlineSeconds.
    */
   int getAckDeadlineSeconds();
 
@@ -159,6 +173,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>bool retain_acked_messages = 7;</code>
+   *
+   * @return The retainAckedMessages.
    */
   boolean getRetainAckedMessages();
 
@@ -175,6 +191,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   *
+   * @return Whether the messageRetentionDuration field is set.
    */
   boolean hasMessageRetentionDuration();
   /**
@@ -190,6 +208,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   *
+   * @return The messageRetentionDuration.
    */
   com.google.protobuf.Duration getMessageRetentionDuration();
   /**
@@ -281,6 +301,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>bool enable_message_ordering = 10;</code>
+   *
+   * @return The enableMessageOrdering.
    */
   boolean getEnableMessageOrdering();
 
@@ -297,6 +319,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   *
+   * @return Whether the expirationPolicy field is set.
    */
   boolean hasExpirationPolicy();
   /**
@@ -312,6 +336,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   *
+   * @return The expirationPolicy.
    */
   com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy();
   /**
@@ -347,6 +373,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   *
+   * @return Whether the deadLetterPolicy field is set.
    */
   boolean hasDeadLetterPolicy();
   /**
@@ -366,6 +394,8 @@ public interface SubscriptionOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   *
+   * @return The deadLetterPolicy.
    */
   com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy();
   /**

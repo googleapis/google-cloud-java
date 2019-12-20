@@ -34,6 +34,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -47,6 +49,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   *
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString getSubscriptionBytes();
 
@@ -62,6 +66,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @return A list containing the ackIds.
    */
   java.util.List<java.lang.String> getAckIdsList();
   /**
@@ -76,6 +82,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @return The count of ackIds.
    */
   int getAckIdsCount();
   /**
@@ -90,6 +98,9 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The ackIds at the given index.
    */
   java.lang.String getAckIds(int index);
   /**
@@ -104,6 +115,9 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string ack_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the ackIds at the given index.
    */
   com.google.protobuf.ByteString getAckIdsBytes(int index);
 
@@ -125,6 +139,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   *
+   * @return A list containing the modifyDeadlineSeconds.
    */
   java.util.List<java.lang.Integer> getModifyDeadlineSecondsList();
   /**
@@ -145,6 +161,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   *
+   * @return The count of modifyDeadlineSeconds.
    */
   int getModifyDeadlineSecondsCount();
   /**
@@ -165,6 +183,9 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated int32 modify_deadline_seconds = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The modifyDeadlineSeconds at the given index.
    */
   int getModifyDeadlineSeconds(int index);
 
@@ -180,6 +201,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @return A list containing the modifyDeadlineAckIds.
    */
   java.util.List<java.lang.String> getModifyDeadlineAckIdsList();
   /**
@@ -194,6 +217,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @return The count of modifyDeadlineAckIds.
    */
   int getModifyDeadlineAckIdsCount();
   /**
@@ -208,6 +233,9 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The modifyDeadlineAckIds at the given index.
    */
   java.lang.String getModifyDeadlineAckIds(int index);
   /**
@@ -222,6 +250,9 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the modifyDeadlineAckIds at the given index.
    */
   com.google.protobuf.ByteString getModifyDeadlineAckIdsBytes(int index);
 
@@ -236,6 +267,8 @@ public interface StreamingPullRequestOrBuilder
    * </pre>
    *
    * <code>int32 stream_ack_deadline_seconds = 5;</code>
+   *
+   * @return The streamAckDeadlineSeconds.
    */
   int getStreamAckDeadlineSeconds();
 }

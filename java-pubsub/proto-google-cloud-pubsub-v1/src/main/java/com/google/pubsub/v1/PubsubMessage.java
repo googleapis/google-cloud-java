@@ -51,6 +51,12 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PubsubMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,11 +87,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
                   input.readMessage(
@@ -168,7 +174,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.pubsub.v1.PubsubMessage.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_;
   /**
@@ -180,6 +185,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes data = 1;</code>
+   *
+   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
@@ -292,6 +299,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string message_id = 3;</code>
+   *
+   * @return The messageId.
    */
   public java.lang.String getMessageId() {
     java.lang.Object ref = messageId_;
@@ -315,6 +324,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string message_id = 3;</code>
+   *
+   * @return The bytes for messageId.
    */
   public com.google.protobuf.ByteString getMessageIdBytes() {
     java.lang.Object ref = messageId_;
@@ -340,6 +351,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+   *
+   * @return Whether the publishTime field is set.
    */
   public boolean hasPublishTime() {
     return publishTime_ != null;
@@ -354,6 +367,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+   *
+   * @return The publishTime.
    */
   public com.google.protobuf.Timestamp getPublishTime() {
     return publishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : publishTime_;
@@ -389,6 +404,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
+   *
+   * @return The orderingKey.
    */
   public java.lang.String getOrderingKey() {
     java.lang.Object ref = orderingKey_;
@@ -415,6 +432,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
+   *
+   * @return The bytes for orderingKey.
    */
   public com.google.protobuf.ByteString getOrderingKeyBytes() {
     java.lang.Object ref = orderingKey_;
@@ -746,7 +765,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.pubsub.v1.PubsubMessage buildPartial() {
       com.google.pubsub.v1.PubsubMessage result = new com.google.pubsub.v1.PubsubMessage(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.data_ = data_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
@@ -757,7 +775,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         result.publishTime_ = publishTimeBuilder_.build();
       }
       result.orderingKey_ = orderingKey_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -863,6 +880,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes data = 1;</code>
+     *
+     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -876,6 +895,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes data = 1;</code>
+     *
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -895,6 +917,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes data = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearData() {
 
@@ -1070,6 +1094,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     *
+     * @return The messageId.
      */
     public java.lang.String getMessageId() {
       java.lang.Object ref = messageId_;
@@ -1093,6 +1119,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     *
+     * @return The bytes for messageId.
      */
     public com.google.protobuf.ByteString getMessageIdBytes() {
       java.lang.Object ref = messageId_;
@@ -1116,6 +1144,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     *
+     * @param value The messageId to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageId(java.lang.String value) {
       if (value == null) {
@@ -1137,6 +1168,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessageId() {
 
@@ -1155,6 +1188,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     *
+     * @param value The bytes for messageId to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1183,6 +1219,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+     *
+     * @return Whether the publishTime field is set.
      */
     public boolean hasPublishTime() {
       return publishTimeBuilder_ != null || publishTime_ != null;
@@ -1197,6 +1235,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+     *
+     * @return The publishTime.
      */
     public com.google.protobuf.Timestamp getPublishTime() {
       if (publishTimeBuilder_ == null) {
@@ -1381,6 +1421,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     *
+     * @return The orderingKey.
      */
     public java.lang.String getOrderingKey() {
       java.lang.Object ref = orderingKey_;
@@ -1407,6 +1449,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     *
+     * @return The bytes for orderingKey.
      */
     public com.google.protobuf.ByteString getOrderingKeyBytes() {
       java.lang.Object ref = orderingKey_;
@@ -1433,6 +1477,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     *
+     * @param value The orderingKey to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderingKey(java.lang.String value) {
       if (value == null) {
@@ -1457,6 +1504,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOrderingKey() {
 
@@ -1478,6 +1527,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     *
+     * @param value The bytes for orderingKey to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderingKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

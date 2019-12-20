@@ -41,6 +41,12 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
   private ExpirationPolicy() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExpirationPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
+   *
+   * @return Whether the ttl field is set.
    */
   public boolean hasTtl() {
     return ttl_ != null;
@@ -144,6 +151,8 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
+   *
+   * @return The ttl.
    */
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
@@ -512,6 +521,8 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 1;</code>
+     *
+     * @return Whether the ttl field is set.
      */
     public boolean hasTtl() {
       return ttlBuilder_ != null || ttl_ != null;
@@ -529,6 +540,8 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 1;</code>
+     *
+     * @return The ttl.
      */
     public com.google.protobuf.Duration getTtl() {
       if (ttlBuilder_ == null) {

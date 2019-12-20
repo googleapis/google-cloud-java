@@ -31,6 +31,8 @@ public interface ReceivedMessageOrBuilder
    * </pre>
    *
    * <code>string ack_id = 1;</code>
+   *
+   * @return The ackId.
    */
   java.lang.String getAckId();
   /**
@@ -41,6 +43,8 @@ public interface ReceivedMessageOrBuilder
    * </pre>
    *
    * <code>string ack_id = 1;</code>
+   *
+   * @return The bytes for ackId.
    */
   com.google.protobuf.ByteString getAckIdBytes();
 
@@ -52,6 +56,8 @@ public interface ReceivedMessageOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   *
+   * @return Whether the message field is set.
    */
   boolean hasMessage();
   /**
@@ -62,6 +68,8 @@ public interface ReceivedMessageOrBuilder
    * </pre>
    *
    * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   *
+   * @return The message.
    */
   com.google.pubsub.v1.PubsubMessage getMessage();
   /**
@@ -95,6 +103,8 @@ public interface ReceivedMessageOrBuilder
    * </pre>
    *
    * <code>int32 delivery_attempt = 3;</code>
+   *
+   * @return The deliveryAttempt.
    */
   int getDeliveryAttempt();
 }
