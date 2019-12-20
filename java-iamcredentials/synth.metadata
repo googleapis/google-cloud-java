@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-12T08:44:50.656064Z",
+  "updateTime": "2019-12-20T08:44:47.932519Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.2",
-        "dockerImage": "googleapis/artman@sha256:a86051ce32e2454ca2558ec9e437d46c2184b6dd291f57b0686676d77242658e"
+        "version": "0.42.3",
+        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "19c4589a3cb44b3679f7b3fba88365b3d055d5f8",
-        "internalRef": "285013366"
+        "sha": "50af0530730348f1e3697bf3c70261f7daaf2981",
+        "internalRef": "286491002"
       }
     },
     {
@@ -34,6 +34,377 @@
         "generator": "gapic",
         "config": "google/iam/credentials/artman_iamcredentials_v1.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "google-cloud-iamcredentials/pom.xml"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/test/java/com/google/cloud/iam/credentials/v1/MockIAMCredentials.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/test/java/com/google/cloud/iam/credentials/v1/MockIAMCredentialsImpl.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/test/java/com/google/cloud/iam/credentials/v1/IamCredentialsClientTest.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/IamCredentialsSettings.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/IamCredentialsClient.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/stub/IamCredentialsStub.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/stub/GrpcIamCredentialsCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/stub/IamCredentialsStubSettings.java"
+    },
+    {
+      "path": "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/stub/GrpcIamCredentialsStub.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignJwtRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignBlobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignJwtResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateIdTokenRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateAccessTokenRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateAccessTokenRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/IAMCredentialsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/IAMCredentialsCommonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateIdTokenResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignBlobResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignBlobResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignBlobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateAccessTokenResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignJwtRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateIdTokenRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/SignJwtResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/ServiceAccountName.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateIdTokenResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/GenerateAccessTokenResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/proto/google/iam/credentials/v1/iamcredentials.proto"
+    },
+    {
+      "path": "proto-google-cloud-iamcredentials-v1/src/main/proto/google/iam/credentials/v1/common.proto"
+    },
+    {
+      "path": "grpc-google-cloud-iamcredentials-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-iamcredentials-v1/src/main/java/com/google/cloud/iam/credentials/v1/IAMCredentialsGrpc.java"
+    },
+    {
+      "path": ".git/HEAD"
+    },
+    {
+      "path": ".git/index"
+    },
+    {
+      "path": ".git/shallow"
+    },
+    {
+      "path": ".git/packed-refs"
+    },
+    {
+      "path": ".git/config"
+    },
+    {
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/refs/heads/master"
+    },
+    {
+      "path": ".git/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/objects/pack/pack-922ff410f22ac6f9dc9cd72416335fbafc099a65.idx"
+    },
+    {
+      "path": ".git/objects/pack/pack-922ff410f22ac6f9dc9cd72416335fbafc099a65.pack"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
+      "path": "google-cloud-iamcredentials-bom/pom.xml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
     }
   ]
 }

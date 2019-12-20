@@ -27,12 +27,15 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the service account for which the credentials
+   * Required. The resource name of the service account for which the credentials
    * are requested, in the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +44,15 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the service account for which the credentials
+   * Required. The resource name of the service account for which the credentials
    * are requested, in the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -63,7 +69,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -82,7 +89,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -101,7 +109,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -121,7 +130,8 @@ public interface GenerateAccessTokenRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -135,13 +145,13 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Code to identify the scopes to be included in the OAuth 2.0 access token.
+   * Required. Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
    * information.
    * At least one value required.
    * </pre>
    *
-   * <code>repeated string scope = 4;</code>
+   * <code>repeated string scope = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the scope.
    */
@@ -150,13 +160,13 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Code to identify the scopes to be included in the OAuth 2.0 access token.
+   * Required. Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
    * information.
    * At least one value required.
    * </pre>
    *
-   * <code>repeated string scope = 4;</code>
+   * <code>repeated string scope = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of scope.
    */
@@ -165,13 +175,13 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Code to identify the scopes to be included in the OAuth 2.0 access token.
+   * Required. Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
    * information.
    * At least one value required.
    * </pre>
    *
-   * <code>repeated string scope = 4;</code>
+   * <code>repeated string scope = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The scope at the given index.
@@ -181,13 +191,13 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Code to identify the scopes to be included in the OAuth 2.0 access token.
+   * Required. Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
    * information.
    * At least one value required.
    * </pre>
    *
-   * <code>repeated string scope = 4;</code>
+   * <code>repeated string scope = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the scope at the given index.

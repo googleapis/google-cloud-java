@@ -37,44 +37,55 @@ public final class IAMCredentialsProto {
     java.lang.String[] descriptorData = {
       "\n.google/iam/credentials/v1/iamcredentia"
           + "ls.proto\022\031google.iam.credentials.v1\032\034goo"
-          + "gle/api/annotations.proto\032&google/iam/cr"
-          + "edentials/v1/common.proto2\340\005\n\016IAMCredent"
-          + "ials\022\314\001\n\023GenerateAccessToken\0225.google.ia"
-          + "m.credentials.v1.GenerateAccessTokenRequ"
-          + "est\0326.google.iam.credentials.v1.Generate"
-          + "AccessTokenResponse\"F\202\323\344\223\002@\";/v1/{name=p"
-          + "rojects/*/serviceAccounts/*}:generateAcc"
-          + "essToken:\001*\022\274\001\n\017GenerateIdToken\0221.google"
-          + ".iam.credentials.v1.GenerateIdTokenReque"
-          + "st\0322.google.iam.credentials.v1.GenerateI"
-          + "dTokenResponse\"B\202\323\344\223\002<\"7/v1/{name=projec"
-          + "ts/*/serviceAccounts/*}:generateIdToken:"
-          + "\001*\022\240\001\n\010SignBlob\022*.google.iam.credentials"
-          + ".v1.SignBlobRequest\032+.google.iam.credent"
-          + "ials.v1.SignBlobResponse\";\202\323\344\223\0025\"0/v1/{n"
-          + "ame=projects/*/serviceAccounts/*}:signBl"
-          + "ob:\001*\022\234\001\n\007SignJwt\022).google.iam.credentia"
-          + "ls.v1.SignJwtRequest\032*.google.iam.creden"
-          + "tials.v1.SignJwtResponse\":\202\323\344\223\0024\"//v1/{n"
-          + "ame=projects/*/serviceAccounts/*}:signJw"
-          + "t:\001*B\205\001\n#com.google.cloud.iam.credential"
-          + "s.v1B\023IAMCredentialsProtoP\001ZDgoogle.gola"
-          + "ng.org/genproto/googleapis/iam/credentia"
-          + "ls/v1;credentials\370\001\001b\006proto3"
+          + "gle/api/annotations.proto\032\027google/api/cl"
+          + "ient.proto\032&google/iam/credentials/v1/co"
+          + "mmon.proto2\255\007\n\016IAMCredentials\022\354\001\n\023Genera"
+          + "teAccessToken\0225.google.iam.credentials.v"
+          + "1.GenerateAccessTokenRequest\0326.google.ia"
+          + "m.credentials.v1.GenerateAccessTokenResp"
+          + "onse\"f\202\323\344\223\002@\";/v1/{name=projects/*/servi"
+          + "ceAccounts/*}:generateAccessToken:\001*\332A\035n"
+          + "ame,delegates,scope,lifetime\022\344\001\n\017Generat"
+          + "eIdToken\0221.google.iam.credentials.v1.Gen"
+          + "erateIdTokenRequest\0322.google.iam.credent"
+          + "ials.v1.GenerateIdTokenResponse\"j\202\323\344\223\002<\""
+          + "7/v1/{name=projects/*/serviceAccounts/*}"
+          + ":generateIdToken:\001*\332A%name,delegates,aud"
+          + "ience,include_email\022\271\001\n\010SignBlob\022*.googl"
+          + "e.iam.credentials.v1.SignBlobRequest\032+.g"
+          + "oogle.iam.credentials.v1.SignBlobRespons"
+          + "e\"T\202\323\344\223\0025\"0/v1/{name=projects/*/serviceA"
+          + "ccounts/*}:signBlob:\001*\332A\026name,delegates,"
+          + "payload\022\265\001\n\007SignJwt\022).google.iam.credent"
+          + "ials.v1.SignJwtRequest\032*.google.iam.cred"
+          + "entials.v1.SignJwtResponse\"S\202\323\344\223\0024\"//v1/"
+          + "{name=projects/*/serviceAccounts/*}:sign"
+          + "Jwt:\001*\332A\026name,delegates,payload\032Q\312A\035iamc"
+          + "redentials.googleapis.com\322A.https://www."
+          + "googleapis.com/auth/cloud-platformB\205\001\n#c"
+          + "om.google.cloud.iam.credentials.v1B\023IAMC"
+          + "redentialsProtoP\001ZDgoogle.golang.org/gen"
+          + "proto/googleapis/iam/credentials/v1;cred"
+          + "entials\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.cloud.iam.credentials.v1.IAMCredentialsCommonProto.getDescriptor(),
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.cloud.iam.credentials.v1.IAMCredentialsCommonProto.getDescriptor();
   }
 

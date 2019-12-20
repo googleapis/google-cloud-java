@@ -173,18 +173,21 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param scope Code to identify the scopes to be included in the OAuth 2.0 access token. See
-   *     https://developers.google.com/identity/protocols/googlescopes for more information. At
-   *     least one value required.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param scope Required. Code to identify the scopes to be included in the OAuth 2.0 access
+   *     token. See https://developers.google.com/identity/protocols/googlescopes for more
+   *     information. At least one value required.
    * @param lifetime The desired lifetime duration of the access token in seconds. Must be set to a
    *     value less than or equal to 3600 (1 hour). If a value is not specified, the token's
    *     lifetime will be set to a default value of one hour.
@@ -219,18 +222,21 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param scope Code to identify the scopes to be included in the OAuth 2.0 access token. See
-   *     https://developers.google.com/identity/protocols/googlescopes for more information. At
-   *     least one value required.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param scope Required. Code to identify the scopes to be included in the OAuth 2.0 access
+   *     token. See https://developers.google.com/identity/protocols/googlescopes for more
+   *     information. At least one value required.
    * @param lifetime The desired lifetime duration of the access token in seconds. Must be set to a
    *     value less than or equal to 3600 (1 hour). If a value is not specified, the token's
    *     lifetime will be set to a default value of one hour.
@@ -315,17 +321,20 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param audience The audience for the token, such as the API or account that this token grants
-   *     access to.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param audience Required. The audience for the token, such as the API or account that this
+   *     token grants access to.
    * @param includeEmail Include the service account email in the token. If set to `true`, the token
    *     will contain `email` and `email_verified` claims.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -359,17 +368,20 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param audience The audience for the token, such as the API or account that this token grants
-   *     access to.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param audience Required. The audience for the token, such as the API or account that this
+   *     token grants access to.
    * @param includeEmail Include the service account email in the token. If set to `true`, the token
    *     will contain `email` and `email_verified` claims.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -452,16 +464,19 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param payload The bytes to sign.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param payload Required. The bytes to sign.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(
@@ -491,16 +506,19 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param payload The bytes to sign.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param payload Required. The bytes to sign.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(String name, List<String> delegates, ByteString payload) {
@@ -578,16 +596,19 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param payload The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param payload Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(
@@ -617,16 +638,19 @@ public class IamCredentialsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the service account for which the credentials are requested,
-   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param name Required. The resource name of the service account for which the credentials are
+   *     requested, in the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
    * @param delegates The sequence of service accounts in a delegation chain. Each service account
    *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
    *     in the chain. The last service account in the chain must be granted the
    *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
    *     `name` field of the request.
    *     <p>The delegates must have the following format:
-   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
-   * @param payload The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is
+   *     required; replacing it with a project ID is invalid.
+   * @param payload Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(String name, List<String> delegates, String payload) {

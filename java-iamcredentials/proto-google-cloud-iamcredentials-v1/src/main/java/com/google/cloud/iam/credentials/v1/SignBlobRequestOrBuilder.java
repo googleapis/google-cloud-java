@@ -27,12 +27,15 @@ public interface SignBlobRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the service account for which the credentials
+   * Required. The resource name of the service account for which the credentials
    * are requested, in the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +44,15 @@ public interface SignBlobRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the service account for which the credentials
+   * Required. The resource name of the service account for which the credentials
    * are requested, in the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -63,7 +69,8 @@ public interface SignBlobRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
@@ -82,7 +89,8 @@ public interface SignBlobRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
@@ -101,7 +109,8 @@ public interface SignBlobRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
@@ -121,7 +130,8 @@ public interface SignBlobRequestOrBuilder
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 3;</code>
@@ -135,10 +145,10 @@ public interface SignBlobRequestOrBuilder
    *
    *
    * <pre>
-   * The bytes to sign.
+   * Required. The bytes to sign.
    * </pre>
    *
-   * <code>bytes payload = 5;</code>
+   * <code>bytes payload = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The payload.
    */

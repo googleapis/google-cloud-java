@@ -137,12 +137,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource name of the service account for which the credentials
+   * Required. The resource name of the service account for which the credentials
    * are requested, in the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -161,12 +164,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource name of the service account for which the credentials
+   * Required. The resource name of the service account for which the credentials
    * are requested, in the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -195,7 +201,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -216,7 +223,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -237,7 +245,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -259,7 +268,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * on the service account that is specified in the `name` field of the
    * request.
    * The delegates must have the following format:
-   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+   * character is required; replacing it with a project ID is invalid.
    * </pre>
    *
    * <code>repeated string delegates = 2;</code>
@@ -277,11 +287,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The audience for the token, such as the API or account that this token
+   * Required. The audience for the token, such as the API or account that this token
    * grants access to.
    * </pre>
    *
-   * <code>string audience = 3;</code>
+   * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The audience.
    */
@@ -300,11 +310,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The audience for the token, such as the API or account that this token
+   * Required. The audience for the token, such as the API or account that this token
    * grants access to.
    * </pre>
    *
-   * <code>string audience = 3;</code>
+   * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for audience.
    */
@@ -721,12 +731,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -745,12 +758,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -769,12 +785,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -792,12 +811,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -811,12 +833,15 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -852,7 +877,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -873,7 +899,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -894,7 +921,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -916,7 +944,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -938,7 +967,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -967,7 +997,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -995,7 +1026,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -1020,7 +1052,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -1044,7 +1077,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      * </pre>
      *
      * <code>repeated string delegates = 2;</code>
@@ -1068,11 +1102,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      * </pre>
      *
-     * <code>string audience = 3;</code>
+     * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The audience.
      */
@@ -1091,11 +1125,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      * </pre>
      *
-     * <code>string audience = 3;</code>
+     * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for audience.
      */
@@ -1114,11 +1148,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      * </pre>
      *
-     * <code>string audience = 3;</code>
+     * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The audience to set.
      * @return This builder for chaining.
@@ -1136,11 +1170,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      * </pre>
      *
-     * <code>string audience = 3;</code>
+     * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1154,11 +1188,11 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      * </pre>
      *
-     * <code>string audience = 3;</code>
+     * <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for audience to set.
      * @return This builder for chaining.

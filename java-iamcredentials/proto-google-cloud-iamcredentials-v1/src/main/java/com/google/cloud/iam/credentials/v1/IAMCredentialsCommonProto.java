@@ -69,33 +69,44 @@ public final class IAMCredentialsCommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/iam/credentials/v1/common.proto"
-          + "\022\031google.iam.credentials.v1\032\036google/prot"
-          + "obuf/duration.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"y\n\032GenerateAccessTokenReque"
-          + "st\022\014\n\004name\030\001 \001(\t\022\021\n\tdelegates\030\002 \003(\t\022\r\n\005s"
-          + "cope\030\004 \003(\t\022+\n\010lifetime\030\007 \001(\0132\031.google.pr"
-          + "otobuf.Duration\"d\n\033GenerateAccessTokenRe"
-          + "sponse\022\024\n\014access_token\030\001 \001(\t\022/\n\013expire_t"
-          + "ime\030\003 \001(\0132\032.google.protobuf.Timestamp\"C\n"
-          + "\017SignBlobRequest\022\014\n\004name\030\001 \001(\t\022\021\n\tdelega"
-          + "tes\030\003 \003(\t\022\017\n\007payload\030\005 \001(\014\"7\n\020SignBlobRe"
-          + "sponse\022\016\n\006key_id\030\001 \001(\t\022\023\n\013signed_blob\030\004 "
-          + "\001(\014\"B\n\016SignJwtRequest\022\014\n\004name\030\001 \001(\t\022\021\n\td"
-          + "elegates\030\003 \003(\t\022\017\n\007payload\030\005 \001(\t\"5\n\017SignJ"
-          + "wtResponse\022\016\n\006key_id\030\001 \001(\t\022\022\n\nsigned_jwt"
-          + "\030\002 \001(\t\"b\n\026GenerateIdTokenRequest\022\014\n\004name"
-          + "\030\001 \001(\t\022\021\n\tdelegates\030\002 \003(\t\022\020\n\010audience\030\003 "
-          + "\001(\t\022\025\n\rinclude_email\030\004 \001(\010\"(\n\027GenerateId"
-          + "TokenResponse\022\r\n\005token\030\001 \001(\tB\213\001\n#com.goo"
-          + "gle.cloud.iam.credentials.v1B\031IAMCredent"
-          + "ialsCommonProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/iam/credentials/v1;cred"
-          + "entials\370\001\001b\006proto3"
+          + "\022\031google.iam.credentials.v1\032\037google/api/"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\032\036google/protobuf/duration.proto\032"
+          + "\037google/protobuf/timestamp.proto\"\251\001\n\032Gen"
+          + "erateAccessTokenRequest\0227\n\004name\030\001 \001(\tB)\340"
+          + "A\002\372A#\n!iam.googleapis.com/ServiceAccount"
+          + "\022\021\n\tdelegates\030\002 \003(\t\022\022\n\005scope\030\004 \003(\tB\003\340A\002\022"
+          + "+\n\010lifetime\030\007 \001(\0132\031.google.protobuf.Dura"
+          + "tion\"d\n\033GenerateAccessTokenResponse\022\024\n\014a"
+          + "ccess_token\030\001 \001(\t\022/\n\013expire_time\030\003 \001(\0132\032"
+          + ".google.protobuf.Timestamp\"s\n\017SignBlobRe"
+          + "quest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!iam.googlea"
+          + "pis.com/ServiceAccount\022\021\n\tdelegates\030\003 \003("
+          + "\t\022\024\n\007payload\030\005 \001(\014B\003\340A\002\"7\n\020SignBlobRespo"
+          + "nse\022\016\n\006key_id\030\001 \001(\t\022\023\n\013signed_blob\030\004 \001(\014"
+          + "\"r\n\016SignJwtRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#"
+          + "\n!iam.googleapis.com/ServiceAccount\022\021\n\td"
+          + "elegates\030\003 \003(\t\022\024\n\007payload\030\005 \001(\tB\003\340A\002\"5\n\017"
+          + "SignJwtResponse\022\016\n\006key_id\030\001 \001(\t\022\022\n\nsigne"
+          + "d_jwt\030\002 \001(\t\"\222\001\n\026GenerateIdTokenRequest\0227"
+          + "\n\004name\030\001 \001(\tB)\340A\002\372A#\n!iam.googleapis.com"
+          + "/ServiceAccount\022\021\n\tdelegates\030\002 \003(\t\022\025\n\010au"
+          + "dience\030\003 \001(\tB\003\340A\002\022\025\n\rinclude_email\030\004 \001(\010"
+          + "\"(\n\027GenerateIdTokenResponse\022\r\n\005token\030\001 \001"
+          + "(\tB\347\001\n#com.google.cloud.iam.credentials."
+          + "v1B\031IAMCredentialsCommonProtoP\001ZDgoogle."
+          + "golang.org/genproto/googleapis/iam/crede"
+          + "ntials/v1;credentials\370\001\001\352AY\n!iam.googlea"
+          + "pis.com/ServiceAccount\0224projects/{projec"
+          + "t}/serviceAccounts/{service_account}b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -163,6 +174,15 @@ public final class IAMCredentialsCommonProto {
             new java.lang.String[] {
               "Token",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
