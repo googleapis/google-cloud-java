@@ -94,6 +94,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 24:
+            {
+              isRequired_ = input.readBool();
+              break;
+            }
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -286,6 +291,23 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     return getType();
   }
 
+  public static final int IS_REQUIRED_FIELD_NUMBER = 3;
+  private boolean isRequired_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether this is a required field. Defaults to false.
+   * </pre>
+   *
+   * <code>bool is_required = 3;</code>
+   *
+   * @return The isRequired.
+   */
+  public boolean getIsRequired() {
+    return isRequired_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -306,6 +328,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     if (type_ != null) {
       output.writeMessage(2, getType());
     }
+    if (isRequired_ != false) {
+      output.writeBool(3, isRequired_);
+    }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
@@ -323,6 +348,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     if (type_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getType());
+    }
+    if (isRequired_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isRequired_);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
@@ -349,6 +377,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     if (hasType()) {
       if (!getType().equals(other.getType())) return false;
     }
+    if (getIsRequired() != other.getIsRequired()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -368,6 +397,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
     }
+    hash = (37 * hash) + IS_REQUIRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsRequired());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -524,6 +555,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         type_ = null;
         typeBuilder_ = null;
       }
+      isRequired_ = false;
+
       return this;
     }
 
@@ -558,6 +591,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       } else {
         result.type_ = typeBuilder_.build();
       }
+      result.isRequired_ = isRequired_;
       onBuilt();
       return result;
     }
@@ -618,6 +652,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasType()) {
         mergeType(other.getType());
+      }
+      if (other.getIsRequired() != false) {
+        setIsRequired(other.getIsRequired());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1077,6 +1114,57 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         type_ = null;
       }
       return typeBuilder_;
+    }
+
+    private boolean isRequired_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether this is a required field. Defaults to false.
+     * </pre>
+     *
+     * <code>bool is_required = 3;</code>
+     *
+     * @return The isRequired.
+     */
+    public boolean getIsRequired() {
+      return isRequired_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this is a required field. Defaults to false.
+     * </pre>
+     *
+     * <code>bool is_required = 3;</code>
+     *
+     * @param value The isRequired to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsRequired(boolean value) {
+
+      isRequired_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this is a required field. Defaults to false.
+     * </pre>
+     *
+     * <code>bool is_required = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsRequired() {
+
+      isRequired_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

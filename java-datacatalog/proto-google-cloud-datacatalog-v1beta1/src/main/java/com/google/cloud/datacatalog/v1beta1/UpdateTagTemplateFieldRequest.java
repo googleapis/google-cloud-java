@@ -255,18 +255,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to be updated.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
    *   * `display_name`
    *   * `type.enum_type`
+   *   * `is_required`
    * If `update_mask` is not set or empty, all of the allowed fields above will
    * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
-   * values cannot be deleted nor renamed.
+   * values cannot be deleted nor renamed. Updating a template field from
+   * optional to required is NOT allowed.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -277,18 +280,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to be updated.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
    *   * `display_name`
    *   * `type.enum_type`
+   *   * `is_required`
    * If `update_mask` is not set or empty, all of the allowed fields above will
    * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
-   * values cannot be deleted nor renamed.
+   * values cannot be deleted nor renamed. Updating a template field from
+   * optional to required is NOT allowed.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -299,18 +305,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to be updated.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
    *   * `display_name`
    *   * `type.enum_type`
+   *   * `is_required`
    * If `update_mask` is not set or empty, all of the allowed fields above will
    * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
-   * values cannot be deleted nor renamed.
+   * values cannot be deleted nor renamed. Updating a template field from
+   * optional to required is NOT allowed.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -1039,18 +1048,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -1061,18 +1073,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -1089,18 +1104,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1119,18 +1137,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1146,18 +1167,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1178,18 +1202,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1206,18 +1233,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1228,18 +1258,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1254,18 +1287,21 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The field mask specifies the parts of the template to be updated.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
+     *   * `is_required`
      * If `update_mask` is not set or empty, all of the allowed fields above will
      * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
-     * values cannot be deleted nor renamed.
+     * values cannot be deleted nor renamed. Updating a template field from
+     * optional to required is NOT allowed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

@@ -119,4 +119,17 @@ public interface TagTemplateFieldOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1beta1.FieldTypeOrBuilder getTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether this is a required field. Defaults to false.
+   * </pre>
+   *
+   * <code>bool is_required = 3;</code>
+   *
+   * @return The isRequired.
+   */
+  boolean getIsRequired();
 }

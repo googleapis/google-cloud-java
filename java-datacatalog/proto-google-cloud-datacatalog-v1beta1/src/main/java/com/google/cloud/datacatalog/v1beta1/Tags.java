@@ -106,27 +106,28 @@ public final class Tags {
           + "eField:\0028\001:p\352Am\n&datacatalog.googleapis."
           + "com/TagTemplate\022Cprojects/{project}/loca"
           + "tions/{location}/tagTemplates/{tag_templ"
-          + "ate}\"\203\002\n\020TagTemplateField\022\021\n\004name\030\006 \001(\tB"
+          + "ate}\"\230\002\n\020TagTemplateField\022\021\n\004name\030\006 \001(\tB"
           + "\003\340A\003\022\024\n\014display_name\030\001 \001(\t\022>\n\004type\030\002 \001(\013"
           + "2+.google.cloud.datacatalog.v1beta1.Fiel"
-          + "dTypeB\003\340A\002:\205\001\352A\201\001\n+datacatalog.googleapi"
-          + "s.com/TagTemplateField\022Rprojects/{projec"
-          + "t}/locations/{location}/tagTemplates/{ta"
-          + "g_template}/fields/{field}\"\247\003\n\tFieldType"
-          + "\022S\n\016primitive_type\030\001 \001(\01629.google.cloud."
-          + "datacatalog.v1beta1.FieldType.PrimitiveT"
-          + "ypeH\000\022I\n\tenum_type\030\002 \001(\01324.google.cloud."
-          + "datacatalog.v1beta1.FieldType.EnumTypeH\000"
-          + "\032\212\001\n\010EnumType\022V\n\016allowed_values\030\001 \003(\0132>."
-          + "google.cloud.datacatalog.v1beta1.FieldTy"
-          + "pe.EnumType.EnumValue\032&\n\tEnumValue\022\031\n\014di"
-          + "splay_name\030\001 \001(\tB\003\340A\002\"`\n\rPrimitiveType\022\036"
-          + "\n\032PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBLE"
-          + "\020\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004B"
-          + "\013\n\ttype_declBx\n$com.google.cloud.datacat"
-          + "alog.v1beta1P\001ZKgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/datacatalog/v1beta1;"
-          + "datacatalog\370\001\001b\006proto3"
+          + "dTypeB\003\340A\002\022\023\n\013is_required\030\003 \001(\010:\205\001\352A\201\001\n+"
+          + "datacatalog.googleapis.com/TagTemplateFi"
+          + "eld\022Rprojects/{project}/locations/{locat"
+          + "ion}/tagTemplates/{tag_template}/fields/"
+          + "{field}\"\247\003\n\tFieldType\022S\n\016primitive_type\030"
+          + "\001 \001(\01629.google.cloud.datacatalog.v1beta1"
+          + ".FieldType.PrimitiveTypeH\000\022I\n\tenum_type\030"
+          + "\002 \001(\01324.google.cloud.datacatalog.v1beta1"
+          + ".FieldType.EnumTypeH\000\032\212\001\n\010EnumType\022V\n\016al"
+          + "lowed_values\030\001 \003(\0132>.google.cloud.dataca"
+          + "talog.v1beta1.FieldType.EnumType.EnumVal"
+          + "ue\032&\n\tEnumValue\022\031\n\014display_name\030\001 \001(\tB\003\340"
+          + "A\002\"`\n\rPrimitiveType\022\036\n\032PRIMITIVE_TYPE_UN"
+          + "SPECIFIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n\006STRING\020\002\022\010\n\004B"
+          + "OOL\020\003\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declBx\n$com"
+          + ".google.cloud.datacatalog.v1beta1P\001ZKgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/datacatalog/v1beta1;datacatalog\370\001\001b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -200,7 +201,7 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1beta1_TagTemplateField_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Type",
+              "Name", "DisplayName", "Type", "IsRequired",
             });
     internal_static_google_cloud_datacatalog_v1beta1_FieldType_descriptor =
         getDescriptor().getMessageTypes().get(4);

@@ -667,8 +667,13 @@ public class DataCatalogClientTest {
   public void createTagTemplateFieldTest() {
     String name = "name3373707";
     String displayName = "displayName1615086568";
+    boolean isRequired = true;
     TagTemplateField expectedResponse =
-        TagTemplateField.newBuilder().setName(name).setDisplayName(displayName).build();
+        TagTemplateField.newBuilder()
+            .setName(name)
+            .setDisplayName(displayName)
+            .setIsRequired(isRequired)
+            .build();
     mockDataCatalog.addResponse(expectedResponse);
 
     String formattedParent =
@@ -718,8 +723,13 @@ public class DataCatalogClientTest {
   public void updateTagTemplateFieldTest() {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
+    boolean isRequired = true;
     TagTemplateField expectedResponse =
-        TagTemplateField.newBuilder().setName(name2).setDisplayName(displayName).build();
+        TagTemplateField.newBuilder()
+            .setName(name2)
+            .setDisplayName(displayName)
+            .setIsRequired(isRequired)
+            .build();
     mockDataCatalog.addResponse(expectedResponse);
 
     String formattedName =
@@ -769,8 +779,13 @@ public class DataCatalogClientTest {
   public void renameTagTemplateFieldTest() {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
+    boolean isRequired = true;
     TagTemplateField expectedResponse =
-        TagTemplateField.newBuilder().setName(name2).setDisplayName(displayName).build();
+        TagTemplateField.newBuilder()
+            .setName(name2)
+            .setDisplayName(displayName)
+            .setIsRequired(isRequired)
+            .build();
     mockDataCatalog.addResponse(expectedResponse);
 
     String formattedName =

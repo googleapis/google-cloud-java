@@ -1727,13 +1727,13 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>&#42;
    *     projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * @param tagTemplateField Required. The template to update.
-   * @param updateMask The field mask specifies the parts of the template to be updated. Allowed
-   *     fields:
-   *     <p>&#42; `display_name` &#42; `type.enum_type`
+   * @param updateMask Optional. The field mask specifies the parts of the template to be updated.
+   *     Allowed fields:
+   *     <p>&#42; `display_name` &#42; `type.enum_type` &#42; `is_required`
    *     <p>If `update_mask` is not set or empty, all of the allowed fields above will be updated.
    *     <p>When updating an enum type, the provided values will be merged with the existing values.
    *     Therefore, enum values can only be added, existing enum values cannot be deleted nor
-   *     renamed.
+   *     renamed. Updating a template field from optional to required is NOT allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplateField updateTagTemplateField(
