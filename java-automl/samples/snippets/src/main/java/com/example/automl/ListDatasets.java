@@ -48,7 +48,6 @@ class ListDatasets {
       ListDatasetsRequest request =
           ListDatasetsRequest.newBuilder()
               .setParent(projectLocation.toString())
-              .setFilter("translation_dataset_metadata:*")
               .build();
 
       // List all the datasets available in the region by applying filter.
