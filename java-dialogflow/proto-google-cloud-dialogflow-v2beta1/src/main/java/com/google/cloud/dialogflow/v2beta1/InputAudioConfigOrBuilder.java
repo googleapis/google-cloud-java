@@ -123,12 +123,18 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the phraseHints.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getPhraseHintsList();
   /**
    *
@@ -139,12 +145,18 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of phraseHints.
    */
+  @java.lang.Deprecated
   int getPhraseHintsCount();
   /**
    *
@@ -155,13 +167,19 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getPhraseHints(int index);
   /**
    *
@@ -172,13 +190,19 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPhraseHintsBytes(int index);
 
   /**

@@ -887,9 +887,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field could contain
-   * webhook call latency. The string keys of the Struct's fields map can change
-   * without notice.
+   * Free-form diagnostic information for the associated detect intent request.
+   * The fields of this data can change without notice, so you should not write
+   * code that depends on its structure.
+   * The data may contain:
+   * - webhook call latency
+   * - webhook errors
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -903,9 +906,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field could contain
-   * webhook call latency. The string keys of the Struct's fields map can change
-   * without notice.
+   * Free-form diagnostic information for the associated detect intent request.
+   * The fields of this data can change without notice, so you should not write
+   * code that depends on its structure.
+   * The data may contain:
+   * - webhook call latency
+   * - webhook errors
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -921,9 +927,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field could contain
-   * webhook call latency. The string keys of the Struct's fields map can change
-   * without notice.
+   * Free-form diagnostic information for the associated detect intent request.
+   * The fields of this data can change without notice, so you should not write
+   * code that depends on its structure.
+   * The data may contain:
+   * - webhook call latency
+   * - webhook errors
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3820,9 +3829,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3836,9 +3848,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3858,9 +3873,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3882,9 +3900,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3903,9 +3924,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3931,9 +3955,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3953,9 +3980,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3969,9 +3999,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3989,9 +4022,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field could contain
-     * webhook call latency. The string keys of the Struct's fields map can change
-     * without notice.
+     * Free-form diagnostic information for the associated detect intent request.
+     * The fields of this data can change without notice, so you should not write
+     * code that depends on its structure.
+     * The data may contain:
+     * - webhook call latency
+     * - webhook errors
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>

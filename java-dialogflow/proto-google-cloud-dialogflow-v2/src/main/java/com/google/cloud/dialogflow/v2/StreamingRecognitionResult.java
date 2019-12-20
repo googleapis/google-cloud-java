@@ -59,6 +59,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   private StreamingRecognitionResult() {
     messageType_ = 0;
     transcript_ = "";
+    speechWordInfo_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -80,6 +81,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +116,33 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
               confidence_ = input.readFloat();
               break;
             }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                speechWordInfo_ =
+                    new java.util.ArrayList<com.google.cloud.dialogflow.v2.SpeechWordInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              speechWordInfo_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.SpeechWordInfo.parser(), extensionRegistry));
+              break;
+            }
+          case 66:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (speechEndOffset_ != null) {
+                subBuilder = speechEndOffset_.toBuilder();
+              }
+              speechEndOffset_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(speechEndOffset_);
+                speechEndOffset_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +157,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        speechWordInfo_ = java.util.Collections.unmodifiableList(speechWordInfo_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -444,6 +476,129 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     return confidence_;
   }
 
+  public static final int SPEECH_WORD_INFO_FIELD_NUMBER = 7;
+  private java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> speechWordInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  public java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> getSpeechWordInfoList() {
+    return speechWordInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>
+      getSpeechWordInfoOrBuilderList() {
+    return speechWordInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  public int getSpeechWordInfoCount() {
+    return speechWordInfo_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  public com.google.cloud.dialogflow.v2.SpeechWordInfo getSpeechWordInfo(int index) {
+    return speechWordInfo_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  public com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder getSpeechWordInfoOrBuilder(
+      int index) {
+    return speechWordInfo_.get(index);
+  }
+
+  public static final int SPEECH_END_OFFSET_FIELD_NUMBER = 8;
+  private com.google.protobuf.Duration speechEndOffset_;
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   *
+   * @return Whether the speechEndOffset field is set.
+   */
+  public boolean hasSpeechEndOffset() {
+    return speechEndOffset_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   *
+   * @return The speechEndOffset.
+   */
+  public com.google.protobuf.Duration getSpeechEndOffset() {
+    return speechEndOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : speechEndOffset_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   */
+  public com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder() {
+    return getSpeechEndOffset();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -473,6 +628,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (confidence_ != 0F) {
       output.writeFloat(4, confidence_);
     }
+    for (int i = 0; i < speechWordInfo_.size(); i++) {
+      output.writeMessage(7, speechWordInfo_.get(i));
+    }
+    if (speechEndOffset_ != null) {
+      output.writeMessage(8, getSpeechEndOffset());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -497,6 +658,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (confidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
+    for (int i = 0; i < speechWordInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, speechWordInfo_.get(i));
+    }
+    if (speechEndOffset_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSpeechEndOffset());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -518,6 +685,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (getIsFinal() != other.getIsFinal()) return false;
     if (java.lang.Float.floatToIntBits(getConfidence())
         != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+    if (!getSpeechWordInfoList().equals(other.getSpeechWordInfoList())) return false;
+    if (hasSpeechEndOffset() != other.hasSpeechEndOffset()) return false;
+    if (hasSpeechEndOffset()) {
+      if (!getSpeechEndOffset().equals(other.getSpeechEndOffset())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -537,6 +709,14 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinal());
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
+    if (getSpeechWordInfoCount() > 0) {
+      hash = (37 * hash) + SPEECH_WORD_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechWordInfoList().hashCode();
+    }
+    if (hasSpeechEndOffset()) {
+      hash = (37 * hash) + SPEECH_END_OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechEndOffset().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -696,7 +876,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSpeechWordInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -710,6 +892,18 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
       confidence_ = 0F;
 
+      if (speechWordInfoBuilder_ == null) {
+        speechWordInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        speechWordInfoBuilder_.clear();
+      }
+      if (speechEndOffsetBuilder_ == null) {
+        speechEndOffset_ = null;
+      } else {
+        speechEndOffset_ = null;
+        speechEndOffsetBuilder_ = null;
+      }
       return this;
     }
 
@@ -737,10 +931,25 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2.StreamingRecognitionResult buildPartial() {
       com.google.cloud.dialogflow.v2.StreamingRecognitionResult result =
           new com.google.cloud.dialogflow.v2.StreamingRecognitionResult(this);
+      int from_bitField0_ = bitField0_;
       result.messageType_ = messageType_;
       result.transcript_ = transcript_;
       result.isFinal_ = isFinal_;
       result.confidence_ = confidence_;
+      if (speechWordInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          speechWordInfo_ = java.util.Collections.unmodifiableList(speechWordInfo_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.speechWordInfo_ = speechWordInfo_;
+      } else {
+        result.speechWordInfo_ = speechWordInfoBuilder_.build();
+      }
+      if (speechEndOffsetBuilder_ == null) {
+        result.speechEndOffset_ = speechEndOffset_;
+      } else {
+        result.speechEndOffset_ = speechEndOffsetBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -804,6 +1013,36 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       if (other.getConfidence() != 0F) {
         setConfidence(other.getConfidence());
       }
+      if (speechWordInfoBuilder_ == null) {
+        if (!other.speechWordInfo_.isEmpty()) {
+          if (speechWordInfo_.isEmpty()) {
+            speechWordInfo_ = other.speechWordInfo_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSpeechWordInfoIsMutable();
+            speechWordInfo_.addAll(other.speechWordInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.speechWordInfo_.isEmpty()) {
+          if (speechWordInfoBuilder_.isEmpty()) {
+            speechWordInfoBuilder_.dispose();
+            speechWordInfoBuilder_ = null;
+            speechWordInfo_ = other.speechWordInfo_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            speechWordInfoBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSpeechWordInfoFieldBuilder()
+                    : null;
+          } else {
+            speechWordInfoBuilder_.addAllMessages(other.speechWordInfo_);
+          }
+        }
+      }
+      if (other.hasSpeechEndOffset()) {
+        mergeSpeechEndOffset(other.getSpeechEndOffset());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -833,6 +1072,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
+
+    private int bitField0_;
 
     private int messageType_ = 0;
     /**
@@ -1166,6 +1407,595 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       confidence_ = 0F;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> speechWordInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSpeechWordInfoIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        speechWordInfo_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2.SpeechWordInfo>(speechWordInfo_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SpeechWordInfo,
+            com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder,
+            com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>
+        speechWordInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> getSpeechWordInfoList() {
+      if (speechWordInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(speechWordInfo_);
+      } else {
+        return speechWordInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public int getSpeechWordInfoCount() {
+      if (speechWordInfoBuilder_ == null) {
+        return speechWordInfo_.size();
+      } else {
+        return speechWordInfoBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechWordInfo getSpeechWordInfo(int index) {
+      if (speechWordInfoBuilder_ == null) {
+        return speechWordInfo_.get(index);
+      } else {
+        return speechWordInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder setSpeechWordInfo(
+        int index, com.google.cloud.dialogflow.v2.SpeechWordInfo value) {
+      if (speechWordInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.set(index, value);
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder setSpeechWordInfo(
+        int index, com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder builderForValue) {
+      if (speechWordInfoBuilder_ == null) {
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder addSpeechWordInfo(com.google.cloud.dialogflow.v2.SpeechWordInfo value) {
+      if (speechWordInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.add(value);
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder addSpeechWordInfo(
+        int index, com.google.cloud.dialogflow.v2.SpeechWordInfo value) {
+      if (speechWordInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.add(index, value);
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder addSpeechWordInfo(
+        com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder builderForValue) {
+      if (speechWordInfoBuilder_ == null) {
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder addSpeechWordInfo(
+        int index, com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder builderForValue) {
+      if (speechWordInfoBuilder_ == null) {
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder addAllSpeechWordInfo(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.SpeechWordInfo> values) {
+      if (speechWordInfoBuilder_ == null) {
+        ensureSpeechWordInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, speechWordInfo_);
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder clearSpeechWordInfo() {
+      if (speechWordInfoBuilder_ == null) {
+        speechWordInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public Builder removeSpeechWordInfo(int index) {
+      if (speechWordInfoBuilder_ == null) {
+        ensureSpeechWordInfoIsMutable();
+        speechWordInfo_.remove(index);
+        onChanged();
+      } else {
+        speechWordInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder getSpeechWordInfoBuilder(
+        int index) {
+      return getSpeechWordInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder getSpeechWordInfoOrBuilder(
+        int index) {
+      if (speechWordInfoBuilder_ == null) {
+        return speechWordInfo_.get(index);
+      } else {
+        return speechWordInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>
+        getSpeechWordInfoOrBuilderList() {
+      if (speechWordInfoBuilder_ != null) {
+        return speechWordInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(speechWordInfo_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder addSpeechWordInfoBuilder() {
+      return getSpeechWordInfoFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.SpeechWordInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder addSpeechWordInfoBuilder(
+        int index) {
+      return getSpeechWordInfoFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.SpeechWordInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Word-specific information for the words recognized by Speech in
+     * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [InputAudioConfig.enable_word_info] is set.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder>
+        getSpeechWordInfoBuilderList() {
+      return getSpeechWordInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SpeechWordInfo,
+            com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder,
+            com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>
+        getSpeechWordInfoFieldBuilder() {
+      if (speechWordInfoBuilder_ == null) {
+        speechWordInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SpeechWordInfo,
+                com.google.cloud.dialogflow.v2.SpeechWordInfo.Builder,
+                com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>(
+                speechWordInfo_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        speechWordInfo_ = null;
+      }
+      return speechWordInfoBuilder_;
+    }
+
+    private com.google.protobuf.Duration speechEndOffset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        speechEndOffsetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     *
+     * @return Whether the speechEndOffset field is set.
+     */
+    public boolean hasSpeechEndOffset() {
+      return speechEndOffsetBuilder_ != null || speechEndOffset_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     *
+     * @return The speechEndOffset.
+     */
+    public com.google.protobuf.Duration getSpeechEndOffset() {
+      if (speechEndOffsetBuilder_ == null) {
+        return speechEndOffset_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : speechEndOffset_;
+      } else {
+        return speechEndOffsetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    public Builder setSpeechEndOffset(com.google.protobuf.Duration value) {
+      if (speechEndOffsetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechEndOffset_ = value;
+        onChanged();
+      } else {
+        speechEndOffsetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    public Builder setSpeechEndOffset(com.google.protobuf.Duration.Builder builderForValue) {
+      if (speechEndOffsetBuilder_ == null) {
+        speechEndOffset_ = builderForValue.build();
+        onChanged();
+      } else {
+        speechEndOffsetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    public Builder mergeSpeechEndOffset(com.google.protobuf.Duration value) {
+      if (speechEndOffsetBuilder_ == null) {
+        if (speechEndOffset_ != null) {
+          speechEndOffset_ =
+              com.google.protobuf.Duration.newBuilder(speechEndOffset_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          speechEndOffset_ = value;
+        }
+        onChanged();
+      } else {
+        speechEndOffsetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    public Builder clearSpeechEndOffset() {
+      if (speechEndOffsetBuilder_ == null) {
+        speechEndOffset_ = null;
+        onChanged();
+      } else {
+        speechEndOffset_ = null;
+        speechEndOffsetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    public com.google.protobuf.Duration.Builder getSpeechEndOffsetBuilder() {
+
+      onChanged();
+      return getSpeechEndOffsetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder() {
+      if (speechEndOffsetBuilder_ != null) {
+        return speechEndOffsetBuilder_.getMessageOrBuilder();
+      } else {
+        return speechEndOffset_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : speechEndOffset_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time offset of the end of this Speech recognition result relative to the
+     * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getSpeechEndOffsetFieldBuilder() {
+      if (speechEndOffsetBuilder_ == null) {
+        speechEndOffsetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getSpeechEndOffset(), getParentForChildren(), isClean());
+        speechEndOffset_ = null;
+      }
+      return speechEndOffsetBuilder_;
     }
 
     @java.lang.Override

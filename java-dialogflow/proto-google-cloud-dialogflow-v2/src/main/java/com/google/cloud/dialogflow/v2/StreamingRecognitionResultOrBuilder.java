@@ -110,4 +110,104 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The confidence.
    */
   float getConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> getSpeechWordInfoList();
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  com.google.cloud.dialogflow.v2.SpeechWordInfo getSpeechWordInfo(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  int getSpeechWordInfoCount();
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder>
+      getSpeechWordInfoOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Word-specific information for the words recognized by Speech in
+   * [transcript][google.cloud.dialogflow.v2.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [InputAudioConfig.enable_word_info] is set.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.SpeechWordInfo speech_word_info = 7;</code>
+   */
+  com.google.cloud.dialogflow.v2.SpeechWordInfoOrBuilder getSpeechWordInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   *
+   * @return Whether the speechEndOffset field is set.
+   */
+  boolean hasSpeechEndOffset();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   *
+   * @return The speechEndOffset.
+   */
+  com.google.protobuf.Duration getSpeechEndOffset();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset of the end of this Speech recognition result relative to the
+   * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder();
 }

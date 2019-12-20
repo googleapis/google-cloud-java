@@ -31,6 +31,11 @@ public interface ContextOrBuilder
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
    * The `Context ID` is always converted to lowercase, may only contain
    * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+   * The following context names are reserved for internal use by Dialogflow.
+   * You should not use these contexts or create contexts with these names:
+   * * `__system_counters__`
+   * * `*_id_dialog_context`
+   * * `*_dialog_params_size`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,6 +51,11 @@ public interface ContextOrBuilder
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
    * The `Context ID` is always converted to lowercase, may only contain
    * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+   * The following context names are reserved for internal use by Dialogflow.
+   * You should not use these contexts or create contexts with these names:
+   * * `__system_counters__`
+   * * `*_id_dialog_context`
+   * * `*_dialog_params_size`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

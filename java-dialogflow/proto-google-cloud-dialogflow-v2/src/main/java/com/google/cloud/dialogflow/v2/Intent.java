@@ -48130,8 +48130,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Read-only after creation. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-   * make this intent a followup intent.
+   * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+   * intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -48157,8 +48158,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Read-only after creation. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-   * make this intent a followup intent.
+   * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+   * intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -52220,8 +52222,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Read-only after creation. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-     * make this intent a followup intent.
+     * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+     * intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -52247,8 +52250,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Read-only after creation. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-     * make this intent a followup intent.
+     * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+     * intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -52274,8 +52278,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Read-only after creation. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-     * make this intent a followup intent.
+     * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+     * intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -52300,8 +52305,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Read-only after creation. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-     * make this intent a followup intent.
+     * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+     * intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -52322,8 +52328,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Read-only after creation. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
-     * make this intent a followup intent.
+     * for example with [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents], in order to make this
+     * intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>

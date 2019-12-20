@@ -102,17 +102,39 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.v2.SpeechWordInfo] in
+   * [StreamingRecognitionResult][google.cloud.dialogflow.v2.StreamingRecognitionResult] with information about the recognized speech
+   * words, e.g. start and end time offsets. If false or unspecified, Speech
+   * doesn't return any word-level information.
+   * </pre>
+   *
+   * <code>bool enable_word_info = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWordInfo.
+   */
+  boolean getEnableWordInfo();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the phraseHints.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getPhraseHintsList();
   /**
    *
@@ -123,12 +145,18 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of phraseHints.
    */
+  @java.lang.Deprecated
   int getPhraseHintsCount();
   /**
    *
@@ -139,13 +167,19 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getPhraseHints(int index);
   /**
    *
@@ -156,14 +190,142 @@ public interface InputAudioConfigOrBuilder
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   * This field is deprecated. Please use [speech_contexts]() instead. If you
+   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+   * treat the [phrase_hints]() as a single additional [SpeechContext]().
    * </pre>
    *
-   * <code>repeated string phrase_hints = 4;</code>
+   * <code>
+   * repeated string phrase_hints = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPhraseHintsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SpeechContext speech_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.SpeechContext> getSpeechContextsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SpeechContext speech_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SpeechContext getSpeechContexts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SpeechContext speech_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSpeechContextsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SpeechContext speech_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.SpeechContextOrBuilder>
+      getSpeechContextsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context information to assist speech recognition.
+   * See [the Cloud Speech
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.SpeechContext speech_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
 
   /**
    *

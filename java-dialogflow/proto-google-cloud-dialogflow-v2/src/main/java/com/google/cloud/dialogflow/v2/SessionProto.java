@@ -161,40 +161,43 @@ public final class SessionProto {
           + ".v2.QueryResult\022*\n\016webhook_status\030\004 \001(\0132"
           + "\022.google.rpc.Status\022\024\n\014output_audio\030\005 \001("
           + "\014\022J\n\023output_audio_config\030\006 \001(\0132-.google."
-          + "cloud.dialogflow.v2.OutputAudioConfig\"\212\002"
+          + "cloud.dialogflow.v2.OutputAudioConfig\"\206\003"
           + "\n\032StreamingRecognitionResult\022X\n\014message_"
           + "type\030\001 \001(\0162B.google.cloud.dialogflow.v2."
           + "StreamingRecognitionResult.MessageType\022\022"
           + "\n\ntranscript\030\002 \001(\t\022\020\n\010is_final\030\003 \001(\010\022\022\n\n"
-          + "confidence\030\004 \001(\002\"X\n\013MessageType\022\034\n\030MESSA"
-          + "GE_TYPE_UNSPECIFIED\020\000\022\016\n\nTRANSCRIPT\020\001\022\033\n"
-          + "\027END_OF_SINGLE_UTTERANCE\020\002\":\n\tTextInput\022"
-          + "\021\n\004text\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage_code\030\002 \001("
-          + "\tB\003\340A\002\"m\n\nEventInput\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
-          + "0\n\nparameters\030\002 \001(\0132\027.google.protobuf.St"
-          + "ructB\003\340A\001\022\032\n\rlanguage_code\030\003 \001(\tB\003\340A\002\"K\n"
-          + "\036SentimentAnalysisRequestConfig\022)\n\034analy"
-          + "ze_query_text_sentiment\030\001 \001(\010B\003\340A\001\"^\n\027Se"
-          + "ntimentAnalysisResult\022C\n\024query_text_sent"
-          + "iment\030\001 \001(\0132%.google.cloud.dialogflow.v2"
-          + ".Sentiment\"-\n\tSentiment\022\r\n\005score\030\001 \001(\002\022\021"
-          + "\n\tmagnitude\030\002 \001(\0022\346\003\n\010Sessions\022\312\001\n\014Detec"
-          + "tIntent\022/.google.cloud.dialogflow.v2.Det"
-          + "ectIntentRequest\0320.google.cloud.dialogfl"
-          + "ow.v2.DetectIntentResponse\"W\202\323\344\223\002;\"6/v2/"
-          + "{session=projects/*/agent/sessions/*}:de"
-          + "tectIntent:\001*\332A\023session,query_input\022\222\001\n\025"
-          + "StreamingDetectIntent\0228.google.cloud.dia"
-          + "logflow.v2.StreamingDetectIntentRequest\032"
-          + "9.google.cloud.dialogflow.v2.StreamingDe"
-          + "tectIntentResponse\"\000(\0010\001\032x\312A\031dialogflow."
-          + "googleapis.com\322AYhttps://www.googleapis."
-          + "com/auth/cloud-platform,https://www.goog"
-          + "leapis.com/auth/dialogflowB\233\001\n\036com.googl"
-          + "e.cloud.dialogflow.v2B\014SessionProtoP\001ZDg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Go"
-          + "ogle.Cloud.Dialogflow.V2b\006proto3"
+          + "confidence\030\004 \001(\002\022D\n\020speech_word_info\030\007 \003"
+          + "(\0132*.google.cloud.dialogflow.v2.SpeechWo"
+          + "rdInfo\0224\n\021speech_end_offset\030\010 \001(\0132\031.goog"
+          + "le.protobuf.Duration\"X\n\013MessageType\022\034\n\030M"
+          + "ESSAGE_TYPE_UNSPECIFIED\020\000\022\016\n\nTRANSCRIPT\020"
+          + "\001\022\033\n\027END_OF_SINGLE_UTTERANCE\020\002\":\n\tTextIn"
+          + "put\022\021\n\004text\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage_code\030"
+          + "\002 \001(\tB\003\340A\002\"m\n\nEventInput\022\021\n\004name\030\001 \001(\tB\003"
+          + "\340A\002\0220\n\nparameters\030\002 \001(\0132\027.google.protobu"
+          + "f.StructB\003\340A\001\022\032\n\rlanguage_code\030\003 \001(\tB\003\340A"
+          + "\002\"K\n\036SentimentAnalysisRequestConfig\022)\n\034a"
+          + "nalyze_query_text_sentiment\030\001 \001(\010B\003\340A\001\"^"
+          + "\n\027SentimentAnalysisResult\022C\n\024query_text_"
+          + "sentiment\030\001 \001(\0132%.google.cloud.dialogflo"
+          + "w.v2.Sentiment\"-\n\tSentiment\022\r\n\005score\030\001 \001"
+          + "(\002\022\021\n\tmagnitude\030\002 \001(\0022\346\003\n\010Sessions\022\312\001\n\014D"
+          + "etectIntent\022/.google.cloud.dialogflow.v2"
+          + ".DetectIntentRequest\0320.google.cloud.dial"
+          + "ogflow.v2.DetectIntentResponse\"W\202\323\344\223\002;\"6"
+          + "/v2/{session=projects/*/agent/sessions/*"
+          + "}:detectIntent:\001*\332A\023session,query_input\022"
+          + "\222\001\n\025StreamingDetectIntent\0228.google.cloud"
+          + ".dialogflow.v2.StreamingDetectIntentRequ"
+          + "est\0329.google.cloud.dialogflow.v2.Streami"
+          + "ngDetectIntentResponse\"\000(\0010\001\032x\312A\031dialogf"
+          + "low.googleapis.com\322AYhttps://www.googlea"
+          + "pis.com/auth/cloud-platform,https://www."
+          + "googleapis.com/auth/dialogflowB\233\001\n\036com.g"
+          + "oogle.cloud.dialogflow.v2B\014SessionProtoP"
+          + "\001ZDgoogle.golang.org/genproto/googleapis"
+          + "/cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252"
+          + "\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -304,7 +307,12 @@ public final class SessionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_StreamingRecognitionResult_descriptor,
             new java.lang.String[] {
-              "MessageType", "Transcript", "IsFinal", "Confidence",
+              "MessageType",
+              "Transcript",
+              "IsFinal",
+              "Confidence",
+              "SpeechWordInfo",
+              "SpeechEndOffset",
             });
     internal_static_google_cloud_dialogflow_v2_TextInput_descriptor =
         getDescriptor().getMessageTypes().get(8);
