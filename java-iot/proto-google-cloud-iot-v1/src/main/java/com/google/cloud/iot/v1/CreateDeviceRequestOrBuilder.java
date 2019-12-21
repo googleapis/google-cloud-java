@@ -27,24 +27,28 @@ public interface CreateDeviceRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the device registry where this device should be created.
+   * Required. The name of the device registry where this device should be created.
    * For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The name of the device registry where this device should be created.
+   * Required. The name of the device registry where this device should be created.
    * For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -52,36 +56,36 @@ public interface CreateDeviceRequestOrBuilder
    *
    *
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
+   * Required. The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasDevice();
   /**
    *
    *
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
+   * Required. The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.iot.v1.Device getDevice();
   /**
    *
    *
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
+   * Required. The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder();
 }

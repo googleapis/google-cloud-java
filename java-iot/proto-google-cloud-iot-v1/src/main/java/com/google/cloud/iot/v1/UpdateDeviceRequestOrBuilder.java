@@ -27,39 +27,39 @@ public interface UpdateDeviceRequestOrBuilder
    *
    *
    * <pre>
-   * The new values for the device. The `id` and `num_id` fields must
+   * Required. The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasDevice();
   /**
    *
    *
    * <pre>
-   * The new values for the device. The `id` and `num_id` fields must
+   * Required. The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.iot.v1.Device getDevice();
   /**
    *
    *
    * <pre>
-   * The new values for the device. The `id` and `num_id` fields must
+   * Required. The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder();
 
@@ -67,39 +67,42 @@ public interface UpdateDeviceRequestOrBuilder
    *
    *
    * <pre>
-   * Only updates the `device` fields indicated by this mask.
+   * Required. Only updates the `device` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `credentials`, `blocked`, and `metadata`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
    *
    *
    * <pre>
-   * Only updates the `device` fields indicated by this mask.
+   * Required. Only updates the `device` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `credentials`, `blocked`, and `metadata`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    *
    *
    * <pre>
-   * Only updates the `device` fields indicated by this mask.
+   * Required. Only updates the `device` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `credentials`, `blocked`, and `metadata`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

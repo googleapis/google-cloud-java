@@ -127,12 +127,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The name of the device registry where this device should be created.
+   * Required. The name of the device registry where this device should be created.
    * For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -149,12 +151,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The name of the device registry where this device should be created.
+   * Required. The name of the device registry where this device should be created.
    * For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -174,12 +178,12 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
+   * Required. The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasDevice() {
     return device_ != null;
@@ -188,12 +192,12 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
+   * Required. The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.iot.v1.Device getDevice() {
     return device_ == null ? com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
@@ -202,12 +206,12 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
+   * Required. The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
     return getDevice();
@@ -562,12 +566,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The name of the device registry where this device should be created.
+     * Required. The name of the device registry where this device should be created.
      * For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -584,12 +590,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The name of the device registry where this device should be created.
+     * Required. The name of the device registry where this device should be created.
      * For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -606,12 +614,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The name of the device registry where this device should be created.
+     * Required. The name of the device registry where this device should be created.
      * For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -626,12 +636,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The name of the device registry where this device should be created.
+     * Required. The name of the device registry where this device should be created.
      * For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -643,12 +655,14 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The name of the device registry where this device should be created.
+     * Required. The name of the device registry where this device should be created.
      * For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -671,12 +685,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasDevice() {
       return deviceBuilder_ != null || device_ != null;
@@ -685,12 +700,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.iot.v1.Device getDevice() {
       if (deviceBuilder_ == null) {
@@ -703,12 +719,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDevice(com.google.cloud.iot.v1.Device value) {
       if (deviceBuilder_ == null) {
@@ -727,12 +744,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDevice(com.google.cloud.iot.v1.Device.Builder builderForValue) {
       if (deviceBuilder_ == null) {
@@ -748,12 +766,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDevice(com.google.cloud.iot.v1.Device value) {
       if (deviceBuilder_ == null) {
@@ -774,12 +793,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDevice() {
       if (deviceBuilder_ == null) {
@@ -796,12 +816,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.iot.v1.Device.Builder getDeviceBuilder() {
 
@@ -812,12 +833,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
       if (deviceBuilder_ != null) {
@@ -830,12 +852,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
+     * Required. The device registration details. The field `name` must be empty. The server
      * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.Device,

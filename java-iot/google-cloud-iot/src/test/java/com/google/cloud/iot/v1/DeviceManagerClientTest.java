@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -60,7 +62,8 @@ public class DeviceManagerClientTest {
   public static void startStaticServer() {
     mockDeviceManager = new MockDeviceManager();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockDeviceManager));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDeviceManager));
     serviceHelper.start();
   }
 
@@ -666,7 +669,7 @@ public class DeviceManagerClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -691,7 +694,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -709,7 +712,7 @@ public class DeviceManagerClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -732,7 +735,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -747,7 +750,7 @@ public class DeviceManagerClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -772,7 +775,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
@@ -785,6 +788,47 @@ public class DeviceManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void sendCommandToDeviceTest() {
+    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ByteString binaryData = ByteString.copyFromUtf8("40");
+
+    SendCommandToDeviceResponse actualResponse = client.sendCommandToDevice(name, binaryData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ByteString binaryData = ByteString.copyFromUtf8("40");
+
+      client.sendCommandToDevice(name, binaryData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceTest2() {
     SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
@@ -811,7 +855,7 @@ public class DeviceManagerClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void sendCommandToDeviceExceptionTest() throws Exception {
+  public void sendCommandToDeviceExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockDeviceManager.addException(exception);
 

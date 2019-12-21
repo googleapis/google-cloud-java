@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.iot.v1.stub.DeviceManagerStub;
 import com.google.cloud.iot.v1.stub.DeviceManagerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -176,10 +177,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project and cloud region where this device registry must be created. For
-   *     example, `projects/example-project/locations/us-central1`.
-   * @param deviceRegistry The device registry. The field `name` must be empty. The server will
-   *     generate that field from the device registry `id` provided and the `parent` field.
+   * @param parent Required. The project and cloud region where this device registry must be
+   *     created. For example, `projects/example-project/locations/us-central1`.
+   * @param deviceRegistry Required. The device registry. The field `name` must be empty. The server
+   *     will generate that field from the device registry `id` provided and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceRegistry createDeviceRegistry(
@@ -207,10 +208,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project and cloud region where this device registry must be created. For
-   *     example, `projects/example-project/locations/us-central1`.
-   * @param deviceRegistry The device registry. The field `name` must be empty. The server will
-   *     generate that field from the device registry `id` provided and the `parent` field.
+   * @param parent Required. The project and cloud region where this device registry must be
+   *     created. For example, `projects/example-project/locations/us-central1`.
+   * @param deviceRegistry Required. The device registry. The field `name` must be empty. The server
+   *     will generate that field from the device registry `id` provided and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceRegistry createDeviceRegistry(String parent, DeviceRegistry deviceRegistry) {
@@ -286,7 +287,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device registry. For example,
+   * @param name Required. The name of the device registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -312,7 +313,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device registry. For example,
+   * @param name Required. The name of the device registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -381,12 +382,12 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param deviceRegistry The new values for the device registry. The `id` field must be empty, and
-   *     the `name` field must indicate the path of the resource. For example,
+   * @param deviceRegistry Required. The new values for the device registry. The `id` field must be
+   *     empty, and the `name` field must indicate the path of the resource. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param updateMask Only updates the `device_registry` fields indicated by this mask. The field
-   *     mask must not be empty, and it must not contain fields that are immutable or only set by
-   *     the server. Mutable top-level fields: `event_notification_config`, `http_config`,
+   * @param updateMask Required. Only updates the `device_registry` fields indicated by this mask.
+   *     The field mask must not be empty, and it must not contain fields that are immutable or only
+   *     set by the server. Mutable top-level fields: `event_notification_config`, `http_config`,
    *     `mqtt_config`, and `state_notification_config`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -464,7 +465,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device registry. For example,
+   * @param name Required. The name of the device registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -490,7 +491,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device registry. For example,
+   * @param name Required. The name of the device registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -561,7 +562,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project and cloud region path. For example,
+   * @param parent Required. The project and cloud region path. For example,
    *     `projects/example-project/locations/us-central1`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -588,7 +589,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project and cloud region path. For example,
+   * @param parent Required. The project and cloud region path. For example,
    *     `projects/example-project/locations/us-central1`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -695,10 +696,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the device registry where this device should be created. For example,
-   *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param device The device registration details. The field `name` must be empty. The server
-   *     generates `name` from the device registry `id` and the `parent` field.
+   * @param parent Required. The name of the device registry where this device should be created.
+   *     For example, `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @param device Required. The device registration details. The field `name` must be empty. The
+   *     server generates `name` from the device registry `id` and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device createDevice(RegistryName parent, Device device) {
@@ -725,10 +726,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the device registry where this device should be created. For example,
-   *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param device The device registration details. The field `name` must be empty. The server
-   *     generates `name` from the device registry `id` and the `parent` field.
+   * @param parent Required. The name of the device registry where this device should be created.
+   *     For example, `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @param device Required. The device registration details. The field `name` must be empty. The
+   *     server generates `name` from the device registry `id` and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device createDevice(String parent, Device device) {
@@ -800,7 +801,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -825,7 +826,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -895,13 +896,13 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param device The new values for the device. The `id` and `num_id` fields must be empty, and
-   *     the field `name` must specify the name path. For example,
+   * @param device Required. The new values for the device. The `id` and `num_id` fields must be
+   *     empty, and the field `name` must specify the name path. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param updateMask Only updates the `device` fields indicated by this mask. The field mask must
-   *     not be empty, and it must not contain fields that are immutable or only set by the server.
-   *     Mutable top-level fields: `credentials`, `blocked`, and `metadata`
+   * @param updateMask Required. Only updates the `device` fields indicated by this mask. The field
+   *     mask must not be empty, and it must not contain fields that are immutable or only set by
+   *     the server. Mutable top-level fields: `credentials`, `blocked`, and `metadata`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device updateDevice(Device device, FieldMask updateMask) {
@@ -973,7 +974,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -998,7 +999,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1069,7 +1070,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The device registry path. Required. For example,
+   * @param parent Required. The device registry path. Required. For example,
    *     `projects/my-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1096,7 +1097,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The device registry path. Required. For example,
+   * @param parent Required. The device registry path. Required. For example,
    *     `projects/my-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1201,10 +1202,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData The configuration data for the device.
+   * @param binaryData Required. The configuration data for the device.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceConfig modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData) {
@@ -1232,10 +1233,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData The configuration data for the device.
+   * @param binaryData Required. The configuration data for the device.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceConfig modifyCloudToDeviceConfig(String name, ByteString binaryData) {
@@ -1314,7 +1315,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1342,7 +1343,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1416,7 +1417,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1441,7 +1442,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1506,7 +1507,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = deviceManagerClient.setIamPolicy(resource, policy);
    * }
@@ -1519,7 +1520,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(RegistryName resource, Policy policy) {
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
@@ -1537,7 +1538,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = deviceManagerClient.setIamPolicy(resource.toString(), policy);
    * }
@@ -1565,7 +1566,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1590,7 +1591,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1615,7 +1616,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy response = deviceManagerClient.getIamPolicy(resource);
    * }
    * </code></pre>
@@ -1624,7 +1625,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(RegistryName resource) {
+  public final Policy getIamPolicy(ResourceName resource) {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
@@ -1642,7 +1643,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy response = deviceManagerClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
@@ -1666,7 +1667,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -1690,7 +1691,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -1713,7 +1714,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = deviceManagerClient.testIamPermissions(resource, permissions);
    * }
@@ -1727,7 +1728,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      RegistryName resource, List<String> permissions) {
+      ResourceName resource, List<String> permissions) {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
@@ -1746,7 +1747,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = deviceManagerClient.testIamPermissions(resource.toString(), permissions);
    * }
@@ -1779,7 +1780,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1805,7 +1806,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1841,15 +1842,91 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The command data to send to the device.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(
+      DeviceName name, ByteString binaryData) {
+
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBinaryData(binaryData)
+            .build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name.toString(), binaryData);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The command data to send to the device.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(String name, ByteString binaryData) {
+
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder().setName(name).setBinaryData(binaryData).build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
    *   String subfolder = "";
    *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData, subfolder);
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData The command data to send to the device.
+   * @param binaryData Required. The command data to send to the device.
    * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
    *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
    *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
@@ -1893,10 +1970,10 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the device. For example,
+   * @param name Required. The name of the device. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData The command data to send to the device.
+   * @param binaryData Required. The command data to send to the device.
    * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
    *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
    *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
@@ -1999,12 +2076,12 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the registry. For example,
+   * @param parent Required. The name of the registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   * @param gatewayId Required. The value of `gateway_id` can be either the device numeric ID or the
    *     user-defined device identifier.
-   * @param deviceId The device to associate with the specified gateway. The value of `device_id`
-   *     can be either the device numeric ID or the user-defined device identifier.
+   * @param deviceId Required. The device to associate with the specified gateway. The value of
+   *     `device_id` can be either the device numeric ID or the user-defined device identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BindDeviceToGatewayResponse bindDeviceToGateway(
@@ -2034,12 +2111,12 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the registry. For example,
+   * @param parent Required. The name of the registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   * @param gatewayId Required. The value of `gateway_id` can be either the device numeric ID or the
    *     user-defined device identifier.
-   * @param deviceId The device to associate with the specified gateway. The value of `device_id`
-   *     can be either the device numeric ID or the user-defined device identifier.
+   * @param deviceId Required. The device to associate with the specified gateway. The value of
+   *     `device_id` can be either the device numeric ID or the user-defined device identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BindDeviceToGatewayResponse bindDeviceToGateway(
@@ -2123,12 +2200,12 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the registry. For example,
+   * @param parent Required. The name of the registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   * @param gatewayId Required. The value of `gateway_id` can be either the device numeric ID or the
    *     user-defined device identifier.
-   * @param deviceId The device to disassociate from the specified gateway. The value of `device_id`
-   *     can be either the device numeric ID or the user-defined device identifier.
+   * @param deviceId Required. The device to disassociate from the specified gateway. The value of
+   *     `device_id` can be either the device numeric ID or the user-defined device identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
@@ -2158,12 +2235,12 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the registry. For example,
+   * @param parent Required. The name of the registry. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   * @param gatewayId Required. The value of `gateway_id` can be either the device numeric ID or the
    *     user-defined device identifier.
-   * @param deviceId The device to disassociate from the specified gateway. The value of `device_id`
-   *     can be either the device numeric ID or the user-defined device identifier.
+   * @param deviceId Required. The device to disassociate from the specified gateway. The value of
+   *     `device_id` can be either the device numeric ID or the user-defined device identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(

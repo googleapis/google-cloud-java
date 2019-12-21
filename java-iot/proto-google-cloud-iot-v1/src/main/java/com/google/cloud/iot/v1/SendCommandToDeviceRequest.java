@@ -126,12 +126,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The name of the device. For example,
+   * Required. The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -148,12 +150,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The name of the device. For example,
+   * Required. The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -173,10 +177,10 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The command data to send to the device.
+   * Required. The command data to send to the device.
    * </pre>
    *
-   * <code>bytes binary_data = 2;</code>
+   * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
@@ -587,12 +591,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The name of the device. For example,
+     * Required. The name of the device. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -609,12 +615,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The name of the device. For example,
+     * Required. The name of the device. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -631,12 +639,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The name of the device. For example,
+     * Required. The name of the device. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -651,12 +661,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The name of the device. For example,
+     * Required. The name of the device. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -668,12 +680,14 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The name of the device. For example,
+     * Required. The name of the device. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -691,10 +705,10 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The command data to send to the device.
+     * Required. The command data to send to the device.
      * </pre>
      *
-     * <code>bytes binary_data = 2;</code>
+     * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
@@ -703,10 +717,10 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The command data to send to the device.
+     * Required. The command data to send to the device.
      * </pre>
      *
-     * <code>bytes binary_data = 2;</code>
+     * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setBinaryData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -721,10 +735,10 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The command data to send to the device.
+     * Required. The command data to send to the device.
      * </pre>
      *
-     * <code>bytes binary_data = 2;</code>
+     * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearBinaryData() {
 

@@ -27,22 +27,26 @@ public interface BindDeviceToGatewayRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the registry. For example,
+   * Required. The name of the registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The name of the registry. For example,
+   * Required. The name of the registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -50,22 +54,22 @@ public interface BindDeviceToGatewayRequestOrBuilder
    *
    *
    * <pre>
-   * The value of `gateway_id` can be either the device numeric ID or the
+   * Required. The value of `gateway_id` can be either the device numeric ID or the
    * user-defined device identifier.
    * </pre>
    *
-   * <code>string gateway_id = 2;</code>
+   * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getGatewayId();
   /**
    *
    *
    * <pre>
-   * The value of `gateway_id` can be either the device numeric ID or the
+   * Required. The value of `gateway_id` can be either the device numeric ID or the
    * user-defined device identifier.
    * </pre>
    *
-   * <code>string gateway_id = 2;</code>
+   * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getGatewayIdBytes();
 
@@ -73,24 +77,24 @@ public interface BindDeviceToGatewayRequestOrBuilder
    *
    *
    * <pre>
-   * The device to associate with the specified gateway. The value of
+   * Required. The device to associate with the specified gateway. The value of
    * `device_id` can be either the device numeric ID or the user-defined device
    * identifier.
    * </pre>
    *
-   * <code>string device_id = 3;</code>
+   * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDeviceId();
   /**
    *
    *
    * <pre>
-   * The device to associate with the specified gateway. The value of
+   * Required. The device to associate with the specified gateway. The value of
    * `device_id` can be either the device numeric ID or the user-defined device
    * identifier.
    * </pre>
    *
-   * <code>string device_id = 3;</code>
+   * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDeviceIdBytes();
 }

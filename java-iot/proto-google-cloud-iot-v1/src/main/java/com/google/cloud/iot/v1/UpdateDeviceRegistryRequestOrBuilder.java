@@ -27,36 +27,42 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    *
    *
    * <pre>
-   * The new values for the device registry. The `id` field must be empty, and
+   * Required. The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+   * <code>
+   * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasDeviceRegistry();
   /**
    *
    *
    * <pre>
-   * The new values for the device registry. The `id` field must be empty, and
+   * Required. The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+   * <code>
+   * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
   /**
    *
    *
    * <pre>
-   * The new values for the device registry. The `id` field must be empty, and
+   * Required. The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+   * <code>
+   * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistryOrBuilder();
 
@@ -64,42 +70,45 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    *
    *
    * <pre>
-   * Only updates the `device_registry` fields indicated by this mask.
+   * Required. Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `event_notification_config`, `http_config`,
    * `mqtt_config`, and `state_notification_config`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
    *
    *
    * <pre>
-   * Only updates the `device_registry` fields indicated by this mask.
+   * Required. Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `event_notification_config`, `http_config`,
    * `mqtt_config`, and `state_notification_config`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    *
    *
    * <pre>
-   * Only updates the `device_registry` fields indicated by this mask.
+   * Required. Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `event_notification_config`, `http_config`,
    * `mqtt_config`, and `state_notification_config`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

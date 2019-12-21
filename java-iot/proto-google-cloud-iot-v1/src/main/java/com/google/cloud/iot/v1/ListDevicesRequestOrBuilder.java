@@ -27,22 +27,26 @@ public interface ListDevicesRequestOrBuilder
    *
    *
    * <pre>
-   * The device registry path. Required. For example,
+   * Required. The device registry path. Required. For example,
    * `projects/my-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The device registry path. Required. For example,
+   * Required. The device registry path. Required. For example,
    * `projects/my-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

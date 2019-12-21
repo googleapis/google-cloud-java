@@ -27,22 +27,26 @@ public interface ListDeviceRegistriesRequestOrBuilder
    *
    *
    * <pre>
-   * The project and cloud region path. For example,
+   * Required. The project and cloud region path. For example,
    * `projects/example-project/locations/us-central1`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The project and cloud region path. For example,
+   * Required. The project and cloud region path. For example,
    * `projects/example-project/locations/us-central1`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
