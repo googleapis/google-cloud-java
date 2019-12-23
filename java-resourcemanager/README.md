@@ -219,15 +219,15 @@ We put together all the code shown above into three programs. The programs assum
 running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 The first program creates a project if it does not exist. Complete source code can be found at
-[GetOrCreateProject.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
+[GetOrCreateProject.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
 
 The second program updates a project if it exists and lists all projects the user has permission to
 view. Complete source code can be found at
-[UpdateAndListProjects.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+[UpdateAndListProjects.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 
 The third program modifies the IAM policy associated with a project using the read-modify-write
 pattern.  Complete source code can be found at
-[ModifyPolicy.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
+[ModifyPolicy.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
 Transport
 ---------
