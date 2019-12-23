@@ -36,6 +36,8 @@ public interface ServiceContextOrBuilder
    * </pre>
    *
    * <code>string service = 2;</code>
+   *
+   * @return The service.
    */
   java.lang.String getService();
   /**
@@ -51,6 +53,8 @@ public interface ServiceContextOrBuilder
    * </pre>
    *
    * <code>string service = 2;</code>
+   *
+   * @return The bytes for service.
    */
   com.google.protobuf.ByteString getServiceBytes();
 
@@ -60,9 +64,13 @@ public interface ServiceContextOrBuilder
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
+   * For App Engine standard environment, the version is set to the version of
+   * the app.
    * </pre>
    *
    * <code>string version = 3;</code>
+   *
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
@@ -71,9 +79,13 @@ public interface ServiceContextOrBuilder
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
+   * For App Engine standard environment, the version is set to the version of
+   * the app.
    * </pre>
    *
    * <code>string version = 3;</code>
+   *
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
 
@@ -88,6 +100,8 @@ public interface ServiceContextOrBuilder
    * </pre>
    *
    * <code>string resource_type = 4;</code>
+   *
+   * @return The resourceType.
    */
   java.lang.String getResourceType();
   /**
@@ -101,6 +115,8 @@ public interface ServiceContextOrBuilder
    * </pre>
    *
    * <code>string resource_type = 4;</code>
+   *
+   * @return The bytes for resourceType.
    */
   com.google.protobuf.ByteString getResourceTypeBytes();
 }

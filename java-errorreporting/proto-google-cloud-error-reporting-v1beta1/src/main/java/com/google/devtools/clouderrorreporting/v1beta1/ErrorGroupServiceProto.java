@@ -47,44 +47,46 @@ public final class ErrorGroupServiceProto {
       "\nEgoogle/devtools/clouderrorreporting/v1"
           + "beta1/error_group_service.proto\022+google."
           + "devtools.clouderrorreporting.v1beta1\032\034go"
-          + "ogle/api/annotations.proto\0328google/devto"
-          + "ols/clouderrorreporting/v1beta1/common.p"
-          + "roto\"%\n\017GetGroupRequest\022\022\n\ngroup_name\030\001 "
-          + "\001(\t\"\\\n\022UpdateGroupRequest\022F\n\005group\030\001 \001(\013"
-          + "27.google.devtools.clouderrorreporting.v"
-          + "1beta1.ErrorGroup2\216\003\n\021ErrorGroupService\022"
-          + "\264\001\n\010GetGroup\022<.google.devtools.clouderro"
-          + "rreporting.v1beta1.GetGroupRequest\0327.goo"
-          + "gle.devtools.clouderrorreporting.v1beta1"
-          + ".ErrorGroup\"1\202\323\344\223\002+\022)/v1beta1/{group_nam"
-          + "e=projects/*/groups/*}\022\301\001\n\013UpdateGroup\022?"
+          + "ogle/api/annotations.proto\032\027google/api/c"
+          + "lient.proto\032\037google/api/field_behavior.p"
+          + "roto\032\031google/api/resource.proto\0328google/"
+          + "devtools/clouderrorreporting/v1beta1/com"
+          + "mon.proto\"\\\n\017GetGroupRequest\022I\n\ngroup_na"
+          + "me\030\001 \001(\tB5\340A\002\372A/\n-clouderrorreporting.go"
+          + "ogleapis.com/ErrorGroup\"a\n\022UpdateGroupRe"
+          + "quest\022K\n\005group\030\001 \001(\01327.google.devtools.c"
+          + "louderrorreporting.v1beta1.ErrorGroupB\003\340"
+          + "A\0022\373\003\n\021ErrorGroupService\022\301\001\n\010GetGroup\022<."
+          + "google.devtools.clouderrorreporting.v1be"
+          + "ta1.GetGroupRequest\0327.google.devtools.cl"
+          + "ouderrorreporting.v1beta1.ErrorGroup\">\202\323"
+          + "\344\223\002+\022)/v1beta1/{group_name=projects/*/gr"
+          + "oups/*}\332A\ngroup_name\022\311\001\n\013UpdateGroup\022?.g"
+          + "oogle.devtools.clouderrorreporting.v1bet"
+          + "a1.UpdateGroupRequest\0327.google.devtools."
+          + "clouderrorreporting.v1beta1.ErrorGroup\"@"
+          + "\202\323\344\223\0022\032)/v1beta1/{group.name=projects/*/"
+          + "groups/*}:\005group\332A\005group\032V\312A\"clouderrorr"
+          + "eporting.googleapis.com\322A.https://www.go"
+          + "ogleapis.com/auth/cloud-platformB\372\001\n/com"
           + ".google.devtools.clouderrorreporting.v1b"
-          + "eta1.UpdateGroupRequest\0327.google.devtool"
-          + "s.clouderrorreporting.v1beta1.ErrorGroup"
-          + "\"8\202\323\344\223\0022\032)/v1beta1/{group.name=projects/"
-          + "*/groups/*}:\005groupB\367\001\n/com.google.devtoo"
-          + "ls.clouderrorreporting.v1beta1B\026ErrorGro"
-          + "upServiceProtoP\001Z^google.golang.org/genp"
-          + "roto/googleapis/devtools/clouderrorrepor"
-          + "ting/v1beta1;clouderrorreporting\252\002#Googl"
-          + "e.Cloud.ErrorReporting.V1Beta1\312\002#Google\\"
-          + "Cloud\\ErrorReporting\\V1beta1b\006proto3"
+          + "eta1B\026ErrorGroupServiceProtoP\001Z^google.g"
+          + "olang.org/genproto/googleapis/devtools/c"
+          + "louderrorreporting/v1beta1;clouderrorrep"
+          + "orting\370\001\001\252\002#Google.Cloud.ErrorReporting."
+          + "V1Beta1\312\002#Google\\Cloud\\ErrorReporting\\V1"
+          + "beta1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.devtools.clouderrorreporting.v1beta1.CommonProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.devtools.clouderrorreporting.v1beta1.CommonProto.getDescriptor(),
+            });
     internal_static_google_devtools_clouderrorreporting_v1beta1_GetGroupRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_devtools_clouderrorreporting_v1beta1_GetGroupRequest_fieldAccessorTable =
@@ -103,10 +105,18 @@ public final class ErrorGroupServiceProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.devtools.clouderrorreporting.v1beta1.CommonProto.getDescriptor();
   }
 

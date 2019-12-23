@@ -45,6 +45,12 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ServiceContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service = 2;</code>
+   *
+   * @return The service.
    */
   public java.lang.String getService() {
     java.lang.Object ref = service_;
@@ -163,6 +170,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service = 2;</code>
+   *
+   * @return The bytes for service.
    */
   public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
@@ -184,9 +193,13 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
+   * For App Engine standard environment, the version is set to the version of
+   * the app.
    * </pre>
    *
    * <code>string version = 3;</code>
+   *
+   * @return The version.
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -205,9 +218,13 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
+   * For App Engine standard environment, the version is set to the version of
+   * the app.
    * </pre>
    *
    * <code>string version = 3;</code>
+   *
+   * @return The bytes for version.
    */
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
@@ -234,6 +251,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_type = 4;</code>
+   *
+   * @return The resourceType.
    */
   public java.lang.String getResourceType() {
     java.lang.Object ref = resourceType_;
@@ -257,6 +276,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string resource_type = 4;</code>
+   *
+   * @return The bytes for resourceType.
    */
   public com.google.protobuf.ByteString getResourceTypeBytes() {
     java.lang.Object ref = resourceType_;
@@ -639,6 +660,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 2;</code>
+     *
+     * @return The service.
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -664,6 +687,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 2;</code>
+     *
+     * @return The bytes for service.
      */
     public com.google.protobuf.ByteString getServiceBytes() {
       java.lang.Object ref = service_;
@@ -689,6 +714,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 2;</code>
+     *
+     * @param value The service to set.
+     * @return This builder for chaining.
      */
     public Builder setService(java.lang.String value) {
       if (value == null) {
@@ -712,6 +740,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearService() {
 
@@ -732,6 +762,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service = 2;</code>
+     *
+     * @param value The bytes for service to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -751,9 +784,13 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
+     * For App Engine standard environment, the version is set to the version of
+     * the app.
      * </pre>
      *
      * <code>string version = 3;</code>
+     *
+     * @return The version.
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -772,9 +809,13 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
+     * For App Engine standard environment, the version is set to the version of
+     * the app.
      * </pre>
      *
      * <code>string version = 3;</code>
+     *
+     * @return The bytes for version.
      */
     public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
@@ -793,9 +834,14 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
+     * For App Engine standard environment, the version is set to the version of
+     * the app.
      * </pre>
      *
      * <code>string version = 3;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(java.lang.String value) {
       if (value == null) {
@@ -812,9 +858,13 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
+     * For App Engine standard environment, the version is set to the version of
+     * the app.
      * </pre>
      *
      * <code>string version = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -828,9 +878,14 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
+     * For App Engine standard environment, the version is set to the version of
+     * the app.
      * </pre>
      *
      * <code>string version = 3;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -855,6 +910,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 4;</code>
+     *
+     * @return The resourceType.
      */
     public java.lang.String getResourceType() {
       java.lang.Object ref = resourceType_;
@@ -878,6 +935,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 4;</code>
+     *
+     * @return The bytes for resourceType.
      */
     public com.google.protobuf.ByteString getResourceTypeBytes() {
       java.lang.Object ref = resourceType_;
@@ -901,6 +960,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 4;</code>
+     *
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceType(java.lang.String value) {
       if (value == null) {
@@ -922,6 +984,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResourceType() {
 
@@ -940,6 +1004,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 4;</code>
+     *
+     * @param value The bytes for resourceType to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

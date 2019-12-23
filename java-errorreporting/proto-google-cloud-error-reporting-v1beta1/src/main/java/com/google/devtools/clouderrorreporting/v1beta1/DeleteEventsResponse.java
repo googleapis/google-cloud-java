@@ -40,6 +40,12 @@ public final class DeleteEventsResponse extends com.google.protobuf.GeneratedMes
   private DeleteEventsResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeleteEventsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

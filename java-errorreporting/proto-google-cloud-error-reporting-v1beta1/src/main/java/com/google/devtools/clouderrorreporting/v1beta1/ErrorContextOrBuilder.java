@@ -32,6 +32,8 @@ public interface ErrorContextOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;</code>
+   *
+   * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
   /**
@@ -43,6 +45,8 @@ public interface ErrorContextOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;</code>
+   *
+   * @return The httpRequest.
    */
   com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext getHttpRequest();
   /**
@@ -73,6 +77,8 @@ public interface ErrorContextOrBuilder
    * </pre>
    *
    * <code>string user = 2;</code>
+   *
+   * @return The user.
    */
   java.lang.String getUser();
   /**
@@ -90,6 +96,8 @@ public interface ErrorContextOrBuilder
    * </pre>
    *
    * <code>string user = 2;</code>
+   *
+   * @return The bytes for user.
    */
   com.google.protobuf.ByteString getUserBytes();
 
@@ -101,11 +109,12 @@ public interface ErrorContextOrBuilder
    * report the error, usually the place where it was logged.
    * For a logged exception this would be the source line where the
    * exception is logged, usually close to the place where it was
-   * caught. This value is in contrast to `Exception.cause_location`,
-   * which describes the source line where the exception was thrown.
+   * caught.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
+   *
+   * @return Whether the reportLocation field is set.
    */
   boolean hasReportLocation();
   /**
@@ -116,11 +125,12 @@ public interface ErrorContextOrBuilder
    * report the error, usually the place where it was logged.
    * For a logged exception this would be the source line where the
    * exception is logged, usually close to the place where it was
-   * caught. This value is in contrast to `Exception.cause_location`,
-   * which describes the source line where the exception was thrown.
+   * caught.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
+   *
+   * @return The reportLocation.
    */
   com.google.devtools.clouderrorreporting.v1beta1.SourceLocation getReportLocation();
   /**
@@ -131,8 +141,7 @@ public interface ErrorContextOrBuilder
    * report the error, usually the place where it was logged.
    * For a logged exception this would be the source line where the
    * exception is logged, usually close to the place where it was
-   * caught. This value is in contrast to `Exception.cause_location`,
-   * which describes the source line where the exception was thrown.
+   * caught.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>

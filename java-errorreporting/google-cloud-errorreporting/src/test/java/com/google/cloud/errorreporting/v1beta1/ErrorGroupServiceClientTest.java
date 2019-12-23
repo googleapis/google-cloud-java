@@ -23,8 +23,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
+import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
-import com.google.devtools.clouderrorreporting.v1beta1.GroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -41,23 +42,23 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ErrorGroupServiceClientTest {
-  private static MockErrorGroupService mockErrorGroupService;
-  private static MockErrorStatsService mockErrorStatsService;
   private static MockReportErrorsService mockReportErrorsService;
+  private static MockErrorStatsService mockErrorStatsService;
+  private static MockErrorGroupService mockErrorGroupService;
   private static MockServiceHelper serviceHelper;
   private ErrorGroupServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockErrorGroupService = new MockErrorGroupService();
-    mockErrorStatsService = new MockErrorStatsService();
     mockReportErrorsService = new MockReportErrorsService();
+    mockErrorStatsService = new MockErrorStatsService();
+    mockErrorGroupService = new MockErrorGroupService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockErrorGroupService, mockErrorStatsService, mockReportErrorsService));
+                mockReportErrorsService, mockErrorStatsService, mockErrorGroupService));
     serviceHelper.start();
   }
 
@@ -86,13 +87,13 @@ public class ErrorGroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getGroupTest() {
-    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+    ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
-    GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
+    ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
 
     ErrorGroup actualResponse = client.getGroup(groupName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -101,7 +102,7 @@ public class ErrorGroupServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
-    Assert.assertEquals(groupName, GroupName.parse(actualRequest.getGroupName()));
+    Assert.assertEquals(groupName, ErrorGroupName.parse(actualRequest.getGroupName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -115,7 +116,7 @@ public class ErrorGroupServiceClientTest {
     mockErrorGroupService.addException(exception);
 
     try {
-      GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
+      ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
 
       client.getGroup(groupName);
       Assert.fail("No exception raised");
@@ -127,7 +128,7 @@ public class ErrorGroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateGroupTest() {
-    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+    ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();

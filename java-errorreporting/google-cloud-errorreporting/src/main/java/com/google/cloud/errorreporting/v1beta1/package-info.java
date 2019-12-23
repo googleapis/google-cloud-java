@@ -19,17 +19,18 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= ErrorGroupServiceClient =======================
+ * <p>========================= ReportErrorsServiceClient =========================
  *
- * <p>Service Description: Service for retrieving and updating individual error groups.
+ * <p>Service Description: An API for reporting error events.
  *
- * <p>Sample for ErrorGroupServiceClient:
+ * <p>Sample for ReportErrorsServiceClient:
  *
  * <pre>
  * <code>
- * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
+ *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
  * </code>
  * </pre>
@@ -50,18 +51,17 @@
  * </code>
  * </pre>
  *
- * ========================= ReportErrorsServiceClient =========================
+ * ======================= ErrorGroupServiceClient =======================
  *
- * <p>Service Description: An API for reporting error events.
+ * <p>Service Description: Service for retrieving and updating individual error groups.
  *
- * <p>Sample for ReportErrorsServiceClient:
+ * <p>Sample for ErrorGroupServiceClient:
  *
  * <pre>
  * <code>
- * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.of("[PROJECT]");
- *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
  * </code>
  * </pre>

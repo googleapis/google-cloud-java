@@ -44,6 +44,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListEventsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -169,14 +174,18 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Required] The resource name of the Google Cloud Platform project. Written
+   * Required. The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
    * Example: `projects/my-project-123`.
    * </pre>
    *
-   * <code>string project_name = 1;</code>
+   * <code>
+   * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The projectName.
    */
   public java.lang.String getProjectName() {
     java.lang.Object ref = projectName_;
@@ -193,14 +202,18 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Required] The resource name of the Google Cloud Platform project. Written
+   * Required. The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
    * Example: `projects/my-project-123`.
    * </pre>
    *
-   * <code>string project_name = 1;</code>
+   * <code>
+   * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for projectName.
    */
   public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
@@ -220,10 +233,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Required] The group for which events shall be returned.
+   * Required. The group for which events shall be returned.
    * </pre>
    *
-   * <code>string group_id = 2;</code>
+   * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The groupId.
    */
   public java.lang.String getGroupId() {
     java.lang.Object ref = groupId_;
@@ -240,10 +255,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Required] The group for which events shall be returned.
+   * Required. The group for which events shall be returned.
    * </pre>
    *
-   * <code>string group_id = 2;</code>
+   * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for groupId.
    */
   public com.google.protobuf.ByteString getGroupIdBytes() {
     java.lang.Object ref = groupId_;
@@ -263,13 +280,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] List only ErrorGroups which belong to a service context that
+   * Optional. List only ErrorGroups which belong to a service context that
    * matches the filter.
    * Data for all service contexts is returned if this field is not specified.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the serviceFilter field is set.
    */
   public boolean hasServiceFilter() {
     return serviceFilter_ != null;
@@ -278,13 +298,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] List only ErrorGroups which belong to a service context that
+   * Optional. List only ErrorGroups which belong to a service context that
    * matches the filter.
    * Data for all service contexts is returned if this field is not specified.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The serviceFilter.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter() {
     return serviceFilter_ == null
@@ -295,12 +318,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] List only ErrorGroups which belong to a service context that
+   * Optional. List only ErrorGroups which belong to a service context that
    * matches the filter.
    * Data for all service contexts is returned if this field is not specified.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder
@@ -314,12 +338,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] List only data for the given time range.
+   * Optional. List only data for the given time range.
    * If not set a default time range is used. The field time_range_begin
    * in the response will specify the beginning of this time range.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timeRange field is set.
    */
   public boolean hasTimeRange() {
     return timeRange_ != null;
@@ -328,12 +356,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] List only data for the given time range.
+   * Optional. List only data for the given time range.
    * If not set a default time range is used. The field time_range_begin
    * in the response will specify the beginning of this time range.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timeRange.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange() {
     return timeRange_ == null
@@ -344,12 +376,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] List only data for the given time range.
+   * Optional. List only data for the given time range.
    * If not set a default time range is used. The field time_range_begin
    * in the response will specify the beginning of this time range.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder
       getTimeRangeOrBuilder() {
@@ -362,10 +396,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] The maximum number of results to return per response.
+   * Optional. The maximum number of results to return per response.
    * </pre>
    *
-   * <code>int32 page_size = 6;</code>
+   * <code>int32 page_size = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -377,10 +413,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] A `next_page_token` provided by a previous response.
+   * Optional. A `next_page_token` provided by a previous response.
    * </pre>
    *
-   * <code>string page_token = 7;</code>
+   * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -397,10 +435,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Optional] A `next_page_token` provided by a previous response.
+   * Optional. A `next_page_token` provided by a previous response.
    * </pre>
    *
-   * <code>string page_token = 7;</code>
+   * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -847,14 +887,18 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The projectName.
      */
     public java.lang.String getProjectName() {
       java.lang.Object ref = projectName_;
@@ -871,14 +915,18 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for projectName.
      */
     public com.google.protobuf.ByteString getProjectNameBytes() {
       java.lang.Object ref = projectName_;
@@ -895,14 +943,19 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The projectName to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectName(java.lang.String value) {
       if (value == null) {
@@ -917,14 +970,18 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectName() {
 
@@ -936,14 +993,19 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for projectName to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -961,10 +1023,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The group for which events shall be returned.
+     * Required. The group for which events shall be returned.
      * </pre>
      *
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The groupId.
      */
     public java.lang.String getGroupId() {
       java.lang.Object ref = groupId_;
@@ -981,10 +1045,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The group for which events shall be returned.
+     * Required. The group for which events shall be returned.
      * </pre>
      *
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for groupId.
      */
     public com.google.protobuf.ByteString getGroupIdBytes() {
       java.lang.Object ref = groupId_;
@@ -1001,10 +1067,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The group for which events shall be returned.
+     * Required. The group for which events shall be returned.
      * </pre>
      *
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The groupId to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupId(java.lang.String value) {
       if (value == null) {
@@ -1019,10 +1088,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The group for which events shall be returned.
+     * Required. The group for which events shall be returned.
      * </pre>
      *
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGroupId() {
 
@@ -1034,10 +1105,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Required] The group for which events shall be returned.
+     * Required. The group for which events shall be returned.
      * </pre>
      *
-     * <code>string group_id = 2;</code>
+     * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for groupId to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1060,13 +1134,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the serviceFilter field is set.
      */
     public boolean hasServiceFilter() {
       return serviceFilterBuilder_ != null || serviceFilter_ != null;
@@ -1075,13 +1152,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The serviceFilter.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter() {
       if (serviceFilterBuilder_ == null) {
@@ -1097,12 +1177,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setServiceFilter(
@@ -1123,12 +1204,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setServiceFilter(
@@ -1147,12 +1229,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeServiceFilter(
@@ -1178,12 +1261,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearServiceFilter() {
@@ -1201,12 +1285,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.Builder
@@ -1219,12 +1304,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder
@@ -1242,12 +1328,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only ErrorGroups which belong to a service context that
+     * Optional. List only ErrorGroups which belong to a service context that
      * matches the filter.
      * Data for all service contexts is returned if this field is not specified.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1277,12 +1364,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timeRange field is set.
      */
     public boolean hasTimeRange() {
       return timeRangeBuilder_ != null || timeRange_ != null;
@@ -1291,12 +1382,16 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timeRange.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange() {
       if (timeRangeBuilder_ == null) {
@@ -1311,12 +1406,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTimeRange(
         com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange value) {
@@ -1336,12 +1433,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTimeRange(
         com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Builder builderForValue) {
@@ -1358,12 +1457,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeTimeRange(
         com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange value) {
@@ -1387,12 +1488,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTimeRange() {
       if (timeRangeBuilder_ == null) {
@@ -1409,12 +1512,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Builder
         getTimeRangeBuilder() {
@@ -1426,12 +1531,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder
         getTimeRangeOrBuilder() {
@@ -1447,12 +1554,14 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] List only data for the given time range.
+     * Optional. List only data for the given time range.
      * If not set a default time range is used. The field time_range_begin
      * in the response will specify the beginning of this time range.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange,
@@ -1476,10 +1585,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] The maximum number of results to return per response.
+     * Optional. The maximum number of results to return per response.
      * </pre>
      *
-     * <code>int32 page_size = 6;</code>
+     * <code>int32 page_size = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1488,10 +1599,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] The maximum number of results to return per response.
+     * Optional. The maximum number of results to return per response.
      * </pre>
      *
-     * <code>int32 page_size = 6;</code>
+     * <code>int32 page_size = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1503,10 +1617,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] The maximum number of results to return per response.
+     * Optional. The maximum number of results to return per response.
      * </pre>
      *
-     * <code>int32 page_size = 6;</code>
+     * <code>int32 page_size = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1520,10 +1636,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] A `next_page_token` provided by a previous response.
+     * Optional. A `next_page_token` provided by a previous response.
      * </pre>
      *
-     * <code>string page_token = 7;</code>
+     * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1540,10 +1658,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] A `next_page_token` provided by a previous response.
+     * Optional. A `next_page_token` provided by a previous response.
      * </pre>
      *
-     * <code>string page_token = 7;</code>
+     * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1560,10 +1680,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] A `next_page_token` provided by a previous response.
+     * Optional. A `next_page_token` provided by a previous response.
      * </pre>
      *
-     * <code>string page_token = 7;</code>
+     * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1578,10 +1701,12 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] A `next_page_token` provided by a previous response.
+     * Optional. A `next_page_token` provided by a previous response.
      * </pre>
      *
-     * <code>string page_token = 7;</code>
+     * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1593,10 +1718,13 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Optional] A `next_page_token` provided by a previous response.
+     * Optional. A `next_page_token` provided by a previous response.
      * </pre>
      *
-     * <code>string page_token = 7;</code>
+     * <code>string page_token = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -42,6 +42,12 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ErrorEvent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -169,6 +174,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1;</code>
+   *
+   * @return Whether the eventTime field is set.
    */
   public boolean hasEventTime() {
     return eventTime_ != null;
@@ -183,6 +190,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1;</code>
+   *
+   * @return The eventTime.
    */
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
@@ -212,6 +221,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
+   *
+   * @return Whether the serviceContext field is set.
    */
   public boolean hasServiceContext() {
     return serviceContext_ != null;
@@ -224,6 +235,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
+   *
+   * @return The serviceContext.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getServiceContext() {
     return serviceContext_ == null
@@ -254,6 +267,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string message = 3;</code>
+   *
+   * @return The message.
    */
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
@@ -274,6 +289,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string message = 3;</code>
+   *
+   * @return The bytes for message.
    */
   public com.google.protobuf.ByteString getMessageBytes() {
     java.lang.Object ref = message_;
@@ -297,6 +314,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
+   *
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -309,6 +328,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
+   *
+   * @return The context.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorContext getContext() {
     return context_ == null
@@ -748,6 +769,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1;</code>
+     *
+     * @return Whether the eventTime field is set.
      */
     public boolean hasEventTime() {
       return eventTimeBuilder_ != null || eventTime_ != null;
@@ -762,6 +785,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1;</code>
+     *
+     * @return The eventTime.
      */
     public com.google.protobuf.Timestamp getEventTime() {
       if (eventTimeBuilder_ == null) {
@@ -939,6 +964,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
+     *
+     * @return Whether the serviceContext field is set.
      */
     public boolean hasServiceContext() {
       return serviceContextBuilder_ != null || serviceContext_ != null;
@@ -951,6 +978,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
+     *
+     * @return The serviceContext.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getServiceContext() {
       if (serviceContextBuilder_ == null) {
@@ -1121,6 +1150,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message = 3;</code>
+     *
+     * @return The message.
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -1141,6 +1172,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message = 3;</code>
+     *
+     * @return The bytes for message.
      */
     public com.google.protobuf.ByteString getMessageBytes() {
       java.lang.Object ref = message_;
@@ -1161,6 +1194,9 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message = 3;</code>
+     *
+     * @param value The message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessage(java.lang.String value) {
       if (value == null) {
@@ -1179,6 +1215,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessage() {
 
@@ -1194,6 +1232,9 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string message = 3;</code>
+     *
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1220,6 +1261,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
+     *
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -1232,6 +1275,8 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
+     *
+     * @return The context.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorContext getContext() {
       if (contextBuilder_ == null) {

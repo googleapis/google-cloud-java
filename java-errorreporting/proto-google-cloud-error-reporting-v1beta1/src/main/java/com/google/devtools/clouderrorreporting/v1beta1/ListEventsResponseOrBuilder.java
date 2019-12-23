@@ -86,6 +86,8 @@ public interface ListEventsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -98,6 +100,8 @@ public interface ListEventsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 
@@ -109,6 +113,8 @@ public interface ListEventsResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
+   *
+   * @return Whether the timeRangeBegin field is set.
    */
   boolean hasTimeRangeBegin();
   /**
@@ -119,6 +125,8 @@ public interface ListEventsResponseOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
+   *
+   * @return The timeRangeBegin.
    */
   com.google.protobuf.Timestamp getTimeRangeBegin();
   /**

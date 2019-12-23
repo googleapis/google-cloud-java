@@ -31,6 +31,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string method = 1;</code>
+   *
+   * @return The method.
    */
   java.lang.String getMethod();
   /**
@@ -41,6 +43,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string method = 1;</code>
+   *
+   * @return The bytes for method.
    */
   com.google.protobuf.ByteString getMethodBytes();
 
@@ -52,6 +56,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string url = 2;</code>
+   *
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -62,6 +68,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string url = 2;</code>
+   *
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString getUrlBytes();
 
@@ -73,6 +81,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string user_agent = 3;</code>
+   *
+   * @return The userAgent.
    */
   java.lang.String getUserAgent();
   /**
@@ -83,6 +93,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string user_agent = 3;</code>
+   *
+   * @return The bytes for userAgent.
    */
   com.google.protobuf.ByteString getUserAgentBytes();
 
@@ -94,6 +106,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string referrer = 4;</code>
+   *
+   * @return The referrer.
    */
   java.lang.String getReferrer();
   /**
@@ -104,6 +118,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string referrer = 4;</code>
+   *
+   * @return The bytes for referrer.
    */
   com.google.protobuf.ByteString getReferrerBytes();
 
@@ -115,6 +131,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>int32 response_status_code = 5;</code>
+   *
+   * @return The responseStatusCode.
    */
   int getResponseStatusCode();
 
@@ -129,6 +147,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string remote_ip = 6;</code>
+   *
+   * @return The remoteIp.
    */
   java.lang.String getRemoteIp();
   /**
@@ -142,6 +162,8 @@ public interface HttpRequestContextOrBuilder
    * </pre>
    *
    * <code>string remote_ip = 6;</code>
+   *
+   * @return The bytes for remoteIp.
    */
   com.google.protobuf.ByteString getRemoteIpBytes();
 }

@@ -31,6 +31,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+   *
+   * @return Whether the group field is set.
    */
   boolean hasGroup();
   /**
@@ -41,6 +43,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+   *
+   * @return The group.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup();
   /**
@@ -63,6 +67,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   *
+   * @return The count.
    */
   long getCount();
 
@@ -85,6 +91,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>int64 affected_users_count = 3;</code>
+   *
+   * @return The affectedUsersCount.
    */
   long getAffectedUsersCount();
 
@@ -171,6 +179,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
+   *
+   * @return Whether the firstSeenTime field is set.
    */
   boolean hasFirstSeenTime();
   /**
@@ -183,6 +193,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
+   *
+   * @return The firstSeenTime.
    */
   com.google.protobuf.Timestamp getFirstSeenTime();
   /**
@@ -208,6 +220,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
+   *
+   * @return Whether the lastSeenTime field is set.
    */
   boolean hasLastSeenTime();
   /**
@@ -220,6 +234,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
+   *
+   * @return The lastSeenTime.
    */
   com.google.protobuf.Timestamp getLastSeenTime();
   /**
@@ -318,6 +334,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>int32 num_affected_services = 8;</code>
+   *
+   * @return The numAffectedServices.
    */
   int getNumAffectedServices();
 
@@ -333,6 +351,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
+   *
+   * @return Whether the representative field is set.
    */
   boolean hasRepresentative();
   /**
@@ -347,6 +367,8 @@ public interface ErrorGroupStatsOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
+   *
+   * @return The representative.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getRepresentative();
   /**

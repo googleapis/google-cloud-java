@@ -33,6 +33,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1;</code>
+   *
+   * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
   /**
@@ -45,6 +47,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1;</code>
+   *
+   * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
   /**
@@ -68,6 +72,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
+   *
+   * @return Whether the serviceContext field is set.
    */
   boolean hasServiceContext();
   /**
@@ -78,6 +84,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
+   *
+   * @return The serviceContext.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getServiceContext();
   /**
@@ -100,6 +108,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>string message = 3;</code>
+   *
+   * @return The message.
    */
   java.lang.String getMessage();
   /**
@@ -110,6 +120,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>string message = 3;</code>
+   *
+   * @return The bytes for message.
    */
   com.google.protobuf.ByteString getMessageBytes();
 
@@ -121,6 +133,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
+   *
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -131,6 +145,8 @@ public interface ErrorEventOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
+   *
+   * @return The context.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorContext getContext();
   /**

@@ -32,6 +32,8 @@ public interface SourceLocationOrBuilder
    * </pre>
    *
    * <code>string file_path = 1;</code>
+   *
+   * @return The filePath.
    */
   java.lang.String getFilePath();
   /**
@@ -43,6 +45,8 @@ public interface SourceLocationOrBuilder
    * </pre>
    *
    * <code>string file_path = 1;</code>
+   *
+   * @return The bytes for filePath.
    */
   com.google.protobuf.ByteString getFilePathBytes();
 
@@ -54,6 +58,8 @@ public interface SourceLocationOrBuilder
    * </pre>
    *
    * <code>int32 line_number = 2;</code>
+   *
+   * @return The lineNumber.
    */
   int getLineNumber();
 
@@ -67,6 +73,8 @@ public interface SourceLocationOrBuilder
    * </pre>
    *
    * <code>string function_name = 4;</code>
+   *
+   * @return The functionName.
    */
   java.lang.String getFunctionName();
   /**
@@ -79,6 +87,8 @@ public interface SourceLocationOrBuilder
    * </pre>
    *
    * <code>string function_name = 4;</code>
+   *
+   * @return The bytes for functionName.
    */
   com.google.protobuf.ByteString getFunctionNameBytes();
 }

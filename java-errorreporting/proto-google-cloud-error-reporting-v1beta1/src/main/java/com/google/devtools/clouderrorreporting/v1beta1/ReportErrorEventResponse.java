@@ -41,6 +41,12 @@ public final class ReportErrorEventResponse extends com.google.protobuf.Generate
   private ReportErrorEventResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReportErrorEventResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

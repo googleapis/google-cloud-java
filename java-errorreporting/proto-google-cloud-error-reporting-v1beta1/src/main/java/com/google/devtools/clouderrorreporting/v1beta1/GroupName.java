@@ -26,6 +26,7 @@ import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
+@Deprecated
 public class GroupName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =

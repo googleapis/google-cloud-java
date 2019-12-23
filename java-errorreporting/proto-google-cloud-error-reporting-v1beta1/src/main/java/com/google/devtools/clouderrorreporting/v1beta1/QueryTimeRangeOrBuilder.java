@@ -31,6 +31,8 @@ public interface QueryTimeRangeOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+   *
+   * @return The enum numeric value on the wire for period.
    */
   int getPeriodValue();
   /**
@@ -41,6 +43,8 @@ public interface QueryTimeRangeOrBuilder
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+   *
+   * @return The period.
    */
   com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period getPeriod();
 }

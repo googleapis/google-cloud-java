@@ -27,28 +27,36 @@ public interface DeleteEventsRequestOrBuilder
    *
    *
    * <pre>
-   * [Required] The resource name of the Google Cloud Platform project. Written
+   * Required. The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
    * Example: `projects/my-project-123`.
    * </pre>
    *
-   * <code>string project_name = 1;</code>
+   * <code>
+   * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The projectName.
    */
   java.lang.String getProjectName();
   /**
    *
    *
    * <pre>
-   * [Required] The resource name of the Google Cloud Platform project. Written
+   * Required. The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
    * Example: `projects/my-project-123`.
    * </pre>
    *
-   * <code>string project_name = 1;</code>
+   * <code>
+   * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for projectName.
    */
   com.google.protobuf.ByteString getProjectNameBytes();
 }

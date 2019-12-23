@@ -67,54 +67,48 @@ public final class CommonProto {
       "\n8google/devtools/clouderrorreporting/v1"
           + "beta1/common.proto\022+google.devtools.clou"
           + "derrorreporting.v1beta1\032\034google/api/anno"
-          + "tations.proto\032#google/api/monitored_reso"
-          + "urce.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\201\001\n\nErrorGroup\022\014\n\004name\030\001 \001(\t\022\020\n\010grou"
-          + "p_id\030\002 \001(\t\022S\n\017tracking_issues\030\003 \003(\0132:.go"
-          + "ogle.devtools.clouderrorreporting.v1beta"
-          + "1.TrackingIssue\"\034\n\rTrackingIssue\022\013\n\003url\030"
-          + "\001 \001(\t\"\357\001\n\nErrorEvent\022.\n\nevent_time\030\001 \001(\013"
-          + "2\032.google.protobuf.Timestamp\022T\n\017service_"
-          + "context\030\002 \001(\0132;.google.devtools.clouderr"
-          + "orreporting.v1beta1.ServiceContext\022\017\n\007me"
-          + "ssage\030\003 \001(\t\022J\n\007context\030\005 \001(\01329.google.de"
-          + "vtools.clouderrorreporting.v1beta1.Error"
-          + "Context\"I\n\016ServiceContext\022\017\n\007service\030\002 \001"
-          + "(\t\022\017\n\007version\030\003 \001(\t\022\025\n\rresource_type\030\004 \001"
-          + "(\t\"\311\001\n\014ErrorContext\022U\n\014http_request\030\001 \001("
-          + "\0132?.google.devtools.clouderrorreporting."
-          + "v1beta1.HttpRequestContext\022\014\n\004user\030\002 \001(\t"
-          + "\022T\n\017report_location\030\003 \001(\0132;.google.devto"
-          + "ols.clouderrorreporting.v1beta1.SourceLo"
-          + "cation\"\210\001\n\022HttpRequestContext\022\016\n\006method\030"
-          + "\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\020"
-          + "\n\010referrer\030\004 \001(\t\022\034\n\024response_status_code"
-          + "\030\005 \001(\005\022\021\n\tremote_ip\030\006 \001(\t\"O\n\016SourceLocat"
-          + "ion\022\021\n\tfile_path\030\001 \001(\t\022\023\n\013line_number\030\002 "
-          + "\001(\005\022\025\n\rfunction_name\030\004 \001(\tB\354\001\n/com.googl"
-          + "e.devtools.clouderrorreporting.v1beta1B\013"
-          + "CommonProtoP\001Z^google.golang.org/genprot"
-          + "o/googleapis/devtools/clouderrorreportin"
-          + "g/v1beta1;clouderrorreporting\252\002#Google.C"
+          + "tations.proto\032\031google/api/resource.proto"
+          + "\032\037google/protobuf/timestamp.proto\"\330\001\n\nEr"
+          + "rorGroup\022\014\n\004name\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\t"
+          + "\022S\n\017tracking_issues\030\003 \003(\0132:.google.devto"
+          + "ols.clouderrorreporting.v1beta1.Tracking"
+          + "Issue:U\352AR\n-clouderrorreporting.googleap"
+          + "is.com/ErrorGroup\022!projects/{project}/gr"
+          + "oups/{group}\"\034\n\rTrackingIssue\022\013\n\003url\030\001 \001"
+          + "(\t\"\357\001\n\nErrorEvent\022.\n\nevent_time\030\001 \001(\0132\032."
+          + "google.protobuf.Timestamp\022T\n\017service_con"
+          + "text\030\002 \001(\0132;.google.devtools.clouderrorr"
+          + "eporting.v1beta1.ServiceContext\022\017\n\007messa"
+          + "ge\030\003 \001(\t\022J\n\007context\030\005 \001(\01329.google.devto"
+          + "ols.clouderrorreporting.v1beta1.ErrorCon"
+          + "text\"I\n\016ServiceContext\022\017\n\007service\030\002 \001(\t\022"
+          + "\017\n\007version\030\003 \001(\t\022\025\n\rresource_type\030\004 \001(\t\""
+          + "\311\001\n\014ErrorContext\022U\n\014http_request\030\001 \001(\0132?"
+          + ".google.devtools.clouderrorreporting.v1b"
+          + "eta1.HttpRequestContext\022\014\n\004user\030\002 \001(\t\022T\n"
+          + "\017report_location\030\003 \001(\0132;.google.devtools"
+          + ".clouderrorreporting.v1beta1.SourceLocat"
+          + "ion\"\210\001\n\022HttpRequestContext\022\016\n\006method\030\001 \001"
+          + "(\t\022\013\n\003url\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\020\n\010r"
+          + "eferrer\030\004 \001(\t\022\034\n\024response_status_code\030\005 "
+          + "\001(\005\022\021\n\tremote_ip\030\006 \001(\t\"O\n\016SourceLocation"
+          + "\022\021\n\tfile_path\030\001 \001(\t\022\023\n\013line_number\030\002 \001(\005"
+          + "\022\025\n\rfunction_name\030\004 \001(\tB\357\001\n/com.google.d"
+          + "evtools.clouderrorreporting.v1beta1B\013Com"
+          + "monProtoP\001Z^google.golang.org/genproto/g"
+          + "oogleapis/devtools/clouderrorreporting/v"
+          + "1beta1;clouderrorreporting\370\001\001\252\002#Google.C"
           + "loud.ErrorReporting.V1Beta1\312\002#Google\\Clo"
           + "ud\\ErrorReporting\\V1beta1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.MonitoredResourceProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_fieldAccessorTable =
@@ -171,8 +165,13 @@ public final class CommonProto {
             new java.lang.String[] {
               "FilePath", "LineNumber", "FunctionName",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.MonitoredResourceProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

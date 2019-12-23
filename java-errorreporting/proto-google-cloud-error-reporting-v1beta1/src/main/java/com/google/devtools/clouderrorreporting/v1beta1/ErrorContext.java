@@ -45,6 +45,12 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ErrorContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -156,6 +161,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;</code>
+   *
+   * @return Whether the httpRequest field is set.
    */
   public boolean hasHttpRequest() {
     return httpRequest_ != null;
@@ -169,6 +176,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;</code>
+   *
+   * @return The httpRequest.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext getHttpRequest() {
     return httpRequest_ == null
@@ -207,6 +216,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user = 2;</code>
+   *
+   * @return The user.
    */
   public java.lang.String getUser() {
     java.lang.Object ref = user_;
@@ -234,6 +245,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user = 2;</code>
+   *
+   * @return The bytes for user.
    */
   public com.google.protobuf.ByteString getUserBytes() {
     java.lang.Object ref = user_;
@@ -257,11 +270,12 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * report the error, usually the place where it was logged.
    * For a logged exception this would be the source line where the
    * exception is logged, usually close to the place where it was
-   * caught. This value is in contrast to `Exception.cause_location`,
-   * which describes the source line where the exception was thrown.
+   * caught.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
+   *
+   * @return Whether the reportLocation field is set.
    */
   public boolean hasReportLocation() {
     return reportLocation_ != null;
@@ -274,11 +288,12 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * report the error, usually the place where it was logged.
    * For a logged exception this would be the source line where the
    * exception is logged, usually close to the place where it was
-   * caught. This value is in contrast to `Exception.cause_location`,
-   * which describes the source line where the exception was thrown.
+   * caught.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
+   *
+   * @return The reportLocation.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.SourceLocation getReportLocation() {
     return reportLocation_ == null
@@ -293,8 +308,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    * report the error, usually the place where it was logged.
    * For a logged exception this would be the source line where the
    * exception is logged, usually close to the place where it was
-   * caught. This value is in contrast to `Exception.cause_location`,
-   * which describes the source line where the exception was thrown.
+   * caught.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -700,6 +714,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;
      * </code>
+     *
+     * @return Whether the httpRequest field is set.
      */
     public boolean hasHttpRequest() {
       return httpRequestBuilder_ != null || httpRequest_ != null;
@@ -714,6 +730,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;
      * </code>
+     *
+     * @return The httpRequest.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext getHttpRequest() {
       if (httpRequestBuilder_ == null) {
@@ -908,6 +926,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user = 2;</code>
+     *
+     * @return The user.
      */
     public java.lang.String getUser() {
       java.lang.Object ref = user_;
@@ -935,6 +955,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user = 2;</code>
+     *
+     * @return The bytes for user.
      */
     public com.google.protobuf.ByteString getUserBytes() {
       java.lang.Object ref = user_;
@@ -962,6 +984,9 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user = 2;</code>
+     *
+     * @param value The user to set.
+     * @return This builder for chaining.
      */
     public Builder setUser(java.lang.String value) {
       if (value == null) {
@@ -987,6 +1012,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUser() {
 
@@ -1009,6 +1036,9 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user = 2;</code>
+     *
+     * @param value The bytes for user to set.
+     * @return This builder for chaining.
      */
     public Builder setUserBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1035,11 +1065,12 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
+     *
+     * @return Whether the reportLocation field is set.
      */
     public boolean hasReportLocation() {
       return reportLocationBuilder_ != null || reportLocation_ != null;
@@ -1052,11 +1083,12 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
+     *
+     * @return The reportLocation.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.SourceLocation getReportLocation() {
       if (reportLocationBuilder_ == null) {
@@ -1075,8 +1107,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -1103,8 +1134,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -1128,8 +1158,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -1161,8 +1190,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -1186,8 +1214,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -1206,8 +1233,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
@@ -1230,8 +1256,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * report the error, usually the place where it was logged.
      * For a logged exception this would be the source line where the
      * exception is logged, usually close to the place where it was
-     * caught. This value is in contrast to `Exception.cause_location`,
-     * which describes the source line where the exception was thrown.
+     * caught.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>

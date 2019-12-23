@@ -42,6 +42,12 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetGroupRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,7 +117,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Required] The group resource name. Written as
+   * Required. The group resource name. Written as
    * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
    * Call
    * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -121,7 +126,11 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
    * </pre>
    *
-   * <code>string group_name = 1;</code>
+   * <code>
+   * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The groupName.
    */
   public java.lang.String getGroupName() {
     java.lang.Object ref = groupName_;
@@ -138,7 +147,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Required] The group resource name. Written as
+   * Required. The group resource name. Written as
    * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
    * Call
    * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -147,7 +156,11 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
    * </pre>
    *
-   * <code>string group_name = 1;</code>
+   * <code>
+   * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for groupName.
    */
   public com.google.protobuf.ByteString getGroupNameBytes() {
     java.lang.Object ref = groupName_;
@@ -489,7 +502,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Required] The group resource name. Written as
+     * Required. The group resource name. Written as
      * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
      * Call
      * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -498,7 +511,11 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
      * </pre>
      *
-     * <code>string group_name = 1;</code>
+     * <code>
+     * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The groupName.
      */
     public java.lang.String getGroupName() {
       java.lang.Object ref = groupName_;
@@ -515,7 +532,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Required] The group resource name. Written as
+     * Required. The group resource name. Written as
      * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
      * Call
      * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -524,7 +541,11 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
      * </pre>
      *
-     * <code>string group_name = 1;</code>
+     * <code>
+     * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for groupName.
      */
     public com.google.protobuf.ByteString getGroupNameBytes() {
       java.lang.Object ref = groupName_;
@@ -541,7 +562,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Required] The group resource name. Written as
+     * Required. The group resource name. Written as
      * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
      * Call
      * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -550,7 +571,12 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
      * </pre>
      *
-     * <code>string group_name = 1;</code>
+     * <code>
+     * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The groupName to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupName(java.lang.String value) {
       if (value == null) {
@@ -565,7 +591,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Required] The group resource name. Written as
+     * Required. The group resource name. Written as
      * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
      * Call
      * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -574,7 +600,11 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
      * </pre>
      *
-     * <code>string group_name = 1;</code>
+     * <code>
+     * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGroupName() {
 
@@ -586,7 +616,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Required] The group resource name. Written as
+     * Required. The group resource name. Written as
      * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
      * Call
      * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -595,7 +625,12 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
      * </pre>
      *
-     * <code>string group_name = 1;</code>
+     * <code>
+     * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for groupName to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

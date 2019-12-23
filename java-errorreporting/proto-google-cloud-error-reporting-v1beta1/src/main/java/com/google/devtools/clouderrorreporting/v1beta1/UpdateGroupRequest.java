@@ -40,6 +40,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
   private UpdateGroupRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateGroupRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,10 +125,14 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Required] The group which replaces the resource on the server.
+   * Required. The group which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the group field is set.
    */
   public boolean hasGroup() {
     return group_ != null;
@@ -132,10 +141,14 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Required] The group which replaces the resource on the server.
+   * Required. The group which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The group.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup() {
     return group_ == null
@@ -146,10 +159,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Required] The group which replaces the resource on the server.
+   * Required. The group which replaces the resource on the server.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder getGroupOrBuilder() {
     return getGroup();
@@ -504,10 +519,14 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the group field is set.
      */
     public boolean hasGroup() {
       return groupBuilder_ != null || group_ != null;
@@ -516,10 +535,14 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The group.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup() {
       if (groupBuilder_ == null) {
@@ -534,10 +557,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGroup(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup value) {
       if (groupBuilder_ == null) {
@@ -556,10 +581,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGroup(
         com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder builderForValue) {
@@ -576,10 +603,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeGroup(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup value) {
       if (groupBuilder_ == null) {
@@ -602,10 +631,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearGroup() {
       if (groupBuilder_ == null) {
@@ -622,10 +653,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder getGroupBuilder() {
 
@@ -636,10 +669,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder getGroupOrBuilder() {
       if (groupBuilder_ != null) {
@@ -654,10 +689,12 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Required] The group which replaces the resource on the server.
+     * Required. The group which replaces the resource on the server.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup,

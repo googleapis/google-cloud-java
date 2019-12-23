@@ -43,6 +43,12 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new QueryTimeRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -259,12 +264,20 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Period valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Period forNumber(int value) {
       switch (value) {
         case 0:
@@ -340,6 +353,8 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+   *
+   * @return The enum numeric value on the wire for period.
    */
   public int getPeriodValue() {
     return period_;
@@ -352,6 +367,8 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+   *
+   * @return The period.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period getPeriod() {
     @SuppressWarnings("deprecation")
@@ -697,6 +714,8 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+     *
+     * @return The enum numeric value on the wire for period.
      */
     public int getPeriodValue() {
       return period_;
@@ -709,6 +728,9 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for period to set.
+     * @return This builder for chaining.
      */
     public Builder setPeriodValue(int value) {
       period_ = value;
@@ -723,6 +745,8 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+     *
+     * @return The period.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period getPeriod() {
       @SuppressWarnings("deprecation")
@@ -740,6 +764,9 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+     *
+     * @param value The period to set.
+     * @return This builder for chaining.
      */
     public Builder setPeriod(
         com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period value) {
@@ -759,6 +786,8 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period period = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPeriod() {
 

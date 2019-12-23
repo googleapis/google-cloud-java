@@ -44,6 +44,12 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ErrorGroup();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,11 +89,11 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 trackingIssues_ =
                     new java.util.ArrayList<
                         com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               trackingIssues_.add(
                   input.readMessage(
@@ -109,7 +115,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         trackingIssues_ = java.util.Collections.unmodifiableList(trackingIssues_);
       }
       this.unknownFields = unknownFields.build();
@@ -132,7 +138,6 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -144,6 +149,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -165,6 +172,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -189,6 +198,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string group_id = 2;</code>
+   *
+   * @return The groupId.
    */
   public java.lang.String getGroupId() {
     java.lang.Object ref = groupId_;
@@ -210,6 +221,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string group_id = 2;</code>
+   *
+   * @return The bytes for groupId.
    */
   public com.google.protobuf.ByteString getGroupIdBytes() {
     java.lang.Object ref = groupId_;
@@ -530,7 +543,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
 
       if (trackingIssuesBuilder_ == null) {
         trackingIssues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         trackingIssuesBuilder_.clear();
       }
@@ -562,19 +575,17 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
       com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup result =
           new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.groupId_ = groupId_;
       if (trackingIssuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           trackingIssues_ = java.util.Collections.unmodifiableList(trackingIssues_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.trackingIssues_ = trackingIssues_;
       } else {
         result.trackingIssues_ = trackingIssuesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -637,7 +648,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         if (!other.trackingIssues_.isEmpty()) {
           if (trackingIssues_.isEmpty()) {
             trackingIssues_ = other.trackingIssues_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTrackingIssuesIsMutable();
             trackingIssues_.addAll(other.trackingIssues_);
@@ -650,7 +661,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             trackingIssuesBuilder_.dispose();
             trackingIssuesBuilder_ = null;
             trackingIssues_ = other.trackingIssues_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             trackingIssuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrackingIssuesFieldBuilder()
@@ -702,6 +713,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -723,6 +736,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -744,6 +759,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -763,6 +781,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -779,6 +799,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -801,6 +824,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string group_id = 2;</code>
+     *
+     * @return The groupId.
      */
     public java.lang.String getGroupId() {
       java.lang.Object ref = groupId_;
@@ -822,6 +847,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string group_id = 2;</code>
+     *
+     * @return The bytes for groupId.
      */
     public com.google.protobuf.ByteString getGroupIdBytes() {
       java.lang.Object ref = groupId_;
@@ -843,6 +870,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string group_id = 2;</code>
+     *
+     * @param value The groupId to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupId(java.lang.String value) {
       if (value == null) {
@@ -862,6 +892,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string group_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGroupId() {
 
@@ -878,6 +910,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string group_id = 2;</code>
+     *
+     * @param value The bytes for groupId to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -894,11 +929,11 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         trackingIssues_ = java.util.Collections.emptyList();
 
     private void ensureTrackingIssuesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         trackingIssues_ =
             new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>(
                 trackingIssues_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1144,7 +1179,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrackingIssues() {
       if (trackingIssuesBuilder_ == null) {
         trackingIssues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         trackingIssuesBuilder_.clear();
@@ -1289,7 +1324,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder,
                 com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>(
                 trackingIssues_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         trackingIssues_ = null;

@@ -42,6 +42,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReportErrorEventRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,14 +135,18 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Required] The resource name of the Google Cloud Platform project. Written
+   * Required. The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840). Example:
    * `projects/my-project-123`.
    * </pre>
    *
-   * <code>string project_name = 1;</code>
+   * <code>
+   * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The projectName.
    */
   public java.lang.String getProjectName() {
     java.lang.Object ref = projectName_;
@@ -154,14 +163,18 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Required] The resource name of the Google Cloud Platform project. Written
+   * Required. The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840). Example:
    * `projects/my-project-123`.
    * </pre>
    *
-   * <code>string project_name = 1;</code>
+   * <code>
+   * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for projectName.
    */
   public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
@@ -181,10 +194,14 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Required] The error event to be reported.
+   * Required. The error event to be reported.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the event field is set.
    */
   public boolean hasEvent() {
     return event_ != null;
@@ -193,10 +210,14 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Required] The error event to be reported.
+   * Required. The error event to be reported.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The event.
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent() {
     return event_ == null
@@ -207,10 +228,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Required] The error event to be reported.
+   * Required. The error event to be reported.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+   * <code>
+   * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder
       getEventOrBuilder() {
@@ -580,14 +603,18 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840). Example:
      * `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The projectName.
      */
     public java.lang.String getProjectName() {
       java.lang.Object ref = projectName_;
@@ -604,14 +631,18 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840). Example:
      * `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for projectName.
      */
     public com.google.protobuf.ByteString getProjectNameBytes() {
       java.lang.Object ref = projectName_;
@@ -628,14 +659,19 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840). Example:
      * `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The projectName to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectName(java.lang.String value) {
       if (value == null) {
@@ -650,14 +686,18 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840). Example:
      * `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectName() {
 
@@ -669,14 +709,19 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The resource name of the Google Cloud Platform project. Written
+     * Required. The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840). Example:
      * `projects/my-project-123`.
      * </pre>
      *
-     * <code>string project_name = 1;</code>
+     * <code>
+     * string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for projectName to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -699,10 +744,14 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the event field is set.
      */
     public boolean hasEvent() {
       return eventBuilder_ != null || event_ != null;
@@ -711,10 +760,14 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The event.
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent() {
       if (eventBuilder_ == null) {
@@ -730,10 +783,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEvent(
         com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
@@ -753,10 +808,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEvent(
         com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder
@@ -774,10 +831,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEvent(
         com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
@@ -801,10 +860,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEvent() {
       if (eventBuilder_ == null) {
@@ -821,10 +882,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder
         getEventBuilder() {
@@ -836,10 +899,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder
         getEventOrBuilder() {
@@ -856,10 +921,12 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Required] The error event to be reported.
+     * Required. The error event to be reported.
      * </pre>
      *
-     * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
+     * <code>
+     * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent,

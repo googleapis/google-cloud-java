@@ -43,6 +43,12 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListEventsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -139,7 +145,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ERROR_EVENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> errorEvents_;
   /**
@@ -219,6 +224,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -241,6 +248,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -264,6 +273,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
+   *
+   * @return Whether the timeRangeBegin field is set.
    */
   public boolean hasTimeRangeBegin() {
     return timeRangeBegin_ != null;
@@ -276,6 +287,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
+   *
+   * @return The timeRangeBegin.
    */
   public com.google.protobuf.Timestamp getTimeRangeBegin() {
     return timeRangeBegin_ == null
@@ -573,7 +586,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result =
           new com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (errorEventsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorEvents_ = java.util.Collections.unmodifiableList(errorEvents_);
@@ -589,7 +601,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.timeRangeBegin_ = timeRangeBeginBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1106,6 +1117,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1128,6 +1141,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1150,6 +1165,9 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1170,6 +1188,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1187,6 +1207,9 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1213,6 +1236,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
+     *
+     * @return Whether the timeRangeBegin field is set.
      */
     public boolean hasTimeRangeBegin() {
       return timeRangeBeginBuilder_ != null || timeRangeBegin_ != null;
@@ -1225,6 +1250,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
+     *
+     * @return The timeRangeBegin.
      */
     public com.google.protobuf.Timestamp getTimeRangeBegin() {
       if (timeRangeBeginBuilder_ == null) {

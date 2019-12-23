@@ -154,12 +154,12 @@ public class ReportErrorsServiceClient implements BackgroundResource {
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
-   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
-   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
-   * &lt;pre&gt;POST
-   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
+   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
+   * key, append it to the URL as the value of a `key` parameter. For example:
+   *
+   * <p>`POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
    * <p>Sample code:
    *
@@ -171,10 +171,10 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @param event [Required] The error event to be reported.
+   * @param event Required. The error event to be reported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportErrorEventResponse reportErrorEvent(
@@ -192,12 +192,12 @@ public class ReportErrorsServiceClient implements BackgroundResource {
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
-   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
-   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
-   * &lt;pre&gt;POST
-   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
+   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
+   * key, append it to the URL as the value of a `key` parameter. For example:
+   *
+   * <p>`POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
    * <p>Sample code:
    *
@@ -209,10 +209,10 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @param event [Required] The error event to be reported.
+   * @param event Required. The error event to be reported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportErrorEventResponse reportErrorEvent(
@@ -227,12 +227,12 @@ public class ReportErrorsServiceClient implements BackgroundResource {
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
-   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
-   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
-   * &lt;pre&gt;POST
-   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
+   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
+   * key, append it to the URL as the value of a `key` parameter. For example:
+   *
+   * <p>`POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
    * <p>Sample code:
    *
@@ -259,12 +259,12 @@ public class ReportErrorsServiceClient implements BackgroundResource {
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
-   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
-   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
-   * &lt;pre&gt;POST
-   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
+   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
+   * key, append it to the URL as the value of a `key` parameter. For example:
+   *
+   * <p>`POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
    * <p>Sample code:
    *

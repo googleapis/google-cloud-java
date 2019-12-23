@@ -32,6 +32,8 @@ public interface ErrorGroupOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface ErrorGroupOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface ErrorGroupOrBuilder
    * </pre>
    *
    * <code>string group_id = 2;</code>
+   *
+   * @return The groupId.
    */
   java.lang.String getGroupId();
   /**
@@ -66,6 +72,8 @@ public interface ErrorGroupOrBuilder
    * </pre>
    *
    * <code>string group_id = 2;</code>
+   *
+   * @return The bytes for groupId.
    */
   com.google.protobuf.ByteString getGroupIdBytes();
 

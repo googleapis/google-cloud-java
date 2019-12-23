@@ -22,11 +22,10 @@ package com.google.devtools.clouderrorreporting.v1beta1;
  *
  *
  * <pre>
- * Indicates a location in the source code of the service for which
- * errors are reported.
- * This data should be provided by the application when reporting an error,
- * unless the error report has been generated automatically from Google App
- * Engine logs. All fields are optional.
+ * Indicates a location in the source code of the service for which errors are
+ * reported. `functionName` must be provided by the application when reporting
+ * an error, unless the error report contains a `message` with a supported
+ * exception stack trace. All fields are optional for the later case.
  * </pre>
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.SourceLocation}
@@ -47,6 +46,12 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SourceLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +64,6 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +138,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string file_path = 1;</code>
+   *
+   * @return The filePath.
    */
   public java.lang.String getFilePath() {
     java.lang.Object ref = filePath_;
@@ -155,6 +161,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string file_path = 1;</code>
+   *
+   * @return The bytes for filePath.
    */
   public com.google.protobuf.ByteString getFilePathBytes() {
     java.lang.Object ref = filePath_;
@@ -178,6 +186,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 line_number = 2;</code>
+   *
+   * @return The lineNumber.
    */
   public int getLineNumber() {
     return lineNumber_;
@@ -195,6 +205,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string function_name = 4;</code>
+   *
+   * @return The functionName.
    */
   public java.lang.String getFunctionName() {
     java.lang.Object ref = functionName_;
@@ -217,6 +229,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string function_name = 4;</code>
+   *
+   * @return The bytes for functionName.
    */
   public com.google.protobuf.ByteString getFunctionNameBytes() {
     java.lang.Object ref = functionName_;
@@ -412,11 +426,10 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates a location in the source code of the service for which
-   * errors are reported.
-   * This data should be provided by the application when reporting an error,
-   * unless the error report has been generated automatically from Google App
-   * Engine logs. All fields are optional.
+   * Indicates a location in the source code of the service for which errors are
+   * reported. `functionName` must be provided by the application when reporting
+   * an error, unless the error report contains a `message` with a supported
+   * exception stack trace. All fields are optional for the later case.
    * </pre>
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.SourceLocation}
@@ -597,6 +610,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1;</code>
+     *
+     * @return The filePath.
      */
     public java.lang.String getFilePath() {
       java.lang.Object ref = filePath_;
@@ -618,6 +633,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1;</code>
+     *
+     * @return The bytes for filePath.
      */
     public com.google.protobuf.ByteString getFilePathBytes() {
       java.lang.Object ref = filePath_;
@@ -639,6 +656,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1;</code>
+     *
+     * @param value The filePath to set.
+     * @return This builder for chaining.
      */
     public Builder setFilePath(java.lang.String value) {
       if (value == null) {
@@ -658,6 +678,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilePath() {
 
@@ -674,6 +696,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string file_path = 1;</code>
+     *
+     * @param value The bytes for filePath to set.
+     * @return This builder for chaining.
      */
     public Builder setFilePathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -695,6 +720,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 line_number = 2;</code>
+     *
+     * @return The lineNumber.
      */
     public int getLineNumber() {
       return lineNumber_;
@@ -707,6 +734,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 line_number = 2;</code>
+     *
+     * @param value The lineNumber to set.
+     * @return This builder for chaining.
      */
     public Builder setLineNumber(int value) {
 
@@ -722,6 +752,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 line_number = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLineNumber() {
 
@@ -741,6 +773,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string function_name = 4;</code>
+     *
+     * @return The functionName.
      */
     public java.lang.String getFunctionName() {
       java.lang.Object ref = functionName_;
@@ -763,6 +797,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string function_name = 4;</code>
+     *
+     * @return The bytes for functionName.
      */
     public com.google.protobuf.ByteString getFunctionNameBytes() {
       java.lang.Object ref = functionName_;
@@ -785,6 +821,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string function_name = 4;</code>
+     *
+     * @param value The functionName to set.
+     * @return This builder for chaining.
      */
     public Builder setFunctionName(java.lang.String value) {
       if (value == null) {
@@ -805,6 +844,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string function_name = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFunctionName() {
 
@@ -822,6 +863,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string function_name = 4;</code>
+     *
+     * @param value The bytes for functionName to set.
+     * @return This builder for chaining.
      */
     public Builder setFunctionNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

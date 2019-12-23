@@ -27,7 +27,7 @@ public interface GetGroupRequestOrBuilder
    *
    *
    * <pre>
-   * [Required] The group resource name. Written as
+   * Required. The group resource name. Written as
    * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
    * Call
    * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -36,14 +36,18 @@ public interface GetGroupRequestOrBuilder
    * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
    * </pre>
    *
-   * <code>string group_name = 1;</code>
+   * <code>
+   * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The groupName.
    */
   java.lang.String getGroupName();
   /**
    *
    *
    * <pre>
-   * [Required] The group resource name. Written as
+   * Required. The group resource name. Written as
    * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
    * Call
    * &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
@@ -52,7 +56,11 @@ public interface GetGroupRequestOrBuilder
    * Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
    * </pre>
    *
-   * <code>string group_name = 1;</code>
+   * <code>
+   * string group_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for groupName.
    */
   com.google.protobuf.ByteString getGroupNameBytes();
 }
