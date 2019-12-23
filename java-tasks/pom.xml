@@ -153,6 +153,11 @@
         <version>${google.common-protos.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>${google.core.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.threeten</groupId>
         <artifactId>threetenbp</artifactId>
         <version>${threeten.version}</version>
