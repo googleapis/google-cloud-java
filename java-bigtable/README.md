@@ -2,7 +2,6 @@
 
 Java idiomatic client for [Cloud Bigtable][cloud-bigtable].
 
-[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigtable.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigtable.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
@@ -374,6 +373,16 @@ codebase.
 
 Apache 2.0 - See [LICENSE] for more information.
 
+## CI Status
+
+Java Version | Status
+------------ | ------
+Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
+Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
+Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
+Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
+Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
 [DEVELOPING]:DEVELOPING.md
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
@@ -381,3 +390,13 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-bigtable]: https://cloud.google.com/bigtable/
 [bigtable-product-docs]: https://cloud.google.com/bigtable/docs/
 [bigtable-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigtable/package-summary.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigtable/java11.html
