@@ -15,6 +15,8 @@
  */
 package com.google.cloud.recaptchaenterprise.v1beta1.stub;
 
+import static com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client.ListKeysPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -24,10 +26,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1beta1.Assessment;
 import com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1beta1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1beta1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1beta1.Key;
+import com.google.recaptchaenterprise.v1beta1.ListKeysRequest;
+import com.google.recaptchaenterprise.v1beta1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -67,12 +77,59 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnnotateAssessmentResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<CreateKeyRequest, Key> createKeyMethodDescriptor =
+      MethodDescriptor.<CreateKeyRequest, Key>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1/CreateKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListKeysRequest, ListKeysResponse>
+      listKeysMethodDescriptor =
+          MethodDescriptor.<ListKeysRequest, ListKeysResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1/ListKeys")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListKeysRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListKeysResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetKeyRequest, Key> getKeyMethodDescriptor =
+      MethodDescriptor.<GetKeyRequest, Key>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1/GetKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateKeyRequest, Key> updateKeyMethodDescriptor =
+      MethodDescriptor.<UpdateKeyRequest, Key>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1/UpdateKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteKeyRequest, Empty> deleteKeyMethodDescriptor =
+      MethodDescriptor.<DeleteKeyRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1/DeleteKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable;
   private final UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable;
+  private final UnaryCallable<CreateKeyRequest, Key> createKeyCallable;
+  private final UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable;
+  private final UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable;
+  private final UnaryCallable<GetKeyRequest, Key> getKeyCallable;
+  private final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable;
+  private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -145,6 +202,71 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
                       }
                     })
                 .build();
+    GrpcCallSettings<CreateKeyRequest, Key> createKeyTransportSettings =
+        GrpcCallSettings.<CreateKeyRequest, Key>newBuilder()
+            .setMethodDescriptor(createKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
+        GrpcCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
+            .setMethodDescriptor(listKeysMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListKeysRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListKeysRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
+        GrpcCallSettings.<GetKeyRequest, Key>newBuilder()
+            .setMethodDescriptor(getKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateKeyRequest, Key> updateKeyTransportSettings =
+        GrpcCallSettings.<UpdateKeyRequest, Key>newBuilder()
+            .setMethodDescriptor(updateKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("key.name", String.valueOf(request.getKey().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteKeyRequest, Empty> deleteKeyTransportSettings =
+        GrpcCallSettings.<DeleteKeyRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createAssessmentCallable =
         callableFactory.createUnaryCallable(
@@ -154,6 +276,24 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
             annotateAssessmentTransportSettings,
             settings.annotateAssessmentSettings(),
             clientContext);
+    this.createKeyCallable =
+        callableFactory.createUnaryCallable(
+            createKeyTransportSettings, settings.createKeySettings(), clientContext);
+    this.listKeysCallable =
+        callableFactory.createUnaryCallable(
+            listKeysTransportSettings, settings.listKeysSettings(), clientContext);
+    this.listKeysPagedCallable =
+        callableFactory.createPagedCallable(
+            listKeysTransportSettings, settings.listKeysSettings(), clientContext);
+    this.getKeyCallable =
+        callableFactory.createUnaryCallable(
+            getKeyTransportSettings, settings.getKeySettings(), clientContext);
+    this.updateKeyCallable =
+        callableFactory.createUnaryCallable(
+            updateKeyTransportSettings, settings.updateKeySettings(), clientContext);
+    this.deleteKeyCallable =
+        callableFactory.createUnaryCallable(
+            deleteKeyTransportSettings, settings.deleteKeySettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -165,6 +305,30 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
   public UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable() {
     return annotateAssessmentCallable;
+  }
+
+  public UnaryCallable<CreateKeyRequest, Key> createKeyCallable() {
+    return createKeyCallable;
+  }
+
+  public UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable() {
+    return listKeysPagedCallable;
+  }
+
+  public UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable() {
+    return listKeysCallable;
+  }
+
+  public UnaryCallable<GetKeyRequest, Key> getKeyCallable() {
+    return getKeyCallable;
+  }
+
+  public UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable() {
+    return updateKeyCallable;
+  }
+
+  public UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable() {
+    return deleteKeyCallable;
   }
 
   @Override

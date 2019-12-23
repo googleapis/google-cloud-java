@@ -15,6 +15,8 @@
  */
 package com.google.cloud.recaptchaenterprise.v1beta1;
 
+import static com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client.ListKeysPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,13 +25,22 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.recaptchaenterprise.v1beta1.stub.RecaptchaEnterpriseServiceV1Beta1StubSettings;
+import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1beta1.Assessment;
 import com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1beta1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1beta1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1beta1.Key;
+import com.google.recaptchaenterprise.v1beta1.ListKeysRequest;
+import com.google.recaptchaenterprise.v1beta1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -77,6 +88,32 @@ public class RecaptchaEnterpriseServiceV1Beta1Settings
       annotateAssessmentSettings() {
     return ((RecaptchaEnterpriseServiceV1Beta1StubSettings) getStubSettings())
         .annotateAssessmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createKey. */
+  public UnaryCallSettings<CreateKeyRequest, Key> createKeySettings() {
+    return ((RecaptchaEnterpriseServiceV1Beta1StubSettings) getStubSettings()).createKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listKeys. */
+  public PagedCallSettings<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
+      listKeysSettings() {
+    return ((RecaptchaEnterpriseServiceV1Beta1StubSettings) getStubSettings()).listKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getKey. */
+  public UnaryCallSettings<GetKeyRequest, Key> getKeySettings() {
+    return ((RecaptchaEnterpriseServiceV1Beta1StubSettings) getStubSettings()).getKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKey. */
+  public UnaryCallSettings<UpdateKeyRequest, Key> updateKeySettings() {
+    return ((RecaptchaEnterpriseServiceV1Beta1StubSettings) getStubSettings()).updateKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteKey. */
+  public UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings() {
+    return ((RecaptchaEnterpriseServiceV1Beta1StubSettings) getStubSettings()).deleteKeySettings();
   }
 
   public static final RecaptchaEnterpriseServiceV1Beta1Settings create(
@@ -187,6 +224,32 @@ public class RecaptchaEnterpriseServiceV1Beta1Settings
     public UnaryCallSettings.Builder<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
         annotateAssessmentSettings() {
       return getStubSettingsBuilder().annotateAssessmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createKey. */
+    public UnaryCallSettings.Builder<CreateKeyRequest, Key> createKeySettings() {
+      return getStubSettingsBuilder().createKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listKeys. */
+    public PagedCallSettings.Builder<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
+        listKeysSettings() {
+      return getStubSettingsBuilder().listKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getKey. */
+    public UnaryCallSettings.Builder<GetKeyRequest, Key> getKeySettings() {
+      return getStubSettingsBuilder().getKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKey. */
+    public UnaryCallSettings.Builder<UpdateKeyRequest, Key> updateKeySettings() {
+      return getStubSettingsBuilder().updateKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteKey. */
+    public UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings() {
+      return getStubSettingsBuilder().deleteKeySettings();
     }
 
     @Override

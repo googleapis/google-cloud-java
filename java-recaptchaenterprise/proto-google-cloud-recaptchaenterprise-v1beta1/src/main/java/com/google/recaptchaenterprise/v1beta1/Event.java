@@ -32,6 +32,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   private Event() {
     token_ = "";
     siteKey_ = "";
+    userAgent_ = "";
+    userIpAddress_ = "";
+    expectedAction_ = "";
   }
 
   @java.lang.Override
@@ -70,6 +73,27 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               siteKey_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userAgent_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userIpAddress_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expectedAction_ = s;
               break;
             }
           default:
@@ -112,11 +136,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The user response token provided by the reCAPTCHA client-side integration
+   * Optional. The user response token provided by the reCAPTCHA client-side integration
    * on your site.
    * </pre>
    *
-   * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getToken() {
     java.lang.Object ref = token_;
@@ -133,11 +157,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The user response token provided by the reCAPTCHA client-side integration
+   * Optional. The user response token provided by the reCAPTCHA client-side integration
    * on your site.
    * </pre>
    *
-   * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getTokenBytes() {
     java.lang.Object ref = token_;
@@ -157,11 +181,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+   * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
    * the token.
    * </pre>
    *
-   * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getSiteKey() {
     java.lang.Object ref = siteKey_;
@@ -178,11 +202,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+   * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
    * the token.
    * </pre>
    *
-   * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getSiteKeyBytes() {
     java.lang.Object ref = siteKey_;
@@ -190,6 +214,141 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       siteKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USER_AGENT_FIELD_NUMBER = 3;
+  private volatile java.lang.Object userAgent_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user agent present in the request from the user's device related to
+   * this event.
+   * </pre>
+   *
+   * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public java.lang.String getUserAgent() {
+    java.lang.Object ref = userAgent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userAgent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user agent present in the request from the user's device related to
+   * this event.
+   * </pre>
+   *
+   * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public com.google.protobuf.ByteString getUserAgentBytes() {
+    java.lang.Object ref = userAgent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      userAgent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USER_IP_ADDRESS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object userIpAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP address in the request from the user's device related to this event.
+   * </pre>
+   *
+   * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public java.lang.String getUserIpAddress() {
+    java.lang.Object ref = userIpAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userIpAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP address in the request from the user's device related to this event.
+   * </pre>
+   *
+   * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public com.google.protobuf.ByteString getUserIpAddressBytes() {
+    java.lang.Object ref = userIpAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      userIpAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXPECTED_ACTION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object expectedAction_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expected action for this type of event. This should be the same action
+   * provided at token generation time on client-side platforms already
+   * integrated with recaptcha enterprise.
+   * </pre>
+   *
+   * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public java.lang.String getExpectedAction() {
+    java.lang.Object ref = expectedAction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      expectedAction_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expected action for this type of event. This should be the same action
+   * provided at token generation time on client-side platforms already
+   * integrated with recaptcha enterprise.
+   * </pre>
+   *
+   * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  public com.google.protobuf.ByteString getExpectedActionBytes() {
+    java.lang.Object ref = expectedAction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      expectedAction_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -216,6 +375,15 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!getSiteKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, siteKey_);
     }
+    if (!getUserAgentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userAgent_);
+    }
+    if (!getUserIpAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userIpAddress_);
+    }
+    if (!getExpectedActionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, expectedAction_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -230,6 +398,15 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSiteKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, siteKey_);
+    }
+    if (!getUserAgentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userAgent_);
+    }
+    if (!getUserIpAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userIpAddress_);
+    }
+    if (!getExpectedActionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, expectedAction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +426,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
     if (!getToken().equals(other.getToken())) return false;
     if (!getSiteKey().equals(other.getSiteKey())) return false;
+    if (!getUserAgent().equals(other.getUserAgent())) return false;
+    if (!getUserIpAddress().equals(other.getUserIpAddress())) return false;
+    if (!getExpectedAction().equals(other.getExpectedAction())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -264,6 +444,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getToken().hashCode();
     hash = (37 * hash) + SITE_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getSiteKey().hashCode();
+    hash = (37 * hash) + USER_AGENT_FIELD_NUMBER;
+    hash = (53 * hash) + getUserAgent().hashCode();
+    hash = (37 * hash) + USER_IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getUserIpAddress().hashCode();
+    hash = (37 * hash) + EXPECTED_ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + getExpectedAction().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,6 +591,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
       siteKey_ = "";
 
+      userAgent_ = "";
+
+      userIpAddress_ = "";
+
+      expectedAction_ = "";
+
       return this;
     }
 
@@ -434,6 +626,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           new com.google.recaptchaenterprise.v1beta1.Event(this);
       result.token_ = token_;
       result.siteKey_ = siteKey_;
+      result.userAgent_ = userAgent_;
+      result.userIpAddress_ = userIpAddress_;
+      result.expectedAction_ = expectedAction_;
       onBuilt();
       return result;
     }
@@ -491,6 +686,18 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         siteKey_ = other.siteKey_;
         onChanged();
       }
+      if (!other.getUserAgent().isEmpty()) {
+        userAgent_ = other.userAgent_;
+        onChanged();
+      }
+      if (!other.getUserIpAddress().isEmpty()) {
+        userIpAddress_ = other.userIpAddress_;
+        onChanged();
+      }
+      if (!other.getExpectedAction().isEmpty()) {
+        expectedAction_ = other.expectedAction_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -525,11 +732,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The user response token provided by the reCAPTCHA client-side integration
+     * Optional. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -546,11 +753,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The user response token provided by the reCAPTCHA client-side integration
+     * Optional. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getTokenBytes() {
       java.lang.Object ref = token_;
@@ -567,11 +774,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The user response token provided by the reCAPTCHA client-side integration
+     * Optional. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setToken(java.lang.String value) {
       if (value == null) {
@@ -586,11 +793,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The user response token provided by the reCAPTCHA client-side integration
+     * Optional. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearToken() {
 
@@ -602,11 +809,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The user response token provided by the reCAPTCHA client-side integration
+     * Optional. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -624,11 +831,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getSiteKey() {
       java.lang.Object ref = siteKey_;
@@ -645,11 +852,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getSiteKeyBytes() {
       java.lang.Object ref = siteKey_;
@@ -666,11 +873,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSiteKey(java.lang.String value) {
       if (value == null) {
@@ -685,11 +892,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearSiteKey() {
 
@@ -701,11 +908,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
+     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSiteKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -714,6 +921,303 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       siteKey_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userAgent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user agent present in the request from the user's device related to
+     * this event.
+     * </pre>
+     *
+     * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.lang.String getUserAgent() {
+      java.lang.Object ref = userAgent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userAgent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user agent present in the request from the user's device related to
+     * this event.
+     * </pre>
+     *
+     * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.ByteString getUserAgentBytes() {
+      java.lang.Object ref = userAgent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userAgent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user agent present in the request from the user's device related to
+     * this event.
+     * </pre>
+     *
+     * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setUserAgent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      userAgent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user agent present in the request from the user's device related to
+     * this event.
+     * </pre>
+     *
+     * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearUserAgent() {
+
+      userAgent_ = getDefaultInstance().getUserAgent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user agent present in the request from the user's device related to
+     * this event.
+     * </pre>
+     *
+     * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setUserAgentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      userAgent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userIpAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP address in the request from the user's device related to this event.
+     * </pre>
+     *
+     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.lang.String getUserIpAddress() {
+      java.lang.Object ref = userIpAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userIpAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP address in the request from the user's device related to this event.
+     * </pre>
+     *
+     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.ByteString getUserIpAddressBytes() {
+      java.lang.Object ref = userIpAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userIpAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP address in the request from the user's device related to this event.
+     * </pre>
+     *
+     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setUserIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      userIpAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP address in the request from the user's device related to this event.
+     * </pre>
+     *
+     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearUserIpAddress() {
+
+      userIpAddress_ = getDefaultInstance().getUserIpAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP address in the request from the user's device related to this event.
+     * </pre>
+     *
+     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setUserIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      userIpAddress_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object expectedAction_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expected action for this type of event. This should be the same action
+     * provided at token generation time on client-side platforms already
+     * integrated with recaptcha enterprise.
+     * </pre>
+     *
+     * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.lang.String getExpectedAction() {
+      java.lang.Object ref = expectedAction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expectedAction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expected action for this type of event. This should be the same action
+     * provided at token generation time on client-side platforms already
+     * integrated with recaptcha enterprise.
+     * </pre>
+     *
+     * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.ByteString getExpectedActionBytes() {
+      java.lang.Object ref = expectedAction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        expectedAction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expected action for this type of event. This should be the same action
+     * provided at token generation time on client-side platforms already
+     * integrated with recaptcha enterprise.
+     * </pre>
+     *
+     * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setExpectedAction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      expectedAction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expected action for this type of event. This should be the same action
+     * provided at token generation time on client-side platforms already
+     * integrated with recaptcha enterprise.
+     * </pre>
+     *
+     * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearExpectedAction() {
+
+      expectedAction_ = getDefaultInstance().getExpectedAction();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expected action for this type of event. This should be the same action
+     * provided at token generation time on client-side platforms already
+     * integrated with recaptcha enterprise.
+     * </pre>
+     *
+     * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setExpectedActionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      expectedAction_ = value;
       onChanged();
       return this;
     }
