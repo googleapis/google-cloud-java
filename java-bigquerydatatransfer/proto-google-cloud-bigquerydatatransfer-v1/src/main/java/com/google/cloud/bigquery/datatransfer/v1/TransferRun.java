@@ -46,6 +46,12 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TransferRun();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -273,7 +278,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
 
-  public enum DestinationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum DestinationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DESTINATION_DATASET_ID(2),
     DESTINATION_NOT_SET(0);
     private final int value;
@@ -281,7 +289,11 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     private DestinationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DestinationCase valueOf(int value) {
       return forNumber(value);
@@ -320,6 +332,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -343,6 +357,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -366,6 +382,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
@@ -378,6 +396,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
+   *
+   * @return The scheduleTime.
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
@@ -408,6 +428,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
+   *
+   * @return Whether the runTime field is set.
    */
   public boolean hasRunTime() {
     return runTime_ != null;
@@ -421,6 +443,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
+   *
+   * @return The runTime.
    */
   public com.google.protobuf.Timestamp getRunTime() {
     return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
@@ -449,6 +473,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status error_status = 21;</code>
+   *
+   * @return Whether the errorStatus field is set.
    */
   public boolean hasErrorStatus() {
     return errorStatus_ != null;
@@ -461,6 +487,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status error_status = 21;</code>
+   *
+   * @return The errorStatus.
    */
   public com.google.rpc.Status getErrorStatus() {
     return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
@@ -490,6 +518,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -504,6 +534,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -535,6 +567,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -549,6 +583,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -579,6 +615,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -592,6 +630,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -620,6 +660,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the params field is set.
    */
   public boolean hasParams() {
     return params_ != null;
@@ -632,6 +674,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The params.
    */
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
@@ -658,6 +702,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The destinationDatasetId.
    */
   public java.lang.String getDestinationDatasetId() {
     java.lang.Object ref = "";
@@ -683,6 +729,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for destinationDatasetId.
    */
   public com.google.protobuf.ByteString getDestinationDatasetIdBytes() {
     java.lang.Object ref = "";
@@ -711,6 +759,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dataSourceId.
    */
   public java.lang.String getDataSourceId() {
     java.lang.Object ref = dataSourceId_;
@@ -731,6 +781,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for dataSourceId.
    */
   public com.google.protobuf.ByteString getDataSourceIdBytes() {
     java.lang.Object ref = dataSourceId_;
@@ -754,6 +806,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -766,6 +820,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferState getState() {
     @SuppressWarnings("deprecation")
@@ -786,6 +842,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 user_id = 11;</code>
+   *
+   * @return The userId.
    */
   public long getUserId() {
     return userId_;
@@ -805,6 +863,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The schedule.
    */
   public java.lang.String getSchedule() {
     java.lang.Object ref = schedule_;
@@ -829,6 +889,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for schedule.
    */
   public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
@@ -854,6 +916,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The notificationPubsubTopic.
    */
   public java.lang.String getNotificationPubsubTopic() {
     java.lang.Object ref = notificationPubsubTopic_;
@@ -876,6 +940,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for notificationPubsubTopic.
    */
   public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
     java.lang.Object ref = notificationPubsubTopic_;
@@ -903,6 +969,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the emailPreferences field is set.
    */
   public boolean hasEmailPreferences() {
     return emailPreferences_ != null;
@@ -919,6 +987,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The emailPreferences.
    */
   public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences() {
     return emailPreferences_ == null
@@ -1636,6 +1706,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1659,6 +1731,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1682,6 +1756,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1703,6 +1780,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1721,6 +1800,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1747,6 +1829,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
+     *
+     * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
@@ -1759,6 +1843,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
+     *
+     * @return The scheduleTime.
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
@@ -1929,6 +2015,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
+     *
+     * @return Whether the runTime field is set.
      */
     public boolean hasRunTime() {
       return runTimeBuilder_ != null || runTime_ != null;
@@ -1942,6 +2030,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
+     *
+     * @return The runTime.
      */
     public com.google.protobuf.Timestamp getRunTime() {
       if (runTimeBuilder_ == null) {
@@ -2110,6 +2200,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status error_status = 21;</code>
+     *
+     * @return Whether the errorStatus field is set.
      */
     public boolean hasErrorStatus() {
       return errorStatusBuilder_ != null || errorStatus_ != null;
@@ -2122,6 +2214,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status error_status = 21;</code>
+     *
+     * @return The errorStatus.
      */
     public com.google.rpc.Status getErrorStatus() {
       if (errorStatusBuilder_ == null) {
@@ -2285,6 +2379,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -2299,6 +2395,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -2478,6 +2576,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -2492,6 +2592,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -2671,6 +2773,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -2685,6 +2789,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2866,6 +2972,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the params field is set.
      */
     public boolean hasParams() {
       return paramsBuilder_ != null || params_ != null;
@@ -2878,6 +2986,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The params.
      */
     public com.google.protobuf.Struct getParams() {
       if (paramsBuilder_ == null) {
@@ -3034,6 +3144,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The destinationDatasetId.
      */
     public java.lang.String getDestinationDatasetId() {
       java.lang.Object ref = "";
@@ -3059,6 +3171,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for destinationDatasetId.
      */
     public com.google.protobuf.ByteString getDestinationDatasetIdBytes() {
       java.lang.Object ref = "";
@@ -3084,6 +3198,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The destinationDatasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDestinationDatasetId(java.lang.String value) {
       if (value == null) {
@@ -3102,6 +3219,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDestinationDatasetId() {
       if (destinationCase_ == 2) {
@@ -3119,6 +3238,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for destinationDatasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDestinationDatasetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3140,6 +3262,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The dataSourceId.
      */
     public java.lang.String getDataSourceId() {
       java.lang.Object ref = dataSourceId_;
@@ -3160,6 +3284,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for dataSourceId.
      */
     public com.google.protobuf.ByteString getDataSourceIdBytes() {
       java.lang.Object ref = dataSourceId_;
@@ -3180,6 +3306,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The dataSourceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceId(java.lang.String value) {
       if (value == null) {
@@ -3198,6 +3327,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataSourceId() {
 
@@ -3213,6 +3344,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for dataSourceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3234,6 +3368,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -3246,6 +3382,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -3260,6 +3399,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferState getState() {
       @SuppressWarnings("deprecation")
@@ -3277,6 +3418,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.bigquery.datatransfer.v1.TransferState value) {
       if (value == null) {
@@ -3295,6 +3439,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -3312,6 +3458,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
+     *
+     * @return The userId.
      */
     public long getUserId() {
       return userId_;
@@ -3324,6 +3472,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
+     *
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(long value) {
 
@@ -3339,6 +3490,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 user_id = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
 
@@ -3360,6 +3513,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The schedule.
      */
     public java.lang.String getSchedule() {
       java.lang.Object ref = schedule_;
@@ -3384,6 +3539,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for schedule.
      */
     public com.google.protobuf.ByteString getScheduleBytes() {
       java.lang.Object ref = schedule_;
@@ -3408,6 +3565,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The schedule to set.
+     * @return This builder for chaining.
      */
     public Builder setSchedule(java.lang.String value) {
       if (value == null) {
@@ -3430,6 +3590,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSchedule() {
 
@@ -3449,6 +3611,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for schedule to set.
+     * @return This builder for chaining.
      */
     public Builder setScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3472,6 +3637,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The notificationPubsubTopic.
      */
     public java.lang.String getNotificationPubsubTopic() {
       java.lang.Object ref = notificationPubsubTopic_;
@@ -3494,6 +3661,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for notificationPubsubTopic.
      */
     public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
       java.lang.Object ref = notificationPubsubTopic_;
@@ -3516,6 +3685,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The notificationPubsubTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setNotificationPubsubTopic(java.lang.String value) {
       if (value == null) {
@@ -3536,6 +3708,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNotificationPubsubTopic() {
 
@@ -3553,6 +3727,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for notificationPubsubTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setNotificationPubsubTopicBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3583,6 +3760,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the emailPreferences field is set.
      */
     public boolean hasEmailPreferences() {
       return emailPreferencesBuilder_ != null || emailPreferences_ != null;
@@ -3599,6 +3778,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The emailPreferences.
      */
     public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences() {
       if (emailPreferencesBuilder_ == null) {

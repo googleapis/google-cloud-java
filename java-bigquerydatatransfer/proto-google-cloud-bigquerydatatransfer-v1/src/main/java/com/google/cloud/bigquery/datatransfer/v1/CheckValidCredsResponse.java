@@ -40,6 +40,12 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
   private CheckValidCredsResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CheckValidCredsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>bool has_valid_creds = 1;</code>
+   *
+   * @return The hasValidCreds.
    */
   public boolean getHasValidCreds() {
     return hasValidCreds_;
@@ -450,6 +457,8 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool has_valid_creds = 1;</code>
+     *
+     * @return The hasValidCreds.
      */
     public boolean getHasValidCreds() {
       return hasValidCreds_;
@@ -462,6 +471,9 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool has_valid_creds = 1;</code>
+     *
+     * @param value The hasValidCreds to set.
+     * @return This builder for chaining.
      */
     public Builder setHasValidCreds(boolean value) {
 
@@ -477,6 +489,8 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool has_valid_creds = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHasValidCreds() {
 

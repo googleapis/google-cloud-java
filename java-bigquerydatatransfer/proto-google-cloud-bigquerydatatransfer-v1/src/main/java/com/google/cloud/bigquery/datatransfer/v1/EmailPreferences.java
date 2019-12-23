@@ -41,6 +41,12 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
   private EmailPreferences() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EmailPreferences();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -113,6 +118,8 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>bool enable_failure_email = 1;</code>
+   *
+   * @return The enableFailureEmail.
    */
   public boolean getEnableFailureEmail() {
     return enableFailureEmail_;
@@ -446,6 +453,8 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool enable_failure_email = 1;</code>
+     *
+     * @return The enableFailureEmail.
      */
     public boolean getEnableFailureEmail() {
       return enableFailureEmail_;
@@ -458,6 +467,9 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool enable_failure_email = 1;</code>
+     *
+     * @param value The enableFailureEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableFailureEmail(boolean value) {
 
@@ -473,6 +485,8 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>bool enable_failure_email = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnableFailureEmail() {
 

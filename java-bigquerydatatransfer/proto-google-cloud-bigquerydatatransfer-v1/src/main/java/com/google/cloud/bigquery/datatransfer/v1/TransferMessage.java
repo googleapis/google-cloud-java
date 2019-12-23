@@ -43,6 +43,12 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TransferMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -231,12 +236,20 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MessageSeverity valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MessageSeverity forNumber(int value) {
       switch (value) {
         case 0:
@@ -310,6 +323,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp message_time = 1;</code>
+   *
+   * @return Whether the messageTime field is set.
    */
   public boolean hasMessageTime() {
     return messageTime_ != null;
@@ -322,6 +337,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp message_time = 1;</code>
+   *
+   * @return The messageTime.
    */
   public com.google.protobuf.Timestamp getMessageTime() {
     return messageTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : messageTime_;
@@ -350,6 +367,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for severity.
    */
   public int getSeverityValue() {
     return severity_;
@@ -363,6 +382,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
    * </code>
+   *
+   * @return The severity.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity() {
     @SuppressWarnings("deprecation")
@@ -384,6 +405,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string message_text = 3;</code>
+   *
+   * @return The messageText.
    */
   public java.lang.String getMessageText() {
     java.lang.Object ref = messageText_;
@@ -404,6 +427,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string message_text = 3;</code>
+   *
+   * @return The bytes for messageText.
    */
   public com.google.protobuf.ByteString getMessageTextBytes() {
     java.lang.Object ref = messageText_;
@@ -799,6 +824,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp message_time = 1;</code>
+     *
+     * @return Whether the messageTime field is set.
      */
     public boolean hasMessageTime() {
       return messageTimeBuilder_ != null || messageTime_ != null;
@@ -811,6 +838,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp message_time = 1;</code>
+     *
+     * @return The messageTime.
      */
     public com.google.protobuf.Timestamp getMessageTime() {
       if (messageTimeBuilder_ == null) {
@@ -976,6 +1005,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for severity.
      */
     public int getSeverityValue() {
       return severity_;
@@ -989,6 +1020,9 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
       severity_ = value;
@@ -1004,6 +1038,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
      * </code>
+     *
+     * @return The severity.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity() {
       @SuppressWarnings("deprecation")
@@ -1023,6 +1059,9 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
      * </code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverity(
         com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity value) {
@@ -1043,6 +1082,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSeverity() {
 
@@ -1060,6 +1101,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     *
+     * @return The messageText.
      */
     public java.lang.String getMessageText() {
       java.lang.Object ref = messageText_;
@@ -1080,6 +1123,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     *
+     * @return The bytes for messageText.
      */
     public com.google.protobuf.ByteString getMessageTextBytes() {
       java.lang.Object ref = messageText_;
@@ -1100,6 +1145,9 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     *
+     * @param value The messageText to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageText(java.lang.String value) {
       if (value == null) {
@@ -1118,6 +1166,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessageText() {
 
@@ -1133,6 +1183,9 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     *
+     * @param value The bytes for messageText to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string param_id = 1;</code>
+   *
+   * @return The paramId.
    */
   java.lang.String getParamId();
   /**
@@ -41,6 +43,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string param_id = 1;</code>
+   *
+   * @return The bytes for paramId.
    */
   com.google.protobuf.ByteString getParamIdBytes();
 
@@ -52,6 +56,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -62,6 +68,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -73,6 +81,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -83,6 +93,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -94,6 +106,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -104,6 +118,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+   *
+   * @return The type.
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type getType();
 
@@ -115,6 +131,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>bool required = 5;</code>
+   *
+   * @return The required.
    */
   boolean getRequired();
 
@@ -126,6 +144,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>bool repeated = 6;</code>
+   *
+   * @return The repeated.
    */
   boolean getRepeated();
 
@@ -137,6 +157,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string validation_regex = 7;</code>
+   *
+   * @return The validationRegex.
    */
   java.lang.String getValidationRegex();
   /**
@@ -147,6 +169,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string validation_regex = 7;</code>
+   *
+   * @return The bytes for validationRegex.
    */
   com.google.protobuf.ByteString getValidationRegexBytes();
 
@@ -158,6 +182,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   *
+   * @return A list containing the allowedValues.
    */
   java.util.List<java.lang.String> getAllowedValuesList();
   /**
@@ -168,6 +194,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   *
+   * @return The count of allowedValues.
    */
   int getAllowedValuesCount();
   /**
@@ -178,6 +206,9 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedValues at the given index.
    */
   java.lang.String getAllowedValues(int index);
   /**
@@ -188,6 +219,9 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedValues at the given index.
    */
   com.google.protobuf.ByteString getAllowedValuesBytes(int index);
 
@@ -199,6 +233,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue min_value = 9;</code>
+   *
+   * @return Whether the minValue field is set.
    */
   boolean hasMinValue();
   /**
@@ -209,6 +245,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue min_value = 9;</code>
+   *
+   * @return The minValue.
    */
   com.google.protobuf.DoubleValue getMinValue();
   /**
@@ -230,6 +268,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
+   *
+   * @return Whether the maxValue field is set.
    */
   boolean hasMaxValue();
   /**
@@ -240,6 +280,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
+   *
+   * @return The maxValue.
    */
   com.google.protobuf.DoubleValue getMaxValue();
   /**
@@ -315,6 +357,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string validation_description = 12;</code>
+   *
+   * @return The validationDescription.
    */
   java.lang.String getValidationDescription();
   /**
@@ -326,6 +370,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string validation_description = 12;</code>
+   *
+   * @return The bytes for validationDescription.
    */
   com.google.protobuf.ByteString getValidationDescriptionBytes();
 
@@ -337,6 +383,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string validation_help_url = 13;</code>
+   *
+   * @return The validationHelpUrl.
    */
   java.lang.String getValidationHelpUrl();
   /**
@@ -347,6 +395,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>string validation_help_url = 13;</code>
+   *
+   * @return The bytes for validationHelpUrl.
    */
   com.google.protobuf.ByteString getValidationHelpUrlBytes();
 
@@ -358,6 +408,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>bool immutable = 14;</code>
+   *
+   * @return The immutable.
    */
   boolean getImmutable();
 
@@ -369,6 +421,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>bool recurse = 15;</code>
+   *
+   * @return The recurse.
    */
   boolean getRecurse();
 
@@ -381,6 +435,8 @@ public interface DataSourceParameterOrBuilder
    * </pre>
    *
    * <code>bool deprecated = 20;</code>
+   *
+   * @return The deprecated.
    */
   boolean getDeprecated();
 }

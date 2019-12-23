@@ -44,6 +44,12 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferLogsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -89,9 +95,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
           case 48:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 messageTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               messageTypes_.add(rawValue);
               break;
@@ -102,9 +108,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   messageTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 messageTypes_.add(rawValue);
               }
@@ -125,7 +131,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         messageTypes_ = java.util.Collections.unmodifiableList(messageTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -148,7 +154,6 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
             com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -163,6 +168,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -187,6 +194,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -214,6 +223,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -238,6 +249,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -261,6 +274,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int32 page_size = 5;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -298,6 +313,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
    * </code>
+   *
+   * @return A list containing the messageTypes.
    */
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity>
       getMessageTypesList() {
@@ -317,6 +334,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
    * </code>
+   *
+   * @param value The messageTypes to add.
    */
   public int getMessageTypesCount() {
     return messageTypes_.size();
@@ -332,6 +351,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The messageTypes at the given index.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getMessageTypes(
       int index) {
@@ -348,6 +370,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for messageTypes.
    */
   public java.util.List<java.lang.Integer> getMessageTypesValueList() {
     return messageTypes_;
@@ -363,6 +387,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * <code>
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of messageTypes at the given index.
    */
   public int getMessageTypesValue(int index) {
     return messageTypes_.get(index);
@@ -628,7 +655,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
       pageSize_ = 0;
 
       messageTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -658,16 +685,14 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
       com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         messageTypes_ = java.util.Collections.unmodifiableList(messageTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.messageTypes_ = messageTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -734,7 +759,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
       if (!other.messageTypes_.isEmpty()) {
         if (messageTypes_.isEmpty()) {
           messageTypes_ = other.messageTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureMessageTypesIsMutable();
           messageTypes_.addAll(other.messageTypes_);
@@ -787,6 +812,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -811,6 +838,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -835,6 +864,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -857,6 +889,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -876,6 +910,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -901,6 +938,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -925,6 +964,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -949,6 +990,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -971,6 +1015,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -990,6 +1036,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1011,6 +1060,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 page_size = 5;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1023,6 +1074,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 page_size = 5;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1038,6 +1092,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 page_size = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1049,9 +1105,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
     private java.util.List<java.lang.Integer> messageTypes_ = java.util.Collections.emptyList();
 
     private void ensureMessageTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         messageTypes_ = new java.util.ArrayList<java.lang.Integer>(messageTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1065,6 +1121,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @return A list containing the messageTypes.
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity>
         getMessageTypesList() {
@@ -1084,6 +1142,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @return The count of messageTypes.
      */
     public int getMessageTypesCount() {
       return messageTypes_.size();
@@ -1099,6 +1159,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The messageTypes at the given index.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity
         getMessageTypes(int index) {
@@ -1115,6 +1178,10 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The messageTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageTypes(
         int index,
@@ -1138,6 +1205,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param value The messageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addMessageTypes(
         com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity value) {
@@ -1160,6 +1230,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param values The messageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMessageTypes(
         java.lang.Iterable<
@@ -1184,10 +1257,12 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMessageTypes() {
       messageTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1202,6 +1277,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for messageTypes.
      */
     public java.util.List<java.lang.Integer> getMessageTypesValueList() {
       return java.util.Collections.unmodifiableList(messageTypes_);
@@ -1217,6 +1294,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of messageTypes at the given index.
      */
     public int getMessageTypesValue(int index) {
       return messageTypes_.get(index);
@@ -1232,6 +1312,10 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of messageTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setMessageTypesValue(int index, int value) {
       ensureMessageTypesIsMutable();
@@ -1250,6 +1334,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for messageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addMessageTypesValue(int value) {
       ensureMessageTypesIsMutable();
@@ -1268,6 +1355,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * <code>
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
+     *
+     * @param values The enum numeric values on the wire for messageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMessageTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureMessageTypesIsMutable();

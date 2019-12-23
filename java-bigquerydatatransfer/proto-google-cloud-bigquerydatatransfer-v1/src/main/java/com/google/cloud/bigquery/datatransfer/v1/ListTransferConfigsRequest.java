@@ -44,6 +44,12 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferConfigsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dataSourceIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               dataSourceIds_.add(s);
               break;
@@ -110,7 +116,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -133,7 +139,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
             com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -148,6 +153,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -172,6 +179,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -195,6 +204,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @return A list containing the dataSourceIds.
    */
   public com.google.protobuf.ProtocolStringList getDataSourceIdsList() {
     return dataSourceIds_;
@@ -207,6 +218,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @return The count of dataSourceIds.
    */
   public int getDataSourceIdsCount() {
     return dataSourceIds_.size();
@@ -219,6 +232,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The dataSourceIds at the given index.
    */
   public java.lang.String getDataSourceIds(int index) {
     return dataSourceIds_.get(index);
@@ -231,6 +247,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dataSourceIds at the given index.
    */
   public com.google.protobuf.ByteString getDataSourceIdsBytes(int index) {
     return dataSourceIds_.getByteString(index);
@@ -250,6 +269,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -274,6 +295,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -297,6 +320,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -546,7 +571,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       parent_ = "";
 
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageToken_ = "";
 
       pageSize_ = 0;
@@ -581,16 +606,14 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.dataSourceIds_ = dataSourceIds_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -651,7 +674,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       if (!other.dataSourceIds_.isEmpty()) {
         if (dataSourceIds_.isEmpty()) {
           dataSourceIds_ = other.dataSourceIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDataSourceIdsIsMutable();
           dataSourceIds_.addAll(other.dataSourceIds_);
@@ -711,6 +734,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -735,6 +760,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -759,6 +786,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -781,6 +811,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -800,6 +832,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -816,9 +851,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDataSourceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = new com.google.protobuf.LazyStringArrayList(dataSourceIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -829,6 +864,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @return A list containing the dataSourceIds.
      */
     public com.google.protobuf.ProtocolStringList getDataSourceIdsList() {
       return dataSourceIds_.getUnmodifiableView();
@@ -841,6 +878,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @return The count of dataSourceIds.
      */
     public int getDataSourceIdsCount() {
       return dataSourceIds_.size();
@@ -853,6 +892,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The dataSourceIds at the given index.
      */
     public java.lang.String getDataSourceIds(int index) {
       return dataSourceIds_.get(index);
@@ -865,6 +907,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the dataSourceIds at the given index.
      */
     public com.google.protobuf.ByteString getDataSourceIdsBytes(int index) {
       return dataSourceIds_.getByteString(index);
@@ -877,6 +922,10 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The dataSourceIds to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceIds(int index, java.lang.String value) {
       if (value == null) {
@@ -895,6 +944,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @param value The dataSourceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDataSourceIds(java.lang.String value) {
       if (value == null) {
@@ -913,6 +965,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @param values The dataSourceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDataSourceIds(java.lang.Iterable<java.lang.String> values) {
       ensureDataSourceIdsIsMutable();
@@ -928,10 +983,12 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataSourceIds() {
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -943,6 +1000,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     *
+     * @param value The bytes of the dataSourceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDataSourceIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -968,6 +1028,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -992,6 +1054,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1016,6 +1080,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1038,6 +1105,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1057,6 +1126,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1078,6 +1150,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1090,6 +1164,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1105,6 +1182,8 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 

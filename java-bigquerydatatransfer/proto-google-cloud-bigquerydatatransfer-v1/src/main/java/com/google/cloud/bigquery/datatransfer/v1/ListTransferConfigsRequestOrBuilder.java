@@ -35,6 +35,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @return A list containing the dataSourceIds.
    */
   java.util.List<java.lang.String> getDataSourceIdsList();
   /**
@@ -70,6 +76,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @return The count of dataSourceIds.
    */
   int getDataSourceIdsCount();
   /**
@@ -80,6 +88,9 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The dataSourceIds at the given index.
    */
   java.lang.String getDataSourceIds(int index);
   /**
@@ -90,6 +101,9 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dataSourceIds at the given index.
    */
   com.google.protobuf.ByteString getDataSourceIdsBytes(int index);
 
@@ -105,6 +119,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -119,6 +135,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -130,6 +148,8 @@ public interface ListTransferConfigsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 }

@@ -31,6 +31,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
+   *
+   * @return The dataSourceId.
    */
   java.lang.String getDataSourceId();
   /**
@@ -62,6 +68,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
+   *
+   * @return The bytes for dataSourceId.
    */
   com.google.protobuf.ByteString getDataSourceIdBytes();
 
@@ -73,6 +81,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -83,6 +93,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -94,6 +106,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -104,6 +118,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -115,6 +131,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string client_id = 5;</code>
+   *
+   * @return The clientId.
    */
   java.lang.String getClientId();
   /**
@@ -125,6 +143,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string client_id = 5;</code>
+   *
+   * @return The bytes for clientId.
    */
   com.google.protobuf.ByteString getClientIdBytes();
 
@@ -138,6 +158,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @return A list containing the scopes.
    */
   java.util.List<java.lang.String> getScopesList();
   /**
@@ -150,6 +172,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @return The count of scopes.
    */
   int getScopesCount();
   /**
@@ -162,6 +186,9 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
   /**
@@ -174,6 +201,9 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
    */
   com.google.protobuf.ByteString getScopesBytes(int index);
 
@@ -187,6 +217,8 @@ public interface DataSourceOrBuilder
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
    * </code>
+   *
+   * @return The enum numeric value on the wire for transferType.
    */
   @java.lang.Deprecated
   int getTransferTypeValue();
@@ -200,6 +232,8 @@ public interface DataSourceOrBuilder
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
    * </code>
+   *
+   * @return The transferType.
    */
   @java.lang.Deprecated
   com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType();
@@ -212,6 +246,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+   *
+   * @return The supportsMultipleTransfers.
    */
   @java.lang.Deprecated
   boolean getSupportsMultipleTransfers();
@@ -225,6 +261,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>int32 update_deadline_seconds = 9;</code>
+   *
+   * @return The updateDeadlineSeconds.
    */
   int getUpdateDeadlineSeconds();
 
@@ -240,6 +278,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string default_schedule = 10;</code>
+   *
+   * @return The defaultSchedule.
    */
   java.lang.String getDefaultSchedule();
   /**
@@ -254,6 +294,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string default_schedule = 10;</code>
+   *
+   * @return The bytes for defaultSchedule.
    */
   com.google.protobuf.ByteString getDefaultScheduleBytes();
 
@@ -267,6 +309,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>bool supports_custom_schedule = 11;</code>
+   *
+   * @return The supportsCustomSchedule.
    */
   boolean getSupportsCustomSchedule();
 
@@ -336,6 +380,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string help_url = 13;</code>
+   *
+   * @return The helpUrl.
    */
   java.lang.String getHelpUrl();
   /**
@@ -346,6 +392,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>string help_url = 13;</code>
+   *
+   * @return The bytes for helpUrl.
    */
   com.google.protobuf.ByteString getHelpUrlBytes();
 
@@ -359,6 +407,8 @@ public interface DataSourceOrBuilder
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
    * </code>
+   *
+   * @return The enum numeric value on the wire for authorizationType.
    */
   int getAuthorizationTypeValue();
   /**
@@ -371,6 +421,8 @@ public interface DataSourceOrBuilder
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
    * </code>
+   *
+   * @return The authorizationType.
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType getAuthorizationType();
 
@@ -386,6 +438,8 @@ public interface DataSourceOrBuilder
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
    * </code>
+   *
+   * @return The enum numeric value on the wire for dataRefreshType.
    */
   int getDataRefreshTypeValue();
   /**
@@ -400,6 +454,8 @@ public interface DataSourceOrBuilder
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
    * </code>
+   *
+   * @return The dataRefreshType.
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType();
 
@@ -412,6 +468,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>int32 default_data_refresh_window_days = 16;</code>
+   *
+   * @return The defaultDataRefreshWindowDays.
    */
   int getDefaultDataRefreshWindowDays();
 
@@ -424,6 +482,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>bool manual_runs_disabled = 17;</code>
+   *
+   * @return The manualRunsDisabled.
    */
   boolean getManualRunsDisabled();
 
@@ -435,6 +495,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+   *
+   * @return Whether the minimumScheduleInterval field is set.
    */
   boolean hasMinimumScheduleInterval();
   /**
@@ -445,6 +507,8 @@ public interface DataSourceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+   *
+   * @return The minimumScheduleInterval.
    */
   com.google.protobuf.Duration getMinimumScheduleInterval();
   /**

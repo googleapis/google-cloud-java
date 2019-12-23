@@ -50,6 +50,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateTransferConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,7 +68,6 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -167,6 +172,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -192,6 +199,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -217,6 +226,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the transferConfig field is set.
    */
   public boolean hasTransferConfig() {
     return transferConfig_ != null;
@@ -231,6 +242,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The transferConfig.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
     return transferConfig_ == null
@@ -277,6 +290,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   *
+   * @return The authorizationCode.
    */
   public java.lang.String getAuthorizationCode() {
     java.lang.Object ref = authorizationCode_;
@@ -311,6 +326,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   *
+   * @return The bytes for authorizationCode.
    */
   public com.google.protobuf.ByteString getAuthorizationCodeBytes() {
     java.lang.Object ref = authorizationCode_;
@@ -339,6 +356,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   *
+   * @return The versionInfo.
    */
   public java.lang.String getVersionInfo() {
     java.lang.Object ref = versionInfo_;
@@ -364,6 +383,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   *
+   * @return The bytes for versionInfo.
    */
   public com.google.protobuf.ByteString getVersionInfoBytes() {
     java.lang.Object ref = versionInfo_;
@@ -390,6 +411,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   *
+   * @return The serviceAccountName.
    */
   public java.lang.String getServiceAccountName() {
     java.lang.Object ref = serviceAccountName_;
@@ -413,6 +436,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   *
+   * @return The bytes for serviceAccountName.
    */
   public com.google.protobuf.ByteString getServiceAccountNameBytes() {
     java.lang.Object ref = serviceAccountName_;
@@ -848,6 +873,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -873,6 +900,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -898,6 +927,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -921,6 +953,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -941,6 +975,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -969,6 +1006,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the transferConfig field is set.
      */
     public boolean hasTransferConfig() {
       return transferConfigBuilder_ != null || transferConfig_ != null;
@@ -983,6 +1022,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The transferConfig.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
       if (transferConfigBuilder_ == null) {
@@ -1180,6 +1221,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     *
+     * @return The authorizationCode.
      */
     public java.lang.String getAuthorizationCode() {
       java.lang.Object ref = authorizationCode_;
@@ -1214,6 +1257,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     *
+     * @return The bytes for authorizationCode.
      */
     public com.google.protobuf.ByteString getAuthorizationCodeBytes() {
       java.lang.Object ref = authorizationCode_;
@@ -1248,6 +1293,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     *
+     * @param value The authorizationCode to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationCode(java.lang.String value) {
       if (value == null) {
@@ -1280,6 +1328,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAuthorizationCode() {
 
@@ -1309,6 +1359,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     *
+     * @param value The bytes for authorizationCode to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1335,6 +1388,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     *
+     * @return The versionInfo.
      */
     public java.lang.String getVersionInfo() {
       java.lang.Object ref = versionInfo_;
@@ -1360,6 +1415,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     *
+     * @return The bytes for versionInfo.
      */
     public com.google.protobuf.ByteString getVersionInfoBytes() {
       java.lang.Object ref = versionInfo_;
@@ -1385,6 +1442,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     *
+     * @param value The versionInfo to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionInfo(java.lang.String value) {
       if (value == null) {
@@ -1408,6 +1468,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersionInfo() {
 
@@ -1428,6 +1490,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     *
+     * @param value The bytes for versionInfo to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionInfoBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1452,6 +1517,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     *
+     * @return The serviceAccountName.
      */
     public java.lang.String getServiceAccountName() {
       java.lang.Object ref = serviceAccountName_;
@@ -1475,6 +1542,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     *
+     * @return The bytes for serviceAccountName.
      */
     public com.google.protobuf.ByteString getServiceAccountNameBytes() {
       java.lang.Object ref = serviceAccountName_;
@@ -1498,6 +1567,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     *
+     * @param value The serviceAccountName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountName(java.lang.String value) {
       if (value == null) {
@@ -1519,6 +1591,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccountName() {
 
@@ -1537,6 +1611,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     *
+     * @param value The bytes for serviceAccountName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

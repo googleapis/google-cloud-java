@@ -31,6 +31,8 @@ public interface CheckValidCredsResponseOrBuilder
    * </pre>
    *
    * <code>bool has_valid_creds = 1;</code>
+   *
+   * @return The hasValidCreds.
    */
   boolean getHasValidCreds();
 }

@@ -54,6 +54,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DataSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -115,9 +121,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 scopes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               scopes_.add(s);
               break;
@@ -153,11 +159,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 parameters_ =
                     new java.util.ArrayList<
                         com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000002;
               }
               parameters_.add(
                   input.readMessage(
@@ -225,10 +231,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
@@ -337,12 +343,20 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AuthorizationType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AuthorizationType forNumber(int value) {
       switch (value) {
         case 0:
@@ -495,12 +509,20 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DataRefreshType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DataRefreshType forNumber(int value) {
       switch (value) {
         case 0:
@@ -562,7 +584,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -573,6 +594,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -593,6 +616,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -616,6 +641,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
+   *
+   * @return The dataSourceId.
    */
   public java.lang.String getDataSourceId() {
     java.lang.Object ref = dataSourceId_;
@@ -636,6 +663,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
+   *
+   * @return The bytes for dataSourceId.
    */
   public com.google.protobuf.ByteString getDataSourceIdBytes() {
     java.lang.Object ref = dataSourceId_;
@@ -659,6 +688,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -679,6 +710,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -702,6 +735,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -722,6 +757,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -745,6 +782,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string client_id = 5;</code>
+   *
+   * @return The clientId.
    */
   public java.lang.String getClientId() {
     java.lang.Object ref = clientId_;
@@ -765,6 +804,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string client_id = 5;</code>
+   *
+   * @return The bytes for clientId.
    */
   public com.google.protobuf.ByteString getClientIdBytes() {
     java.lang.Object ref = clientId_;
@@ -790,6 +831,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @return A list containing the scopes.
    */
   public com.google.protobuf.ProtocolStringList getScopesList() {
     return scopes_;
@@ -804,6 +847,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @return The count of scopes.
    */
   public int getScopesCount() {
     return scopes_.size();
@@ -818,6 +863,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   public java.lang.String getScopes(int index) {
     return scopes_.get(index);
@@ -832,6 +880,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
    */
   public com.google.protobuf.ByteString getScopesBytes(int index) {
     return scopes_.getByteString(index);
@@ -849,6 +900,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
    * </code>
+   *
+   * @return The enum numeric value on the wire for transferType.
    */
   @java.lang.Deprecated
   public int getTransferTypeValue() {
@@ -864,6 +917,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
    * </code>
+   *
+   * @return The transferType.
    */
   @java.lang.Deprecated
   public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
@@ -885,6 +940,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+   *
+   * @return The supportsMultipleTransfers.
    */
   @java.lang.Deprecated
   public boolean getSupportsMultipleTransfers() {
@@ -902,6 +959,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 update_deadline_seconds = 9;</code>
+   *
+   * @return The updateDeadlineSeconds.
    */
   public int getUpdateDeadlineSeconds() {
     return updateDeadlineSeconds_;
@@ -921,6 +980,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_schedule = 10;</code>
+   *
+   * @return The defaultSchedule.
    */
   public java.lang.String getDefaultSchedule() {
     java.lang.Object ref = defaultSchedule_;
@@ -945,6 +1006,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_schedule = 10;</code>
+   *
+   * @return The bytes for defaultSchedule.
    */
   public com.google.protobuf.ByteString getDefaultScheduleBytes() {
     java.lang.Object ref = defaultSchedule_;
@@ -970,6 +1033,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool supports_custom_schedule = 11;</code>
+   *
+   * @return The supportsCustomSchedule.
    */
   public boolean getSupportsCustomSchedule() {
     return supportsCustomSchedule_;
@@ -1057,6 +1122,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string help_url = 13;</code>
+   *
+   * @return The helpUrl.
    */
   public java.lang.String getHelpUrl() {
     java.lang.Object ref = helpUrl_;
@@ -1077,6 +1144,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string help_url = 13;</code>
+   *
+   * @return The bytes for helpUrl.
    */
   public com.google.protobuf.ByteString getHelpUrlBytes() {
     java.lang.Object ref = helpUrl_;
@@ -1102,6 +1171,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
    * </code>
+   *
+   * @return The enum numeric value on the wire for authorizationType.
    */
   public int getAuthorizationTypeValue() {
     return authorizationType_;
@@ -1116,6 +1187,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
    * </code>
+   *
+   * @return The authorizationType.
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
       getAuthorizationType() {
@@ -1142,6 +1215,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
    * </code>
+   *
+   * @return The enum numeric value on the wire for dataRefreshType.
    */
   public int getDataRefreshTypeValue() {
     return dataRefreshType_;
@@ -1158,6 +1233,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
    * </code>
+   *
+   * @return The dataRefreshType.
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType() {
     @SuppressWarnings("deprecation")
@@ -1180,6 +1257,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 default_data_refresh_window_days = 16;</code>
+   *
+   * @return The defaultDataRefreshWindowDays.
    */
   public int getDefaultDataRefreshWindowDays() {
     return defaultDataRefreshWindowDays_;
@@ -1196,6 +1275,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool manual_runs_disabled = 17;</code>
+   *
+   * @return The manualRunsDisabled.
    */
   public boolean getManualRunsDisabled() {
     return manualRunsDisabled_;
@@ -1211,6 +1292,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+   *
+   * @return Whether the minimumScheduleInterval field is set.
    */
   public boolean hasMinimumScheduleInterval() {
     return minimumScheduleInterval_ != null;
@@ -1223,6 +1306,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+   *
+   * @return The minimumScheduleInterval.
    */
   public com.google.protobuf.Duration getMinimumScheduleInterval() {
     return minimumScheduleInterval_ == null
@@ -1646,7 +1731,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       clientId_ = "";
 
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       transferType_ = 0;
 
       supportsMultipleTransfers_ = false;
@@ -1659,7 +1744,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         parametersBuilder_.clear();
       }
@@ -1707,15 +1792,14 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.bigquery.datatransfer.v1.DataSource result =
           new com.google.cloud.bigquery.datatransfer.v1.DataSource(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.dataSourceId_ = dataSourceId_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.clientId_ = clientId_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.scopes_ = scopes_;
       result.transferType_ = transferType_;
@@ -1724,9 +1808,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       result.defaultSchedule_ = defaultSchedule_;
       result.supportsCustomSchedule_ = supportsCustomSchedule_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.parameters_ = parameters_;
       } else {
@@ -1742,7 +1826,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.minimumScheduleInterval_ = minimumScheduleIntervalBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1816,7 +1899,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (!other.scopes_.isEmpty()) {
         if (scopes_.isEmpty()) {
           scopes_ = other.scopes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureScopesIsMutable();
           scopes_.addAll(other.scopes_);
@@ -1843,7 +1926,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -1856,7 +1939,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000002);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -1926,6 +2009,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1946,6 +2031,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1966,6 +2053,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1984,6 +2074,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1999,6 +2091,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2020,6 +2115,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     *
+     * @return The dataSourceId.
      */
     public java.lang.String getDataSourceId() {
       java.lang.Object ref = dataSourceId_;
@@ -2040,6 +2137,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     *
+     * @return The bytes for dataSourceId.
      */
     public com.google.protobuf.ByteString getDataSourceIdBytes() {
       java.lang.Object ref = dataSourceId_;
@@ -2060,6 +2159,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     *
+     * @param value The dataSourceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceId(java.lang.String value) {
       if (value == null) {
@@ -2078,6 +2180,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataSourceId() {
 
@@ -2093,6 +2197,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     *
+     * @param value The bytes for dataSourceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2114,6 +2221,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2134,6 +2243,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -2154,6 +2265,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -2172,6 +2286,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -2187,6 +2303,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2208,6 +2327,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2228,6 +2349,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2248,6 +2371,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2266,6 +2392,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2281,6 +2409,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 4;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2302,6 +2433,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     *
+     * @return The clientId.
      */
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
@@ -2322,6 +2455,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     *
+     * @return The bytes for clientId.
      */
     public com.google.protobuf.ByteString getClientIdBytes() {
       java.lang.Object ref = clientId_;
@@ -2342,6 +2477,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     *
+     * @param value The clientId to set.
+     * @return This builder for chaining.
      */
     public Builder setClientId(java.lang.String value) {
       if (value == null) {
@@ -2360,6 +2498,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClientId() {
 
@@ -2375,6 +2515,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     *
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
      */
     public Builder setClientIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2391,9 +2534,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2406,6 +2549,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @return A list containing the scopes.
      */
     public com.google.protobuf.ProtocolStringList getScopesList() {
       return scopes_.getUnmodifiableView();
@@ -2420,6 +2565,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @return The count of scopes.
      */
     public int getScopesCount() {
       return scopes_.size();
@@ -2434,6 +2581,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
      */
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
@@ -2448,6 +2598,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
      */
     public com.google.protobuf.ByteString getScopesBytes(int index) {
       return scopes_.getByteString(index);
@@ -2462,6 +2615,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
      */
     public Builder setScopes(int index, java.lang.String value) {
       if (value == null) {
@@ -2482,6 +2639,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @param value The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopes(java.lang.String value) {
       if (value == null) {
@@ -2502,6 +2662,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @param values The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
       ensureScopesIsMutable();
@@ -2519,10 +2682,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScopes() {
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2536,6 +2701,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     *
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2559,6 +2727,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
+     *
+     * @return The enum numeric value on the wire for transferType.
      */
     @java.lang.Deprecated
     public int getTransferTypeValue() {
@@ -2574,6 +2744,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for transferType to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setTransferTypeValue(int value) {
@@ -2591,6 +2764,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
+     *
+     * @return The transferType.
      */
     @java.lang.Deprecated
     public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
@@ -2611,6 +2786,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
+     *
+     * @param value The transferType to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setTransferType(com.google.cloud.bigquery.datatransfer.v1.TransferType value) {
@@ -2632,6 +2810,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearTransferType() {
@@ -2650,6 +2830,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+     *
+     * @return The supportsMultipleTransfers.
      */
     @java.lang.Deprecated
     public boolean getSupportsMultipleTransfers() {
@@ -2663,6 +2845,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+     *
+     * @param value The supportsMultipleTransfers to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setSupportsMultipleTransfers(boolean value) {
@@ -2679,6 +2864,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearSupportsMultipleTransfers() {
@@ -2698,6 +2885,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
+     *
+     * @return The updateDeadlineSeconds.
      */
     public int getUpdateDeadlineSeconds() {
       return updateDeadlineSeconds_;
@@ -2711,6 +2900,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
+     *
+     * @param value The updateDeadlineSeconds to set.
+     * @return This builder for chaining.
      */
     public Builder setUpdateDeadlineSeconds(int value) {
 
@@ -2727,6 +2919,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUpdateDeadlineSeconds() {
 
@@ -2748,6 +2942,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     *
+     * @return The defaultSchedule.
      */
     public java.lang.String getDefaultSchedule() {
       java.lang.Object ref = defaultSchedule_;
@@ -2772,6 +2968,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     *
+     * @return The bytes for defaultSchedule.
      */
     public com.google.protobuf.ByteString getDefaultScheduleBytes() {
       java.lang.Object ref = defaultSchedule_;
@@ -2796,6 +2994,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     *
+     * @param value The defaultSchedule to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultSchedule(java.lang.String value) {
       if (value == null) {
@@ -2818,6 +3019,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultSchedule() {
 
@@ -2837,6 +3040,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     *
+     * @param value The bytes for defaultSchedule to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2860,6 +3066,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool supports_custom_schedule = 11;</code>
+     *
+     * @return The supportsCustomSchedule.
      */
     public boolean getSupportsCustomSchedule() {
       return supportsCustomSchedule_;
@@ -2874,6 +3082,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool supports_custom_schedule = 11;</code>
+     *
+     * @param value The supportsCustomSchedule to set.
+     * @return This builder for chaining.
      */
     public Builder setSupportsCustomSchedule(boolean value) {
 
@@ -2891,6 +3102,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool supports_custom_schedule = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSupportsCustomSchedule() {
 
@@ -2903,11 +3116,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         parameters_ = java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(
                 parameters_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3141,7 +3354,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -3278,7 +3491,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -3293,6 +3506,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     *
+     * @return The helpUrl.
      */
     public java.lang.String getHelpUrl() {
       java.lang.Object ref = helpUrl_;
@@ -3313,6 +3528,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     *
+     * @return The bytes for helpUrl.
      */
     public com.google.protobuf.ByteString getHelpUrlBytes() {
       java.lang.Object ref = helpUrl_;
@@ -3333,6 +3550,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     *
+     * @param value The helpUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setHelpUrl(java.lang.String value) {
       if (value == null) {
@@ -3351,6 +3571,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHelpUrl() {
 
@@ -3366,6 +3588,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     *
+     * @param value The bytes for helpUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setHelpUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3389,6 +3614,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
      * </code>
+     *
+     * @return The enum numeric value on the wire for authorizationType.
      */
     public int getAuthorizationTypeValue() {
       return authorizationType_;
@@ -3403,6 +3630,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for authorizationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationTypeValue(int value) {
       authorizationType_ = value;
@@ -3419,6 +3649,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
      * </code>
+     *
+     * @return The authorizationType.
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
         getAuthorizationType() {
@@ -3440,6 +3672,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
      * </code>
+     *
+     * @param value The authorizationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationType(
         com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType value) {
@@ -3461,6 +3696,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAuthorizationType() {
 
@@ -3483,6 +3720,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
      * </code>
+     *
+     * @return The enum numeric value on the wire for dataRefreshType.
      */
     public int getDataRefreshTypeValue() {
       return dataRefreshType_;
@@ -3500,6 +3739,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for dataRefreshType to set.
+     * @return This builder for chaining.
      */
     public Builder setDataRefreshTypeValue(int value) {
       dataRefreshType_ = value;
@@ -3519,6 +3761,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
      * </code>
+     *
+     * @return The dataRefreshType.
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
         getDataRefreshType() {
@@ -3543,6 +3787,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
      * </code>
+     *
+     * @param value The dataRefreshType to set.
+     * @return This builder for chaining.
      */
     public Builder setDataRefreshType(
         com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType value) {
@@ -3567,6 +3814,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataRefreshType() {
 
@@ -3585,6 +3834,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 default_data_refresh_window_days = 16;</code>
+     *
+     * @return The defaultDataRefreshWindowDays.
      */
     public int getDefaultDataRefreshWindowDays() {
       return defaultDataRefreshWindowDays_;
@@ -3598,6 +3849,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 default_data_refresh_window_days = 16;</code>
+     *
+     * @param value The defaultDataRefreshWindowDays to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultDataRefreshWindowDays(int value) {
 
@@ -3614,6 +3868,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 default_data_refresh_window_days = 16;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultDataRefreshWindowDays() {
 
@@ -3632,6 +3888,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool manual_runs_disabled = 17;</code>
+     *
+     * @return The manualRunsDisabled.
      */
     public boolean getManualRunsDisabled() {
       return manualRunsDisabled_;
@@ -3645,6 +3903,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool manual_runs_disabled = 17;</code>
+     *
+     * @param value The manualRunsDisabled to set.
+     * @return This builder for chaining.
      */
     public Builder setManualRunsDisabled(boolean value) {
 
@@ -3661,6 +3922,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool manual_runs_disabled = 17;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearManualRunsDisabled() {
 
@@ -3683,6 +3946,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+     *
+     * @return Whether the minimumScheduleInterval field is set.
      */
     public boolean hasMinimumScheduleInterval() {
       return minimumScheduleIntervalBuilder_ != null || minimumScheduleInterval_ != null;
@@ -3695,6 +3960,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+     *
+     * @return The minimumScheduleInterval.
      */
     public com.google.protobuf.Duration getMinimumScheduleInterval() {
       if (minimumScheduleIntervalBuilder_ == null) {

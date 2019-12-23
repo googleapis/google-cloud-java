@@ -36,6 +36,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -64,6 +68,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the transferConfig field is set.
    */
   boolean hasTransferConfig();
   /**
@@ -76,6 +82,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The transferConfig.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
   /**
@@ -113,6 +121,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   *
+   * @return The authorizationCode.
    */
   java.lang.String getAuthorizationCode();
   /**
@@ -137,6 +147,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   *
+   * @return The bytes for authorizationCode.
    */
   com.google.protobuf.ByteString getAuthorizationCodeBytes();
 
@@ -153,6 +165,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   *
+   * @return The versionInfo.
    */
   java.lang.String getVersionInfo();
   /**
@@ -168,6 +182,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   *
+   * @return The bytes for versionInfo.
    */
   com.google.protobuf.ByteString getVersionInfoBytes();
 
@@ -182,6 +198,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   *
+   * @return The serviceAccountName.
    */
   java.lang.String getServiceAccountName();
   /**
@@ -195,6 +213,8 @@ public interface CreateTransferConfigRequestOrBuilder
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   *
+   * @return The bytes for serviceAccountName.
    */
   com.google.protobuf.ByteString getServiceAccountNameBytes();
 }

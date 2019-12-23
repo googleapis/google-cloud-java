@@ -97,6 +97,8 @@ public interface ListTransferRunsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -110,6 +112,8 @@ public interface ListTransferRunsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

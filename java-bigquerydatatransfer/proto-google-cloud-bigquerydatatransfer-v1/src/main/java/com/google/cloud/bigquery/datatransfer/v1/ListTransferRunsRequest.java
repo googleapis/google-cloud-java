@@ -47,6 +47,12 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferRunsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,9 +86,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 states_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               states_.add(rawValue);
               break;
@@ -93,9 +99,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   states_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 states_.add(rawValue);
               }
@@ -135,7 +141,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         states_ = java.util.Collections.unmodifiableList(states_);
       }
       this.unknownFields = unknownFields.build();
@@ -220,12 +226,20 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RunAttempt valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static RunAttempt forNumber(int value) {
       switch (value) {
         case 0:
@@ -283,7 +297,6 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt)
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -299,6 +312,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -324,6 +339,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -362,6 +379,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   *
+   * @return A list containing the states.
    */
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferState> getStatesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -376,6 +395,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   *
+   * @param value The states to add.
    */
   public int getStatesCount() {
     return states_.size();
@@ -388,6 +409,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The states at the given index.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferState getStates(int index) {
     return states_converter_.convert(states_.get(index));
@@ -400,6 +424,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for states.
    */
   public java.util.List<java.lang.Integer> getStatesValueList() {
     return states_;
@@ -412,6 +438,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of states at the given index.
    */
   public int getStatesValue(int index) {
     return states_.get(index);
@@ -433,6 +462,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -457,6 +488,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -480,6 +513,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -497,6 +532,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for runAttempt.
    */
   public int getRunAttemptValue() {
     return runAttempt_;
@@ -511,6 +548,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * <code>
    * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
    * </code>
+   *
+   * @return The runAttempt.
    */
   public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
       getRunAttempt() {
@@ -793,7 +832,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       parent_ = "";
 
       states_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageToken_ = "";
 
       pageSize_ = 0;
@@ -829,17 +868,15 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         states_ = java.util.Collections.unmodifiableList(states_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.states_ = states_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
       result.runAttempt_ = runAttempt_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -899,7 +936,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       if (!other.states_.isEmpty()) {
         if (states_.isEmpty()) {
           states_ = other.states_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureStatesIsMutable();
           states_.addAll(other.states_);
@@ -963,6 +1000,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -988,6 +1027,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1013,6 +1054,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1036,6 +1080,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1056,6 +1102,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1071,9 +1120,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     private java.util.List<java.lang.Integer> states_ = java.util.Collections.emptyList();
 
     private void ensureStatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         states_ = new java.util.ArrayList<java.lang.Integer>(states_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1084,6 +1133,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @return A list containing the states.
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferState> getStatesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1098,6 +1149,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @return The count of states.
      */
     public int getStatesCount() {
       return states_.size();
@@ -1110,6 +1163,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The states at the given index.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferState getStates(int index) {
       return states_converter_.convert(states_.get(index));
@@ -1122,6 +1178,10 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The states to set.
+     * @return This builder for chaining.
      */
     public Builder setStates(
         int index, com.google.cloud.bigquery.datatransfer.v1.TransferState value) {
@@ -1141,6 +1201,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param value The states to add.
+     * @return This builder for chaining.
      */
     public Builder addStates(com.google.cloud.bigquery.datatransfer.v1.TransferState value) {
       if (value == null) {
@@ -1159,6 +1222,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param values The states to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStates(
         java.lang.Iterable<? extends com.google.cloud.bigquery.datatransfer.v1.TransferState>
@@ -1178,10 +1244,12 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStates() {
       states_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1193,6 +1261,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for states.
      */
     public java.util.List<java.lang.Integer> getStatesValueList() {
       return java.util.Collections.unmodifiableList(states_);
@@ -1205,6 +1275,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of states at the given index.
      */
     public int getStatesValue(int index) {
       return states_.get(index);
@@ -1217,6 +1290,10 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of states at the given index.
+     * @return This builder for chaining.
      */
     public Builder setStatesValue(int index, int value) {
       ensureStatesIsMutable();
@@ -1232,6 +1309,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for states to add.
+     * @return This builder for chaining.
      */
     public Builder addStatesValue(int value) {
       ensureStatesIsMutable();
@@ -1247,6 +1327,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+     *
+     * @param values The enum numeric values on the wire for states to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStatesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureStatesIsMutable();
@@ -1270,6 +1353,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1294,6 +1379,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1318,6 +1405,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1340,6 +1430,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1359,6 +1451,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1380,6 +1475,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1392,6 +1489,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1407,6 +1507,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1426,6 +1528,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
      * </code>
+     *
+     * @return The enum numeric value on the wire for runAttempt.
      */
     public int getRunAttemptValue() {
       return runAttempt_;
@@ -1440,6 +1544,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for runAttempt to set.
+     * @return This builder for chaining.
      */
     public Builder setRunAttemptValue(int value) {
       runAttempt_ = value;
@@ -1456,6 +1563,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
      * </code>
+     *
+     * @return The runAttempt.
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
         getRunAttempt() {
@@ -1478,6 +1587,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
      * </code>
+     *
+     * @param value The runAttempt to set.
+     * @return This builder for chaining.
      */
     public Builder setRunAttempt(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt value) {
@@ -1499,6 +1611,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * <code>
      * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRunAttempt() {
 

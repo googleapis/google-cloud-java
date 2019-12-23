@@ -31,6 +31,8 @@ public interface TransferMessageOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp message_time = 1;</code>
+   *
+   * @return Whether the messageTime field is set.
    */
   boolean hasMessageTime();
   /**
@@ -41,6 +43,8 @@ public interface TransferMessageOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp message_time = 1;</code>
+   *
+   * @return The messageTime.
    */
   com.google.protobuf.Timestamp getMessageTime();
   /**
@@ -63,6 +67,8 @@ public interface TransferMessageOrBuilder
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
   /**
@@ -74,6 +80,8 @@ public interface TransferMessageOrBuilder
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
    * </code>
+   *
+   * @return The severity.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity();
 
@@ -85,6 +93,8 @@ public interface TransferMessageOrBuilder
    * </pre>
    *
    * <code>string message_text = 3;</code>
+   *
+   * @return The messageText.
    */
   java.lang.String getMessageText();
   /**
@@ -95,6 +105,8 @@ public interface TransferMessageOrBuilder
    * </pre>
    *
    * <code>string message_text = 3;</code>
+   *
+   * @return The bytes for messageText.
    */
   com.google.protobuf.ByteString getMessageTextBytes();
 }
